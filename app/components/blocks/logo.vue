@@ -1,11 +1,19 @@
 <template>
     <div>
-        <v-app-bar-title>
+        <v-app-bar-title v-if="blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk">
             <NuxtLink class="logobrand" href="/">
                 <v-icon start color="orange">
-                    <img loading="lazy"
-                        :src="`${$directus.url}assets/${blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk}`"
+                    <img :src="`${$directus.url}assets/${blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk}`"
                         :alt="blocksSiteoverview?.name" />
+                </v-icon>
+                <p class="logotext">{{ blocksSiteoverview?.name }}<!--Meeovi--></p>
+            </NuxtLink>
+        </v-app-bar-title>
+
+        <v-app-bar-title v-else>
+            <NuxtLink class="logobrand" href="/">
+                <v-icon start color="orange">
+                    <img src="/images/logo512alpha.png" :alt="blocksSiteoverview?.name" />
                 </v-icon>
                 <p class="logotext">{{ blocksSiteoverview?.name }}<!--Meeovi--></p>
             </NuxtLink>

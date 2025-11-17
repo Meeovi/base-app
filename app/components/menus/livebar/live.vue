@@ -33,7 +33,9 @@
                             <template v-slot:activator="{ props }">
                                 <div class="avatarBorder" v-for="(shorts, index) in short" :key="index">
                                     <v-avatar v-bind="props" size="60">
-                                        <NuxtImg loading="lazy" :src="`${$directus.url}assets/${shorts?.thumbnail?.filename_disk}`" :alt="shorts?.name" cover />
+                                        <img v-if="shorts?.thumbnail?.filename_disk" loading="lazy" :src="`${$directus.url}assets/${shorts?.thumbnail?.filename_disk}`" :alt="shorts?.name" cover />
+
+                                        <img v-else src="/images/display-2.png" :alt="shorts?.name" cover />
                                     </v-avatar>
                                 </div>
                             </template>
