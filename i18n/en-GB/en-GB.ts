@@ -12,6 +12,19 @@ import recoveryPassword from "./recoveryPassword.json";
 import validations from "./validations.json";
 
 export default {
+  $vuetify: {
+    badge: '...', // Add your desired label here
+    carousel: {
+      prev: 'Previous slide',
+      next: 'Next slide',
+    },
+    rating: {
+      ariaLabel: {
+        item: 'Rating {0} of {1}',
+      },
+    },
+  },
+
   ...form,
   ...general,
   ...account,

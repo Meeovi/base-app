@@ -1,56 +1,75 @@
 <template>
-    <div>
-        <section data-bs-version="5.1" class="nichem5 footer1 cid-uYyskHkMB5" once="footer" id="footer01-i">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 logo-footer mb-3 mt-3 align-left">
-
-                        <p class="mbr-fonts-style text-logo-footer pt-2 mb-0 display-4"
-                            style="width: 100%; text-align: center;">
-                            {{ blocksCopyright?.content?.[0]?.subtitle }} {{ new Date().getFullYear() }}&nbsp;<NuxtLink
-                                :to="blocksCopyright?.content?.[0]?.url">{{ blocksCopyright?.name }}&nbsp;&nbsp;
-                            </NuxtLink>
-                            {{ blocksCopyright?.content?.[0]?.name }}
-                        </p>
-                    </div>
-                    <div class="col-lg-5 copyright mb-3 mt-3 align-self-center">
-                        <ul class="mbr-list list-inline align-center">
-                            <li class="list-inline-item mbr-fonts-style display-4" v-for="child in about?.menus"
-                                :key="child.id">
-                                <NuxtLink :to="`${child.url}`" class="text-white mbr-semibold">{{ child?.name }}
-                                </NuxtLink>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+  <div>
+    <BottomFooter />
+    <Newsletter />
+    <v-btn class="footertotopbtn" title="To the Top of the Page" prepend-icon="fas:fa fa-arrow-up" rounded="0"
+      href="#mainSection">Back to Top</v-btn>
+    <section data-bs-version="5.1" class="footer3 cid-u4cbW5p2qg" once="footer" id="footer03-8b"
+      data-sortbtn="btn-primary">
+      <div class="container">
+        <v-row class="align-left justify-content-center mbr-white">
+          <v-col cols="4" class="md-pb">
+            <h2 class="mbr-section-title pb-2 mbr-fonts-style display-7">
+              <strong>{{ about?.name }}</strong></h2>
+            <div v-for="child in about?.menus" :key="child.id">
+              <h3 class="mbr-section-subtitle mbr-fonts-style mbr-lighter display-4"><NuxtLink
+                  :href="`/${child.slug}`">{{ child?.name }}</NuxtLink></h3>
             </div>
-        </section>
-    </div>
+          </v-col>
+          <v-col cols="4" class="md-pb">
+            <h2 class="mbr-section-title pb-2 mbr-fonts-style display-7">
+              <strong>{{ legal?.name }}</strong></h2>
+            <div v-for="child in legal?.menus" :key="child.id">
+              <h3 class="mbr-section-subtitle mbr-fonts-style mbr-lighter display-4"><NuxtLink
+                  :href="`/${child.slug}`">{{ child?.name }}</NuxtLink></h3>
+            </div>
+          </v-col>
+          <v-col cols="4" class="md-pb">
+            <h2 class="mbr-section-title pb-2 mbr-fonts-style display-7">
+              <strong>{{ company?.name }}</strong></h2>
+            <div v-for="child in company?.menus" :key="child.id">
+              <h3 class="mbr-section-subtitle mbr-fonts-style mbr-lighter display-4"><NuxtLink
+                  :href="`/${child.slug}`">{{ child?.name }}</NuxtLink></h3>
+            </div>
+          </v-col>
+        </v-row>
+      </div>
+    </section>
+
+    <copyright />
+  </div>
 </template>
 
 <script setup>
-    const {
-        $directus,
-        $readItem
-    } = useNuxtApp()
+  import {
+    ref
+  } from 'vue'
+  import Newsletter from '~/components/Newsletter.vue'
+  import copyright from '~/components/blocks/copyright.vue'
+  import BottomFooter from '~/components/menus/BottomFooter.vue'
 
-    const {
-        data: about
-    } = await useAsyncData('about', () => {
-        return $directus.request($readItem('navigation', '74', ))
-    })
+  const {
+    $directus,
+    $readItem
+  } = useNuxtApp()
+  const route = useRoute()
 
-    const {
-        data: blocksCopyright
-    } = await useAsyncData('blocksCopyright', () => {
-        return $directus.request($readItem('page_blocks', '5', {
-            fields: ['*', 'media.*.*'],
-        }))
-    })
+  const {
+    data: about
+  } = await useAsyncData('about', () => {
+    return $directus.request($readItem('navigation', '7',))
+  })
 
-    const {
-        data: copyright
-    } = await useAsyncData('copyright', () => {
-        return $directus.request($readItem('navigation', '10'))
-    })
+  const {
+    data: legal
+  } = await useAsyncData('legal', () => {
+    return $directus.request($readItem('navigation', '8'))
+  })
+
+  const {
+    data: company
+  } = await useAsyncData('company', () => {
+    return $directus.request($readItem('navigation', '9'))
+  })
+
 </script>

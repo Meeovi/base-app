@@ -14,12 +14,36 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       secretKey: string,
    },
 
+   paypal: {
+      clientId: string,
+
+      clientSecret: string,
+
+      sandbox: boolean,
+   },
+
    stripe: {
       secretKey: string,
    },
 
    nitro: {
       envPrefix: string,
+   },
+
+   vuefire: {
+      admin: any,
+
+      auth: {
+         enabled: boolean,
+
+         errorMap: string,
+
+         persistence: Array<string>,
+
+         popupRedirectResolver: string,
+
+         sessionCookie: boolean,
+      },
    },
 
    private: {
@@ -135,32 +159,26 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
 
       sri: boolean,
    },
-
-   logto: {
-      fetchUserInfo: boolean,
-
-      postCallbackRedirectUri: string,
-
-      postLogoutRedirectUri: string,
-
-      pathnames: {
-         signIn: string,
-
-         signOut: string,
-
-         callback: string,
-      },
-
-      endpoint: string,
-
-      appId: string,
-
-      appSecret: string,
-
-      cookieEncryptionKey: string,
-   },
   }
   interface SharedPublicRuntimeConfig {
+   authSecret: string,
+
+   jwtSecret: string,
+
+   firebaseApiKey: string,
+
+   firebaseAuthDomain: string,
+
+   firebaseProjectId: string,
+
+   firebaseStorageBucket: string,
+
+   firebaseMessagingSenderId: string,
+
+   firebaseAppId: string,
+
+   measurementId: string,
+
    directus: {
       url: string,
 
@@ -193,6 +211,36 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       },
    },
 
+   commerceApiToken: string,
+
+   ups: {
+      apiKey: string,
+
+      apiUrl: string,
+   },
+
+   fedex: {
+      apiKey: string,
+
+      apiUrl: string,
+   },
+
+   dhl: {
+      apiKey: string,
+
+      apiUrl: string,
+   },
+
+   payments: {
+      enabledProviders: Array<string>,
+
+      defaultProvider: string,
+
+      currency: string,
+   },
+
+   directusGraphql: string,
+
    indexName: string,
 
    meilisearch: {
@@ -209,11 +257,15 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       },
    },
 
-   commerceUrl: string,
+   minioEndpoint: string,
 
-   commerceGraphql: string,
+   minioUser: string,
 
-   commerceApiToken: string,
+   minioPass: string,
+
+   supabaseUrl: string,
+
+   supabaseAnonKey: string,
 
    gtagId: string,
 
@@ -221,14 +273,34 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       publishableKey: string,
    },
 
-   logto: {
-      endpoint: string,
+   paypalClientId: string,
 
-      appId: string,
+   vuefire: {
+      config: {
+         apiKey: string,
 
-      appSecret: string,
+         authDomain: string,
 
-      cookieEncryptionKey: string,
+         projectId: string,
+
+         storageBucket: string,
+
+         messagingSenderId: string,
+
+         appId: string,
+
+         measurementId: string,
+      },
+
+      appCheck: {
+         provider: string,
+
+         key: string,
+
+         isTokenAutoRefreshEnabled: boolean,
+
+         debug: string,
+      },
    },
 
    i18n: {

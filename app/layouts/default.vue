@@ -1,126 +1,179 @@
 <template>
-  <v-app :theme="theme">
-    <v-app-bar id="topnav" density="compact">
-      <template v-slot:prepend>
-        <v-btn variant="flat" @click="drawer = !drawer">
-          <v-icon start icon="fas fa-bars"></v-icon> Menu
-        </v-btn>
-      </template>
+  <v-responsive>
+    <v-app :theme="theme.value">
+      <v-app-bar id="topnav">
+        <template v-slot:prepend>
+          <v-btn variant="flat" color="transparent" @click="drawer = !drawer">
+            <v-icon start icon="fas:fa fa-bars"></v-icon> Menu
+          </v-btn>
+        </template>
 
-      <v-app-bar-title><a class="logobrand" href="/">
-          <v-icon start icon="fas fa-question-circle"></v-icon> Logo
-        </a></v-app-bar-title>
+        <logo />
 
-      <v-text-field density="compact" variant="solo" label="Search" append-inner-icon="fas fa-search" single-line
-        hide-details @click:append-inner="onClick"></v-text-field>
-      <v-spacer></v-spacer>
+        <search />
+        <!--<SearchHeader v-model="searchInputValue" @submit="handleFormSubmit" />-->
+        <v-spacer></v-spacer>
 
-      <div class="d-flex align-center flex-column flex-sm-row fill-height">
-        <v-col>
-          <v-btn :prepend-icon="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'" @click="onClick"></v-btn>
-        </v-col>
-        <v-col>
-          <v-menu :location="location" transition="slide-y-transition">
-            <template v-slot:activator="{ props }">
-              <v-btn variant="flat" v-bind="props">
-                <v-icon start icon="fas fa-clock-rotate-left"></v-icon>
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item title="" value="" href="/"></v-list-item>
-              <v-divider></v-divider>
-              <v-list-item title="Show More" value="Show More" href="/admin/user/notifications">
-              </v-list-item>
-            </v-list>
-          </v-menu>
-        </v-col>
+        <div class="d-flex align-center flex-column flex-sm-row fill-height">
+          <v-col class="notificationsHeader">
+            <LayoutNotifications />
+          </v-col>
 
-        <v-col>
-          <ecosystemmenu />
-        </v-col>
-        <v-col>
-          <v-menu :location="location" transition="slide-y-transition">
-            <template v-slot:activator="{ props }">
-              <v-btn variant="flat" v-bind="props">
-                <v-icon start icon="fas fa-user-circle"></v-icon>
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item title="My Account" value="my account" href="/admin/user/"></v-list-item>
-              <v-list-item title="Logout" value="logout" href="/logout"></v-list-item>
-            </v-list>
-          </v-menu>
-        </v-col>
-      </div>
-    </v-app-bar>
+          <v-col class="ecosystemMenuIcon">
+            <ecosystemmenu />
+          </v-col>
 
-    <v-main>
-      <v-card>
-        <v-layout>
-          <v-navigation-drawer v-model="drawer" temporary>
-            <v-list-item title="Home" href="/"></v-list-item>
-            <v-expansion-panels variant="accordion">
-            <v-expansion-panel title="Departments" expand-icon="fas fa-plus" collapse-icon="fas fa-minus" elevation="0">
-                <v-expansion-panel-text>
-                    <div >
-                        <v-list-item title="departments.name" value="departments.name"
-                            href="`/departments/${departments.slug}`">
-                        </v-list-item>
-                    </div>
-                </v-expansion-panel-text>
-            </v-expansion-panel>
-        </v-expansion-panels>
-            <v-list-item title="" href="/projects/"></v-list-item>
-            <v-list-item title="" href="/lists/"></v-list-item>
-            <v-spacer></v-spacer>
-          </v-navigation-drawer>
+          <v-col id="minSearch">
+            <mobilesearch />
+          </v-col>
 
-          <v-main id="sidebarNav"></v-main>
-          <main id="mainSection">
-            <div>
-              <slot />
-            </div>
-          </main>
-        </v-layout>
-      </v-card>
-      <FooterNav />
-    </v-main>
-  </v-app>
+          <v-col class="myaccounttopmenu">
+            <myaccounttopmenu />
+          </v-col>
+
+          <v-col class="shoppingCart">
+            <cart />
+          </v-col>
+        </div>
+      </v-app-bar>
+
+      <v-main>
+        <v-card>
+          <v-layout>
+            <v-navigation-drawer class="sidebarSection" v-model="drawer" temporary>
+              <sidebartop />
+              <div class="drawer-content">
+                <v-list nav>
+                  <v-divider></v-divider>
+
+                  <departmentsmenu />
+
+                  <v-divider></v-divider>
+
+                  <outlets />
+                  
+                  <v-divider></v-divider>
+
+                  <topmenu />
+                  
+                  <v-divider></v-divider>
+
+                  <!--<socialmenu />
+
+                  <v-divider></v-divider>
+
+                  <myaccountmenu />
+                  <v-divider></v-divider>
+
+                  <bottomsidebarmenu />-->
+                  <v-row>
+                    <v-col cols="3">
+                      <v-btn variant="text" stacked title="Help" prepend-icon="fas:fa fa-question-circle" size="x-small"
+                        href="/help/">Help Center</v-btn>
+                    </v-col>
+                    <v-col cols="3">
+                      <v-btn variant="text" stacked title="Notifications" prepend-icon="fas:fa fa-bell" size="x-small"
+                        href="/account/user/notifications">Notify Center</v-btn>
+                    </v-col>
+                    <v-col cols="3">
+                      <v-btn @click="toggleDark()" variant="text">
+                        <v-icon>
+                          {{ isDark ? 'fas:fa fa-moon' : 'fas:fa fa-sun' }}
+                        </v-icon>
+                      </v-btn>
+                    </v-col>
+                    <v-col cols="3">
+                      <!--<logout />-->
+                    </v-col>
+                  </v-row>
+                </v-list>
+              </div>
+            </v-navigation-drawer>
+
+            <v-main id="sidebarNav"></v-main>
+            <main id="mainSection">
+              <!--<announcements />-->
+              <LowerBar />
+              <v-row>
+                <v-col>
+                  <live />
+                </v-col>
+              </v-row>
+              <div class="contentPage">
+                <slot />
+              </div>
+            </main>
+          </v-layout>
+        </v-card>
+        <!--<aboveFooter />-->
+        <BottomFooter />
+        <FooterNav />
+        <!---->
+      </v-main>
+    </v-app>
+  </v-responsive>
 </template>
 
 <script setup>
-  import search from '~/components/Search/search.vue'
-  import ecosystemmenu from '~/components/Menus/ecosystemmenu.vue'
+  //import SearchHeader from '../components/search/SearchHeader.vue'
+  import sidebartop from '~/components/menus/sidebar/sidebartop.vue'
+  import logo from '~/components/blocks/logo.vue'
+  import search from '~/components/search/search.vue'
+  import ecosystemmenu from '~/components/menus/ecosystemmenu.vue'
+  import live from '~/components/menus/livebar/live.vue'
+  import topmenu from '~/components/menus/sidebar/topmenu.vue'
+  import departmentsmenu from '~/components/menus/sidebar/departmentsmenu.vue'
+  import outlets from '~/components/menus/sidebar/outletsmenu.vue'
+  import LayoutNotifications from '~/components/menus/LayoutNotifications.vue'
+  import mobilesearch from '~/components/menus/topmenu/mobilesearch.vue'
+  import myaccounttopmenu from '~/components/menus/topmenu/myaccounttopmenu.vue'
+  import LowerBar from '~/components/menus/LowerBar.vue'
+  import FooterNav from '~/components/menus/FooterNav.vue'
+  import cart from '~/components/menus/topmenu/cart.vue'
+  import BottomFooter from '~/components/menus/BottomFooter.vue'
   import {
     ref
   } from 'vue';
+  //import logout from '~/components/authentication/logout'
   import {
-    useDark,
-    useToggle
-  } from '@vueuse/core'
+    useDark  } from '@vueuse/core'
   import {
     useTheme
   } from 'vuetify'
 
-  const theme = useTheme()
-  const isDark = useDark()
-  const toggleDark = useToggle(isDark)
+  const drawer = ref(null);
+  const isDark = useDark();
 
-  // Sync Vuetify theme with dark mode
-  watch(isDark, (dark) => {
-    theme.global.name.value = dark ? 'dark' : 'light'
-  }, {
-    immediate: true
+  const theme = useTheme()
+
+  // Local storage key
+  const STORAGE_KEY = 'elite-theme'
+
+  // Determine initial mode
+  onMounted(() => {
+    const stored = localStorage.getItem(STORAGE_KEY)
+
+    if (stored) {
+      // Use saved preference
+      theme.global.name.value = stored
+    } else {
+      // No preference — follow system
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      theme.global.name.value = prefersDark ? 'dark' : 'light'
+    }
   })
 
-  // Initialize user state
-  const drawer = ref(null);
+  // Toggle between themes
+  const toggleDark = () => {
+    theme.global.name.value =
+      theme.global.current.value.dark ? 'light' : 'dark'
+  }
 
-  useSeoMeta({
-    title: 'Starter Template',
-    htmlAttrs: {
-      // uncomment this line to simulate dark mode
-      // class: 'dark',
-    },
-  });
+  // Save preference whenever theme changes
+  watch(
+    () => theme.global.name.value,
+    (val) => {
+      localStorage.setItem(STORAGE_KEY, val)
+    }
+  )
 </script>

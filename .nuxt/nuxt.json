@@ -1,9 +1,9 @@
 {
-  "_hash": "BxlpIR6jD4UsQKvb3-p78V4udIBDN5JPEvrXxFNxETQ",
+  "_hash": "QEhjGB0afKvWb0_x_02YgupOBgBwaoAkybMSweEzS3U",
   "project": {
-    "rootDir": "C:/Users/Basti/OneDrive/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/AlternateCMS-Framework/TheMeeoviCompany-Sites/meeovi/apps/Starter-Template"
+    "rootDir": "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app"
   },
   "versions": {
-    "nuxt": "3.17.1"
+    "nuxt": "4.2.0"
   }
 }

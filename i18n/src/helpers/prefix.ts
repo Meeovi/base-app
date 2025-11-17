@@ -13,5 +13,5 @@ export function getPrefix(
 ): string {
   if (name.includes(fallbackLocale)) return "";
   const index = locales.findIndex((element) => name.includes(element));
-  return index >= 0 ? locales[index] : "";
+  return index >= 0 ? (locales[index] ?? "") : "";
 }

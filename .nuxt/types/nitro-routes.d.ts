@@ -3,14 +3,29 @@ import type { Serialize, Simplify } from "nitropack/types";
 declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
-    '/__nuxt_error': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/handlers/renderer').default>>>>
+    '/api/upload-video': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/upload-video.post').default>>>>
     }
-    '/_i18n/:hash/:locale/messages.json': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/server/routes/messages').default>>>>
+    '/api/view-video': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/view-video.post').default>>>>
+    }
+    '/api/directus/users': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/directus/users.post').default>>>>
+    }
+    '/api/magento/customers': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/magento/customers.post').default>>>>
+    }
+    '/api/sync/user': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/sync/user.post').default>>>>
+    }
+    '/__nuxt_error': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/nitro-server/dist/runtime/handlers/renderer').default>>>>
     }
     '/__nuxt_island/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/#internal/nuxt/island-renderer').default>>>>
+    }
+    '/_i18n/:hash/:locale/messages.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/server/routes/messages').default>>>>
     }
     '/_ipx/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/image/dist/runtime/ipx').default>>>>

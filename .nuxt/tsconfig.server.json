@@ -30,13 +30,13 @@
         "../*"
       ],
       "nitropack/types": [
-        "../node_modules/nuxt/node_modules/nitropack/types"
+        "../node_modules/nitropack/types"
       ],
       "nitropack/runtime": [
-        "../node_modules/nuxt/node_modules/nitropack/runtime"
+        "../node_modules/nitropack/runtime"
       ],
       "nitropack": [
-        "../node_modules/nuxt/node_modules/nitropack"
+        "../node_modules/nitropack"
       ],
       "defu": [
         "../node_modules/defu"
@@ -75,7 +75,7 @@
         "../node_modules/unplugin-vue-router/client"
       ],
       "@nuxt/schema": [
-        "../node_modules/nuxt/node_modules/@nuxt/schema"
+        "../node_modules/@nuxt/schema"
       ],
       "nuxt": [
         "../node_modules/nuxt"
@@ -117,7 +117,67 @@
         "./*"
       ],
       "#internal/nuxt/paths": [
-        "../node_modules/nuxt/dist/core/runtime/nitro/utils/paths"
+        "../node_modules/@nuxt/nitro-server/dist/runtime/utils/paths"
+      ],
+      "#commerce": [
+        "../layers/commerce-app"
+      ],
+      "#commerce/*": [
+        "../layers/commerce-app/*"
+      ],
+      "#lists": [
+        "../layers/lists-app"
+      ],
+      "#lists/*": [
+        "../layers/lists-app/*"
+      ],
+      "#social": [
+        "../layers/social-app"
+      ],
+      "#social/*": [
+        "../layers/social-app/*"
+      ],
+      "#auth": [
+        "../layers/auth-app"
+      ],
+      "#auth/*": [
+        "../layers/auth-app/*"
+      ],
+      "#departments": [
+        "../layers/departments-app"
+      ],
+      "#departments/*": [
+        "../layers/departments-app/*"
+      ],
+      "#layers/social-app": [
+        "../layers/social-app"
+      ],
+      "#layers/social-app/*": [
+        "../layers/social-app/*"
+      ],
+      "#layers/lists-app": [
+        "../layers/lists-app"
+      ],
+      "#layers/lists-app/*": [
+        "../layers/lists-app/*"
+      ],
+      "#layers/departments-app": [
+        "../layers/departments-app"
+      ],
+      "#layers/departments-app/*": [
+        "../layers/departments-app/*"
+      ],
+      "#layers/commerce-app": [
+        "../layers/commerce-app"
+      ],
+      "#layers/commerce-app/*": [
+        "../layers/commerce-app/*"
+      ],
+      "#layers/auth-app": [
+        "../layers/auth-app"
+      ],
+      "#layers/auth-app/*": [
+        "../layers/auth-app/*"
       ],
       "#image": [
         "../node_modules/@nuxt/image/dist/runtime"
@@ -139,9 +199,6 @@
       ],
       "#unhead/composables": [
         "../node_modules/nuxt/dist/head/runtime/composables"
-      ],
-      "#logto": [
-        "../node_modules/@logto/nuxt/dist/runtime/utils/handler"
       ]
     },
     "lib": [
@@ -157,18 +214,27 @@
     "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime/server",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server",
     "../shared/**/*.d.ts",
+    "../layers/social-app/shared/**/*.d.ts",
+    "../layers/lists-app/shared/**/*.d.ts",
+    "../layers/departments-app/shared/**/*.d.ts",
+    "../layers/commerce-app/shared/**/*.d.ts",
+    "../layers/auth-app/shared/**/*.d.ts",
     "./types/nitro.d.ts",
     "../server/**/*"
   ],
   "exclude": [
     "../node_modules",
     "../node_modules/nuxt/node_modules",
+    "../node_modules/nuxt-vuefire/node_modules",
+    "../node_modules/@nuxtjs/leaflet/node_modules",
     "../node_modules/@nuxt/image/node_modules",
     "../node_modules/@nuxtjs/tailwindcss/node_modules",
     "../node_modules/@storefront-ui/nuxt/node_modules",
+    "../node_modules/vuetify-nuxt-module/node_modules",
+    "../node_modules/@pinia/nuxt/node_modules",
+    "../node_modules/@vueuse/nuxt/node_modules",
     "../node_modules/@nuxtjs/i18n/node_modules",
     "../node_modules/nuxt-security/node_modules",
-    "../node_modules/@logto/nuxt/node_modules",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist"

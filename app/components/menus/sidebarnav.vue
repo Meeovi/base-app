@@ -17,6 +17,6 @@
     const {
         data: navAccount
     } = await useAsyncData('navAccount', () => {
-        return $directus.request($readItem('navigation', '2'))
+        return $directus.request($readItem('navigation', '87'))
     })
 </script>
