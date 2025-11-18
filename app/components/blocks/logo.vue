@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-app-bar-title v-if="blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk">
+        <v-app-bar-title v-if="blocksSiteoverview?.media?.directus_files_id?.filename_disk">
             <NuxtLink class="logobrand" href="/">
                 <v-icon start color="orange">
                     <img :src="`${$directus.url}assets/${blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk}`"

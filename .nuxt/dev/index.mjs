@@ -2290,20 +2290,10 @@ const pathToI18nConfig = {
     "pl-PL": "/:slug(.*)*",
     "testde": "/:slug(.*)*"
   },
-  "/shop/:id()": {
-    "en-GB": "/shop/:id()",
-    "pl-PL": "/shop/:id()",
-    "testde": "/shop/:id()"
-  },
   "/Auth/login": {
     "en-GB": "/Auth/login",
     "pl-PL": "/Auth/login",
     "testde": "/Auth/login"
-  },
-  "/brand/:id()": {
-    "en-GB": "/brand/:id()",
-    "pl-PL": "/brand/:id()",
-    "testde": "/brand/:id()"
   },
   "/promotions": {
     "en-GB": "/promotions",
@@ -2370,10 +2360,20 @@ const pathToI18nConfig = {
     "pl-PL": "/Search/results",
     "testde": "/Search/results"
   },
+  "/shop/:slug(.*)*": {
+    "en-GB": "/shop/:slug(.*)*",
+    "pl-PL": "/shop/:slug(.*)*",
+    "testde": "/shop/:slug(.*)*"
+  },
   "/account/success": {
     "en-GB": "/account/success",
     "pl-PL": "/account/success",
     "testde": "/account/success"
+  },
+  "/brand/:slug(.*)*": {
+    "en-GB": "/brand/:slug(.*)*",
+    "pl-PL": "/brand/:slug(.*)*",
+    "testde": "/brand/:slug(.*)*"
   },
   "/forgot-password": {
     "en-GB": "/forgot-password",
@@ -2495,9 +2495,7 @@ const i18nPathToPath = {
   "/callback": "/callback",
   "/register": "/register",
   "/:slug(.*)*": "/:slug(.*)*",
-  "/shop/:id()": "/shop/:id()",
   "/Auth/login": "/Auth/login",
-  "/brand/:id()": "/brand/:id()",
   "/promotions": "/promotions",
   "/User": "/User",
   "/coupon/:id()": "/coupon/:id()",
@@ -2511,7 +2509,9 @@ const i18nPathToPath = {
   "/notifications": "/notifications",
   "/reset-password": "/reset-password",
   "/Search/results": "/Search/results",
+  "/shop/:slug(.*)*": "/shop/:slug(.*)*",
   "/account/success": "/account/success",
+  "/brand/:slug(.*)*": "/brand/:slug(.*)*",
   "/forgot-password": "/forgot-password",
   "/lists/list/:id()": "/lists/list/:id()",
   "/product/:id(.*)*": "/product/:id(.*)*",
@@ -3101,7 +3101,7 @@ const _DXMRFSHHYLVeO7a7qEPi0nWRa7rXEAbCnd2ehPuEXRk = defineNitroPlugin(async (ni
   await nitroApp.hooks.callHook("nuxt-security:ready");
 });
 
-const sriHashes = {"/_nuxt/builds/meta/571f3880-7c7c-4b7b-b49e-bfe131b14a88.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/meta/dev.json":"sha384-w+XUaTnQyc0LapV5mCiXEjGTMqOHvY0++JXCZqcmIss1/D4kD9O3MvcbWKbnBFlM","/_nuxt/builds/latest.json":"sha384-4eCJnnIdEXUxVVftKOgwtxPaP92UA/GcWtAVbvZjxc3SQ3IXWmTwE+/Dh8Tx1aeP","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
+const sriHashes = {"/_nuxt/builds/meta/571f3880-7c7c-4b7b-b49e-bfe131b14a88.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/meta/dev.json":"sha384-lOKfHBEHPtCcK5ee4m10kqfhj50D241zPcJUPpLBwHJ8sUvacM7aPnbn2yP+OV9l","/_nuxt/builds/latest.json":"sha384-cbRdofi1CN4W+Bk8rExWUzCx48WkjdW6F1lxJ4/aBPxePTQ+1HN2/PaJx/Qv1BJQ","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
 
 const SCRIPT_RE$1 = /<script((?=[^>]+\bsrc="([^"]+)")(?![^>]+\bintegrity="[^"]+")[^>]+)(?:\/>|><\/script>)/g;
 const LINK_RE$1 = /<link((?=[^>]+\brel="(?:stylesheet|preload|modulepreload)")(?=[^>]+\bhref="([^"]+)")(?![^>]+\bintegrity="[\w\-+/=]+")[^>]+)>/g;

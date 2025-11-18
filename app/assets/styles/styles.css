@@ -15,6 +15,7 @@ body {
     padding-left: 0px !important;
     padding-right: 0px !important;
     padding-bottom: 0px !important;
+    color: rgb(var(--v-theme-on-surface)) !important;
 }
 
 .v-selection-control__input input {
@@ -248,6 +249,11 @@ body {
     border: 1px solid black !important;
 }
 
+.article05 {
+    background-color: transparent !important;
+    color: rgb(var(--v-theme-on-surface));
+}
+
 /******************* Authentication CSS ********/
 
 .loginForm,
@@ -318,6 +324,10 @@ body {
 
 .gBtn {
     margin-left: 30%;
+}
+
+.content2 .item-content, .features16 .display-5, .display-4, .features15 .display-2, .pb-2, .py-2 {
+    color: black;
 }
 
 /******************* Main Section CSS *********/

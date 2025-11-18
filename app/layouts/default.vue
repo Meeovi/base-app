@@ -53,15 +53,16 @@
                   <outlets />
                   
                   <v-divider></v-divider>
+                  
+                  <socialmenu />
 
+                  <v-divider></v-divider>
+                  
                   <topmenu />
                   
                   <v-divider></v-divider>
 
-                  <!--<socialmenu />
-
-                  <v-divider></v-divider>
-
+                  <!--
                   <myaccountmenu />
                   <v-divider></v-divider>
 
@@ -117,6 +118,7 @@
 <script setup>
   //import SearchHeader from '../components/search/SearchHeader.vue'
   import sidebartop from '~/components/menus/sidebar/sidebartop.vue'
+  import socialmenu from '~/components/menus/sidebar/socialmenu.vue'
   import logo from '~/components/blocks/logo.vue'
   import search from '~/components/search/search.vue'
   import ecosystemmenu from '~/components/menus/ecosystemmenu.vue'

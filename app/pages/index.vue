@@ -13,6 +13,7 @@
       <featuredproducts />
       <relatedspaces />
       <bestsellers />
+      <pixanomycallout />
       <recentlyViewed />
       <relatedstations />
       <relatedbrands />
@@ -24,7 +25,7 @@
 <script setup>
   import headerslider from '~/components/pages/homepage/headerslider.vue'
   //import intro from '~/components/pages/homepage/intro.vue'
-  //import pixanomycallout from '~/components/pages/homepage/pixanomycallout.vue'
+  import pixanomycallout from '~/components/pages/homepage/pixanomycallout.vue'
   import hellobar from '~/components/pages/homepage/hellobar.vue'
   import bookcallout from '~/components/pages/homepage/bookcallout.vue'
   import musiccallout from '~/components/pages/homepage/musiccallout.vue'
