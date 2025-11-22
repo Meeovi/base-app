@@ -5,11 +5,6 @@ export const pathToI18nConfig = {
     "pl-PL": "/cart",
     "testde": "/cart"
   },
-  "/error": {
-    "en-GB": "/error",
-    "pl-PL": "/error",
-    "testde": "/error"
-  },
   "/": {
     "en-GB": "/",
     "pl-PL": "/",
@@ -65,20 +60,10 @@ export const pathToI18nConfig = {
     "pl-PL": "/:slug(.*)*",
     "testde": "/:slug(.*)*"
   },
-  "/Auth/login": {
-    "en-GB": "/Auth/login",
-    "pl-PL": "/Auth/login",
-    "testde": "/Auth/login"
-  },
   "/promotions": {
     "en-GB": "/promotions",
     "pl-PL": "/promotions",
     "testde": "/promotions"
-  },
-  "/User": {
-    "en-GB": "/User",
-    "pl-PL": "/User",
-    "testde": "/User"
   },
   "/coupon/:id()": {
     "en-GB": "/coupon/:id()",
@@ -95,25 +80,10 @@ export const pathToI18nConfig = {
     "pl-PL": "/lists",
     "testde": "/lists"
   },
-  "/User/account": {
-    "en-GB": "/User/account",
-    "pl-PL": "/User/account",
-    "testde": "/User/account"
-  },
   "/account": {
     "en-GB": "/account",
     "pl-PL": "/account",
     "testde": "/account"
-  },
-  "/Auth/callback": {
-    "en-GB": "/Auth/callback",
-    "pl-PL": "/Auth/callback",
-    "testde": "/Auth/callback"
-  },
-  "/Auth/register": {
-    "en-GB": "/Auth/register",
-    "pl-PL": "/Auth/register",
-    "testde": "/Auth/register"
   },
   "/connect": {
     "en-GB": "/connect",
@@ -129,11 +99,6 @@ export const pathToI18nConfig = {
     "en-GB": "/reset-password",
     "pl-PL": "/reset-password",
     "testde": "/reset-password"
-  },
-  "/Search/results": {
-    "en-GB": "/Search/results",
-    "pl-PL": "/Search/results",
-    "testde": "/Search/results"
   },
   "/shop/:slug(.*)*": {
     "en-GB": "/shop/:slug(.*)*",
@@ -170,25 +135,10 @@ export const pathToI18nConfig = {
     "pl-PL": "/account/checkout",
     "testde": "/account/checkout"
   },
-  "/connect/:slug(.*)*": {
-    "en-GB": "/connect/:slug(.*)*",
-    "pl-PL": "/connect/:slug(.*)*",
-    "testde": "/connect/:slug(.*)*"
-  },
   "/account/user/:uid()": {
     "en-GB": "/account/user/:uid()",
     "pl-PL": "/account/user/:uid()",
     "testde": "/account/user/:uid()"
-  },
-  "/User/notifications": {
-    "en-GB": "/User/notifications",
-    "pl-PL": "/User/notifications",
-    "testde": "/User/notifications"
-  },
-  "/Auth/reset-password": {
-    "en-GB": "/Auth/reset-password",
-    "pl-PL": "/Auth/reset-password",
-    "testde": "/Auth/reset-password"
   },
   "/connect/vibe/upload": {
     "en-GB": "/connect/vibe/upload",
@@ -199,11 +149,6 @@ export const pathToI18nConfig = {
     "en-GB": "/lists/bookmark/:id()",
     "pl-PL": "/lists/bookmark/:id()",
     "testde": "/lists/bookmark/:id()"
-  },
-  "/Auth/forgot-password": {
-    "en-GB": "/Auth/forgot-password",
-    "pl-PL": "/Auth/forgot-password",
-    "testde": "/Auth/forgot-password"
   },
   "/connect/vibe/:id(.*)*": {
     "en-GB": "/connect/vibe/:id(.*)*",
@@ -258,7 +203,6 @@ export const pathToI18nConfig = {
 };
 export const i18nPathToPath = {
   "/cart": "/cart",
-  "/error": "/error",
   "/": "/",
   "/login": "/login",
   "/shops": "/shops",
@@ -270,20 +214,14 @@ export const i18nPathToPath = {
   "/callback": "/callback",
   "/register": "/register",
   "/:slug(.*)*": "/:slug(.*)*",
-  "/Auth/login": "/Auth/login",
   "/promotions": "/promotions",
-  "/User": "/User",
   "/coupon/:id()": "/coupon/:id()",
   "/lists/error": "/lists/error",
   "/lists": "/lists",
-  "/User/account": "/User/account",
   "/account": "/account",
-  "/Auth/callback": "/Auth/callback",
-  "/Auth/register": "/Auth/register",
   "/connect": "/connect",
   "/notifications": "/notifications",
   "/reset-password": "/reset-password",
-  "/Search/results": "/Search/results",
   "/shop/:slug(.*)*": "/shop/:slug(.*)*",
   "/account/success": "/account/success",
   "/brand/:slug(.*)*": "/brand/:slug(.*)*",
@@ -291,13 +229,9 @@ export const i18nPathToPath = {
   "/lists/list/:id()": "/lists/list/:id()",
   "/product/:id(.*)*": "/product/:id(.*)*",
   "/account/checkout": "/account/checkout",
-  "/connect/:slug(.*)*": "/connect/:slug(.*)*",
   "/account/user/:uid()": "/account/user/:uid()",
-  "/User/notifications": "/User/notifications",
-  "/Auth/reset-password": "/Auth/reset-password",
   "/connect/vibe/upload": "/connect/vibe/upload",
   "/lists/bookmark/:id()": "/lists/bookmark/:id()",
-  "/Auth/forgot-password": "/Auth/forgot-password",
   "/connect/vibe/:id(.*)*": "/connect/vibe/:id(.*)*",
   "/connect/vibe/preview": "/connect/vibe/preview",
   "/departments/:slug(.*)*": "/departments/:slug(.*)*",

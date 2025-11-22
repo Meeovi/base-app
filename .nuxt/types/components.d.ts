@@ -199,14 +199,14 @@ interface _GlobalComponents {
   'FeaturesMembers': typeof import("../../layers/social-app/app/components/features/members.vue")['default']
   'FeaturesMemories': typeof import("../../layers/social-app/app/components/features/memories.vue")['default']
   'FeaturesRadio': typeof import("../../layers/social-app/app/components/features/radio.vue")['default']
+  'FeaturesSpaceSectionsAudioSpaces': typeof import("../../layers/social-app/app/components/features/spaceSections/audioSpaces.vue")['default']
+  'FeaturesSpaceSectionsCrudAddSpace': typeof import("../../layers/social-app/app/components/features/spaceSections/crud/add-space.vue")['default']
+  'FeaturesSpaceSectionsCrudUpdateSpace': typeof import("../../layers/social-app/app/components/features/spaceSections/crud/update-space.vue")['default']
+  'FeaturesSpaceSectionsDefaultSpaces': typeof import("../../layers/social-app/app/components/features/spaceSections/defaultSpaces.vue")['default']
+  'FeaturesSpaceSectionsImageSpaces': typeof import("../../layers/social-app/app/components/features/spaceSections/imageSpaces.vue")['default']
+  'FeaturesSpaceSectionsTextSpaces': typeof import("../../layers/social-app/app/components/features/spaceSections/textSpaces.vue")['default']
+  'FeaturesSpaceSectionsVideoSpaces': typeof import("../../layers/social-app/app/components/features/spaceSections/videoSpaces.vue")['default']
   'FeaturesSpaces': typeof import("../../layers/social-app/app/components/features/spaces.vue")['default']
-  'FeaturesSpacesAudioSpaces': typeof import("../../layers/social-app/app/components/features/spaces/audioSpaces.vue")['default']
-  'FeaturesSpacesCrudAddSpace': typeof import("../../layers/social-app/app/components/features/spaces/crud/add-space.vue")['default']
-  'FeaturesSpacesCrudUpdateSpace': typeof import("../../layers/social-app/app/components/features/spaces/crud/update-space.vue")['default']
-  'FeaturesSpacesDefaultSpaces': typeof import("../../layers/social-app/app/components/features/spaces/defaultSpaces.vue")['default']
-  'FeaturesSpacesImageSpaces': typeof import("../../layers/social-app/app/components/features/spaces/imageSpaces.vue")['default']
-  'FeaturesSpacesTextSpaces': typeof import("../../layers/social-app/app/components/features/spaces/textSpaces.vue")['default']
-  'FeaturesSpacesVideoSpaces': typeof import("../../layers/social-app/app/components/features/spaces/videoSpaces.vue")['default']
   'FeaturesVibeSectionsAddBookmarkvideo': typeof import("../../layers/social-app/app/components/features/vibeSections/add-bookmarkvideo.vue")['default']
   'FeaturesVibeSectionsAddLive': typeof import("../../layers/social-app/app/components/features/vibeSections/add-live.vue")['default']
   'FeaturesVibeSectionsRelatedshorts': typeof import("../../layers/social-app/app/components/features/vibeSections/relatedshorts.vue")['default']
@@ -334,6 +334,7 @@ interface _GlobalComponents {
   'ContentBlocksCurrencySwitcher': typeof import("../../layers/commerce-app/app/components/content/blocks/currencySwitcher.vue")['default']
   'ContentBlocksLanguageSwitcher': typeof import("../../layers/commerce-app/app/components/content/blocks/languageSwitcher.vue")['default']
   'ContentBlocksVideoproduct': typeof import("../../layers/commerce-app/app/components/content/blocks/videoproduct.vue")['default']
+  'ContentPagesShowcases': typeof import("../../layers/commerce-app/app/components/content/pages/showcases.vue")['default']
   'Ecosystemmenu': typeof import("../../layers/commerce-app/app/components/ecosystemmenu.vue")['default']
   'MarketingAddCoupon': typeof import("../../layers/commerce-app/app/components/marketing/add-coupon.vue")['default']
   'MarketingAddRewards': typeof import("../../layers/commerce-app/app/components/marketing/add-rewards.vue")['default']
@@ -737,14 +738,14 @@ interface _GlobalComponents {
   'LazyFeaturesMembers': LazyComponent<typeof import("../../layers/social-app/app/components/features/members.vue")['default']>
   'LazyFeaturesMemories': LazyComponent<typeof import("../../layers/social-app/app/components/features/memories.vue")['default']>
   'LazyFeaturesRadio': LazyComponent<typeof import("../../layers/social-app/app/components/features/radio.vue")['default']>
+  'LazyFeaturesSpaceSectionsAudioSpaces': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaceSections/audioSpaces.vue")['default']>
+  'LazyFeaturesSpaceSectionsCrudAddSpace': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaceSections/crud/add-space.vue")['default']>
+  'LazyFeaturesSpaceSectionsCrudUpdateSpace': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaceSections/crud/update-space.vue")['default']>
+  'LazyFeaturesSpaceSectionsDefaultSpaces': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaceSections/defaultSpaces.vue")['default']>
+  'LazyFeaturesSpaceSectionsImageSpaces': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaceSections/imageSpaces.vue")['default']>
+  'LazyFeaturesSpaceSectionsTextSpaces': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaceSections/textSpaces.vue")['default']>
+  'LazyFeaturesSpaceSectionsVideoSpaces': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaceSections/videoSpaces.vue")['default']>
   'LazyFeaturesSpaces': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaces.vue")['default']>
-  'LazyFeaturesSpacesAudioSpaces': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaces/audioSpaces.vue")['default']>
-  'LazyFeaturesSpacesCrudAddSpace': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaces/crud/add-space.vue")['default']>
-  'LazyFeaturesSpacesCrudUpdateSpace': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaces/crud/update-space.vue")['default']>
-  'LazyFeaturesSpacesDefaultSpaces': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaces/defaultSpaces.vue")['default']>
-  'LazyFeaturesSpacesImageSpaces': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaces/imageSpaces.vue")['default']>
-  'LazyFeaturesSpacesTextSpaces': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaces/textSpaces.vue")['default']>
-  'LazyFeaturesSpacesVideoSpaces': LazyComponent<typeof import("../../layers/social-app/app/components/features/spaces/videoSpaces.vue")['default']>
   'LazyFeaturesVibeSectionsAddBookmarkvideo': LazyComponent<typeof import("../../layers/social-app/app/components/features/vibeSections/add-bookmarkvideo.vue")['default']>
   'LazyFeaturesVibeSectionsAddLive': LazyComponent<typeof import("../../layers/social-app/app/components/features/vibeSections/add-live.vue")['default']>
   'LazyFeaturesVibeSectionsRelatedshorts': LazyComponent<typeof import("../../layers/social-app/app/components/features/vibeSections/relatedshorts.vue")['default']>
@@ -872,6 +873,7 @@ interface _GlobalComponents {
   'LazyContentBlocksCurrencySwitcher': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/blocks/currencySwitcher.vue")['default']>
   'LazyContentBlocksLanguageSwitcher': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/blocks/languageSwitcher.vue")['default']>
   'LazyContentBlocksVideoproduct': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/blocks/videoproduct.vue")['default']>
+  'LazyContentPagesShowcases': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/pages/showcases.vue")['default']>
   'LazyEcosystemmenu': LazyComponent<typeof import("../../layers/commerce-app/app/components/ecosystemmenu.vue")['default']>
   'LazyMarketingAddCoupon': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/add-coupon.vue")['default']>
   'LazyMarketingAddRewards': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/add-rewards.vue")['default']>

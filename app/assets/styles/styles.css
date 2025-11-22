@@ -939,6 +939,11 @@ body {
     position: relative;
 }
 
+.pageContainer {
+    top: 60px;
+    position: relative;
+}
+
 /****************** Messages Page **************/
 
 .messagePage {
