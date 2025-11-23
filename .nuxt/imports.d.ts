@@ -36,6 +36,7 @@ export { useLivePreview } from '../app/composables/useLivePreview';
 export { default as useServerRootMixin } from '../app/composables/useServerRootMixin';
 export { default as useVisualEditing } from '../app/composables/useVisualEditing';
 export { getPrimaryBillingAddress } from '../app/utils/billing-address';
+export { fieldRegistry, interfaceRegistry, resolveFieldComponent } from '../app/utils/fieldRegistry';
 export { getRelativeTime, getFriendlyDate, greetUser, toDateTime, subtractDates, monthsAbbr, destructureDate, getMonth, getDate, getDay } from '../app/utils/time';
 export { userName } from '../app/utils/user-name';
 export { useVendureMutation } from '../layers/commerce-app/app/composables/useVendureMutation';

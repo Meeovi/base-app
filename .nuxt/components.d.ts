@@ -14,7 +14,6 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 
-export const DirectusFormElement: typeof import("../app/components/DirectusFormElement.vue")['default']
 export const Newsletter: typeof import("../app/components/Newsletter.vue")['default']
 export const PageBuilder: typeof import("../app/components/PageBuilder.vue")['default']
 export const AccountAddresses: typeof import("../app/components/account/addresses.vue")['default']
@@ -37,22 +36,18 @@ export const BlocksContactUs: typeof import("../app/components/blocks/contactUs.
 export const BlocksCopyright: typeof import("../app/components/blocks/copyright.vue")['default']
 export const BlocksDemoNotice: typeof import("../app/components/blocks/demoNotice.vue")['default']
 export const BlocksFavicon: typeof import("../app/components/blocks/favicon.vue")['default']
+export const BlocksFormsBooleanInput: typeof import("../app/components/blocks/forms/BooleanInput.vue")['default']
 export const BlocksFormsDateTime: typeof import("../app/components/blocks/forms/DateTime.vue")['default']
+export const BlocksFormsDirectusFormElement: typeof import("../app/components/blocks/forms/DirectusFormElement.vue")['default']
 export const BlocksFormsFileInput: typeof import("../app/components/blocks/forms/FileInput.vue")['default']
-export const BlocksFormsInput: typeof import("../app/components/blocks/forms/Input.vue")['default']
-export const BlocksFormsSelect: typeof import("../app/components/blocks/forms/Select.vue")['default']
+export const BlocksFormsSelectInput: typeof import("../app/components/blocks/forms/SelectInput.vue")['default']
 export const BlocksFormsTextArea: typeof import("../app/components/blocks/forms/TextArea.vue")['default']
+export const BlocksFormsTextInput: typeof import("../app/components/blocks/forms/TextInput.vue")['default']
+export const BlocksForms[collection]: typeof import("../app/components/blocks/forms/[collection].vue")['default']
 export const BlocksLogo: typeof import("../app/components/blocks/logo.vue")['default']
 export const BlocksRelatedarticles: typeof import("../app/components/blocks/relatedarticles.vue")['default']
 export const BlocksWelcomeMessage: typeof import("../app/components/blocks/welcomeMessage.vue")['default']
-export const FormsBaseFormField: typeof import("../app/components/forms/BaseFormField.vue")['default']
 export const FormsDynamicForm: typeof import("../app/components/forms/DynamicForm.vue")['default']
-export const FormsFormBuilder: typeof import("../app/components/forms/FormBuilder.vue")['default']
-export const FormsFieldsCheckboxField: typeof import("../app/components/forms/fields/CheckboxField.vue")['default']
-export const FormsFieldsCheckboxGroupField: typeof import("../app/components/forms/fields/CheckboxGroupField.vue")['default']
-export const FormsFieldsFileUploadField: typeof import("../app/components/forms/fields/FileUploadField.vue")['default']
-export const FormsFieldsRadioGroupField: typeof import("../app/components/forms/fields/RadioGroupField.vue")['default']
-export const FormsFieldsSelectField: typeof import("../app/components/forms/fields/SelectField.vue")['default']
 export const MenusBottomFooter: typeof import("../app/components/menus/BottomFooter.vue")['default']
 export const MenusFooterNav: typeof import("../app/components/menus/FooterNav.vue")['default']
 export const MenusLayoutNotifications: typeof import("../app/components/menus/LayoutNotifications.vue")['default']
@@ -553,7 +548,6 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
-export const LazyDirectusFormElement: LazyComponent<typeof import("../app/components/DirectusFormElement.vue")['default']>
 export const LazyNewsletter: LazyComponent<typeof import("../app/components/Newsletter.vue")['default']>
 export const LazyPageBuilder: LazyComponent<typeof import("../app/components/PageBuilder.vue")['default']>
 export const LazyAccountAddresses: LazyComponent<typeof import("../app/components/account/addresses.vue")['default']>
@@ -576,22 +570,18 @@ export const LazyBlocksContactUs: LazyComponent<typeof import("../app/components
 export const LazyBlocksCopyright: LazyComponent<typeof import("../app/components/blocks/copyright.vue")['default']>
 export const LazyBlocksDemoNotice: LazyComponent<typeof import("../app/components/blocks/demoNotice.vue")['default']>
 export const LazyBlocksFavicon: LazyComponent<typeof import("../app/components/blocks/favicon.vue")['default']>
+export const LazyBlocksFormsBooleanInput: LazyComponent<typeof import("../app/components/blocks/forms/BooleanInput.vue")['default']>
 export const LazyBlocksFormsDateTime: LazyComponent<typeof import("../app/components/blocks/forms/DateTime.vue")['default']>
+export const LazyBlocksFormsDirectusFormElement: LazyComponent<typeof import("../app/components/blocks/forms/DirectusFormElement.vue")['default']>
 export const LazyBlocksFormsFileInput: LazyComponent<typeof import("../app/components/blocks/forms/FileInput.vue")['default']>
-export const LazyBlocksFormsInput: LazyComponent<typeof import("../app/components/blocks/forms/Input.vue")['default']>
-export const LazyBlocksFormsSelect: LazyComponent<typeof import("../app/components/blocks/forms/Select.vue")['default']>
+export const LazyBlocksFormsSelectInput: LazyComponent<typeof import("../app/components/blocks/forms/SelectInput.vue")['default']>
 export const LazyBlocksFormsTextArea: LazyComponent<typeof import("../app/components/blocks/forms/TextArea.vue")['default']>
+export const LazyBlocksFormsTextInput: LazyComponent<typeof import("../app/components/blocks/forms/TextInput.vue")['default']>
+export const LazyBlocksForms[collection]: LazyComponent<typeof import("../app/components/blocks/forms/[collection].vue")['default']>
 export const LazyBlocksLogo: LazyComponent<typeof import("../app/components/blocks/logo.vue")['default']>
 export const LazyBlocksRelatedarticles: LazyComponent<typeof import("../app/components/blocks/relatedarticles.vue")['default']>
 export const LazyBlocksWelcomeMessage: LazyComponent<typeof import("../app/components/blocks/welcomeMessage.vue")['default']>
-export const LazyFormsBaseFormField: LazyComponent<typeof import("../app/components/forms/BaseFormField.vue")['default']>
 export const LazyFormsDynamicForm: LazyComponent<typeof import("../app/components/forms/DynamicForm.vue")['default']>
-export const LazyFormsFormBuilder: LazyComponent<typeof import("../app/components/forms/FormBuilder.vue")['default']>
-export const LazyFormsFieldsCheckboxField: LazyComponent<typeof import("../app/components/forms/fields/CheckboxField.vue")['default']>
-export const LazyFormsFieldsCheckboxGroupField: LazyComponent<typeof import("../app/components/forms/fields/CheckboxGroupField.vue")['default']>
-export const LazyFormsFieldsFileUploadField: LazyComponent<typeof import("../app/components/forms/fields/FileUploadField.vue")['default']>
-export const LazyFormsFieldsRadioGroupField: LazyComponent<typeof import("../app/components/forms/fields/RadioGroupField.vue")['default']>
-export const LazyFormsFieldsSelectField: LazyComponent<typeof import("../app/components/forms/fields/SelectField.vue")['default']>
 export const LazyMenusBottomFooter: LazyComponent<typeof import("../app/components/menus/BottomFooter.vue")['default']>
 export const LazyMenusFooterNav: LazyComponent<typeof import("../app/components/menus/FooterNav.vue")['default']>
 export const LazyMenusLayoutNotifications: LazyComponent<typeof import("../app/components/menus/LayoutNotifications.vue")['default']>

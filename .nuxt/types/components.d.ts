@@ -14,7 +14,6 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 interface _GlobalComponents {
-  'DirectusFormElement': typeof import("../../app/components/DirectusFormElement.vue")['default']
   'Newsletter': typeof import("../../app/components/Newsletter.vue")['default']
   'PageBuilder': typeof import("../../app/components/PageBuilder.vue")['default']
   'AccountAddresses': typeof import("../../app/components/account/addresses.vue")['default']
@@ -37,22 +36,18 @@ interface _GlobalComponents {
   'BlocksCopyright': typeof import("../../app/components/blocks/copyright.vue")['default']
   'BlocksDemoNotice': typeof import("../../app/components/blocks/demoNotice.vue")['default']
   'BlocksFavicon': typeof import("../../app/components/blocks/favicon.vue")['default']
+  'BlocksFormsBooleanInput': typeof import("../../app/components/blocks/forms/BooleanInput.vue")['default']
   'BlocksFormsDateTime': typeof import("../../app/components/blocks/forms/DateTime.vue")['default']
+  'BlocksFormsDirectusFormElement': typeof import("../../app/components/blocks/forms/DirectusFormElement.vue")['default']
   'BlocksFormsFileInput': typeof import("../../app/components/blocks/forms/FileInput.vue")['default']
-  'BlocksFormsInput': typeof import("../../app/components/blocks/forms/Input.vue")['default']
-  'BlocksFormsSelect': typeof import("../../app/components/blocks/forms/Select.vue")['default']
+  'BlocksFormsSelectInput': typeof import("../../app/components/blocks/forms/SelectInput.vue")['default']
   'BlocksFormsTextArea': typeof import("../../app/components/blocks/forms/TextArea.vue")['default']
+  'BlocksFormsTextInput': typeof import("../../app/components/blocks/forms/TextInput.vue")['default']
+  'BlocksForms[collection]': typeof import("../../app/components/blocks/forms/[collection].vue")['default']
   'BlocksLogo': typeof import("../../app/components/blocks/logo.vue")['default']
   'BlocksRelatedarticles': typeof import("../../app/components/blocks/relatedarticles.vue")['default']
   'BlocksWelcomeMessage': typeof import("../../app/components/blocks/welcomeMessage.vue")['default']
-  'FormsBaseFormField': typeof import("../../app/components/forms/BaseFormField.vue")['default']
   'FormsDynamicForm': typeof import("../../app/components/forms/DynamicForm.vue")['default']
-  'FormsFormBuilder': typeof import("../../app/components/forms/FormBuilder.vue")['default']
-  'FormsFieldsCheckboxField': typeof import("../../app/components/forms/fields/CheckboxField.vue")['default']
-  'FormsFieldsCheckboxGroupField': typeof import("../../app/components/forms/fields/CheckboxGroupField.vue")['default']
-  'FormsFieldsFileUploadField': typeof import("../../app/components/forms/fields/FileUploadField.vue")['default']
-  'FormsFieldsRadioGroupField': typeof import("../../app/components/forms/fields/RadioGroupField.vue")['default']
-  'FormsFieldsSelectField': typeof import("../../app/components/forms/fields/SelectField.vue")['default']
   'MenusBottomFooter': typeof import("../../app/components/menus/BottomFooter.vue")['default']
   'MenusFooterNav': typeof import("../../app/components/menus/FooterNav.vue")['default']
   'MenusLayoutNotifications': typeof import("../../app/components/menus/LayoutNotifications.vue")['default']
@@ -553,7 +548,6 @@ interface _GlobalComponents {
   'Html': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Html']
   'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Body']
   'NuxtIsland': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
-  'LazyDirectusFormElement': LazyComponent<typeof import("../../app/components/DirectusFormElement.vue")['default']>
   'LazyNewsletter': LazyComponent<typeof import("../../app/components/Newsletter.vue")['default']>
   'LazyPageBuilder': LazyComponent<typeof import("../../app/components/PageBuilder.vue")['default']>
   'LazyAccountAddresses': LazyComponent<typeof import("../../app/components/account/addresses.vue")['default']>
@@ -576,22 +570,18 @@ interface _GlobalComponents {
   'LazyBlocksCopyright': LazyComponent<typeof import("../../app/components/blocks/copyright.vue")['default']>
   'LazyBlocksDemoNotice': LazyComponent<typeof import("../../app/components/blocks/demoNotice.vue")['default']>
   'LazyBlocksFavicon': LazyComponent<typeof import("../../app/components/blocks/favicon.vue")['default']>
+  'LazyBlocksFormsBooleanInput': LazyComponent<typeof import("../../app/components/blocks/forms/BooleanInput.vue")['default']>
   'LazyBlocksFormsDateTime': LazyComponent<typeof import("../../app/components/blocks/forms/DateTime.vue")['default']>
+  'LazyBlocksFormsDirectusFormElement': LazyComponent<typeof import("../../app/components/blocks/forms/DirectusFormElement.vue")['default']>
   'LazyBlocksFormsFileInput': LazyComponent<typeof import("../../app/components/blocks/forms/FileInput.vue")['default']>
-  'LazyBlocksFormsInput': LazyComponent<typeof import("../../app/components/blocks/forms/Input.vue")['default']>
-  'LazyBlocksFormsSelect': LazyComponent<typeof import("../../app/components/blocks/forms/Select.vue")['default']>
+  'LazyBlocksFormsSelectInput': LazyComponent<typeof import("../../app/components/blocks/forms/SelectInput.vue")['default']>
   'LazyBlocksFormsTextArea': LazyComponent<typeof import("../../app/components/blocks/forms/TextArea.vue")['default']>
+  'LazyBlocksFormsTextInput': LazyComponent<typeof import("../../app/components/blocks/forms/TextInput.vue")['default']>
+  'LazyBlocksForms[collection]': LazyComponent<typeof import("../../app/components/blocks/forms/[collection].vue")['default']>
   'LazyBlocksLogo': LazyComponent<typeof import("../../app/components/blocks/logo.vue")['default']>
   'LazyBlocksRelatedarticles': LazyComponent<typeof import("../../app/components/blocks/relatedarticles.vue")['default']>
   'LazyBlocksWelcomeMessage': LazyComponent<typeof import("../../app/components/blocks/welcomeMessage.vue")['default']>
-  'LazyFormsBaseFormField': LazyComponent<typeof import("../../app/components/forms/BaseFormField.vue")['default']>
   'LazyFormsDynamicForm': LazyComponent<typeof import("../../app/components/forms/DynamicForm.vue")['default']>
-  'LazyFormsFormBuilder': LazyComponent<typeof import("../../app/components/forms/FormBuilder.vue")['default']>
-  'LazyFormsFieldsCheckboxField': LazyComponent<typeof import("../../app/components/forms/fields/CheckboxField.vue")['default']>
-  'LazyFormsFieldsCheckboxGroupField': LazyComponent<typeof import("../../app/components/forms/fields/CheckboxGroupField.vue")['default']>
-  'LazyFormsFieldsFileUploadField': LazyComponent<typeof import("../../app/components/forms/fields/FileUploadField.vue")['default']>
-  'LazyFormsFieldsRadioGroupField': LazyComponent<typeof import("../../app/components/forms/fields/RadioGroupField.vue")['default']>
-  'LazyFormsFieldsSelectField': LazyComponent<typeof import("../../app/components/forms/fields/SelectField.vue")['default']>
   'LazyMenusBottomFooter': LazyComponent<typeof import("../../app/components/menus/BottomFooter.vue")['default']>
   'LazyMenusFooterNav': LazyComponent<typeof import("../../app/components/menus/FooterNav.vue")['default']>
   'LazyMenusLayoutNotifications': LazyComponent<typeof import("../../app/components/menus/LayoutNotifications.vue")['default']>

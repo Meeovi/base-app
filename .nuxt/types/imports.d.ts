@@ -54,6 +54,7 @@ declare global {
   const effect: typeof import('../../node_modules/vue').effect
   const effectScope: typeof import('../../node_modules/vue').effectScope
   const extendRef: typeof import('@vueuse/core').extendRef
+  const fieldRegistry: typeof import('../../app/utils/fieldRegistry').fieldRegistry
   const formatPrice: typeof import('../../layers/commerce-app/app/utils/currency').formatPrice
   const getAppManifest: typeof import('../../node_modules/nuxt/dist/app/composables/manifest').getAppManifest
   const getCurrencySymbol: typeof import('../../layers/commerce-app/app/utils/currency').getCurrencySymbol
@@ -76,6 +77,7 @@ declare global {
   const inject: typeof import('../../node_modules/vue').inject
   const injectHead: typeof import('../../node_modules/nuxt/dist/app/composables/head').injectHead
   const injectLocal: typeof import('@vueuse/core').injectLocal
+  const interfaceRegistry: typeof import('../../app/utils/fieldRegistry').interfaceRegistry
   const isDefined: typeof import('@vueuse/core').isDefined
   const isLoggedIn: typeof import('../../layers/auth-app/app/utils/auth').isLoggedIn
   const isNuxtError: typeof import('../../node_modules/nuxt/dist/app/composables/error').isNuxtError
@@ -145,6 +147,7 @@ declare global {
   const reloadNuxtApp: typeof import('../../node_modules/nuxt/dist/app/composables/chunk').reloadNuxtApp
   const requestIdleCallback: typeof import('../../node_modules/nuxt/dist/app/compat/idle-callback').requestIdleCallback
   const resolveComponent: typeof import('../../node_modules/vue').resolveComponent
+  const resolveFieldComponent: typeof import('../../app/utils/fieldRegistry').resolveFieldComponent
   const resolveRef: typeof import('@vueuse/core').resolveRef
   const setInterval: typeof import('../../node_modules/nuxt/dist/app/compat/interval').setInterval
   const setPageLayout: typeof import('../../node_modules/nuxt/dist/app/composables/router').setPageLayout
@@ -539,6 +542,7 @@ declare module 'vue' {
     readonly effect: UnwrapRef<typeof import('../../node_modules/vue')['effect']>
     readonly effectScope: UnwrapRef<typeof import('../../node_modules/vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
+    readonly fieldRegistry: UnwrapRef<typeof import('../../app/utils/fieldRegistry')['fieldRegistry']>
     readonly formatPrice: UnwrapRef<typeof import('../../layers/commerce-app/app/utils/currency')['formatPrice']>
     readonly getAppManifest: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/manifest')['getAppManifest']>
     readonly getCurrencySymbol: UnwrapRef<typeof import('../../layers/commerce-app/app/utils/currency')['getCurrencySymbol']>
@@ -561,6 +565,7 @@ declare module 'vue' {
     readonly inject: UnwrapRef<typeof import('../../node_modules/vue')['inject']>
     readonly injectHead: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/head')['injectHead']>
     readonly injectLocal: UnwrapRef<typeof import('@vueuse/core')['injectLocal']>
+    readonly interfaceRegistry: UnwrapRef<typeof import('../../app/utils/fieldRegistry')['interfaceRegistry']>
     readonly isDefined: UnwrapRef<typeof import('@vueuse/core')['isDefined']>
     readonly isLoggedIn: UnwrapRef<typeof import('../../layers/auth-app/app/utils/auth')['isLoggedIn']>
     readonly isNuxtError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/error')['isNuxtError']>
@@ -630,6 +635,7 @@ declare module 'vue' {
     readonly reloadNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/chunk')['reloadNuxtApp']>
     readonly requestIdleCallback: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/idle-callback')['requestIdleCallback']>
     readonly resolveComponent: UnwrapRef<typeof import('../../node_modules/vue')['resolveComponent']>
+    readonly resolveFieldComponent: UnwrapRef<typeof import('../../app/utils/fieldRegistry')['resolveFieldComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
     readonly setInterval: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/interval')['setInterval']>
     readonly setPageLayout: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['setPageLayout']>

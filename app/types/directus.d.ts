@@ -1,10 +1,3 @@
-// Minimal Directus schema typing to satisfy imports.
-// Expand this with your actual Directus collections/interfaces as needed.
-export type DirectusSchema = {
-  // Example collection definitions
-  users?: any;
-  items?: any;
-  [key: string]: any;
-}
+import type { SchemaOverview } from '@directus/types'
 
-export {};
+export type DirectusSchema = SchemaOverview
