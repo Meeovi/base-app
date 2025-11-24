@@ -43,7 +43,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useNotifications } from '../../composables/globals/useNotifications'
+import { useNotifications } from '../../../layers/ui-app/app/composables/globals/useNotifications'
 
 const location = ref('bottom')
 const { notifications, unreadCount, markAsRead } = useNotifications()

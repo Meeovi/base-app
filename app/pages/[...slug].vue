@@ -8,7 +8,7 @@
 <script setup>
   import {
     defineAsyncComponent,
-    ref
+    shallowRef
   } from 'vue'
   import { pageComponentMap } from '@/types/pageComponentMap'
   import {
@@ -61,7 +61,7 @@
   })
 
 
-  const currentComponent = ref(null)
+  const currentComponent = shallowRef(null)
 
   // decide component after page resolves
   if (page?.value) {

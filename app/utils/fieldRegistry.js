@@ -1,4 +1,4 @@
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, markRaw } from 'vue'
 import TextInput from '~/components/blocks/forms/TextInput.vue'
 import TextArea from '~/components/blocks/forms/TextArea.vue'
 import SelectInput from '~/components/blocks/forms/SelectInput.vue'
@@ -54,7 +54,7 @@ export const interfaceRegistry = {
     'tags': SelectInput,
 
     // fallback placeholders for other common interfaces (lazy-loaded if custom components are added)
-    'gallery': defineAsyncComponent(() => import('~/components/blocks/forms/FileInput.vue')),
+    'gallery': markRaw(defineAsyncComponent(() => import('~/components/blocks/forms/FileInput.vue'))),
     'color': TextInput,
     'rating': TextInput,
     'url': TextInput,

@@ -18,7 +18,12 @@ export const pageComponentMap: Record<string, AsyncComponentLoader> = {
   'members': () => import('#social/app/components/features/members.vue'),
   'spaces': () => import('#social/app/components/features/spaces.vue'),
   'vibez': () => import('#social/app/components/features/vibez.vue'),
-  'showcases': () => import('#commerce/app/components/content/pages/showcases.vue')
+  'showcases': () => import('#commerce/app/components/content/pages/showcases.vue'),
+  'notifications': () => import('~/components/pages/notifications.vue'),
+  'seller dashboard': () => import('~/components/pages/sellerdashboard.vue'),
+  'offline': () => import('~/components/pages/offline.vue'),
+  'checkout': () => import('~/components/pages/account/checkout.vue'),
+  'success': () => import('~/components/pages/account/success.vue'),
 }
 
 export default pageComponentMap

@@ -90,11 +90,6 @@ export const pathToI18nConfig = {
     "pl-PL": "/connect",
     "testde": "/connect"
   },
-  "/notifications": {
-    "en-GB": "/notifications",
-    "pl-PL": "/notifications",
-    "testde": "/notifications"
-  },
   "/reset-password": {
     "en-GB": "/reset-password",
     "pl-PL": "/reset-password",
@@ -104,11 +99,6 @@ export const pathToI18nConfig = {
     "en-GB": "/shop/:slug(.*)*",
     "pl-PL": "/shop/:slug(.*)*",
     "testde": "/shop/:slug(.*)*"
-  },
-  "/account/success": {
-    "en-GB": "/account/success",
-    "pl-PL": "/account/success",
-    "testde": "/account/success"
   },
   "/brand/:slug(.*)*": {
     "en-GB": "/brand/:slug(.*)*",
@@ -129,11 +119,6 @@ export const pathToI18nConfig = {
     "en-GB": "/product/:id(.*)*",
     "pl-PL": "/product/:id(.*)*",
     "testde": "/product/:id(.*)*"
-  },
-  "/account/checkout": {
-    "en-GB": "/account/checkout",
-    "pl-PL": "/account/checkout",
-    "testde": "/account/checkout"
   },
   "/account/user/:uid()": {
     "en-GB": "/account/user/:uid()",
@@ -220,15 +205,12 @@ export const i18nPathToPath = {
   "/lists": "/lists",
   "/account": "/account",
   "/connect": "/connect",
-  "/notifications": "/notifications",
   "/reset-password": "/reset-password",
   "/shop/:slug(.*)*": "/shop/:slug(.*)*",
-  "/account/success": "/account/success",
   "/brand/:slug(.*)*": "/brand/:slug(.*)*",
   "/forgot-password": "/forgot-password",
   "/lists/list/:id()": "/lists/list/:id()",
   "/product/:id(.*)*": "/product/:id(.*)*",
-  "/account/checkout": "/account/checkout",
   "/account/user/:uid()": "/account/user/:uid()",
   "/connect/vibe/upload": "/connect/vibe/upload",
   "/lists/bookmark/:id()": "/lists/bookmark/:id()",

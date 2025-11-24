@@ -143,11 +143,23 @@
       "#auth/*": [
         "../layers/auth-app/*"
       ],
+      "#ui": [
+        "../layers/ui-app"
+      ],
+      "#ui/*": [
+        "../layers/ui-app/*"
+      ],
       "#departments": [
         "../layers/departments-app"
       ],
       "#departments/*": [
         "../layers/departments-app/*"
+      ],
+      "#layers/ui-app": [
+        "../layers/ui-app"
+      ],
+      "#layers/ui-app/*": [
+        "../layers/ui-app/*"
       ],
       "#layers/social-app": [
         "../layers/social-app"
@@ -214,6 +226,7 @@
     "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime/server",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server",
     "../shared/**/*.d.ts",
+    "../layers/ui-app/shared/**/*.d.ts",
     "../layers/social-app/shared/**/*.d.ts",
     "../layers/lists-app/shared/**/*.d.ts",
     "../layers/departments-app/shared/**/*.d.ts",

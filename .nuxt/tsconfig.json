@@ -137,11 +137,23 @@
       "#auth/*": [
         "../layers/auth-app/*"
       ],
+      "#ui": [
+        "../layers/ui-app"
+      ],
+      "#ui/*": [
+        "../layers/ui-app/*"
+      ],
       "#departments": [
         "../layers/departments-app"
       ],
       "#departments/*": [
         "../layers/departments-app/*"
+      ],
+      "#layers/ui-app": [
+        "../layers/ui-app"
+      ],
+      "#layers/ui-app/*": [
+        "../layers/ui-app/*"
       ],
       "#layers/social-app": [
         "../layers/social-app"

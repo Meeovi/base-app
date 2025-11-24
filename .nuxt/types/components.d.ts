@@ -15,7 +15,6 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 
 interface _GlobalComponents {
   'Newsletter': typeof import("../../app/components/Newsletter.vue")['default']
-  'PageBuilder': typeof import("../../app/components/PageBuilder.vue")['default']
   'AccountAddresses': typeof import("../../app/components/account/addresses.vue")['default']
   'AccountDashboard': typeof import("../../app/components/account/dashboard.vue")['default']
   'AccountDownloads': typeof import("../../app/components/account/downloads.vue")['default']
@@ -36,18 +35,9 @@ interface _GlobalComponents {
   'BlocksCopyright': typeof import("../../app/components/blocks/copyright.vue")['default']
   'BlocksDemoNotice': typeof import("../../app/components/blocks/demoNotice.vue")['default']
   'BlocksFavicon': typeof import("../../app/components/blocks/favicon.vue")['default']
-  'BlocksFormsBooleanInput': typeof import("../../app/components/blocks/forms/BooleanInput.vue")['default']
-  'BlocksFormsDateTime': typeof import("../../app/components/blocks/forms/DateTime.vue")['default']
-  'BlocksFormsDirectusFormElement': typeof import("../../app/components/blocks/forms/DirectusFormElement.vue")['default']
-  'BlocksFormsFileInput': typeof import("../../app/components/blocks/forms/FileInput.vue")['default']
-  'BlocksFormsSelectInput': typeof import("../../app/components/blocks/forms/SelectInput.vue")['default']
-  'BlocksFormsTextArea': typeof import("../../app/components/blocks/forms/TextArea.vue")['default']
-  'BlocksFormsTextInput': typeof import("../../app/components/blocks/forms/TextInput.vue")['default']
-  'BlocksForms[collection]': typeof import("../../app/components/blocks/forms/[collection].vue")['default']
   'BlocksLogo': typeof import("../../app/components/blocks/logo.vue")['default']
   'BlocksRelatedarticles': typeof import("../../app/components/blocks/relatedarticles.vue")['default']
   'BlocksWelcomeMessage': typeof import("../../app/components/blocks/welcomeMessage.vue")['default']
-  'FormsDynamicForm': typeof import("../../app/components/forms/DynamicForm.vue")['default']
   'MenusBottomFooter': typeof import("../../app/components/menus/BottomFooter.vue")['default']
   'MenusFooterNav': typeof import("../../app/components/menus/FooterNav.vue")['default']
   'MenusLayoutNotifications': typeof import("../../app/components/menus/LayoutNotifications.vue")['default']
@@ -71,6 +61,8 @@ interface _GlobalComponents {
   'MenusTopmenuCart': typeof import("../../app/components/menus/topmenu/cart.vue")['default']
   'MenusTopmenuMobilesearch': typeof import("../../app/components/menus/topmenu/mobilesearch.vue")['default']
   'MenusTopmenuMyaccounttopmenu': typeof import("../../app/components/menus/topmenu/myaccounttopmenu.vue")['default']
+  'PagesAccountCheckout': typeof import("../../app/components/pages/account/checkout.vue")['default']
+  'PagesAccountSuccess': typeof import("../../app/components/pages/account/success.vue")['default']
   'PagesBidding': typeof import("../../app/components/pages/bidding.vue")['default']
   'PagesHomepageAtaglance': typeof import("../../app/components/pages/homepage/ataglance.vue")['default']
   'PagesHomepageBlogcallout': typeof import("../../app/components/pages/homepage/blogcallout.vue")['default']
@@ -155,6 +147,15 @@ interface _GlobalComponents {
   'SearchTemplatesHomeTemplate': typeof import("../../app/components/search/templates/HomeTemplate.vue")['default']
   'SearchWidgetsClearRefinements': typeof import("../../app/components/search/widgets/ClearRefinements.vue")['default']
   'SearchWidgetsNoResults': typeof import("../../app/components/search/widgets/NoResults.vue")['default']
+  'PageBuilder': typeof import("../../layers/ui-app/app/components/PageBuilder.vue")['default']
+  'FormsBooleanInput': typeof import("../../layers/ui-app/app/components/forms/BooleanInput.vue")['default']
+  'FormsDateTime': typeof import("../../layers/ui-app/app/components/forms/DateTime.vue")['default']
+  'FormsDirectusFormElement': typeof import("../../layers/ui-app/app/components/forms/DirectusFormElement.vue")['default']
+  'FormsFileInput': typeof import("../../layers/ui-app/app/components/forms/FileInput.vue")['default']
+  'FormsSelectInput': typeof import("../../layers/ui-app/app/components/forms/SelectInput.vue")['default']
+  'FormsTextArea': typeof import("../../layers/ui-app/app/components/forms/TextArea.vue")['default']
+  'FormsTextInput': typeof import("../../layers/ui-app/app/components/forms/TextInput.vue")['default']
+  'Forms[collection]': typeof import("../../layers/ui-app/app/components/forms/[collection].vue")['default']
   'BlocksCreateArticleBlock': typeof import("../../layers/social-app/app/components/blocks/CreateArticleBlock.vue")['default']
   'BlocksDynamicCrudForm': typeof import("../../layers/social-app/app/components/blocks/DynamicCrudForm.vue")['default']
   'BlocksLeafletMap': typeof import("../../layers/social-app/app/components/blocks/LeafletMap.vue")['default']
@@ -549,7 +550,6 @@ interface _GlobalComponents {
   'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Body']
   'NuxtIsland': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
   'LazyNewsletter': LazyComponent<typeof import("../../app/components/Newsletter.vue")['default']>
-  'LazyPageBuilder': LazyComponent<typeof import("../../app/components/PageBuilder.vue")['default']>
   'LazyAccountAddresses': LazyComponent<typeof import("../../app/components/account/addresses.vue")['default']>
   'LazyAccountDashboard': LazyComponent<typeof import("../../app/components/account/dashboard.vue")['default']>
   'LazyAccountDownloads': LazyComponent<typeof import("../../app/components/account/downloads.vue")['default']>
@@ -570,18 +570,9 @@ interface _GlobalComponents {
   'LazyBlocksCopyright': LazyComponent<typeof import("../../app/components/blocks/copyright.vue")['default']>
   'LazyBlocksDemoNotice': LazyComponent<typeof import("../../app/components/blocks/demoNotice.vue")['default']>
   'LazyBlocksFavicon': LazyComponent<typeof import("../../app/components/blocks/favicon.vue")['default']>
-  'LazyBlocksFormsBooleanInput': LazyComponent<typeof import("../../app/components/blocks/forms/BooleanInput.vue")['default']>
-  'LazyBlocksFormsDateTime': LazyComponent<typeof import("../../app/components/blocks/forms/DateTime.vue")['default']>
-  'LazyBlocksFormsDirectusFormElement': LazyComponent<typeof import("../../app/components/blocks/forms/DirectusFormElement.vue")['default']>
-  'LazyBlocksFormsFileInput': LazyComponent<typeof import("../../app/components/blocks/forms/FileInput.vue")['default']>
-  'LazyBlocksFormsSelectInput': LazyComponent<typeof import("../../app/components/blocks/forms/SelectInput.vue")['default']>
-  'LazyBlocksFormsTextArea': LazyComponent<typeof import("../../app/components/blocks/forms/TextArea.vue")['default']>
-  'LazyBlocksFormsTextInput': LazyComponent<typeof import("../../app/components/blocks/forms/TextInput.vue")['default']>
-  'LazyBlocksForms[collection]': LazyComponent<typeof import("../../app/components/blocks/forms/[collection].vue")['default']>
   'LazyBlocksLogo': LazyComponent<typeof import("../../app/components/blocks/logo.vue")['default']>
   'LazyBlocksRelatedarticles': LazyComponent<typeof import("../../app/components/blocks/relatedarticles.vue")['default']>
   'LazyBlocksWelcomeMessage': LazyComponent<typeof import("../../app/components/blocks/welcomeMessage.vue")['default']>
-  'LazyFormsDynamicForm': LazyComponent<typeof import("../../app/components/forms/DynamicForm.vue")['default']>
   'LazyMenusBottomFooter': LazyComponent<typeof import("../../app/components/menus/BottomFooter.vue")['default']>
   'LazyMenusFooterNav': LazyComponent<typeof import("../../app/components/menus/FooterNav.vue")['default']>
   'LazyMenusLayoutNotifications': LazyComponent<typeof import("../../app/components/menus/LayoutNotifications.vue")['default']>
@@ -605,6 +596,8 @@ interface _GlobalComponents {
   'LazyMenusTopmenuCart': LazyComponent<typeof import("../../app/components/menus/topmenu/cart.vue")['default']>
   'LazyMenusTopmenuMobilesearch': LazyComponent<typeof import("../../app/components/menus/topmenu/mobilesearch.vue")['default']>
   'LazyMenusTopmenuMyaccounttopmenu': LazyComponent<typeof import("../../app/components/menus/topmenu/myaccounttopmenu.vue")['default']>
+  'LazyPagesAccountCheckout': LazyComponent<typeof import("../../app/components/pages/account/checkout.vue")['default']>
+  'LazyPagesAccountSuccess': LazyComponent<typeof import("../../app/components/pages/account/success.vue")['default']>
   'LazyPagesBidding': LazyComponent<typeof import("../../app/components/pages/bidding.vue")['default']>
   'LazyPagesHomepageAtaglance': LazyComponent<typeof import("../../app/components/pages/homepage/ataglance.vue")['default']>
   'LazyPagesHomepageBlogcallout': LazyComponent<typeof import("../../app/components/pages/homepage/blogcallout.vue")['default']>
@@ -689,6 +682,15 @@ interface _GlobalComponents {
   'LazySearchTemplatesHomeTemplate': LazyComponent<typeof import("../../app/components/search/templates/HomeTemplate.vue")['default']>
   'LazySearchWidgetsClearRefinements': LazyComponent<typeof import("../../app/components/search/widgets/ClearRefinements.vue")['default']>
   'LazySearchWidgetsNoResults': LazyComponent<typeof import("../../app/components/search/widgets/NoResults.vue")['default']>
+  'LazyPageBuilder': LazyComponent<typeof import("../../layers/ui-app/app/components/PageBuilder.vue")['default']>
+  'LazyFormsBooleanInput': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/BooleanInput.vue")['default']>
+  'LazyFormsDateTime': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/DateTime.vue")['default']>
+  'LazyFormsDirectusFormElement': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/DirectusFormElement.vue")['default']>
+  'LazyFormsFileInput': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/FileInput.vue")['default']>
+  'LazyFormsSelectInput': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/SelectInput.vue")['default']>
+  'LazyFormsTextArea': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/TextArea.vue")['default']>
+  'LazyFormsTextInput': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/TextInput.vue")['default']>
+  'LazyForms[collection]': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/[collection].vue")['default']>
   'LazyBlocksCreateArticleBlock': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/CreateArticleBlock.vue")['default']>
   'LazyBlocksDynamicCrudForm': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/DynamicCrudForm.vue")['default']>
   'LazyBlocksLeafletMap': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/LeafletMap.vue")['default']>

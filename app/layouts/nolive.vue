@@ -1,6 +1,6 @@
 <template>
   <v-responsive>
-    <v-app :theme="theme">
+    <v-app :theme="theme.global.name.value">
       <v-app-bar id="topnav">
         <template v-slot:prepend>
           <v-btn variant="flat" color="transparent" @click="drawer = !drawer">

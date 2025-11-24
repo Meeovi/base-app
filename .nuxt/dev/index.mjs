@@ -1176,6 +1176,7 @@ const _inlineRuntimeConfig = {
     "fs": {
       "dir": [
         "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/public",
+        "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/layers/ui-app/public",
         "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/layers/social-app/public",
         "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/layers/lists-app/public",
         "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/layers/departments-app/public",
@@ -2315,11 +2316,6 @@ const pathToI18nConfig = {
     "pl-PL": "/connect",
     "testde": "/connect"
   },
-  "/notifications": {
-    "en-GB": "/notifications",
-    "pl-PL": "/notifications",
-    "testde": "/notifications"
-  },
   "/reset-password": {
     "en-GB": "/reset-password",
     "pl-PL": "/reset-password",
@@ -2329,11 +2325,6 @@ const pathToI18nConfig = {
     "en-GB": "/shop/:slug(.*)*",
     "pl-PL": "/shop/:slug(.*)*",
     "testde": "/shop/:slug(.*)*"
-  },
-  "/account/success": {
-    "en-GB": "/account/success",
-    "pl-PL": "/account/success",
-    "testde": "/account/success"
   },
   "/brand/:slug(.*)*": {
     "en-GB": "/brand/:slug(.*)*",
@@ -2354,11 +2345,6 @@ const pathToI18nConfig = {
     "en-GB": "/product/:id(.*)*",
     "pl-PL": "/product/:id(.*)*",
     "testde": "/product/:id(.*)*"
-  },
-  "/account/checkout": {
-    "en-GB": "/account/checkout",
-    "pl-PL": "/account/checkout",
-    "testde": "/account/checkout"
   },
   "/account/user/:uid()": {
     "en-GB": "/account/user/:uid()",
@@ -2445,15 +2431,12 @@ const i18nPathToPath = {
   "/lists": "/lists",
   "/account": "/account",
   "/connect": "/connect",
-  "/notifications": "/notifications",
   "/reset-password": "/reset-password",
   "/shop/:slug(.*)*": "/shop/:slug(.*)*",
-  "/account/success": "/account/success",
   "/brand/:slug(.*)*": "/brand/:slug(.*)*",
   "/forgot-password": "/forgot-password",
   "/lists/list/:id()": "/lists/list/:id()",
   "/product/:id(.*)*": "/product/:id(.*)*",
-  "/account/checkout": "/account/checkout",
   "/account/user/:uid()": "/account/user/:uid()",
   "/connect/vibe/upload": "/connect/vibe/upload",
   "/lists/bookmark/:id()": "/lists/bookmark/:id()",
@@ -3035,7 +3018,7 @@ const _DXMRFSHHYLVeO7a7qEPi0nWRa7rXEAbCnd2ehPuEXRk = defineNitroPlugin(async (ni
   await nitroApp.hooks.callHook("nuxt-security:ready");
 });
 
-const sriHashes = {"/_nuxt/builds/meta/571f3880-7c7c-4b7b-b49e-bfe131b14a88.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/meta/dev.json":"sha384-zay+3MYdiLqNs9SGoXCl8FXqjTjEqbsaJrBHtRSqCXd7TJFtOz3t9vhPcEN54knv","/_nuxt/builds/latest.json":"sha384-YCiHbLm1moZct9YM4kBCAGTdFzjikzRvREYttQdPcm0bXMs/b3ZZtZoThnNqq3fP","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
+const sriHashes = {"/_nuxt/builds/meta/571f3880-7c7c-4b7b-b49e-bfe131b14a88.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/meta/dev.json":"sha384-8kcIMvXFd+QCbf0KliNzsmY/HyXrs1AZfRhSKfgY2XbN8HT0p+LjahzyfZ4jrzAX","/_nuxt/builds/latest.json":"sha384-xBk6Ut440QQmgCWX6hGNSfsqvDRlSHmgkGRMVfi5dZEVRLLDbxp223xTeU7aQzKJ","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
 
 const SCRIPT_RE$1 = /<script((?=[^>]+\bsrc="([^"]+)")(?![^>]+\bintegrity="[^"]+")[^>]+)(?:\/>|><\/script>)/g;
 const LINK_RE$1 = /<link((?=[^>]+\brel="(?:stylesheet|preload|modulepreload)")(?=[^>]+\bhref="([^"]+)")(?![^>]+\bintegrity="[\w\-+/=]+")[^>]+)>/g;

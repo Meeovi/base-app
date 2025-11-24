@@ -1,5 +1,6 @@
-/// <reference types="@nuxt/telemetry" />
 /// <reference types="@nuxt/devtools" />
+/// <reference types="@nuxt/devtools" />
+/// <reference types="@nuxt/telemetry" />
 /// <reference types="nuxt-vuefire" />
 /// <reference types="@nuxtjs/leaflet" />
 /// <reference types="nuxt-vuefire" />

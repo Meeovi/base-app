@@ -9,7 +9,8 @@ const layers = useLayers(__dirname, {
   social: 'layers/social-app',
   lists: 'layers/lists-app',
   departments: 'layers/departments-app',
-  auth: 'layers/auth-app'
+  auth: 'layers/auth-app',
+  ui: 'layers/ui-app',
 })
 
 export default defineNuxtConfig({
