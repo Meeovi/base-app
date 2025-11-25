@@ -225,31 +225,19 @@ interface _GlobalComponents {
   'FeaturesBookmarks': typeof import("../../layers/lists-app/app/components/features/bookmarks.vue")['default']
   'FeaturesLists': typeof import("../../layers/lists-app/app/components/features/lists.vue")['default']
   'FeaturesStarred': typeof import("../../layers/lists-app/app/components/features/starred.vue")['default']
-  'ListsAddItemDialog': typeof import("../../layers/lists-app/app/components/lists/AddItemDialog.vue")['default']
-  'ListsListDashboard': typeof import("../../layers/lists-app/app/components/lists/ListDashboard.vue")['default']
   'ListsListItemCard': typeof import("../../layers/lists-app/app/components/lists/ListItemCard.vue")['default']
   'ListsAddBookmark': typeof import("../../layers/lists-app/app/components/lists/add-bookmark.vue")['default']
+  'ListsAddListItem': typeof import("../../layers/lists-app/app/components/lists/add-list-item.vue")['default']
   'ListsAddList': typeof import("../../layers/lists-app/app/components/lists/add-list.vue")['default']
-  'ListsBookmark': typeof import("../../layers/lists-app/app/components/lists/bookmark.vue")['default']
   'ListsListsettings': typeof import("../../layers/lists-app/app/components/lists/listsettings.vue")['default']
   'ListsUpdateBookmark': typeof import("../../layers/lists-app/app/components/lists/update-bookmark.vue")['default']
   'ListsUpdateList': typeof import("../../layers/lists-app/app/components/lists/update-list.vue")['default']
-  'ListsWishlist': typeof import("../../layers/lists-app/app/components/lists/wishlist.vue")['default']
   'MediaPlayer': typeof import("../../layers/lists-app/app/components/media/MediaPlayer.vue")['default']
   'PartialsAddtolist': typeof import("../../layers/lists-app/app/components/partials/addtolist.vue")['default']
   'PartialsCreateListBtn': typeof import("../../layers/lists-app/app/components/partials/createListBtn.vue")['default']
   'PartialsListBtn': typeof import("../../layers/lists-app/app/components/partials/listBtn.vue")['default']
-  'RelatedAddBookmark': typeof import("../../layers/lists-app/app/components/related/add-bookmark.vue")['default']
-  'RelatedAddList': typeof import("../../layers/lists-app/app/components/related/add-list.vue")['default']
-  'RelatedBookmark': typeof import("../../layers/lists-app/app/components/related/bookmark.vue")['default']
   'RelatedList': typeof import("../../layers/lists-app/app/components/related/list.vue")['default']
-  'RelatedLists': typeof import("../../layers/lists-app/app/components/related/lists.vue")['default']
-  'RelatedListsListsettings': typeof import("../../layers/lists-app/app/components/related/lists/listsettings.vue")['default']
-  'RelatedListsettings': typeof import("../../layers/lists-app/app/components/related/listsettings.vue")['default']
   'RelatedRelatedlists': typeof import("../../layers/lists-app/app/components/related/relatedlists.vue")['default']
-  'RelatedUpdateBookmark': typeof import("../../layers/lists-app/app/components/related/update-bookmark.vue")['default']
-  'RelatedUpdateList': typeof import("../../layers/lists-app/app/components/related/update-list.vue")['default']
-  'RelatedWishlist': typeof import("../../layers/lists-app/app/components/related/wishlist.vue")['default']
   'TasksTaskItem': typeof import("../../layers/lists-app/app/components/tasks/TaskItem.vue")['default']
   'CategoriesAdultstore': typeof import("../../layers/departments-app/app/components/categories/adultstore.vue")['default']
   'CategoriesChart[id]': typeof import("../../layers/departments-app/app/components/categories/chart/[id].vue")['default']
@@ -274,9 +262,8 @@ interface _GlobalComponents {
   'CategoriesTravel': typeof import("../../layers/departments-app/app/components/categories/travel.vue")['default']
   'CategoriesWeather': typeof import("../../layers/departments-app/app/components/categories/weather/weather.vue")['default']
   'RelatedRelatedcharts': typeof import("../../layers/departments-app/app/components/related/relatedcharts.vue")['default']
-  'FooterNav': typeof import("../../layers/commerce-app/app/components/FooterNav.vue")['default']
-  'CatalogProductAddAttributeSet': typeof import("../../layers/commerce-app/app/components/catalog/product/add-attribute-set.vue")['default']
   'CatalogProductAddAttribute': typeof import("../../layers/commerce-app/app/components/catalog/product/add-attribute.vue")['default']
+  'CatalogProductAddProductType': typeof import("../../layers/commerce-app/app/components/catalog/product/add-product-type.vue")['default']
   'CatalogProductAddProduct': typeof import("../../layers/commerce-app/app/components/catalog/product/add-product.vue")['default']
   'CatalogProductAddShowcase': typeof import("../../layers/commerce-app/app/components/catalog/product/add-showcase.vue")['default']
   'CatalogProductAddStation': typeof import("../../layers/commerce-app/app/components/catalog/product/add-station.vue")['default']
@@ -331,7 +318,7 @@ interface _GlobalComponents {
   'ContentBlocksLanguageSwitcher': typeof import("../../layers/commerce-app/app/components/content/blocks/languageSwitcher.vue")['default']
   'ContentBlocksVideoproduct': typeof import("../../layers/commerce-app/app/components/content/blocks/videoproduct.vue")['default']
   'ContentPagesShowcases': typeof import("../../layers/commerce-app/app/components/content/pages/showcases.vue")['default']
-  'Ecosystemmenu': typeof import("../../layers/commerce-app/app/components/ecosystemmenu.vue")['default']
+  'MarketingAddBrand': typeof import("../../layers/commerce-app/app/components/marketing/add-brand.vue")['default']
   'MarketingAddCoupon': typeof import("../../layers/commerce-app/app/components/marketing/add-coupon.vue")['default']
   'MarketingAddRewards': typeof import("../../layers/commerce-app/app/components/marketing/add-rewards.vue")['default']
   'MarketingCoupons': typeof import("../../layers/commerce-app/app/components/marketing/coupons.vue")['default']
@@ -377,6 +364,7 @@ interface _GlobalComponents {
   'SalesOrdersTab': typeof import("../../layers/commerce-app/app/components/sales/ordersTab.vue")['default']
   'SalesPaymentsPriceDisplay': typeof import("../../layers/commerce-app/app/components/sales/payments/PriceDisplay.vue")['default']
   'SalesPaymentsStripePaymentElement': typeof import("../../layers/commerce-app/app/components/sales/payments/StripePaymentElement.vue")['default']
+  'ShopAddShop': typeof import("../../layers/commerce-app/app/components/shop/add-shop.vue")['default']
   'ShopCartItem': typeof import("../../layers/commerce-app/app/components/shop/cart/cartItem.vue")['default']
   'ShopCartCheckout': typeof import("../../layers/commerce-app/app/components/shop/cart/checkout.vue")['default']
   'ShopCheckoutStripeCardElement': typeof import("../../layers/commerce-app/app/components/shop/checkout/StripeCardElement.vue")['default']
@@ -760,31 +748,19 @@ interface _GlobalComponents {
   'LazyFeaturesBookmarks': LazyComponent<typeof import("../../layers/lists-app/app/components/features/bookmarks.vue")['default']>
   'LazyFeaturesLists': LazyComponent<typeof import("../../layers/lists-app/app/components/features/lists.vue")['default']>
   'LazyFeaturesStarred': LazyComponent<typeof import("../../layers/lists-app/app/components/features/starred.vue")['default']>
-  'LazyListsAddItemDialog': LazyComponent<typeof import("../../layers/lists-app/app/components/lists/AddItemDialog.vue")['default']>
-  'LazyListsListDashboard': LazyComponent<typeof import("../../layers/lists-app/app/components/lists/ListDashboard.vue")['default']>
   'LazyListsListItemCard': LazyComponent<typeof import("../../layers/lists-app/app/components/lists/ListItemCard.vue")['default']>
   'LazyListsAddBookmark': LazyComponent<typeof import("../../layers/lists-app/app/components/lists/add-bookmark.vue")['default']>
+  'LazyListsAddListItem': LazyComponent<typeof import("../../layers/lists-app/app/components/lists/add-list-item.vue")['default']>
   'LazyListsAddList': LazyComponent<typeof import("../../layers/lists-app/app/components/lists/add-list.vue")['default']>
-  'LazyListsBookmark': LazyComponent<typeof import("../../layers/lists-app/app/components/lists/bookmark.vue")['default']>
   'LazyListsListsettings': LazyComponent<typeof import("../../layers/lists-app/app/components/lists/listsettings.vue")['default']>
   'LazyListsUpdateBookmark': LazyComponent<typeof import("../../layers/lists-app/app/components/lists/update-bookmark.vue")['default']>
   'LazyListsUpdateList': LazyComponent<typeof import("../../layers/lists-app/app/components/lists/update-list.vue")['default']>
-  'LazyListsWishlist': LazyComponent<typeof import("../../layers/lists-app/app/components/lists/wishlist.vue")['default']>
   'LazyMediaPlayer': LazyComponent<typeof import("../../layers/lists-app/app/components/media/MediaPlayer.vue")['default']>
   'LazyPartialsAddtolist': LazyComponent<typeof import("../../layers/lists-app/app/components/partials/addtolist.vue")['default']>
   'LazyPartialsCreateListBtn': LazyComponent<typeof import("../../layers/lists-app/app/components/partials/createListBtn.vue")['default']>
   'LazyPartialsListBtn': LazyComponent<typeof import("../../layers/lists-app/app/components/partials/listBtn.vue")['default']>
-  'LazyRelatedAddBookmark': LazyComponent<typeof import("../../layers/lists-app/app/components/related/add-bookmark.vue")['default']>
-  'LazyRelatedAddList': LazyComponent<typeof import("../../layers/lists-app/app/components/related/add-list.vue")['default']>
-  'LazyRelatedBookmark': LazyComponent<typeof import("../../layers/lists-app/app/components/related/bookmark.vue")['default']>
   'LazyRelatedList': LazyComponent<typeof import("../../layers/lists-app/app/components/related/list.vue")['default']>
-  'LazyRelatedLists': LazyComponent<typeof import("../../layers/lists-app/app/components/related/lists.vue")['default']>
-  'LazyRelatedListsListsettings': LazyComponent<typeof import("../../layers/lists-app/app/components/related/lists/listsettings.vue")['default']>
-  'LazyRelatedListsettings': LazyComponent<typeof import("../../layers/lists-app/app/components/related/listsettings.vue")['default']>
   'LazyRelatedRelatedlists': LazyComponent<typeof import("../../layers/lists-app/app/components/related/relatedlists.vue")['default']>
-  'LazyRelatedUpdateBookmark': LazyComponent<typeof import("../../layers/lists-app/app/components/related/update-bookmark.vue")['default']>
-  'LazyRelatedUpdateList': LazyComponent<typeof import("../../layers/lists-app/app/components/related/update-list.vue")['default']>
-  'LazyRelatedWishlist': LazyComponent<typeof import("../../layers/lists-app/app/components/related/wishlist.vue")['default']>
   'LazyTasksTaskItem': LazyComponent<typeof import("../../layers/lists-app/app/components/tasks/TaskItem.vue")['default']>
   'LazyCategoriesAdultstore': LazyComponent<typeof import("../../layers/departments-app/app/components/categories/adultstore.vue")['default']>
   'LazyCategoriesChart[id]': LazyComponent<typeof import("../../layers/departments-app/app/components/categories/chart/[id].vue")['default']>
@@ -809,9 +785,8 @@ interface _GlobalComponents {
   'LazyCategoriesTravel': LazyComponent<typeof import("../../layers/departments-app/app/components/categories/travel.vue")['default']>
   'LazyCategoriesWeather': LazyComponent<typeof import("../../layers/departments-app/app/components/categories/weather/weather.vue")['default']>
   'LazyRelatedRelatedcharts': LazyComponent<typeof import("../../layers/departments-app/app/components/related/relatedcharts.vue")['default']>
-  'LazyFooterNav': LazyComponent<typeof import("../../layers/commerce-app/app/components/FooterNav.vue")['default']>
-  'LazyCatalogProductAddAttributeSet': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/add-attribute-set.vue")['default']>
   'LazyCatalogProductAddAttribute': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/add-attribute.vue")['default']>
+  'LazyCatalogProductAddProductType': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/add-product-type.vue")['default']>
   'LazyCatalogProductAddProduct': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/add-product.vue")['default']>
   'LazyCatalogProductAddShowcase': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/add-showcase.vue")['default']>
   'LazyCatalogProductAddStation': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/add-station.vue")['default']>
@@ -866,7 +841,7 @@ interface _GlobalComponents {
   'LazyContentBlocksLanguageSwitcher': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/blocks/languageSwitcher.vue")['default']>
   'LazyContentBlocksVideoproduct': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/blocks/videoproduct.vue")['default']>
   'LazyContentPagesShowcases': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/pages/showcases.vue")['default']>
-  'LazyEcosystemmenu': LazyComponent<typeof import("../../layers/commerce-app/app/components/ecosystemmenu.vue")['default']>
+  'LazyMarketingAddBrand': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/add-brand.vue")['default']>
   'LazyMarketingAddCoupon': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/add-coupon.vue")['default']>
   'LazyMarketingAddRewards': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/add-rewards.vue")['default']>
   'LazyMarketingCoupons': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/coupons.vue")['default']>
@@ -912,6 +887,7 @@ interface _GlobalComponents {
   'LazySalesOrdersTab': LazyComponent<typeof import("../../layers/commerce-app/app/components/sales/ordersTab.vue")['default']>
   'LazySalesPaymentsPriceDisplay': LazyComponent<typeof import("../../layers/commerce-app/app/components/sales/payments/PriceDisplay.vue")['default']>
   'LazySalesPaymentsStripePaymentElement': LazyComponent<typeof import("../../layers/commerce-app/app/components/sales/payments/StripePaymentElement.vue")['default']>
+  'LazyShopAddShop': LazyComponent<typeof import("../../layers/commerce-app/app/components/shop/add-shop.vue")['default']>
   'LazyShopCartItem': LazyComponent<typeof import("../../layers/commerce-app/app/components/shop/cart/cartItem.vue")['default']>
   'LazyShopCartCheckout': LazyComponent<typeof import("../../layers/commerce-app/app/components/shop/cart/checkout.vue")['default']>
   'LazyShopCheckoutStripeCardElement': LazyComponent<typeof import("../../layers/commerce-app/app/components/shop/checkout/StripeCardElement.vue")['default']>

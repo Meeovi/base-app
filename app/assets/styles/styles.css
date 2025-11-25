@@ -9,6 +9,14 @@ a:hover {
     color: rgb(var(--v-theme-info));
 }
 
+.v-theme--dark .auto-text {
+  color: white;
+}
+
+.v-theme--light .auto-text {
+  color: black;
+}
+
 body {
     margin: 0;
     overflow-x: unset !important;
@@ -249,7 +257,7 @@ body {
     border: 1px solid black !important;
 }
 
-.article05 {
+.article05, .features03 {
     background-color: transparent !important;
     color: rgb(var(--v-theme-on-surface));
 }

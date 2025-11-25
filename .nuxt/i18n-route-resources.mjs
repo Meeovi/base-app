@@ -70,11 +70,6 @@ export const pathToI18nConfig = {
     "pl-PL": "/coupon/:id()",
     "testde": "/coupon/:id()"
   },
-  "/lists/error": {
-    "en-GB": "/lists/error",
-    "pl-PL": "/lists/error",
-    "testde": "/lists/error"
-  },
   "/lists": {
     "en-GB": "/lists",
     "pl-PL": "/lists",
@@ -110,11 +105,6 @@ export const pathToI18nConfig = {
     "pl-PL": "/forgot-password",
     "testde": "/forgot-password"
   },
-  "/lists/list/:id()": {
-    "en-GB": "/lists/list/:id()",
-    "pl-PL": "/lists/list/:id()",
-    "testde": "/lists/list/:id()"
-  },
   "/product/:id(.*)*": {
     "en-GB": "/product/:id(.*)*",
     "pl-PL": "/product/:id(.*)*",
@@ -144,6 +134,11 @@ export const pathToI18nConfig = {
     "en-GB": "/connect/vibe/preview",
     "pl-PL": "/connect/vibe/preview",
     "testde": "/connect/vibe/preview"
+  },
+  "/lists/list/:slug(.*)*": {
+    "en-GB": "/lists/list/:slug(.*)*",
+    "pl-PL": "/lists/list/:slug(.*)*",
+    "testde": "/lists/list/:slug(.*)*"
   },
   "/departments/:slug(.*)*": {
     "en-GB": "/departments/:slug(.*)*",
@@ -201,7 +196,6 @@ export const i18nPathToPath = {
   "/:slug(.*)*": "/:slug(.*)*",
   "/promotions": "/promotions",
   "/coupon/:id()": "/coupon/:id()",
-  "/lists/error": "/lists/error",
   "/lists": "/lists",
   "/account": "/account",
   "/connect": "/connect",
@@ -209,13 +203,13 @@ export const i18nPathToPath = {
   "/shop/:slug(.*)*": "/shop/:slug(.*)*",
   "/brand/:slug(.*)*": "/brand/:slug(.*)*",
   "/forgot-password": "/forgot-password",
-  "/lists/list/:id()": "/lists/list/:id()",
   "/product/:id(.*)*": "/product/:id(.*)*",
   "/account/user/:uid()": "/account/user/:uid()",
   "/connect/vibe/upload": "/connect/vibe/upload",
   "/lists/bookmark/:id()": "/lists/bookmark/:id()",
   "/connect/vibe/:id(.*)*": "/connect/vibe/:id(.*)*",
   "/connect/vibe/preview": "/connect/vibe/preview",
+  "/lists/list/:slug(.*)*": "/lists/list/:slug(.*)*",
   "/departments/:slug(.*)*": "/departments/:slug(.*)*",
   "/connect/post/:slug(.*)*": "/connect/post/:slug(.*)*",
   "/connect/user/:slug(.*)*": "/connect/user/:slug(.*)*",
