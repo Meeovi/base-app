@@ -473,7 +473,7 @@ body {
 
 .rightAddBtn {
     position: relative;
-    margin-top: 20px;
+    padding-top: 25px;
 }
 
 .features19 .v-col {
@@ -564,6 +564,10 @@ body {
 
 .lowerBar {
     top: 63px;
+}
+
+.features20 h2, .features20 .underline {
+    text-align: center;
 }
 
 /******************** Meeovi Time CSS ************/
