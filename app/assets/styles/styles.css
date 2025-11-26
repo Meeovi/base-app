@@ -358,9 +358,9 @@ body {
 .homeSection,
 .contentPage,
 .contentPage404 {
-    padding: 10px !important;
+    padding: 5px !important;
     margin-bottom: 1% !important;
-    top: 60px !important;
+    top: 45px !important;
     position: relative;
     min-height: 100vh
 }
@@ -567,6 +567,10 @@ body {
 }
 
 .features20 h2, .features20 .underline {
+    text-align: center;
+}
+
+.center-text {
     text-align: center;
 }
 
@@ -954,6 +958,10 @@ body {
 .pageContainer {
     top: 60px;
     position: relative;
+}
+
+.spaceTabs {
+    padding: 15px;
 }
 
 /****************** Messages Page **************/

@@ -80,11 +80,6 @@ export const pathToI18nConfig = {
     "pl-PL": "/account",
     "testde": "/account"
   },
-  "/connect": {
-    "en-GB": "/connect",
-    "pl-PL": "/connect",
-    "testde": "/connect"
-  },
   "/reset-password": {
     "en-GB": "/reset-password",
     "pl-PL": "/reset-password",
@@ -198,7 +193,6 @@ export const i18nPathToPath = {
   "/coupon/:id()": "/coupon/:id()",
   "/lists": "/lists",
   "/account": "/account",
-  "/connect": "/connect",
   "/reset-password": "/reset-password",
   "/shop/:slug(.*)*": "/shop/:slug(.*)*",
   "/brand/:slug(.*)*": "/brand/:slug(.*)*",
