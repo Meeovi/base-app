@@ -152,9 +152,12 @@ interface _GlobalComponents {
   'FormsDateTime': typeof import("../../layers/ui-app/app/components/forms/DateTime.vue")['default']
   'FormsDirectusFormElement': typeof import("../../layers/ui-app/app/components/forms/DirectusFormElement.vue")['default']
   'FormsFileInput': typeof import("../../layers/ui-app/app/components/forms/FileInput.vue")['default']
+  'FormsRelationSelect': typeof import("../../layers/ui-app/app/components/forms/RelationSelect.vue")['default']
+  'FormsRepeaterInput': typeof import("../../layers/ui-app/app/components/forms/RepeaterInput.vue")['default']
   'FormsSelectInput': typeof import("../../layers/ui-app/app/components/forms/SelectInput.vue")['default']
   'FormsTextArea': typeof import("../../layers/ui-app/app/components/forms/TextArea.vue")['default']
   'FormsTextInput': typeof import("../../layers/ui-app/app/components/forms/TextInput.vue")['default']
+  'FormsTiptapEditor': typeof import("../../layers/ui-app/app/components/forms/TiptapEditor.vue")['default']
   'Forms[collection]': typeof import("../../layers/ui-app/app/components/forms/[collection].vue")['default']
   'BlocksCreateArticleBlock': typeof import("../../layers/social-app/app/components/blocks/CreateArticleBlock.vue")['default']
   'BlocksDynamicCrudForm': typeof import("../../layers/social-app/app/components/blocks/DynamicCrudForm.vue")['default']
@@ -672,9 +675,12 @@ interface _GlobalComponents {
   'LazyFormsDateTime': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/DateTime.vue")['default']>
   'LazyFormsDirectusFormElement': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/DirectusFormElement.vue")['default']>
   'LazyFormsFileInput': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/FileInput.vue")['default']>
+  'LazyFormsRelationSelect': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/RelationSelect.vue")['default']>
+  'LazyFormsRepeaterInput': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/RepeaterInput.vue")['default']>
   'LazyFormsSelectInput': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/SelectInput.vue")['default']>
   'LazyFormsTextArea': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/TextArea.vue")['default']>
   'LazyFormsTextInput': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/TextInput.vue")['default']>
+  'LazyFormsTiptapEditor': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/TiptapEditor.vue")['default']>
   'LazyForms[collection]': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/[collection].vue")['default']>
   'LazyBlocksCreateArticleBlock': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/CreateArticleBlock.vue")['default']>
   'LazyBlocksDynamicCrudForm': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/DynamicCrudForm.vue")['default']>

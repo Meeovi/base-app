@@ -964,6 +964,11 @@ body {
     padding: 15px;
 }
 
+.feedBtnDialog {
+    position: relative;
+    bottom: 25px;
+}
+
 /****************** Messages Page **************/
 
 .messagePage {

@@ -152,9 +152,12 @@ export const FormsBooleanInput: typeof import("../layers/ui-app/app/components/f
 export const FormsDateTime: typeof import("../layers/ui-app/app/components/forms/DateTime.vue")['default']
 export const FormsDirectusFormElement: typeof import("../layers/ui-app/app/components/forms/DirectusFormElement.vue")['default']
 export const FormsFileInput: typeof import("../layers/ui-app/app/components/forms/FileInput.vue")['default']
+export const FormsRelationSelect: typeof import("../layers/ui-app/app/components/forms/RelationSelect.vue")['default']
+export const FormsRepeaterInput: typeof import("../layers/ui-app/app/components/forms/RepeaterInput.vue")['default']
 export const FormsSelectInput: typeof import("../layers/ui-app/app/components/forms/SelectInput.vue")['default']
 export const FormsTextArea: typeof import("../layers/ui-app/app/components/forms/TextArea.vue")['default']
 export const FormsTextInput: typeof import("../layers/ui-app/app/components/forms/TextInput.vue")['default']
+export const FormsTiptapEditor: typeof import("../layers/ui-app/app/components/forms/TiptapEditor.vue")['default']
 export const Forms[collection]: typeof import("../layers/ui-app/app/components/forms/[collection].vue")['default']
 export const BlocksCreateArticleBlock: typeof import("../layers/social-app/app/components/blocks/CreateArticleBlock.vue")['default']
 export const BlocksDynamicCrudForm: typeof import("../layers/social-app/app/components/blocks/DynamicCrudForm.vue")['default']
@@ -672,9 +675,12 @@ export const LazyFormsBooleanInput: LazyComponent<typeof import("../layers/ui-ap
 export const LazyFormsDateTime: LazyComponent<typeof import("../layers/ui-app/app/components/forms/DateTime.vue")['default']>
 export const LazyFormsDirectusFormElement: LazyComponent<typeof import("../layers/ui-app/app/components/forms/DirectusFormElement.vue")['default']>
 export const LazyFormsFileInput: LazyComponent<typeof import("../layers/ui-app/app/components/forms/FileInput.vue")['default']>
+export const LazyFormsRelationSelect: LazyComponent<typeof import("../layers/ui-app/app/components/forms/RelationSelect.vue")['default']>
+export const LazyFormsRepeaterInput: LazyComponent<typeof import("../layers/ui-app/app/components/forms/RepeaterInput.vue")['default']>
 export const LazyFormsSelectInput: LazyComponent<typeof import("../layers/ui-app/app/components/forms/SelectInput.vue")['default']>
 export const LazyFormsTextArea: LazyComponent<typeof import("../layers/ui-app/app/components/forms/TextArea.vue")['default']>
 export const LazyFormsTextInput: LazyComponent<typeof import("../layers/ui-app/app/components/forms/TextInput.vue")['default']>
+export const LazyFormsTiptapEditor: LazyComponent<typeof import("../layers/ui-app/app/components/forms/TiptapEditor.vue")['default']>
 export const LazyForms[collection]: LazyComponent<typeof import("../layers/ui-app/app/components/forms/[collection].vue")['default']>
 export const LazyBlocksCreateArticleBlock: LazyComponent<typeof import("../layers/social-app/app/components/blocks/CreateArticleBlock.vue")['default']>
 export const LazyBlocksDynamicCrudForm: LazyComponent<typeof import("../layers/social-app/app/components/blocks/DynamicCrudForm.vue")['default']>
