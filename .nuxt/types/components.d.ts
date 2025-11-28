@@ -159,8 +159,6 @@ interface _GlobalComponents {
   'FormsTextInput': typeof import("../../layers/ui-app/app/components/forms/TextInput.vue")['default']
   'FormsTiptapEditor': typeof import("../../layers/ui-app/app/components/forms/TiptapEditor.vue")['default']
   'Forms[collection]': typeof import("../../layers/ui-app/app/components/forms/[collection].vue")['default']
-  'BlocksCreateArticleBlock': typeof import("../../layers/social-app/app/components/blocks/CreateArticleBlock.vue")['default']
-  'BlocksDynamicCrudForm': typeof import("../../layers/social-app/app/components/blocks/DynamicCrudForm.vue")['default']
   'BlocksLeafletMap': typeof import("../../layers/social-app/app/components/blocks/LeafletMap.vue")['default']
   'BlocksComments': typeof import("../../layers/social-app/app/components/blocks/comments.vue")['default']
   'BlocksDocument': typeof import("../../layers/social-app/app/components/blocks/document.vue")['default']
@@ -682,8 +680,6 @@ interface _GlobalComponents {
   'LazyFormsTextInput': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/TextInput.vue")['default']>
   'LazyFormsTiptapEditor': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/TiptapEditor.vue")['default']>
   'LazyForms[collection]': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/[collection].vue")['default']>
-  'LazyBlocksCreateArticleBlock': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/CreateArticleBlock.vue")['default']>
-  'LazyBlocksDynamicCrudForm': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/DynamicCrudForm.vue")['default']>
   'LazyBlocksLeafletMap': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/LeafletMap.vue")['default']>
   'LazyBlocksComments': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/comments.vue")['default']>
   'LazyBlocksDocument': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/document.vue")['default']>

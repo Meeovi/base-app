@@ -159,8 +159,6 @@ export const FormsTextArea: typeof import("../layers/ui-app/app/components/forms
 export const FormsTextInput: typeof import("../layers/ui-app/app/components/forms/TextInput.vue")['default']
 export const FormsTiptapEditor: typeof import("../layers/ui-app/app/components/forms/TiptapEditor.vue")['default']
 export const Forms[collection]: typeof import("../layers/ui-app/app/components/forms/[collection].vue")['default']
-export const BlocksCreateArticleBlock: typeof import("../layers/social-app/app/components/blocks/CreateArticleBlock.vue")['default']
-export const BlocksDynamicCrudForm: typeof import("../layers/social-app/app/components/blocks/DynamicCrudForm.vue")['default']
 export const BlocksLeafletMap: typeof import("../layers/social-app/app/components/blocks/LeafletMap.vue")['default']
 export const BlocksComments: typeof import("../layers/social-app/app/components/blocks/comments.vue")['default']
 export const BlocksDocument: typeof import("../layers/social-app/app/components/blocks/document.vue")['default']
@@ -682,8 +680,6 @@ export const LazyFormsTextArea: LazyComponent<typeof import("../layers/ui-app/ap
 export const LazyFormsTextInput: LazyComponent<typeof import("../layers/ui-app/app/components/forms/TextInput.vue")['default']>
 export const LazyFormsTiptapEditor: LazyComponent<typeof import("../layers/ui-app/app/components/forms/TiptapEditor.vue")['default']>
 export const LazyForms[collection]: LazyComponent<typeof import("../layers/ui-app/app/components/forms/[collection].vue")['default']>
-export const LazyBlocksCreateArticleBlock: LazyComponent<typeof import("../layers/social-app/app/components/blocks/CreateArticleBlock.vue")['default']>
-export const LazyBlocksDynamicCrudForm: LazyComponent<typeof import("../layers/social-app/app/components/blocks/DynamicCrudForm.vue")['default']>
 export const LazyBlocksLeafletMap: LazyComponent<typeof import("../layers/social-app/app/components/blocks/LeafletMap.vue")['default']>
 export const LazyBlocksComments: LazyComponent<typeof import("../layers/social-app/app/components/blocks/comments.vue")['default']>
 export const LazyBlocksDocument: LazyComponent<typeof import("../layers/social-app/app/components/blocks/document.vue")['default']>

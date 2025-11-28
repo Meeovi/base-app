@@ -167,6 +167,12 @@
       "#layers/social-app/*": [
         "../layers/social-app/*"
       ],
+      "#layers/seller-dashboard-app": [
+        "../layers/seller-dashboard-app"
+      ],
+      "#layers/seller-dashboard-app/*": [
+        "../layers/seller-dashboard-app/*"
+      ],
       "#layers/lists-app": [
         "../layers/lists-app"
       ],
@@ -228,6 +234,7 @@
     "../shared/**/*.d.ts",
     "../layers/ui-app/shared/**/*.d.ts",
     "../layers/social-app/shared/**/*.d.ts",
+    "../layers/seller-dashboard-app/shared/**/*.d.ts",
     "../layers/lists-app/shared/**/*.d.ts",
     "../layers/departments-app/shared/**/*.d.ts",
     "../layers/commerce-app/shared/**/*.d.ts",

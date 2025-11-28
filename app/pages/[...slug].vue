@@ -52,10 +52,6 @@
     }
   })
 
-  definePageMeta({
-    layout: 'nolive'
-  })
-
   useHead({
     title: page?.value?.name || 'Page'
   })

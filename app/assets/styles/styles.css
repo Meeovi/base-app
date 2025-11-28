@@ -969,6 +969,28 @@ body {
     bottom: 25px;
 }
 
+.feedPost {
+    padding: 10px;
+}
+
+.socialbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.member-cards {
+    padding: 15px;
+}
+
+.center-text {
+    text-align: center;
+    padding: 20px;
+}
+
+.mediaCard {
+    padding: 15px;
+}
+
 /****************** Messages Page **************/
 
 .messagePage {
