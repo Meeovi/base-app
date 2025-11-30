@@ -211,6 +211,7 @@ interface _GlobalComponents {
   'FeaturesVibez': typeof import("../../layers/social-app/app/components/features/vibez.vue")['default']
   'MenusLowerbar': typeof import("../../layers/social-app/app/components/menus/lowerbar.vue")['default']
   'RelatedMemberList': typeof import("../../layers/social-app/app/components/related/memberList.vue")['default']
+  'RelatedMuxPlayer': typeof import("../../layers/social-app/app/components/related/muxPlayer.vue")['default']
   'RelatedPost': typeof import("../../layers/social-app/app/components/related/post.vue")['default']
   'RelatedRadio': typeof import("../../layers/social-app/app/components/related/radio.vue")['default']
   'RelatedRelatedshorts': typeof import("../../layers/social-app/app/components/related/relatedshorts.vue")['default']
@@ -328,6 +329,7 @@ interface _GlobalComponents {
   'MarketingPromotionsSubscriptions': typeof import("../../layers/commerce-app/app/components/marketing/promotions/subscriptions.vue")['default']
   'MarketingUpdateRewards': typeof import("../../layers/commerce-app/app/components/marketing/update-rewards.vue")['default']
   'PartialsLocaleSelector': typeof import("../../layers/commerce-app/app/components/partials/LocaleSelector.vue")['default']
+  'PartialsShoppingCart': typeof import("../../layers/commerce-app/app/components/partials/ShoppingCart.vue")['default']
   'PartialsStripePayment': typeof import("../../layers/commerce-app/app/components/partials/StripePayment.vue")['default']
   'PartialsAddToCartBtn': typeof import("../../layers/commerce-app/app/components/partials/addToCartBtn.vue")['default']
   'PartialsCartItem': typeof import("../../layers/commerce-app/app/components/partials/cartItem.vue")['default']
@@ -373,6 +375,78 @@ interface _GlobalComponents {
   'ShopCheckoutCartPromotionItem': typeof import("../../layers/commerce-app/app/components/shop/checkout/cart/PromotionItem.vue")['default']
   'Avatar': typeof import("../../layers/auth-app/app/components/avatar.vue")['default']
   'Logout': typeof import("../../layers/auth-app/app/components/logout.vue")['default']
+  'MagicDrawerDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicDrawer/src/components/MagicDrawer.d.vue")['default']
+  'MagicDrawer': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicDrawer/src/components/MagicDrawer.vue")['default']
+  'MagicMenuChannelDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuChannel.d.vue")['default']
+  'MagicMenuChannel': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuChannel.vue")['default']
+  'MagicMenuContentDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuContent.d.vue")['default']
+  'MagicMenuContent': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuContent.vue")['default']
+  'MagicMenuFloatDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuFloat.d.vue")['default']
+  'MagicMenuFloat': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuFloat.vue")['default']
+  'MagicMenuItemDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuItem.d.vue")['default']
+  'MagicMenuItem': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuItem.vue")['default']
+  'MagicMenuProviderDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuProvider.d.vue")['default']
+  'MagicMenuProvider': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuProvider.vue")['default']
+  'MagicMenuRemoteDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuRemote.d.vue")['default']
+  'MagicMenuRemote': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuRemote.vue")['default']
+  'MagicMenuTriggerDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuTrigger.d.vue")['default']
+  'MagicMenuTrigger': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuTrigger.vue")['default']
+  'MagicMenuViewDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuView.d.vue")['default']
+  'MagicMenuView': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuView.vue")['default']
+  'MagicModalDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicModal/src/components/MagicModal.d.vue")['default']
+  'MagicModal': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicModal/src/components/MagicModal.vue")['default']
+  'MagicCommandContentDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandContent.d.vue")['default']
+  'MagicCommandContent': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandContent.vue")['default']
+  'MagicCommandDrawerDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandDrawer.d.vue")['default']
+  'MagicCommandDrawer': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandDrawer.vue")['default']
+  'MagicCommandItemDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandItem.d.vue")['default']
+  'MagicCommandItem': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandItem.vue")['default']
+  'MagicCommandModalDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandModal.d.vue")['default']
+  'MagicCommandModal': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandModal.vue")['default']
+  'MagicCommandProviderDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandProvider.d.vue")['default']
+  'MagicCommandProvider': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandProvider.vue")['default']
+  'MagicCommandRendererDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandRenderer.d.vue")['default']
+  'MagicCommandRenderer': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandRenderer.vue")['default']
+  'MagicCommandTriggerDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandTrigger.d.vue")['default']
+  'MagicCommandTrigger': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandTrigger.vue")['default']
+  'MagicCommandViewDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandView.d.vue")['default']
+  'MagicCommandView': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandView.vue")['default']
+  'MagicCookieItemDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/src/components/MagicCookieItem.d.vue")['default']
+  'MagicCookieItem': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/src/components/MagicCookieItem.vue")['default']
+  'MagicCookieProviderDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/src/components/MagicCookieProvider.d.vue")['default']
+  'MagicCookieProvider': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/src/components/MagicCookieProvider.vue")['default']
+  'MagicCookieViewDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/src/components/MagicCookieView.d.vue")['default']
+  'MagicCookieView': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/src/components/MagicCookieView.vue")['default']
+  'MagicMarqueeDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMarquee/src/components/MagicMarquee.d.vue")['default']
+  'MagicMarquee': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMarquee/src/components/MagicMarquee.vue")['default']
+  'MagicPlayerAudioDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerAudio.d.vue")['default']
+  'MagicPlayerAudio': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerAudio.vue")['default']
+  'MagicPlayerAudioControlsDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerAudioControls.d.vue")['default']
+  'MagicPlayerAudioControls': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerAudioControls.vue")['default']
+  'MagicPlayerDisplayTimeDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerDisplayTime.d.vue")['default']
+  'MagicPlayerDisplayTime': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerDisplayTime.vue")['default']
+  'MagicPlayerMuxPopoverDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerMuxPopover.d.vue")['default']
+  'MagicPlayerMuxPopover': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerMuxPopover.vue")['default']
+  'MagicPlayerOverlayDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerOverlay.d.vue")['default']
+  'MagicPlayerOverlay': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerOverlay.vue")['default']
+  'MagicPlayerPosterDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerPoster.d.vue")['default']
+  'MagicPlayerPoster': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerPoster.vue")['default']
+  'MagicPlayerProviderDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerProvider.d.vue")['default']
+  'MagicPlayerProvider': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerProvider.vue")['default']
+  'MagicPlayerTimelineDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerTimeline.d.vue")['default']
+  'MagicPlayerTimeline': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerTimeline.vue")['default']
+  'MagicPlayerVideoDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerVideo.d.vue")['default']
+  'MagicPlayerVideo': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerVideo.vue")['default']
+  'MagicPlayerVideoControlsDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerVideoControls.d.vue")['default']
+  'MagicPlayerVideoControls': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerVideoControls.vue")['default']
+  'MagicScrollCollisionDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollCollision.d.vue")['default']
+  'MagicScrollCollision': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollCollision.vue")['default']
+  'MagicScrollMotionDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollMotion.d.vue")['default']
+  'MagicScrollMotion': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollMotion.vue")['default']
+  'MagicScrollProviderDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollProvider.d.vue")['default']
+  'MagicScrollProvider': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollProvider.vue")['default']
+  'MagicScrollSceneDVue': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollScene.d.vue")['default']
+  'MagicScrollScene': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollScene.vue")['default']
   'NuxtWelcome': typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']
   'NuxtLayout': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
   'NuxtErrorBoundary': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -524,6 +598,10 @@ interface _GlobalComponents {
   'SfTooltip': typeof import("@storefront-ui/vue")['SfTooltip']
   'NuxtLinkLocale': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']
   'SwitchLocalePathLink': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']
+  'MagicDraggable': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicDraggable/src/components/MagicDraggable.vue")['default']
+  'MagicPie': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPie/src/components/MagicPie.vue")['default']
+  'MagicNoise': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicNoise/src/components/MagicNoise.vue")['default']
+  'MagicToastProvider': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/src/components/MagicToastProvider.vue")['default']
   'NuxtPage': typeof import("../../node_modules/nuxt/dist/pages/runtime/page")['default']
   'NoScript': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['NoScript']
   'Link': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Link']
@@ -732,6 +810,7 @@ interface _GlobalComponents {
   'LazyFeaturesVibez': LazyComponent<typeof import("../../layers/social-app/app/components/features/vibez.vue")['default']>
   'LazyMenusLowerbar': LazyComponent<typeof import("../../layers/social-app/app/components/menus/lowerbar.vue")['default']>
   'LazyRelatedMemberList': LazyComponent<typeof import("../../layers/social-app/app/components/related/memberList.vue")['default']>
+  'LazyRelatedMuxPlayer': LazyComponent<typeof import("../../layers/social-app/app/components/related/muxPlayer.vue")['default']>
   'LazyRelatedPost': LazyComponent<typeof import("../../layers/social-app/app/components/related/post.vue")['default']>
   'LazyRelatedRadio': LazyComponent<typeof import("../../layers/social-app/app/components/related/radio.vue")['default']>
   'LazyRelatedRelatedshorts': LazyComponent<typeof import("../../layers/social-app/app/components/related/relatedshorts.vue")['default']>
@@ -849,6 +928,7 @@ interface _GlobalComponents {
   'LazyMarketingPromotionsSubscriptions': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/promotions/subscriptions.vue")['default']>
   'LazyMarketingUpdateRewards': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/update-rewards.vue")['default']>
   'LazyPartialsLocaleSelector': LazyComponent<typeof import("../../layers/commerce-app/app/components/partials/LocaleSelector.vue")['default']>
+  'LazyPartialsShoppingCart': LazyComponent<typeof import("../../layers/commerce-app/app/components/partials/ShoppingCart.vue")['default']>
   'LazyPartialsStripePayment': LazyComponent<typeof import("../../layers/commerce-app/app/components/partials/StripePayment.vue")['default']>
   'LazyPartialsAddToCartBtn': LazyComponent<typeof import("../../layers/commerce-app/app/components/partials/addToCartBtn.vue")['default']>
   'LazyPartialsCartItem': LazyComponent<typeof import("../../layers/commerce-app/app/components/partials/cartItem.vue")['default']>
@@ -894,6 +974,78 @@ interface _GlobalComponents {
   'LazyShopCheckoutCartPromotionItem': LazyComponent<typeof import("../../layers/commerce-app/app/components/shop/checkout/cart/PromotionItem.vue")['default']>
   'LazyAvatar': LazyComponent<typeof import("../../layers/auth-app/app/components/avatar.vue")['default']>
   'LazyLogout': LazyComponent<typeof import("../../layers/auth-app/app/components/logout.vue")['default']>
+  'LazyMagicDrawerDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicDrawer/src/components/MagicDrawer.d.vue")['default']>
+  'LazyMagicDrawer': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicDrawer/src/components/MagicDrawer.vue")['default']>
+  'LazyMagicMenuChannelDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuChannel.d.vue")['default']>
+  'LazyMagicMenuChannel': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuChannel.vue")['default']>
+  'LazyMagicMenuContentDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuContent.d.vue")['default']>
+  'LazyMagicMenuContent': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuContent.vue")['default']>
+  'LazyMagicMenuFloatDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuFloat.d.vue")['default']>
+  'LazyMagicMenuFloat': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuFloat.vue")['default']>
+  'LazyMagicMenuItemDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuItem.d.vue")['default']>
+  'LazyMagicMenuItem': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuItem.vue")['default']>
+  'LazyMagicMenuProviderDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuProvider.d.vue")['default']>
+  'LazyMagicMenuProvider': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuProvider.vue")['default']>
+  'LazyMagicMenuRemoteDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuRemote.d.vue")['default']>
+  'LazyMagicMenuRemote': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuRemote.vue")['default']>
+  'LazyMagicMenuTriggerDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuTrigger.d.vue")['default']>
+  'LazyMagicMenuTrigger': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuTrigger.vue")['default']>
+  'LazyMagicMenuViewDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuView.d.vue")['default']>
+  'LazyMagicMenuView': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuView.vue")['default']>
+  'LazyMagicModalDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicModal/src/components/MagicModal.d.vue")['default']>
+  'LazyMagicModal': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicModal/src/components/MagicModal.vue")['default']>
+  'LazyMagicCommandContentDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandContent.d.vue")['default']>
+  'LazyMagicCommandContent': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandContent.vue")['default']>
+  'LazyMagicCommandDrawerDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandDrawer.d.vue")['default']>
+  'LazyMagicCommandDrawer': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandDrawer.vue")['default']>
+  'LazyMagicCommandItemDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandItem.d.vue")['default']>
+  'LazyMagicCommandItem': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandItem.vue")['default']>
+  'LazyMagicCommandModalDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandModal.d.vue")['default']>
+  'LazyMagicCommandModal': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandModal.vue")['default']>
+  'LazyMagicCommandProviderDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandProvider.d.vue")['default']>
+  'LazyMagicCommandProvider': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandProvider.vue")['default']>
+  'LazyMagicCommandRendererDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandRenderer.d.vue")['default']>
+  'LazyMagicCommandRenderer': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandRenderer.vue")['default']>
+  'LazyMagicCommandTriggerDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandTrigger.d.vue")['default']>
+  'LazyMagicCommandTrigger': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandTrigger.vue")['default']>
+  'LazyMagicCommandViewDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandView.d.vue")['default']>
+  'LazyMagicCommandView': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/src/components/MagicCommandView.vue")['default']>
+  'LazyMagicCookieItemDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/src/components/MagicCookieItem.d.vue")['default']>
+  'LazyMagicCookieItem': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/src/components/MagicCookieItem.vue")['default']>
+  'LazyMagicCookieProviderDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/src/components/MagicCookieProvider.d.vue")['default']>
+  'LazyMagicCookieProvider': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/src/components/MagicCookieProvider.vue")['default']>
+  'LazyMagicCookieViewDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/src/components/MagicCookieView.d.vue")['default']>
+  'LazyMagicCookieView': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/src/components/MagicCookieView.vue")['default']>
+  'LazyMagicMarqueeDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMarquee/src/components/MagicMarquee.d.vue")['default']>
+  'LazyMagicMarquee': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMarquee/src/components/MagicMarquee.vue")['default']>
+  'LazyMagicPlayerAudioDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerAudio.d.vue")['default']>
+  'LazyMagicPlayerAudio': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerAudio.vue")['default']>
+  'LazyMagicPlayerAudioControlsDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerAudioControls.d.vue")['default']>
+  'LazyMagicPlayerAudioControls': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerAudioControls.vue")['default']>
+  'LazyMagicPlayerDisplayTimeDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerDisplayTime.d.vue")['default']>
+  'LazyMagicPlayerDisplayTime': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerDisplayTime.vue")['default']>
+  'LazyMagicPlayerMuxPopoverDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerMuxPopover.d.vue")['default']>
+  'LazyMagicPlayerMuxPopover': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerMuxPopover.vue")['default']>
+  'LazyMagicPlayerOverlayDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerOverlay.d.vue")['default']>
+  'LazyMagicPlayerOverlay': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerOverlay.vue")['default']>
+  'LazyMagicPlayerPosterDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerPoster.d.vue")['default']>
+  'LazyMagicPlayerPoster': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerPoster.vue")['default']>
+  'LazyMagicPlayerProviderDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerProvider.d.vue")['default']>
+  'LazyMagicPlayerProvider': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerProvider.vue")['default']>
+  'LazyMagicPlayerTimelineDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerTimeline.d.vue")['default']>
+  'LazyMagicPlayerTimeline': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerTimeline.vue")['default']>
+  'LazyMagicPlayerVideoDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerVideo.d.vue")['default']>
+  'LazyMagicPlayerVideo': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerVideo.vue")['default']>
+  'LazyMagicPlayerVideoControlsDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerVideoControls.d.vue")['default']>
+  'LazyMagicPlayerVideoControls': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/src/components/MagicPlayerVideoControls.vue")['default']>
+  'LazyMagicScrollCollisionDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollCollision.d.vue")['default']>
+  'LazyMagicScrollCollision': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollCollision.vue")['default']>
+  'LazyMagicScrollMotionDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollMotion.d.vue")['default']>
+  'LazyMagicScrollMotion': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollMotion.vue")['default']>
+  'LazyMagicScrollProviderDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollProvider.d.vue")['default']>
+  'LazyMagicScrollProvider': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollProvider.vue")['default']>
+  'LazyMagicScrollSceneDVue': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollScene.d.vue")['default']>
+  'LazyMagicScrollScene': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollScene.vue")['default']>
   'LazyNuxtWelcome': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
   'LazyNuxtLayout': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
   'LazyNuxtErrorBoundary': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>
@@ -1045,6 +1197,10 @@ interface _GlobalComponents {
   'LazySfTooltip': LazyComponent<typeof import("@storefront-ui/vue")['SfTooltip']>
   'LazyNuxtLinkLocale': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']>
   'LazySwitchLocalePathLink': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']>
+  'LazyMagicDraggable': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicDraggable/src/components/MagicDraggable.vue")['default']>
+  'LazyMagicPie': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicPie/src/components/MagicPie.vue")['default']>
+  'LazyMagicNoise': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicNoise/src/components/MagicNoise.vue")['default']>
+  'LazyMagicToastProvider': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/src/components/MagicToastProvider.vue")['default']>
   'LazyNuxtPage': LazyComponent<typeof import("../../node_modules/nuxt/dist/pages/runtime/page")['default']>
   'LazyNoScript': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['NoScript']>
   'LazyLink': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Link']>

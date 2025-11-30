@@ -1,5 +1,4 @@
 /********************** Main CSS *************/
-
 html {
     font-family: 'Inter', sans-serif !important;
 }
@@ -1251,6 +1250,24 @@ body {
     border: none;
     min-height: 0px;
     padding-bottom: 0px;
+}
+
+/***************** Form CSS ********************/
+.form-field-wrapper {
+  position: relative;
+}
+
+.auto-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #e0f7fa;
+  color: #00796b;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }
 
 /***************** Footer ********************/

@@ -1,10 +1,11 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
 import { Server } from 'node:http';
-import { resolve, dirname, join } from 'node:path';
+import { resolve, dirname, extname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, setCookie, getResponseStatus, createError, removeResponseHeader, getQuery as getQuery$1, readBody, handleCors, getRequestIP, readMultipartFormData, getRouterParam, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getResponseStatusText } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, setCookie, getResponseStatus, createError, removeResponseHeader, getQuery as getQuery$1, readBody, handleCors, getRequestIP, readMultipartFormData, getHeader, getRouterParam, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getResponseStatusText } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/h3/dist/index.mjs';
 import { escapeHtml } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@vue/shared/dist/shared.cjs.js';
+import Mux from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@mux/mux-node/index.mjs';
 import * as DirectusSdk from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@directus/sdk/dist/index.js';
 import { S3Client, PutObjectCommand } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@aws-sdk/client-s3/dist-cjs/index.js';
 import { v4 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/uuid/dist-node/index.js';
@@ -15,10 +16,11 @@ import admin from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Ja
 import { existsSync, readFileSync, promises } from 'node:fs';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import destr, { destr as destr$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/destr/dist/index.mjs';
+import process$1 from 'node:process';
 import { renderToString } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/vue/server-renderer/index.mjs';
 import { klona } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/klona/dist/index.mjs';
-import defu, { defuFn, createDefu } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/defu/dist/defu.mjs';
-import { snakeCase } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/scule/dist/index.mjs';
+import defu, { defuFn, createDefu, defu as defu$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/defu/dist/defu.mjs';
+import { snakeCase, kebabCase, titleCase } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/scule/dist/index.mjs';
 import { createHead as createHead$1, propsToString, renderSSRHead } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unhead/dist/server.mjs';
 import { stringify, uneval } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/devalue/index.js';
 import { isVNode, toValue, isRef } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/vue/index.mjs';
@@ -27,6 +29,7 @@ import { createFetch, Headers as Headers$1 } from 'file://C:/Users/Basti/Documen
 import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/node-mock-http/dist/index.mjs';
 import { createStorage, prefixStorage } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unstorage/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unstorage/drivers/fs.mjs';
+import unstorage_47drivers_47redis from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unstorage/drivers/redis.mjs';
 import unstorage_47drivers_47lru_45cache from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unstorage/drivers/lru-cache.mjs';
 import { digest } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ohash/dist/index.mjs';
 import { toRouteMatcher, createRouter } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/radix3/dist/index.mjs';
@@ -40,10 +43,13 @@ import { createRouterMatcher } from 'file://C:/Users/Basti/Documents/My_Websites
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { getContext } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unctx/dist/index.mjs';
 import { captureRawStackTrace, parseRawStackTrace } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/errx/dist/index.js';
-import { fileURLToPath } from 'node:url';
+import { pathToFileURL, fileURLToPath } from 'node:url';
 import { dirname as dirname$1, resolve as resolve$1, isAbsolute } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/pathe/dist/index.mjs';
 import { walkResolver } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unhead/dist/utils.mjs';
 import { FilterXSS } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/xss/lib/index.js';
+import { McpServer } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js';
+import { StreamableHTTPServerTransport } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@modelcontextprotocol/sdk/dist/esm/server/streamableHttp.js';
+import ms from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ms/index.js';
 import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ipx/dist/index.mjs';
 
 const HASH_RE = /#/g;
@@ -308,6 +314,7 @@ const storage$2 = createStorage({});
 
 storage$2.mount('/assets', assets$1);
 
+storage$2.mount('redis', unstorage_47drivers_47redis({"driver":"redis","port":6379,"host":"http://158.69.211.52/","password":"Libraxus@1086"}));
 storage$2.mount('#rate-limiter-storage', unstorage_47drivers_47lru_45cache({"driver":"lruCache"}));
 storage$2.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app","watchOptions":{"ignored":[null]}}));
 storage$2.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/server","watchOptions":{"ignored":[null]}}));
@@ -592,7 +599,7 @@ function defineCachedFunction(fn, opts = {}) {
     if (shouldBypassCache) {
       return fn(...args);
     }
-    const key = await (opts.getKey || getKey)(...args);
+    const key = await (opts.getKey || getKey$2)(...args);
     const shouldInvalidateCache = await opts.shouldInvalidateCache?.(...args);
     const entry = await get(
       key,
@@ -610,7 +617,7 @@ function defineCachedFunction(fn, opts = {}) {
 function cachedFunction(fn, opts = {}) {
   return defineCachedFunction(fn, opts);
 }
-function getKey(...args) {
+function getKey$2(...args) {
   return args.length > 0 ? hash(args) : "";
 }
 function escapeKey(key) {
@@ -926,7 +933,7 @@ const _inlineRuntimeConfig = {
     "firebaseApiKey": "AIzaSyDyQ18nYjvGb9O1fSy6MCHxFGshplR9zWo",
     "firebaseAuthDomain": "meeovi-39483.firebaseapp.com",
     "firebaseProjectId": "meeovi-39483",
-    "firebaseStorageBucket": "\"meeovi-39483.firebasestorage.app\",",
+    "firebaseStorageBucket": "meeovi-39483.firebasestorage.app",
     "firebaseMessagingSenderId": "826536453744",
     "firebaseAppId": "1:826536453744:web:f036117f55f7be0fd436b5",
     "measurementId": "G-MMRCT1NE4Z",
@@ -996,8 +1003,6 @@ const _inlineRuntimeConfig = {
     "minioEndpoint": "https://live.meeovicms.com",
     "minioUser": "meeovi",
     "minioPass": "Libraxus@1986",
-    "supabaseUrl": "https://tfelkrbgkbmewrzmgfcc.supabase.co",
-    "supabaseAnonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRmZWxrcmJna2JtZXdyem1nZmNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg1MTYxMTcsImV4cCI6MjA1NDA5MjExN30.bFIMXnDLutAlG4Y2dCUyrmm2jXPInLuyqaBEhTSIVCk",
     "gtagId": "GTM-MQ4JC38D",
     "stripe": {
       "publishableKey": ""
@@ -1008,7 +1013,7 @@ const _inlineRuntimeConfig = {
         "apiKey": "AIzaSyDyQ18nYjvGb9O1fSy6MCHxFGshplR9zWo",
         "authDomain": "meeovi-39483.firebaseapp.com",
         "projectId": "meeovi-39483",
-        "storageBucket": "\"meeovi-39483.firebasestorage.app\",",
+        "storageBucket": "meeovi-39483.firebasestorage.app",
         "messagingSenderId": "826536453744",
         "appId": "1:826536453744:web:f036117f55f7be0fd436b5",
         "measurementId": "G-MMRCT1NE4Z"
@@ -1169,6 +1174,14 @@ const _inlineRuntimeConfig = {
       "exportToPresets": true
     },
     "sri": true
+  },
+  "mcp": {
+    "enabled": true,
+    "route": "/mcp",
+    "browserRedirect": "/",
+    "name": "Meeovi MCP Server",
+    "version": "1.0.0",
+    "dir": "mcp"
   },
   "ipx": {
     "baseURL": "/_ipx",
@@ -1500,6 +1513,7 @@ const errorCSS = (
   top: 0;
   width: 100vw;
   height: 100vh;
+  border: none;
   z-index: var(--z-base);
 }
 #frame[inert] {
@@ -1561,7 +1575,7 @@ const errorCSS = (
 }
 `
 );
-function webComponentScript(base64HTML) {
+function webComponentScript(base64HTML, startMinimized) {
   return (
     /* js */
     `
@@ -1655,6 +1669,11 @@ function webComponentScript(base64HTML) {
       shadow.appendChild(preview);
       shadow.appendChild(button);
       
+      if (${startMinimized}) {
+        iframe.setAttribute('inert', '');
+        button.setAttribute('aria-expanded', 'false');
+      }
+      
       // Initialize preview
       setTimeout(updatePreview, 100);
       
@@ -1665,14 +1684,14 @@ function webComponentScript(base64HTML) {
   `
   );
 }
-function generateErrorOverlayHTML(html) {
+function generateErrorOverlayHTML(html, options) {
   const nonce = Array.from(crypto.getRandomValues(new Uint8Array(16)), (b) => b.toString(16).padStart(2, "0")).join("");
   const errorPage = html.replace("<head>", `<head><script>${iframeStorageBridge(nonce)}<\/script>`);
   const base64HTML = Buffer.from(errorPage, "utf8").toString("base64");
   return `
     <script>${parentStorageBridge(nonce)}<\/script>
     <nuxt-error-overlay></nuxt-error-overlay>
-    <script>${webComponentScript(base64HTML)}<\/script>
+    <script>${webComponentScript(base64HTML, options?.startMinimized ?? false)}<\/script>
   `;
 }
 
@@ -1730,7 +1749,7 @@ const errorHandler$0 = (async function errorhandler(error, event, { defaultHandl
   setResponseStatus(event, res.status && res.status !== 200 ? res.status : defaultRes.status, res.statusText || defaultRes.statusText);
   {
     const prettyResponse = await defaultHandler(error, event, { json: false });
-    return send(event, html.replace("</body>", `${generateErrorOverlayHTML(prettyResponse.body)}</body>`));
+    return send(event, html.replace("</body>", `${generateErrorOverlayHTML(prettyResponse.body, { startMinimized: 300 <= statusCode && statusCode < 500 })}</body>`));
   }
 });
 
@@ -2767,6 +2786,236 @@ const defuReplaceArray = createDefu((obj, key, value) => {
   }
 });
 
+function parseCacheDuration(duration) {
+  if (typeof duration === "number") {
+    return duration;
+  }
+  const parsed = ms(duration);
+  if (parsed === void 0) {
+    throw new Error(`Invalid cache duration: ${duration}`);
+  }
+  return Math.ceil(parsed / 1e3);
+}
+function createCacheOptions(cache, name, defaultGetKey) {
+  if (typeof cache === "object") {
+    return {
+      getKey: defaultGetKey,
+      ...cache,
+      maxAge: parseCacheDuration(cache.maxAge),
+      name: cache.name ?? name,
+      group: cache.group ?? "mcp"
+    };
+  }
+  return {
+    maxAge: parseCacheDuration(cache),
+    name,
+    group: "mcp",
+    getKey: defaultGetKey
+  };
+}
+function wrapWithCache(fn, cacheOptions) {
+  return defineCachedFunction(
+    fn,
+    cacheOptions
+  );
+}
+
+function enrichNameTitle(options) {
+  const { name, title, _meta, type } = options;
+  const filename = _meta?.filename;
+  let enrichedName = name;
+  let enrichedTitle = title;
+  if (filename) {
+    const nameWithoutExt = filename.replace(/\.(ts|js|mts|mjs)$/, "");
+    if (!enrichedName) {
+      enrichedName = kebabCase(nameWithoutExt);
+    }
+    if (!enrichedTitle) {
+      enrichedTitle = titleCase(nameWithoutExt);
+    }
+  }
+  if (!enrichedName) {
+    throw new Error(`Failed to auto-generate ${type} name from filename. Please provide a name explicitly.`);
+  }
+  return {
+    name: enrichedName,
+    title: enrichedTitle
+  };
+}
+
+function registerToolFromDefinition(server, tool) {
+  const { name, title } = enrichNameTitle({
+    name: tool.name,
+    title: tool.title,
+    _meta: tool._meta,
+    type: "tool"
+  });
+  let handler = tool.handler;
+  if (tool.cache !== void 0) {
+    const defaultGetKey = tool.inputSchema ? (args) => {
+      const values = Object.values(args);
+      return values.map((v) => String(v).replace(/\//g, "-").replace(/^-/, "")).join(":");
+    } : void 0;
+    const cacheOptions = createCacheOptions(tool.cache, `mcp-tool:${name}`, defaultGetKey);
+    handler = wrapWithCache(
+      tool.handler,
+      cacheOptions
+    );
+  }
+  if (tool.inputSchema) {
+    return server.registerTool(
+      name,
+      {
+        title,
+        description: tool.description,
+        inputSchema: tool.inputSchema,
+        outputSchema: tool.outputSchema,
+        annotations: tool.annotations,
+        _meta: tool._meta
+      },
+      handler
+    );
+  } else {
+    return server.registerTool(
+      name,
+      {
+        title,
+        description: tool.description,
+        outputSchema: tool.outputSchema,
+        annotations: tool.annotations,
+        _meta: tool._meta
+      },
+      handler
+    );
+  }
+}
+
+function getMimeType(filePath) {
+  const ext = extname(filePath).toLowerCase();
+  switch (ext) {
+    case ".md":
+      return "text/markdown";
+    case ".ts":
+    case ".mts":
+    case ".cts":
+      return "text/typescript";
+    case ".js":
+    case ".mjs":
+    case ".cjs":
+      return "text/javascript";
+    case ".json":
+      return "application/json";
+    case ".html":
+      return "text/html";
+    case ".css":
+      return "text/css";
+    case ".xml":
+      return "text/xml";
+    case ".csv":
+      return "text/csv";
+    case ".yaml":
+    case ".yml":
+      return "text/yaml";
+    default:
+      return "text/plain";
+  }
+}
+function registerResourceFromDefinition(server, resource) {
+  const { name, title } = enrichNameTitle({
+    name: resource.name,
+    title: resource.title,
+    _meta: resource._meta,
+    type: "resource"
+  });
+  let uri = resource.uri;
+  let handler = resource.handler;
+  const metadata = {
+    ...resource.metadata,
+    title: resource.title || resource.metadata?.title || title,
+    description: resource.description || resource.metadata?.description
+  };
+  if ("file" in resource && resource.file) {
+    const filePath = resolve(process.cwd(), resource.file);
+    if (!uri) {
+      uri = pathToFileURL(filePath).toString();
+    }
+    if (!handler) {
+      handler = async (requestUri) => {
+        try {
+          const content = await readFile(filePath, "utf-8");
+          return {
+            contents: [{
+              uri: requestUri.toString(),
+              mimeType: resource.metadata?.mimeType || getMimeType(filePath),
+              text: content
+            }]
+          };
+        } catch (error) {
+          throw new Error(`Failed to read file ${filePath}: ${error instanceof Error ? error.message : String(error)}`);
+        }
+      };
+    }
+  }
+  if (!uri) {
+    throw new Error(`Resource ${name} is missing a URI`);
+  }
+  if (!handler) {
+    throw new Error(`Resource ${name} is missing a handler`);
+  }
+  if (resource.cache !== void 0) {
+    const defaultGetKey = (requestUri) => requestUri.pathname.replace(/\//g, "-").replace(/^-/, "");
+    const cacheOptions = createCacheOptions(resource.cache, `mcp-resource:${name}`, defaultGetKey);
+    handler = wrapWithCache(
+      handler,
+      cacheOptions
+    );
+  }
+  if (typeof uri === "string") {
+    return server.registerResource(
+      name,
+      uri,
+      metadata,
+      handler
+    );
+  } else {
+    return server.registerResource(
+      name,
+      uri,
+      metadata,
+      handler
+    );
+  }
+}
+
+function registerPromptFromDefinition(server, prompt) {
+  const { name, title } = enrichNameTitle({
+    name: prompt.name,
+    title: prompt.title,
+    _meta: prompt._meta,
+    type: "prompt"
+  });
+  if (prompt.inputSchema) {
+    return server.registerPrompt(
+      name,
+      {
+        title,
+        description: prompt.description,
+        argsSchema: prompt.inputSchema
+      },
+      prompt.handler
+    );
+  } else {
+    return server.registerPrompt(
+      name,
+      {
+        title,
+        description: prompt.description
+      },
+      prompt.handler
+    );
+  }
+}
+
 let initialized = false;
 function getFirebaseAdmin() {
   if (initialized) return admin;
@@ -3007,7 +3256,7 @@ const _DXMRFSHHYLVeO7a7qEPi0nWRa7rXEAbCnd2ehPuEXRk = defineNitroPlugin(async (ni
   await nitroApp.hooks.callHook("nuxt-security:ready");
 });
 
-const sriHashes = {"/_nuxt/builds/meta/571f3880-7c7c-4b7b-b49e-bfe131b14a88.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/meta/dev.json":"sha384-uspsLde7OGQvJsMlyf51+brIlzHpWB8QhEikcXBYFiaMhUNvFx1uYepGJH5cqHC+","/_nuxt/builds/latest.json":"sha384-F5jlp9/YcISxKTkdwH/kf7ZI/xUNjztjnPUYvR3WSeSEQcoWqff9Xecbo6SgyOYd","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
+const sriHashes = {"/_nuxt/builds/meta/dev.json":"sha384-hs1zCsoZIXiwU8cyppoW27ZwEmBfzFoAdxgstxCXrErvYs22OQnfQ5KGi2Z68DVf","/_nuxt/builds/meta/ea960129-3262-4af1-97c2-b18084b8bd63.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/latest.json":"sha384-kpoSxF31q8mf+sf2ePd0BJyptbp1YWm8cdy191XBaXcUt8hgLxiNt6WZPAsZziGI","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
 
 const SCRIPT_RE$1 = /<script((?=[^>]+\bsrc="([^"]+)")(?![^>]+\bintegrity="[^"]+")[^>]+)(?:\/>|><\/script>)/g;
 const LINK_RE$1 = /<link((?=[^>]+\brel="(?:stylesheet|preload|modulepreload)")(?=[^>]+\bhref="([^"]+)")(?![^>]+\bintegrity="[\w\-+/=]+")[^>]+)>/g;
@@ -3390,7 +3639,7 @@ const getSSRRenderer = lazyCachedFunction(async () => {
   });
   async function renderToString$1(input, context) {
     const html = await renderToString(input, context);
-    if (process.env.NUXT_VITE_NODE_OPTIONS) {
+    if (process$1.env.NUXT_VITE_NODE_OPTIONS) {
       renderer.rendererContext.updateManifest(await getClientManifest());
     }
     return APP_ROOT_OPEN_TAG + html + APP_ROOT_CLOSE_TAG;
@@ -3892,6 +4141,95 @@ const _zwBj2t = defineEventHandler(async (event) => {
   }
 });
 
+const tools = [];
+
+const resources = [];
+
+const prompts = [];
+
+const handlers$1 = [];
+
+function resolveConfig(config, event) {
+  return typeof config === "function" ? config(event) : config;
+}
+function createMcpServer(config) {
+  const server = new McpServer({
+    name: config.name,
+    version: config.version
+  });
+  for (const tool of config.tools || []) {
+    registerToolFromDefinition(server, tool);
+  }
+  for (const resource of config.resources || []) {
+    registerResourceFromDefinition(server, resource);
+  }
+  for (const prompt of config.prompts || []) {
+    registerPromptFromDefinition(server, prompt);
+  }
+  return server;
+}
+function createMcpHandler(config) {
+  return defineEventHandler(async (event) => {
+    const resolvedConfig = resolveConfig(config, event);
+    if (getHeader(event, "accept")?.includes("text/html")) {
+      return sendRedirect(event, resolvedConfig.browserRedirect);
+    }
+    const server = createMcpServer(resolvedConfig);
+    const transport = new StreamableHTTPServerTransport({
+      sessionIdGenerator: void 0
+    });
+    event.node.res.on("close", () => {
+      transport.close();
+      server.close();
+    });
+    await server.connect(transport);
+    const body = await readBody(event);
+    await transport.handleRequest(event.node.req, event.node.res, body);
+  });
+}
+
+const defaultMcpConfig = {
+  enabled: true,
+  route: "/mcp",
+  browserRedirect: "/",
+  name: "",
+  version: "1.0.0",
+  dir: "mcp"
+};
+function getMcpConfig(partial) {
+  return defu$1(partial, defaultMcpConfig);
+}
+
+const _Zw164B = createMcpHandler((event) => {
+  const runtimeConfig = useRuntimeConfig(event).mcp;
+  const config = getMcpConfig(runtimeConfig);
+  const handlerName = getRouterParam(event, "handler");
+  if (handlerName) {
+    const handlerDef = handlers$1.find(
+      (h) => h.name === handlerName
+    );
+    if (!handlerDef) {
+      throw new Error(`Handler "${handlerName}" not found`);
+    }
+    return {
+      name: handlerDef.name,
+      version: handlerDef.version ?? config.version,
+      browserRedirect: handlerDef.browserRedirect ?? config.browserRedirect,
+      tools: handlerDef.tools,
+      resources: handlerDef.resources,
+      prompts: handlerDef.prompts
+    };
+  }
+  return {
+    name: config.name || "MCP Server",
+    version: config.version,
+    browserRedirect: config.browserRedirect,
+    tools,
+    resources,
+    prompts
+  };
+});
+
 const storage = prefixStorage(useStorage(), "i18n");
 function cachedFunctionI18n(fn, opts) {
   opts = { maxAge: 1, ...opts };
@@ -4024,6 +4362,7 @@ const _3MA6LX = lazyEventHandler(() => {
   return useBase(opts.baseURL, ipxHandler);
 });
 
+const _lazy_bJYvB1 = () => Promise.resolve().then(function () { return getKey$1; });
 const _lazy__ZQa1j = () => Promise.resolve().then(function () { return uploadVideo_post$1; });
 const _lazy_Hbrwmz = () => Promise.resolve().then(function () { return viewVideo_post$1; });
 const _lazy_9MHYsq = () => Promise.resolve().then(function () { return users_post$1; });
@@ -4033,6 +4372,7 @@ const _lazy_X3cMEh = () => Promise.resolve().then(function () { return renderer$
 
 const handlers = [
   { route: '', handler: _tIQtQH, lazy: false, middleware: true, method: undefined },
+  { route: '/api/getKey', handler: _lazy_bJYvB1, lazy: true, middleware: false, method: undefined },
   { route: '/api/upload-video', handler: _lazy__ZQa1j, lazy: true, middleware: false, method: "post" },
   { route: '/api/view-video', handler: _lazy_Hbrwmz, lazy: true, middleware: false, method: "post" },
   { route: '/api/directus/users', handler: _lazy_9MHYsq, lazy: true, middleware: false, method: "post" },
@@ -4045,6 +4385,7 @@ const handlers = [
   { route: '', handler: _gySGfR, lazy: false, middleware: false, method: undefined },
   { route: '', handler: _JxUJMA, lazy: false, middleware: false, method: undefined },
   { route: '', handler: _zwBj2t, lazy: false, middleware: false, method: undefined },
+  { route: '/mcp', handler: _Zw164B, lazy: false, middleware: false, method: undefined },
   { route: '/_i18n/:hash/:locale/messages.json', handler: _CJz77U, lazy: false, middleware: false, method: undefined },
   { route: '/_ipx/**', handler: _3MA6LX, lazy: false, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_X3cMEh, lazy: true, middleware: false, method: undefined }
@@ -5879,6 +6220,25 @@ const styles = {};
 const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: styles
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const getKey = defineEventHandler(async (event) => {
+  var _a;
+  const config = useRuntimeConfig();
+  const { Video } = new Mux(config.MUX_TOKEN_ID, config.MUX_TOKEN_SECRET);
+  const stream = await Video.LiveStreams.create({
+    new_asset_settings: { playback_policy: "public" },
+    playback_policy: "public"
+  });
+  return {
+    key: stream.stream_key,
+    playbackId: (_a = stream.playback_ids) == null ? void 0 : _a.map((e) => e.id)
+  };
+});
+
+const getKey$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: getKey
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const Directus$1 = DirectusSdk.Directus || DirectusSdk.default || DirectusSdk;

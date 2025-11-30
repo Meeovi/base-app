@@ -3,6 +3,9 @@ import type { Serialize, Simplify } from "nitropack/types";
 declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
+    '/api/getKey': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/getKey').default>>>>
+    }
     '/api/upload-video': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/upload-video.post').default>>>>
     }
@@ -23,6 +26,9 @@ declare module "nitropack/types" {
     }
     '/__nuxt_island/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/#internal/nuxt/island-renderer').default>>>>
+    }
+    '/mcp': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/handler').default>>>>
     }
     '/_i18n/:hash/:locale/messages.json': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/server/routes/messages').default>>>>

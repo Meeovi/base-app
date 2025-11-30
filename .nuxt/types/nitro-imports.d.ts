@@ -28,6 +28,10 @@ declare global {
   const defineI18nLocale: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/shared').defineI18nLocale
   const defineI18nLocaleDetector: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/server').defineI18nLocaleDetector
   const defineLazyEventHandler: typeof import('../../node_modules/h3').defineLazyEventHandler
+  const defineMcpHandler: typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/definitions').defineMcpHandler
+  const defineMcpPrompt: typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/definitions').defineMcpPrompt
+  const defineMcpResource: typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/definitions').defineMcpResource
+  const defineMcpTool: typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/definitions').defineMcpTool
   const defineNitroErrorHandler: typeof import('../../node_modules/nitropack/dist/runtime/internal/error/utils').defineNitroErrorHandler
   const defineNitroPlugin: typeof import('../../node_modules/nitropack/dist/runtime/internal/plugin').defineNitroPlugin
   const defineNodeListener: typeof import('../../node_modules/h3').defineNodeListener
@@ -42,6 +46,7 @@ declare global {
   const defuReplaceArray: typeof import('../../node_modules/nuxt-security/dist/utils/merge').defuReplaceArray
   const deleteCookie: typeof import('../../node_modules/h3').deleteCookie
   const dynamicEventHandler: typeof import('../../node_modules/h3').dynamicEventHandler
+  const errorResult: typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/definitions').errorResult
   const eventHandler: typeof import('../../node_modules/h3').eventHandler
   const fetchWithEvent: typeof import('../../node_modules/h3').fetchWithEvent
   const firebaseAdmin: typeof import('../../layers/auth-app/server/utils/firebaseAdmin').default
@@ -83,6 +88,7 @@ declare global {
   const getValidatedRouterParams: typeof import('../../node_modules/h3').getValidatedRouterParams
   const handleCacheHeaders: typeof import('../../node_modules/h3').handleCacheHeaders
   const handleCors: typeof import('../../node_modules/h3').handleCors
+  const imageResult: typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/definitions').imageResult
   const isCorsOriginAllowed: typeof import('../../node_modules/h3').isCorsOriginAllowed
   const isError: typeof import('../../node_modules/h3').isError
   const isEvent: typeof import('../../node_modules/h3').isEvent
@@ -91,6 +97,7 @@ declare global {
   const isPreflightRequest: typeof import('../../node_modules/h3').isPreflightRequest
   const isStream: typeof import('../../node_modules/h3').isStream
   const isWebResponse: typeof import('../../node_modules/h3').isWebResponse
+  const jsonResult: typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/definitions').jsonResult
   const lazyEventHandler: typeof import('../../node_modules/h3').lazyEventHandler
   const nitroPlugin: typeof import('../../node_modules/nitropack/dist/runtime/internal/plugin').nitroPlugin
   const parseCookies: typeof import('../../node_modules/h3').parseCookies
@@ -123,6 +130,7 @@ declare global {
   const setResponseHeaders: typeof import('../../node_modules/h3').setResponseHeaders
   const setResponseStatus: typeof import('../../node_modules/h3').setResponseStatus
   const splitCookiesString: typeof import('../../node_modules/h3').splitCookiesString
+  const textResult: typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/definitions').textResult
   const toEventHandler: typeof import('../../node_modules/h3').toEventHandler
   const toNodeListener: typeof import('../../node_modules/h3').toNodeListener
   const toPlainHandler: typeof import('../../node_modules/h3').toPlainHandler
@@ -163,6 +171,7 @@ export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsUR
 export { defineAppConfig } from 'C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@nuxt/nitro-server/dist/runtime/utils/config';
 export { useImage } from 'C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@nuxt/image/dist/runtime/server/utils/image';
 export { defuReplaceArray } from 'C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/nuxt-security/dist/utils/merge';
+export { defineMcpTool, defineMcpResource, defineMcpPrompt, defineMcpHandler, textResult, jsonResult, errorResult, imageResult } from 'C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/definitions';
 export { defineI18nLocale, defineI18nConfig } from 'C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@nuxtjs/i18n/dist/runtime/composables/shared';
 export { defineI18nLocaleDetector } from 'C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@nuxtjs/i18n/dist/runtime/composables/server';
 export { getCookieLocale, getHeaderLanguage, getHeaderLanguages, getHeaderLocale, getHeaderLocales, getPathLocale, getQueryLocale, setCookieLocale, tryCookieLocale, tryHeaderLocale, tryHeaderLocales, tryPathLocale, tryQueryLocale } from 'C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@intlify/utils/dist/h3';

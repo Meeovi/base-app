@@ -159,6 +159,20 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
 
       sri: boolean,
    },
+
+   mcp: {
+      enabled: boolean,
+
+      route: string,
+
+      browserRedirect: string,
+
+      name: string,
+
+      version: string,
+
+      dir: string,
+   },
   }
   interface SharedPublicRuntimeConfig {
    authSecret: string,
@@ -262,10 +276,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
    minioUser: string,
 
    minioPass: string,
-
-   supabaseUrl: string,
-
-   supabaseAnonKey: string,
 
    gtagId: string,
 

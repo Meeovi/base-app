@@ -26,7 +26,7 @@
         "../node_modules/@unhead/vue"
       ],
       "@nuxt/devtools": [
-        "../node_modules/nuxt/node_modules/@nuxt/devtools"
+        "../node_modules/@nuxt/devtools"
       ],
       "vue": [
         "../node_modules/vue"
@@ -214,6 +214,24 @@
       ],
       "#internal-i18n-types": [
         "../node_modules/@nuxtjs/i18n/dist/types"
+      ],
+      "@maas/vue-equipment/plugins": [
+        "../node_modules/@maas/vue-equipment/dist/plugins"
+      ],
+      "@maas/vue-equipment/plugins/*": [
+        "../node_modules/@maas/vue-equipment/dist/plugins/*"
+      ],
+      "@maas/vue-equipment/composables": [
+        "../node_modules/@maas/vue-equipment/dist/composables"
+      ],
+      "@maas/vue-equipment/composables/*": [
+        "../node_modules/@maas/vue-equipment/dist/composables/*"
+      ],
+      "@maas/vue-equipment/utils": [
+        "../node_modules/@maas/vue-equipment/dist/utils"
+      ],
+      "@maas/vue-equipment/utils/*": [
+        "../node_modules/@maas/vue-equipment/dist/utils/*"
       ],
       "#vue-router": [
         "../node_modules/vue-router"

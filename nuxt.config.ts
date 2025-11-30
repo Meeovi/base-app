@@ -1,8 +1,12 @@
 import {
   useLayers
 } from 'nuxt-layers-utils'
-import { fileURLToPath } from 'node:url'
-import { URL } from 'node:url'
+import {
+  fileURLToPath
+} from 'node:url'
+import {
+  URL
+} from 'node:url'
 
 const layers = useLayers(__dirname, {
   commerce: 'layers/commerce-app',
@@ -71,16 +75,7 @@ export default defineNuxtConfig({
     'assets/styles/styles.css',
   ],
 
-  modules: [
-    "@nuxt/image",
-    '@nuxtjs/tailwindcss',
-    "@storefront-ui/nuxt",
-    'vuetify-nuxt-module',
-    '@pinia/nuxt',
-    '@vueuse/nuxt',
-    '@nuxtjs/i18n',
-    "nuxt-security",
-  ],
+  modules: ["@nuxt/image", '@nuxtjs/tailwindcss', "@storefront-ui/nuxt", 'vuetify-nuxt-module', '@pinia/nuxt', '@vueuse/nuxt', '@nuxtjs/i18n', "nuxt-security", '@maas/vue-equipment/nuxt', '@nuxtjs/mcp-toolkit'],
 
   security: {
     headers: {
@@ -92,6 +87,16 @@ export default defineNuxtConfig({
       crossOriginEmbedderPolicy: false,
       permissionsPolicy: false
     }
+  },
+
+  mcp: {
+    name: 'Meeovi MCP Server',
+    version: '1.0.0',
+  },
+
+  vueEquipment: {
+    plugins: ['MagicDrawer', 'MagicMenu', 'MagicModal', 'MagicCommand', 'MagicCookie', 'MagicDraggable', 'MagicMenu', 'MagicEmitter', 'MagicError', 'MagicMarquee', 'MagicPie', 'MagicNoise', 'MagicPlayer', 'MagicScroll', 'MagicToast'],
+    composables: ['useCountdown', 'useScrollTo', 'useuseEasings', 'useMetaViewport', 'useScrollLockPadding'],
   },
 
   vuetify: {
@@ -248,6 +253,14 @@ export default defineNuxtConfig({
       ]
     },
     compressPublicAssets: true,
+    storage: {
+      redis: {
+        driver: 'redis',
+        port: 6379,
+        host: process.env.REDIS_HOST || '',
+        password: process.env.REDIS_PASSWORD || '',
+      }
+    }
   },
 
   compatibilityDate: '2025-02-22',

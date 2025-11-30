@@ -1,167 +1,210 @@
 <template>
-  <div>
-    <div class="tiptap-toolbar">
-      <div class="tiptap-toolbar-left">
-        <v-btn @click.prevent="toggleBold" :class="{ active: editor && editor.isActive && editor.isActive('bold') }">Bold</v-btn>
-        <v-btn @click.prevent="toggleItalic" :class="{ active: editor && editor.isActive && editor.isActive('italic') }">Italic</v-btn>
-        <v-btn @click.prevent="toggleHeading">H2</v-btn>
-        <v-btn @click.prevent="toggleBulletList">• List</v-btn>
-        <v-btn @click.prevent="toggleOrderedList">1. List</v-btn>
-        <v-btn @click.prevent="setLink">Link</v-btn>
+  <div v-if="editor" class="container">
+    <div class="control-group">
+      <div class="button-group">
+        <v-btn @click="editor.chain().focus().toggleBold().run()"
+          :disabled="!editor.can().chain().focus().toggleBold().run()"
+          :class="{ 'is-active': editor.isActive('bold') }">
+          Bold
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleItalic().run()"
+          :disabled="!editor.can().chain().focus().toggleItalic().run()"
+          :class="{ 'is-active': editor.isActive('italic') }">
+          Italic
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleStrike().run()"
+          :disabled="!editor.can().chain().focus().toggleStrike().run()"
+          :class="{ 'is-active': editor.isActive('strike') }">
+          Strike
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleCode().run()"
+          :disabled="!editor.can().chain().focus().toggleCode().run()"
+          :class="{ 'is-active': editor.isActive('code') }">
+          Code
+        </v-btn>
+        <v-btn @click="editor.chain().focus().unsetAllMarks().run()">Clear marks</v-btn>
+        <v-btn @click="editor.chain().focus().clearNodes().run()">Clear nodes</v-btn>
+        <v-btn @click="editor.chain().focus().setParagraph().run()"
+          :class="{ 'is-active': editor.isActive('paragraph') }">
+          Paragraph
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
+          :class="{ 'is-active': editor.isActive('heading', { level: 1 }) }">
+          H1
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
+          :class="{ 'is-active': editor.isActive('heading', { level: 2 }) }">
+          H2
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
+          :class="{ 'is-active': editor.isActive('heading', { level: 3 }) }">
+          H3
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleHeading({ level: 4 }).run()"
+          :class="{ 'is-active': editor.isActive('heading', { level: 4 }) }">
+          H4
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleHeading({ level: 5 }).run()"
+          :class="{ 'is-active': editor.isActive('heading', { level: 5 }) }">
+          H5
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
+          :class="{ 'is-active': editor.isActive('heading', { level: 6 }) }">
+          H6
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleBulletList().run()"
+          :class="{ 'is-active': editor.isActive('bulletList') }">
+          Bullet list
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleOrderedList().run()"
+          :class="{ 'is-active': editor.isActive('orderedList') }">
+          Ordered list
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleCodeBlock().run()"
+          :class="{ 'is-active': editor.isActive('codeBlock') }">
+          Code block
+        </v-btn>
+        <v-btn @click="editor.chain().focus().toggleBlockquote().run()"
+          :class="{ 'is-active': editor.isActive('blockquote') }">
+          Blockquote
+        </v-btn>
+        <v-btn @click="editor.chain().focus().setHorizontalRule().run()">Horizontal rule</v-btn>
+        <v-btn @click="editor.chain().focus().setHardBreak().run()">Hard break</v-btn>
+        <v-btn @click="editor.chain().focus().undo().run()" :disabled="!editor.can().chain().focus().undo().run()">
+          Undo
+        </v-btn>
+        <v-btn @click="editor.chain().focus().redo().run()" :disabled="!editor.can().chain().focus().redo().run()">
+          Redo
+        </v-btn>
+        <v-btn @click="editor.chain().focus().setColor('#958DF1').run()"
+          :class="{ 'is-active': editor.isActive('textStyle', { color: '#958DF1' }) }">
+          Purple
+        </v-btn>
       </div>
     </div>
-
-    <div class="tiptap-editor">
-      <editor-content :editor="editor" />
-    </div>
+    <editor-content :editor="editor" />
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
-import { Editor, EditorContent } from '@tiptap/vue-3'
-import StarterKit from '@tiptap/starter-kit'
-import Image from '@tiptap/extension-image'
-import Link from '@tiptap/extension-link'
+<script setup>
+  import {
+    ref,
+    onMounted,
+    onBeforeUnmount
+  } from 'vue'
+  import {
+    Editor,
+    EditorContent
+  } from '@tiptap/vue-3'
+  import StarterKit from '@tiptap/starter-kit'
 
-const props = withDefaults(defineProps<{ modelValue?: string, enableImageUpload?: boolean, extraExtensions?: any[] }>(), { modelValue: '', enableImageUpload: true, extraExtensions: () => [] as any[] })
-const emit = defineEmits(['update:modelValue'])
+  const editor = ref(null)
 
-const editor = ref<any>(null)
-const fileInput = ref<HTMLInputElement | null>(null)
+  onMounted(() => {
+    editor.value = new Editor({
+      content: "",
+      extensions: [StarterKit],
+    })
+  })
 
-const runtimeConfig = useRuntimeConfig()
-
-const buildExtensions = (): any[] => {
-  const extras = props.extraExtensions || []
-  const exts: any[] = [StarterKit]
-  // allow future extensions to be passed in
-  if (Array.isArray(extras) && extras.length) exts.push(...extras)
-  if (props.enableImageUpload) exts.push(Image)
-  // include Link extension so link toolbar works
-  exts.push(Link)
-  return exts
-}
-
-onMounted(() => {
-  editor.value = new Editor({
-    content: props.modelValue ?? '',
-    // cast to any to avoid TypeScript generic incompatibility between different extension option types
-    extensions: buildExtensions() as any,
-    onUpdate: ({ editor }: any) => {
-      try {
-        emit('update:modelValue', editor.getHTML())
-      } catch (e) {
-        // ignore
-      }
+  onBeforeUnmount(() => {
+    if (editor.value) {
+      editor.value.destroy()
+      editor.value = null
     }
   })
-})
-
-watch(() => props.modelValue, (val) => {
-  if (!editor.value) return
-  const current = editor.value.getHTML()
-  if (val == null) val = ''
-  if (val !== current) {
-    editor.value.commands.setContent(val, false)
-  }
-})
-
-onBeforeUnmount(() => {
-  try { editor.value?.destroy() } catch (e) { /* ignore */ }
-})
-
-const triggerFile = () => {
-  try { fileInput.value?.click() } catch (e) { /* ignore */ }
-}
-
-const onFileChange = async (ev: Event) => {
-  const input = ev.target as HTMLInputElement
-  const file = input?.files?.[0]
-  if (!file) return
-    try {
-    const uploaded = await uploadFileToDirectus(file)
-    const up = uploaded as any
-    if (up?.data?.id) {
-      const directusUrl = (runtimeConfig.public as any).directus?.url || ''
-      const src = `${directusUrl.replace(/\/$/, '')}/assets/${up.data.id}`
-      // insert image into editor
-      editor.value.chain().focus().setImage({ src }).run()
-      // emit updated HTML
-      emit('update:modelValue', editor.value.getHTML())
-    }
-  } catch (err) {
-    console.error('TiptapEditor image upload failed', err)
-  } finally {
-    // reset input
-    if (fileInput.value) fileInput.value.value = ''
-  }
-}
-
-const uploadFileToDirectus = async (file: File): Promise<any> => {
-  const cfg = ((runtimeConfig.public as any).directus) || {}
-  const url = String((cfg as any).url || '')
-  const token = String((cfg as any).auth?.token || '')
-  if (!url) throw new Error('Directus url not configured')
-  const fd = new FormData()
-  fd.append('file', file, file.name)
-  try {
-    const res = await $fetch(url.replace(/\/$/, '') + '/files', {
-      method: 'POST',
-      body: fd,
-      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
-    })
-    // Directus returns { data: { ... } }
-    return res
-  } catch (e) {
-    console.error('uploadFileToDirectus error', e)
-    throw e
-  }
-}
-
-// Toolbar command helpers
-const toggleBold = () => {
-  if (!editor.value) return
-  editor.value.chain().focus().toggleBold().run()
-}
-
-const toggleItalic = () => {
-  if (!editor.value) return
-  editor.value.chain().focus().toggleItalic().run()
-}
-
-const toggleHeading = () => {
-  if (!editor.value) return
-  editor.value.chain().focus().toggleHeading({ level: 2 }).run()
-}
-
-const toggleBulletList = () => {
-  if (!editor.value) return
-  editor.value.chain().focus().toggleBulletList().run()
-}
-
-const toggleOrderedList = () => {
-  if (!editor.value) return
-  editor.value.chain().focus().toggleOrderedList().run()
-}
-
-const toggleCodeBlock = () => {
-  if (!editor.value) return
-  editor.value.chain().focus().toggleCodeBlock().run()
-}
-
-const setLink = () => {
-  if (!editor.value) return
-  const url = window.prompt('Enter URL')
-  if (!url) return
-  editor.value.chain().focus().extendMarkRange('link').setLink({ href: url }).run()
-}
 </script>
 
-<style scoped>
-.tiptap-toolbar{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
-.tiptap-toolbar-left, .tiptap-toolbar-right{display:flex;gap:6px}
-.tiptap-toolbar v-btn{padding:6px 8px;border:1px solid #ddd;background:#fff;border-radius:4px;cursor:pointer}
-.tiptap-toolbar v-btn.active{background:#eee}
-.tiptap-editor{border:1px solid #e6e6e6;padding:12px;border-radius:6px;min-height:180px}
+<style lang="scss" scoped>
+  /* Basic editor styles */
+  .tiptap {
+    :first-child {
+      margin-top: 0;
+    }
+
+    /* List styles */
+    ul,
+    ol {
+      padding: 0 1rem;
+      margin: 1.25rem 1rem 1.25rem 0.4rem;
+
+      li p {
+        margin-top: 0.25em;
+        margin-bottom: 0.25em;
+      }
+    }
+
+    /* Heading styles */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      line-height: 1.1;
+      margin-top: 2.5rem;
+      text-wrap: pretty;
+    }
+
+    h1,
+    h2 {
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-size: 1rem;
+    }
+
+    /* Code and preformatted text styles */
+    code {
+      background-color: var(--purple-light);
+      border-radius: 0.4rem;
+      color: var(--black);
+      font-size: 0.85rem;
+      padding: 0.25em 0.3em;
+    }
+
+    pre {
+      background: var(--black);
+      border-radius: 0.5rem;
+      color: var(--white);
+      font-family: 'JetBrainsMono', monospace;
+      margin: 1.5rem 0;
+      padding: 0.75rem 1rem;
+
+      code {
+        background: none;
+        color: inherit;
+        font-size: 0.8rem;
+        padding: 0;
+      }
+    }
+
+    blockquote {
+      border-left: 3px solid var(--gray-3);
+      margin: 1.5rem 0;
+      padding-left: 1rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--gray-2);
+      margin: 2rem 0;
+    }
+  }
 </style>

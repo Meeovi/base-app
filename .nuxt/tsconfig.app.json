@@ -26,7 +26,7 @@
         "../node_modules/@unhead/vue"
       ],
       "@nuxt/devtools": [
-        "../node_modules/nuxt/node_modules/@nuxt/devtools"
+        "../node_modules/@nuxt/devtools"
       ],
       "vue": [
         "../node_modules/vue"
@@ -218,6 +218,24 @@
       "#internal-i18n-types": [
         "../node_modules/@nuxtjs/i18n/dist/types"
       ],
+      "@maas/vue-equipment/plugins": [
+        "../node_modules/@maas/vue-equipment/dist/plugins"
+      ],
+      "@maas/vue-equipment/plugins/*": [
+        "../node_modules/@maas/vue-equipment/dist/plugins/*"
+      ],
+      "@maas/vue-equipment/composables": [
+        "../node_modules/@maas/vue-equipment/dist/composables"
+      ],
+      "@maas/vue-equipment/composables/*": [
+        "../node_modules/@maas/vue-equipment/dist/composables/*"
+      ],
+      "@maas/vue-equipment/utils": [
+        "../node_modules/@maas/vue-equipment/dist/utils"
+      ],
+      "@maas/vue-equipment/utils/*": [
+        "../node_modules/@maas/vue-equipment/dist/utils/*"
+      ],
       "#vue-router": [
         "../node_modules/vue-router"
       ],
@@ -294,6 +312,8 @@
     "../node_modules/@vueuse/nuxt/node_modules",
     "../node_modules/@nuxtjs/i18n/node_modules",
     "../node_modules/nuxt-security/node_modules",
+    "../node_modules/@maas/vue-equipment/node_modules",
+    "../node_modules/@nuxtjs/mcp-toolkit/node_modules",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist",
@@ -311,6 +331,62 @@
     "../node_modules/dist/runtime/server",
     "../node_modules/*.*",
     "../node_modules/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicDrawer/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicDrawer/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicDrawer/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicDrawer/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicModal/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicModal/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicModal/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicModal/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicDraggable/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicDraggable/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicDraggable/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicDraggable/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicEmitter/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicEmitter/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicEmitter/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicEmitter/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicError/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicError/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicError/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicError/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicMarquee/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicMarquee/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicMarquee/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicMarquee/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicPie/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicPie/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicPie/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicPie/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicNoise/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicNoise/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicNoise/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicNoise/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/dist/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/dist/runtime/server",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/*.*",
+    "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/dist/*.*",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime/server",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/*.*",

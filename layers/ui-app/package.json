@@ -10,8 +10,22 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "nuxt": "^4.2.1",
-    "vue": "^3.5.25",
-    "vue-router": "^4.6.3"
+    "@tiptap/core": "^3.11.1",
+    "@tiptap/extension-highlight": "^3.11.1",
+    "@tiptap/extension-horizontal-rule": "^3.11.1",
+    "@tiptap/extension-image": "^3.11.1",
+    "@tiptap/extension-list": "^3.11.1",
+    "@tiptap/extension-subscript": "^3.11.1",
+    "@tiptap/extension-superscript": "^3.11.1",
+    "@tiptap/extension-text-align": "^3.11.1",
+    "@tiptap/extension-typography": "^3.11.1",
+    "@tiptap/extensions": "^3.11.1",
+    "@tiptap/pm": "^3.11.1",
+    "@tiptap/starter-kit": "^3.11.1",
+    "lodash.throttle": "^4.1.1",
+    "nuxt": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/lodash.throttle": "^4.1.9"
   }
 }

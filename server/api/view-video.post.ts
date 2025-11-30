@@ -1,4 +1,5 @@
 import { useDirectusClient } from '../directus'
+import { defineEventHandler, readBody } from 'h3'
 
 export default defineEventHandler(async (event) => {
   const { videoId } = await readBody(event)
