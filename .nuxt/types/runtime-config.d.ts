@@ -253,6 +253,10 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       currency: string,
    },
 
+   NUXT_PROJECT_ID: string,
+
+   NUXT_PUBLIC_SITE_URL: string,
+
    directusGraphql: string,
 
    indexName: string,

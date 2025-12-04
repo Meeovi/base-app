@@ -161,7 +161,6 @@ interface _GlobalComponents {
   'Forms[collection]': typeof import("../../layers/ui-app/app/components/forms/[collection].vue")['default']
   'BlocksLeafletMap': typeof import("../../layers/social-app/app/components/blocks/LeafletMap.vue")['default']
   'BlocksComments': typeof import("../../layers/social-app/app/components/blocks/comments.vue")['default']
-  'BlocksDocument': typeof import("../../layers/social-app/app/components/blocks/document.vue")['default']
   'BlocksEventsAbout': typeof import("../../layers/social-app/app/components/blocks/events/about.vue")['default']
   'BlocksFlag': typeof import("../../layers/social-app/app/components/blocks/flag.vue")['default']
   'BlocksGroupsAbout': typeof import("../../layers/social-app/app/components/blocks/groups/about.vue")['default']
@@ -171,15 +170,13 @@ interface _GlobalComponents {
   'BlocksGroupsMembers': typeof import("../../layers/social-app/app/components/blocks/groups/members.vue")['default']
   'BlocksGroupsProducts': typeof import("../../layers/social-app/app/components/blocks/groups/products.vue")['default']
   'BlocksGroupsSpaceLists': typeof import("../../layers/social-app/app/components/blocks/groups/spaceLists.vue")['default']
-  'BlocksPhoto': typeof import("../../layers/social-app/app/components/blocks/photo.vue")['default']
   'BlocksReactions': typeof import("../../layers/social-app/app/components/blocks/reactions.vue")['default']
   'BlocksRepost': typeof import("../../layers/social-app/app/components/blocks/repost.vue")['default']
   'BlocksShare': typeof import("../../layers/social-app/app/components/blocks/share.vue")['default']
   'BlocksStickers': typeof import("../../layers/social-app/app/components/blocks/stickers.vue")['default']
   'BlocksVideo': typeof import("../../layers/social-app/app/components/blocks/video.vue")['default']
   'FeaturesBirthdays': typeof import("../../layers/social-app/app/components/features/birthdays.vue")['default']
-  'FeaturesEventEventsHome': typeof import("../../layers/social-app/app/components/features/event/eventsHome.vue")['default']
-  'FeaturesEventYourEvents': typeof import("../../layers/social-app/app/components/features/event/your-events.vue")['default']
+  'FeaturesEventYourEvents': typeof import("../../layers/social-app/app/components/features/event/yourEvents.vue")['default']
   'FeaturesEvents': typeof import("../../layers/social-app/app/components/features/events.vue")['default']
   'FeaturesFeedAddPost': typeof import("../../layers/social-app/app/components/features/feed/add-post.vue")['default']
   'FeaturesFeedPosts': typeof import("../../layers/social-app/app/components/features/feed/posts.vue")['default']
@@ -220,6 +217,16 @@ interface _GlobalComponents {
   'RelatedShort': typeof import("../../layers/social-app/app/components/related/short.vue")['default']
   'RelatedSpace': typeof import("../../layers/social-app/app/components/related/space.vue")['default']
   'RelatedTag': typeof import("../../layers/social-app/app/components/related/tag.vue")['default']
+  'BlocksAutocomplete': typeof import("../../layers/search-app/app/components/blocks/autocomplete.vue")['default']
+  'FeaturesAiSearch': typeof import("../../layers/search-app/app/components/features/aiSearch.vue")['default']
+  'FeaturesAllSearch': typeof import("../../layers/search-app/app/components/features/allSearch.vue")['default']
+  'FeaturesImageSearch': typeof import("../../layers/search-app/app/components/features/imageSearch.vue")['default']
+  'FeaturesVideoSearch': typeof import("../../layers/search-app/app/components/features/videoSearch.vue")['default']
+  'Filters': typeof import("../../layers/search-app/app/components/filters/filters.vue")['default']
+  'FeaturesNowPlaying': typeof import("../../layers/media-app/app/components/features/nowPlaying.vue")['default']
+  'FeaturesPlaylist': typeof import("../../layers/media-app/app/components/features/playlist.vue")['default']
+  'FeaturesRadioPlayer': typeof import("../../layers/media-app/app/components/features/radioPlayer.vue")['default']
+  'FeaturesVideoPlayer': typeof import("../../layers/media-app/app/components/features/videoPlayer.vue")['default']
   'FeaturesArchived': typeof import("../../layers/lists-app/app/components/features/archived.vue")['default']
   'FeaturesBookmarks': typeof import("../../layers/lists-app/app/components/features/bookmarks.vue")['default']
   'FeaturesLists': typeof import("../../layers/lists-app/app/components/features/lists.vue")['default']
@@ -760,7 +767,6 @@ interface _GlobalComponents {
   'LazyForms[collection]': LazyComponent<typeof import("../../layers/ui-app/app/components/forms/[collection].vue")['default']>
   'LazyBlocksLeafletMap': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/LeafletMap.vue")['default']>
   'LazyBlocksComments': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/comments.vue")['default']>
-  'LazyBlocksDocument': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/document.vue")['default']>
   'LazyBlocksEventsAbout': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/events/about.vue")['default']>
   'LazyBlocksFlag': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/flag.vue")['default']>
   'LazyBlocksGroupsAbout': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/groups/about.vue")['default']>
@@ -770,15 +776,13 @@ interface _GlobalComponents {
   'LazyBlocksGroupsMembers': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/groups/members.vue")['default']>
   'LazyBlocksGroupsProducts': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/groups/products.vue")['default']>
   'LazyBlocksGroupsSpaceLists': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/groups/spaceLists.vue")['default']>
-  'LazyBlocksPhoto': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/photo.vue")['default']>
   'LazyBlocksReactions': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/reactions.vue")['default']>
   'LazyBlocksRepost': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/repost.vue")['default']>
   'LazyBlocksShare': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/share.vue")['default']>
   'LazyBlocksStickers': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/stickers.vue")['default']>
   'LazyBlocksVideo': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/video.vue")['default']>
   'LazyFeaturesBirthdays': LazyComponent<typeof import("../../layers/social-app/app/components/features/birthdays.vue")['default']>
-  'LazyFeaturesEventEventsHome': LazyComponent<typeof import("../../layers/social-app/app/components/features/event/eventsHome.vue")['default']>
-  'LazyFeaturesEventYourEvents': LazyComponent<typeof import("../../layers/social-app/app/components/features/event/your-events.vue")['default']>
+  'LazyFeaturesEventYourEvents': LazyComponent<typeof import("../../layers/social-app/app/components/features/event/yourEvents.vue")['default']>
   'LazyFeaturesEvents': LazyComponent<typeof import("../../layers/social-app/app/components/features/events.vue")['default']>
   'LazyFeaturesFeedAddPost': LazyComponent<typeof import("../../layers/social-app/app/components/features/feed/add-post.vue")['default']>
   'LazyFeaturesFeedPosts': LazyComponent<typeof import("../../layers/social-app/app/components/features/feed/posts.vue")['default']>
@@ -819,6 +823,16 @@ interface _GlobalComponents {
   'LazyRelatedShort': LazyComponent<typeof import("../../layers/social-app/app/components/related/short.vue")['default']>
   'LazyRelatedSpace': LazyComponent<typeof import("../../layers/social-app/app/components/related/space.vue")['default']>
   'LazyRelatedTag': LazyComponent<typeof import("../../layers/social-app/app/components/related/tag.vue")['default']>
+  'LazyBlocksAutocomplete': LazyComponent<typeof import("../../layers/search-app/app/components/blocks/autocomplete.vue")['default']>
+  'LazyFeaturesAiSearch': LazyComponent<typeof import("../../layers/search-app/app/components/features/aiSearch.vue")['default']>
+  'LazyFeaturesAllSearch': LazyComponent<typeof import("../../layers/search-app/app/components/features/allSearch.vue")['default']>
+  'LazyFeaturesImageSearch': LazyComponent<typeof import("../../layers/search-app/app/components/features/imageSearch.vue")['default']>
+  'LazyFeaturesVideoSearch': LazyComponent<typeof import("../../layers/search-app/app/components/features/videoSearch.vue")['default']>
+  'LazyFilters': LazyComponent<typeof import("../../layers/search-app/app/components/filters/filters.vue")['default']>
+  'LazyFeaturesNowPlaying': LazyComponent<typeof import("../../layers/media-app/app/components/features/nowPlaying.vue")['default']>
+  'LazyFeaturesPlaylist': LazyComponent<typeof import("../../layers/media-app/app/components/features/playlist.vue")['default']>
+  'LazyFeaturesRadioPlayer': LazyComponent<typeof import("../../layers/media-app/app/components/features/radioPlayer.vue")['default']>
+  'LazyFeaturesVideoPlayer': LazyComponent<typeof import("../../layers/media-app/app/components/features/videoPlayer.vue")['default']>
   'LazyFeaturesArchived': LazyComponent<typeof import("../../layers/lists-app/app/components/features/archived.vue")['default']>
   'LazyFeaturesBookmarks': LazyComponent<typeof import("../../layers/lists-app/app/components/features/bookmarks.vue")['default']>
   'LazyFeaturesLists': LazyComponent<typeof import("../../layers/lists-app/app/components/features/lists.vue")['default']>

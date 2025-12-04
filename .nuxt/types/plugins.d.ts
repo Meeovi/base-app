@@ -39,6 +39,9 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/nuxt-vuefire/dist/runtime/app-check/plugin.client.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/warn.dev.server.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/check-if-layout-used.js")> &
+  InjectionType<typeof import("../../layers/auth-app/app/plugins/auth-init")> &
+  InjectionType<typeof import("../../layers/auth-app/app/plugins/session-refresh")> &
+  InjectionType<typeof import("../../layers/social-app/app/plugins/reactions-init.client")> &
   InjectionType<typeof import("../../app/plugins/apollo")> &
   InjectionType<typeof import("../../app/plugins/directus")> &
   InjectionType<typeof import("../../app/plugins/gtag.client.js")> &

@@ -27,6 +27,9 @@
    },
    "dependencies": {
       "@apollo/client": "^3.14.0",
+      "@atproto/api": "^0.18.3",
+      "@atproto/oauth-client": "^0.5.9",
+      "@atproto/oauth-client-browser": "^0.3.35",
       "@aws-sdk/client-s3": "^3.927.0",
       "@directus/sdk": "^20.1.0",
       "@directus/types": "^13.2.3",

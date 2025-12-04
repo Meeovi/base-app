@@ -43,12 +43,15 @@ export { fieldRegistry, interfaceRegistry, resolveFieldComponent } from '../app/
 export { supabase } from '../app/utils/supabase';
 export { getRelativeTime, getFriendlyDate, greetUser, toDateTime, subtractDates, monthsAbbr, destructureDate, getMonth, getDate, getDay } from '../app/utils/time';
 export { userName } from '../app/utils/user-name';
+export { resolveActorDid, resolveActorServiceEndpoint } from '../app/utils/utilActor';
 export { useVendureMutation } from '../layers/commerce-app/app/composables/useVendureMutation';
 export { useVendureQuery } from '../layers/commerce-app/app/composables/useVendureQuery';
 export { default as countryList } from '../layers/commerce-app/app/utils/countryList';
 export { formatPrice, convertPrice, getCurrencySymbol } from '../layers/commerce-app/app/utils/currency';
 export { getStripe } from '../layers/commerce-app/app/utils/stripe';
+export { useAuth } from '../layers/auth-app/app/composables/useAuth';
 export { useDirectusAuth } from '../layers/auth-app/app/composables/useDirectusAuth';
+export { useSessionRefresh } from '../layers/auth-app/app/composables/useSessionRefresh';
 export { isLoggedIn, getUser } from '../layers/auth-app/app/utils/auth';
 export { useNonce } from '../node_modules/nuxt-security/dist/runtime/composables/nonce';
 export { useFirebaseAuth, useCurrentUser, useFirestore, useDocument, useCollection, useDatabase, useDatabaseList, useDatabaseObject, useFirebaseStorage, useStorageFile, useStorageFileUrl, useStorageFileMetadata } from 'vuefire';

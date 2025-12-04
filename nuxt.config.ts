@@ -151,6 +151,10 @@ export default defineNuxtConfig({
       secretKey: process.env.NUXT_TURNSTILE_SECRET_KEY,
     },
     public: {
+      // ShareThis
+      NUXT_PROJECT_ID: process.env.NUXT_PROJECT_ID,
+      NUXT_PUBLIC_SITE_URL: process.env.NUXT_PUBLIC_SITE_URL,
+      
       // Directus
       directus: {
         url: process.env.DIRECTUS_URL,
