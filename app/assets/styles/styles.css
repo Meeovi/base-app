@@ -261,6 +261,15 @@ body {
     color: rgb(var(--v-theme-on-surface));
 }
 
+.rightTextColumn {
+    position: relative;
+    top: 45px;
+}
+
+.header1 .container-fluid {
+    padding-left: 0px;
+}
+
 /******************* Authentication CSS ********/
 
 .loginForm,
