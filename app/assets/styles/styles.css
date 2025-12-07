@@ -1003,6 +1003,40 @@ body {
     padding-top: 0;
 }
 
+.noteSubtitle {
+    position: relative;
+    top: 5px;
+}
+
+
+.postBar #st-1 {
+    top: 5px;
+    position: relative;
+}
+
+.postBar .st-count, .st-count {
+    color: white !important;
+}
+
+.postBar #st-1 .st-btn > svg {
+    height: 28px !important;
+}
+
+.social02 {
+    background-color: transparent !important;
+}
+
+.postReactions {
+    position: relative;
+    top: 3px;
+}
+
+.postFlag {
+    position: relative;
+    top: -8px;
+    color: black !important;
+}
+
 /****************** Messages Page **************/
 
 .messagePage {
