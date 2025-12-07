@@ -1,49 +1,78 @@
 <template>
   <div class="accountMenu">
-    <v-menu :location="location" transition="slide-y-transition">
-      <template v-slot:activator="{ props }">
-        <NuxtLink variant="flat" v-bind="props">
-          <v-icon start icon="fas:fa fa-user-circle"></v-icon>
-        </NuxtLink>
-      </template>
-      <v-list>
-        <v-row class="accountDropdown" v-if="isAuthenticated">
-          <v-col cols="12">
-            <v-toolbar :title="`Welcome, ${user?.first_name || user?.email}`" color="info"></v-toolbar>
-          </v-col>
-          <v-col cols="6">
-            <h6>{{ navSocial?.name }}</h6>
-            <br>
-            <v-divider></v-divider>
-            <div v-for="(item, index) in navSocial?.menus" :key="index">
-              <v-list-item :title="item?.name" :value="item?.name" :prepend-icon="item?.icon"
-                :href="item?.url"></v-list-item>
-            </div>
-          </v-col>
+    <v-btn class="relative" icon="fas fa-user-circle" variant="text" @click.stop="drawer = !drawer"
+      aria-label="Account"></v-btn>
+    <!-- Flyout Menu -->
+    <v-navigation-drawer v-model="drawer" location="right" temporary class="cart-flyout">
+      <v-card-title class="d-flex justify-space-between align-center">
+        <span>Account</span>
+        <v-btn icon="fas:fa fa-x" @click="drawer = false">
+        </v-btn>
+      </v-card-title>
 
-          <v-col cols="6">
-            <h6>{{ navcomm?.name }}</h6>
-            <br>
-            <v-divider></v-divider>
-            <div v-for="(item, index) in navcomm?.menus" :key="index">
-              <v-list-item :title="item?.name" :value="item?.name" :prepend-icon="item?.icon"
-                :href="item?.url"></v-list-item>
-            </div>
-          </v-col>
-          <v-col cols="12">
-            <v-list-item prepend-icon="fas:fa fa-upload" title="Upload Center" href="/upload"></v-list-item>
-          </v-col>
-          <v-list-item @click="initiateLogout" prepend-icon="fas:fa fa-sign-out-alt">
-            <v-list-item-title>Logout</v-list-item-title>
-          </v-list-item>
-        </v-row>
-        <v-row v-else>
-          <v-list-item prepend-icon="fas:fa fa-sign-in-alt">
-            <v-list-item-title><NuxtLink to="/auth/login">Login</NuxtLink></v-list-item-title>
-          </v-list-item>
-        </v-row>
-      </v-list>
-    </v-menu>
+      <v-divider></v-divider>
+
+      <div class="cart-items">
+        <template>
+          <v-list>
+            <v-row v-if="isAuthenticated">
+              <v-col cols="12">
+                <v-toolbar :title="`Welcome, ${user?.first_name || user?.email}`" color="info"></v-toolbar>
+              </v-col>
+              <v-col cols="12">
+                <v-sheet elevation="0">
+                  <v-tabs color="cyan">
+                    <v-tab value="one">{{ navSocial?.name }}</v-tab>
+                    <v-tab value="two">{{ navcomm?.name }}</v-tab>
+                    <!--<v-tab value="three">Item Three</v-tab>-->
+                  </v-tabs>
+
+                  <v-divider></v-divider>
+
+                  <v-tabs-window v-model="tab">
+                    <!--Social Links-->
+                    <v-tabs-window-item value="one">
+                      <div v-for="(item, index) in navSocial?.menus" :key="index">
+                        <v-list-item :title="item?.name" :value="item?.name" :prepend-icon="item?.icon"
+                          :href="item?.url"></v-list-item>
+                      </div>
+                    </v-tabs-window-item>
+
+                    <!--Commerce Links-->
+                    <v-tabs-window-item value="two">
+                      <div v-for="(item, index) in navcomm?.menus" :key="index">
+                        <v-list-item :title="item?.name" :value="item?.name" :prepend-icon="item?.icon"
+                          :href="item?.url"></v-list-item>
+                      </div>
+                    </v-tabs-window-item>
+
+                    <!-- Links-->
+                    <v-tabs-window-item value="three">
+                      <v-sheet class="pa-5" color="brown">Three</v-sheet>
+                    </v-tabs-window-item>
+                  </v-tabs-window>
+                </v-sheet>
+              </v-col>
+
+              <v-col cols="12">
+                <v-list-item prepend-icon="fas:fa fa-upload" title="Upload Center" href="/upload"></v-list-item>
+              </v-col>
+              <v-list-item @click="initiateLogout" prepend-icon="fas:fa fa-sign-out-alt">
+                <v-list-item-title>Logout</v-list-item-title>
+              </v-list-item>
+            </v-row>
+
+            <v-row v-else>
+              <v-list-item prepend-icon="fas:fa fa-sign-in-alt">
+                <v-list-item-title>
+                  <NuxtLink to="/auth/login">Login</NuxtLink>
+                </v-list-item-title>
+              </v-list-item>
+            </v-row>
+          </v-list>
+        </template>
+      </div>
+    </v-navigation-drawer>
 
     <v-dialog v-model="showLogoutConfirmation" max-width="300">
       <v-card>
@@ -66,46 +95,64 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
+  import {
+    ref,
+    onMounted
+  } from 'vue'
+  import {
+    useRouter
+  } from 'vue-router'
 
-const router = useRouter()
-const location = ref('bottom')
-const showLogoutConfirmation = ref(false)
+  const tab = ref(null)
+  const drawer = ref(false)
+  const router = useRouter()
+  const showLogoutConfirmation = ref(false)
 
-// Use the Directus auth composable
-const { user, isAuthenticated, signOut, getCurrentUser } = useDirectusAuth()
+  // Use the Directus auth composable
+  const {
+    user,
+    isAuthenticated,
+    signOut,
+    getCurrentUser
+  } = useDirectusAuth()
 
-// Initialize user on component mount
-onMounted(async () => {
-  const currentUser = await getCurrentUser()
-  if (currentUser) {
-    user.value = currentUser
+  // Initialize user on component mount
+  onMounted(async () => {
+    const currentUser = await getCurrentUser()
+    if (currentUser) {
+      user.value = currentUser
+    }
+  })
+
+  const {
+    $directus,
+    $readItem
+  } = useNuxtApp()
+  const route = useRoute()
+
+  const {
+    data: navSocial
+  } = await useAsyncData('navSocial', () => {
+    return $directus.request($readItem('navigation', '2'))
+  })
+
+  const {
+    data: navcomm
+  } = await useAsyncData('navcomm', () => {
+    return $directus.request($readItem('navigation', '3'))
+  })
+
+  const initiateLogout = () => {
+    showLogoutConfirmation.value = true
   }
-})
 
-const { $directus, $readItem } = useNuxtApp()
-const route = useRoute()
-
-const { data: navSocial } = await useAsyncData('navSocial', () => {
-  return $directus.request($readItem('navigation', '2'))
-})
-
-const { data: navcomm } = await useAsyncData('navcomm', () => {
-  return $directus.request($readItem('navigation', '3'))
-})
-
-const initiateLogout = () => {
-  showLogoutConfirmation.value = true
-}
-
-const confirmLogout = async () => {
-  try {
-    await signOut()
-    showLogoutConfirmation.value = false
-    await router.push('/auth/login')
-  } catch (error) {
-    console.error('Logout failed:', error)
+  const confirmLogout = async () => {
+    try {
+      await signOut()
+      showLogoutConfirmation.value = false
+      await router.push('/auth/login')
+    } catch (error) {
+      console.error('Logout failed:', error)
+    }
   }
-}
 </script>

@@ -1,9 +1,8 @@
 <template>
-  <div class="notifications-page">
-    <v-container>
+  <div class="notifications-page" style="width: 100%;">
       <v-row>
         <v-col cols="12">
-          <v-card>
+          <v-card elevation="0" style="width: 100%;">
             <v-card-title class="d-flex align-center">
               <span>Notifications</span>
               <v-spacer></v-spacer>
@@ -50,7 +49,6 @@
           </v-card>
         </v-col>
       </v-row>
-    </v-container>
   </div>
 </template>
 
@@ -61,7 +59,7 @@
   } from 'vue'
   import {
     useNotifications
-  } from '@/layers/ui-app/app/composables/globals/useNotifications'
+  } from '#ui/app/composables/globals/useNotifications'
 
   const {
     notifications,

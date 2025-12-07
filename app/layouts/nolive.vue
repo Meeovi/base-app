@@ -1,6 +1,6 @@
 <template>
   <v-responsive>
-    <v-app :theme="theme.global.name.value">
+    <v-app :theme="theme.change.value">
       <v-app-bar id="topnav">
         <template v-slot:prepend>
           <v-btn variant="flat" color="transparent" @click="drawer = !drawer">
@@ -152,23 +152,23 @@
 
     if (stored) {
       // Use saved preference
-      theme.global.name.value = stored
+      theme.change.value = stored
     } else {
       // No preference — follow system
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      theme.global.name.value = prefersDark ? 'dark' : 'light'
+      theme.change.value = prefersDark ? 'dark' : 'light'
     }
   })
 
   // Toggle between themes
   const toggleDark = () => {
-    theme.global.name.value =
+    theme.change.value =
       theme.global.current.value.dark ? 'light' : 'dark'
   }
 
   // Save preference whenever theme changes
   watch(
-    () => theme.global.name.value,
+    () => theme.change.value,
     (val) => {
       localStorage.setItem(STORAGE_KEY, val)
     }

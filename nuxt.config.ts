@@ -154,7 +154,7 @@ export default defineNuxtConfig({
       // ShareThis
       NUXT_PROJECT_ID: process.env.NUXT_PROJECT_ID,
       NUXT_PUBLIC_SITE_URL: process.env.NUXT_PUBLIC_SITE_URL,
-      
+
       // Directus
       directus: {
         url: process.env.DIRECTUS_URL,
@@ -246,6 +246,12 @@ export default defineNuxtConfig({
         ),
       }
     },
+    server: {
+      proxy: {
+        '/comentario.js': 'http://localhost:8083/comentario.js',
+        '/api/embed': 'http://localhost:8083/api/embed'
+      }
+    },
     logLevel: 'info',
     plugins: []
   },
@@ -264,6 +270,13 @@ export default defineNuxtConfig({
         host: process.env.REDIS_HOST || '',
         password: process.env.REDIS_PASSWORD || '',
       }
+    }
+  },
+
+  devServer: {
+    proxy: {
+      '/comentario.js': 'http://localhost:8083/comentario.js',
+      '/api/embed': 'http://localhost:8083/api/embed'
     }
   },
 

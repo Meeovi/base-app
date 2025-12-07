@@ -225,6 +225,8 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       },
    },
 
+   commentsUrl: string,
+
    commerceApiToken: string,
 
    ups: {

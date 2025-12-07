@@ -1,10 +1,10 @@
 <template>
   <div>
     <!-- Shopping Cart Button -->
-    <v-btn class="relative" icon="fas:fa fa-cart-shopping" variant="text" @click.stop="drawer = !drawer"
+    <v-btn class="relative" icon="fas fa-basket-shopping" variant="text" @click.stop="drawer = !drawer"
       aria-label="Shopping Cart">
-      <v-badge :content="totalQuantity" :value="totalQuantity" color="error" overlap />
     </v-btn>
+    <v-badge :content="totalQuantity" :value="totalQuantity" color="error" overlap />
 
     <!-- Cart Notification -->
     <v-snackbar v-model="cartNotification" timeout="2000" color="success">
