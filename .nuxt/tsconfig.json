@@ -55,6 +55,30 @@
       "vite/client": [
         "../node_modules/vite/client"
       ],
+      "@nuxtjs/robots": [
+        "../node_modules/@nuxtjs/robots"
+      ],
+      "@nuxtjs/sitemap": [
+        "../node_modules/@nuxtjs/sitemap"
+      ],
+      "nuxt-link-checker": [
+        "../node_modules/nuxt-link-checker"
+      ],
+      "nuxt-og-image": [
+        "../node_modules/nuxt-og-image"
+      ],
+      "nuxt-schema-org": [
+        "../node_modules/nuxt-schema-org"
+      ],
+      "nuxt-seo-utils": [
+        "../node_modules/nuxt-seo-utils"
+      ],
+      "nuxt-site-config": [
+        "../node_modules/nuxt-site-config"
+      ],
+      "@tiptap/vue-3": [
+        "../node_modules/@tiptap/vue-3"
+      ],
       "vue-i18n": [
         "../node_modules/vue-i18n/dist/vue-i18n",
         "../node_modules/vue-i18n"
@@ -108,40 +132,10 @@
         "../*"
       ],
       "#shared": [
-        "../shared"
+        "../layers/shared-app"
       ],
       "#shared/*": [
-        "../shared/*"
-      ],
-      "#commerce": [
-        "../layers/commerce-app"
-      ],
-      "#commerce/*": [
-        "../layers/commerce-app/*"
-      ],
-      "#lists": [
-        "../layers/lists-app"
-      ],
-      "#lists/*": [
-        "../layers/lists-app/*"
-      ],
-      "#social": [
-        "../layers/social-app"
-      ],
-      "#social/*": [
-        "../layers/social-app/*"
-      ],
-      "#auth": [
-        "../layers/auth-app"
-      ],
-      "#auth/*": [
-        "../layers/auth-app/*"
-      ],
-      "#ui": [
-        "../layers/ui-app"
-      ],
-      "#ui/*": [
-        "../layers/ui-app/*"
+        "../layers/shared-app/*"
       ],
       "#departments": [
         "../layers/departments-app"
@@ -149,11 +143,29 @@
       "#departments/*": [
         "../layers/departments-app/*"
       ],
-      "#layers/ui-app": [
-        "../layers/ui-app"
+      "#lists": [
+        "../layers/lists-app"
       ],
-      "#layers/ui-app/*": [
-        "../layers/ui-app/*"
+      "#lists/*": [
+        "../layers/lists-app/*"
+      ],
+      "#commerce": [
+        "../layers/commerce-app"
+      ],
+      "#commerce/*": [
+        "../layers/commerce-app/*"
+      ],
+      "#social": [
+        "../layers/social-app"
+      ],
+      "#social/*": [
+        "../layers/social-app/*"
+      ],
+      "#sellerDashboard": [
+        "../layers/seller-dashboard-app"
+      ],
+      "#sellerDashboard/*": [
+        "../layers/seller-dashboard-app/*"
       ],
       "#layers/social-app": [
         "../layers/social-app"
@@ -161,23 +173,17 @@
       "#layers/social-app/*": [
         "../layers/social-app/*"
       ],
-      "#layers/seller-dashboard-app": [
-        "../layers/seller-dashboard-app"
+      "#layers/shared-app": [
+        "../layers/shared-app"
       ],
-      "#layers/seller-dashboard-app/*": [
-        "../layers/seller-dashboard-app/*"
+      "#layers/shared-app/*": [
+        "../layers/shared-app/*"
       ],
-      "#layers/search-app": [
-        "../layers/search-app"
+      "#layers/commerce-app": [
+        "../layers/commerce-app"
       ],
-      "#layers/search-app/*": [
-        "../layers/search-app/*"
-      ],
-      "#layers/media-app": [
-        "../layers/media-app"
-      ],
-      "#layers/media-app/*": [
-        "../layers/media-app/*"
+      "#layers/commerce-app/*": [
+        "../layers/commerce-app/*"
       ],
       "#layers/lists-app": [
         "../layers/lists-app"
@@ -191,17 +197,11 @@
       "#layers/departments-app/*": [
         "../layers/departments-app/*"
       ],
-      "#layers/commerce-app": [
-        "../layers/commerce-app"
+      "#layers/seller-dashboard-app": [
+        "../layers/seller-dashboard-app"
       ],
-      "#layers/commerce-app/*": [
-        "../layers/commerce-app/*"
-      ],
-      "#layers/auth-app": [
-        "../layers/auth-app"
-      ],
-      "#layers/auth-app/*": [
-        "../layers/auth-app/*"
+      "#layers/seller-dashboard-app/*": [
+        "../layers/seller-dashboard-app/*"
       ],
       "#app": [
         "../node_modules/nuxt/dist/app"
@@ -211,24 +211,6 @@
       ],
       "vue-demi": [
         "../node_modules/nuxt/dist/app/compat/vue-demi"
-      ],
-      "#image": [
-        "../node_modules/@nuxt/image/dist/runtime"
-      ],
-      "#image/*": [
-        "../node_modules/@nuxt/image/dist/runtime/*"
-      ],
-      "#i18n": [
-        "../node_modules/@nuxtjs/i18n/dist/runtime/composables/index"
-      ],
-      "#i18n-kit": [
-        "../node_modules/@nuxtjs/i18n/dist/runtime/kit"
-      ],
-      "#i18n-kit/*": [
-        "../node_modules/@nuxtjs/i18n/dist/runtime/kit/*"
-      ],
-      "#internal-i18n-types": [
-        "../node_modules/@nuxtjs/i18n/dist/types"
       ],
       "@maas/vue-equipment/plugins": [
         "../node_modules/@maas/vue-equipment/dist/plugins"
@@ -248,6 +230,18 @@
       "@maas/vue-equipment/utils/*": [
         "../node_modules/@maas/vue-equipment/dist/utils/*"
       ],
+      "#i18n": [
+        "../node_modules/@nuxtjs/i18n/dist/runtime/composables/index"
+      ],
+      "#i18n-kit": [
+        "../node_modules/@nuxtjs/i18n/dist/runtime/kit"
+      ],
+      "#i18n-kit/*": [
+        "../node_modules/@nuxtjs/i18n/dist/runtime/kit/*"
+      ],
+      "#internal-i18n-types": [
+        "../node_modules/@nuxtjs/i18n/dist/types"
+      ],
       "#vue-router": [
         "../node_modules/vue-router"
       ],
@@ -256,6 +250,48 @@
       ],
       "#imports": [
         "./imports"
+      ],
+      "#site-config": [
+        "../node_modules/nuxt-site-config/dist/runtime"
+      ],
+      "#site-config/*": [
+        "../node_modules/nuxt-site-config/dist/runtime/*"
+      ],
+      "#robots": [
+        "../node_modules/@nuxtjs/robots/dist/runtime"
+      ],
+      "#robots/*": [
+        "../node_modules/@nuxtjs/robots/dist/runtime/*"
+      ],
+      "#sitemap": [
+        "../node_modules/@nuxtjs/sitemap/dist/runtime"
+      ],
+      "#sitemap/*": [
+        "../node_modules/@nuxtjs/sitemap/dist/runtime/*"
+      ],
+      "#og-image": [
+        "../node_modules/nuxt-og-image/dist/runtime"
+      ],
+      "#og-image/*": [
+        "../node_modules/nuxt-og-image/dist/runtime/*"
+      ],
+      "#og-image-cache": [
+        "../node_modules/nuxt-og-image/dist/runtime/server/og-image/cache/lru"
+      ],
+      "#nuxt-og-image-utils": [
+        "../node_modules/nuxt-og-image/dist/runtime/shared"
+      ],
+      "#schema-org": [
+        "../node_modules/nuxt-schema-org/dist/runtime"
+      ],
+      "#schema-org/*": [
+        "../node_modules/nuxt-schema-org/dist/runtime/*"
+      ],
+      "#seo-utils": [
+        "../node_modules/nuxt-seo-utils/dist/runtime"
+      ],
+      "#seo-utils/*": [
+        "../node_modules/nuxt-seo-utils/dist/runtime/*"
       ],
       "#app-manifest": [
         "./manifest/meta/dev"
@@ -303,6 +339,8 @@
     "./nuxt.d.ts",
     "../app/**/*",
     "../modules/*/runtime/**/*",
+    "../test/nuxt/**/*",
+    "../tests/nuxt/**/*",
     "../layers/*/app/**/*",
     "../layers/*/modules/*/runtime/**/*",
     "../shared/**/*.d.ts",
@@ -351,25 +389,36 @@
     "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/runtime",
     "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/dist/runtime",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime"
+    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime",
+    "../node_modules/nuxt-site-config/dist/runtime",
+    "../node_modules/nuxt-site-config/dist/dist/runtime"
   ],
   "exclude": [
     "../node_modules",
     "../node_modules/nuxt/node_modules",
-    "../node_modules/nuxt-vuefire/node_modules",
     "../node_modules/@nuxtjs/leaflet/node_modules",
     "../node_modules/@nuxt/image/node_modules",
+    "../node_modules/@sidebase/nuxt-auth/node_modules",
     "../node_modules/@nuxtjs/tailwindcss/node_modules",
-    "../node_modules/@storefront-ui/nuxt/node_modules",
     "../node_modules/vuetify-nuxt-module/node_modules",
     "../node_modules/@pinia/nuxt/node_modules",
     "../node_modules/@vueuse/nuxt/node_modules",
-    "../node_modules/@nuxtjs/i18n/node_modules",
-    "../node_modules/nuxt-security/node_modules",
     "../node_modules/@maas/vue-equipment/node_modules",
     "../node_modules/@nuxtjs/mcp-toolkit/node_modules",
+    "../node_modules/nuxt-tiptap-editor/node_modules",
+    "../node_modules/@nuxt/test-utils/node_modules",
+    "../node_modules/@nuxtjs/i18n/node_modules",
+    "../node_modules/nuxt-security/node_modules",
+    "../node_modules/@nuxtjs/seo/node_modules",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
+    "../node_modules/nuxt-site-config/node_modules",
+    "../node_modules/@nuxtjs/robots/node_modules",
+    "../node_modules/@nuxtjs/sitemap/node_modules",
+    "../node_modules/nuxt-link-checker/node_modules",
+    "../node_modules/nuxt-og-image/node_modules",
+    "../node_modules/nuxt-schema-org/node_modules",
+    "../node_modules/nuxt-seo-utils/node_modules",
     "../dist",
     "../.data",
     "../modules/*/runtime/server/**/*",
@@ -406,6 +455,8 @@
     "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/runtime/server",
     "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/dist/runtime/server",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime/server",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server"
+    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server",
+    "../node_modules/nuxt-site-config/dist/runtime/server",
+    "../node_modules/nuxt-site-config/dist/dist/runtime/server"
   ]
 }

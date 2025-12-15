@@ -97,38 +97,22 @@
 <script setup>
   import {
     ref,
-    onMounted
   } from 'vue'
-  import {
-    useRouter
-  } from 'vue-router'
 
   const tab = ref(null)
   const drawer = ref(false)
-  const router = useRouter()
   const showLogoutConfirmation = ref(false)
 
-  // Use the Directus auth composable
-  const {
-    user,
-    isAuthenticated,
-    signOut,
-    getCurrentUser
-  } = useDirectusAuth()
-
-  // Initialize user on component mount
-  onMounted(async () => {
-    const currentUser = await getCurrentUser()
-    if (currentUser) {
-      user.value = currentUser
-    }
-  })
+  // Use sidebase auth
+  const { data: session, status, signOut } = useAuth()
+  
+  const user = computed(() => session.value?.user || null)
+  const isAuthenticated = computed(() => status.value === 'authenticated')
 
   const {
     $directus,
     $readItem
   } = useNuxtApp()
-  const route = useRoute()
 
   const {
     data: navSocial
@@ -148,9 +132,8 @@
 
   const confirmLogout = async () => {
     try {
-      await signOut()
+      await signOut({ callbackUrl: '/auth/login' })
       showLogoutConfirmation.value = false
-      await router.push('/auth/login')
     } catch (error) {
       console.error('Logout failed:', error)
     }

@@ -3,23 +3,26 @@ import type { Serialize, Simplify } from "nitropack/types";
 declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
-    '/api/getKey': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/getKey').default>>>>
+    '/api/auth/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/auth/[...]').default>>>>
+    }
+    '/api/comments/channel/:id': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/comments/channel/[id]').default>>>>
+    }
+    '/api/me': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/me.get').default>>>>
+    }
+    '/api/rocketChat': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/rocketChat').default>>>>
+    }
+    '/api/token': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/token.get').default>>>>
     }
     '/api/upload-video': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/upload-video.post').default>>>>
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/upload-video.post').default>>>>
     }
     '/api/view-video': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/view-video.post').default>>>>
-    }
-    '/api/directus/users': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/directus/users.post').default>>>>
-    }
-    '/api/magento/customers': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/magento/customers.post').default>>>>
-    }
-    '/api/sync/user': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/sync/user.post').default>>>>
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/view-video.post').default>>>>
     }
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/nitro-server/dist/runtime/handlers/renderer').default>>>>
@@ -30,11 +33,59 @@ declare module "nitropack/types" {
     '/mcp': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/handler').default>>>>
     }
+    '/mcp/deeplink': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/deeplink').default>>>>
+    }
+    '/mcp/badge.svg': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/badge-image').default>>>>
+    }
+    '/__site-config__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-site-config/dist/runtime/server/routes/__site-config__/debug').default>>>>
+    }
+    '/robots.txt': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/robots/dist/runtime/server/routes/robots-txt').default>>>>
+    }
+    '/__robots__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/robots/dist/runtime/server/routes/__robots__/debug').default>>>>
+    }
+    '/__robots__/debug-path.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/robots/dist/runtime/server/routes/__robots__/debug-path').default>>>>
+    }
+    '/sitemap_index.xml': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/sitemap_index.xml').default>>>>
+    }
+    '/__sitemap__/**:sitemap': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/sitemap/[sitemap].xml').default>>>> | Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/sitemap/[sitemap].xml').default>>>>
+    }
+    '/__sitemap__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/__sitemap__/debug').default>>>>
+    }
+    '/__sitemap__/style.xsl': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/sitemap.xsl').default>>>>
+    }
+    '/sitemap.xml': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/sitemap.xml').default>>>>
+    }
+    '/__og-image__/font/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/server/routes/font').default>>>>
+    }
+    '/__og-image__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/server/routes/debug.json').default>>>>
+    }
+    '/__og-image__/image/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/server/routes/image').default>>>>
+    }
+    '/__og-image__/static/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/server/routes/image').default>>>>
+    }
+    '/__schema-org__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-schema-org/dist/runtime/server/routes/__schema-org__/debug').default>>>>
+    }
     '/_i18n/:hash/:locale/messages.json': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/server/routes/messages').default>>>>
     }
     '/_ipx/**': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/image/dist/runtime/ipx').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/image/dist/runtime/server/routes/_ipx').default>>>>
     }
   }
 }

@@ -1,20 +1,17 @@
 import {
+  defineNuxtConfig
+} from 'nuxt/config'
+import {
   useLayers
 } from 'nuxt-layers-utils'
-import {
-  fileURLToPath
-} from 'node:url'
-import {
-  URL
-} from 'node:url'
 
 const layers = useLayers(__dirname, {
+  shared: 'layers/shared-app',
   commerce: 'layers/commerce-app',
-  social: 'layers/social-app',
-  lists: 'layers/lists-app',
   departments: 'layers/departments-app',
-  auth: 'layers/auth-app',
-  ui: 'layers/ui-app',
+  lists: 'layers/lists-app',
+  sellerDashboard: 'layers/seller-dashboard-app',
+  social: 'layers/social-app',
 })
 
 export default defineNuxtConfig({
@@ -75,7 +72,17 @@ export default defineNuxtConfig({
     'assets/styles/styles.css',
   ],
 
-  modules: ["@nuxt/image", '@nuxtjs/tailwindcss', "@storefront-ui/nuxt", 'vuetify-nuxt-module', '@pinia/nuxt', '@vueuse/nuxt', '@nuxtjs/i18n', "nuxt-security", '@maas/vue-equipment/nuxt', '@nuxtjs/mcp-toolkit'],
+  modules: [
+    "@nuxt/image",
+    '@nuxt/test-utils/module',
+    '@nuxtjs/tailwindcss',
+    'vuetify-nuxt-module',
+    '@pinia/nuxt',
+    '@vueuse/nuxt',
+    '@nuxtjs/i18n',
+    "nuxt-security",
+    '@nuxtjs/seo',
+  ],
 
   security: {
     headers: {
@@ -87,16 +94,6 @@ export default defineNuxtConfig({
       crossOriginEmbedderPolicy: false,
       permissionsPolicy: false
     }
-  },
-
-  mcp: {
-    name: 'Meeovi MCP Server',
-    version: '1.0.0',
-  },
-
-  vueEquipment: {
-    plugins: ['MagicDrawer', 'MagicMenu', 'MagicModal', 'MagicCommand', 'MagicCookie', 'MagicDraggable', 'MagicMenu', 'MagicEmitter', 'MagicError', 'MagicMarquee', 'MagicPie', 'MagicNoise', 'MagicPlayer', 'MagicScroll', 'MagicToast'],
-    composables: ['useCountdown', 'useScrollTo', 'useuseEasings', 'useMetaViewport', 'useScrollLockPadding'],
   },
 
   vuetify: {
@@ -176,58 +173,15 @@ export default defineNuxtConfig({
         }
       },
 
-      directusGraphql: process.env.DIRECTUS_GRAPHQL,
-
-      indexName: process.env.MEILISEARCH_INDEX_NAME,
-
-      meilisearch: {
-        host: process.env.MEILISEARCH_HOST,
-        searchApiKey: process.env.MEILISEARCH_SEARCH_API_KEY,
-        options: {
-          primaryKey: 'id',
-          keepZeroFacets: false,
-          finitePagination: false
-        },
-      },
-
-      // Minio
-      minioEndpoint: process.env.MINIO_ENDPOINT,
-      minioUser: process.env.MINIO_USER,
-      minioPass: process.env.MINIO_PASS,
-
-      // Supabase
-      supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL,
-      supabaseAnonKey: process.env.NUXT_PUBLIC_SUPABASE_KEY,
-
-      // Commerce 
-      commerceUrl: process.env.COMMERCE_STORE_URL,
-      commerceGraphql: process.env.COMMERCE_GRAPHQL_URL,
-      commerceApiToken: process.env.WEBSITE_TOKEN,
-
       // Google Tag Manager
       gtagId: process.env.NUXT_PUBLIC_GTAG_ID,
 
-      // Stripe
-      stripe: {
-        publishableKey: process.env.STRIPE_PUBLISHABLE_KEY
-      },
-
-      // Paypal
-      paypalClientId: process.env.PAYPAL_CLIENT_ID,
     },
-    stripe: {
-      secretKey: process.env.STRIPE_SECRET_KEY
-    }
   },
 
   build: {
     transpile: [
       'vuetify',
-      "@fortawesome/vue-fontawesome",
-      "@fortawesome/fontawesome-svg-core",
-      "@fortawesome/pro-solid-svg-icons",
-      "@fortawesome/pro-regular-svg-icons",
-      "@fortawesome/free-brands-svg-icons"
     ],
   },
 
@@ -237,20 +191,6 @@ export default defineNuxtConfig({
     },
     ssr: {
       noExternal: ['vuetify']
-    },
-    resolve: {
-      alias: {
-        '@apollo/client/core': '@apollo/client',
-        '@apollo/client/core/index.js': fileURLToPath(
-          new URL('./shims/apollo-v4-compat.ts', import.meta.url)
-        ),
-      }
-    },
-    server: {
-      proxy: {
-        '/comentario.js': 'http://localhost:8083/comentario.js',
-        '/api/embed': 'http://localhost:8083/api/embed'
-      }
     },
     logLevel: 'info',
     plugins: []
@@ -263,22 +203,7 @@ export default defineNuxtConfig({
       ]
     },
     compressPublicAssets: true,
-    storage: {
-      redis: {
-        driver: 'redis',
-        port: 6379,
-        host: process.env.REDIS_HOST || '',
-        password: process.env.REDIS_PASSWORD || '',
-      }
-    }
-  },
-
-  devServer: {
-    proxy: {
-      '/comentario.js': 'http://localhost:8083/comentario.js',
-      '/api/embed': 'http://localhost:8083/api/embed'
-    }
   },
 
   compatibilityDate: '2025-02-22',
-})
+} as any)

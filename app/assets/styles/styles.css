@@ -136,7 +136,7 @@ body {
     color: black !important;
 }
 
-#searchResults {
+#sharedResults {
     min-height: 100vh !important;
     position: relative;
     top: 50px;
@@ -1177,7 +1177,7 @@ body {
 
 /*************** Search *****************/
 
-#search {
+#shared {
     max-width: 40%;
     min-width: 20%;
 }

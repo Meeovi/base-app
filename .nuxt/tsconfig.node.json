@@ -55,6 +55,30 @@
       "vite/client": [
         "../node_modules/vite/client"
       ],
+      "@nuxtjs/robots": [
+        "../node_modules/@nuxtjs/robots"
+      ],
+      "@nuxtjs/sitemap": [
+        "../node_modules/@nuxtjs/sitemap"
+      ],
+      "nuxt-link-checker": [
+        "../node_modules/nuxt-link-checker"
+      ],
+      "nuxt-og-image": [
+        "../node_modules/nuxt-og-image"
+      ],
+      "nuxt-schema-org": [
+        "../node_modules/nuxt-schema-org"
+      ],
+      "nuxt-seo-utils": [
+        "../node_modules/nuxt-seo-utils"
+      ],
+      "nuxt-site-config": [
+        "../node_modules/nuxt-site-config"
+      ],
+      "@tiptap/vue-3": [
+        "../node_modules/@tiptap/vue-3"
+      ],
       "vue-i18n": [
         "../node_modules/vue-i18n"
       ],
@@ -105,30 +129,42 @@
     "../layers/*/nuxt.config.*",
     "../layers/*/.config/nuxt.*",
     "../layers/*/modules/**/*",
+    "../vitest.config.*",
     "../nuxt.schema.*",
     "../layers/*/nuxt.schema.*"
   ],
   "exclude": [
     "../node_modules",
     "../node_modules/nuxt/node_modules",
-    "../node_modules/nuxt-vuefire/node_modules",
     "../node_modules/@nuxtjs/leaflet/node_modules",
     "../node_modules/@nuxt/image/node_modules",
+    "../node_modules/@sidebase/nuxt-auth/node_modules",
     "../node_modules/@nuxtjs/tailwindcss/node_modules",
-    "../node_modules/@storefront-ui/nuxt/node_modules",
     "../node_modules/vuetify-nuxt-module/node_modules",
     "../node_modules/@pinia/nuxt/node_modules",
     "../node_modules/@vueuse/nuxt/node_modules",
-    "../node_modules/@nuxtjs/i18n/node_modules",
-    "../node_modules/nuxt-security/node_modules",
     "../node_modules/@maas/vue-equipment/node_modules",
     "../node_modules/@nuxtjs/mcp-toolkit/node_modules",
+    "../node_modules/nuxt-tiptap-editor/node_modules",
+    "../node_modules/@nuxt/test-utils/node_modules",
+    "../node_modules/@nuxtjs/i18n/node_modules",
+    "../node_modules/nuxt-security/node_modules",
+    "../node_modules/@nuxtjs/seo/node_modules",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
+    "../node_modules/nuxt-site-config/node_modules",
+    "../node_modules/@nuxtjs/robots/node_modules",
+    "../node_modules/@nuxtjs/sitemap/node_modules",
+    "../node_modules/nuxt-link-checker/node_modules",
+    "../node_modules/nuxt-og-image/node_modules",
+    "../node_modules/nuxt-schema-org/node_modules",
+    "../node_modules/nuxt-seo-utils/node_modules",
     "../dist",
     "../.data",
     "../app/**/*",
     "../modules/*/runtime/**/*",
+    "../test/nuxt/**/*",
+    "../tests/nuxt/**/*",
     "../layers/*/app/**/*",
     "../layers/*/modules/*/runtime/**/*",
     "../modules/*/runtime/server/**/*",
@@ -165,6 +201,8 @@
     "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/runtime",
     "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/dist/runtime",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime"
+    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime",
+    "../node_modules/nuxt-site-config/dist/runtime",
+    "../node_modules/nuxt-site-config/dist/dist/runtime"
   ]
 }

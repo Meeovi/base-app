@@ -30,20 +30,18 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       envPrefix: string,
    },
 
-   vuefire: {
-      admin: any,
+   mcp: {
+      enabled: boolean,
 
-      auth: {
-         enabled: boolean,
+      route: string,
 
-         errorMap: string,
+      browserRedirect: string,
 
-         persistence: Array<string>,
+      name: string,
 
-         popupRedirectResolver: string,
+      version: string,
 
-         sessionCookie: boolean,
-      },
+      dir: string,
    },
 
    private: {
@@ -160,39 +158,211 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       sri: boolean,
    },
 
-   mcp: {
-      enabled: boolean,
+   sitemap: {
+      isI18nMapped: boolean,
 
-      route: string,
+      sitemapName: string,
 
-      browserRedirect: string,
+      isMultiSitemap: boolean,
 
-      name: string,
+      excludeAppSources: Array<any>,
+
+      cacheMaxAgeSeconds: number,
+
+      autoLastmod: boolean,
+
+      defaultSitemapsChunkSize: number,
+
+      minify: boolean,
+
+      sortEntries: boolean,
+
+      debug: boolean,
+
+      discoverImages: boolean,
+
+      discoverVideos: boolean,
+
+      sitemapsPathPrefix: string,
+
+      isNuxtContentDocumentDriven: boolean,
+
+      xsl: string,
+
+      xslTips: boolean,
+
+      xslColumns: Array<{
+
+      }>,
+
+      credits: boolean,
 
       version: string,
 
-      dir: string,
+      sitemaps: {
+         index: {
+            sitemapName: string,
+
+            _route: string,
+
+            sitemaps: Array<any>,
+
+            include: Array<any>,
+
+            exclude: Array<any>,
+         },
+
+         "en-GB": {
+            include: Array<any>,
+
+            exclude: Array<string>,
+
+            includeAppSources: boolean,
+
+            sitemapName: string,
+
+            _route: string,
+         },
+
+         "pl-PL": {
+            include: Array<any>,
+
+            exclude: Array<string>,
+
+            includeAppSources: boolean,
+
+            sitemapName: string,
+
+            _route: string,
+         },
+
+         "de-DE": {
+            include: Array<any>,
+
+            exclude: Array<string>,
+
+            includeAppSources: boolean,
+
+            sitemapName: string,
+
+            _route: string,
+         },
+      },
+
+      autoI18n: {
+         differentDomains: boolean,
+
+         defaultLocale: string,
+
+         locales: Array<{
+
+         }>,
+
+         strategy: string,
+
+         pages: any,
+      },
+   },
+
+   "nuxt-schema-org": {
+      reactive: boolean,
+
+      minify: boolean,
+
+      scriptAttributes: {
+         "data-nuxt-schema-org": boolean,
+      },
+
+      identity: any,
+
+      version: string,
+   },
+
+   "nuxt-site-config": {
+      stack: Array<{
+
+      }>,
+
+      version: string,
+
+      debug: boolean,
+
+      multiTenancy: Array<any>,
+   },
+
+   "nuxt-robots": {
+      version: string,
+
+      isNuxtContentV2: boolean,
+
+      debug: boolean,
+
+      credits: boolean,
+
+      groups: Array<{
+
+      }>,
+
+      sitemap: Array<string>,
+
+      header: boolean,
+
+      robotsEnabledValue: string,
+
+      robotsDisabledValue: string,
+
+      cacheControl: string,
+
+      botDetection: boolean,
+   },
+
+   "nuxt-og-image": {
+      version: string,
+
+      satoriOptions: any,
+
+      resvgOptions: any,
+
+      sharpOptions: any,
+
+      publicStoragePath: string,
+
+      defaults: {
+         emojis: string,
+
+         renderer: string,
+
+         component: string,
+
+         extension: string,
+
+         width: number,
+
+         height: number,
+
+         cacheMaxAgeSeconds: number,
+      },
+
+      debug: boolean,
+
+      baseCacheKey: string,
+
+      fonts: Array<{
+
+      }>,
+
+      hasNuxtIcon: boolean,
+
+      colorPreference: string,
+
+      strictNuxtContentPaths: any,
+
+      isNuxtContentDocumentDriven: boolean,
+
+      componentDirs: Array<string>,
    },
   }
   interface SharedPublicRuntimeConfig {
-   authSecret: string,
-
-   jwtSecret: string,
-
-   firebaseApiKey: string,
-
-   firebaseAuthDomain: string,
-
-   firebaseProjectId: string,
-
-   firebaseStorageBucket: string,
-
-   firebaseMessagingSenderId: string,
-
-   firebaseAppId: string,
-
-   measurementId: string,
-
    directus: {
       url: string,
 
@@ -224,8 +394,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
          },
       },
    },
-
-   commentsUrl: string,
 
    commerceApiToken: string,
 
@@ -291,32 +459,62 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
 
    paypalClientId: string,
 
-   vuefire: {
-      config: {
-         apiKey: string,
+   auth: {
+      isEnabled: boolean,
 
-         authDomain: string,
+      baseURL: string,
 
-         projectId: string,
+      disableInternalRouting: boolean,
 
-         storageBucket: string,
+      disableServerSideAuth: boolean,
 
-         messagingSenderId: string,
+      originEnvKey: string,
 
-         appId: string,
+      sessionRefresh: {
+         enablePeriodically: boolean,
 
-         measurementId: string,
+         enableOnWindowFocus: boolean,
+
+         handler: any,
       },
 
-      appCheck: {
-         provider: string,
+      globalAppMiddleware: {
+         isEnabled: boolean,
 
-         key: string,
+         allow404WithoutAuth: boolean,
 
-         isTokenAutoRefreshEnabled: boolean,
-
-         debug: string,
+         addDefaultCallbackUrl: boolean,
       },
+
+      provider: {
+         type: string,
+
+         trustHost: boolean,
+
+         defaultProvider: string,
+
+         addDefaultCallbackUrl: boolean,
+      },
+   },
+
+   "nuxt-schema-org": {
+      reactive: boolean,
+
+      minify: boolean,
+
+      scriptAttributes: {
+         "data-nuxt-schema-org": boolean,
+      },
+
+      identity: any,
+
+      version: string,
+   },
+
+   "seo-utils": {
+      canonicalQueryWhitelist: Array<string>,
+
+      canonicalLowercase: boolean,
    },
 
    i18n: {

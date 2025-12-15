@@ -7,11 +7,11 @@ type InjectionType<A extends Plugin> = A extends {default: Plugin<infer T>} ? De
 
 type NuxtAppInjections = 
   InjectionType<typeof import("../../node_modules/@pinia/nuxt/dist/runtime/payload-plugin.js")> &
-  InjectionType<typeof import("../../node_modules/nuxt-vuefire/dist/runtime/payload-plugin.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/revive-payload.client.js")> &
   InjectionType<typeof import("../../node_modules/vuetify-nuxt-module/dist/runtime/plugins/vuetify-i18n-date.js")> &
   InjectionType<typeof import("../../node_modules/vuetify-nuxt-module/dist/runtime/plugins/vuetify-i18n.js")> &
   InjectionType<typeof import("../../node_modules/vuetify-nuxt-module/dist/runtime/plugins/vuetify-icons.js")> &
+  InjectionType<typeof import("../../node_modules/nuxt-site-config/dist/runtime/app/plugins/0.siteConfig.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/head/runtime/plugins/unhead.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/pages/runtime/plugins/router.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/browser-devtools-timing.client.js")> &
@@ -21,41 +21,46 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/revive-payload.server.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/chunk-reload.client.js")> &
   InjectionType<typeof import("../../node_modules/@pinia/nuxt/dist/runtime/plugin.vue3.js")> &
+  InjectionType<typeof import("../../node_modules/nuxt-seo-utils/dist/runtime/app/plugins/siteConfig.js")> &
+  InjectionType<typeof import("../../node_modules/nuxt-seo-utils/dist/runtime/app/plugins/inferSeoMetaPlugin.js")> &
+  InjectionType<typeof import("../../node_modules/nuxt-seo-utils/dist/runtime/app/plugins/titles.js")> &
+  InjectionType<typeof import("../../node_modules/nuxt-seo-utils/dist/runtime/app/plugins/defaultsWaitI18n.js")> &
+  InjectionType<typeof import("../../node_modules/nuxt-schema-org/dist/runtime/app/plugins/i18n/defaults.js")> &
+  InjectionType<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/plugins/og-image-canonical-urls.server.js")> &
+  InjectionType<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/plugins/route-rule-og-image.server.js")> &
+  InjectionType<typeof import("../../node_modules/@nuxtjs/robots/dist/runtime/app/plugins/robot-meta.server.js")> &
+  InjectionType<typeof import("../../node_modules/nuxt-site-config/dist/runtime/app/plugins/i18n.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/pages/runtime/plugins/prefetch.client.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/pages/runtime/plugins/check-if-page-unused.js")> &
-  InjectionType<typeof import("../../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/dist/runtime/plugins/devtools.client.js")> &
   InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/switch-locale-path-ssr.js")> &
   InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/route-locale-detect.js")> &
   InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/preload.js")> &
   InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/dev.js")> &
   InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/i18n.js")> &
   InjectionType<typeof import("../../node_modules/vuetify-nuxt-module/dist/runtime/plugins/vuetify-no-client-hints.js")> &
-  InjectionType<typeof import("../../node_modules/nuxt-vuefire/dist/runtime/admin/plugin.server.js")> &
-  InjectionType<typeof import("../../node_modules/nuxt-vuefire/dist/runtime/app/plugin.server.js")> &
-  InjectionType<typeof import("../../node_modules/nuxt-vuefire/dist/runtime/app/plugin.client.js")> &
-  InjectionType<typeof import("../../node_modules/nuxt-vuefire/dist/runtime/auth/plugin.server.js")> &
-  InjectionType<typeof import("../../node_modules/nuxt-vuefire/dist/runtime/auth/plugin-authenticate-user.server.js")> &
-  InjectionType<typeof import("../../node_modules/nuxt-vuefire/dist/runtime/app-check/plugin.server.js")> &
-  InjectionType<typeof import("../../node_modules/nuxt-vuefire/dist/runtime/app-check/plugin.client.js")> &
+  InjectionType<typeof import("../../node_modules/@sidebase/nuxt-auth/dist/runtime/plugin.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/warn.dev.server.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/check-if-layout-used.js")> &
-  InjectionType<typeof import("../../layers/auth-app/app/plugins/auth-init")> &
-  InjectionType<typeof import("../../layers/auth-app/app/plugins/session-refresh")> &
-  InjectionType<typeof import("../../layers/social-app/app/plugins/reactions-init.client")> &
+  InjectionType<typeof import("../../layers/commerce-app/app/plugins/paypal.js")> &
+  InjectionType<typeof import("../../layers/shared-app/app/plugins/apollo")> &
+  InjectionType<typeof import("../../layers/shared-app/app/plugins/instantsearch.js")> &
+  InjectionType<typeof import("../../layers/shared-app/app/plugins/meilisearch.js")> &
+  InjectionType<typeof import("../../layers/shared-app/app/plugins/videojs.client.js")> &
+  InjectionType<typeof import("../../layers/social-app/app/plugins/rocketchat-api.js")> &
+  InjectionType<typeof import("../../layers/social-app/app/plugins/vue-disqus.js")> &
   InjectionType<typeof import("../../app/plugins/apollo")> &
   InjectionType<typeof import("../../app/plugins/directus")> &
   InjectionType<typeof import("../../app/plugins/gtag.client.js")> &
-  InjectionType<typeof import("../../app/plugins/instantsearch.js")> &
-  InjectionType<typeof import("../../app/plugins/meilisearch.js")> &
-  InjectionType<typeof import("../../app/plugins/paypal.js")> &
-  InjectionType<typeof import("../../app/plugins/videojs.client.js")> &
-  InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/ssg-detect.js")>
+  InjectionType<typeof import("../../node_modules/nuxt-seo-utils/dist/runtime/app/plugins/1.absoluteImageUrls.server.js")> &
+  InjectionType<typeof import("../../node_modules/nuxt-seo-utils/dist/runtime/app/plugins/0.routeRules.js")> &
+  InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/ssg-detect.js")> &
+  InjectionType<typeof import("../../node_modules/nuxt-schema-org/dist/runtime/app/plugins/i18n/init.js")>
 
 declare module '#app' {
   interface NuxtApp extends NuxtAppInjections { }
 
   interface NuxtAppLiterals {
-    pluginName: 'nuxt:revive-payload:client' | 'vuetify:date-i18n:plugin' | 'vuetify:i18n:plugin' | 'vuetify:icons:plugin' | 'nuxt:head' | 'nuxt:router' | 'nuxt:browser-devtools-timing' | 'nuxt:revive-payload:server' | 'nuxt:chunk-reload' | 'pinia' | 'nuxt:global-components' | 'nuxt:prefetch' | 'nuxt:checkIfPageUnused' | 'i18n:plugin:switch-locale-path-ssr' | 'i18n:plugin:route-locale-detect' | 'i18n:plugin:preload' | 'i18n:dev' | 'i18n:plugin' | 'nuxt:checkIfLayoutUsed' | 'i18n:plugin:ssg-detect' | 'vuetify:nuxt:server:plugin' | 'vuetify:nuxt:client:plugin'
+    pluginName: 'nuxt:revive-payload:client' | 'vuetify:date-i18n:plugin' | 'vuetify:i18n:plugin' | 'vuetify:icons:plugin' | 'nuxt-site-config:init' | 'nuxt:head' | 'nuxt:router' | 'nuxt:browser-devtools-timing' | 'nuxt:revive-payload:server' | 'nuxt:chunk-reload' | 'pinia' | 'nuxt-seo:fallback-titles' | 'nuxt-seo:defaults' | 'nuxt-schema-org:defaults' | 'nuxt-site-config:i18n' | 'nuxt:global-components' | 'nuxt:prefetch' | 'nuxt:checkIfPageUnused' | 'i18n:plugin:switch-locale-path-ssr' | 'i18n:plugin:route-locale-detect' | 'i18n:plugin:preload' | 'i18n:dev' | 'i18n:plugin' | 'nuxt:checkIfLayoutUsed' | 'i18n:plugin:ssg-detect' | 'vuetify:nuxt:server:plugin' | 'vuetify:nuxt:client:plugin' | 'nuxt-schema-org:init'
   }
 }
 

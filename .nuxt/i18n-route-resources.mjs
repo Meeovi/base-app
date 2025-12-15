@@ -174,6 +174,11 @@ export const pathToI18nConfig = {
     "en-GB": "/departments/category/:slug(.*)*",
     "pl-PL": "/departments/category/:slug(.*)*",
     "testde": "/departments/category/:slug(.*)*"
+  },
+  "/ndefined": {
+    "en-GB": "/ndefined",
+    "pl-PL": "/ndefined",
+    "testde": "/ndefined"
   }
 };
 export const i18nPathToPath = {
@@ -211,5 +216,6 @@ export const i18nPathToPath = {
   "/connect/space/:slug(.*)*": "/connect/space/:slug(.*)*",
   "/product/showcases": "/product/showcases",
   "/connect/hashtag/:slug(.*)*": "/connect/hashtag/:slug(.*)*",
-  "/departments/category/:slug(.*)*": "/departments/category/:slug(.*)*"
+  "/departments/category/:slug(.*)*": "/departments/category/:slug(.*)*",
+  "/ndefined": "/ndefined"
 };

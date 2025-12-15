@@ -1,5 +1,24 @@
 <template>
-  <section class="flex flex-col items-center md:mt-16 mb-8">
+  <section class="flex flex-col items-center md:mt-16 mb-8 w-full">
+    <div v-if="isOnline" class="mb-6 w-full flex justify-center">
+      <div class="bg-green-50 border border-green-100 text-green-800 px-4 py-2 rounded-md flex items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.172 7.707 8.88a1 1 0 10-1.414 1.415l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <div class="text-sm">
+          {{ $t('youAreOnlineText') }}
+        </div>
+        <div class="ml-4 flex items-center gap-3">
+          <button v-if="!isCounting" @click="startCountdown()" class="text-sm underline text-green-700">{{ $t('continue') }}</button>
+          <div v-else class="flex items-center gap-2">
+            <span class="text-sm text-green-700">Refreshing in {{ countdown }}s</span>
+            <button @click="refreshNow" class="text-sm underline text-green-700">Refresh now</button>
+            <button @click="cancelCountdown" class="text-sm underline text-gray-600">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="300" height="300">
       <path
         d="M152.9 37c-7.3-1.4-14.2 2.9-15.4 9.5-.4 2.3-.1 4.7.9 6.8l-3.2 5.1 6-1.2a14 14 0 0 0 7.1 3.7c7.3 1.4 14.1-2.9 15.4-9.5 1.3-6.6-3.6-13-10.8-14.4Z"
@@ -111,15 +130,60 @@
       <path d="M39 50a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" stroke="#18181B" stroke-width="1.5" />
       <path d="M39 27.5v14.3" stroke="#18181B" stroke-width="1.5" stroke-linecap="round" />
     </svg>
-    <p class="mt-8 text-center">{{ $t('youAreOfflineText') }}</p>
+    <p v-if="!isOnline" class="mt-8 text-center">{{ $t('youAreOfflineText') }}</p>
+    <p v-else class="mt-8 text-center">{{ $t('youAreOnlineText') }}</p>
   </section>
 </template>
 
 <script setup lang="ts">
-import { useOnline, whenever } from '@vueuse/core';
+import { useOnline } from '@vueuse/core';
+import { ref, onUnmounted } from 'vue';
 
 const router = useRouter();
 const isOnline = useOnline();
 
-whenever(isOnline, () => router.push('/'), { immediate: true });
+const countdown = ref(5);
+const isCounting = ref(false);
+let timer: ReturnType<typeof setInterval> | null = null;
+
+function startCountdown(seconds = 5) {
+  if (isCounting.value) return;
+  countdown.value = seconds;
+  isCounting.value = true;
+  timer = setInterval(() => {
+    if (countdown.value <= 1) {
+      clearInterval(timer as any);
+      timer = null;
+      isCounting.value = false;
+      doReload();
+    } else {
+      countdown.value -= 1;
+    }
+  }, 1000);
+}
+
+function cancelCountdown() {
+  if (timer) {
+    clearInterval(timer as any);
+    timer = null;
+  }
+  isCounting.value = false;
+}
+
+function refreshNow() {
+  cancelCountdown();
+  doReload();
+}
+
+function doReload() {
+  if (typeof window !== 'undefined' && window.location) {
+    window.location.reload();
+  } else {
+    router.go(0);
+  }
+}
+
+onUnmounted(() => {
+  if (timer) clearInterval(timer as any);
+});
 </script>

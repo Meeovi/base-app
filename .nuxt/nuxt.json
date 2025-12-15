@@ -1,9 +1,9 @@
 {
-  "_hash": "Rw8dgq5z5rpCIqQWHdc3dTrnaKtaJMeQkN6yQPvC9QI",
+  "_hash": "9qcO3CWOocqApmZFIexfl92qWR3hhNTXa_GPMrbkLnk",
   "project": {
     "rootDir": "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app"
   },
   "versions": {
-    "nuxt": "4.2.1"
+    "nuxt": "4.2.2"
   }
 }

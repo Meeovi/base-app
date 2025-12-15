@@ -120,7 +120,7 @@
   import sidebartop from '~/components/menus/sidebar/sidebartop.vue'
   import socialmenu from '~/components/menus/sidebar/socialmenu.vue'
   import logo from '~/components/blocks/logo.vue'
-  import search from '~/components/search/search.vue'
+  import search from '#shared/app/components/search/search.vue'
   import ecosystemmenu from '~/components/menus/ecosystemmenu.vue'
   import live from '~/components/menus/livebar/live.vue'
   import topmenu from '~/components/menus/sidebar/topmenu.vue'

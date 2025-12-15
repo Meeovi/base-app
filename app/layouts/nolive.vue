@@ -109,7 +109,7 @@
   //import SearchHeader from '../components/search/SearchHeader.vue'
   import sidebartop from '@/components/menus/sidebar/sidebartop.vue'
   import logo from '@/components/blocks/logo.vue'
-  import search from '@/components/search/search.vue'
+  import search from '#shared/app/components/search/search.vue'
   import ecosystemmenu from '@/components/menus/ecosystemmenu.vue'
   import topmenu from '@/components/menus/sidebar/topmenu.vue'
   import socialmenu from '@/components/menus/sidebar/socialmenu.vue'
