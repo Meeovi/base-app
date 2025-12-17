@@ -427,8 +427,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
 
    NUXT_PUBLIC_SITE_URL: string,
 
-   directusGraphql: string,
-
    indexName: string,
 
    meilisearch: {
@@ -458,6 +456,10 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
    },
 
    paypalClientId: string,
+
+   applicationId: string,
+
+   subscriber: string,
 
    auth: {
       isEnabled: boolean,

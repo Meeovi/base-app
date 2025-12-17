@@ -27,6 +27,7 @@
       "gqlg": "npx gqlg --schemaFilePath graphql/schema.graphql --destDirPath graphql/framework --depthLimit 2"
    },
    "dependencies": {
+      "@novu/js": "^3.11.0",
       "@nuxtjs/i18n": "^10.1.0",
       "@nuxtjs/mcp-toolkit": "^0.5.2",
       "@nuxtjs/seo": "^3.2.2",
@@ -48,8 +49,8 @@
       "sass-embedded": "^1.93.3",
       "tsx": "^4.20.6",
       "typescript": "^5.9.3",
-      "vue-tsc": "^2.2.12",
-      "vitest": "^4.0.15"
+      "vitest": "^4.0.15",
+      "vue-tsc": "^2.2.12"
    },
    "workspaces": [
       "layers/*"

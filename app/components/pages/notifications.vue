@@ -1,88 +1,74 @@
 <template>
-  <div class="notifications-page" style="width: 100%;">
-    <v-row>
-      <v-col cols="12">
-        <v-card elevation="0" style="width: 100%;">
-          <v-card-title class="d-flex align-center">
-            <span>Notifications</span>
-            <v-spacer></v-spacer>
-            <v-btn color="primary" prepend-icon="fas:fa fa-check-double" @click="markAllAsRead"
-              :disabled="!hasUnreadNotifications">
-              Mark All as Read
-            </v-btn>
-          </v-card-title>
+  <div>
+    <section data-bs-version="5.1" class="info1 cid-v5A0K07pfT" id="info1-bd" data-sortbtn="btn-primary">
+      <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(68, 121, 217);"></div>
+      <div class="align-center container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <h3 class="mbr-section-title mb-4 mbr-fonts-style display-1">
+              <strong> {{ notificationPage?.name }}</strong>
+            </h3>
+            <p class="mbr-section-title mb-4 mbr-fonts-style display-7" v-html="notificationPage?.content"></p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <DynamicTableElement :items="notifications" :loading="loading" class="elevation-1" :format-dates="true"
-            :actions="true">
-            <template #item="{ item, headers }">
-              <tr :class="{ 'unread-row': !item.isRead }">
-                <td v-for="h in headers" :key="h.value">
-                  <template v-if="h.value === 'title'">
-                    <div class="d-flex align-center">
-                      <v-icon :icon="getNotificationIcon(item.type)" :color="getNotificationColor(item.type)"
-                        class="me-2"></v-icon>
-                      <span v-html="item.title"></span>
-                    </div>
-                  </template>
-                  <template v-else-if="h.value === 'date'">
-                    {{ new Date(item.date).toLocaleString() }}
-                  </template>
-                  <template v-else-if="h.value === '__actions'">
-                    <v-btn icon variant="text" size="small"
-                      :href="(item.source === 'magento' && item.type === 'order') ? (`/orders/${item.payload?.order_id}`) : (item.payload?.link || '/notifications')"
-                      class="me-2">
-                      <v-icon>fas:fa fa-external-link-alt</v-icon>
-                    </v-btn>
-                    <v-btn v-if="!item.isRead" icon variant="text" size="small" color="primary"
-                      @click="markAsRead(item.id, item.source)">
-                      <v-icon>fas:fa fa-check</v-icon>
-                    </v-btn>
-                  </template>
-                  <template v-else>
-                    {{ item[h.value] }}
-                  </template>
-                </td>
-              </tr>
-            </template>
-          </DynamicTableElement>
-        </v-card>
-      </v-col>
-    </v-row>
+    <v-card variant="text">
+      <v-toolbar :style="`background-color: ${notificationBar?.color}; color: ${notificationBar?.colortext} !important`">
+
+        <v-tabs v-model="tab" align-tabs="center">
+          <div v-for="(menu, index) in notificationBar?.menus" :key="index">
+            <v-tab :value="menu?.value">
+              <v-btn variant="text" :style="`color: ${notificationBar?.colortext} !important`">{{ menu?.name }}</v-btn>
+            </v-tab>
+          </div>
+        </v-tabs>
+      </v-toolbar>
+    </v-card>
+
+    <v-tabs-window v-model="tab">
+      <v-tabs-window-item :value="notificationBar?.menus?.[0]?.value">
+        <v-row class="media-container-row">
+          <template v-if="notifications?.length">
+            <!--<v-col class="wrap col-sm-12 col-lg-4 feedPost" v-for="notify in notifications" :key="notify.id">
+              <notifyCard :notify="notify" />
+            </v-col>-->
+            <div id="notification-inbox"></div>
+          </template>
+          <div class="center-text" v-else>No Notifications yet</div>
+        </v-row>
+      </v-tabs-window-item>
+    </v-tabs-window>
   </div>
 </template>
 
 <script setup>
-  import {
-    ref,
-    computed
-  } from 'vue'
-  import {
-    useNotifications
-  } from '#shared/app/composables/globals/useNotifications'
+  const {
+    $directus,
+    $readItem,
+    $readItems
+  } = useNuxtApp()
+  const tab = ref(null);
 
   const {
-    notifications,
-    markAsRead,
-    markAllAsRead
-  } = useNotifications()
-  const loading = ref(false)
-  const hasUnreadNotifications = computed(() => notifications.value.some(n => !n.isRead))
+    data: notificationBar
+  } = await useAsyncData('notificationBar', async () => {
+    const resp = await $directus.request($readItem('navigation', '93', {
+      fields: ['*', {
+        '*': ['*']
+      }]
+    }))
+    return resp?.data ?? resp ?? null
+  })
+
+  const {
+    data: notificationPage
+  } = await useAsyncData('notificationPage', () => {
+    return $directus.request($readItem('pages', '95', {
+      fields: ['*', {
+        '*': ['*']
+      }]
+    }))
+  })
 </script>
-
-<style scoped>
-  .notifications-page {
-    padding: 20px 0;
-  }
-
-  .unread-row {
-    background-color: rgba(var(--v-theme-primary), 0.05);
-  }
-
-  :deep(.v-data-table) {
-    background: transparent !important;
-  }
-
-  :deep(.v-data-table-header) {
-    background-color: rgba(var(--v-theme-surface), 0.8);
-  }
-</style>

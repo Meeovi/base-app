@@ -42,7 +42,6 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/warn.dev.server.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/check-if-layout-used.js")> &
   InjectionType<typeof import("../../layers/commerce-app/app/plugins/paypal.js")> &
-  InjectionType<typeof import("../../layers/shared-app/app/plugins/apollo")> &
   InjectionType<typeof import("../../layers/shared-app/app/plugins/instantsearch.js")> &
   InjectionType<typeof import("../../layers/shared-app/app/plugins/meilisearch.js")> &
   InjectionType<typeof import("../../layers/shared-app/app/plugins/videojs.client.js")> &
@@ -51,6 +50,7 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../app/plugins/apollo")> &
   InjectionType<typeof import("../../app/plugins/directus")> &
   InjectionType<typeof import("../../app/plugins/gtag.client.js")> &
+  InjectionType<typeof import("../../app/plugins/novu.client.js")> &
   InjectionType<typeof import("../../node_modules/nuxt-seo-utils/dist/runtime/app/plugins/1.absoluteImageUrls.server.js")> &
   InjectionType<typeof import("../../node_modules/nuxt-seo-utils/dist/runtime/app/plugins/0.routeRules.js")> &
   InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/ssg-detect.js")> &

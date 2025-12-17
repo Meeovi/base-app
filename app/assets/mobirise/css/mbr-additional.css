@@ -16585,3 +16585,23 @@ a {
     width: 100%;
   }
 }
+.cid-v5A0K07pfT {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-image: url("../../../assets/images/background1-2.jpg");
+}
+.cid-v5A0K07pfT .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-v5A0K07pfT .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-v5A0K07pfT .mbr-section-title {
+  color: #ffffff;
+}

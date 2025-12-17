@@ -47,11 +47,6 @@ export default defineNuxtConfig({
           rel: 'stylesheet',
           href: 'https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css'
         },
-        {
-          rel: 'preload',
-          as: 'style',
-          href: 'https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap'
-        }
       ],
     },
   },
@@ -172,6 +167,10 @@ export default defineNuxtConfig({
           },
         }
       },
+
+      // Novu Credentials
+      applicationId: process.env.APPLICATION_IDENTIFIER,
+      subscriber: process.env.SUBSCRIBER,
 
       // Google Tag Manager
       gtagId: process.env.NUXT_PUBLIC_GTAG_ID,

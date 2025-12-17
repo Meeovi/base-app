@@ -1,5 +1,5 @@
 <template>
-  <div class="pageContainer">
+  <div>
     <component v-if="currentComponent" :is="currentComponent" :page="page?.value" />
     <div v-else v-html="page?.value?.content" />
   </div>

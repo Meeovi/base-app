@@ -1028,8 +1028,6 @@ const _inlineRuntimeConfig = {
           "*",
           "*",
           "*",
-          "*",
-          "*",
           "*"
         ],
         "redirect": {
@@ -1070,7 +1068,6 @@ const _inlineRuntimeConfig = {
     },
     "NUXT_PROJECT_ID": "63155c574a688f00124a59c2",
     "NUXT_PUBLIC_SITE_URL": "https://www.meeovi.com",
-    "directusGraphql": "https://cms.meeovicms.com/graphql",
     "indexName": "meeovi",
     "meilisearch": {
       "host": "https://search.meeovicms.com",
@@ -1089,6 +1086,8 @@ const _inlineRuntimeConfig = {
       "publishableKey": ""
     },
     "paypalClientId": "AbcdEfghIjklMnopQrstuVwxYz",
+    "applicationId": "meX6fGJ-flYl",
+    "subscriber": "69381ef6faa9c95d04c7ac0a",
     "auth": {
       "isEnabled": true,
       "baseURL": "http://localhost:3000/api/auth",
@@ -4289,7 +4288,7 @@ const setupVueI18nOptions = async (defaultLocale) => {
   return options;
 };
 
-const appHead = {"link":[{"rel":"icon","href":"/favicon.ico"},{"rel":"apple-touch-icon","href":"/icons/apple-touch-icon-180x180.png"},{"rel":"stylesheet","href":"https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css"},{"rel":"preload","as":"style","href":"https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"}],"meta":[{"name":"viewport","content":"minimum-scale=1, initial-scale=1, width=device-width"},{"charset":"utf-8"},{"name":"description","content":"Starter template for the M Framework"},{"name":"description","content":"Starter Template for the M Framework"},{"name":"description","content":"Base Application for Meeovi Framework"},{"property":"og:type","content":"website"}],"style":[],"script":[{},{"src":"https://comments.meeovicms.com/comments/embed.js","defer":true}],"noscript":[],"viewport":"minimum-scale=1, initial-scale=1, width=device-width","templateParams":{"separator":"·"},"htmlAttrs":{"lang":"en"}};
+const appHead = {"link":[{"rel":"icon","href":"/favicon.ico"},{"rel":"apple-touch-icon","href":"/icons/apple-touch-icon-180x180.png"},{"rel":"stylesheet","href":"https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css"}],"meta":[{"name":"viewport","content":"minimum-scale=1, initial-scale=1, width=device-width"},{"charset":"utf-8"},{"name":"description","content":"Starter template for the M Framework"},{"name":"description","content":"Starter Template for the M Framework"},{"name":"description","content":"Base Application for Meeovi Framework"},{"property":"og:type","content":"website"}],"style":[],"script":[{},{"src":"https://comments.meeovicms.com/comments/embed.js","defer":true}],"noscript":[],"viewport":"minimum-scale=1, initial-scale=1, width=device-width","templateParams":{"separator":"·"},"htmlAttrs":{"lang":"en"}};
 
 const appRootTag = "div";
 
@@ -5049,7 +5048,7 @@ const _DXMRFSHHYLVeO7a7qEPi0nWRa7rXEAbCnd2ehPuEXRk = defineNitroPlugin$1(async (
   await nitroApp.hooks.callHook("nuxt-security:ready");
 });
 
-const sriHashes = {"/_nuxt/builds/meta/649fdd4d-d228-4e38-abe3-74a81c34f2b7.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/meta/dev.json":"sha384-ktdrLPTwmqOFB4HnWtrcYPs+njqNpcOuR3XC+yLYzHJQG08Ac4UNphpg38eXFjJY","/_nuxt/builds/latest.json":"sha384-qnQJAvGW/qdLnk1u0I5gHKAVGD/arFONgxJStNP0hM+qJ1jll0as5YohrXW7PaYl","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
+const sriHashes = {"/_nuxt/builds/meta/649fdd4d-d228-4e38-abe3-74a81c34f2b7.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/meta/dev.json":"sha384-otysO5h1TGJY272VhZVFUTIEiLLUXU6T+MKZM7EAUNoGULwIJGGiwQ+5yEqIhpoS","/_nuxt/builds/latest.json":"sha384-VTZNgZZErSG9X2suh82WJN2hzefhxe89Pn2CRdxAAIJ0Q1JSK9g5AELUS27IpOtY","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
 
 const SCRIPT_RE$1 = /<script((?=[^>]+\bsrc="([^"]+)")(?![^>]+\bintegrity="[^"]+")[^>]+)(?:\/>|><\/script>)/g;
 const LINK_RE$1 = /<link((?=[^>]+\brel="(?:stylesheet|preload|modulepreload)")(?=[^>]+\bhref="([^"]+)")(?![^>]+\bintegrity="[\w\-+/=]+")[^>]+)>/g;

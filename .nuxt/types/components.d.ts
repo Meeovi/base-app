@@ -15,13 +15,8 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 
 interface _GlobalComponents {
   'Newsletter': typeof import("../../app/components/Newsletter.vue").default
-  'BlocksContactUs': typeof import("../../app/components/blocks/contactUs.vue").default
   'BlocksCopyright': typeof import("../../app/components/blocks/copyright.vue").default
-  'BlocksDemoNotice': typeof import("../../app/components/blocks/demoNotice.vue").default
-  'BlocksFavicon': typeof import("../../app/components/blocks/favicon.vue").default
   'BlocksLogo': typeof import("../../app/components/blocks/logo.vue").default
-  'BlocksRelatedarticles': typeof import("../../app/components/blocks/relatedarticles.vue").default
-  'BlocksWelcomeMessage': typeof import("../../app/components/blocks/welcomeMessage.vue").default
   'MenusBottomFooter': typeof import("../../app/components/menus/BottomFooter.vue").default
   'MenusFooterNav': typeof import("../../app/components/menus/FooterNav.vue").default
   'MenusLayoutNotifications': typeof import("../../app/components/menus/LayoutNotifications.vue").default
@@ -33,7 +28,6 @@ interface _GlobalComponents {
   'MenusSellerbar': typeof import("../../app/components/menus/sellerbar.vue").default
   'MenusSidebarBottomsidebarmenu': typeof import("../../app/components/menus/sidebar/bottomsidebarmenu.vue").default
   'MenusSidebarDepartmentsmenu': typeof import("../../app/components/menus/sidebar/departmentsmenu.vue").default
-  'MenusSidebarLeftDrawer': typeof import("../../app/components/menus/sidebar/leftDrawer.vue").default
   'MenusSidebarMyaccountmenu': typeof import("../../app/components/menus/sidebar/myaccountmenu.vue").default
   'MenusSidebarOutletsmenu': typeof import("../../app/components/menus/sidebar/outletsmenu.vue").default
   'MenusSidebarSidebartop': typeof import("../../app/components/menus/sidebar/sidebartop.vue").default
@@ -121,10 +115,6 @@ interface _GlobalComponents {
   'FeaturesFeedRelatedposts': typeof import("../../layers/social-app/app/components/features/feed/relatedposts.vue").default
   'FeaturesFeedUpdatePost': typeof import("../../layers/social-app/app/components/features/feed/update-post.vue").default
   'FeaturesFeeds': typeof import("../../layers/social-app/app/components/features/feeds.vue").default
-  'FeaturesFriendAllFriends': typeof import("../../layers/social-app/app/components/features/friend/all-friends.vue").default
-  'FeaturesFriendRequests': typeof import("../../layers/social-app/app/components/features/friend/friend-requests.vue").default
-  'FeaturesFriendMembers': typeof import("../../layers/social-app/app/components/features/friend/members.vue").default
-  'FeaturesFriendSuggestions': typeof import("../../layers/social-app/app/components/features/friend/suggestions.vue").default
   'FeaturesFriends': typeof import("../../layers/social-app/app/components/features/friends.vue").default
   'FeaturesHashtags': typeof import("../../layers/social-app/app/components/features/hashtags.vue").default
   'FeaturesMedia': typeof import("../../layers/social-app/app/components/features/media.vue").default
@@ -468,6 +458,8 @@ interface _GlobalComponents {
   'Head': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Head
   'Html': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Html
   'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Body
+  'OgImage': typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default
+  'OgImageScreenshot': typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default
   'SchemaOrgDebug': typeof import("@unhead/schema-org/vue").SchemaOrgDebug
   'SchemaOrgArticle': typeof import("@unhead/schema-org/vue").SchemaOrgArticle
   'SchemaOrgBreadcrumb': typeof import("@unhead/schema-org/vue").SchemaOrgBreadcrumb
@@ -494,13 +486,8 @@ interface _GlobalComponents {
   'SchemaOrgSoftwareApp': typeof import("@unhead/schema-org/vue").SchemaOrgSoftwareApp
   'NuxtIsland': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island").default
   'LazyNewsletter': LazyComponent<typeof import("../../app/components/Newsletter.vue").default>
-  'LazyBlocksContactUs': LazyComponent<typeof import("../../app/components/blocks/contactUs.vue").default>
   'LazyBlocksCopyright': LazyComponent<typeof import("../../app/components/blocks/copyright.vue").default>
-  'LazyBlocksDemoNotice': LazyComponent<typeof import("../../app/components/blocks/demoNotice.vue").default>
-  'LazyBlocksFavicon': LazyComponent<typeof import("../../app/components/blocks/favicon.vue").default>
   'LazyBlocksLogo': LazyComponent<typeof import("../../app/components/blocks/logo.vue").default>
-  'LazyBlocksRelatedarticles': LazyComponent<typeof import("../../app/components/blocks/relatedarticles.vue").default>
-  'LazyBlocksWelcomeMessage': LazyComponent<typeof import("../../app/components/blocks/welcomeMessage.vue").default>
   'LazyMenusBottomFooter': LazyComponent<typeof import("../../app/components/menus/BottomFooter.vue").default>
   'LazyMenusFooterNav': LazyComponent<typeof import("../../app/components/menus/FooterNav.vue").default>
   'LazyMenusLayoutNotifications': LazyComponent<typeof import("../../app/components/menus/LayoutNotifications.vue").default>
@@ -512,7 +499,6 @@ interface _GlobalComponents {
   'LazyMenusSellerbar': LazyComponent<typeof import("../../app/components/menus/sellerbar.vue").default>
   'LazyMenusSidebarBottomsidebarmenu': LazyComponent<typeof import("../../app/components/menus/sidebar/bottomsidebarmenu.vue").default>
   'LazyMenusSidebarDepartmentsmenu': LazyComponent<typeof import("../../app/components/menus/sidebar/departmentsmenu.vue").default>
-  'LazyMenusSidebarLeftDrawer': LazyComponent<typeof import("../../app/components/menus/sidebar/leftDrawer.vue").default>
   'LazyMenusSidebarMyaccountmenu': LazyComponent<typeof import("../../app/components/menus/sidebar/myaccountmenu.vue").default>
   'LazyMenusSidebarOutletsmenu': LazyComponent<typeof import("../../app/components/menus/sidebar/outletsmenu.vue").default>
   'LazyMenusSidebarSidebartop': LazyComponent<typeof import("../../app/components/menus/sidebar/sidebartop.vue").default>
@@ -600,10 +586,6 @@ interface _GlobalComponents {
   'LazyFeaturesFeedRelatedposts': LazyComponent<typeof import("../../layers/social-app/app/components/features/feed/relatedposts.vue").default>
   'LazyFeaturesFeedUpdatePost': LazyComponent<typeof import("../../layers/social-app/app/components/features/feed/update-post.vue").default>
   'LazyFeaturesFeeds': LazyComponent<typeof import("../../layers/social-app/app/components/features/feeds.vue").default>
-  'LazyFeaturesFriendAllFriends': LazyComponent<typeof import("../../layers/social-app/app/components/features/friend/all-friends.vue").default>
-  'LazyFeaturesFriendRequests': LazyComponent<typeof import("../../layers/social-app/app/components/features/friend/friend-requests.vue").default>
-  'LazyFeaturesFriendMembers': LazyComponent<typeof import("../../layers/social-app/app/components/features/friend/members.vue").default>
-  'LazyFeaturesFriendSuggestions': LazyComponent<typeof import("../../layers/social-app/app/components/features/friend/suggestions.vue").default>
   'LazyFeaturesFriends': LazyComponent<typeof import("../../layers/social-app/app/components/features/friends.vue").default>
   'LazyFeaturesHashtags': LazyComponent<typeof import("../../layers/social-app/app/components/features/hashtags.vue").default>
   'LazyFeaturesMedia': LazyComponent<typeof import("../../layers/social-app/app/components/features/media.vue").default>
@@ -947,6 +929,8 @@ interface _GlobalComponents {
   'LazyHead': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Head>
   'LazyHtml': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Html>
   'LazyBody': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Body>
+  'LazyOgImage': LazyComponent<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default>
+  'LazyOgImageScreenshot': LazyComponent<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default>
   'LazySchemaOrgDebug': LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgDebug>
   'LazySchemaOrgArticle': LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgArticle>
   'LazySchemaOrgBreadcrumb': LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgBreadcrumb>

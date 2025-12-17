@@ -15,13 +15,8 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 
 
 export const Newsletter: typeof import("../app/components/Newsletter.vue").default
-export const BlocksContactUs: typeof import("../app/components/blocks/contactUs.vue").default
 export const BlocksCopyright: typeof import("../app/components/blocks/copyright.vue").default
-export const BlocksDemoNotice: typeof import("../app/components/blocks/demoNotice.vue").default
-export const BlocksFavicon: typeof import("../app/components/blocks/favicon.vue").default
 export const BlocksLogo: typeof import("../app/components/blocks/logo.vue").default
-export const BlocksRelatedarticles: typeof import("../app/components/blocks/relatedarticles.vue").default
-export const BlocksWelcomeMessage: typeof import("../app/components/blocks/welcomeMessage.vue").default
 export const MenusBottomFooter: typeof import("../app/components/menus/BottomFooter.vue").default
 export const MenusFooterNav: typeof import("../app/components/menus/FooterNav.vue").default
 export const MenusLayoutNotifications: typeof import("../app/components/menus/LayoutNotifications.vue").default
@@ -33,7 +28,6 @@ export const MenusMobilesearch: typeof import("../app/components/menus/mobilesea
 export const MenusSellerbar: typeof import("../app/components/menus/sellerbar.vue").default
 export const MenusSidebarBottomsidebarmenu: typeof import("../app/components/menus/sidebar/bottomsidebarmenu.vue").default
 export const MenusSidebarDepartmentsmenu: typeof import("../app/components/menus/sidebar/departmentsmenu.vue").default
-export const MenusSidebarLeftDrawer: typeof import("../app/components/menus/sidebar/leftDrawer.vue").default
 export const MenusSidebarMyaccountmenu: typeof import("../app/components/menus/sidebar/myaccountmenu.vue").default
 export const MenusSidebarOutletsmenu: typeof import("../app/components/menus/sidebar/outletsmenu.vue").default
 export const MenusSidebarSidebartop: typeof import("../app/components/menus/sidebar/sidebartop.vue").default
@@ -121,10 +115,6 @@ export const FeaturesFeedPosts: typeof import("../layers/social-app/app/componen
 export const FeaturesFeedRelatedposts: typeof import("../layers/social-app/app/components/features/feed/relatedposts.vue").default
 export const FeaturesFeedUpdatePost: typeof import("../layers/social-app/app/components/features/feed/update-post.vue").default
 export const FeaturesFeeds: typeof import("../layers/social-app/app/components/features/feeds.vue").default
-export const FeaturesFriendAllFriends: typeof import("../layers/social-app/app/components/features/friend/all-friends.vue").default
-export const FeaturesFriendRequests: typeof import("../layers/social-app/app/components/features/friend/friend-requests.vue").default
-export const FeaturesFriendMembers: typeof import("../layers/social-app/app/components/features/friend/members.vue").default
-export const FeaturesFriendSuggestions: typeof import("../layers/social-app/app/components/features/friend/suggestions.vue").default
 export const FeaturesFriends: typeof import("../layers/social-app/app/components/features/friends.vue").default
 export const FeaturesHashtags: typeof import("../layers/social-app/app/components/features/hashtags.vue").default
 export const FeaturesMedia: typeof import("../layers/social-app/app/components/features/media.vue").default
@@ -468,6 +458,8 @@ export const Style: typeof import("../node_modules/nuxt/dist/head/runtime/compon
 export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/components").Head
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components").Html
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components").Body
+export const OgImage: typeof import("../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default
+export const OgImageScreenshot: typeof import("../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default
 export const SchemaOrgDebug: typeof import("@unhead/schema-org/vue").SchemaOrgDebug
 export const SchemaOrgArticle: typeof import("@unhead/schema-org/vue").SchemaOrgArticle
 export const SchemaOrgBreadcrumb: typeof import("@unhead/schema-org/vue").SchemaOrgBreadcrumb
@@ -494,13 +486,8 @@ export const SchemaOrgBook: typeof import("@unhead/schema-org/vue").SchemaOrgBoo
 export const SchemaOrgSoftwareApp: typeof import("@unhead/schema-org/vue").SchemaOrgSoftwareApp
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island").default
 export const LazyNewsletter: LazyComponent<typeof import("../app/components/Newsletter.vue").default>
-export const LazyBlocksContactUs: LazyComponent<typeof import("../app/components/blocks/contactUs.vue").default>
 export const LazyBlocksCopyright: LazyComponent<typeof import("../app/components/blocks/copyright.vue").default>
-export const LazyBlocksDemoNotice: LazyComponent<typeof import("../app/components/blocks/demoNotice.vue").default>
-export const LazyBlocksFavicon: LazyComponent<typeof import("../app/components/blocks/favicon.vue").default>
 export const LazyBlocksLogo: LazyComponent<typeof import("../app/components/blocks/logo.vue").default>
-export const LazyBlocksRelatedarticles: LazyComponent<typeof import("../app/components/blocks/relatedarticles.vue").default>
-export const LazyBlocksWelcomeMessage: LazyComponent<typeof import("../app/components/blocks/welcomeMessage.vue").default>
 export const LazyMenusBottomFooter: LazyComponent<typeof import("../app/components/menus/BottomFooter.vue").default>
 export const LazyMenusFooterNav: LazyComponent<typeof import("../app/components/menus/FooterNav.vue").default>
 export const LazyMenusLayoutNotifications: LazyComponent<typeof import("../app/components/menus/LayoutNotifications.vue").default>
@@ -512,7 +499,6 @@ export const LazyMenusMobilesearch: LazyComponent<typeof import("../app/componen
 export const LazyMenusSellerbar: LazyComponent<typeof import("../app/components/menus/sellerbar.vue").default>
 export const LazyMenusSidebarBottomsidebarmenu: LazyComponent<typeof import("../app/components/menus/sidebar/bottomsidebarmenu.vue").default>
 export const LazyMenusSidebarDepartmentsmenu: LazyComponent<typeof import("../app/components/menus/sidebar/departmentsmenu.vue").default>
-export const LazyMenusSidebarLeftDrawer: LazyComponent<typeof import("../app/components/menus/sidebar/leftDrawer.vue").default>
 export const LazyMenusSidebarMyaccountmenu: LazyComponent<typeof import("../app/components/menus/sidebar/myaccountmenu.vue").default>
 export const LazyMenusSidebarOutletsmenu: LazyComponent<typeof import("../app/components/menus/sidebar/outletsmenu.vue").default>
 export const LazyMenusSidebarSidebartop: LazyComponent<typeof import("../app/components/menus/sidebar/sidebartop.vue").default>
@@ -600,10 +586,6 @@ export const LazyFeaturesFeedPosts: LazyComponent<typeof import("../layers/socia
 export const LazyFeaturesFeedRelatedposts: LazyComponent<typeof import("../layers/social-app/app/components/features/feed/relatedposts.vue").default>
 export const LazyFeaturesFeedUpdatePost: LazyComponent<typeof import("../layers/social-app/app/components/features/feed/update-post.vue").default>
 export const LazyFeaturesFeeds: LazyComponent<typeof import("../layers/social-app/app/components/features/feeds.vue").default>
-export const LazyFeaturesFriendAllFriends: LazyComponent<typeof import("../layers/social-app/app/components/features/friend/all-friends.vue").default>
-export const LazyFeaturesFriendRequests: LazyComponent<typeof import("../layers/social-app/app/components/features/friend/friend-requests.vue").default>
-export const LazyFeaturesFriendMembers: LazyComponent<typeof import("../layers/social-app/app/components/features/friend/members.vue").default>
-export const LazyFeaturesFriendSuggestions: LazyComponent<typeof import("../layers/social-app/app/components/features/friend/suggestions.vue").default>
 export const LazyFeaturesFriends: LazyComponent<typeof import("../layers/social-app/app/components/features/friends.vue").default>
 export const LazyFeaturesHashtags: LazyComponent<typeof import("../layers/social-app/app/components/features/hashtags.vue").default>
 export const LazyFeaturesMedia: LazyComponent<typeof import("../layers/social-app/app/components/features/media.vue").default>
@@ -947,6 +929,8 @@ export const LazyStyle: LazyComponent<typeof import("../node_modules/nuxt/dist/h
 export const LazyHead: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components").Head>
 export const LazyHtml: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components").Html>
 export const LazyBody: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components").Body>
+export const LazyOgImage: LazyComponent<typeof import("../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default>
+export const LazyOgImageScreenshot: LazyComponent<typeof import("../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default>
 export const LazySchemaOrgDebug: LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgDebug>
 export const LazySchemaOrgArticle: LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgArticle>
 export const LazySchemaOrgBreadcrumb: LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgBreadcrumb>
