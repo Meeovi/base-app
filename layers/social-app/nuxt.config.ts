@@ -25,7 +25,7 @@ export default defineNuxtConfig({
       },
       meta: [{
         name: 'description',
-        content: 'Starter template for the M Framework'
+        content: 'Social App for the M Framework'
       }, ],
       link: [{
           rel: 'icon',
