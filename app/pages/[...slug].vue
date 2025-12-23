@@ -10,7 +10,7 @@
     defineAsyncComponent,
     shallowRef
   } from 'vue'
-  import { pageComponentMap } from '@/types/pageComponentMap'
+  import { pageComponentMap } from '#shared/app/types/pageComponentMap'
   import {
     useRoute
   } from 'vue-router'

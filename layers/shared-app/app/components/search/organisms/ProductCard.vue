@@ -14,7 +14,10 @@ const { name, brand, price, rating, reviewsCount, imageUrl } = toRefs(props)
 
 const formattedPrice = computed(() => Number.isNaN(price) ? '-' : price)
 
-const optimizedImageUrl = computed(() => imageUrl.value.replace('https://images-na.ssl-images-amazon.com/images/', '/product-images/'))
+const optimizedImageUrl = computed(() => {
+  const v = imageUrl?.value ?? ''
+  return typeof v === 'string' ? v.replace('https://images-na.ssl-images-amazon.com/images/', '/product-images/') : ''
+})
 </script>
 
 <template>

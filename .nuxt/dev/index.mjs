@@ -1,27 +1,28 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
 import { Server } from 'node:http';
 import { resolve as resolve$1, dirname, extname, join } from 'node:path';
-import nodeCrypto from 'node:crypto';
+import crypto$1 from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getResponseStatus, createError, getRequestHost, getRequestProtocol, getQuery as getQuery$1, setCookie, removeResponseHeader, readBody, getHeader, getRouterParam, setHeader, handleCors, getRequestIP, readMultipartFormData, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, sendError, getHeaders, parseCookies, isMethod, getResponseStatusText, H3Error } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/h3/dist/index.mjs';
+import wsAdapter from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/crossws/dist/adapters/node.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getResponseStatus, createError, getQuery as getQuery$1, readBody, H3Error, getRequestProtocol, getRequestHost, useSession, getCookie, setCookie, removeResponseHeader, getHeader, getRouterParam, setHeader, handleCors, getRequestIP, readMultipartFormData, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, sendError, readValidatedBody, defineWebSocketHandler, getResponseStatusText } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/h3/dist/index.mjs';
 import { escapeHtml } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@vue/shared/dist/shared.cjs.js';
 import defu, { defuFn, createDefu, defu as defu$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/defu/dist/defu.mjs';
 import { html as html$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/satori-html/dist/index.js';
 import sizeOf from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/image-size/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, joinRelativeURL, hasProtocol, withHttps, withLeadingSlash, withoutTrailingSlash, withBase, withTrailingSlash, withoutLeadingSlash, parsePath, decodePath, stringifyQuery, parseQuery, encodePath, stringifyParsedURL } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ufo/dist/index.mjs';
 import consola, { createConsola, consola as consola$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/consola/dist/index.mjs';
 import { execa } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/nuxt-og-image/node_modules/execa/index.js';
 import playwrightCore from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/playwright-core/index.mjs';
 import { toValue, isVNode, isRef } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/vue/index.mjs';
-import Keycloak from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/next-auth/providers/keycloak.js';
-import { getServerSession } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/next-auth/index.js';
-import fetch$1 from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unenv/dist/runtime/npm/node-fetch.mjs';
-import { AuthHandler } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/next-auth/core/index.js';
-import { getToken as getToken$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/next-auth/jwt/index.js';
+import { z } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/zod/index.js';
 import * as DirectusSdk from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@directus/sdk/dist/index.js';
 import { Client } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/minio/dist/esm/minio.mjs';
 import { v4 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/uuid/dist-node/index.js';
 import formidable from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/formidable/src/index.js';
 import fs$1, { readFile } from 'node:fs/promises';
+import { generateAuthenticationOptions, verifyAuthenticationResponse, generateRegistrationOptions, verifyRegistrationResponse } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@simplewebauthn/server/esm/index.js';
+import { randomUUID, getRandomValues } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/uncrypto/dist/crypto.node.mjs';
+import { bufferToBase64URLString, base64URLStringToBuffer } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@simplewebauthn/browser/dist/bundle/index.js';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import destr, { destr as destr$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/destr/dist/index.mjs';
 import { parse, stringify, uneval } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/devalue/index.js';
@@ -29,22 +30,20 @@ import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:/
 import { createStorage, prefixStorage, normalizeKey } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unstorage/dist/index.mjs';
 import lruCacheDriver from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unstorage/drivers/lru-cache.mjs';
 import { klona } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/klona/dist/index.mjs';
-import { snakeCase, kebabCase, titleCase } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/scule/dist/index.mjs';
+import { snakeCase, kebabCase, titleCase, upperFirst } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/scule/dist/index.mjs';
 import { createGenerator } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@unocss/core/dist/index.mjs';
 import presetWind from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@unocss/preset-wind3/dist/index.mjs';
 import { digest, hash as hash$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ohash/dist/index.mjs';
 import { toRouteMatcher, createRouter } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/radix3/dist/index.mjs';
 import { createHooks } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/hookable/dist/index.mjs';
-import { createFetch, Headers as Headers$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ofetch/dist/node.mjs';
+import { FetchError, createFetch, Headers as Headers$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ofetch/dist/node.mjs';
 import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/node-mock-http/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unstorage/drivers/fs.mjs';
 import unstorage_47drivers_47redis from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unstorage/drivers/redis.mjs';
 import { ErrorParser } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/youch-core/build/index.js';
 import { Youch } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/youch/build/index.js';
-import { SourceMapConsumer } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/source-map/source-map.js';
+import { SourceMapConsumer } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/nitropack/node_modules/source-map/source-map.js';
 import devalue from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@nuxt/devalue/dist/devalue.mjs';
-import { createPathIndexLanguageParser, parseAcceptLanguage } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@intlify/utils/dist/index.mjs';
-import { parse as parse$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/cookie-es/dist/index.mjs';
 import { createRouterMatcher } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/vue-router/vue-router.node.mjs';
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { getContext } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unctx/dist/index.mjs';
@@ -58,296 +57,11 @@ import { walkResolver } from 'file://C:/Users/Basti/Documents/My_Websites/Handma
 import { McpServer } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js';
 import { StreamableHTTPServerTransport } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@modelcontextprotocol/sdk/dist/esm/server/streamableHttp.js';
 import ms from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ms/index.js';
-import satori from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@nuxtjs/mcp-toolkit/node_modules/satori/dist/index.js';
+import satori from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/satori/dist/index.js';
 import { FilterXSS } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/xss/lib/index.js';
 import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ipx/dist/index.mjs';
 import { createUnhead } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unhead/dist/index.mjs';
 import { Resvg } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@resvg/resvg-js/index.js';
-import _satori from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/satori/dist/index.js';
-
-const HASH_RE = /#/g;
-const AMPERSAND_RE = /&/g;
-const SLASH_RE = /\//g;
-const EQUAL_RE = /=/g;
-const IM_RE = /\?/g;
-const PLUS_RE = /\+/g;
-const ENC_CARET_RE = /%5e/gi;
-const ENC_BACKTICK_RE = /%60/gi;
-const ENC_PIPE_RE = /%7c/gi;
-const ENC_SPACE_RE = /%20/gi;
-const ENC_SLASH_RE = /%2f/gi;
-const ENC_ENC_SLASH_RE = /%252f/gi;
-function encode(text) {
-  return encodeURI("" + text).replace(ENC_PIPE_RE, "|");
-}
-function encodeQueryValue(input) {
-  return encode(typeof input === "string" ? input : JSON.stringify(input)).replace(PLUS_RE, "%2B").replace(ENC_SPACE_RE, "+").replace(HASH_RE, "%23").replace(AMPERSAND_RE, "%26").replace(ENC_BACKTICK_RE, "`").replace(ENC_CARET_RE, "^").replace(SLASH_RE, "%2F");
-}
-function encodeQueryKey(text) {
-  return encodeQueryValue(text).replace(EQUAL_RE, "%3D");
-}
-function encodePath(text) {
-  return encode(text).replace(HASH_RE, "%23").replace(IM_RE, "%3F").replace(ENC_ENC_SLASH_RE, "%2F").replace(AMPERSAND_RE, "%26").replace(PLUS_RE, "%2B");
-}
-function decode(text = "") {
-  try {
-    return decodeURIComponent("" + text);
-  } catch {
-    return "" + text;
-  }
-}
-function decodePath(text) {
-  return decode(text.replace(ENC_SLASH_RE, "%252F"));
-}
-function decodeQueryKey(text) {
-  return decode(text.replace(PLUS_RE, " "));
-}
-function decodeQueryValue(text) {
-  return decode(text.replace(PLUS_RE, " "));
-}
-
-function parseQuery(parametersString = "") {
-  const object = /* @__PURE__ */ Object.create(null);
-  if (parametersString[0] === "?") {
-    parametersString = parametersString.slice(1);
-  }
-  for (const parameter of parametersString.split("&")) {
-    const s = parameter.match(/([^=]+)=?(.*)/) || [];
-    if (s.length < 2) {
-      continue;
-    }
-    const key = decodeQueryKey(s[1]);
-    if (key === "__proto__" || key === "constructor") {
-      continue;
-    }
-    const value = decodeQueryValue(s[2] || "");
-    if (object[key] === void 0) {
-      object[key] = value;
-    } else if (Array.isArray(object[key])) {
-      object[key].push(value);
-    } else {
-      object[key] = [object[key], value];
-    }
-  }
-  return object;
-}
-function encodeQueryItem(key, value) {
-  if (typeof value === "number" || typeof value === "boolean") {
-    value = String(value);
-  }
-  if (!value) {
-    return encodeQueryKey(key);
-  }
-  if (Array.isArray(value)) {
-    return value.map(
-      (_value) => `${encodeQueryKey(key)}=${encodeQueryValue(_value)}`
-    ).join("&");
-  }
-  return `${encodeQueryKey(key)}=${encodeQueryValue(value)}`;
-}
-function stringifyQuery(query) {
-  return Object.keys(query).filter((k) => query[k] !== void 0).map((k) => encodeQueryItem(k, query[k])).filter(Boolean).join("&");
-}
-
-const PROTOCOL_STRICT_REGEX = /^[\s\w\0+.-]{2,}:([/\\]{1,2})/;
-const PROTOCOL_REGEX = /^[\s\w\0+.-]{2,}:([/\\]{2})?/;
-const PROTOCOL_RELATIVE_REGEX = /^([/\\]\s*){2,}[^/\\]/;
-const JOIN_LEADING_SLASH_RE = /^\.?\//;
-function hasProtocol(inputString, opts = {}) {
-  if (typeof opts === "boolean") {
-    opts = { acceptRelative: opts };
-  }
-  if (opts.strict) {
-    return PROTOCOL_STRICT_REGEX.test(inputString);
-  }
-  return PROTOCOL_REGEX.test(inputString) || (opts.acceptRelative ? PROTOCOL_RELATIVE_REGEX.test(inputString) : false);
-}
-function hasTrailingSlash(input = "", respectQueryAndFragment) {
-  {
-    return input.endsWith("/");
-  }
-}
-function withoutTrailingSlash(input = "", respectQueryAndFragment) {
-  {
-    return (hasTrailingSlash(input) ? input.slice(0, -1) : input) || "/";
-  }
-}
-function withTrailingSlash(input = "", respectQueryAndFragment) {
-  {
-    return input.endsWith("/") ? input : input + "/";
-  }
-}
-function hasLeadingSlash(input = "") {
-  return input.startsWith("/");
-}
-function withoutLeadingSlash(input = "") {
-  return (hasLeadingSlash(input) ? input.slice(1) : input) || "/";
-}
-function withLeadingSlash(input = "") {
-  return hasLeadingSlash(input) ? input : "/" + input;
-}
-function withBase(input, base) {
-  if (isEmptyURL(base) || hasProtocol(input)) {
-    return input;
-  }
-  const _base = withoutTrailingSlash(base);
-  if (input.startsWith(_base)) {
-    return input;
-  }
-  return joinURL(_base, input);
-}
-function withoutBase(input, base) {
-  if (isEmptyURL(base)) {
-    return input;
-  }
-  const _base = withoutTrailingSlash(base);
-  if (!input.startsWith(_base)) {
-    return input;
-  }
-  const trimmed = input.slice(_base.length);
-  return trimmed[0] === "/" ? trimmed : "/" + trimmed;
-}
-function withQuery(input, query) {
-  const parsed = parseURL(input);
-  const mergedQuery = { ...parseQuery(parsed.search), ...query };
-  parsed.search = stringifyQuery(mergedQuery);
-  return stringifyParsedURL(parsed);
-}
-function getQuery(input) {
-  return parseQuery(parseURL(input).search);
-}
-function isEmptyURL(url) {
-  return !url || url === "/";
-}
-function isNonEmptyURL(url) {
-  return url && url !== "/";
-}
-function joinURL(base, ...input) {
-  let url = base || "";
-  for (const segment of input.filter((url2) => isNonEmptyURL(url2))) {
-    if (url) {
-      const _segment = segment.replace(JOIN_LEADING_SLASH_RE, "");
-      url = withTrailingSlash(url) + _segment;
-    } else {
-      url = segment;
-    }
-  }
-  return url;
-}
-function joinRelativeURL(..._input) {
-  const JOIN_SEGMENT_SPLIT_RE = /\/(?!\/)/;
-  const input = _input.filter(Boolean);
-  const segments = [];
-  let segmentsDepth = 0;
-  for (const i of input) {
-    if (!i || i === "/") {
-      continue;
-    }
-    for (const [sindex, s] of i.split(JOIN_SEGMENT_SPLIT_RE).entries()) {
-      if (!s || s === ".") {
-        continue;
-      }
-      if (s === "..") {
-        if (segments.length === 1 && hasProtocol(segments[0])) {
-          continue;
-        }
-        segments.pop();
-        segmentsDepth--;
-        continue;
-      }
-      if (sindex === 1 && segments[segments.length - 1]?.endsWith(":/")) {
-        segments[segments.length - 1] += "/" + s;
-        continue;
-      }
-      segments.push(s);
-      segmentsDepth++;
-    }
-  }
-  let url = segments.join("/");
-  if (segmentsDepth >= 0) {
-    if (input[0]?.startsWith("/") && !url.startsWith("/")) {
-      url = "/" + url;
-    } else if (input[0]?.startsWith("./") && !url.startsWith("./")) {
-      url = "./" + url;
-    }
-  } else {
-    url = "../".repeat(-1 * segmentsDepth) + url;
-  }
-  if (input[input.length - 1]?.endsWith("/") && !url.endsWith("/")) {
-    url += "/";
-  }
-  return url;
-}
-function withHttps(input) {
-  return withProtocol(input, "https://");
-}
-function withoutProtocol(input) {
-  return withProtocol(input, "");
-}
-function withProtocol(input, protocol) {
-  let match = input.match(PROTOCOL_REGEX);
-  if (!match) {
-    match = input.match(/^\/{2,}/);
-  }
-  if (!match) {
-    return protocol + input;
-  }
-  return protocol + input.slice(match[0].length);
-}
-
-const protocolRelative = Symbol.for("ufo:protocolRelative");
-function parseURL(input = "", defaultProto) {
-  const _specialProtoMatch = input.match(
-    /^[\s\0]*(blob:|data:|javascript:|vbscript:)(.*)/i
-  );
-  if (_specialProtoMatch) {
-    const [, _proto, _pathname = ""] = _specialProtoMatch;
-    return {
-      protocol: _proto.toLowerCase(),
-      pathname: _pathname,
-      href: _proto + _pathname,
-      auth: "",
-      host: "",
-      search: "",
-      hash: ""
-    };
-  }
-  if (!hasProtocol(input, { acceptRelative: true })) {
-    return defaultProto ? parseURL(defaultProto + input) : parsePath(input);
-  }
-  const [, protocol = "", auth, hostAndPath = ""] = input.replace(/\\/g, "/").match(/^[\s\0]*([\w+.-]{2,}:)?\/\/([^/@]+@)?(.*)/) || [];
-  let [, host = "", path = ""] = hostAndPath.match(/([^#/?]*)(.*)?/) || [];
-  if (protocol === "file:") {
-    path = path.replace(/\/(?=[A-Za-z]:)/, "");
-  }
-  const { pathname, search, hash } = parsePath(path);
-  return {
-    protocol: protocol.toLowerCase(),
-    auth: auth ? auth.slice(0, Math.max(0, auth.length - 1)) : "",
-    host,
-    pathname,
-    search,
-    hash,
-    [protocolRelative]: !protocol
-  };
-}
-function parsePath(input = "") {
-  const [pathname = "", search = "", hash = ""] = (input.match(/([^#?]*)(\?[^#]*)?(#.*)?/) || []).splice(1);
-  return {
-    pathname,
-    search,
-    hash
-  };
-}
-function stringifyParsedURL(parsed) {
-  const pathname = parsed.pathname || "";
-  const search = parsed.search ? (parsed.search.startsWith("?") ? "" : "?") + parsed.search : "";
-  const hash = parsed.hash || "";
-  const auth = parsed.auth ? parsed.auth + "@" : "";
-  const host = parsed.host || "";
-  const proto = parsed.protocol || parsed[protocolRelative] ? (parsed.protocol || "") + "//" : "";
-  return proto + auth + host + pathname + search + hash;
-}
 
 const serverAssets = [{"baseName":"nuxt-og-image:fonts","dir":"C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/.nuxt/cache/nuxt-og-image/_fonts"},{"baseName":"server","dir":"C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/server/assets"}];
 
@@ -1086,30 +800,8 @@ const _inlineRuntimeConfig = {
       "publishableKey": ""
     },
     "paypalClientId": "AbcdEfghIjklMnopQrstuVwxYz",
-    "applicationId": "meX6fGJ-flYl",
-    "subscriber": "69381ef6faa9c95d04c7ac0a",
     "auth": {
-      "isEnabled": true,
-      "baseURL": "http://localhost:3000/api/auth",
-      "disableInternalRouting": false,
-      "disableServerSideAuth": false,
-      "originEnvKey": "AUTH_ORIGIN",
-      "sessionRefresh": {
-        "enablePeriodically": false,
-        "enableOnWindowFocus": true,
-        "handler": ""
-      },
-      "globalAppMiddleware": {
-        "isEnabled": false,
-        "allow404WithoutAuth": true,
-        "addDefaultCallbackUrl": true
-      },
-      "provider": {
-        "type": "authjs",
-        "trustHost": false,
-        "defaultProvider": "keycloak",
-        "addDefaultCallbackUrl": true
-      }
+      "loadStrategy": "server-first"
     },
     "nuxt-schema-org": {
       "reactive": true,
@@ -1118,7 +810,7 @@ const _inlineRuntimeConfig = {
         "data-nuxt-schema-org": true
       },
       "identity": "",
-      "version": "5.0.9"
+      "version": "5.0.10"
     },
     "seo-utils": {
       "canonicalQueryWhitelist": [
@@ -1141,22 +833,16 @@ const _inlineRuntimeConfig = {
       "locales": [
         {
           "code": "en-GB",
-          "language": "en-GB",
-          "_hreflang": "en-GB",
-          "_sitemap": "en-GB"
+          "language": "en-GB"
         },
         {
           "code": "pl-PL",
-          "language": "pl-PL",
-          "_hreflang": "pl-PL",
-          "_sitemap": "pl-PL"
+          "language": "pl-PL"
         },
         {
           "code": "testde",
           "language": "de-DE",
-          "localeId": "c19b753b5f2c4bea8ad15e00027802d4",
-          "_hreflang": "de-DE",
-          "_sitemap": "de-DE"
+          "localeId": "c19b753b5f2c4bea8ad15e00027802d4"
         }
       ],
       "detectBrowserLanguage": false,
@@ -1170,7 +856,8 @@ const _inlineRuntimeConfig = {
         "stripMessagesPayload": false,
         "preload": false,
         "strictSeo": false,
-        "nitroContextDetection": true
+        "nitroContextDetection": true,
+        "httpCacheDuration": 10
       },
       "domainLocales": {
         "en-GB": {
@@ -1203,6 +890,301 @@ const _inlineRuntimeConfig = {
     "name": "Meeovi MCP Server",
     "version": "1.0.0",
     "dir": "mcp"
+  },
+  "session": {
+    "name": "nuxt-session",
+    "password": "",
+    "cookie": {
+      "sameSite": "lax"
+    }
+  },
+  "hash": {
+    "scrypt": {}
+  },
+  "webauthn": {
+    "register": {},
+    "authenticate": {}
+  },
+  "oauth": {
+    "gitea": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": "",
+      "baseURL": ""
+    },
+    "github": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "gitlab": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": "",
+      "baseURL": "https://gitlab.com"
+    },
+    "spotify": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "google": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "twitch": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "auth0": {
+      "clientId": "",
+      "clientSecret": "",
+      "domain": "",
+      "audience": "",
+      "redirectURL": ""
+    },
+    "workos": {
+      "clientId": "",
+      "clientSecret": "",
+      "connectionId": "",
+      "screenHint": "",
+      "redirectURL": ""
+    },
+    "microsoft": {
+      "clientId": "",
+      "clientSecret": "",
+      "tenant": "",
+      "scope": [],
+      "authorizationURL": "",
+      "tokenURL": "",
+      "userURL": "",
+      "redirectURL": ""
+    },
+    "azureb2c": {
+      "clientId": "",
+      "policy": "",
+      "tenant": "",
+      "scope": [],
+      "authorizationURL": "",
+      "tokenURL": "",
+      "userURL": "",
+      "redirectURL": ""
+    },
+    "discord": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "battledotnet": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "bluesky": {
+      "clientMetadataFilename": "",
+      "clientName": "",
+      "clientUri": "",
+      "logoUri": "",
+      "policyUri": "",
+      "tosUri": "",
+      "scope": [
+        "atproto"
+      ],
+      "grantTypes": [
+        "authorization_code"
+      ],
+      "responseTypes": [
+        "code"
+      ],
+      "applicationType": "web",
+      "redirectUris": "",
+      "dpopBoundAccessTokens": true,
+      "tokenEndpointAuthMethod": "none"
+    },
+    "keycloak": {
+      "clientId": "",
+      "clientSecret": "",
+      "serverUrl": "",
+      "serverUrlInternal": "",
+      "realm": "",
+      "redirectURL": ""
+    },
+    "linear": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "linkedin": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "cognito": {
+      "clientId": "",
+      "clientSecret": "",
+      "region": "",
+      "userPoolId": "",
+      "redirectURL": ""
+    },
+    "facebook": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "instagram": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "paypal": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "steam": {
+      "apiKey": "",
+      "redirectURL": ""
+    },
+    "x": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "xsuaa": {
+      "clientId": "",
+      "clientSecret": "",
+      "domain": "",
+      "redirectURL": ""
+    },
+    "vk": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "yandex": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "tiktok": {
+      "clientKey": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "dropbox": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "polar": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "zitadel": {
+      "clientId": "",
+      "clientSecret": "",
+      "domain": "",
+      "redirectURL": ""
+    },
+    "authentik": {
+      "clientId": "",
+      "clientSecret": "",
+      "domain": "",
+      "redirectURL": ""
+    },
+    "seznam": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "strava": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "hubspot": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "line": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "atlassian": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "apple": {
+      "teamId": "",
+      "keyId": "",
+      "privateKey": "",
+      "redirectURL": "",
+      "clientId": ""
+    },
+    "kick": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": ""
+    },
+    "livechat": {
+      "clientId": "",
+      "clientSecret": ""
+    },
+    "salesforce": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": "",
+      "baseURL": "",
+      "scope": ""
+    },
+    "slack": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": "",
+      "scope": ""
+    },
+    "heroku": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": "",
+      "scope": ""
+    },
+    "roblox": {
+      "clientId": "",
+      "clientSecret": "",
+      "redirectURL": "",
+      "scope": ""
+    },
+    "okta": {
+      "clientId": "",
+      "clientSecret": "",
+      "domain": "",
+      "audience": "",
+      "scope": [],
+      "redirectURL": ""
+    },
+    "ory": {
+      "clientId": "",
+      "clientSecret": "",
+      "sdkURL": "",
+      "redirectURL": "",
+      "scope": [],
+      "authorizationURL": "",
+      "tokenURL": "",
+      "userURL": ""
+    },
+    "shopifyCustomer": {
+      "shopDomain": "",
+      "clientId": "",
+      "redirectURL": "",
+      "scope": []
+    }
   },
   "private": {
     "basicAuth": false
@@ -1317,7 +1299,7 @@ const _inlineRuntimeConfig = {
       }
     ],
     "credits": true,
-    "version": "7.4.7",
+    "version": "7.5.0",
     "sitemaps": {
       "index": {
         "sitemapName": "index",
@@ -1395,7 +1377,7 @@ const _inlineRuntimeConfig = {
       "data-nuxt-schema-org": true
     },
     "identity": "",
-    "version": "5.0.9"
+    "version": "5.0.10"
   },
   "nuxt-site-config": {
     "stack": [
@@ -1424,12 +1406,12 @@ const _inlineRuntimeConfig = {
         "defaultLocale": "en-GB"
       }
     ],
-    "version": "3.2.11",
+    "version": "3.2.14",
     "debug": false,
     "multiTenancy": []
   },
   "nuxt-robots": {
-    "version": "5.5.6",
+    "version": "5.6.7",
     "isNuxtContentV2": false,
     "debug": false,
     "credits": true,
@@ -1450,6 +1432,7 @@ const _inlineRuntimeConfig = {
           "*"
         ],
         "contentUsage": [],
+        "contentSignal": [],
         "_indexable": true,
         "_rules": [
           {
@@ -1490,7 +1473,7 @@ const _inlineRuntimeConfig = {
     "botDetection": true
   },
   "nuxt-og-image": {
-    "version": "5.1.12",
+    "version": "5.1.13",
     "satoriOptions": {},
     "resvgOptions": {},
     "sharpOptions": {},
@@ -1505,7 +1488,7 @@ const _inlineRuntimeConfig = {
       "cacheMaxAgeSeconds": 259200
     },
     "debug": false,
-    "baseCacheKey": "/cache/nuxt-og-image/5.1.12",
+    "baseCacheKey": "/cache/nuxt-og-image/5.1.13",
     "fonts": [
       {
         "cacheKey": "Inter:undefined:400",
@@ -2242,58 +2225,23 @@ async function errorHandler(error, event) {
   // H3 will handle fallback
 }
 
-const ERROR_MESSAGES = {
-  NO_SECRET: "AUTH_NO_SECRET: No `secret` - this is an error in production, see https://sidebase.io/nuxt-auth/resources/errors. You can ignore this during development",
-  NO_ORIGIN: "AUTH_NO_ORIGIN: No `origin` - this is an error in production, see https://sidebase.io/nuxt-auth/resources/errors. You can ignore this during development"
-};
-
-const isProduction = "development" === "production";
-function useTypedBackendConfig(runtimeConfig, type) {
-  const provider = runtimeConfig.public.auth.provider;
-  if (provider.type === type) {
-    return provider;
-  }
-  throw new Error("RuntimeError: Type must match at this point");
-}
-
-function resolveApiBaseURL(runtimeConfig, returnOnlyPathname) {
-  const authRuntimeConfig = runtimeConfig.public.auth;
-  let baseURL = authRuntimeConfig.baseURL;
-  if (authRuntimeConfig.originEnvKey) {
-    const envBaseURL = process.env[authRuntimeConfig.originEnvKey];
-    if (envBaseURL) {
-      baseURL = envBaseURL;
-    }
-  }
-  return baseURL;
-}
-
-function getHostValueForAuthjs(event, runtimeConfig, trustHostUserPreference, isProduction) {
-  return getServerBaseUrl(runtimeConfig, true, trustHostUserPreference, isProduction, event);
-}
-function getServerBaseUrl(runtimeConfig, includePath, trustHostUserPreference, isProduction, event) {
-  const baseURL = resolveApiBaseURL(runtimeConfig);
-  const parsed = parseURL(baseURL);
-  if (parsed.protocol && parsed.host) {
-    const base = `${parsed.protocol}//${parsed.host}`;
-    return includePath ? `${base}${parsed.pathname}${parsed.search || ""}${parsed.hash || ""}` : base;
-  }
-  if (event && (true)) {
-    const requestUrl = getRequestURL(event, {
-      xForwardedHost: trustHostUserPreference,
-      xForwardedProto: trustHostUserPreference || void 0
+const _cdxnSJlampA5kjx_azfmRhJzuavQKhoLu_yY_6UIdxA = defineNitroPlugin((nitroApp) => {
+  if (process.env.NUXT_OAUTH_FACEBOOK_CLIENT_ID && process.env.NUXT_OAUTH_FACEBOOK_CLIENT_SECRET || process.env.NUXT_OAUTH_INSTAGRAM_CLIENT_ID && process.env.NUXT_OAUTH_INSTAGRAM_CLIENT_SECRET) {
+    nitroApp.hooks.hook("render:html", (html) => {
+      html.head.unshift(`
+      <script>
+        if (window.location.hash === "#_=_"){
+          history.replaceState
+              ? history.replaceState(null, null, window.location.href.split("#")[0])
+              : window.location.hash = "";
+        }
+      <\/script>
+    `);
     });
-    if (!includePath) {
-      return requestUrl.origin;
-    }
-    const basePath = withLeadingSlash(parsed.pathname);
-    requestUrl.pathname = basePath;
-    return requestUrl.href;
   }
-  throw new Error(ERROR_MESSAGES.NO_ORIGIN);
-}
+});
 
-function defineNitroPlugin$1(def) {
+function defineNitroPlugin(def) {
   return def;
 }
 
@@ -2335,6 +2283,8 @@ function defineRenderHandler(render) {
     return ctx.response.body;
   });
 }
+
+const r=Object.create(null),i=e=>globalThis.process?.env||globalThis._importMeta_.env||globalThis.Deno?.env.toObject()||globalThis.__env__||(e?r:globalThis),o=new Proxy(r,{get(e,s){return i()[s]??r[s]},has(e,s){const E=i();return s in E||s in r},set(e,s,E){const B=i(true);return B[s]=E,true},deleteProperty(e,s){if(!s)return  false;const E=i(true);return delete E[s],true},ownKeys(){const e=i(true);return Object.keys(e)}}),t=typeof process<"u"&&process.env&&"development"||"",f=[["APPVEYOR"],["AWS_AMPLIFY","AWS_APP_ID",{ci:true}],["AZURE_PIPELINES","SYSTEM_TEAMFOUNDATIONCOLLECTIONURI"],["AZURE_STATIC","INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN"],["APPCIRCLE","AC_APPCIRCLE"],["BAMBOO","bamboo_planKey"],["BITBUCKET","BITBUCKET_COMMIT"],["BITRISE","BITRISE_IO"],["BUDDY","BUDDY_WORKSPACE_ID"],["BUILDKITE"],["CIRCLE","CIRCLECI"],["CIRRUS","CIRRUS_CI"],["CLOUDFLARE_PAGES","CF_PAGES",{ci:true}],["CLOUDFLARE_WORKERS","WORKERS_CI",{ci:true}],["CODEBUILD","CODEBUILD_BUILD_ARN"],["CODEFRESH","CF_BUILD_ID"],["DRONE"],["DRONE","DRONE_BUILD_EVENT"],["DSARI"],["GITHUB_ACTIONS"],["GITLAB","GITLAB_CI"],["GITLAB","CI_MERGE_REQUEST_ID"],["GOCD","GO_PIPELINE_LABEL"],["LAYERCI"],["HUDSON","HUDSON_URL"],["JENKINS","JENKINS_URL"],["MAGNUM"],["NETLIFY"],["NETLIFY","NETLIFY_LOCAL",{ci:false}],["NEVERCODE"],["RENDER"],["SAIL","SAILCI"],["SEMAPHORE"],["SCREWDRIVER"],["SHIPPABLE"],["SOLANO","TDDIUM"],["STRIDER"],["TEAMCITY","TEAMCITY_VERSION"],["TRAVIS"],["VERCEL","NOW_BUILDER"],["VERCEL","VERCEL",{ci:false}],["VERCEL","VERCEL_ENV",{ci:false}],["APPCENTER","APPCENTER_BUILD_ID"],["CODESANDBOX","CODESANDBOX_SSE",{ci:false}],["CODESANDBOX","CODESANDBOX_HOST",{ci:false}],["STACKBLITZ"],["STORMKIT"],["CLEAVR"],["ZEABUR"],["CODESPHERE","CODESPHERE_APP_ID",{ci:true}],["RAILWAY","RAILWAY_PROJECT_ID"],["RAILWAY","RAILWAY_SERVICE_ID"],["DENO-DEPLOY","DENO_DEPLOYMENT_ID"],["FIREBASE_APP_HOSTING","FIREBASE_APP_HOSTING",{ci:true}]];function b(){if(globalThis.process?.env)for(const e of f){const s=e[1]||e[0];if(globalThis.process?.env[s])return {name:e[0].toLowerCase(),...e[2]}}return globalThis.process?.env?.SHELL==="/bin/jsh"&&globalThis.process?.versions?.webcontainer?{name:"stackblitz",ci:false}:{name:"",ci:false}}const l=b();l.name;function n(e){return e?e!=="false":false}const I=globalThis.process?.platform||"",T=n(o.CI)||l.ci!==false,R=n(globalThis.process?.stdout&&globalThis.process?.stdout.isTTY);n(o.DEBUG);const a=t==="test"||n(o.TEST),h=t==="dev"||t==="development";n(o.MINIMAL)||T||a||!R;const A=/^win/i.test(I);!n(o.NO_COLOR)&&(n(o.FORCE_COLOR)||(R||A)&&o.TERM!=="dumb"||T);const C=(globalThis.process?.versions?.node||"").replace(/^v/,"")||null;Number(C?.split(".")[0])||null;const W=globalThis.process||Object.create(null),_={versions:{}};new Proxy(W,{get(e,s){if(s==="env")return o;if(s in e)return e[s];if(s in _)return _[s]}});const O=globalThis.process?.release?.name==="node",c=!!globalThis.Bun||!!globalThis.process?.versions?.bun,D=!!globalThis.Deno,L=!!globalThis.fastly,S=!!globalThis.Netlify,u=!!globalThis.EdgeRuntime,N=globalThis.navigator?.userAgent==="Cloudflare-Workers",F=[[S,"netlify"],[u,"edge-light"],[N,"workerd"],[L,"fastly"],[D,"deno"],[c,"bun"],[O,"node"]];function G(){const e=F.find(s=>s[0]);if(e)return {name:e[1]}}const P=G();P?.name||"";
 
 const scheduledTasks = false;
 
@@ -2605,32 +2555,407 @@ const defuReplaceArray = createDefu((obj, key, value) => {
   }
 });
 
+function parseAcceptLanguage(value) {
+  return value.split(",").map((tag) => tag.split(";")[0]).filter(
+    (tag) => !(tag === "*" || tag === "")
+  );
+}
+function createPathIndexLanguageParser(index = 0) {
+  return (path) => {
+    const rawPath = typeof path === "string" ? path : path.pathname;
+    const normalizedPath = rawPath.split("?")[0];
+    const parts = normalizedPath.split("/");
+    if (parts[0] === "") {
+      parts.shift();
+    }
+    return parts.length > index ? parts[index] || "" : "";
+  };
+}
+
+function getOAuthRedirectURL(event) {
+  const requestURL = getRequestURL(event);
+  return `${requestURL.protocol}//${requestURL.host}${requestURL.pathname}`;
+}
+async function requestAccessToken(url, options) {
+  const headers = {
+    "Content-Type": "application/x-www-form-urlencoded",
+    ...options.headers
+  };
+  const body = headers["Content-Type"] === "application/x-www-form-urlencoded" ? new URLSearchParams(
+    options.body || options.params || {}
+  ).toString() : options.body;
+  return $fetch(url, {
+    method: "POST",
+    headers,
+    body
+  }).catch((error) => {
+    if (error instanceof FetchError && error.status === 401) {
+      return error.data;
+    }
+    throw error;
+  });
+}
+function handleAccessTokenErrorResponse(event, oauthProvider, oauthError, onError) {
+  const message = `${upperFirst(oauthProvider)} login failed: ${oauthError.error_description || oauthError.error || "Unknown error"}`;
+  const error = createError({
+    statusCode: 401,
+    message,
+    data: oauthError
+  });
+  if (!onError) throw error;
+  return onError(event, error);
+}
+function handleMissingConfiguration(event, provider, missingKeys, onError) {
+  const environmentVariables = missingKeys.map((key) => `NUXT_OAUTH_${provider.toUpperCase()}_${snakeCase(key).toUpperCase()}`);
+  const error = createError({
+    statusCode: 500,
+    message: `Missing ${environmentVariables.join(" or ")} env ${missingKeys.length > 1 ? "variables" : "variable"}.`
+  });
+  if (!onError) throw error;
+  return onError(event, error);
+}
+
+function defineOAuthXEventHandler({
+  config,
+  onSuccess,
+  onError
+}) {
+  return eventHandler(async (event) => {
+    config = defu$1(config, useRuntimeConfig(event).oauth?.x, {
+      authorizationURL: "https://x.com/i/oauth2/authorize",
+      tokenURL: "https://api.x.com/2/oauth2/token",
+      userURL: "https://api.x.com/2/users/me",
+      authorizationParams: {
+        state: randomUUID(),
+        code_challenge: randomUUID()
+      }
+    });
+    const query = getQuery$1(event);
+    if (!config.clientId || !config.clientSecret) {
+      return handleMissingConfiguration(event, "x", ["clientId", "clientSecret"], onError);
+    }
+    const redirectURL = config.redirectURL || getOAuthRedirectURL(event);
+    if (!query.code) {
+      config.scope = config.scope || [
+        "tweet.read",
+        "users.read",
+        "offline.access"
+      ];
+      return sendRedirect(
+        event,
+        withQuery(config.authorizationURL, {
+          response_type: "code",
+          client_id: config.clientId,
+          code_challenge_method: "plain",
+          redirect_uri: redirectURL,
+          scope: config.scope.join(" "),
+          ...config.authorizationParams
+        })
+      );
+    }
+    const tokens = await requestAccessToken(config.tokenURL, {
+      headers: {
+        Authorization: `Basic ${Buffer.from(
+          `${config.clientId}:${config.clientSecret}`
+        ).toString("base64")}`
+      },
+      params: {
+        grant_type: "authorization_code",
+        code_verifier: config.authorizationParams?.code_challenge,
+        redirect_uri: redirectURL,
+        code: query.code
+      }
+    });
+    if (tokens.error) {
+      return handleAccessTokenErrorResponse(event, "x", tokens, onError);
+    }
+    const accessToken = tokens.access_token;
+    const user = await $fetch(config.userURL, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      },
+      query: {
+        "user.fields": "description,id,name,profile_image_url,username,verified,verified_type"
+      }
+    }).catch((error) => {
+      return error;
+    });
+    return onSuccess(event, {
+      tokens,
+      user: user?.data
+    });
+  });
+}
+
+function defineWebAuthnAuthenticateEventHandler({
+  storeChallenge,
+  getChallenge,
+  getCredential,
+  allowCredentials,
+  getOptions,
+  onSuccess,
+  onError
+}) {
+  return eventHandler(async (event) => {
+    const url = getRequestURL(event);
+    const body = await readBody(event);
+    const _config = defu(await getOptions?.(event, body) ?? {}, useRuntimeConfig(event).webauthn.authenticate, {
+      rpID: url.hostname
+    });
+    if (!storeChallenge) {
+      _config.challenge = "";
+    }
+    try {
+      if (!body.verify) {
+        if (allowCredentials && body.userName) {
+          _config.allowCredentials = await allowCredentials(event, body.userName);
+        }
+        const options = await generateAuthenticationOptions(_config);
+        const attemptId = bufferToBase64URLString(getRandomValues(new Uint8Array(32)).buffer);
+        if (storeChallenge) {
+          await storeChallenge(event, options.challenge, attemptId);
+        }
+        return {
+          requestOptions: options,
+          attemptId
+        };
+      }
+      if (!body.attemptId)
+        throw createError({ statusCode: 400 });
+      let expectedChallenge = "";
+      if (getChallenge) {
+        expectedChallenge = await getChallenge(event, body.attemptId);
+      }
+      const credential = await getCredential(event, body.response.id);
+      const verification = await verifyAuthenticationResponse({
+        response: body.response,
+        expectedChallenge,
+        expectedOrigin: url.origin,
+        expectedRPID: url.hostname,
+        requireUserVerification: false,
+        // TODO: make configurable https://simplewebauthn.dev/docs/advanced/passkeys#verifyauthenticationresponse
+        credential: {
+          id: credential.id,
+          publicKey: new Uint8Array(base64URLStringToBuffer(credential.publicKey)),
+          counter: credential.counter,
+          transports: credential.transports
+        }
+      });
+      if (!verification.verified)
+        throw createError({ statusCode: 400, message: "Failed to verify registration response" });
+      await onSuccess(event, {
+        credential,
+        authenticationInfo: verification.authenticationInfo
+      });
+      return verification;
+    } catch (error) {
+      if (!onError) throw error;
+      if (error instanceof H3Error)
+        return onError(event, error);
+      return onError(event, createError({ statusCode: 500, message: "Failed to authenticate credential" }));
+    }
+  });
+}
+
+function defineWebAuthnRegisterEventHandler({
+  storeChallenge,
+  getChallenge,
+  getOptions,
+  validateUser,
+  excludeCredentials,
+  onSuccess,
+  onError
+}) {
+  return eventHandler(async (event) => {
+    const url = getRequestURL(event);
+    const body = await readBody(event);
+    if (body.verify === void 0 || !body.user?.userName)
+      throw createError({
+        message: "Invalid request, missing userName or verify property",
+        statusCode: 400
+      });
+    let user = body.user;
+    if (validateUser) {
+      user = await validateUserData(body.user, event, validateUser);
+    }
+    const _config = defu(await getOptions?.(event, body) ?? {}, useRuntimeConfig(event).webauthn.register, {
+      rpID: url.hostname,
+      rpName: url.hostname,
+      userName: user.userName,
+      userDisplayName: user.displayName,
+      authenticatorSelection: {
+        userVerification: "preferred"
+      }
+    });
+    if (!storeChallenge) {
+      _config.challenge = "";
+    }
+    try {
+      if (!body.verify) {
+        if (excludeCredentials) {
+          _config.excludeCredentials = await excludeCredentials(event, user.userName);
+        }
+        const options = await generateRegistrationOptions(_config);
+        const attemptId = bufferToBase64URLString(getRandomValues(new Uint8Array(32)).buffer);
+        if (storeChallenge) {
+          await storeChallenge(event, options.challenge, attemptId);
+        }
+        return {
+          creationOptions: options,
+          attemptId
+        };
+      }
+      if (!body.attemptId) {
+        throw createError({
+          message: "Invalid request, missing attemptId",
+          statusCode: 400
+        });
+      }
+      let expectedChallenge = "";
+      if (getChallenge) {
+        expectedChallenge = await getChallenge(event, body.attemptId);
+      }
+      const verification = await verifyRegistrationResponse({
+        response: body.response,
+        expectedChallenge,
+        expectedOrigin: url.origin,
+        expectedRPID: url.hostname,
+        requireUserVerification: false,
+        // TODO: make configurable https://simplewebauthn.dev/docs/advanced/passkeys#verifyregistrationresponse
+        supportedAlgorithmIDs: _config.supportedAlgorithmIDs
+      });
+      if (!verification.verified) {
+        throw createError({
+          message: "Failed to verify registration response",
+          statusCode: 400
+        });
+      }
+      await onSuccess(event, {
+        user,
+        credential: {
+          id: verification.registrationInfo.credential.id,
+          publicKey: bufferToBase64URLString(verification.registrationInfo.credential.publicKey.buffer),
+          counter: verification.registrationInfo.credential.counter,
+          backedUp: verification.registrationInfo.credentialBackedUp,
+          transports: verification.registrationInfo.credential.transports
+        },
+        registrationInfo: verification.registrationInfo
+      });
+      return verification;
+    } catch (error) {
+      if (!onError) throw error;
+      if (error instanceof H3Error)
+        return onError(event, error);
+      return onError(event, createError({ statusCode: 500, message: "Failed to register credential" }));
+    }
+  });
+}
+async function validateUserData(userBody, event, fn) {
+  try {
+    const res = await fn(userBody, event);
+    if (res === false) {
+      throw createUserValidationError();
+    }
+    if (res === true) {
+      return userBody;
+    }
+    return res ?? userBody;
+  } catch (error) {
+    throw createUserValidationError(error);
+  }
+}
+function createUserValidationError(validateError) {
+  throw createError({
+    status: validateError?.statusCode || 400,
+    message: validateError?.message || "User Validation Error",
+    data: validateError
+  });
+}
+
+const atprotoProviders = ["bluesky"];
+function getClientMetadataFilename(provider, config) {
+  return config?.clientMetadataFilename || provider + "/client-metadata.json";
+}
+
+function getAtprotoClientMetadata(event, provider, config) {
+  const providerRuntimeConfig = useRuntimeConfig(event).oauth[provider];
+  const scopes = [.../* @__PURE__ */ new Set(["atproto", ...[], ...providerRuntimeConfig.scope ?? []])];
+  const scope = scopes.join(" ");
+  const grantTypes = [.../* @__PURE__ */ new Set(["authorization_code", ...providerRuntimeConfig.grantTypes ?? []])];
+  const requestURL = getRequestURL(event);
+  const baseUrl = `${requestURL.protocol}//${requestURL.host}`;
+  const redirectURL = new URL(
+    providerRuntimeConfig.redirectUris[0] && baseUrl + providerRuntimeConfig.redirectUris[0] || getOAuthRedirectURL(event)
+  );
+  if (redirectURL.hostname === "localhost") {
+    redirectURL.hostname = "127.0.0.1";
+  }
+  const redirectUris = (providerRuntimeConfig.redirectUris.length ? providerRuntimeConfig.redirectUris : [requestURL.pathname]).map((uri) => new URL(`${redirectURL.protocol}//${redirectURL.host}${uri}`).toString());
+  const clientId = `http://localhost?redirect_uri=${encodeURIComponent(redirectURL.toString())}&scope=${encodeURIComponent(scope)}` ;
+  const clientMetadata = {
+    client_name: providerRuntimeConfig.clientName || void 0,
+    client_uri: providerRuntimeConfig.clientUri || void 0,
+    logo_uri: providerRuntimeConfig.logoUri || void 0,
+    policy_uri: providerRuntimeConfig.policyUri || void 0,
+    tos_uri: providerRuntimeConfig.tosUri || void 0,
+    client_id: clientId,
+    redirect_uris: redirectUris,
+    scope,
+    grant_types: grantTypes,
+    application_type: providerRuntimeConfig.applicationType,
+    token_endpoint_auth_method: providerRuntimeConfig.tokenEndpointAuthMethod,
+    dpop_bound_access_tokens: true
+  };
+  return clientMetadata;
+}
+
+function getNitroOrigin$1(ctx = {}) {
+  const isDev = ctx.isDev ?? h;
+  const isPrerender = ctx.isPrerender ?? !!o.prerender;
+  let host = "";
+  let port = "";
+  let protocol = o.NITRO_SSL_CERT && o.NITRO_SSL_KEY ? "https" : "http";
+  if (isDev || isPrerender) {
+    const devEnv = o.__NUXT_DEV__ || o.NUXT_VITE_NODE_OPTIONS;
+    if (devEnv) {
+      const parsed = JSON.parse(devEnv);
+      const origin = parsed.proxy?.url || parsed.baseURL?.replace("/__nuxt_vite_node__", "");
+      host = origin.replace(/^https?:\/\//, "");
+      protocol = origin.startsWith("https") ? "https" : "http";
+    }
+  }
+  if (!host && ctx.requestHost) {
+    host = ctx.requestHost;
+    protocol = ctx.requestProtocol || protocol;
+  }
+  if (!host) {
+    host = o.NITRO_HOST || o.HOST || "";
+    if (isDev)
+      port = o.NITRO_PORT || o.PORT || "3000";
+  }
+  if (host.includes(":")) {
+    const i = host.lastIndexOf(":");
+    port = host.slice(i + 1);
+    host = host.slice(0, i);
+  }
+  host = o.NUXT_SITE_HOST_OVERRIDE || host;
+  port = o.NUXT_SITE_PORT_OVERRIDE || port;
+  if (host.startsWith("http://") || host.startsWith("https://")) {
+    protocol = host.startsWith("https://") ? "https" : "http";
+    host = host.replace(/^https?:\/\//, "");
+  } else if (!host.includes("localhost") && !host.startsWith("127.")) {
+    protocol = "https";
+  }
+  return `${protocol}://${host}${port ? `:${port}` : ""}/`;
+}
+
 function getNitroOrigin(e) {
-  const cert = process.env.NITRO_SSL_CERT;
-  const key = process.env.NITRO_SSL_KEY;
-  let host = process.env.NITRO_HOST || process.env.HOST || false;
-  let port = false;
-  port = process.env.NITRO_PORT || process.env.PORT || "3000";
-  let protocol = cert && key || false ? "https" : "http";
-  if (process.env.__NUXT_DEV__) {
-    const origin = JSON.parse(process.env.__NUXT_DEV__).proxy.url;
-    host = withoutProtocol(origin);
-    protocol = origin.includes("https") ? "https" : "http";
-  } else if (process.env.NUXT_VITE_NODE_OPTIONS) {
-    const origin = JSON.parse(process.env.NUXT_VITE_NODE_OPTIONS).baseURL.replace("/__nuxt_vite_node__", "");
-    host = withoutProtocol(origin);
-    protocol = origin.includes("https") ? "https" : "http";
-  } else if (e) {
-    host = getRequestHost(e, { xForwardedHost: true }) || host;
-    protocol = getRequestProtocol(e, { xForwardedProto: true }) || protocol;
-  }
-  if (typeof host === "string" && host.includes(":")) {
-    const hostParts = host.split(":");
-    port = hostParts.pop();
-    host = hostParts.join(":") || false;
-  }
-  port = port ? `:${port}` : "";
-  return withTrailingSlash(`${protocol}://${host}${port}`);
+  return getNitroOrigin$1({
+    isDev: true,
+    isPrerender: false,
+    requestHost: e ? getRequestHost(e, { xForwardedHost: true }) : void 0,
+    requestProtocol: e ? getRequestProtocol(e, { xForwardedProto: true }) : void 0
+  });
 }
 
 function normalizeSiteConfig(config) {
@@ -3162,6 +3487,30 @@ const BOT_MAP = [
     trusted: false
   }
 ];
+
+const ROBOT_DIRECTIVE_VALUES = {
+  // Standard directives
+  enabled: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  disabled: "noindex, nofollow",
+  index: "index",
+  noindex: "noindex",
+  follow: "follow",
+  nofollow: "nofollow",
+  none: "none",
+  all: "all",
+  // Non-standard directives (not part of official robots spec)
+  noai: "noai",
+  noimageai: "noimageai"
+};
+function formatMaxImagePreview(value) {
+  return `max-image-preview:${value}`;
+}
+function formatMaxSnippet(value) {
+  return `max-snippet:${value}`;
+}
+function formatMaxVideoPreview(value) {
+  return `max-video-preview:${value}`;
+}
 function matches(pattern, path) {
   const pathLength = path.length;
   const patternLength = pattern.length;
@@ -3217,6 +3566,22 @@ function matchPathToRule(path, _rules) {
 function asArray(v) {
   return typeof v === "undefined" ? [] : Array.isArray(v) ? v : [v];
 }
+function contentUsageToString(prefs) {
+  return Object.entries(prefs).filter(([_, value]) => value !== void 0).map(([key, value]) => `${key}=${value}`).join(", ");
+}
+function normalizeContentPreferences(value) {
+  if (!value)
+    return [];
+  if (Array.isArray(value))
+    return value.filter((rule) => Boolean(rule));
+  if (typeof value === "object" && !Array.isArray(value)) {
+    const str = contentUsageToString(value);
+    return str ? [str] : [];
+  }
+  if (typeof value === "string")
+    return value ? [value] : [];
+  return [];
+}
 function normalizeGroup(group) {
   if (group._normalized) {
     const resolvedGroup = group;
@@ -3230,13 +3595,15 @@ function normalizeGroup(group) {
   }
   const disallow = asArray(group.disallow);
   const allow = asArray(group.allow).filter((rule) => Boolean(rule));
-  const contentUsage = asArray(group.contentUsage).filter((rule) => Boolean(rule));
+  const contentUsage = normalizeContentPreferences(group.contentUsage);
+  const contentSignal = normalizeContentPreferences(group.contentSignal);
   return {
     ...group,
     userAgent: group.userAgent ? asArray(group.userAgent) : ["*"],
     disallow,
     allow,
     contentUsage,
+    contentSignal,
     _indexable: !disallow.includes("/"),
     _rules: [
       ...disallow.filter(Boolean).map((r) => ({ pattern: r, allow: false })),
@@ -3260,6 +3627,8 @@ function generateRobotsTxt({ groups, sitemaps }) {
       lines.push(`Clean-param: ${cleanParam}`);
     for (const contentUsage of group.contentUsage || [])
       lines.push(`Content-Usage: ${contentUsage}`);
+    for (const contentSignal of group.contentSignal || [])
+      lines.push(`Content-Signal: ${contentSignal}`);
     lines.push("");
   }
   for (const sitemap of sitemaps)
@@ -3287,51 +3656,6 @@ function createPatternMap() {
   }
   return patternMap;
 }
-
-const ROBOT_DIRECTIVE_VALUES = {
-  // Standard directives
-  enabled: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-  disabled: "noindex, nofollow",
-  index: "index",
-  noindex: "noindex",
-  follow: "follow",
-  nofollow: "nofollow",
-  none: "none",
-  all: "all",
-  // Non-standard directives (not part of official robots spec)
-  noai: "noai",
-  noimageai: "noimageai"
-};
-function formatMaxImagePreview(value) {
-  return `max-image-preview:${value}`;
-}
-function formatMaxSnippet(value) {
-  return `max-snippet:${value}`;
-}
-function formatMaxVideoPreview(value) {
-  return `max-video-preview:${value}`;
-}
-
-function withoutQuery$2(path) {
-  return path.split("?")[0];
-}
-function createNitroRouteRuleMatcher$2(e) {
-  const { nitro, app } = useRuntimeConfig(e);
-  const _routeRulesMatcher = toRouteMatcher(
-    createRouter({
-      routes: Object.fromEntries(
-        Object.entries(nitro?.routeRules || {}).map(([path, rules]) => [withoutTrailingSlash(path), rules])
-      )
-    })
-  );
-  return (path) => {
-    return defu$1({}, ..._routeRulesMatcher.matchAll(
-      // radix3 does not support trailing slashes
-      withoutBase(withoutTrailingSlash(withoutQuery$2(path)), app.baseURL)
-    ).reverse());
-  };
-}
-
 function normaliseRobotsRouteRule(config) {
   let allow;
   if (typeof config.robots === "boolean")
@@ -3375,6 +3699,26 @@ function normaliseRobotsRouteRule(config) {
   return {
     allow,
     rule
+  };
+}
+
+function withoutQuery$2(path) {
+  return path.split("?")[0];
+}
+function createNitroRouteRuleMatcher$2(e) {
+  const { nitro, app } = useRuntimeConfig(e);
+  const _routeRulesMatcher = toRouteMatcher(
+    createRouter({
+      routes: Object.fromEntries(
+        Object.entries(nitro?.routeRules || {}).map(([path, rules]) => [withoutTrailingSlash(path), rules])
+      )
+    })
+  );
+  return (path) => {
+    return defu$1({}, ..._routeRulesMatcher.matchAll(
+      // radix3 does not support trailing slashes
+      withoutBase(withoutTrailingSlash(withoutQuery$2(path)), app.baseURL)
+    ).reverse());
   };
 }
 
@@ -3508,22 +3852,62 @@ function getPathRobotConfig(e, options) {
   };
 }
 
-function defineNitroPlugin(def) {
-  return def;
+const sessionHooks = createHooks();
+async function getUserSession(event) {
+  const session = await _useSession(event);
+  return {
+    ...session.data,
+    id: session.id
+  };
 }
-const _AP2zuAuSNoUKkSkIpSZlk8BYtqL5a1shv1EcU3JcnpE = defineNitroPlugin(() => {
-  try {
-    const runtimeConfig = useRuntimeConfig();
-    const trustHostUserPreference = useTypedBackendConfig(runtimeConfig, "authjs").trustHost;
-    getServerBaseUrl(runtimeConfig, false, trustHostUserPreference, isProduction);
-  } catch (error) {
-    {
-      console.info(ERROR_MESSAGES.NO_ORIGIN);
+async function setUserSession(event, data, config) {
+  const session = await _useSession(event, config);
+  await session.update(defu$1(data, session.data));
+  return session.data;
+}
+async function clearUserSession(event, config) {
+  const session = await _useSession(event, config);
+  await sessionHooks.callHookParallel("clear", session.data, event);
+  await session.clear();
+  return true;
+}
+async function requireUserSession(event, opts = {}) {
+  const userSession = await getUserSession(event);
+  if (!userSession.user) {
+    if (isEvent(event)) {
+      throw createError({
+        statusCode: opts.statusCode || 401,
+        message: opts.message || "Unauthorized"
+      });
+    } else {
+      throw new Response(opts.message || "Unauthorized", {
+        status: opts.statusCode || 401
+      });
     }
   }
+  return userSession;
+}
+let sessionConfig;
+function _useSession(event, config = {}) {
+  if (!sessionConfig) {
+    const runtimeConfig = useRuntimeConfig(isEvent(event) ? event : void 0);
+    const envSessionPassword = `${runtimeConfig.nitro?.envPrefix || "NUXT_"}SESSION_PASSWORD`;
+    sessionConfig = defu$1({ password: process.env[envSessionPassword] }, runtimeConfig.session);
+    if (!sessionConfig.password) {
+      console.error(`[nuxt-auth-utils] ${envSessionPassword} environment variable or runtimeConfig.session.password was not set.`);
+    }
+  }
+  const finalConfig = defu$1(config, sessionConfig);
+  return useSession(event, finalConfig);
+}
+
+const _iJkIwfIdFCUYQ4g74eVpIbhEX0cgRphTEJj4ba06ew8 = defineNitroPlugin((nitroApp) => {
+  nitroApp.hooks.hook("request", async (event) => {
+    await getUserSession(event);
+  });
 });
 
-const _pLzN7P7gu74lbAWNw_bZ4luNIXECYa1swgjn_1dN4w = defineNitroPlugin$1(async (nitroApp) => {
+const _pLzN7P7gu74lbAWNw_bZ4luNIXECYa1swgjn_1dN4w = defineNitroPlugin(async (nitroApp) => {
   nitroApp.hooks.hook("render:html", async (ctx, { event }) => {
     const routeOptions = getRouteRules(event);
     const isIsland = process.env.NUXT_COMPONENT_ISLANDS && event.path.startsWith("/__nuxt_island");
@@ -3555,7 +3939,7 @@ async function resolveRobotsTxtContext(e, nitro = useNitroApp()) {
   return generateRobotsTxtCtx;
 }
 
-const _1j2_7vr1DPpUV3dsNV0gbvw1x8G4oC46IDkbhAefSmo = defineNitroPlugin$1(async (nitroApp) => {
+const _1j2_7vr1DPpUV3dsNV0gbvw1x8G4oC46IDkbhAefSmo = defineNitroPlugin(async (nitroApp) => {
   const { isNuxtContentV2, robotsDisabledValue, botDetection } = useRuntimeConfigNuxtRobots();
   if (botDetection !== false) {
     nitroApp._robotsPatternMap = createPatternMap();
@@ -3827,17 +4211,16 @@ async function resolveContext(e) {
     }
   }
   queryParams = separateProps(queryParams);
-  let basePath = withoutTrailingSlash(
+  const basePath = withoutTrailingSlash(
     path.replace(`/__og-image__/image`, "").replace(`/__og-image__/static`, "").replace(`/og.${extension}`, "")
   );
-  if (queryParams._query && typeof queryParams._query === "object")
-    basePath = withQuery(basePath, queryParams._query);
+  const basePathWithQuery = queryParams._query && typeof queryParams._query === "object" ? withQuery(basePath, queryParams._query) : basePath;
   const isDebugJsonPayload = extension === "json" && runtimeConfig.debug;
-  const key = resolvePathCacheKey(e, basePath);
+  const key = resolvePathCacheKey(e, basePathWithQuery);
   let options = queryParams.options;
   if (!options) {
     if (!options) {
-      const payload = await fetchPathHtmlAndExtractOptions(e, basePath, key);
+      const payload = await fetchPathHtmlAndExtractOptions(e, basePathWithQuery, key);
       if (payload instanceof Error)
         return payload;
       options = payload;
@@ -4025,39 +4408,12 @@ async function fetchPathHtmlAndExtractOptions(e, path, key) {
   });
 }
 
-const _5cqK42agoj1GCWbdFsvGb9_VqMNO01wykTEBnPiDSbs = defineNitroPlugin$1(async (nitro) => {
+const _5cqK42agoj1GCWbdFsvGb9_VqMNO01wykTEBnPiDSbs = defineNitroPlugin(async (nitro) => {
   return;
 });
 
-function useI18nContext(event) {
-  if (event.context.nuxtI18n == null) {
-    throw new Error("Nuxt I18n server context has not been set up yet.");
-  }
-  return event.context.nuxtI18n;
-}
-function tryUseI18nContext(event) {
-  return event.context.nuxtI18n;
-}
-const headers = new Headers({ "x-nuxt-i18n": "internal" });
-{
-  headers.set("Cache-Control", "no-cache");
-}
-function createI18nContext() {
-  return {
-    messages: {},
-    slp: {},
-    localeConfigs: {},
-    trackMap: {},
-    vueI18nOptions: void 0,
-    trackKey(key, locale) {
-      this.trackMap[locale] ??= /* @__PURE__ */ new Set();
-      this.trackMap[locale].add(key);
-    }
-  };
-}
-
 /*!
-  * shared v11.1.12
+  * shared v11.2.7
   * (c) 2025 kazuya kawaguchi
   * Released under the MIT License.
   */
@@ -4113,37 +4469,46 @@ function deepCopy(src, des) {
     }
 }
 
-function matchBrowserLocale(locales, browserLocales) {
-  const matchedLocales = [];
-  for (const [index, browserCode] of browserLocales.entries()) {
-    const matchedLocale = locales.find((l) => l.language?.toLowerCase() === browserCode.toLowerCase());
-    if (matchedLocale) {
-      matchedLocales.push({ code: matchedLocale.code, score: 1 - index / browserLocales.length });
-      break;
-    }
+const __nuxtMock = { runWithContext: async (fn) => await fn() };
+const merger$1 = createDefu((obj, key, value) => {
+  if (key === "messages" || key === "datetimeFormats" || key === "numberFormats") {
+    obj[key] ??= create(null);
+    deepCopy(value, obj[key]);
+    return true;
   }
-  for (const [index, browserCode] of browserLocales.entries()) {
-    const languageCode = browserCode.split("-")[0].toLowerCase();
-    const matchedLocale = locales.find((l) => l.language?.split("-")[0].toLowerCase() === languageCode);
-    if (matchedLocale) {
-      matchedLocales.push({ code: matchedLocale.code, score: 0.999 - index / browserLocales.length });
-      break;
-    }
+});
+async function loadVueI18nOptions(vueI18nConfigs) {
+  const nuxtApp = __nuxtMock;
+  let vueI18nOptions = { messages: create(null) };
+  for (const configFile of vueI18nConfigs) {
+    const resolver = await configFile().then((x) => x.default);
+    const resolved = isFunction(resolver) ? await nuxtApp.runWithContext(() => resolver()) : resolver;
+    vueI18nOptions = merger$1(create(null), resolved, vueI18nOptions);
   }
-  return matchedLocales;
+  vueI18nOptions.fallbackLocale ??= false;
+  return vueI18nOptions;
 }
-function compareBrowserLocale(a, b) {
-  if (a.score === b.score) {
-    return b.code.length - a.code.length;
+const isModule = (val) => toTypeString(val) === "[object Module]";
+const isResolvedModule = (val) => isModule(val) || true;
+async function getLocaleMessages(locale, loader) {
+  const nuxtApp = __nuxtMock;
+  try {
+    const getter = await nuxtApp.runWithContext(loader.load).then((x) => isResolvedModule(x) ? x.default : x);
+    return isFunction(getter) ? await nuxtApp.runWithContext(() => getter(locale)) : getter;
+  } catch (e) {
+    throw new Error(`Failed loading locale (${locale}): ` + e.message);
   }
-  return b.score - a.score;
 }
-function findBrowserLocale(locales, browserLocales) {
-  const matchedLocales = matchBrowserLocale(
-    locales.map((l) => ({ code: l.code, language: l.language || l.code })),
-    browserLocales
+async function getLocaleMessagesMerged(locale, loaders = []) {
+  const nuxtApp = __nuxtMock;
+  const messages = await Promise.all(
+    loaders.map((loader) => nuxtApp.runWithContext(() => getLocaleMessages(locale, loader)))
   );
-  return matchedLocales.sort(compareBrowserLocale).at(0)?.code ?? "";
+  const merged = {};
+  for (const message of messages) {
+    deepCopy(message, merged);
+  }
+  return merged;
 }
 
 // @ts-nocheck
@@ -4181,24 +4546,57 @@ const vueI18nConfigs = [
 const normalizedLocales = [
   {
     code: "en-GB",
-    language: "en-GB",
-    _hreflang: "en-GB",
-    _sitemap: "en-GB"
+    language: "en-GB"
   },
   {
     code: "pl-PL",
-    language: "pl-PL",
-    _hreflang: "pl-PL",
-    _sitemap: "pl-PL"
+    language: "pl-PL"
   },
   {
     code: "testde",
     language: "de-DE",
-    localeId: "c19b753b5f2c4bea8ad15e00027802d4",
-    _hreflang: "de-DE",
-    _sitemap: "de-DE"
+    localeId: "c19b753b5f2c4bea8ad15e00027802d4"
   }
 ];
+
+const setupVueI18nOptions = async (defaultLocale) => {
+  const options = await loadVueI18nOptions(vueI18nConfigs);
+  options.locale = defaultLocale || options.locale || "en-US";
+  options.defaultLocale = defaultLocale;
+  options.fallbackLocale ??= false;
+  options.messages ??= {};
+  for (const locale of localeCodes) {
+    options.messages[locale] ??= {};
+  }
+  return options;
+};
+
+function useRuntimeI18n(nuxtApp, event) {
+  {
+    return useRuntimeConfig(event).public.i18n;
+  }
+}
+function useI18nDetection(nuxtApp) {
+  const detectBrowserLanguage = useRuntimeI18n().detectBrowserLanguage;
+  const detect = detectBrowserLanguage || {};
+  return {
+    ...detect,
+    enabled: !!detectBrowserLanguage,
+    cookieKey: detect.cookieKey || "i18n_redirected"
+  };
+}
+function resolveRootRedirect(config) {
+  if (!config) {
+    return void 0;
+  }
+  return {
+    path: "/" + (isString(config) ? config : config.path).replace(/^\//, ""),
+    code: !isString(config) && config.statusCode || 302
+  };
+}
+function toArray(value) {
+  return Array.isArray(value) ? value : [value];
+}
 
 function createLocaleConfigs(fallbackLocale) {
   const localeConfigs = {};
@@ -4210,8 +4608,12 @@ function createLocaleConfigs(fallbackLocale) {
   return localeConfigs;
 }
 function getFallbackLocaleCodes(fallback, locales) {
-  if (fallback === false) return [];
-  if (isArray(fallback)) return fallback;
+  if (fallback === false) {
+    return [];
+  }
+  if (isArray(fallback)) {
+    return fallback;
+  }
   let fallbackLocales = [];
   if (isString(fallback)) {
     if (locales.every((locale) => locale !== fallback)) {
@@ -4221,7 +4623,9 @@ function getFallbackLocaleCodes(fallback, locales) {
   }
   const targets = [...locales, "default"];
   for (const locale of targets) {
-    if (locale in fallback == false) continue;
+    if (locale in fallback == false) {
+      continue;
+    }
     fallbackLocales = [...fallbackLocales, ...fallback[locale].filter(Boolean)];
   }
   return fallbackLocales;
@@ -4237,56 +4641,73 @@ function getDefaultLocaleForDomain(host) {
 }
 const isSupportedLocale = (locale) => localeCodes.includes(locale || "");
 
-const __nuxtMock = { runWithContext: async (fn) => await fn() };
-const merger$1 = createDefu((obj, key, value) => {
-  if (key === "messages" || key === "datetimeFormats" || key === "numberFormats") {
-    obj[key] ??= create(null);
-    deepCopy(value, obj[key]);
-    return true;
+function useI18nContext(event) {
+  if (event.context.nuxtI18n == null) {
+    throw new Error("Nuxt I18n server context has not been set up yet.");
   }
-});
-async function loadVueI18nOptions(vueI18nConfigs) {
-  const nuxtApp = __nuxtMock;
-  let vueI18nOptions = { messages: create(null) };
-  for (const configFile of vueI18nConfigs) {
-    const resolver = await configFile().then((x) => x.default);
-    const resolved = isFunction(resolver) ? await nuxtApp.runWithContext(() => resolver()) : resolver;
-    vueI18nOptions = merger$1(create(null), resolved, vueI18nOptions);
-  }
-  vueI18nOptions.fallbackLocale ??= false;
-  return vueI18nOptions;
+  return event.context.nuxtI18n;
 }
-const isModule = (val) => toTypeString(val) === "[object Module]";
-const isResolvedModule = (val) => isModule(val) || true;
-async function getLocaleMessages(locale, loader) {
-  const nuxtApp = __nuxtMock;
-  try {
-    const getter = await nuxtApp.runWithContext(loader.load).then((x) => isResolvedModule(x) ? x.default : x);
-    return isFunction(getter) ? await nuxtApp.runWithContext(() => getter(locale)) : getter;
-  } catch (e) {
-    throw new Error(`Failed loading locale (${locale}): ` + e.message);
-  }
+function tryUseI18nContext(event) {
+  return event.context.nuxtI18n;
 }
-async function getLocaleMessagesMerged(locale, loaders = []) {
-  const nuxtApp = __nuxtMock;
-  const merged = {};
-  for (const loader of loaders) {
-    deepCopy(await nuxtApp.runWithContext(async () => await getLocaleMessages(locale, loader)), merged);
-  }
-  return merged;
+const getHost = (event) => getRequestURL(event, { xForwardedHost: true }).host;
+async function initializeI18nContext(event) {
+  const runtimeI18n = useRuntimeI18n(void 0, event);
+  const defaultLocale = runtimeI18n.defaultLocale || "";
+  const options = await setupVueI18nOptions(getDefaultLocaleForDomain(getHost(event)) || defaultLocale);
+  const localeConfigs = createLocaleConfigs(options.fallbackLocale);
+  const ctx = createI18nContext();
+  ctx.vueI18nOptions = options;
+  ctx.localeConfigs = localeConfigs;
+  event.context.nuxtI18n = ctx;
+  return ctx;
+}
+function createI18nContext() {
+  return {
+    messages: {},
+    slp: {},
+    localeConfigs: {},
+    trackMap: {},
+    vueI18nOptions: void 0,
+    trackKey(key, locale) {
+      this.trackMap[locale] ??= /* @__PURE__ */ new Set();
+      this.trackMap[locale].add(key);
+    }
+  };
 }
 
-const setupVueI18nOptions = async (defaultLocale) => {
-  const options = await loadVueI18nOptions(vueI18nConfigs);
-  options.locale = defaultLocale || options.locale || "en-US";
-  options.defaultLocale = defaultLocale;
-  options.fallbackLocale ??= false;
-  options.messages ??= {};
-  for (const locale of localeCodes) {
-    options.messages[locale] ??= {};
+function matchBrowserLocale(locales, browserLocales) {
+  const matchedLocales = [];
+  for (const [index, browserCode] of browserLocales.entries()) {
+    const matchedLocale = locales.find((l) => l.language?.toLowerCase() === browserCode.toLowerCase());
+    if (matchedLocale) {
+      matchedLocales.push({ code: matchedLocale.code, score: 1 - index / browserLocales.length });
+      break;
+    }
   }
-  return options;
-};
+  for (const [index, browserCode] of browserLocales.entries()) {
+    const languageCode = browserCode.split("-")[0].toLowerCase();
+    const matchedLocale = locales.find((l) => l.language?.split("-")[0].toLowerCase() === languageCode);
+    if (matchedLocale) {
+      matchedLocales.push({ code: matchedLocale.code, score: 0.999 - index / browserLocales.length });
+      break;
+    }
+  }
+  return matchedLocales;
+}
+function compareBrowserLocale(a, b) {
+  if (a.score === b.score) {
+    return b.code.length - a.code.length;
+  }
+  return b.score - a.score;
+}
+function findBrowserLocale(locales, browserLocales) {
+  const matchedLocales = matchBrowserLocale(
+    locales.map((l) => ({ code: l.code, language: l.language || l.code })),
+    browserLocales
+  );
+  return matchedLocales.sort(compareBrowserLocale).at(0)?.code ?? "";
+}
 
 const appHead = {"link":[{"rel":"icon","href":"/favicon.ico"},{"rel":"apple-touch-icon","href":"/icons/apple-touch-icon-180x180.png"},{"rel":"stylesheet","href":"https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css"}],"meta":[{"name":"viewport","content":"minimum-scale=1, initial-scale=1, width=device-width"},{"charset":"utf-8"},{"name":"description","content":"Starter template for the M Framework"},{"name":"description","content":"Starter Template for the M Framework"},{"name":"description","content":"Base Application for Meeovi Framework"},{"property":"og:type","content":"website"}],"style":[],"script":[{},{"src":"https://comments.meeovicms.com/comments/embed.js","defer":true}],"noscript":[],"viewport":"minimum-scale=1, initial-scale=1, width=device-width","templateParams":{"separator":"·"},"htmlAttrs":{"lang":"en"}};
 
@@ -4303,31 +4724,6 @@ const appSpaLoaderTag = "div";
 const appSpaLoaderAttrs = {"id":"__nuxt-loader"};
 
 const appId = "nuxt-app";
-
-function useRuntimeI18n(nuxtApp) {
-  {
-    return useRuntimeConfig().public.i18n;
-  }
-}
-function useI18nDetection(nuxtApp) {
-  const detectBrowserLanguage = useRuntimeI18n().detectBrowserLanguage;
-  const detect = detectBrowserLanguage || {};
-  return {
-    ...detect,
-    enabled: !!detectBrowserLanguage,
-    cookieKey: detect.cookieKey || "i18n_redirected"
-  };
-}
-function resolveRootRedirect(config) {
-  if (!config) return void 0;
-  return {
-    path: "/" + (isString(config) ? config : config.path).replace(/^\//, ""),
-    code: !isString(config) && config.statusCode || 302
-  };
-}
-function toArray(value) {
-  return Array.isArray(value) ? value : [value];
-}
 
 const separator = "___";
 const pathLanguageParser = createPathIndexLanguageParser(0);
@@ -4351,19 +4747,13 @@ function matchDomainLocale(locales, host, pathLocale) {
   }
   return (
     // match by current path locale
-    matches.find((l) => l.code === pathLocale)?.code || // fallback to default locale for the domain
-    matches.find((l) => l.defaultForDomains?.includes(host) ?? l.domainDefault)?.code
+    matches.find((l) => l.code === pathLocale)?.code || matches.find((l) => l.defaultForDomains?.includes(host) ?? l.domainDefault)?.code
   );
 }
 
-const getCookieLocale = (event, cookieName) => {
-  const cookieValue = getRequestHeader(event, "cookie") || "";
-  return parse$1(cookieValue)[cookieName];
-};
+const getCookieLocale = (event, cookieName) => (getCookie(event, cookieName)) || void 0;
 const getRouteLocale = (event, route) => getLocaleFromRoute(route);
-const getHeaderLocale = (event) => {
-  return findBrowserLocale(normalizedLocales, parseAcceptLanguage(getRequestHeader(event, "accept-language") || ""));
-};
+const getHeaderLocale = (event) => findBrowserLocale(normalizedLocales, parseAcceptLanguage(getRequestHeader(event, "accept-language") || ""));
 const getHostLocale = (event, path, domainLocales) => {
   const host = getRequestURL(event, { xForwardedHost: true }).host;
   const locales = normalizedLocales.map((l) => ({
@@ -4538,6 +4928,11 @@ const pathToI18nConfig = {
     "pl-PL": "/connect/user/:slug(.*)*",
     "testde": "/connect/user/:slug(.*)*"
   },
+  "/seller-dashboard": {
+    "en-GB": "/seller-dashboard",
+    "pl-PL": "/seller-dashboard",
+    "testde": "/seller-dashboard"
+  },
   "/connect/event/:slug(.*)*": {
     "en-GB": "/connect/event/:slug(.*)*",
     "pl-PL": "/connect/event/:slug(.*)*",
@@ -4600,6 +4995,7 @@ const i18nPathToPath = {
   "/departments/:slug(.*)*": "/departments/:slug(.*)*",
   "/connect/post/:slug(.*)*": "/connect/post/:slug(.*)*",
   "/connect/user/:slug(.*)*": "/connect/user/:slug(.*)*",
+  "/seller-dashboard": "/seller-dashboard",
   "/connect/event/:slug(.*)*": "/connect/event/:slug(.*)*",
   "/connect/space/:slug(.*)*": "/connect/space/:slug(.*)*",
   "/product/showcases": "/product/showcases",
@@ -4613,7 +5009,9 @@ for (const path of Object.keys(i18nPathToPath)) {
   matcher.addRoute({ path, component: () => "", meta: {} });
 }
 const getI18nPathToI18nPath = (path, locale) => {
-  if (!path || !locale) return;
+  if (!path || !locale) {
+    return;
+  }
   const plainPath = i18nPathToPath[path];
   const i18nConfig = pathToI18nConfig[plainPath];
   if (i18nConfig && i18nConfig[locale]) {
@@ -4621,12 +5019,19 @@ const getI18nPathToI18nPath = (path, locale) => {
   }
 };
 function isExistingNuxtRoute(path) {
-  if (path === "") return;
+  if (path === "") {
+    return;
+  }
+  if (path.endsWith("/__nuxt_error")) {
+    return;
+  }
   const resolvedMatch = matcher.resolve({ path }, { path: "/", name: "", matched: [], params: {}, meta: {} });
   return resolvedMatch.matched.length > 0 ? resolvedMatch : void 0;
 }
 function matchLocalized(path, locale, defaultLocale) {
-  if (path === "") return;
+  if (path === "") {
+    return;
+  }
   const parsed = parsePath(path);
   const resolvedMatch = matcher.resolve(
     { path: parsed.pathname || "/" },
@@ -4643,10 +5048,9 @@ function matchLocalized(path, locale, defaultLocale) {
   }
 }
 function prefixable(currentLocale, defaultLocale) {
-  return   (currentLocale !== defaultLocale || "prefix_except_default" === "prefix");
+  return (currentLocale !== defaultLocale || "prefix_except_default" === "prefix");
 }
 
-const getHost = (event) => getRequestURL(event, { xForwardedHost: true }).host;
 function* detect(detectors, detection, path) {
   if (detection.enabled) {
     yield { locale: detectors.cookie(), source: "cookie" };
@@ -4657,10 +5061,10 @@ function* detect(detectors, detection, path) {
   }
   yield { locale: detection.fallbackLocale, source: "fallback" };
 }
-const _SRhDnY_DPe9XMRfGFYQIkHMPYjpcuoeXZ4NCMWgS4vU = defineNitroPlugin$1(async (nitro) => {
+const _SRhDnY_DPe9XMRfGFYQIkHMPYjpcuoeXZ4NCMWgS4vU = defineNitroPlugin(async (nitro) => {
   const runtimeI18n = useRuntimeI18n();
   const rootRedirect = resolveRootRedirect(runtimeI18n.rootRedirect);
-  const _defaultLocale = runtimeI18n.defaultLocale || "";
+  runtimeI18n.defaultLocale || "";
   try {
     const cacheStorage = useStorage("cache");
     const cachedKeys = await cacheStorage.getKeys("nitro:handlers:i18n");
@@ -4712,10 +5116,14 @@ const _SRhDnY_DPe9XMRfGFYQIkHMPYjpcuoeXZ4NCMWgS4vU = defineNitroPlugin$1(async (
     }
     switch (detection.redirectOn) {
       case "root":
-        if (requestURL.pathname !== "/") break;
+        if (requestURL.pathname !== "/") {
+          break;
+        }
       // fallthrough (root has no prefix)
       case "no prefix":
-        if (pathLocale) break;
+        if (pathLocale) {
+          break;
+        }
       // fallthrough to resolve
       case "all":
         resolvedPath ??= getLocalizedMatch(locale);
@@ -4726,33 +5134,29 @@ const _SRhDnY_DPe9XMRfGFYQIkHMPYjpcuoeXZ4NCMWgS4vU = defineNitroPlugin$1(async (
   }
   const baseUrlGetter = createBaseUrlGetter();
   nitro.hooks.hook("request", async (event) => {
-    const options = await setupVueI18nOptions(getDefaultLocaleForDomain(getHost(event)) || _defaultLocale);
+    await initializeI18nContext(event);
+  });
+  nitro.hooks.hook("render:before", async ({ event }) => {
+    const ctx = useI18nContext(event);
     const url = getRequestURL(event);
-    const ctx = createI18nContext();
-    event.context.nuxtI18n = ctx;
-    {
-      const detector = useDetectors(event, detection);
-      const localeSegment = detector.route(event.path);
-      const pathLocale = isSupportedLocale(localeSegment) && localeSegment || void 0;
-      const path = pathLocale && url.pathname.slice(pathLocale.length + 1) || url.pathname;
-      if (!url.pathname.includes("/_i18n/") && !isExistingNuxtRoute(path)) {
-        return;
-      }
-      const resolved = resolveRedirectPath(event, path, pathLocale, options.defaultLocale, detector);
-      if (resolved.path && resolved.path !== url.pathname) {
-        ctx.detectLocale = resolved.locale;
-        detection.useCookie && setCookie(event, detection.cookieKey, resolved.locale, cookieOptions);
-        await sendRedirect(
-          event,
-          joinURL(baseUrlGetter(event, options.defaultLocale), resolved.path + url.search),
-          resolved.code
-        );
-        return;
-      }
+    const detector = useDetectors(event, detection);
+    const localeSegment = detector.route(event.path);
+    const pathLocale = isSupportedLocale(localeSegment) && localeSegment || void 0;
+    const path = (pathLocale && url.pathname.slice(pathLocale.length + 1)) ?? url.pathname;
+    if (!url.pathname.includes("/_i18n/fgbXbtzS") && !isExistingNuxtRoute(path)) {
+      return;
     }
-    const localeConfigs = createLocaleConfigs(options.fallbackLocale);
-    ctx.vueI18nOptions = options;
-    ctx.localeConfigs = localeConfigs;
+    const resolved = resolveRedirectPath(event, path, pathLocale, ctx.vueI18nOptions.defaultLocale, detector);
+    if (resolved.path && resolved.path !== url.pathname) {
+      ctx.detectLocale = resolved.locale;
+      detection.useCookie && setCookie(event, detection.cookieKey, resolved.locale, cookieOptions);
+      await sendRedirect(
+        event,
+        joinURL(baseUrlGetter(event, ctx.vueI18nOptions.defaultLocale), resolved.path + url.search),
+        resolved.code
+      );
+      return;
+    }
   });
   nitro.hooks.hook("render:html", (htmlContext, { event }) => {
     tryUseI18nContext(event);
@@ -4846,7 +5250,8 @@ function resolveSecurityRules(event) {
   if (!event.context.security.rules) {
     const router = createRouter({ routes: structuredClone(nitroAppSecurityOptions) });
     const matcher = toRouteMatcher(router);
-    const matches = matcher.matchAll(event.path.split("?")[0]);
+    const eventPathNoQuery = event.path.split("?")[0];
+    const matches = eventPathNoQuery ? matcher.matchAll(eventPathNoQuery) : [];
     const rules = defuReplaceArray({}, ...matches.reverse());
     event.context.security.rules = rules;
   }
@@ -4859,7 +5264,8 @@ function resolveSecurityRoute(event) {
   if (!event.context.security.route) {
     const routeNames = Object.fromEntries(Object.entries(nitroAppSecurityOptions).map(([name]) => [name, { name }]));
     const router = createRouter({ routes: routeNames });
-    const match = router.lookup(event.path.split("?")[0]);
+    const eventPathNoQuery = event.path.split("?")[0];
+    const match = eventPathNoQuery ? router.lookup(eventPathNoQuery) : void 0;
     const route = match?.name ?? "";
     event.context.security.route = route;
   }
@@ -5004,11 +5410,12 @@ function backwardsCompatibleSecurity(securityHeaders) {
   return securityHeadersAsObject;
 }
 
-const _DXMRFSHHYLVeO7a7qEPi0nWRa7rXEAbCnd2ehPuEXRk = defineNitroPlugin$1(async (nitroApp) => {
+const _DXMRFSHHYLVeO7a7qEPi0nWRa7rXEAbCnd2ehPuEXRk = defineNitroPlugin(async (nitroApp) => {
   const appSecurityOptions = getAppSecurityOptions();
   const runtimeConfig = useRuntimeConfig();
   for (const route in runtimeConfig.nitro.routeRules) {
     const rule = runtimeConfig.nitro.routeRules[route];
+    if (!rule) continue;
     const { headers: headers2 } = rule;
     const securityHeaders2 = standardToSecurity(headers2);
     if (securityHeaders2) {
@@ -5025,6 +5432,7 @@ const _DXMRFSHHYLVeO7a7qEPi0nWRa7rXEAbCnd2ehPuEXRk = defineNitroPlugin$1(async (
   );
   for (const route in runtimeConfig.nitro.routeRules) {
     const rule = runtimeConfig.nitro.routeRules[route];
+    if (!rule) continue;
     const { security } = rule;
     if (security) {
       const { headers: headers2 } = security;
@@ -5048,11 +5456,11 @@ const _DXMRFSHHYLVeO7a7qEPi0nWRa7rXEAbCnd2ehPuEXRk = defineNitroPlugin$1(async (
   await nitroApp.hooks.callHook("nuxt-security:ready");
 });
 
-const sriHashes = {"/_nuxt/builds/meta/649fdd4d-d228-4e38-abe3-74a81c34f2b7.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/meta/dev.json":"sha384-otysO5h1TGJY272VhZVFUTIEiLLUXU6T+MKZM7EAUNoGULwIJGGiwQ+5yEqIhpoS","/_nuxt/builds/latest.json":"sha384-VTZNgZZErSG9X2suh82WJN2hzefhxe89Pn2CRdxAAIJ0Q1JSK9g5AELUS27IpOtY","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
+const sriHashes = {"/_nuxt/builds/meta/19baae2f-2189-4252-868d-9706bd2ea91b.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/meta/dev.json":"sha384-+xsFsFJnbkf/oGlCCXeXQSD7cQjvVcqJ+oLnH/N5s3DSyzBxdTyIfhSxztVe/bUF","/_nuxt/builds/latest.json":"sha384-lVxMoD7UmsHq6EgS2HY1LjmydLe3WuZKWdKd5MCRdQS6154hGeb5K1C6ju2xVeem","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
 
 const SCRIPT_RE$1 = /<script((?=[^>]+\bsrc="([^"]+)")(?![^>]+\bintegrity="[^"]+")[^>]+)(?:\/>|><\/script>)/g;
 const LINK_RE$1 = /<link((?=[^>]+\brel="(?:stylesheet|preload|modulepreload)")(?=[^>]+\bhref="([^"]+)")(?![^>]+\bintegrity="[\w\-+/=]+")[^>]+)>/g;
-const _Bp2P3b_iRzev_OeTFm3s2Q8yUxpDatQjTh96B1C7nEQ = defineNitroPlugin$1((nitroApp) => {
+const _Bp2P3b_iRzev_OeTFm3s2Q8yUxpDatQjTh96B1C7nEQ = defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook("render:html", (html, { event }) => {
     const rules = resolveSecurityRules(event);
     if (!rules.enabled || !rules.sri) {
@@ -5095,17 +5503,45 @@ function generateRandomNonce() {
   return nonce;
 }
 
-const _nBZsUZZfz3dbEnzg2TgZ2gCy1d2F2P97liW3lQSGs7k = defineNitroPlugin$1((nitroApp) => {
+const _nBZsUZZfz3dbEnzg2TgZ2gCy1d2F2P97liW3lQSGs7k = defineNitroPlugin((nitroApp) => {
   {
     return;
   }
 });
 
-const LINK_RE = /<link([^>]*?>)/gi;
+const LINK_RE = /<link\b([^>]*?>)/gi;
 const NONCE_RE = /nonce="[^"]+"/i;
-const SCRIPT_RE = /<script([^>]*?>)/gi;
-const STYLE_RE = /<style([^>]*?>)/gi;
-const _SdeRca68a4V3egyjyBJMtTW8mq1RCOdA3lSG16SGhZQ = defineNitroPlugin$1((nitroApp) => {
+const SCRIPT_RE = /<script\b([^>]*?>)/gi;
+const STYLE_RE = /<style\b([^>]*?>)/gi;
+const QUOTE_MASK_RE = /"([^"]*)"/g;
+const QUOTE_RESTORE_RE = /__QUOTE_PLACEHOLDER_(\d+)__/g;
+function injectNonceToTags(element, nonce) {
+  if (typeof element !== "string") {
+    return element;
+  }
+  const quotes = [];
+  let maskedElement = element.replace(QUOTE_MASK_RE, (match) => {
+    quotes.push(match);
+    return `__QUOTE_PLACEHOLDER_${quotes.length - 1}__`;
+  });
+  maskedElement = maskedElement.replace(LINK_RE, (match, rest) => {
+    if (NONCE_RE.test(rest)) {
+      return match.replace(NONCE_RE, `nonce="${nonce}"`);
+    }
+    return `<link nonce="${nonce}"` + rest;
+  });
+  maskedElement = maskedElement.replace(SCRIPT_RE, (match, rest) => {
+    return `<script nonce="${nonce}"` + rest;
+  });
+  maskedElement = maskedElement.replace(STYLE_RE, (match, rest) => {
+    return `<style nonce="${nonce}"` + rest;
+  });
+  const restoredHtml = maskedElement.replace(QUOTE_RESTORE_RE, (match, index) => {
+    return quotes[parseInt(index, 10)];
+  });
+  return restoredHtml;
+}
+const _SdeRca68a4V3egyjyBJMtTW8mq1RCOdA3lSG16SGhZQ = defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook("request", (event) => {
     if (event.context.security?.nonce) {
       return;
@@ -5124,24 +5560,7 @@ const _SdeRca68a4V3egyjyBJMtTW8mq1RCOdA3lSG16SGhZQ = defineNitroPlugin$1((nitroA
     const nonce = event.context.security.nonce;
     const sections = ["body", "bodyAppend", "bodyPrepend", "head"];
     for (const section of sections) {
-      html[section] = html[section].map((element) => {
-        if (typeof element !== "string") {
-          return element;
-        }
-        element = element.replace(LINK_RE, (match, rest) => {
-          if (NONCE_RE.test(rest)) {
-            return match.replace(NONCE_RE, `nonce="${nonce}"`);
-          }
-          return `<link nonce="${nonce}"` + rest;
-        });
-        element = element.replace(SCRIPT_RE, (match, rest) => {
-          return `<script nonce="${nonce}"` + rest;
-        });
-        element = element.replace(STYLE_RE, (match, rest) => {
-          return `<style nonce="${nonce}"` + rest;
-        });
-        return element;
-      });
+      html[section] = html[section].map((element) => injectNonceToTags(element, nonce));
     }
     {
       html.head.push(
@@ -5151,7 +5570,7 @@ const _SdeRca68a4V3egyjyBJMtTW8mq1RCOdA3lSG16SGhZQ = defineNitroPlugin$1((nitroA
   });
 });
 
-const _JprukelCG2cDMIaLhvl9kPLvKuicIfshkw7TQHfIo = defineNitroPlugin$1((nitroApp) => {
+const _JprukelCG2cDMIaLhvl9kPLvKuicIfshkw7TQHfIo = defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook("render:html", (response, { event }) => {
     if (response.island) {
       return;
@@ -5188,10 +5607,10 @@ function updateCspVariables(csp, nonce, scriptHashes, styleHashes) {
         return source;
       }
     }).filter((source) => source);
-    if (directive === "script-src" && scriptHashes) {
+    if (["script-src", "script-src-elem"].includes(directive) && scriptHashes) {
       modifiedSources.push(...scriptHashes);
     }
-    if (directive === "style-src" && styleHashes) {
+    if (["style-src", "style-src-elem"].includes(directive) && styleHashes) {
       modifiedSources.push(...styleHashes);
     }
     return [directive, modifiedSources];
@@ -5199,13 +5618,13 @@ function updateCspVariables(csp, nonce, scriptHashes, styleHashes) {
   return generatedCsp;
 }
 
-const _hPlZtw7p_bCEtPdQypJ9nRDcixiEFS8PyaV9FlB5S4 = defineNitroPlugin$1((nitroApp) => {
+const _hPlZtw7p_bCEtPdQypJ9nRDcixiEFS8PyaV9FlB5S4 = defineNitroPlugin((nitroApp) => {
   {
     return;
   }
 });
 
-const _8fygYVUGN7QwfYcqtD4JWHwWly5UVop34qBpe97upTU = defineNitroPlugin$1((nitroApp) => {
+const _8fygYVUGN7QwfYcqtD4JWHwWly5UVop34qBpe97upTU = defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook("render:response", (response, { event }) => {
     const rules = resolveSecurityRules(event);
     if (rules.enabled && rules.headers) {
@@ -5228,7 +5647,7 @@ const _8fygYVUGN7QwfYcqtD4JWHwWly5UVop34qBpe97upTU = defineNitroPlugin$1((nitroA
   });
 });
 
-const _3cq2_NhiFS_8AekfgeIWCDxz4vO3_icMDxTsZnGC7E = defineNitroPlugin$1((nitroApp) => {
+const _3cq2_NhiFS_8AekfgeIWCDxz4vO3_icMDxTsZnGC7E = defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook("beforeResponse", (event) => {
     const rules = resolveSecurityRules(event);
     if (rules.enabled && rules.hidePoweredBy && !event.node.res.headersSent) {
@@ -5237,14 +5656,14 @@ const _3cq2_NhiFS_8AekfgeIWCDxz4vO3_icMDxTsZnGC7E = defineNitroPlugin$1((nitroAp
   });
 });
 
-const _B8lyDTlxLYwIVL7mHaIG_costZHgLMP7QejioBZNJ0Y = defineNitroPlugin$1(async (nitroApp) => {
+const _B8lyDTlxLYwIVL7mHaIG_costZHgLMP7QejioBZNJ0Y = defineNitroPlugin(async (nitroApp) => {
   {
     const prerenderedHeaders = await useStorage("assets:nuxt-security").getItem("headers.json") || {};
     nitroApp.hooks.hook("beforeResponse", (event) => {
       const rules = resolveSecurityRules(event);
       if (rules.enabled && rules.ssg && rules.ssg.nitroHeaders) {
         const path = event.path.split("?")[0];
-        if (prerenderedHeaders[path]) {
+        if (path && prerenderedHeaders[path]) {
           setResponseHeaders(event, prerenderedHeaders[path]);
         }
       }
@@ -5253,7 +5672,8 @@ const _B8lyDTlxLYwIVL7mHaIG_costZHgLMP7QejioBZNJ0Y = defineNitroPlugin$1(async (
 });
 
 const plugins = [
-  _AP2zuAuSNoUKkSkIpSZlk8BYtqL5a1shv1EcU3JcnpE,
+  _cdxnSJlampA5kjx_azfmRhJzuavQKhoLu_yY_6UIdxA,
+_iJkIwfIdFCUYQ4g74eVpIbhEX0cgRphTEJj4ba06ew8,
 _pLzN7P7gu74lbAWNw_bZ4luNIXECYa1swgjn_1dN4w,
 _1j2_7vr1DPpUV3dsNV0gbvw1x8G4oC46IDkbhAefSmo,
 _5cqK42agoj1GCWbdFsvGb9_VqMNO01wykTEBnPiDSbs,
@@ -5973,6 +6393,35 @@ const _J6gEDw = defineEventHandler(async (event) => {
   }
 });
 
+const _QWmR2y = eventHandler(async (event) => {
+  await clearUserSession(event);
+  return { loggedOut: true };
+});
+
+const _ahRYdb = eventHandler(async (event) => {
+  const session = await getUserSession(event);
+  if (Object.keys(session).length > 0) {
+    await sessionHooks.callHookParallel("fetch", session, event);
+  }
+  const { secure, ...data } = session;
+  return data;
+});
+
+const _SnNpHp = defineEventHandler((event) => {
+  const path = event.path.slice(1);
+  const runtimeConfig = useRuntimeConfig(event);
+  for (const provider of atprotoProviders) {
+    const config = runtimeConfig.oauth[provider];
+    if (getClientMetadataFilename(provider, config) === path) {
+      return getAtprotoClientMetadata(event, provider);
+    }
+  }
+  throw createError({
+    statusCode: 404,
+    message: "Provider not found"
+  });
+});
+
 const defaultThrowErrorValue = { throwError: true };
 const defaultSecurityConfig = (serverlUrl, strict) => {
   const defaultConfig = {
@@ -6061,11 +6510,89 @@ const defaultSecurityConfig = (serverlUrl, strict) => {
     },
     sri: true
   };
+  {
+    defaultConfig.headers.crossOriginEmbedderPolicy = "unsafe-none" ;
+    defaultConfig.headers.contentSecurityPolicy = {
+      "base-uri": ["'none'"],
+      "default-src": ["'none'"],
+      "connect-src": ["'self'"],
+      "font-src": ["'self'"],
+      "form-action": ["'self'"],
+      "frame-ancestors": ["'self'"],
+      "frame-src": ["'self'"],
+      "img-src": ["'self'"],
+      "manifest-src": ["'self'"],
+      "media-src": ["'self'"],
+      "object-src": ["'none'"],
+      "script-src-attr": ["'none'"],
+      "style-src": ["'self'", "'nonce-{{nonce}}'"],
+      "script-src": ["'self'", "'strict-dynamic'", "'nonce-{{nonce}}'"],
+      "upgrade-insecure-requests": true,
+      "worker-src": ["'self'"]
+    };
+    defaultConfig.ssg.hashStyles = true;
+    defaultConfig.headers.strictTransportSecurity = {
+      maxAge: 31536e3,
+      includeSubdomains: true,
+      preload: true
+    }, defaultConfig.headers.xFrameOptions = "DENY";
+    defaultConfig.headers.permissionsPolicy = {
+      accelerometer: [],
+      /* Disable OWASP Experimental values
+      'ambient-light-sensor':[],
+      */
+      autoplay: [],
+      /* Disable OWASP Experimental values
+      battery:[],
+      */
+      camera: [],
+      "display-capture": [],
+      /* Disable OWASP Experimental values
+      'document-domain':[],
+      */
+      "encrypted-media": [],
+      fullscreen: [],
+      /* Disable OWASP Experimental values
+      gamepad:[],
+      */
+      geolocation: [],
+      gyroscope: [],
+      /* Disable OWASP Experimental values
+      'layout-animations':['self'],
+      */
+      /* Disable OWASP Experimental values
+      'legacy-image-formats':['self'],
+      */
+      magnetometer: [],
+      microphone: [],
+      midi: [],
+      /* Disable OWASP Experimental values
+      'oversized-images':['self'],
+      */
+      payment: [],
+      "picture-in-picture": [],
+      "publickey-credentials-get": [],
+      "screen-wake-lock": [],
+      /* Disable OWASP Experimental values
+      'speaker-selection':[],
+      */
+      "sync-xhr": ["self"],
+      /* Disable OWASP Experimental values
+      'unoptimized-images':['self'],
+      */
+      /* Disable OWASP Experimental values
+      'unsized-media':['self'],
+      */
+      usb: [],
+      "web-share": [],
+      "xr-spatial-tracking": []
+    };
+  }
   return defaultConfig;
 };
 
 const FILE_UPLOAD_HEADER = "multipart/form-data";
-const defaultSizeLimiter = defaultSecurityConfig("").requestSizeLimiter;
+const defaultSizeLimiter = defaultSecurityConfig("", true).requestSizeLimiter;
 const _VOEU8B = defineEventHandler((event) => {
   const rules = resolveSecurityRules(event);
   if (rules.enabled && rules.requestSizeLimiter) {
@@ -6136,7 +6663,7 @@ const _gySGfR = defineEventHandler((event) => {
 });
 
 const storage$1 = useStorage("#rate-limiter-storage");
-const defaultRateLimiter = defaultSecurityConfig("").rateLimiter;
+const defaultRateLimiter = defaultSecurityConfig("", true).rateLimiter;
 const _JxUJMA = defineEventHandler(async (event) => {
   const rules = resolveSecurityRules(event);
   const route = resolveSecurityRoute(event);
@@ -6377,6 +6904,11 @@ const _Il98N8 = defineEventHandler(async (e) => {
       setHeader(e, "X-Robots-Tag", robotConfig.rule);
     }
     e.context.robots = robotConfig;
+    {
+      const productionRobotConfig = getPathRobotConfig(e, { skipSiteIndexable: true });
+      setHeader(e, "X-Robots-Production", productionRobotConfig.rule);
+      e.context.robotsProduction = productionRobotConfig;
+    }
   }
 });
 
@@ -6403,12 +6935,43 @@ const _JmnCm2 = defineEventHandler(async (e) => {
 const _Tz4KbQ = defineEventHandler(async (e) => {
   const query = getQuery$1(e);
   const path = query.path;
+  const isMockProduction = Boolean(query.mockProductionEnv);
   delete query.path;
-  const res = await $fetch.raw(withQuery(path, query));
-  const html = res._data;
-  const robotsHeader = String(res.headers.get("x-robots-tag"));
-  const robotsMeta = String(html).match(/<meta[^>]+name=["']robots["'][^>]+content=["']([^"']+)["'](?:[^>]+data-hint=["']([^"']+)["'])?[^>]*>/i);
-  const [, robotsContent = null, robotsHint = null] = robotsMeta || [];
+  let robotsHeader = null;
+  let robotsContent = null;
+  let robotsHint = null;
+  const res = await $fetch.raw(withQuery(path, query)).catch(() => null);
+  if (res) {
+    const html = res._data;
+    robotsHeader = String(res.headers.get("x-robots-tag"));
+    if (isMockProduction) {
+      const productionHeader = res.headers.get("x-robots-production");
+      if (productionHeader) {
+        robotsHeader = String(productionHeader);
+      }
+      const productionMeta = String(html).match(/<meta[^>]+name=["']robots["'][^>]+data-production-content=["']([^"']+)["'](?:[^>]+data-hint=["']([^"']+)["'])?[^>]*>/i);
+      if (productionMeta) {
+        [, robotsContent = null, robotsHint = null] = productionMeta;
+      }
+    }
+    if (!robotsContent) {
+      const robotsMeta = String(html).match(/<meta[^>]+name=["']robots["'][^>]+content=["']([^"']+)["'](?:[^>]+data-hint=["']([^"']+)["'])?[^>]*>/i);
+      if (robotsMeta) {
+        [, robotsContent = null, robotsHint = null] = robotsMeta;
+      }
+    }
+  }
+  if (!robotsContent) {
+    const robotConfig = getPathRobotConfig(e, {
+      path,
+      skipSiteIndexable: isMockProduction
+    });
+    robotsContent = robotConfig.rule;
+    robotsHint = robotConfig.debug?.source || null;
+    if (!robotsHeader) {
+      robotsHeader = robotConfig.rule;
+    }
+  }
   const [source, line] = robotsHint ? robotsHint.split(",") : [null, null];
   return {
     rule: robotsContent,
@@ -6448,11 +7011,12 @@ function mergeOnKey(arr, key) {
       result[resultLength++] = item;
     }
   }
-  return result.slice(0, resultLength);
+  result.length = resultLength;
+  return result;
 }
 function splitForLocales(path, locales) {
   const prefix = withLeadingSlash(path).split("/")[1];
-  if (locales.includes(prefix))
+  if (prefix && locales.includes(prefix))
     return [prefix, path.replace(`/${prefix}`, "")];
   return [null, path];
 }
@@ -6484,24 +7048,33 @@ function createFilter(options = {}) {
   const exclude = options.exclude || [];
   if (include.length === 0 && exclude.length === 0)
     return () => true;
+  const excludeRegex = exclude.filter((r) => r instanceof RegExp);
+  const includeRegex = include.filter((r) => r instanceof RegExp);
+  const excludeStrings = exclude.filter((r) => typeof r === "string");
+  const includeStrings = include.filter((r) => typeof r === "string");
+  const excludeMatcher = excludeStrings.length > 0 ? toRouteMatcher(createRouter({
+    routes: Object.fromEntries(excludeStrings.map((r) => [r, true])),
+    strictTrailingSlash: false
+  })) : null;
+  const includeMatcher = includeStrings.length > 0 ? toRouteMatcher(createRouter({
+    routes: Object.fromEntries(includeStrings.map((r) => [r, true])),
+    strictTrailingSlash: false
+  })) : null;
+  const excludeExact = new Set(excludeStrings);
+  const includeExact = new Set(includeStrings);
   return function(path) {
-    for (const v of [{ rules: exclude, result: false }, { rules: include, result: true }]) {
-      const regexRules = v.rules.filter((r) => r instanceof RegExp);
-      if (regexRules.some((r) => r.test(path)))
-        return v.result;
-      const stringRules = v.rules.filter((r) => typeof r === "string");
-      if (stringRules.length > 0) {
-        const routes = {};
-        for (const r of stringRules) {
-          if (r === path)
-            return v.result;
-          routes[r] = true;
-        }
-        const routeRulesMatcher = toRouteMatcher(createRouter({ routes, strictTrailingSlash: false }));
-        if (routeRulesMatcher.matchAll(path).length > 0)
-          return Boolean(v.result);
-      }
-    }
+    if (excludeRegex.some((r) => r.test(path)))
+      return false;
+    if (excludeExact.has(path))
+      return false;
+    if (excludeMatcher && excludeMatcher.matchAll(path).length > 0)
+      return false;
+    if (includeRegex.some((r) => r.test(path)))
+      return true;
+    if (includeExact.has(path))
+      return true;
+    if (includeMatcher && includeMatcher.matchAll(path).length > 0)
+      return true;
     return include.length === 0;
   };
 }
@@ -6837,12 +7410,11 @@ function extractUrlFromParsedElement(urlElement, warnings) {
       });
     }
   }
-  const filteredUrlObj = Object.fromEntries(
+  return Object.fromEntries(
     Object.entries(urlObj).filter(
       ([_, value]) => value != null && (!Array.isArray(value) || value.length > 0)
     )
   );
-  return filteredUrlObj;
 }
 async function parseSitemapXml(xml) {
   const warnings = [];
@@ -6996,11 +7568,15 @@ async function fetchDataSource(input, event) {
     }
   }
 }
-function globalSitemapSources() {
-  return Promise.resolve().then(function () { return globalSources; }).then((m) => m.sources);
+async function globalSitemapSources() {
+  const m = await Promise.resolve().then(function () { return globalSources; });
+  return [...m.sources];
 }
-function childSitemapSources(definition) {
-  return definition?._hasSourceChunk ? Promise.resolve().then(function () { return childSources; }).then((m) => m.sources[definition.sitemapName] || []) : Promise.resolve([]);
+async function childSitemapSources(definition) {
+  if (!definition?._hasSourceChunk)
+    return [];
+  const m = await Promise.resolve().then(function () { return childSources; });
+  return [...m.sources[definition.sitemapName] || []];
 }
 async function resolveSitemapSources(sources, event) {
   return (await Promise.all(
@@ -7024,23 +7600,26 @@ async function resolveSitemapSources(sources, event) {
 
 const _BFyOWT = defineEventHandler(async (e) => {
   const _runtimeConfig = useSitemapRuntimeConfig();
+  const siteConfig = getSiteConfig(e);
   const { sitemaps: _sitemaps } = _runtimeConfig;
   const runtimeConfig = { ..._runtimeConfig };
   delete runtimeConfig.sitemaps;
   const globalSources = await globalSitemapSources();
-  const nitroOrigin = useNitroOrigin(e);
+  const nitroOrigin = getNitroOrigin(e);
   const sitemaps = {};
   for (const s of Object.keys(_sitemaps)) {
+    const sitemap = _sitemaps[s];
     sitemaps[s] = {
-      ..._sitemaps[s],
-      sources: await resolveSitemapSources(await childSitemapSources(_sitemaps[s]), e)
+      ...sitemap,
+      sources: await resolveSitemapSources(await childSitemapSources(sitemap), e)
     };
   }
   return {
     nitroOrigin,
     sitemaps,
     runtimeConfig,
-    globalSources: await resolveSitemapSources(globalSources, e)
+    globalSources: await resolveSitemapSources(globalSources, e),
+    siteConfig: { ...siteConfig }
   };
 });
 
@@ -7318,42 +7897,47 @@ function createNitroRouteRuleMatcher() {
 }
 
 function resolve(s, resolvers) {
-  if (typeof s === "undefined" || !resolvers)
-    return s;
-  s = typeof s === "string" ? s : s.toString();
-  if (hasProtocol(s, { acceptRelative: true, strict: false }))
-    return resolvers.fixSlashes(s);
-  return resolvers.canonicalUrlResolver(s);
+  if (typeof s === "undefined")
+    return void 0;
+  const str = typeof s === "string" ? s : s.toString();
+  if (!resolvers)
+    return str;
+  if (hasProtocol(str, { acceptRelative: true, strict: false }))
+    return resolvers.fixSlashes(str);
+  return resolvers.canonicalUrlResolver(str);
 }
 function removeTrailingSlash(s) {
   return s.replace(/\/(\?|#|$)/, "$1");
 }
 function preNormalizeEntry(_e, resolvers) {
-  const e = typeof _e === "string" ? { loc: _e } : { ..._e };
-  if (e.url && !e.loc) {
-    e.loc = e.url;
-    delete e.url;
+  const input = typeof _e === "string" ? { loc: _e } : { ..._e };
+  if (input.url && !input.loc) {
+    input.loc = input.url;
   }
-  if (typeof e.loc !== "string") {
-    e.loc = "";
+  delete input.url;
+  if (typeof input.loc !== "string") {
+    input.loc = "";
   }
+  const skipEncoding = input._encoded === true;
+  const e = input;
   e.loc = removeTrailingSlash(e.loc);
   e._abs = hasProtocol(e.loc, { acceptRelative: false, strict: false });
   try {
     e._path = e._abs ? parseURL(e.loc) : parsePath(e.loc);
-  } catch (e2) {
-    e2._path = null;
+  } catch {
+    e._path = null;
   }
   if (e._path) {
-    const query = parseQuery(e._path.search);
-    const qs = stringifyQuery(query);
-    e._relativeLoc = `${encodePath(e._path?.pathname)}${qs.length ? `?${qs}` : ""}`;
+    const search = e._path.search;
+    const qs = search && search.length > 1 ? stringifyQuery(parseQuery(search)) : "";
+    const pathname = skipEncoding ? e._path.pathname : encodePath(e._path.pathname);
+    e._relativeLoc = `${pathname}${qs.length ? `?${qs}` : ""}`;
     if (e._path.host) {
       e.loc = stringifyParsedURL(e._path);
     } else {
       e.loc = e._relativeLoc;
     }
-  } else if (!isEncoded(e.loc)) {
+  } else if (!skipEncoding && !isEncoded(e.loc)) {
     e.loc = encodeURI(e.loc);
   }
   if (e.loc === "")
@@ -7383,8 +7967,7 @@ function normaliseEntry(_e, defaults, resolvers) {
   e.loc = resolve(e.loc, resolvers);
   if (e.alternatives) {
     const alternatives = e.alternatives.map((a) => ({ ...a }));
-    for (let i = 0; i < alternatives.length; i++) {
-      const alt = alternatives[i];
+    for (const alt of alternatives) {
       if (typeof alt.href === "string") {
         alt.href = resolve(alt.href, resolvers);
       } else if (typeof alt.href === "object" && alt.href) {
@@ -7395,16 +7978,16 @@ function normaliseEntry(_e, defaults, resolvers) {
   }
   if (e.images) {
     const images = e.images.map((i) => ({ ...i }));
-    for (let i = 0; i < images.length; i++) {
-      images[i].loc = resolve(images[i].loc, resolvers);
+    for (const img of images) {
+      img.loc = resolve(img.loc, resolvers);
     }
     e.images = mergeOnKey(images, "loc");
   }
   if (e.videos) {
     const videos = e.videos.map((v) => ({ ...v }));
-    for (let i = 0; i < videos.length; i++) {
-      if (videos[i].content_loc) {
-        videos[i].content_loc = resolve(videos[i].content_loc, resolvers);
+    for (const video of videos) {
+      if (video.content_loc) {
+        video.content_loc = resolve(video.content_loc, resolvers);
       }
     }
     e.videos = mergeOnKey(videos, "content_loc");
@@ -7422,8 +8005,9 @@ function isValidW3CDate(d) {
 }
 function normaliseDate(d) {
   if (typeof d === "string") {
-    if (d.includes("T")) {
-      const t = d.split("T")[1];
+    const tIdx = d.indexOf("T");
+    if (tIdx !== -1) {
+      const t = d.slice(tIdx + 1);
       if (!t.includes("+") && !t.includes("-") && !t.includes("Z")) {
         d += "Z";
       }
@@ -7530,197 +8114,113 @@ function escapeValueForXml(value) {
     return value ? "yes" : "no";
   return xmlEscape(String(value));
 }
+const yesNo = (v) => v === "yes" || v === true ? "yes" : "no";
 const URLSET_OPENING_TAG = '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-function buildUrlXml(url) {
-  const capacity = 50;
-  const parts = Array.from({ length: capacity });
-  let partIndex = 0;
-  parts[partIndex++] = "    <url>";
-  if (url.loc) {
-    parts[partIndex++] = `        <loc>${escapeValueForXml(url.loc)}</loc>`;
-  }
-  if (url.lastmod) {
-    parts[partIndex++] = `        <lastmod>${url.lastmod}</lastmod>`;
-  }
-  if (url.changefreq) {
-    parts[partIndex++] = `        <changefreq>${url.changefreq}</changefreq>`;
-  }
+function buildUrlXml(url, NL, I1, I2, I3, I4) {
+  let xml = `${I1}<url>${NL}`;
+  if (url.loc) xml += `${I2}<loc>${xmlEscape(url.loc)}</loc>${NL}`;
+  if (url.lastmod) xml += `${I2}<lastmod>${url.lastmod}</lastmod>${NL}`;
+  if (url.changefreq) xml += `${I2}<changefreq>${url.changefreq}</changefreq>${NL}`;
   if (url.priority !== void 0) {
-    const priorityValue = Number.parseFloat(String(url.priority));
-    const formattedPriority = priorityValue % 1 === 0 ? String(priorityValue) : priorityValue.toFixed(1);
-    parts[partIndex++] = `        <priority>${formattedPriority}</priority>`;
+    const p = typeof url.priority === "number" ? url.priority : Number.parseFloat(url.priority);
+    xml += `${I2}<priority>${p.toFixed(1)}</priority>${NL}`;
   }
-  const keys = Object.keys(url).filter((k) => !k.startsWith("_") && !["loc", "lastmod", "changefreq", "priority"].includes(k));
-  for (const key of keys) {
-    const value = url[key];
-    if (value === void 0 || value === null) continue;
-    switch (key) {
-      case "alternatives":
-        if (Array.isArray(value) && value.length > 0) {
-          for (const alt of value) {
-            const attrs = Object.entries(alt).map(([k, v]) => `${k}="${escapeValueForXml(v)}"`).join(" ");
-            parts[partIndex++] = `        <xhtml:link rel="alternate" ${attrs} />`;
-          }
-        }
-        break;
-      case "images":
-        if (Array.isArray(value) && value.length > 0) {
-          for (const img of value) {
-            parts[partIndex++] = "        <image:image>";
-            parts[partIndex++] = `            <image:loc>${escapeValueForXml(img.loc)}</image:loc>`;
-            if (img.title) parts[partIndex++] = `            <image:title>${escapeValueForXml(img.title)}</image:title>`;
-            if (img.caption) parts[partIndex++] = `            <image:caption>${escapeValueForXml(img.caption)}</image:caption>`;
-            if (img.geo_location) parts[partIndex++] = `            <image:geo_location>${escapeValueForXml(img.geo_location)}</image:geo_location>`;
-            if (img.license) parts[partIndex++] = `            <image:license>${escapeValueForXml(img.license)}</image:license>`;
-            parts[partIndex++] = "        </image:image>";
-          }
-        }
-        break;
-      case "videos":
-        if (Array.isArray(value) && value.length > 0) {
-          for (const video of value) {
-            parts[partIndex++] = "        <video:video>";
-            parts[partIndex++] = `            <video:title>${escapeValueForXml(video.title)}</video:title>`;
-            if (video.thumbnail_loc) {
-              parts[partIndex++] = `            <video:thumbnail_loc>${escapeValueForXml(video.thumbnail_loc)}</video:thumbnail_loc>`;
-            }
-            parts[partIndex++] = `            <video:description>${escapeValueForXml(video.description)}</video:description>`;
-            if (video.content_loc) {
-              parts[partIndex++] = `            <video:content_loc>${escapeValueForXml(video.content_loc)}</video:content_loc>`;
-            }
-            if (video.player_loc) {
-              const attrs = video.player_loc.allow_embed ? ' allow_embed="yes"' : "";
-              const autoplay = video.player_loc.autoplay ? ' autoplay="yes"' : "";
-              parts[partIndex++] = `            <video:player_loc${attrs}${autoplay}>${escapeValueForXml(video.player_loc)}</video:player_loc>`;
-            }
-            if (video.duration !== void 0) {
-              parts[partIndex++] = `            <video:duration>${video.duration}</video:duration>`;
-            }
-            if (video.expiration_date) {
-              parts[partIndex++] = `            <video:expiration_date>${video.expiration_date}</video:expiration_date>`;
-            }
-            if (video.rating !== void 0) {
-              parts[partIndex++] = `            <video:rating>${video.rating}</video:rating>`;
-            }
-            if (video.view_count !== void 0) {
-              parts[partIndex++] = `            <video:view_count>${video.view_count}</video:view_count>`;
-            }
-            if (video.publication_date) {
-              parts[partIndex++] = `            <video:publication_date>${video.publication_date}</video:publication_date>`;
-            }
-            if (video.family_friendly !== void 0) {
-              parts[partIndex++] = `            <video:family_friendly>${video.family_friendly === "yes" || video.family_friendly === true ? "yes" : "no"}</video:family_friendly>`;
-            }
-            if (video.restriction) {
-              const relationship = video.restriction.relationship || "allow";
-              parts[partIndex++] = `            <video:restriction relationship="${relationship}">${escapeValueForXml(video.restriction.restriction)}</video:restriction>`;
-            }
-            if (video.platform) {
-              const relationship = video.platform.relationship || "allow";
-              parts[partIndex++] = `            <video:platform relationship="${relationship}">${escapeValueForXml(video.platform.platform)}</video:platform>`;
-            }
-            if (video.requires_subscription !== void 0) {
-              parts[partIndex++] = `            <video:requires_subscription>${video.requires_subscription === "yes" || video.requires_subscription === true ? "yes" : "no"}</video:requires_subscription>`;
-            }
-            if (video.price) {
-              const prices = Array.isArray(video.price) ? video.price : [video.price];
-              for (const price of prices) {
-                const attrs = [];
-                if (price.currency) attrs.push(`currency="${price.currency}"`);
-                if (price.type) attrs.push(`type="${price.type}"`);
-                const attrsStr = attrs.length > 0 ? " " + attrs.join(" ") : "";
-                parts[partIndex++] = `            <video:price${attrsStr}>${escapeValueForXml(price.price)}</video:price>`;
-              }
-            }
-            if (video.uploader) {
-              const info = video.uploader.info ? ` info="${escapeValueForXml(video.uploader.info)}"` : "";
-              parts[partIndex++] = `            <video:uploader${info}>${escapeValueForXml(video.uploader.uploader)}</video:uploader>`;
-            }
-            if (video.live !== void 0) {
-              parts[partIndex++] = `            <video:live>${video.live === "yes" || video.live === true ? "yes" : "no"}</video:live>`;
-            }
-            if (video.tag) {
-              const tags = Array.isArray(video.tag) ? video.tag : [video.tag];
-              for (const tag of tags) {
-                parts[partIndex++] = `            <video:tag>${escapeValueForXml(tag)}</video:tag>`;
-              }
-            }
-            if (video.category) {
-              parts[partIndex++] = `            <video:category>${escapeValueForXml(video.category)}</video:category>`;
-            }
-            if (video.gallery_loc) {
-              const title = video.gallery_loc.title ? ` title="${escapeValueForXml(video.gallery_loc.title)}"` : "";
-              parts[partIndex++] = `            <video:gallery_loc${title}>${escapeValueForXml(video.gallery_loc)}</video:gallery_loc>`;
-            }
-            parts[partIndex++] = "        </video:video>";
-          }
-        }
-        break;
-      case "news":
-        if (value) {
-          parts[partIndex++] = "        <news:news>";
-          parts[partIndex++] = "            <news:publication>";
-          parts[partIndex++] = `                <news:name>${escapeValueForXml(value.publication.name)}</news:name>`;
-          parts[partIndex++] = `                <news:language>${escapeValueForXml(value.publication.language)}</news:language>`;
-          parts[partIndex++] = "            </news:publication>";
-          if (value.title) {
-            parts[partIndex++] = `            <news:title>${escapeValueForXml(value.title)}</news:title>`;
-          }
-          if (value.publication_date) {
-            parts[partIndex++] = `            <news:publication_date>${value.publication_date}</news:publication_date>`;
-          }
-          if (value.access) {
-            parts[partIndex++] = `            <news:access>${value.access}</news:access>`;
-          }
-          if (value.genres) {
-            parts[partIndex++] = `            <news:genres>${escapeValueForXml(value.genres)}</news:genres>`;
-          }
-          if (value.keywords) {
-            parts[partIndex++] = `            <news:keywords>${escapeValueForXml(value.keywords)}</news:keywords>`;
-          }
-          if (value.stock_tickers) {
-            parts[partIndex++] = `            <news:stock_tickers>${escapeValueForXml(value.stock_tickers)}</news:stock_tickers>`;
-          }
-          parts[partIndex++] = "        </news:news>";
-        }
-        break;
+  if (url.alternatives) {
+    for (const alt of url.alternatives) {
+      let attrs = "";
+      for (const [k, v] of Object.entries(alt)) attrs += ` ${k}="${xmlEscape(String(v))}"`;
+      xml += `${I2}<xhtml:link rel="alternate"${attrs} />${NL}`;
     }
   }
-  parts[partIndex++] = "    </url>";
-  return parts.slice(0, partIndex).join("\n");
+  if (url.images) {
+    for (const img of url.images) {
+      xml += `${I2}<image:image>${NL}${I3}<image:loc>${xmlEscape(img.loc)}</image:loc>${NL}`;
+      if (img.title) xml += `${I3}<image:title>${xmlEscape(img.title)}</image:title>${NL}`;
+      if (img.caption) xml += `${I3}<image:caption>${xmlEscape(img.caption)}</image:caption>${NL}`;
+      if (img.geo_location) xml += `${I3}<image:geo_location>${xmlEscape(img.geo_location)}</image:geo_location>${NL}`;
+      if (img.license) xml += `${I3}<image:license>${xmlEscape(img.license)}</image:license>${NL}`;
+      xml += `${I2}</image:image>${NL}`;
+    }
+  }
+  if (url.videos) {
+    for (const video of url.videos) {
+      xml += `${I2}<video:video>${NL}${I3}<video:title>${xmlEscape(video.title)}</video:title>${NL}`;
+      if (video.thumbnail_loc) xml += `${I3}<video:thumbnail_loc>${xmlEscape(video.thumbnail_loc)}</video:thumbnail_loc>${NL}`;
+      xml += `${I3}<video:description>${xmlEscape(video.description)}</video:description>${NL}`;
+      if (video.content_loc) xml += `${I3}<video:content_loc>${xmlEscape(video.content_loc)}</video:content_loc>${NL}`;
+      if (video.player_loc) xml += `${I3}<video:player_loc>${xmlEscape(video.player_loc)}</video:player_loc>${NL}`;
+      if (video.duration !== void 0) xml += `${I3}<video:duration>${video.duration}</video:duration>${NL}`;
+      if (video.expiration_date) xml += `${I3}<video:expiration_date>${video.expiration_date}</video:expiration_date>${NL}`;
+      if (video.rating !== void 0) xml += `${I3}<video:rating>${video.rating}</video:rating>${NL}`;
+      if (video.view_count !== void 0) xml += `${I3}<video:view_count>${video.view_count}</video:view_count>${NL}`;
+      if (video.publication_date) xml += `${I3}<video:publication_date>${video.publication_date}</video:publication_date>${NL}`;
+      if (video.family_friendly !== void 0) xml += `${I3}<video:family_friendly>${yesNo(video.family_friendly)}</video:family_friendly>${NL}`;
+      if (video.restriction) xml += `${I3}<video:restriction relationship="${video.restriction.relationship || "allow"}">${xmlEscape(video.restriction.restriction)}</video:restriction>${NL}`;
+      if (video.platform) xml += `${I3}<video:platform relationship="${video.platform.relationship || "allow"}">${xmlEscape(video.platform.platform)}</video:platform>${NL}`;
+      if (video.requires_subscription !== void 0) xml += `${I3}<video:requires_subscription>${yesNo(video.requires_subscription)}</video:requires_subscription>${NL}`;
+      if (video.price) {
+        for (const price of video.price) {
+          const c = price.currency ? ` currency="${price.currency}"` : "";
+          const t = price.type ? ` type="${price.type}"` : "";
+          xml += `${I3}<video:price${c}${t}>${xmlEscape(String(price.price ?? ""))}</video:price>${NL}`;
+        }
+      }
+      if (video.uploader) {
+        const info = video.uploader.info ? ` info="${xmlEscape(video.uploader.info)}"` : "";
+        xml += `${I3}<video:uploader${info}>${xmlEscape(video.uploader.uploader)}</video:uploader>${NL}`;
+      }
+      if (video.live !== void 0) xml += `${I3}<video:live>${yesNo(video.live)}</video:live>${NL}`;
+      if (video.tag) {
+        const tags = Array.isArray(video.tag) ? video.tag : [video.tag];
+        for (const t of tags) xml += `${I3}<video:tag>${xmlEscape(t)}</video:tag>${NL}`;
+      }
+      if (video.category) xml += `${I3}<video:category>${xmlEscape(video.category)}</video:category>${NL}`;
+      if (video.gallery_loc) xml += `${I3}<video:gallery_loc>${xmlEscape(video.gallery_loc)}</video:gallery_loc>${NL}`;
+      xml += `${I2}</video:video>${NL}`;
+    }
+  }
+  if (url.news) {
+    xml += `${I2}<news:news>${NL}${I3}<news:publication>${NL}`;
+    xml += `${I4}<news:name>${xmlEscape(url.news.publication.name)}</news:name>${NL}`;
+    xml += `${I4}<news:language>${xmlEscape(url.news.publication.language)}</news:language>${NL}`;
+    xml += `${I3}</news:publication>${NL}`;
+    if (url.news.title) xml += `${I3}<news:title>${xmlEscape(url.news.title)}</news:title>${NL}`;
+    if (url.news.publication_date) xml += `${I3}<news:publication_date>${url.news.publication_date}</news:publication_date>${NL}`;
+    xml += `${I2}</news:news>${NL}`;
+  }
+  xml += `${I1}</url>`;
+  return xml;
 }
 function urlsToXml(urls, resolvers, { version, xsl, credits, minify }, errorInfo) {
-  const estimatedSize = urls.length + 5;
-  const xmlParts = Array.from({ length: estimatedSize });
-  let partIndex = 0;
   let xslHref = xsl ? resolvers.relativeBaseUrlResolver(xsl) : false;
-  if (xslHref && errorInfo && errorInfo.messages.length > 0) {
+  if (xslHref && errorInfo?.messages.length) {
     xslHref = withQuery(xslHref, {
       errors: "true",
       error_messages: errorInfo.messages,
       error_urls: errorInfo.urls
     });
   }
-  if (xslHref) {
-    xmlParts[partIndex++] = `<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="${escapeValueForXml(xslHref)}"?>`;
-  } else {
-    xmlParts[partIndex++] = '<?xml version="1.0" encoding="UTF-8"?>';
-  }
-  xmlParts[partIndex++] = URLSET_OPENING_TAG;
+  const NL = minify ? "" : "\n";
+  const I1 = minify ? "" : "    ";
+  const I2 = minify ? "" : "        ";
+  const I3 = minify ? "" : "            ";
+  const I4 = minify ? "" : "                ";
+  let xml = xslHref ? `<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="${escapeValueForXml(xslHref)}"?>${NL}` : `<?xml version="1.0" encoding="UTF-8"?>${NL}`;
+  xml += URLSET_OPENING_TAG + NL;
   for (const url of urls) {
-    xmlParts[partIndex++] = buildUrlXml(url);
+    xml += buildUrlXml(url, NL, I1, I2, I3, I4) + NL;
   }
-  xmlParts[partIndex++] = "</urlset>";
+  xml += "</urlset>";
   if (credits) {
-    xmlParts[partIndex++] = `<!-- XML Sitemap generated by @nuxtjs/sitemap v${version} at ${(/* @__PURE__ */ new Date()).toISOString()} -->`;
+    xml += `${NL}<!-- XML Sitemap generated by @nuxtjs/sitemap v${version} at ${(/* @__PURE__ */ new Date()).toISOString()} -->`;
   }
-  const xmlContent = xmlParts.slice(0, partIndex);
-  if (minify) {
-    return xmlContent.join("").replace(/(?<!<[^>]*)\s(?![^<]*>)/g, "");
-  }
-  return xmlContent.join("\n");
+  return xml;
 }
 
+function getPageKey(pathWithoutPrefix) {
+  const stripped = pathWithoutPrefix[0] === "/" ? pathWithoutPrefix.slice(1) : pathWithoutPrefix;
+  return stripped.endsWith("/index") ? stripped.slice(0, -6) || "index" : stripped || "index";
+}
 function resolveSitemapEntries(sitemap, urls, runtimeConfig, resolvers) {
   const {
     autoI18n,
@@ -7737,10 +8237,16 @@ function resolveSitemapEntries(sitemap, urls, runtimeConfig, resolvers) {
     return e;
   }).filter(Boolean);
   let validI18nUrlsForTransform = [];
-  let warnIncorrectI18nTransformUsage = false;
   const withoutPrefixPaths = {};
   if (autoI18n && autoI18n.strategy !== "no_prefix") {
     const localeCodes = autoI18n.locales.map((l) => l.code);
+    const localeByCode = new Map(autoI18n.locales.map((l) => [l.code, l]));
+    const isPrefixStrategy = autoI18n.strategy === "prefix";
+    const isPrefixExceptOrAndDefault = autoI18n.strategy === "prefix_and_default" || autoI18n.strategy === "prefix_except_default";
+    const xDefaultAndLocales = [{ code: "x-default", _hreflang: "x-default" }, ...autoI18n.locales];
+    const defaultLocale = autoI18n.defaultLocale;
+    const hasPages = !!autoI18n.pages;
+    const hasDifferentDomains = !!autoI18n.differentDomains;
     validI18nUrlsForTransform = _urls.map((_e, i) => {
       if (_e._abs)
         return false;
@@ -7748,15 +8254,15 @@ function resolveSitemapEntries(sitemap, urls, runtimeConfig, resolvers) {
       let localeCode = split[0];
       const pathWithoutPrefix = split[1];
       if (!localeCode)
-        localeCode = autoI18n.defaultLocale;
+        localeCode = defaultLocale;
       const e = _e;
       e._pathWithoutPrefix = pathWithoutPrefix;
-      const locale = autoI18n.locales.find((l) => l.code === localeCode);
+      const locale = localeByCode.get(localeCode);
       if (!locale)
         return false;
       e._locale = locale;
       e._index = i;
-      e._key = `${e._sitemap || ""}${e._path?.pathname || "/"}${e._path.search}`;
+      e._key = `${e._sitemap || ""}${e._path?.pathname || "/"}${e._path?.search || ""}`;
       withoutPrefixPaths[pathWithoutPrefix] = withoutPrefixPaths[pathWithoutPrefix] || [];
       if (!withoutPrefixPaths[pathWithoutPrefix].some((e2) => e2._locale.code === locale.code))
         withoutPrefixPaths[pathWithoutPrefix].push(e);
@@ -7764,9 +8270,9 @@ function resolveSitemapEntries(sitemap, urls, runtimeConfig, resolvers) {
     }).filter(Boolean);
     for (const e of validI18nUrlsForTransform) {
       if (!e._i18nTransform && !e.alternatives?.length) {
-        const alternatives = withoutPrefixPaths[e._pathWithoutPrefix].map((u) => {
+        const alternatives = (withoutPrefixPaths[e._pathWithoutPrefix] || []).map((u) => {
           const entries = [];
-          if (u._locale.code === autoI18n.defaultLocale) {
+          if (u._locale.code === defaultLocale) {
             entries.push({
               href: u.loc,
               hreflang: "x-default"
@@ -7774,7 +8280,7 @@ function resolveSitemapEntries(sitemap, urls, runtimeConfig, resolvers) {
           }
           entries.push({
             href: u.loc,
-            hreflang: u._locale._hreflang || autoI18n.defaultLocale
+            hreflang: u._locale._hreflang || defaultLocale
           });
           return entries;
         }).flat().filter(Boolean);
@@ -7782,14 +8288,11 @@ function resolveSitemapEntries(sitemap, urls, runtimeConfig, resolvers) {
           e.alternatives = alternatives;
       } else if (e._i18nTransform) {
         delete e._i18nTransform;
-        if (autoI18n.strategy === "no_prefix") {
-          warnIncorrectI18nTransformUsage = true;
-        }
-        if (autoI18n.differentDomains) {
+        if (hasDifferentDomains) {
+          const defLocale = localeByCode.get(defaultLocale);
           e.alternatives = [
             {
-              // apply default locale domain
-              ...autoI18n.locales.find((l) => [l.code, l.language].includes(autoI18n.defaultLocale)),
+              ...defLocale,
               code: "x-default"
             },
             ...autoI18n.locales.filter((l) => !!l.domain)
@@ -7800,68 +8303,53 @@ function resolveSitemapEntries(sitemap, urls, runtimeConfig, resolvers) {
             };
           });
         } else {
+          const pageKey = hasPages ? getPageKey(e._pathWithoutPrefix) : "";
+          const pageMappings = hasPages ? autoI18n.pages[pageKey] : void 0;
+          const pathSearch = e._path?.search || "";
+          const pathWithoutPrefix = e._pathWithoutPrefix;
           for (const l of autoI18n.locales) {
-            let loc = e._pathWithoutPrefix;
-            if (autoI18n.pages) {
-              const pageKey = e._pathWithoutPrefix.replace(/^\//, "").replace(/\/index$/, "") || "index";
-              const pageMappings = autoI18n.pages[pageKey];
-              if (pageMappings && pageMappings[l.code] !== void 0) {
-                const customPath = pageMappings[l.code];
+            let loc = pathWithoutPrefix;
+            if (hasPages && pageMappings && pageMappings[l.code] !== void 0) {
+              const customPath = pageMappings[l.code];
+              if (customPath === false)
+                continue;
+              if (typeof customPath === "string")
+                loc = customPath[0] === "/" ? customPath : `/${customPath}`;
+            } else if (!hasDifferentDomains && !(isPrefixExceptOrAndDefault && l.code === defaultLocale)) {
+              loc = joinURL(`/${l.code}`, pathWithoutPrefix);
+            }
+            const _sitemap = isI18nMapped ? l._sitemap : void 0;
+            const alternatives = [];
+            for (const locale of xDefaultAndLocales) {
+              const code = locale.code === "x-default" ? defaultLocale : locale.code;
+              const isDefault = locale.code === "x-default" || locale.code === defaultLocale;
+              let href = pathWithoutPrefix;
+              if (hasPages && pageMappings && pageMappings[code] !== void 0) {
+                const customPath = pageMappings[code];
                 if (customPath === false)
                   continue;
                 if (typeof customPath === "string")
-                  loc = customPath.startsWith("/") ? customPath : `/${customPath}`;
-              } else if (!autoI18n.differentDomains && !(["prefix_and_default", "prefix_except_default"].includes(autoI18n.strategy) && l.code === autoI18n.defaultLocale)) {
-                loc = joinURL(`/${l.code}`, e._pathWithoutPrefix);
+                  href = customPath[0] === "/" ? customPath : `/${customPath}`;
+              } else if (isPrefixStrategy) {
+                href = joinURL("/", code, pathWithoutPrefix);
+              } else if (isPrefixExceptOrAndDefault && !isDefault) {
+                href = joinURL("/", code, pathWithoutPrefix);
               }
-            } else {
-              if (!autoI18n.differentDomains && !(["prefix_and_default", "prefix_except_default"].includes(autoI18n.strategy) && l.code === autoI18n.defaultLocale))
-                loc = joinURL(`/${l.code}`, e._pathWithoutPrefix);
+              if (!filterPath(href))
+                continue;
+              alternatives.push({
+                hreflang: locale._hreflang,
+                href
+              });
             }
-            const _sitemap = isI18nMapped ? l._sitemap : void 0;
+            const { _index: _, ...rest } = e;
             const newEntry = preNormalizeEntry({
               _sitemap,
-              ...e,
-              _index: void 0,
-              _key: `${_sitemap || ""}${loc || "/"}${e._path.search}`,
+              ...rest,
+              _key: `${_sitemap || ""}${loc || "/"}${pathSearch}`,
               _locale: l,
               loc,
-              alternatives: [{ code: "x-default", _hreflang: "x-default" }, ...autoI18n.locales].map((locale) => {
-                const code = locale.code === "x-default" ? autoI18n.defaultLocale : locale.code;
-                const isDefault = locale.code === "x-default" || locale.code === autoI18n.defaultLocale;
-                let href = e._pathWithoutPrefix;
-                if (autoI18n.pages) {
-                  const pageKey = e._pathWithoutPrefix.replace(/^\//, "").replace(/\/index$/, "") || "index";
-                  const pageMappings = autoI18n.pages[pageKey];
-                  if (pageMappings && pageMappings[code] !== void 0) {
-                    const customPath = pageMappings[code];
-                    if (customPath === false)
-                      return false;
-                    if (typeof customPath === "string")
-                      href = customPath.startsWith("/") ? customPath : `/${customPath}`;
-                  } else if (autoI18n.strategy === "prefix") {
-                    href = joinURL("/", code, e._pathWithoutPrefix);
-                  } else if (["prefix_and_default", "prefix_except_default"].includes(autoI18n.strategy)) {
-                    if (!isDefault) {
-                      href = joinURL("/", code, e._pathWithoutPrefix);
-                    }
-                  }
-                } else {
-                  if (autoI18n.strategy === "prefix") {
-                    href = joinURL("/", code, e._pathWithoutPrefix);
-                  } else if (["prefix_and_default", "prefix_except_default"].includes(autoI18n.strategy)) {
-                    if (!isDefault) {
-                      href = joinURL("/", code, e._pathWithoutPrefix);
-                    }
-                  }
-                }
-                if (!filterPath(href))
-                  return false;
-                return {
-                  hreflang: locale._hreflang,
-                  href
-                };
-              }).filter(Boolean)
+              alternatives
             }, resolvers);
             if (e._locale.code === newEntry._locale.code) {
               _urls[e._index] = newEntry;
@@ -7874,14 +8362,11 @@ function resolveSitemapEntries(sitemap, urls, runtimeConfig, resolvers) {
       }
       if (isI18nMapped) {
         e._sitemap = e._sitemap || e._locale._sitemap;
-        e._key = `${e._sitemap || ""}${e.loc || "/"}${e._path.search}`;
+        e._key = `${e._sitemap || ""}${e.loc || "/"}${e._path?.search || ""}`;
       }
       if (e._index)
         _urls[e._index] = e;
     }
-  }
-  if (warnIncorrectI18nTransformUsage) {
-    logger.warn("You're using _i18nTransform with the `no_prefix` strategy. This will cause issues with the sitemap. Please remove the _i18nTransform flag or change i18n strategy.");
   }
   return _urls;
 }
@@ -7897,15 +8382,16 @@ async function buildSitemapUrls(sitemap, resolvers, runtimeConfig, nitro) {
     // chunking
     defaultSitemapsChunkSize
   } = runtimeConfig;
-  const chunkInfo = parseChunkInfo(sitemap.sitemapName, sitemaps, defaultSitemapsChunkSize);
+  const chunkSize = defaultSitemapsChunkSize || void 0;
+  const chunkInfo = parseChunkInfo(sitemap.sitemapName, sitemaps, chunkSize);
   function maybeSort(urls2) {
     return sortEntries ? sortInPlace(urls2) : urls2;
   }
   function maybeSlice(urls2) {
-    return sliceUrlsForChunk(urls2, sitemap.sitemapName, sitemaps, defaultSitemapsChunkSize);
+    return sliceUrlsForChunk(urls2, sitemap.sitemapName, sitemaps, chunkSize);
   }
   if (autoI18n?.differentDomains) {
-    const domain = autoI18n.locales.find((e) => [e.language, e.code].includes(sitemap.sitemapName))?.domain;
+    const domain = autoI18n.locales.find((e) => e.language === sitemap.sitemapName || e.code === sitemap.sitemapName)?.domain;
     if (domain) {
       const _tester = resolvers.canonicalUrlResolver;
       resolvers.canonicalUrlResolver = (path) => resolveSitePath(path, {
@@ -7922,8 +8408,7 @@ async function buildSitemapUrls(sitemap, resolvers, runtimeConfig, nitro) {
   if (chunkInfo.isChunked && baseSitemapName !== sitemap.sitemapName && sitemaps[baseSitemapName]) {
     effectiveSitemap = sitemaps[baseSitemapName];
   }
-  let sourcesInput = effectiveSitemap.includeAppSources ? await globalSitemapSources() : [];
-  sourcesInput.push(...await childSitemapSources(effectiveSitemap));
+  let sourcesInput = effectiveSitemap.includeAppSources ? [...await globalSitemapSources(), ...await childSitemapSources(effectiveSitemap)] : await childSitemapSources(effectiveSitemap);
   if (nitro && resolvers.event) {
     const ctx = {
       event: resolvers.event,
@@ -7946,8 +8431,13 @@ async function buildSitemapUrls(sitemap, resolvers, runtimeConfig, nitro) {
   await nitro?.hooks.callHook("sitemap:input", resolvedCtx);
   const enhancedUrls = resolveSitemapEntries(sitemap, resolvedCtx.urls, { autoI18n, isI18nMapped }, resolvers);
   const filteredUrls = enhancedUrls.filter((e) => {
-    if (isMultiSitemap && e._sitemap && sitemap.sitemapName)
+    if (e._sitemap === false)
+      return false;
+    if (isMultiSitemap && e._sitemap && sitemap.sitemapName) {
+      if (sitemap._isChunking)
+        return sitemap.sitemapName.startsWith(e._sitemap + "-");
       return e._sitemap === sitemap.sitemapName;
+    }
     return true;
   });
   const sortedUrls = maybeSort(filteredUrls);
@@ -8011,8 +8501,9 @@ async function buildSitemapXml(event, definition, resolvers, runtimeConfig) {
     resolvedCtx.urls = resolvedCtx.urls.map((e) => preNormalizeEntry(e, resolvers));
   }
   const maybeSort = (urls2) => runtimeConfig.sortEntries ? sortInPlace(urls2) : urls2;
-  const normalizedPreDedupe = resolvedCtx.urls.map((e) => normaliseEntry(e, definition.defaults, resolvers));
-  const urls = maybeSort(mergeOnKey(normalizedPreDedupe, "_key").map((e) => normaliseEntry(e, definition.defaults, resolvers)));
+  const defaults = definition.defaults || {};
+  const normalizedPreDedupe = resolvedCtx.urls.map((e) => normaliseEntry(e, defaults, resolvers));
+  const urls = maybeSort(mergeOnKey(normalizedPreDedupe, "_key").map((e) => normaliseEntry(e, defaults, resolvers)));
   if (definition._isChunking && definition.sitemapName.includes("-")) {
     const parts = definition.sitemapName.split("-");
     const lastPart = parts.pop();
@@ -8075,14 +8566,256 @@ async function createSitemap(event, definition, runtimeConfig) {
   return xml;
 }
 
-const _yTcTU7 = defineEventHandler(async (e) => {
+defineCachedFunction(
+  async (event, resolvers, runtimeConfig, nitro) => {
+    return buildSitemapIndexInternal(resolvers, runtimeConfig, nitro);
+  },
+  {
+    name: "sitemap:index",
+    group: "sitemap",
+    maxAge: 60 * 10,
+    // 10 minutes default
+    base: "sitemap",
+    // Use the sitemap storage
+    getKey: (event) => {
+      const host = getHeader(event, "host") || getHeader(event, "x-forwarded-host") || "";
+      const proto = getHeader(event, "x-forwarded-proto") || "https";
+      return `sitemap-index-${proto}-${host}`;
+    },
+    swr: true
+    // Enable stale-while-revalidate
+  }
+);
+async function buildSitemapIndexInternal(resolvers, runtimeConfig, nitro) {
+  const {
+    sitemaps,
+    // enhancing
+    autoLastmod,
+    // chunking
+    defaultSitemapsChunkSize,
+    autoI18n,
+    isI18nMapped,
+    sortEntries,
+    sitemapsPathPrefix
+  } = runtimeConfig;
+  if (!sitemaps)
+    throw new Error("Attempting to build a sitemap index without required `sitemaps` configuration.");
+  function maybeSort(urls) {
+    return sortEntries ? sortInPlace(urls) : urls;
+  }
+  const chunks = {};
+  const allFailedSources = [];
+  for (const sitemapName in sitemaps) {
+    if (sitemapName === "index" || sitemapName === "chunks") continue;
+    const sitemapConfig = sitemaps[sitemapName];
+    if (sitemapConfig.chunks || sitemapConfig._isChunking) {
+      sitemapConfig._isChunking = true;
+      sitemapConfig._chunkSize = typeof sitemapConfig.chunks === "number" ? sitemapConfig.chunks : sitemapConfig.chunkSize || defaultSitemapsChunkSize || 1e3;
+    } else {
+      chunks[sitemapName] = chunks[sitemapName] || { urls: [] };
+    }
+  }
+  if (typeof sitemaps.chunks !== "undefined") {
+    const sitemap = sitemaps.chunks;
+    let sourcesInput = await globalSitemapSources();
+    if (nitro && resolvers.event) {
+      const ctx = {
+        event: resolvers.event,
+        sitemapName: sitemap.sitemapName,
+        sources: sourcesInput
+      };
+      await nitro.hooks.callHook("sitemap:sources", ctx);
+      sourcesInput = ctx.sources;
+    }
+    const sources = await resolveSitemapSources(sourcesInput, resolvers.event);
+    const failedSources = sources.filter((source) => source.error && source._isFailure).map((source) => ({
+      url: typeof source.fetch === "string" ? source.fetch : source.fetch?.[0] || "unknown",
+      error: source.error || "Unknown error"
+    }));
+    allFailedSources.push(...failedSources);
+    const resolvedCtx = {
+      urls: sources.flatMap((s) => s.urls),
+      sitemapName: sitemap.sitemapName,
+      event: resolvers.event
+    };
+    await nitro?.hooks.callHook("sitemap:input", resolvedCtx);
+    const normalisedUrls = resolveSitemapEntries(sitemap, resolvedCtx.urls, { autoI18n, isI18nMapped }, resolvers);
+    const enhancedUrls = normalisedUrls.map((e) => defu$1(e, sitemap.defaults));
+    const sortedUrls = maybeSort(enhancedUrls);
+    sortedUrls.forEach((url, i) => {
+      const chunkIndex = Math.floor(i / defaultSitemapsChunkSize);
+      chunks[chunkIndex] = chunks[chunkIndex] || { urls: [] };
+      chunks[chunkIndex].urls.push(url);
+    });
+  }
+  const entries = [];
+  for (const name in chunks) {
+    const sitemap = chunks[name];
+    const entry = {
+      _sitemapName: name,
+      sitemap: resolvers.canonicalUrlResolver(joinURL(sitemapsPathPrefix || "", `/${name}.xml`))
+    };
+    let lastmod = sitemap.urls.filter((a) => !!a?.lastmod).map((a) => typeof a.lastmod === "string" ? new Date(a.lastmod) : a.lastmod).sort((a, b) => (b?.getTime() || 0) - (a?.getTime() || 0))?.[0];
+    if (!lastmod && autoLastmod)
+      lastmod = /* @__PURE__ */ new Date();
+    if (lastmod)
+      entry.lastmod = normaliseDate(lastmod);
+    entries.push(entry);
+  }
+  for (const sitemapName in sitemaps) {
+    const sitemapConfig = sitemaps[sitemapName];
+    if (sitemapName !== "index" && sitemapConfig._isChunking) {
+      const chunkSize = sitemapConfig._chunkSize || defaultSitemapsChunkSize || 1e3;
+      let sourcesInput = sitemapConfig.includeAppSources ? [...await globalSitemapSources(), ...await childSitemapSources(sitemapConfig)] : await childSitemapSources(sitemapConfig);
+      if (nitro && resolvers.event) {
+        const ctx = {
+          event: resolvers.event,
+          sitemapName: sitemapConfig.sitemapName,
+          sources: sourcesInput
+        };
+        await nitro.hooks.callHook("sitemap:sources", ctx);
+        sourcesInput = ctx.sources;
+      }
+      const sources = await resolveSitemapSources(sourcesInput, resolvers.event);
+      const failedSources = sources.filter((source) => source.error && source._isFailure).map((source) => ({
+        url: typeof source.fetch === "string" ? source.fetch : source.fetch?.[0] || "unknown",
+        error: source.error || "Unknown error"
+      }));
+      allFailedSources.push(...failedSources);
+      const resolvedCtx = {
+        urls: sources.flatMap((s) => s.urls),
+        sitemapName: sitemapConfig.sitemapName,
+        event: resolvers.event
+      };
+      await nitro?.hooks.callHook("sitemap:input", resolvedCtx);
+      const normalisedUrls = resolveSitemapEntries(sitemapConfig, resolvedCtx.urls, { autoI18n, isI18nMapped }, resolvers);
+      const totalUrls = normalisedUrls.length;
+      const chunkCount = Math.ceil(totalUrls / chunkSize);
+      sitemapConfig._chunkCount = chunkCount;
+      for (let i = 0; i < chunkCount; i++) {
+        const chunkName = `${sitemapName}-${i}`;
+        const entry = {
+          _sitemapName: chunkName,
+          sitemap: resolvers.canonicalUrlResolver(joinURL(sitemapsPathPrefix || "", `/${chunkName}.xml`))
+        };
+        const chunkUrls = normalisedUrls.slice(i * chunkSize, (i + 1) * chunkSize);
+        let lastmod = chunkUrls.filter((a) => !!a?.lastmod).map((a) => typeof a.lastmod === "string" ? new Date(a.lastmod) : a.lastmod).sort((a, b) => (b?.getTime() || 0) - (a?.getTime() || 0))?.[0];
+        if (!lastmod && autoLastmod)
+          lastmod = /* @__PURE__ */ new Date();
+        if (lastmod)
+          entry.lastmod = normaliseDate(lastmod);
+        entries.push(entry);
+      }
+    }
+  }
+  if (sitemaps.index) {
+    entries.push(...sitemaps.index.sitemaps.map((entry) => {
+      return typeof entry === "string" ? { sitemap: entry } : entry;
+    }));
+  }
+  return { entries, failedSources: allFailedSources };
+}
+function urlsToIndexXml(sitemaps, resolvers, { version, xsl, credits, minify }, errorInfo) {
+  const sitemapXml = sitemaps.map((e) => [
+    "    <sitemap>",
+    `        <loc>${escapeValueForXml(e.sitemap)}</loc>`,
+    // lastmod is optional
+    e.lastmod ? `        <lastmod>${escapeValueForXml(e.lastmod)}</lastmod>` : false,
+    "    </sitemap>"
+  ].filter(Boolean).join("\n")).join("\n");
+  const xmlParts = [
+    '<?xml version="1.0" encoding="UTF-8"?>'
+  ];
+  if (xsl) {
+    let relativeBaseUrl = resolvers.relativeBaseUrlResolver?.(xsl) ?? xsl;
+    if (errorInfo && errorInfo.messages.length > 0) {
+      relativeBaseUrl = withQuery(relativeBaseUrl, {
+        errors: "true",
+        error_messages: errorInfo.messages,
+        error_urls: errorInfo.urls
+      });
+    }
+    xmlParts.push(`<?xml-stylesheet type="text/xsl" href="${escapeValueForXml(relativeBaseUrl)}"?>`);
+  }
+  xmlParts.push(
+    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    sitemapXml,
+    "</sitemapindex>"
+  );
+  if (credits) {
+    xmlParts.push(`<!-- XML Sitemap Index generated by @nuxtjs/sitemap v${version} at ${(/* @__PURE__ */ new Date()).toISOString()} -->`);
+  }
+  return minify ? xmlParts.join("").replace(/(?<!<[^>]*)\s(?![^<]*>)/g, "") : xmlParts.join("\n");
+}
+async function buildSitemapIndex(resolvers, runtimeConfig, nitro) {
+  return buildSitemapIndexInternal(resolvers, runtimeConfig, nitro);
+}
+
+async function sitemapXmlEventHandler(e) {
   const runtimeConfig = useSitemapRuntimeConfig();
   const { sitemaps } = runtimeConfig;
-  if ("index" in sitemaps) {
+  if ("index" in sitemaps)
     return sendRedirect(e, withBase("/sitemap_index.xml", useRuntimeConfig().app.baseURL), 302 );
-  }
   return createSitemap(e, Object.values(sitemaps)[0], runtimeConfig);
-});
+}
+async function sitemapIndexXmlEventHandler(e) {
+  const runtimeConfig = useSitemapRuntimeConfig();
+  const nitro = useNitroApp();
+  const resolvers = useNitroUrlResolvers(e);
+  const { entries: sitemaps, failedSources } = await buildSitemapIndex(resolvers, runtimeConfig, nitro);
+  const indexResolvedCtx = { sitemaps, event: e };
+  await nitro.hooks.callHook("sitemap:index-resolved", indexResolvedCtx);
+  const errorInfo = failedSources.length > 0 ? { messages: failedSources.map((f) => f.error), urls: failedSources.map((f) => f.url) } : void 0;
+  const output = urlsToIndexXml(indexResolvedCtx.sitemaps, resolvers, runtimeConfig, errorInfo);
+  const ctx = { sitemap: output, sitemapName: "sitemap", event: e };
+  await nitro.hooks.callHook("sitemap:output", ctx);
+  setHeader(e, "Content-Type", "text/xml; charset=UTF-8");
+  if (runtimeConfig.cacheMaxAgeSeconds) {
+    setHeader(e, "Cache-Control", `public, max-age=${runtimeConfig.cacheMaxAgeSeconds}, s-maxage=${runtimeConfig.cacheMaxAgeSeconds}, stale-while-revalidate=3600`);
+    const now = /* @__PURE__ */ new Date();
+    setHeader(e, "X-Sitemap-Generated", now.toISOString());
+    setHeader(e, "X-Sitemap-Cache-Duration", `${runtimeConfig.cacheMaxAgeSeconds}s`);
+    const expiryTime = new Date(now.getTime() + runtimeConfig.cacheMaxAgeSeconds * 1e3);
+    setHeader(e, "X-Sitemap-Cache-Expires", expiryTime.toISOString());
+    const remainingSeconds = Math.floor((expiryTime.getTime() - now.getTime()) / 1e3);
+    setHeader(e, "X-Sitemap-Cache-Remaining", `${remainingSeconds}s`);
+  } else {
+    setHeader(e, "Cache-Control", `no-cache, no-store`);
+  }
+  return ctx.sitemap;
+}
+async function sitemapChildXmlEventHandler(e) {
+  if (!e.path.endsWith(".xml"))
+    return;
+  const runtimeConfig = useSitemapRuntimeConfig(e);
+  const { sitemaps } = runtimeConfig;
+  let sitemapName = getRouterParam(e, "sitemap");
+  if (!sitemapName) {
+    const path = e.path;
+    const match = path.match(/(?:\/__sitemap__\/)?([^/]+)\.xml$/);
+    if (match)
+      sitemapName = match[1];
+  }
+  if (!sitemapName)
+    throw createError({ statusCode: 400, message: "Invalid sitemap request" });
+  sitemapName = withoutLeadingSlash(withoutTrailingSlash(sitemapName.replace(".xml", "").replace("__sitemap__/", "").replace(runtimeConfig.sitemapsPathPrefix || "", "")));
+  const chunkInfo = parseChunkInfo(sitemapName, sitemaps, runtimeConfig.defaultSitemapsChunkSize);
+  const isAutoChunked = typeof sitemaps.chunks !== "undefined" && !Number.isNaN(Number(sitemapName));
+  const sitemapExists = sitemapName in sitemaps || chunkInfo.baseSitemapName in sitemaps || isAutoChunked;
+  if (!sitemapExists)
+    throw createError({ statusCode: 404, message: `Sitemap "${sitemapName}" not found.` });
+  if (chunkInfo.isChunked && chunkInfo.chunkIndex !== void 0) {
+    const baseSitemap = sitemaps[chunkInfo.baseSitemapName];
+    if (baseSitemap && !baseSitemap.chunks && !baseSitemap._isChunking)
+      throw createError({ statusCode: 404, message: `Sitemap "${chunkInfo.baseSitemapName}" does not support chunking.` });
+    if (baseSitemap?._chunkCount !== void 0 && chunkInfo.chunkIndex >= baseSitemap._chunkCount)
+      throw createError({ statusCode: 404, message: `Chunk ${chunkInfo.chunkIndex} does not exist for sitemap "${chunkInfo.baseSitemapName}".` });
+  }
+  const sitemapConfig = getSitemapConfig(sitemapName, sitemaps, runtimeConfig.defaultSitemapsChunkSize || void 0);
+  return createSitemap(e, sitemapConfig, runtimeConfig);
+}
+
+const _yTcTU7 = defineEventHandler(sitemapXmlEventHandler);
 
 function useSchemaOrgConfig(e) {
   const runtimeConfig = useRuntimeConfig(e);
@@ -8214,10 +8947,13 @@ const _cachedMessageLoader = defineCachedFunction(_messagesHandler, {
   name: "i18n:messages-internal",
   maxAge: -1 ,
   getKey: (event) => [getRouterParam(event, "locale") ?? "null", getRouterParam(event, "hash") ?? "null"].join("-"),
-  shouldBypassCache(event) {
+  async shouldBypassCache(event) {
     const locale = getRouterParam(event, "locale");
-    if (locale == null) return false;
-    return !useI18nContext(event).localeConfigs?.[locale]?.cacheable;
+    if (locale == null) {
+      return false;
+    }
+    const ctx = tryUseI18nContext(event) || await initializeI18nContext(event);
+    return !ctx.localeConfigs?.[locale]?.cacheable;
   }
 });
 defineCachedEventHandler(_cachedMessageLoader, {
@@ -8246,13 +8982,16 @@ const _y8RD3L = lazyEventHandler(() => {
   return useBase(opts.baseURL, ipxHandler);
 });
 
-const _lazy_Cu4b3a = () => Promise.resolve().then(function () { return _____$1; });
+const _lazy_DPGs2y = () => Promise.resolve().then(function () { return login_post$1; });
 const _lazy_RmdCbk = () => import('file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/layers/shared-app/server/api/comments/channel/%5Bid%5D.js');
-const _lazy_feSUXh = () => Promise.resolve().then(function () { return me_get$1; });
 const _lazy_Fl4g4_ = () => Promise.resolve().then(function () { return rocketChat; });
-const _lazy_iEAufy = () => Promise.resolve().then(function () { return token_get$1; });
 const _lazy_KauQYP = () => Promise.resolve().then(function () { return uploadVideo_post$1; });
+const _lazy_WOhcNy = () => Promise.resolve().then(function () { return stats_get$1; });
 const _lazy_lPH12s = () => Promise.resolve().then(function () { return viewVideo_post$1; });
+const _lazy_5JRByj = () => Promise.resolve().then(function () { return authenticate_post$1; });
+const _lazy_IK4MWz = () => Promise.resolve().then(function () { return register_post$1; });
+const _lazy_I1b2L9 = () => Promise.resolve().then(function () { return directus_get$1; });
+const _lazy_LBbG7G = () => Promise.resolve().then(function () { return ws$1; });
 const _lazy_X3cMEh = () => Promise.resolve().then(function () { return renderer$1; });
 const _lazy_c6dPPY = () => Promise.resolve().then(function () { return sitemap_index_xml$1; });
 const _lazy_okHwgX = () => Promise.resolve().then(function () { return _sitemap__xml$1; });
@@ -8262,18 +9001,24 @@ const _lazy_6y0rdw = () => Promise.resolve().then(function () { return image$1; 
 
 const handlers = [
   { route: '', handler: _tIQtQH, lazy: false, middleware: true, method: undefined },
-  { route: '/api/auth/**', handler: _lazy_Cu4b3a, lazy: true, middleware: false, method: undefined },
+  { route: '/api/auth/login', handler: _lazy_DPGs2y, lazy: true, middleware: false, method: "post" },
   { route: '/api/comments/channel/:id', handler: _lazy_RmdCbk, lazy: true, middleware: false, method: undefined },
-  { route: '/api/me', handler: _lazy_feSUXh, lazy: true, middleware: false, method: "get" },
   { route: '/api/rocketChat', handler: _lazy_Fl4g4_, lazy: true, middleware: false, method: undefined },
-  { route: '/api/token', handler: _lazy_iEAufy, lazy: true, middleware: false, method: "get" },
   { route: '/api/upload-video', handler: _lazy_KauQYP, lazy: true, middleware: false, method: "post" },
+  { route: '/api/user/stats', handler: _lazy_WOhcNy, lazy: true, middleware: false, method: "get" },
   { route: '/api/view-video', handler: _lazy_lPH12s, lazy: true, middleware: false, method: "post" },
+  { route: '/api/webauthn/authenticate', handler: _lazy_5JRByj, lazy: true, middleware: false, method: "post" },
+  { route: '/api/webauthn/register', handler: _lazy_IK4MWz, lazy: true, middleware: false, method: "post" },
+  { route: '/auth/directus', handler: _lazy_I1b2L9, lazy: true, middleware: false, method: "get" },
+  { route: '/routes/ws', handler: _lazy_LBbG7G, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_X3cMEh, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
   { route: '/mcp', handler: _Zw164B, lazy: false, middleware: false, method: undefined },
   { route: '/mcp/deeplink', handler: _1YiwXI, lazy: false, middleware: false, method: undefined },
   { route: '/mcp/badge.svg', handler: _J6gEDw, lazy: false, middleware: false, method: undefined },
+  { route: '/api/_auth/session', handler: _QWmR2y, lazy: false, middleware: false, method: "delete" },
+  { route: '/api/_auth/session', handler: _ahRYdb, lazy: false, middleware: false, method: "get" },
+  { route: '/bluesky/client-metadata.json', handler: _SnNpHp, lazy: false, middleware: false, method: "get" },
   { route: '', handler: _VOEU8B, lazy: false, middleware: false, method: undefined },
   { route: '', handler: _LUXrN5, lazy: false, middleware: false, method: undefined },
   { route: '', handler: _gySGfR, lazy: false, middleware: false, method: undefined },
@@ -8444,7 +9189,7 @@ function useNitroApp() {
 runNitroPlugins(nitroApp$1);
 
 if (!globalThis.crypto) {
-  globalThis.crypto = nodeCrypto;
+  globalThis.crypto = crypto$1;
 }
 const { NITRO_NO_UNIX_SOCKET, NITRO_DEV_WORKER_ID } = process.env;
 trapUnhandledNodeErrors();
@@ -8463,6 +9208,10 @@ listen().catch(() => listen(
   console.error("Dev worker failed to listen:", error);
   return shutdown();
 });
+{
+  const { handleUpgrade } = wsAdapter(nitroApp.h3App.websocket);
+  server.on("upgrade", handleUpgrade);
+}
 nitroApp.router.get(
   "/_nitro/tasks",
   defineEventHandler(async (event) => {
@@ -14413,14 +15162,6 @@ const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 const sources$1 = [
     {
         "context": {
-            "name": "sitemap:urls",
-            "description": "Set with the `sitemap.urls` config."
-        },
-        "urls": [],
-        "sourceType": "user"
-    },
-    {
-        "context": {
             "name": "nuxt:pages",
             "description": "Generated from your static page files.",
             "tips": [
@@ -15617,6 +16358,72 @@ const sources$1 = [
                 ]
             },
             {
+                "loc": "/seller-dashboard",
+                "_sitemap": "en-GB",
+                "alternatives": [
+                    {
+                        "hreflang": "en-GB",
+                        "href": "/seller-dashboard"
+                    },
+                    {
+                        "hreflang": "pl-PL",
+                        "href": "/pl-PL/seller-dashboard"
+                    },
+                    {
+                        "hreflang": "de-DE",
+                        "href": "/testde/seller-dashboard"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/seller-dashboard"
+                    }
+                ]
+            },
+            {
+                "loc": "/pl-PL/seller-dashboard",
+                "_sitemap": "pl-PL",
+                "alternatives": [
+                    {
+                        "hreflang": "en-GB",
+                        "href": "/seller-dashboard"
+                    },
+                    {
+                        "hreflang": "pl-PL",
+                        "href": "/pl-PL/seller-dashboard"
+                    },
+                    {
+                        "hreflang": "de-DE",
+                        "href": "/testde/seller-dashboard"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/seller-dashboard"
+                    }
+                ]
+            },
+            {
+                "loc": "/testde/seller-dashboard",
+                "_sitemap": "de-DE",
+                "alternatives": [
+                    {
+                        "hreflang": "en-GB",
+                        "href": "/seller-dashboard"
+                    },
+                    {
+                        "hreflang": "pl-PL",
+                        "href": "/pl-PL/seller-dashboard"
+                    },
+                    {
+                        "hreflang": "de-DE",
+                        "href": "/testde/seller-dashboard"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/seller-dashboard"
+                    }
+                ]
+            },
+            {
                 "loc": "/product/showcases",
                 "_sitemap": "en-GB",
                 "alternatives": [
@@ -15681,38 +16488,7 @@ const sources$1 = [
                         "href": "/product/showcases"
                     }
                 ]
-            },
-            {
-                "loc": "/sitemap.xml",
-                "_sitemap": "en-GB"
-            },
-            {
-                "loc": "/pl-PL/sitemap.xml",
-                "_sitemap": "en-GB"
-            },
-            {
-                "loc": "/testde/sitemap.xml",
-                "_sitemap": "en-GB"
             }
-        ],
-        "sourceType": "app"
-    },
-    {
-        "context": {
-            "name": "nuxt:prerender",
-            "description": "Generated at build time when prerendering.",
-            "tips": [
-                "Can be disabled with `{ excludeAppSources: ['nuxt:prerender'] }`."
-            ]
-        },
-        "urls": [
-            "/assets/images/*",
-            "/assets/images/*",
-            "/assets/images/*",
-            "/assets/images/*",
-            "/assets/images/*",
-            "/assets/images/*",
-            "/assets/images/*"
         ],
         "sourceType": "app"
     }
@@ -15734,175 +16510,39 @@ const childSources = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProper
   sources: sources
 }, Symbol.toStringTag, { value: 'Module' }));
 
-let preparedAuthjsHandler;
-let usedSecret;
-function NuxtAuthHandler(nuxtAuthOptions) {
-  const runtimeConfig = useRuntimeConfig();
-  const trustHostUserPreference = useTypedBackendConfig(runtimeConfig, "authjs").trustHost;
-  usedSecret = nuxtAuthOptions?.secret;
-  if (!usedSecret) {
-    {
-      console.info(ERROR_MESSAGES.NO_SECRET);
-      usedSecret = "secret";
-    }
+const bodySchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8)
+});
+const login_post = defineEventHandler(async (event) => {
+  const { email, password } = await readValidatedBody(event, bodySchema.parse);
+  if (email === "admin@admin.com" && password === "iamtheadmin") {
+    await setUserSession(event, {
+      user: {
+        name: "John Doe"
+      }
+    });
+    return {};
   }
-  const options = defu$1(nuxtAuthOptions, {
-    secret: usedSecret,
-    logger: void 0,
-    providers: [],
-    // SAFETY: We trust host here because `getHostValueForAuthjs` is responsible for producing a trusted URL
-    trustHost: true,
-    // AuthJS uses `/auth` as default, but we rely on `/api/auth` (same as in previous `next-auth`)
-    basePath: runtimeConfig.public.auth.baseURL
-    // Uncomment to enable framework-author specific functionality
-    // raw: raw as typeof raw
+  throw createError({
+    status: 401,
+    message: "Bad credentials"
   });
-  if (preparedAuthjsHandler) {
-    console.error("You setup the auth handler for a second time - this is likely undesired. Make sure that you only call `NuxtAuthHandler( ... )` once");
-  }
-  preparedAuthjsHandler = (req) => AuthHandler({ req, options });
-  return eventHandler(async (event) => {
-    const { res } = event.node;
-    const nextRequest = await createRequestForAuthjs(event, runtimeConfig, trustHostUserPreference);
-    const nextResult = await preparedAuthjsHandler(nextRequest);
-    if (nextResult.status) {
-      res.statusCode = nextResult.status;
-    }
-    nextResult.cookies?.forEach((cookie) => setCookieDeduped(event, cookie.name, cookie.value, cookie.options));
-    nextResult.headers?.forEach((header) => appendHeaderDeduped(event, header.key, header.value));
-    if (!nextResult.redirect) {
-      return nextResult.body;
-    }
-    if (nextRequest.body?.json) {
-      return { url: nextResult.redirect };
-    }
-    return await sendRedirect(event, nextResult.redirect);
-  });
-}
-function getToken({ event, secureCookie, secret, ...rest }) {
-  const runtimeConfig = useRuntimeConfig();
-  const trustHostUserPreference = useTypedBackendConfig(runtimeConfig, "authjs").trustHost;
-  return getToken$1({
-    // @ts-expect-error As our request is not a real next-auth request, we pass down only what's required for the method, as per code from https://github.com/nextauthjs/next-auth/blob/8387c78e3fef13350d8a8c6102caeeb05c70a650/packages/next-auth/src/jwt/index.ts#L68
-    req: {
-      cookies: parseCookies(event),
-      headers: getHeaders(event)
-    },
-    // see https://github.com/nextauthjs/next-auth/blob/8387c78e3fef13350d8a8c6102caeeb05c70a650/packages/next-auth/src/jwt/index.ts#L73
-    secureCookie: secureCookie ?? getServerBaseUrl(runtimeConfig, false, trustHostUserPreference, isProduction, event).startsWith("https://"),
-    secret: secret || usedSecret,
-    ...rest
-  });
-}
-async function createRequestForAuthjs(event, runtimeConfig, trustHostUserPreference) {
-  const nextRequest = {
-    // `authjs` expects the baseURL here despite the param name
-    host: getHostValueForAuthjs(event, runtimeConfig, trustHostUserPreference, isProduction),
-    body: void 0,
-    cookies: parseCookies(event),
-    query: void 0,
-    headers: getHeaders(event),
-    method: event.method,
-    providerId: void 0,
-    error: void 0
-  };
-  const query = getQuery$1(event);
-  const { action, providerId } = parseActionAndProvider(event);
-  const error = query.error;
-  if (Array.isArray(error)) {
-    throw createError({ statusCode: 400, message: "Error query parameter can only appear once" });
-  }
-  const body = isMethod(event, ["PATCH", "POST", "PUT", "DELETE"]) ? await readBody(event) : void 0;
-  return {
-    ...nextRequest,
-    body,
-    query,
-    action,
-    providerId,
-    error: error ? String(error) : void 0
-  };
-}
-const SUPPORTED_ACTIONS = ["providers", "session", "csrf", "signin", "signout", "callback", "verify-request", "error", "_log"];
-function parseActionAndProvider({ context }) {
-  const params = context.params?._?.split("/");
-  if (!params || ![1, 2].includes(params.length)) {
-    throw createError({ statusCode: 400, message: `Invalid path used for auth-endpoint. Supply either one path parameter (e.g., \`/api/auth/session\`) or two (e.g., \`/api/auth/signin/github\` after the base path (in previous examples base path was: \`/api/auth/\`. Received \`${params}\`` });
-  }
-  const [unvalidatedAction, providerId] = params;
-  const action = SUPPORTED_ACTIONS.find((action2) => action2 === unvalidatedAction);
-  if (!action) {
-    throw createError({ statusCode: 400, message: `Called endpoint with unsupported action ${unvalidatedAction}. Only the following actions are supported: ${SUPPORTED_ACTIONS.join(", ")}` });
-  }
-  return { action, providerId };
-}
-function appendHeaderDeduped(event, name, value) {
-  let current = getResponseHeader(event, name);
-  if (!current) {
-    setResponseHeader(event, name, value);
-    return;
-  }
-  if (!Array.isArray(current)) {
-    current = [current.toString()];
-  }
-  if (current.includes(value)) {
-    return;
-  }
-  current.push(value);
-  setResponseHeader(event, name, current);
-}
-function setCookieDeduped(event, name, value, serializeOptions) {
-  let setCookiesHeader = getResponseHeader(event, "set-cookie");
-  if (setCookiesHeader) {
-    if (!Array.isArray(setCookiesHeader)) {
-      setCookiesHeader = [setCookiesHeader.toString()];
-    }
-    const filterBy = `${name}=`;
-    setCookiesHeader = setCookiesHeader.filter((cookie) => !cookie.startsWith(filterBy));
-    setResponseHeader(event, "set-cookie", setCookiesHeader);
-  }
-  setCookie(event, name, value, serializeOptions);
-}
-
-var _a, _b, _c, _d;
-const _____ = NuxtAuthHandler({
-  // a) Never hardcode your secret in your code!! and b) use a secure secret, `test-123` is **not** secure!!
-  secret: (_a = process.env.AUTH_SECRET) != null ? _a : "test-123",
-  providers: [
-    // @ts-expect-error You need to use .default here for it to work during SSR. May be fixed via Vite at some point
-    Keycloak.default({
-      clientId: (_b = process.env.KEYCLOAK_CLIENT_ID) != null ? _b : "nuxt-app",
-      clientSecret: (_c = process.env.KEYCLOAK_CLIENT_SECRET) != null ? _c : "your-keycloak-client-secret",
-      issuer: (_d = process.env.KEYCLOAK_ISSUER) != null ? _d : "http://localhost:8080/realms/nuxt"
-    })
-  ]
 });
 
-const _____$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const login_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
-  default: _____
+  default: login_post
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const me_get = defineEventHandler(async (event) => {
-  const session = await getServerSession(event);
-  if (!session) {
-    throw createError({ statusCode: 401, statusMessage: "Unauthorized" });
-  }
-  return { user: session.user };
-});
-
-const me_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-  __proto__: null,
-  default: me_get
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const RC_URL = "https://chat.meeovicms.com";
+const RC_URL = process.env.NUXT_PUBLIC_ROCKETCHAT_URL;
 const RC_USER = process.env.ROCKETCHAT_USER;
 const RC_PASS = process.env.ROCKETCHAT_PASS;
 let authToken = null;
 let userId = null;
 async function rocketChatLogin() {
   if (authToken && userId) return { authToken, userId };
-  const res = await fetch$1(`${RC_URL}/api/v1/login`, {
+  const res = await fetch(`${RC_URL}/api/v1/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ user: RC_USER, password: RC_PASS })
@@ -15918,7 +16558,7 @@ function slugify(title) {
 async function ensureChannelForContent(title) {
   const { authToken: authToken2, userId: userId2 } = await rocketChatLogin();
   const channelName = slugify(title);
-  let res = await fetch$1(`${RC_URL}/api/v1/channels.info?roomName=${channelName}`, {
+  let res = await fetch(`${RC_URL}/api/v1/channels.info?roomName=${channelName}`, {
     headers: {
       "X-Auth-Token": authToken2,
       "X-User-Id": userId2
@@ -15928,7 +16568,7 @@ async function ensureChannelForContent(title) {
   if (data.success) {
     return channelName;
   }
-  res = await fetch$1(`${RC_URL}/api/v1/channels.create`, {
+  res = await fetch(`${RC_URL}/api/v1/channels.create`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -15945,13 +16585,6 @@ async function ensureChannelForContent(title) {
 const rocketChat = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   ensureChannelForContent: ensureChannelForContent
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const token_get = eventHandler((event) => getToken({ event }));
-
-const token_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-  __proto__: null,
-  default: token_get
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const Directus$1 = DirectusSdk.Directus || DirectusSdk.default || DirectusSdk;
@@ -16050,6 +16683,16 @@ const uploadVideo_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.define
   default: uploadVideo_post
 }, Symbol.toStringTag, { value: 'Module' }));
 
+const stats_get = defineEventHandler(async (event) => {
+  const { user } = await requireUserSession(event);
+  return {};
+});
+
+const stats_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: stats_get
+}, Symbol.toStringTag, { value: 'Module' }));
+
 const viewVideo_post = defineEventHandler(async (event) => {
   var _a;
   const { videoId } = await readBody(event);
@@ -16080,6 +16723,176 @@ const viewVideo_post = defineEventHandler(async (event) => {
 const viewVideo_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: viewVideo_post
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const authenticate_post = defineWebAuthnAuthenticateEventHandler({
+  async storeChallenge(event, challenge, attemptId) {
+    await hubKV().set(`auth:challenge:${attemptId}`, challenge, { ttl: 60 });
+  },
+  async getChallenge(event, attemptId) {
+    const challenge = await hubKV().get(`auth:challenge:${attemptId}`);
+    if (!challenge) {
+      throw createError({
+        statusCode: 400,
+        message: "Challenge not found or expired"
+      });
+    }
+    await hubKV().del(`auth:challenge:${attemptId}`);
+    return challenge;
+  },
+  async allowCredentials(event, userName) {
+    const db = useDB();
+    const user = await db.query.users.findFirst({
+      where: eq(tables.users.username, userName),
+      with: {
+        credentials: true
+      }
+    });
+    return (user == null ? void 0 : user.credentials) || [];
+  },
+  async getCredential(event, credentialID) {
+    const credential = await useDB().query.credentials.findFirst({
+      where: eq(tables.credentials.id, credentialID),
+      with: {
+        user: true
+      }
+    });
+    if (!credential) {
+      throw createError({
+        statusCode: 404,
+        statusMessage: "Credential not found"
+      });
+    }
+    return credential;
+  },
+  async onSuccess(event, { credential }) {
+    await setUserSession(event, {
+      user: {
+        id: credential.user.id,
+        name: credential.user.name,
+        username: credential.user.username
+      }
+    });
+  }
+});
+
+const authenticate_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: authenticate_post
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const register_post = defineWebAuthnRegisterEventHandler({
+  async storeChallenge(event, challenge, attemptId) {
+    await hubKV().set(`auth:challenge:${attemptId}`, challenge, { ttl: 60 });
+  },
+  async getChallenge(event, attemptId) {
+    const challenge = await hubKV().get(`auth:challenge:${attemptId}`);
+    if (!challenge) {
+      throw createError({
+        statusCode: 400,
+        message: "Challenge not found or expired"
+      });
+    }
+    await hubKV().del(`auth:challenge:${attemptId}`);
+    return challenge;
+  },
+  validateUser: (user) => z.object({
+    userName: z.string().min(1).toLowerCase().trim(),
+    displayName: z.string().min(1).trim()
+  }).parseAsync(user),
+  async onSuccess(event, { user, credential }) {
+    const db = useDB();
+    const dbUser = await db.insert(tables.users).values({
+      username: user.userName,
+      name: user.displayName,
+      createdAt: /* @__PURE__ */ new Date(),
+      lastLoginAt: /* @__PURE__ */ new Date()
+    }).returning().get().catch(() => {
+      throw createError({
+        statusCode: 400,
+        message: "User already exists"
+      });
+    });
+    await db.insert(tables.credentials).values({
+      userId: dbUser.id,
+      id: credential.id,
+      publicKey: credential.publicKey,
+      counter: credential.counter,
+      backedUp: credential.backedUp,
+      transports: credential.transports
+    });
+    await setUserSession(event, {
+      user: {
+        id: dbUser.id,
+        username: dbUser.username,
+        name: dbUser.name || dbUser.username
+      }
+    });
+  },
+  async excludeCredentials(event, userName) {
+    return useDB().select({
+      id: tables.credentials.id,
+      transports: tables.credentials.transports
+    }).from(tables.users).innerJoin(tables.credentials, eq(tables.credentials.userId, tables.users.id)).where(eq(tables.users.username, userName.toLowerCase().trim()));
+  }
+});
+
+const register_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: register_post
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const directus_get = defineOAuthXEventHandler({
+  config: {
+    authorizeUrl: `${process.env.DIRECTUS_URL}/oauth/authorize`,
+    tokenUrl: `${process.env.NUXTUS_DIRECTUS_STATIC_TOKEN}/oauth/token`,
+    scope: ["openid", "profile", "email"]
+  },
+  async onSuccess(event, {
+    user,
+    tokens
+  }) {
+    await setUserSession(event, {
+      user: {
+        id: user.id,
+        firstName: user.first_name,
+        lastName: user.last_name,
+        // spread extra fields as any to avoid assigning unknown properties directly on the User type
+        ...{
+          email: user.email
+        }
+      },
+      loggedInAt: Date.now()
+    });
+    return sendRedirect(event, "/");
+  },
+  onError(event, error) {
+    console.error("OAuth error:", error);
+    return sendRedirect(event, "/login");
+  }
+});
+
+const directus_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: directus_get
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const ws = defineWebSocketHandler({
+  async upgrade(request) {
+    await requireUserSession(request);
+  },
+  async open(peer) {
+    const { user } = await requireUserSession(peer);
+    peer.send(`Hello, ${user.name}!`);
+  },
+  message(peer, message) {
+    peer.send(`Echo: ${message}`);
+  }
+});
+
+const ws$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: ws
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {
@@ -16287,272 +17100,14 @@ const renderer$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty
   default: renderer
 }, Symbol.toStringTag, { value: 'Module' }));
 
-defineCachedFunction(
-  async (event, resolvers, runtimeConfig, nitro) => {
-    return buildSitemapIndexInternal(resolvers, runtimeConfig, nitro);
-  },
-  {
-    name: "sitemap:index",
-    group: "sitemap",
-    maxAge: 60 * 10,
-    // 10 minutes default
-    base: "sitemap",
-    // Use the sitemap storage
-    getKey: (event) => {
-      const host = getHeader(event, "host") || getHeader(event, "x-forwarded-host") || "";
-      const proto = getHeader(event, "x-forwarded-proto") || "https";
-      return `sitemap-index-${proto}-${host}`;
-    },
-    swr: true
-    // Enable stale-while-revalidate
-  }
-);
-async function buildSitemapIndexInternal(resolvers, runtimeConfig, nitro) {
-  const {
-    sitemaps,
-    // enhancing
-    autoLastmod,
-    // chunking
-    defaultSitemapsChunkSize,
-    autoI18n,
-    isI18nMapped,
-    sortEntries,
-    sitemapsPathPrefix
-  } = runtimeConfig;
-  if (!sitemaps)
-    throw new Error("Attempting to build a sitemap index without required `sitemaps` configuration.");
-  function maybeSort(urls) {
-    return sortEntries ? sortInPlace(urls) : urls;
-  }
-  const chunks = {};
-  const allFailedSources = [];
-  for (const sitemapName in sitemaps) {
-    if (sitemapName === "index" || sitemapName === "chunks") continue;
-    const sitemapConfig = sitemaps[sitemapName];
-    if (sitemapConfig.chunks || sitemapConfig._isChunking) {
-      sitemapConfig._isChunking = true;
-      sitemapConfig._chunkSize = typeof sitemapConfig.chunks === "number" ? sitemapConfig.chunks : sitemapConfig.chunkSize || defaultSitemapsChunkSize || 1e3;
-    } else {
-      chunks[sitemapName] = chunks[sitemapName] || { urls: [] };
-    }
-  }
-  if (typeof sitemaps.chunks !== "undefined") {
-    const sitemap = sitemaps.chunks;
-    let sourcesInput = await globalSitemapSources();
-    if (nitro && resolvers.event) {
-      const ctx = {
-        event: resolvers.event,
-        sitemapName: sitemap.sitemapName,
-        sources: sourcesInput
-      };
-      await nitro.hooks.callHook("sitemap:sources", ctx);
-      sourcesInput = ctx.sources;
-    }
-    const sources = await resolveSitemapSources(sourcesInput, resolvers.event);
-    const failedSources = sources.filter((source) => source.error && source._isFailure).map((source) => ({
-      url: typeof source.fetch === "string" ? source.fetch : source.fetch?.[0] || "unknown",
-      error: source.error || "Unknown error"
-    }));
-    allFailedSources.push(...failedSources);
-    const resolvedCtx = {
-      urls: sources.flatMap((s) => s.urls),
-      sitemapName: sitemap.sitemapName,
-      event: resolvers.event
-    };
-    await nitro?.hooks.callHook("sitemap:input", resolvedCtx);
-    const normalisedUrls = resolveSitemapEntries(sitemap, resolvedCtx.urls, { autoI18n, isI18nMapped }, resolvers);
-    const enhancedUrls = normalisedUrls.map((e) => defu$1(e, sitemap.defaults));
-    const sortedUrls = maybeSort(enhancedUrls);
-    sortedUrls.forEach((url, i) => {
-      const chunkIndex = Math.floor(i / defaultSitemapsChunkSize);
-      chunks[chunkIndex] = chunks[chunkIndex] || { urls: [] };
-      chunks[chunkIndex].urls.push(url);
-    });
-  }
-  const entries = [];
-  for (const name in chunks) {
-    const sitemap = chunks[name];
-    const entry = {
-      _sitemapName: name,
-      sitemap: resolvers.canonicalUrlResolver(joinURL(sitemapsPathPrefix || "", `/${name}.xml`))
-    };
-    let lastmod = sitemap.urls.filter((a) => !!a?.lastmod).map((a) => typeof a.lastmod === "string" ? new Date(a.lastmod) : a.lastmod).sort((a, b) => (b?.getTime() || 0) - (a?.getTime() || 0))?.[0];
-    if (!lastmod && autoLastmod)
-      lastmod = /* @__PURE__ */ new Date();
-    if (lastmod)
-      entry.lastmod = normaliseDate(lastmod);
-    entries.push(entry);
-  }
-  for (const sitemapName in sitemaps) {
-    const sitemapConfig = sitemaps[sitemapName];
-    if (sitemapName !== "index" && sitemapConfig._isChunking) {
-      const chunkSize = sitemapConfig._chunkSize || defaultSitemapsChunkSize || 1e3;
-      let sourcesInput = sitemapConfig.includeAppSources ? await globalSitemapSources() : [];
-      sourcesInput.push(...await childSitemapSources(sitemapConfig));
-      if (nitro && resolvers.event) {
-        const ctx = {
-          event: resolvers.event,
-          sitemapName: sitemapConfig.sitemapName,
-          sources: sourcesInput
-        };
-        await nitro.hooks.callHook("sitemap:sources", ctx);
-        sourcesInput = ctx.sources;
-      }
-      const sources = await resolveSitemapSources(sourcesInput, resolvers.event);
-      const failedSources = sources.filter((source) => source.error && source._isFailure).map((source) => ({
-        url: typeof source.fetch === "string" ? source.fetch : source.fetch?.[0] || "unknown",
-        error: source.error || "Unknown error"
-      }));
-      allFailedSources.push(...failedSources);
-      const resolvedCtx = {
-        urls: sources.flatMap((s) => s.urls),
-        sitemapName: sitemapConfig.sitemapName,
-        event: resolvers.event
-      };
-      await nitro?.hooks.callHook("sitemap:input", resolvedCtx);
-      const normalisedUrls = resolveSitemapEntries(sitemapConfig, resolvedCtx.urls, { autoI18n, isI18nMapped }, resolvers);
-      const totalUrls = normalisedUrls.length;
-      const chunkCount = Math.ceil(totalUrls / chunkSize);
-      sitemapConfig._chunkCount = chunkCount;
-      for (let i = 0; i < chunkCount; i++) {
-        const chunkName = `${sitemapName}-${i}`;
-        const entry = {
-          _sitemapName: chunkName,
-          sitemap: resolvers.canonicalUrlResolver(joinURL(sitemapsPathPrefix || "", `/${chunkName}.xml`))
-        };
-        const chunkUrls = normalisedUrls.slice(i * chunkSize, (i + 1) * chunkSize);
-        let lastmod = chunkUrls.filter((a) => !!a?.lastmod).map((a) => typeof a.lastmod === "string" ? new Date(a.lastmod) : a.lastmod).sort((a, b) => (b?.getTime() || 0) - (a?.getTime() || 0))?.[0];
-        if (!lastmod && autoLastmod)
-          lastmod = /* @__PURE__ */ new Date();
-        if (lastmod)
-          entry.lastmod = normaliseDate(lastmod);
-        entries.push(entry);
-      }
-    }
-  }
-  if (sitemaps.index) {
-    entries.push(...sitemaps.index.sitemaps.map((entry) => {
-      return typeof entry === "string" ? { sitemap: entry } : entry;
-    }));
-  }
-  return { entries, failedSources: allFailedSources };
-}
-function urlsToIndexXml(sitemaps, resolvers, { version, xsl, credits, minify }, errorInfo) {
-  const sitemapXml = sitemaps.map((e) => [
-    "    <sitemap>",
-    `        <loc>${escapeValueForXml(e.sitemap)}</loc>`,
-    // lastmod is optional
-    e.lastmod ? `        <lastmod>${escapeValueForXml(e.lastmod)}</lastmod>` : false,
-    "    </sitemap>"
-  ].filter(Boolean).join("\n")).join("\n");
-  const xmlParts = [
-    '<?xml version="1.0" encoding="UTF-8"?>'
-  ];
-  if (xsl) {
-    let relativeBaseUrl = resolvers.relativeBaseUrlResolver?.(xsl) ?? xsl;
-    if (errorInfo && errorInfo.messages.length > 0) {
-      relativeBaseUrl = withQuery(relativeBaseUrl, {
-        errors: "true",
-        error_messages: errorInfo.messages,
-        error_urls: errorInfo.urls
-      });
-    }
-    xmlParts.push(`<?xml-stylesheet type="text/xsl" href="${escapeValueForXml(relativeBaseUrl)}"?>`);
-  }
-  xmlParts.push(
-    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    sitemapXml,
-    "</sitemapindex>"
-  );
-  if (credits) {
-    xmlParts.push(`<!-- XML Sitemap Index generated by @nuxtjs/sitemap v${version} at ${(/* @__PURE__ */ new Date()).toISOString()} -->`);
-  }
-  return minify ? xmlParts.join("").replace(/(?<!<[^>]*)\s(?![^<]*>)/g, "") : xmlParts.join("\n");
-}
-async function buildSitemapIndex(resolvers, runtimeConfig, nitro) {
-  return buildSitemapIndexInternal(resolvers, runtimeConfig, nitro);
-}
-
-const sitemap_index_xml = defineEventHandler(async (e) => {
-  const runtimeConfig = useSitemapRuntimeConfig();
-  const nitro = useNitroApp();
-  const resolvers = useNitroUrlResolvers(e);
-  const { entries: sitemaps, failedSources } = await buildSitemapIndex(resolvers, runtimeConfig, nitro);
-  const indexResolvedCtx = { sitemaps, event: e };
-  await nitro.hooks.callHook("sitemap:index-resolved", indexResolvedCtx);
-  const errorInfo = failedSources.length > 0 ? {
-    messages: failedSources.map((f) => f.error),
-    urls: failedSources.map((f) => f.url)
-  } : void 0;
-  const output = urlsToIndexXml(indexResolvedCtx.sitemaps, resolvers, runtimeConfig, errorInfo);
-  const ctx = { sitemap: output, sitemapName: "sitemap", event: e };
-  await nitro.hooks.callHook("sitemap:output", ctx);
-  setHeader(e, "Content-Type", "text/xml; charset=UTF-8");
-  if (runtimeConfig.cacheMaxAgeSeconds) {
-    setHeader(e, "Cache-Control", `public, max-age=${runtimeConfig.cacheMaxAgeSeconds}, s-maxage=${runtimeConfig.cacheMaxAgeSeconds}, stale-while-revalidate=3600`);
-    const now = /* @__PURE__ */ new Date();
-    setHeader(e, "X-Sitemap-Generated", now.toISOString());
-    setHeader(e, "X-Sitemap-Cache-Duration", `${runtimeConfig.cacheMaxAgeSeconds}s`);
-    const expiryTime = new Date(now.getTime() + runtimeConfig.cacheMaxAgeSeconds * 1e3);
-    setHeader(e, "X-Sitemap-Cache-Expires", expiryTime.toISOString());
-    const remainingSeconds = Math.floor((expiryTime.getTime() - now.getTime()) / 1e3);
-    setHeader(e, "X-Sitemap-Cache-Remaining", `${remainingSeconds}s`);
-  } else {
-    setHeader(e, "Cache-Control", `no-cache, no-store`);
-  }
-  return ctx.sitemap;
-});
+const sitemap_index_xml = defineEventHandler(sitemapIndexXmlEventHandler);
 
 const sitemap_index_xml$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: sitemap_index_xml
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const _sitemap__xml = defineEventHandler(async (e) => {
-  const runtimeConfig = useSitemapRuntimeConfig(e);
-  const { sitemaps } = runtimeConfig;
-  let sitemapName = getRouterParam(e, "sitemap");
-  if (!sitemapName) {
-    const path = e.path;
-    const match = path.match(/(?:\/__sitemap__\/)?([^/]+)\.xml$/);
-    if (match) {
-      sitemapName = match[1];
-    }
-  }
-  if (!sitemapName) {
-    return createError({
-      statusCode: 400,
-      message: "Invalid sitemap request"
-    });
-  }
-  sitemapName = withoutLeadingSlash(withoutTrailingSlash(sitemapName.replace(".xml", "").replace("__sitemap__/", "").replace(runtimeConfig.sitemapsPathPrefix || "", "")));
-  const chunkInfo = parseChunkInfo(sitemapName, sitemaps, runtimeConfig.defaultSitemapsChunkSize);
-  const isAutoChunked = typeof sitemaps.chunks !== "undefined" && !Number.isNaN(Number(sitemapName));
-  const sitemapExists = sitemapName in sitemaps || chunkInfo.baseSitemapName in sitemaps || isAutoChunked;
-  if (!sitemapExists) {
-    return createError({
-      statusCode: 404,
-      message: `Sitemap "${sitemapName}" not found.`
-    });
-  }
-  if (chunkInfo.isChunked && chunkInfo.chunkIndex !== void 0) {
-    const baseSitemap = sitemaps[chunkInfo.baseSitemapName];
-    if (baseSitemap && !baseSitemap.chunks && !baseSitemap._isChunking) {
-      return createError({
-        statusCode: 404,
-        message: `Sitemap "${chunkInfo.baseSitemapName}" does not support chunking.`
-      });
-    }
-    if (baseSitemap?._chunkCount !== void 0 && chunkInfo.chunkIndex >= baseSitemap._chunkCount) {
-      return createError({
-        statusCode: 404,
-        message: `Chunk ${chunkInfo.chunkIndex} does not exist for sitemap "${chunkInfo.baseSitemapName}".`
-      });
-    }
-  }
-  const sitemapConfig = getSitemapConfig(sitemapName, sitemaps, runtimeConfig.defaultSitemapsChunkSize);
-  return createSitemap(e, sitemapConfig, runtimeConfig);
-});
+const _sitemap__xml = defineEventHandler(sitemapChildXmlEventHandler);
 
 const _sitemap__xml$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
@@ -16869,7 +17424,7 @@ const node$3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 
 const node = {
   initWasmPromise: Promise.resolve(),
-  satori: _satori
+  satori: satori
 };
 
 const node$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

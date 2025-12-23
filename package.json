@@ -27,9 +27,7 @@
       "gqlg": "npx gqlg --schemaFilePath graphql/schema.graphql --destDirPath graphql/framework --depthLimit 2"
    },
    "dependencies": {
-      "@novu/js": "^3.11.0",
       "@nuxtjs/i18n": "^10.1.0",
-      "@nuxtjs/mcp-toolkit": "^0.5.2",
       "@nuxtjs/seo": "^3.2.2",
       "@pinia/nuxt": "^0.11.2",
       "nuxt": "^4.2.2",

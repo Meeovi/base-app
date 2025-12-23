@@ -15,7 +15,7 @@
       <div class="cart-items">
         <template>
           <v-list>
-            <v-row v-if="isAuthenticated">
+            <v-row v-if="loggedIn">
               <v-col cols="12">
                 <v-toolbar :title="`Welcome, ${user?.first_name || user?.email}`" color="info"></v-toolbar>
               </v-col>
@@ -57,7 +57,7 @@
               <v-col cols="12">
                 <v-list-item prepend-icon="fas:fa fa-upload" title="Upload Center" href="/upload"></v-list-item>
               </v-col>
-              <v-list-item @click="initiateLogout" prepend-icon="fas:fa fa-sign-out-alt">
+              <v-list-item @click="clear" prepend-icon="fas:fa fa-sign-out-alt">
                 <v-list-item-title>Logout</v-list-item-title>
               </v-list-item>
             </v-row>
@@ -102,12 +102,7 @@
   const tab = ref(null)
   const drawer = ref(false)
   const showLogoutConfirmation = ref(false)
-
-  // Use sidebase auth
-  const { data: session, status, signOut } = useAuth()
-  
-  const user = computed(() => session.value?.user || null)
-  const isAuthenticated = computed(() => status.value === 'authenticated')
+  const { loggedIn, user, clear } = useUserSession()
 
   const {
     $directus,
@@ -132,7 +127,7 @@
 
   const confirmLogout = async () => {
     try {
-      await signOut({ callbackUrl: '/auth/login' })
+      await signOut({ callbackUrl: '/login' })
       showLogoutConfirmation.value = false
     } catch (error) {
       console.error('Logout failed:', error)

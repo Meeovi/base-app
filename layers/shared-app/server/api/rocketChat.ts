@@ -1,6 +1,7 @@
-import fetch from 'node-fetch'
+// Use Nuxt/Nitro built-in global `fetch` instead of `node-fetch`.
+// `fetch` is available in the Nitro server runtime as a global.
 
-const RC_URL = 'https://chat.meeovicms.com'
+const RC_URL = process.env.NUXT_PUBLIC_ROCKETCHAT_URL
 const RC_USER = process.env.ROCKETCHAT_USER
 const RC_PASS = process.env.ROCKETCHAT_PASS
 

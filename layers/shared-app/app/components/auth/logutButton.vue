@@ -1,12 +1,9 @@
 <template>
-  <v-btn variant="flat" @click="logout">Logout</v-btn>
+  <v-btn variant="flat" @click="clear">Logout</v-btn>
 </template>
 
 <script setup>
-const { signOut } = useAuth()
+const { clear } = useUserSession()
 
-function logout() {
-  signOut({ callbackUrl: '/' })
-}
 </script>
 

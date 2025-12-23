@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-toolbar v-if="authUser?.id" :color="hellobar?.color" class="helloBar"
+    <v-toolbar v-if="loggedIn" :color="hellobar?.color" class="helloBar"
       :style="`color: ${hellobar?.colortext}`">
-      <v-toolbar-title>{{ hellobar?.description }} {{ authUser?.first_name }}</v-toolbar-title>
+      <v-toolbar-title>{{ hellobar?.description }} {{ user.firstName }} {{ user.lastName }}</v-toolbar-title>
 
       <div v-for="(menu, index) in hellobar?.menus" :key="index">
         <v-toolbar-items v-if="menu?.active === 'Active'" class="helloBar-items">
@@ -16,6 +16,7 @@
 <script setup>
   import { readMe } from '@directus/sdk'
   
+  const { loggedIn, user} = useUserSession()
   const {
     $directus,
     $readItem

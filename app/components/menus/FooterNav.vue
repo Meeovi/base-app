@@ -44,7 +44,7 @@
   import {
     ref
   } from 'vue'
-  import Newsletter from '~/components/Newsletter.vue'
+  import Newsletter from '~/components/blocks/Newsletter.vue'
   import copyright from '~/components/blocks/copyright.vue'
   import BottomFooter from '~/components/menus/BottomFooter.vue'
 

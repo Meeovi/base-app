@@ -150,6 +150,11 @@ export const pathToI18nConfig = {
     "pl-PL": "/connect/user/:slug(.*)*",
     "testde": "/connect/user/:slug(.*)*"
   },
+  "/seller-dashboard": {
+    "en-GB": "/seller-dashboard",
+    "pl-PL": "/seller-dashboard",
+    "testde": "/seller-dashboard"
+  },
   "/connect/event/:slug(.*)*": {
     "en-GB": "/connect/event/:slug(.*)*",
     "pl-PL": "/connect/event/:slug(.*)*",
@@ -212,6 +217,7 @@ export const i18nPathToPath = {
   "/departments/:slug(.*)*": "/departments/:slug(.*)*",
   "/connect/post/:slug(.*)*": "/connect/post/:slug(.*)*",
   "/connect/user/:slug(.*)*": "/connect/user/:slug(.*)*",
+  "/seller-dashboard": "/seller-dashboard",
   "/connect/event/:slug(.*)*": "/connect/event/:slug(.*)*",
   "/connect/space/:slug(.*)*": "/connect/space/:slug(.*)*",
   "/product/showcases": "/product/showcases",

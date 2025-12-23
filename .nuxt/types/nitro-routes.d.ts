@@ -3,26 +3,35 @@ import type { Serialize, Simplify } from "nitropack/types";
 declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
-    '/api/auth/**': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/auth/[...]').default>>>>
+    '/api/auth/login': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/auth/login.post').default>>>>
     }
     '/api/comments/channel/:id': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/comments/channel/[id]').default>>>>
     }
-    '/api/me': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/me.get').default>>>>
-    }
     '/api/rocketChat': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/rocketChat').default>>>>
-    }
-    '/api/token': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/token.get').default>>>>
     }
     '/api/upload-video': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/upload-video.post').default>>>>
     }
+    '/api/user/stats': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/user/stats.get').default>>>>
+    }
     '/api/view-video': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/view-video.post').default>>>>
+    }
+    '/api/webauthn/authenticate': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/webauthn/authenticate.post').default>>>>
+    }
+    '/api/webauthn/register': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/webauthn/register.post').default>>>>
+    }
+    '/auth/directus': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/routes/auth/directus.get').default>>>>
+    }
+    '/routes/ws': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/routes/routes/ws').default>>>>
     }
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/nitro-server/dist/runtime/handlers/renderer').default>>>>
@@ -38,6 +47,13 @@ declare module "nitropack/types" {
     }
     '/mcp/badge.svg': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/badge-image').default>>>>
+    }
+    '/api/_auth/session': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/server/api/session.delete').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/server/api/session.get').default>>>>
+    }
+    '/bluesky/client-metadata.json': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/server/routes/atproto/client-metadata.json.get').default>>>>
     }
     '/__site-config__/debug.json': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-site-config/dist/runtime/server/routes/__site-config__/debug').default>>>>

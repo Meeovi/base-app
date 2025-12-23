@@ -123,7 +123,7 @@
   import LowerBar from '@/components/menus/LowerBar.vue'
   import FooterNav from '@/components/menus/FooterNav.vue'
   import cart from '@/components/menus/topmenu/cart.vue'
-  import announcements from '@/components/partials/globals/announcements.vue'
+  import announcements from '~/components/blocks/announcements.vue'
   import BottomFooter from '@/components/menus/BottomFooter.vue'
 
   import {

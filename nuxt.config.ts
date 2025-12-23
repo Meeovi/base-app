@@ -167,11 +167,7 @@ export default defineNuxtConfig({
           },
         }
       },
-
-      // Novu Credentials
-      applicationId: process.env.APPLICATION_IDENTIFIER,
-      subscriber: process.env.SUBSCRIBER,
-
+      
       // Google Tag Manager
       gtagId: process.env.NUXT_PUBLIC_GTAG_ID,
 

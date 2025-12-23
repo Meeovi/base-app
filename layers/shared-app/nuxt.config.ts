@@ -15,27 +15,18 @@ export default defineNuxtConfig({
 
   css: [],
 
-  modules: [
-    "@nuxt/image",
-    "@sidebase/nuxt-auth",
-    '@pinia/nuxt',
-    '@vueuse/nuxt',
-    '@maas/vue-equipment/nuxt',
-    '@nuxtjs/mcp-toolkit',
-    'nuxt-tiptap-editor',
-  ],
+  modules: ["@nuxt/image", '@pinia/nuxt', '@vueuse/nuxt', '@maas/vue-equipment/nuxt', '@nuxtjs/mcp-toolkit', 'nuxt-tiptap-editor', 'nuxt-auth-utils', 'nuxt-authorization'],
 
   auth: {
-    provider: {
-      type: 'authjs',
-      trustHost: false,
-      defaultProvider: 'keycloak',
-      addDefaultCallbackUrl: true
+    oauth: {
+      directus: {
+        clientId: process.env.NUXT_OAUTH_DIRECTUS_CLIENT_ID,
+        clientSecret: process.env.NUXT_OAUTH_DIRECTUS_CLIENT_SECRET,
+        redirectUrl: process.env.NUXT_OAUTH_DIRECTUS_REDIRECT_URL
+      }
     },
-    globalAppMiddleware: {
-      isEnabled: false
-    },
-    baseURL: `http://localhost:${process.env.PORT || 3000}/api/auth`
+    atproto: true,
+    webAuthn: true
   },
 
   mcp: {
@@ -71,6 +62,10 @@ export default defineNuxtConfig({
           finitePagination: false
         },
       },
+
+      // Rocket.chat
+      rocketChatUrl: process.env.NUXT_PUBLIC_ROCKETCHAT_URL,
+
 
       // Minio
       minioEndpoint: process.env.MINIO_ENDPOINT,
@@ -120,8 +115,10 @@ export default defineNuxtConfig({
         host: process.env.REDIS_HOST || '',
         password: process.env.REDIS_PASSWORD || '',
       }
+    },
+    experimental: {
+      websocket: true
     }
   },
-
   compatibilityDate: '2025-02-22',
 })

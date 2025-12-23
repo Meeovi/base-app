@@ -14,16 +14,19 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 interface _GlobalComponents {
-  'Newsletter': typeof import("../../app/components/Newsletter.vue").default
+  'BlocksNewsletter': typeof import("../../app/components/blocks/Newsletter.vue").default
+  'BlocksAgeverification': typeof import("../../app/components/blocks/ageverification.vue").default
+  'BlocksAnnouncements': typeof import("../../app/components/blocks/announcements.vue").default
   'BlocksCopyright': typeof import("../../app/components/blocks/copyright.vue").default
+  'BlocksEditor': typeof import("../../app/components/blocks/editor.vue").default
   'BlocksLogo': typeof import("../../app/components/blocks/logo.vue").default
+  'BlocksUseDark': typeof import("../../app/components/blocks/useDark.vue").default
   'MenusBottomFooter': typeof import("../../app/components/menus/BottomFooter.vue").default
   'MenusFooterNav': typeof import("../../app/components/menus/FooterNav.vue").default
   'MenusLayoutNotifications': typeof import("../../app/components/menus/LayoutNotifications.vue").default
   'MenusLowerBar': typeof import("../../app/components/menus/LowerBar.vue").default
   'MenusEcosystemmenu': typeof import("../../app/components/menus/ecosystemmenu.vue").default
   'MenusLivebarLive': typeof import("../../app/components/menus/livebar/live.vue").default
-  'MenusLowernav': typeof import("../../app/components/menus/lowernav.vue").default
   'MenusMobilesearch': typeof import("../../app/components/menus/mobilesearch.vue").default
   'MenusSellerbar': typeof import("../../app/components/menus/sellerbar.vue").default
   'MenusSidebarBottomsidebarmenu': typeof import("../../app/components/menus/sidebar/bottomsidebarmenu.vue").default
@@ -39,9 +42,6 @@ interface _GlobalComponents {
   'MenusTopmenuCart': typeof import("../../app/components/menus/topmenu/cart.vue").default
   'MenusTopmenuMobilesearch': typeof import("../../app/components/menus/topmenu/mobilesearch.vue").default
   'MenusTopmenuMyaccounttopmenu': typeof import("../../app/components/menus/topmenu/myaccounttopmenu.vue").default
-  'PagesAccountCheckout': typeof import("../../app/components/pages/account/checkout.vue").default
-  'PagesAccountSuccess': typeof import("../../app/components/pages/account/success.vue").default
-  'PagesBidding': typeof import("../../app/components/pages/bidding.vue").default
   'PagesHomepageAtaglance': typeof import("../../app/components/pages/homepage/ataglance.vue").default
   'PagesHomepageBlogcallout': typeof import("../../app/components/pages/homepage/blogcallout.vue").default
   'PagesHomepageBlogposts': typeof import("../../app/components/pages/homepage/blogposts.vue").default
@@ -57,35 +57,21 @@ interface _GlobalComponents {
   'PagesHomepageSpotlight': typeof import("../../app/components/pages/homepage/spotlight.vue").default
   'PagesHomepageTheatercallout': typeof import("../../app/components/pages/homepage/theatercallout.vue").default
   'PagesHomepageYardsale': typeof import("../../app/components/pages/homepage/yardsale.vue").default
-  'PagesMeeoviGlobal': typeof import("../../app/components/pages/meeoviGlobal.vue").default
   'PagesNotifications': typeof import("../../app/components/pages/notifications.vue").default
   'PagesOffline': typeof import("../../app/components/pages/offline.vue").default
-  'PagesPickupLocations': typeof import("../../app/components/pages/pickup-locations.vue").default
   'PagesProfileArchives': typeof import("../../app/components/pages/profile/archives.vue").default
   'PagesProfileBookmarks': typeof import("../../app/components/pages/profile/bookmarks.vue").default
   'PagesProfileLikes': typeof import("../../app/components/pages/profile/likes.vue").default
   'PagesProfileMedia': typeof import("../../app/components/pages/profile/media.vue").default
   'PagesProfileReplies': typeof import("../../app/components/pages/profile/replies.vue").default
-  'PagesSellerdashboard': typeof import("../../app/components/pages/sellerdashboard.vue").default
   'PagesUpload': typeof import("../../app/components/pages/upload.vue").default
-  'PartialsGlobalsAgeverification': typeof import("../../app/components/partials/globals/ageverification.vue").default
-  'PartialsGlobalsAnnouncements': typeof import("../../app/components/partials/globals/announcements.vue").default
-  'PartialsGlobalsEditor': typeof import("../../app/components/partials/globals/editor.vue").default
-  'PartialsGlobalsUseDark': typeof import("../../app/components/partials/globals/useDark.vue").default
-  'RelatedArticle': typeof import("../../app/components/related/article.vue").default
-  'RelatedRelatedposts': typeof import("../../app/components/related/relatedposts.vue").default
-  'RelatedRelatedproducts': typeof import("../../app/components/related/relatedproducts.vue").default
-  'RelatedTopics': typeof import("../../app/components/related/topics.vue").default
   'BlocksLeafletMap': typeof import("../../layers/social-app/app/components/blocks/LeafletMap.vue").default
   'BlocksComments': typeof import("../../layers/social-app/app/components/blocks/comments.vue").default
   'BlocksEventsAbout': typeof import("../../layers/social-app/app/components/blocks/events/about.vue").default
   'BlocksFlag': typeof import("../../layers/social-app/app/components/blocks/flag.vue").default
   'BlocksGroupsAbout': typeof import("../../layers/social-app/app/components/blocks/groups/about.vue").default
   'BlocksGroupsFeeds': typeof import("../../layers/social-app/app/components/blocks/groups/feeds.vue").default
-  'BlocksGroupsLists': typeof import("../../layers/social-app/app/components/blocks/groups/lists.vue").default
   'BlocksGroupsMedia': typeof import("../../layers/social-app/app/components/blocks/groups/media.vue").default
-  'BlocksGroupsMembers': typeof import("../../layers/social-app/app/components/blocks/groups/members.vue").default
-  'BlocksGroupsProducts': typeof import("../../layers/social-app/app/components/blocks/groups/products.vue").default
   'BlocksGroupsSpaceLists': typeof import("../../layers/social-app/app/components/blocks/groups/spaceLists.vue").default
   'BlocksReactions': typeof import("../../layers/social-app/app/components/blocks/reactions.vue").default
   'BlocksRepost': typeof import("../../layers/social-app/app/components/blocks/repost.vue").default
@@ -138,6 +124,7 @@ interface _GlobalComponents {
   'RelatedMemberList': typeof import("../../layers/social-app/app/components/related/memberList.vue").default
   'RelatedPost': typeof import("../../layers/social-app/app/components/related/post.vue").default
   'RelatedRadio': typeof import("../../layers/social-app/app/components/related/radio.vue").default
+  'RelatedRelatedposts': typeof import("../../layers/social-app/app/components/related/relatedposts.vue").default
   'RelatedRelatedshorts': typeof import("../../layers/social-app/app/components/related/relatedshorts.vue").default
   'RelatedRelatedspaces': typeof import("../../layers/social-app/app/components/related/relatedspaces.vue").default
   'RelatedRelatedusers': typeof import("../../layers/social-app/app/components/related/relatedusers.vue").default
@@ -145,6 +132,13 @@ interface _GlobalComponents {
   'RelatedSpace': typeof import("../../layers/social-app/app/components/related/space.vue").default
   'RelatedTag': typeof import("../../layers/social-app/app/components/related/tag.vue").default
   'AuthLogutButton': typeof import("../../layers/shared-app/app/components/auth/logutButton.vue").default
+  'CommunicationChannels': typeof import("../../layers/shared-app/app/components/communication/channels.vue").default
+  'CommunicationChat': typeof import("../../layers/shared-app/app/components/communication/chat.vue").default
+  'CommunicationDirectory': typeof import("../../layers/shared-app/app/components/communication/directory.vue").default
+  'CommunicationInvites': typeof import("../../layers/shared-app/app/components/communication/invites.vue").default
+  'CommunicationMessages': typeof import("../../layers/shared-app/app/components/communication/messages.vue").default
+  'CommunicationRooms': typeof import("../../layers/shared-app/app/components/communication/rooms.vue").default
+  'CommunicationTeams': typeof import("../../layers/shared-app/app/components/communication/teams.vue").default
   'MediaNowPlaying': typeof import("../../layers/shared-app/app/components/media/nowPlaying.vue").default
   'MediaPlaylist': typeof import("../../layers/shared-app/app/components/media/playlist.vue").default
   'MediaRadioPlayer': typeof import("../../layers/shared-app/app/components/media/radioPlayer.vue").default
@@ -222,6 +216,7 @@ interface _GlobalComponents {
   'CatalogProductAddShowcase': typeof import("../../layers/commerce-app/app/components/catalog/product/add-showcase.vue").default
   'CatalogProductAddStation': typeof import("../../layers/commerce-app/app/components/catalog/product/add-station.vue").default
   'CatalogProductBestsellers': typeof import("../../layers/commerce-app/app/components/catalog/product/bestsellers.vue").default
+  'CatalogProductBidding': typeof import("../../layers/commerce-app/app/components/catalog/product/bidding.vue").default
   'CatalogProductBrands': typeof import("../../layers/commerce-app/app/components/catalog/product/brands.vue").default
   'CatalogProductColorOptions': typeof import("../../layers/commerce-app/app/components/catalog/product/colorOptions.vue").default
   'CatalogProductDeals': typeof import("../../layers/commerce-app/app/components/catalog/product/deals.vue").default
@@ -271,7 +266,11 @@ interface _GlobalComponents {
   'ContentBlocksCurrencySwitcher': typeof import("../../layers/commerce-app/app/components/content/blocks/currencySwitcher.vue").default
   'ContentBlocksLanguageSwitcher': typeof import("../../layers/commerce-app/app/components/content/blocks/languageSwitcher.vue").default
   'ContentBlocksVideoproduct': typeof import("../../layers/commerce-app/app/components/content/blocks/videoproduct.vue").default
+  'ContentPagesCheckout': typeof import("../../layers/commerce-app/app/components/content/pages/checkout.vue").default
+  'ContentPagesMeeoviGlobal': typeof import("../../layers/commerce-app/app/components/content/pages/meeoviGlobal.vue").default
+  'ContentPagesPickupLocations': typeof import("../../layers/commerce-app/app/components/content/pages/pickup-locations.vue").default
   'ContentPagesShowcases': typeof import("../../layers/commerce-app/app/components/content/pages/showcases.vue").default
+  'ContentPagesSuccess': typeof import("../../layers/commerce-app/app/components/content/pages/success.vue").default
   'MarketingAddBrand': typeof import("../../layers/commerce-app/app/components/marketing/add-brand.vue").default
   'MarketingAddCoupon': typeof import("../../layers/commerce-app/app/components/marketing/add-coupon.vue").default
   'MarketingAddRewards': typeof import("../../layers/commerce-app/app/components/marketing/add-rewards.vue").default
@@ -283,6 +282,7 @@ interface _GlobalComponents {
   'MarketingPromotionsSubscription[id]': typeof import("../../layers/commerce-app/app/components/marketing/promotions/subscription/[id].vue").default
   'MarketingPromotionsSubscriptions': typeof import("../../layers/commerce-app/app/components/marketing/promotions/subscriptions.vue").default
   'MarketingUpdateRewards': typeof import("../../layers/commerce-app/app/components/marketing/update-rewards.vue").default
+  'MenusLowernav': typeof import("../../layers/commerce-app/app/components/menus/lowernav.vue").default
   'PartialsLocaleSelector': typeof import("../../layers/commerce-app/app/components/partials/LocaleSelector.vue").default
   'PartialsShoppingCart': typeof import("../../layers/commerce-app/app/components/partials/ShoppingCart.vue").default
   'PartialsStripePayment': typeof import("../../layers/commerce-app/app/components/partials/StripePayment.vue").default
@@ -293,6 +293,7 @@ interface _GlobalComponents {
   'PartialsRatings': typeof import("../../layers/commerce-app/app/components/partials/ratings.vue").default
   'PartialsStoreCurrencySelector': typeof import("../../layers/commerce-app/app/components/partials/store/CurrencySelector.vue").default
   'PartialsStoreSwitcher': typeof import("../../layers/commerce-app/app/components/partials/store/StoreSwitcher.vue").default
+  'RelatedRelatedproducts': typeof import("../../layers/commerce-app/app/components/related/relatedproducts.vue").default
   'SalesOrderDetailsDialog': typeof import("../../layers/commerce-app/app/components/sales/OrderDetailsDialog.vue").default
   'SalesOrderManagement': typeof import("../../layers/commerce-app/app/components/sales/OrderManagement.vue").default
   'SalesReceiptsTab': typeof import("../../layers/commerce-app/app/components/sales/ReceiptsTab.vue").default
@@ -369,6 +370,12 @@ interface _GlobalComponents {
   'CategoriesTravel': typeof import("../../layers/departments-app/app/components/categories/travel.vue").default
   'CategoriesWeather': typeof import("../../layers/departments-app/app/components/categories/weather/weather.vue").default
   'RelatedRelatedcharts': typeof import("../../layers/departments-app/app/components/related/relatedcharts.vue").default
+  'FeaturesAttributes': typeof import("../../layers/seller-dashboard-app/app/components/features/attributes.vue").default
+  'FeaturesIncentives': typeof import("../../layers/seller-dashboard-app/app/components/features/incentives.vue").default
+  'FeaturesIntegrations': typeof import("../../layers/seller-dashboard-app/app/components/features/integrations.vue").default
+  'FeaturesProducts': typeof import("../../layers/seller-dashboard-app/app/components/features/products.vue").default
+  'FeaturesReviews': typeof import("../../layers/seller-dashboard-app/app/components/features/reviews.vue").default
+  'FeaturesSettings': typeof import("../../layers/seller-dashboard-app/app/components/features/settings.vue").default
   'MagicDrawer': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicDrawer/src/components/MagicDrawer.vue").default
   'MagicMenuChannel': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuChannel.vue").default
   'MagicMenuContent': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuContent.vue").default
@@ -405,6 +412,11 @@ interface _GlobalComponents {
   'MagicScrollMotion': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollMotion.vue").default
   'MagicScrollProvider': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollProvider.vue").default
   'MagicScrollScene': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollScene.vue").default
+  'AuthState': typeof import("../../node_modules/nuxt-auth-utils/dist/runtime/app/components/AuthState.vue").default
+  'Bouncer': typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Bouncer.vue").default
+  'Can': typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Can.vue").default
+  'Cannot': typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Cannot.vue").default
+  'Primitive': typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Primitive").default
   'NuxtWelcome': typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue").default
   'NuxtLayout': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout").default
   'NuxtErrorBoundary': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").default
@@ -444,8 +456,8 @@ interface _GlobalComponents {
   'MagicToastProvider': typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/src/components/MagicToastProvider.vue").default
   'InstallButton': typeof import("../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/components/InstallButton.vue").default
   'TiptapEditorContent': typeof import("@tiptap/vue-3").EditorContent
-  'TiptapFloatingMenu': typeof import("@tiptap/vue-3").FloatingMenu
-  'TiptapBubbleMenu': typeof import("@tiptap/vue-3").BubbleMenu
+  'TiptapFloatingMenu': typeof import("@tiptap/vue-3/menus").FloatingMenu
+  'TiptapBubbleMenu': typeof import("@tiptap/vue-3/menus").BubbleMenu
   'NuxtLinkLocale': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default
   'SwitchLocalePathLink': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default
   'NuxtPage': typeof import("../../node_modules/nuxt/dist/pages/runtime/page").default
@@ -458,8 +470,6 @@ interface _GlobalComponents {
   'Head': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Head
   'Html': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Html
   'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Body
-  'OgImage': typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default
-  'OgImageScreenshot': typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default
   'SchemaOrgDebug': typeof import("@unhead/schema-org/vue").SchemaOrgDebug
   'SchemaOrgArticle': typeof import("@unhead/schema-org/vue").SchemaOrgArticle
   'SchemaOrgBreadcrumb': typeof import("@unhead/schema-org/vue").SchemaOrgBreadcrumb
@@ -485,16 +495,19 @@ interface _GlobalComponents {
   'SchemaOrgBook': typeof import("@unhead/schema-org/vue").SchemaOrgBook
   'SchemaOrgSoftwareApp': typeof import("@unhead/schema-org/vue").SchemaOrgSoftwareApp
   'NuxtIsland': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island").default
-  'LazyNewsletter': LazyComponent<typeof import("../../app/components/Newsletter.vue").default>
+  'LazyBlocksNewsletter': LazyComponent<typeof import("../../app/components/blocks/Newsletter.vue").default>
+  'LazyBlocksAgeverification': LazyComponent<typeof import("../../app/components/blocks/ageverification.vue").default>
+  'LazyBlocksAnnouncements': LazyComponent<typeof import("../../app/components/blocks/announcements.vue").default>
   'LazyBlocksCopyright': LazyComponent<typeof import("../../app/components/blocks/copyright.vue").default>
+  'LazyBlocksEditor': LazyComponent<typeof import("../../app/components/blocks/editor.vue").default>
   'LazyBlocksLogo': LazyComponent<typeof import("../../app/components/blocks/logo.vue").default>
+  'LazyBlocksUseDark': LazyComponent<typeof import("../../app/components/blocks/useDark.vue").default>
   'LazyMenusBottomFooter': LazyComponent<typeof import("../../app/components/menus/BottomFooter.vue").default>
   'LazyMenusFooterNav': LazyComponent<typeof import("../../app/components/menus/FooterNav.vue").default>
   'LazyMenusLayoutNotifications': LazyComponent<typeof import("../../app/components/menus/LayoutNotifications.vue").default>
   'LazyMenusLowerBar': LazyComponent<typeof import("../../app/components/menus/LowerBar.vue").default>
   'LazyMenusEcosystemmenu': LazyComponent<typeof import("../../app/components/menus/ecosystemmenu.vue").default>
   'LazyMenusLivebarLive': LazyComponent<typeof import("../../app/components/menus/livebar/live.vue").default>
-  'LazyMenusLowernav': LazyComponent<typeof import("../../app/components/menus/lowernav.vue").default>
   'LazyMenusMobilesearch': LazyComponent<typeof import("../../app/components/menus/mobilesearch.vue").default>
   'LazyMenusSellerbar': LazyComponent<typeof import("../../app/components/menus/sellerbar.vue").default>
   'LazyMenusSidebarBottomsidebarmenu': LazyComponent<typeof import("../../app/components/menus/sidebar/bottomsidebarmenu.vue").default>
@@ -510,9 +523,6 @@ interface _GlobalComponents {
   'LazyMenusTopmenuCart': LazyComponent<typeof import("../../app/components/menus/topmenu/cart.vue").default>
   'LazyMenusTopmenuMobilesearch': LazyComponent<typeof import("../../app/components/menus/topmenu/mobilesearch.vue").default>
   'LazyMenusTopmenuMyaccounttopmenu': LazyComponent<typeof import("../../app/components/menus/topmenu/myaccounttopmenu.vue").default>
-  'LazyPagesAccountCheckout': LazyComponent<typeof import("../../app/components/pages/account/checkout.vue").default>
-  'LazyPagesAccountSuccess': LazyComponent<typeof import("../../app/components/pages/account/success.vue").default>
-  'LazyPagesBidding': LazyComponent<typeof import("../../app/components/pages/bidding.vue").default>
   'LazyPagesHomepageAtaglance': LazyComponent<typeof import("../../app/components/pages/homepage/ataglance.vue").default>
   'LazyPagesHomepageBlogcallout': LazyComponent<typeof import("../../app/components/pages/homepage/blogcallout.vue").default>
   'LazyPagesHomepageBlogposts': LazyComponent<typeof import("../../app/components/pages/homepage/blogposts.vue").default>
@@ -528,35 +538,21 @@ interface _GlobalComponents {
   'LazyPagesHomepageSpotlight': LazyComponent<typeof import("../../app/components/pages/homepage/spotlight.vue").default>
   'LazyPagesHomepageTheatercallout': LazyComponent<typeof import("../../app/components/pages/homepage/theatercallout.vue").default>
   'LazyPagesHomepageYardsale': LazyComponent<typeof import("../../app/components/pages/homepage/yardsale.vue").default>
-  'LazyPagesMeeoviGlobal': LazyComponent<typeof import("../../app/components/pages/meeoviGlobal.vue").default>
   'LazyPagesNotifications': LazyComponent<typeof import("../../app/components/pages/notifications.vue").default>
   'LazyPagesOffline': LazyComponent<typeof import("../../app/components/pages/offline.vue").default>
-  'LazyPagesPickupLocations': LazyComponent<typeof import("../../app/components/pages/pickup-locations.vue").default>
   'LazyPagesProfileArchives': LazyComponent<typeof import("../../app/components/pages/profile/archives.vue").default>
   'LazyPagesProfileBookmarks': LazyComponent<typeof import("../../app/components/pages/profile/bookmarks.vue").default>
   'LazyPagesProfileLikes': LazyComponent<typeof import("../../app/components/pages/profile/likes.vue").default>
   'LazyPagesProfileMedia': LazyComponent<typeof import("../../app/components/pages/profile/media.vue").default>
   'LazyPagesProfileReplies': LazyComponent<typeof import("../../app/components/pages/profile/replies.vue").default>
-  'LazyPagesSellerdashboard': LazyComponent<typeof import("../../app/components/pages/sellerdashboard.vue").default>
   'LazyPagesUpload': LazyComponent<typeof import("../../app/components/pages/upload.vue").default>
-  'LazyPartialsGlobalsAgeverification': LazyComponent<typeof import("../../app/components/partials/globals/ageverification.vue").default>
-  'LazyPartialsGlobalsAnnouncements': LazyComponent<typeof import("../../app/components/partials/globals/announcements.vue").default>
-  'LazyPartialsGlobalsEditor': LazyComponent<typeof import("../../app/components/partials/globals/editor.vue").default>
-  'LazyPartialsGlobalsUseDark': LazyComponent<typeof import("../../app/components/partials/globals/useDark.vue").default>
-  'LazyRelatedArticle': LazyComponent<typeof import("../../app/components/related/article.vue").default>
-  'LazyRelatedRelatedposts': LazyComponent<typeof import("../../app/components/related/relatedposts.vue").default>
-  'LazyRelatedRelatedproducts': LazyComponent<typeof import("../../app/components/related/relatedproducts.vue").default>
-  'LazyRelatedTopics': LazyComponent<typeof import("../../app/components/related/topics.vue").default>
   'LazyBlocksLeafletMap': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/LeafletMap.vue").default>
   'LazyBlocksComments': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/comments.vue").default>
   'LazyBlocksEventsAbout': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/events/about.vue").default>
   'LazyBlocksFlag': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/flag.vue").default>
   'LazyBlocksGroupsAbout': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/groups/about.vue").default>
   'LazyBlocksGroupsFeeds': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/groups/feeds.vue").default>
-  'LazyBlocksGroupsLists': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/groups/lists.vue").default>
   'LazyBlocksGroupsMedia': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/groups/media.vue").default>
-  'LazyBlocksGroupsMembers': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/groups/members.vue").default>
-  'LazyBlocksGroupsProducts': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/groups/products.vue").default>
   'LazyBlocksGroupsSpaceLists': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/groups/spaceLists.vue").default>
   'LazyBlocksReactions': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/reactions.vue").default>
   'LazyBlocksRepost': LazyComponent<typeof import("../../layers/social-app/app/components/blocks/repost.vue").default>
@@ -609,6 +605,7 @@ interface _GlobalComponents {
   'LazyRelatedMemberList': LazyComponent<typeof import("../../layers/social-app/app/components/related/memberList.vue").default>
   'LazyRelatedPost': LazyComponent<typeof import("../../layers/social-app/app/components/related/post.vue").default>
   'LazyRelatedRadio': LazyComponent<typeof import("../../layers/social-app/app/components/related/radio.vue").default>
+  'LazyRelatedRelatedposts': LazyComponent<typeof import("../../layers/social-app/app/components/related/relatedposts.vue").default>
   'LazyRelatedRelatedshorts': LazyComponent<typeof import("../../layers/social-app/app/components/related/relatedshorts.vue").default>
   'LazyRelatedRelatedspaces': LazyComponent<typeof import("../../layers/social-app/app/components/related/relatedspaces.vue").default>
   'LazyRelatedRelatedusers': LazyComponent<typeof import("../../layers/social-app/app/components/related/relatedusers.vue").default>
@@ -616,6 +613,13 @@ interface _GlobalComponents {
   'LazyRelatedSpace': LazyComponent<typeof import("../../layers/social-app/app/components/related/space.vue").default>
   'LazyRelatedTag': LazyComponent<typeof import("../../layers/social-app/app/components/related/tag.vue").default>
   'LazyAuthLogutButton': LazyComponent<typeof import("../../layers/shared-app/app/components/auth/logutButton.vue").default>
+  'LazyCommunicationChannels': LazyComponent<typeof import("../../layers/shared-app/app/components/communication/channels.vue").default>
+  'LazyCommunicationChat': LazyComponent<typeof import("../../layers/shared-app/app/components/communication/chat.vue").default>
+  'LazyCommunicationDirectory': LazyComponent<typeof import("../../layers/shared-app/app/components/communication/directory.vue").default>
+  'LazyCommunicationInvites': LazyComponent<typeof import("../../layers/shared-app/app/components/communication/invites.vue").default>
+  'LazyCommunicationMessages': LazyComponent<typeof import("../../layers/shared-app/app/components/communication/messages.vue").default>
+  'LazyCommunicationRooms': LazyComponent<typeof import("../../layers/shared-app/app/components/communication/rooms.vue").default>
+  'LazyCommunicationTeams': LazyComponent<typeof import("../../layers/shared-app/app/components/communication/teams.vue").default>
   'LazyMediaNowPlaying': LazyComponent<typeof import("../../layers/shared-app/app/components/media/nowPlaying.vue").default>
   'LazyMediaPlaylist': LazyComponent<typeof import("../../layers/shared-app/app/components/media/playlist.vue").default>
   'LazyMediaRadioPlayer': LazyComponent<typeof import("../../layers/shared-app/app/components/media/radioPlayer.vue").default>
@@ -693,6 +697,7 @@ interface _GlobalComponents {
   'LazyCatalogProductAddShowcase': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/add-showcase.vue").default>
   'LazyCatalogProductAddStation': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/add-station.vue").default>
   'LazyCatalogProductBestsellers': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/bestsellers.vue").default>
+  'LazyCatalogProductBidding': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/bidding.vue").default>
   'LazyCatalogProductBrands': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/brands.vue").default>
   'LazyCatalogProductColorOptions': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/colorOptions.vue").default>
   'LazyCatalogProductDeals': LazyComponent<typeof import("../../layers/commerce-app/app/components/catalog/product/deals.vue").default>
@@ -742,7 +747,11 @@ interface _GlobalComponents {
   'LazyContentBlocksCurrencySwitcher': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/blocks/currencySwitcher.vue").default>
   'LazyContentBlocksLanguageSwitcher': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/blocks/languageSwitcher.vue").default>
   'LazyContentBlocksVideoproduct': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/blocks/videoproduct.vue").default>
+  'LazyContentPagesCheckout': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/pages/checkout.vue").default>
+  'LazyContentPagesMeeoviGlobal': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/pages/meeoviGlobal.vue").default>
+  'LazyContentPagesPickupLocations': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/pages/pickup-locations.vue").default>
   'LazyContentPagesShowcases': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/pages/showcases.vue").default>
+  'LazyContentPagesSuccess': LazyComponent<typeof import("../../layers/commerce-app/app/components/content/pages/success.vue").default>
   'LazyMarketingAddBrand': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/add-brand.vue").default>
   'LazyMarketingAddCoupon': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/add-coupon.vue").default>
   'LazyMarketingAddRewards': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/add-rewards.vue").default>
@@ -754,6 +763,7 @@ interface _GlobalComponents {
   'LazyMarketingPromotionsSubscription[id]': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/promotions/subscription/[id].vue").default>
   'LazyMarketingPromotionsSubscriptions': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/promotions/subscriptions.vue").default>
   'LazyMarketingUpdateRewards': LazyComponent<typeof import("../../layers/commerce-app/app/components/marketing/update-rewards.vue").default>
+  'LazyMenusLowernav': LazyComponent<typeof import("../../layers/commerce-app/app/components/menus/lowernav.vue").default>
   'LazyPartialsLocaleSelector': LazyComponent<typeof import("../../layers/commerce-app/app/components/partials/LocaleSelector.vue").default>
   'LazyPartialsShoppingCart': LazyComponent<typeof import("../../layers/commerce-app/app/components/partials/ShoppingCart.vue").default>
   'LazyPartialsStripePayment': LazyComponent<typeof import("../../layers/commerce-app/app/components/partials/StripePayment.vue").default>
@@ -764,6 +774,7 @@ interface _GlobalComponents {
   'LazyPartialsRatings': LazyComponent<typeof import("../../layers/commerce-app/app/components/partials/ratings.vue").default>
   'LazyPartialsStoreCurrencySelector': LazyComponent<typeof import("../../layers/commerce-app/app/components/partials/store/CurrencySelector.vue").default>
   'LazyPartialsStoreSwitcher': LazyComponent<typeof import("../../layers/commerce-app/app/components/partials/store/StoreSwitcher.vue").default>
+  'LazyRelatedRelatedproducts': LazyComponent<typeof import("../../layers/commerce-app/app/components/related/relatedproducts.vue").default>
   'LazySalesOrderDetailsDialog': LazyComponent<typeof import("../../layers/commerce-app/app/components/sales/OrderDetailsDialog.vue").default>
   'LazySalesOrderManagement': LazyComponent<typeof import("../../layers/commerce-app/app/components/sales/OrderManagement.vue").default>
   'LazySalesReceiptsTab': LazyComponent<typeof import("../../layers/commerce-app/app/components/sales/ReceiptsTab.vue").default>
@@ -840,6 +851,12 @@ interface _GlobalComponents {
   'LazyCategoriesTravel': LazyComponent<typeof import("../../layers/departments-app/app/components/categories/travel.vue").default>
   'LazyCategoriesWeather': LazyComponent<typeof import("../../layers/departments-app/app/components/categories/weather/weather.vue").default>
   'LazyRelatedRelatedcharts': LazyComponent<typeof import("../../layers/departments-app/app/components/related/relatedcharts.vue").default>
+  'LazyFeaturesAttributes': LazyComponent<typeof import("../../layers/seller-dashboard-app/app/components/features/attributes.vue").default>
+  'LazyFeaturesIncentives': LazyComponent<typeof import("../../layers/seller-dashboard-app/app/components/features/incentives.vue").default>
+  'LazyFeaturesIntegrations': LazyComponent<typeof import("../../layers/seller-dashboard-app/app/components/features/integrations.vue").default>
+  'LazyFeaturesProducts': LazyComponent<typeof import("../../layers/seller-dashboard-app/app/components/features/products.vue").default>
+  'LazyFeaturesReviews': LazyComponent<typeof import("../../layers/seller-dashboard-app/app/components/features/reviews.vue").default>
+  'LazyFeaturesSettings': LazyComponent<typeof import("../../layers/seller-dashboard-app/app/components/features/settings.vue").default>
   'LazyMagicDrawer': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicDrawer/src/components/MagicDrawer.vue").default>
   'LazyMagicMenuChannel': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuChannel.vue").default>
   'LazyMagicMenuContent': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu/src/components/MagicMenuContent.vue").default>
@@ -876,6 +893,11 @@ interface _GlobalComponents {
   'LazyMagicScrollMotion': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollMotion.vue").default>
   'LazyMagicScrollProvider': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollProvider.vue").default>
   'LazyMagicScrollScene': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/src/components/MagicScrollScene.vue").default>
+  'LazyAuthState': LazyComponent<typeof import("../../node_modules/nuxt-auth-utils/dist/runtime/app/components/AuthState.vue").default>
+  'LazyBouncer': LazyComponent<typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Bouncer.vue").default>
+  'LazyCan': LazyComponent<typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Can.vue").default>
+  'LazyCannot': LazyComponent<typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Cannot.vue").default>
+  'LazyPrimitive': LazyComponent<typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Primitive").default>
   'LazyNuxtWelcome': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue").default>
   'LazyNuxtLayout': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout").default>
   'LazyNuxtErrorBoundary': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").default>
@@ -915,8 +937,8 @@ interface _GlobalComponents {
   'LazyMagicToastProvider': LazyComponent<typeof import("../../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/src/components/MagicToastProvider.vue").default>
   'LazyInstallButton': LazyComponent<typeof import("../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/components/InstallButton.vue").default>
   'LazyTiptapEditorContent': LazyComponent<typeof import("@tiptap/vue-3").EditorContent>
-  'LazyTiptapFloatingMenu': LazyComponent<typeof import("@tiptap/vue-3").FloatingMenu>
-  'LazyTiptapBubbleMenu': LazyComponent<typeof import("@tiptap/vue-3").BubbleMenu>
+  'LazyTiptapFloatingMenu': LazyComponent<typeof import("@tiptap/vue-3/menus").FloatingMenu>
+  'LazyTiptapBubbleMenu': LazyComponent<typeof import("@tiptap/vue-3/menus").BubbleMenu>
   'LazyNuxtLinkLocale': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default>
   'LazySwitchLocalePathLink': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default>
   'LazyNuxtPage': LazyComponent<typeof import("../../node_modules/nuxt/dist/pages/runtime/page").default>
@@ -929,8 +951,6 @@ interface _GlobalComponents {
   'LazyHead': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Head>
   'LazyHtml': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Html>
   'LazyBody': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Body>
-  'LazyOgImage': LazyComponent<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default>
-  'LazyOgImageScreenshot': LazyComponent<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default>
   'LazySchemaOrgDebug': LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgDebug>
   'LazySchemaOrgArticle': LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgArticle>
   'LazySchemaOrgBreadcrumb': LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgBreadcrumb>
