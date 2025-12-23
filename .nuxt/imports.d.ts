@@ -45,10 +45,6 @@ export { fieldRegistry, interfaceRegistry, resolveFieldComponent } from '../laye
 export { supabase } from '../layers/shared-app/app/utils/supabase';
 export { getRelativeTime, getFriendlyDate, greetUser, toDateTime, subtractDates, monthsAbbr, destructureDate, getMonth, getDate, getDay } from '../layers/shared-app/app/utils/time';
 export { userName } from '../layers/shared-app/app/utils/user-name';
-export { useVendureMutation } from '../layers/commerce-app/app/composables/useVendureMutation';
-export { useVendureQuery } from '../layers/commerce-app/app/composables/useVendureQuery';
-export { default as countryList } from '../layers/commerce-app/app/utils/countryList';
-export { formatPrice, convertPrice, getCurrencySymbol } from '../layers/commerce-app/app/utils/currency';
 export { allows, denies, authorize } from '../node_modules/nuxt-authorization/dist/runtime/utils/bouncer';
 export { useNonce } from '../node_modules/nuxt-security/dist/runtime/composables/nonce';
 export { getNitroOrigin } from '../node_modules/nuxt-site-config/dist/runtime/app/composables/getNitroOrigin';

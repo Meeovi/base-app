@@ -42,12 +42,9 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/nuxt-auth-utils/dist/runtime/app/plugins/session.client.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/warn.dev.server.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/check-if-layout-used.js")> &
-  InjectionType<typeof import("../../layers/commerce-app/app/plugins/paypal.js")> &
   InjectionType<typeof import("../../layers/shared-app/app/plugins/instantsearch.js")> &
   InjectionType<typeof import("../../layers/shared-app/app/plugins/meilisearch.js")> &
   InjectionType<typeof import("../../layers/shared-app/app/plugins/videojs.client.js")> &
-  InjectionType<typeof import("../../layers/social-app/app/plugins/rocketchat-api.js")> &
-  InjectionType<typeof import("../../layers/social-app/app/plugins/vue-disqus.js")> &
   InjectionType<typeof import("../../app/plugins/apollo")> &
   InjectionType<typeof import("../../app/plugins/directus")> &
   InjectionType<typeof import("../../app/plugins/gtag.client.js")> &
