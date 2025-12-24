@@ -836,8 +836,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       strictNuxtContentPaths: any,
 
       isNuxtContentDocumentDriven: boolean,
-
-      componentDirs: Array<string>,
    },
   }
   interface SharedPublicRuntimeConfig {
@@ -873,8 +871,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       },
    },
 
-   commerceApiToken: string,
-
    ups: {
       apiKey: string,
 
@@ -901,12 +897,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       currency: string,
    },
 
-   NUXT_PROJECT_ID: string,
-
-   NUXT_PUBLIC_SITE_URL: string,
-
-   indexName: string,
-
    meilisearch: {
       host: string,
 
@@ -921,36 +911,12 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       },
    },
 
-   minioEndpoint: string,
-
-   minioUser: string,
-
-   minioPass: string,
-
-   gtagId: string,
-
    stripe: {
       publishableKey: string,
    },
 
-   paypalClientId: string,
-
    auth: {
       loadStrategy: string,
-   },
-
-   "nuxt-schema-org": {
-      reactive: boolean,
-
-      minify: boolean,
-
-      scriptAttributes: {
-         "data-nuxt-schema-org": boolean,
-      },
-
-      identity: any,
-
-      version: string,
    },
 
    "seo-utils": {

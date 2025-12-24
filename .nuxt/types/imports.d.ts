@@ -49,6 +49,8 @@ declare global {
   const computedWithControl: typeof import('@vueuse/core').computedWithControl
   const controlledComputed: typeof import('@vueuse/core').controlledComputed
   const controlledRef: typeof import('@vueuse/core').controlledRef
+  const convertPrice: typeof import('../../layers/commerce-app/app/utils/currency').convertPrice
+  const countryList: typeof import('../../layers/commerce-app/app/utils/countryList').default
   const createError: typeof import('../../node_modules/nuxt/dist/app/composables/error').createError
   const createEventHook: typeof import('@vueuse/core').createEventHook
   const createGlobalState: typeof import('@vueuse/core').createGlobalState
@@ -126,7 +128,9 @@ declare global {
   const effectScope: typeof import('../../node_modules/vue').effectScope
   const extendRef: typeof import('@vueuse/core').extendRef
   const fieldRegistry: typeof import('../../layers/shared-app/app/utils/fieldRegistry').fieldRegistry
+  const formatPrice: typeof import('../../layers/commerce-app/app/utils/currency').formatPrice
   const getAppManifest: typeof import('../../node_modules/nuxt/dist/app/composables/manifest').getAppManifest
+  const getCurrencySymbol: typeof import('../../layers/commerce-app/app/utils/currency').getCurrencySymbol
   const getCurrentInstance: typeof import('../../node_modules/vue').getCurrentInstance
   const getCurrentScope: typeof import('../../node_modules/vue').getCurrentScope
   const getDate: typeof import('../../layers/shared-app/app/utils/time').getDate
@@ -137,6 +141,7 @@ declare global {
   const getPrimaryBillingAddress: typeof import('../../layers/shared-app/app/utils/billing-address').getPrimaryBillingAddress
   const getRelativeTime: typeof import('../../layers/shared-app/app/utils/time').getRelativeTime
   const getRouteRules: typeof import('../../node_modules/nuxt/dist/app/composables/manifest').getRouteRules
+  const getStripe: typeof import('../../layers/commerce-app/app/utils/stripe').getStripe
   const greetUser: typeof import('../../layers/shared-app/app/utils/time').greetUser
   const h: typeof import('../../node_modules/vue').h
   const hasInjectionContext: typeof import('../../node_modules/vue').hasInjectionContext
@@ -215,6 +220,7 @@ declare global {
   const resolveComponent: typeof import('../../node_modules/vue').resolveComponent
   const resolveFieldComponent: typeof import('../../layers/shared-app/app/utils/fieldRegistry').resolveFieldComponent
   const resolveRef: typeof import('@vueuse/core').resolveRef
+  const setInterval: typeof import('../../node_modules/nuxt/dist/app/compat/interval').setInterval
   const setPageLayout: typeof import('../../node_modules/nuxt/dist/app/composables/router').setPageLayout
   const setResponseStatus: typeof import('../../node_modules/nuxt/dist/app/composables/ssr').setResponseStatus
   const shallowReactive: typeof import('../../node_modules/vue').shallowReactive
@@ -507,6 +513,8 @@ declare global {
   const useUserSession: typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/app/composables/session').useUserSession
   const useVModel: typeof import('@vueuse/core').useVModel
   const useVModels: typeof import('@vueuse/core').useVModels
+  const useVendureMutation: typeof import('../../layers/commerce-app/app/composables/useVendureMutation').useVendureMutation
+  const useVendureQuery: typeof import('../../layers/commerce-app/app/composables/useVendureQuery').useVendureQuery
   const useVibrate: typeof import('@vueuse/core').useVibrate
   const useVirtualList: typeof import('@vueuse/core').useVirtualList
   const useWakeLock: typeof import('@vueuse/core').useWakeLock
@@ -606,6 +614,8 @@ declare module 'vue' {
     readonly computedWithControl: UnwrapRef<typeof import('@vueuse/core')['computedWithControl']>
     readonly controlledComputed: UnwrapRef<typeof import('@vueuse/core')['controlledComputed']>
     readonly controlledRef: UnwrapRef<typeof import('@vueuse/core')['controlledRef']>
+    readonly convertPrice: UnwrapRef<typeof import('../../layers/commerce-app/app/utils/currency')['convertPrice']>
+    readonly countryList: UnwrapRef<typeof import('../../layers/commerce-app/app/utils/countryList')['default']>
     readonly createError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/error')['createError']>
     readonly createEventHook: UnwrapRef<typeof import('@vueuse/core')['createEventHook']>
     readonly createGlobalState: UnwrapRef<typeof import('@vueuse/core')['createGlobalState']>
@@ -683,7 +693,9 @@ declare module 'vue' {
     readonly effectScope: UnwrapRef<typeof import('../../node_modules/vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly fieldRegistry: UnwrapRef<typeof import('../../layers/shared-app/app/utils/fieldRegistry')['fieldRegistry']>
+    readonly formatPrice: UnwrapRef<typeof import('../../layers/commerce-app/app/utils/currency')['formatPrice']>
     readonly getAppManifest: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/manifest')['getAppManifest']>
+    readonly getCurrencySymbol: UnwrapRef<typeof import('../../layers/commerce-app/app/utils/currency')['getCurrencySymbol']>
     readonly getCurrentInstance: UnwrapRef<typeof import('../../node_modules/vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('../../node_modules/vue')['getCurrentScope']>
     readonly getDate: UnwrapRef<typeof import('../../layers/shared-app/app/utils/time')['getDate']>
@@ -694,6 +706,7 @@ declare module 'vue' {
     readonly getPrimaryBillingAddress: UnwrapRef<typeof import('../../layers/shared-app/app/utils/billing-address')['getPrimaryBillingAddress']>
     readonly getRelativeTime: UnwrapRef<typeof import('../../layers/shared-app/app/utils/time')['getRelativeTime']>
     readonly getRouteRules: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/manifest')['getRouteRules']>
+    readonly getStripe: UnwrapRef<typeof import('../../layers/commerce-app/app/utils/stripe')['getStripe']>
     readonly greetUser: UnwrapRef<typeof import('../../layers/shared-app/app/utils/time')['greetUser']>
     readonly h: UnwrapRef<typeof import('../../node_modules/vue')['h']>
     readonly hasInjectionContext: UnwrapRef<typeof import('../../node_modules/vue')['hasInjectionContext']>
@@ -772,6 +785,7 @@ declare module 'vue' {
     readonly resolveComponent: UnwrapRef<typeof import('../../node_modules/vue')['resolveComponent']>
     readonly resolveFieldComponent: UnwrapRef<typeof import('../../layers/shared-app/app/utils/fieldRegistry')['resolveFieldComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
+    readonly setInterval: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/interval')['setInterval']>
     readonly setPageLayout: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['setPageLayout']>
     readonly setResponseStatus: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['setResponseStatus']>
     readonly shallowReactive: UnwrapRef<typeof import('../../node_modules/vue')['shallowReactive']>
@@ -1064,6 +1078,8 @@ declare module 'vue' {
     readonly useUserSession: UnwrapRef<typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/app/composables/session')['useUserSession']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
+    readonly useVendureMutation: UnwrapRef<typeof import('../../layers/commerce-app/app/composables/useVendureMutation')['useVendureMutation']>
+    readonly useVendureQuery: UnwrapRef<typeof import('../../layers/commerce-app/app/composables/useVendureQuery')['useVendureQuery']>
     readonly useVibrate: UnwrapRef<typeof import('@vueuse/core')['useVibrate']>
     readonly useVirtualList: UnwrapRef<typeof import('@vueuse/core')['useVirtualList']>
     readonly useWakeLock: UnwrapRef<typeof import('@vueuse/core')['useWakeLock']>

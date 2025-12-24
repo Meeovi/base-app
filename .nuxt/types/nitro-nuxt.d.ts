@@ -1,7 +1,7 @@
 
 /// <reference path="app.config.d.ts" />
 /// <reference path="runtime-config.d.ts" />
-/// <reference types="C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@nuxt/nitro-server/dist/index.mjs" />
+/// <reference types="/home/meebuzo/github/base-app/node_modules/@nuxt/nitro-server/dist/index.mjs" />
 /// <reference path="../image/providers.d.ts" />
 /// <reference path="nuxt-security.d.ts" />
 /// <reference path="nuxt-security-nitro.d.ts" />

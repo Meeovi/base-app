@@ -14,6 +14,8 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 
+export const RelatedRelatedposts: typeof import("../app/components/Related/relatedposts.vue").default
+export const RelatedRelatedproducts: typeof import("../app/components/Related/relatedproducts.vue").default
 export const CatalogProductAddAttribute: typeof import("../app/components/catalog/product/add-attribute.vue").default
 export const CatalogProductAddProductType: typeof import("../app/components/catalog/product/add-product-type.vue").default
 export const CatalogProductAddProduct: typeof import("../app/components/catalog/product/add-product.vue").default
@@ -92,8 +94,6 @@ export const PartialsCompareBtn: typeof import("../app/components/partials/compa
 export const PartialsRatings: typeof import("../app/components/partials/ratings.vue").default
 export const PartialsStoreCurrencySelector: typeof import("../app/components/partials/store/CurrencySelector.vue").default
 export const PartialsStoreSwitcher: typeof import("../app/components/partials/store/StoreSwitcher.vue").default
-export const RelatedRelatedposts: typeof import("../app/components/related/relatedposts.vue").default
-export const RelatedRelatedproducts: typeof import("../app/components/related/relatedproducts.vue").default
 export const SalesOrderDetailsDialog: typeof import("../app/components/sales/OrderDetailsDialog.vue").default
 export const SalesOrderManagement: typeof import("../app/components/sales/OrderManagement.vue").default
 export const SalesReceiptsTab: typeof import("../app/components/sales/ReceiptsTab.vue").default
@@ -152,6 +152,8 @@ export const Head: typeof import("../../../node_modules/nuxt/dist/head/runtime/c
 export const Html: typeof import("../../../node_modules/nuxt/dist/head/runtime/components").Html
 export const Body: typeof import("../../../node_modules/nuxt/dist/head/runtime/components").Body
 export const NuxtIsland: typeof import("../../../node_modules/nuxt/dist/app/components/nuxt-island").default
+export const LazyRelatedRelatedposts: LazyComponent<typeof import("../app/components/Related/relatedposts.vue").default>
+export const LazyRelatedRelatedproducts: LazyComponent<typeof import("../app/components/Related/relatedproducts.vue").default>
 export const LazyCatalogProductAddAttribute: LazyComponent<typeof import("../app/components/catalog/product/add-attribute.vue").default>
 export const LazyCatalogProductAddProductType: LazyComponent<typeof import("../app/components/catalog/product/add-product-type.vue").default>
 export const LazyCatalogProductAddProduct: LazyComponent<typeof import("../app/components/catalog/product/add-product.vue").default>
@@ -230,8 +232,6 @@ export const LazyPartialsCompareBtn: LazyComponent<typeof import("../app/compone
 export const LazyPartialsRatings: LazyComponent<typeof import("../app/components/partials/ratings.vue").default>
 export const LazyPartialsStoreCurrencySelector: LazyComponent<typeof import("../app/components/partials/store/CurrencySelector.vue").default>
 export const LazyPartialsStoreSwitcher: LazyComponent<typeof import("../app/components/partials/store/StoreSwitcher.vue").default>
-export const LazyRelatedRelatedposts: LazyComponent<typeof import("../app/components/related/relatedposts.vue").default>
-export const LazyRelatedRelatedproducts: LazyComponent<typeof import("../app/components/related/relatedproducts.vue").default>
 export const LazySalesOrderDetailsDialog: LazyComponent<typeof import("../app/components/sales/OrderDetailsDialog.vue").default>
 export const LazySalesOrderManagement: LazyComponent<typeof import("../app/components/sales/OrderManagement.vue").default>
 export const LazySalesReceiptsTab: LazyComponent<typeof import("../app/components/sales/ReceiptsTab.vue").default>

@@ -7,24 +7,39 @@
   </template>
   
   <script setup>
-  import { useVendureMutation } from '~/app/composables/useVendureMutation';
-  import transitionOrderToStateMutation from '#graphql/app/commerce/mutations/transitionOrderToState.gql';
   import getActiveOrderQuery from '#graphql/app/commerce/queries/activeOrder.gql';
   import { useNuxtApp } from '#app';
-  
-  const nuxtApp = useNuxtApp();
-  
+
+  const nuxtApp = useNuxtApp() as any;
+
   const redirectToCheckout = async () => {
-    // Optionally, fetch the active order to get the order code or id
-    const orderRes = await nuxtApp.$graphql.request(getActiveOrderQuery);
-    const order = orderRes?.activeOrder;
-    if (!order) return;
-  
-    // Transition order to 'ArrangingPayment' (Vendure default)
-    const { mutate: transitionOrder } = useVendureMutation(transitionOrderToStateMutation);
-    await transitionOrder({ state: 'ArrangingPayment' });
-  
-    // Redirect to payment/confirmation page (adjust as needed)
-    window.location.href = `/checkout/confirmation/${order.code}`;
+    try {
+      // Fetch the active order to get the order code or id
+      const orderRes = await nuxtApp.$graphql.request(getActiveOrderQuery);
+      const order = orderRes?.activeOrder;
+      if (!order) return;
+
+      // Attempt to create a checkout session in Directus
+      try {
+        const payload = {
+          orderCode: order.code,
+          items: (order.lines || []).map((l: any) => ({ sku: l?.productVariant?.sku, quantity: l.quantity }))
+        };
+        const created = await nuxtApp.$createItem('checkout_sessions', payload);
+        // support common response shapes
+        const redirectUrl = created?.redirect_url || created?.data?.redirect_url || created?.url || created?.data?.url;
+        if (redirectUrl) {
+          window.location.href = redirectUrl;
+          return;
+        }
+      } catch (e) {
+        console.warn('Directus checkout session creation failed, falling back:', e);
+      }
+
+      // Fallback: redirect to local confirmation route
+      window.location.href = `/checkout/confirmation/${order.code}`;
+    } catch (error) {
+      console.error('Checkout redirect failed:', error);
+    }
   };
   </script>

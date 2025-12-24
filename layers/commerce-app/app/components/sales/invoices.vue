@@ -1,151 +1,107 @@
 <template>
-  <div>
-    <!-- Search -->
-    <v-row class="mb-4">
-      <v-col cols="12" md="6">
-        <v-text-field
-          v-model="searchQuery"
-          label="Search invoices..."
-          prepend-inner-icon="mdi-magnify"
-          variant="outlined"
-          density="compact"
-          clearable
-          @input="debouncedSearch"
-        />
-      </v-col>
-      <v-col cols="12" md="6">
-        <v-btn
-          color="primary"
-          variant="outlined"
-          prepend-icon="mdi-refresh"
-          @click="refreshInvoices"
-        >
-          Refresh
-        </v-btn>
-      </v-col>
-    </v-row>
+    <div>
+        <section data-bs-version="5.1" class="info1 cid-v5A0K07pfT" id="info1-bd" data-sortbtn="btn-primary">
+            <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(68, 121, 217);"></div>
+            <div class="align-center container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <h3 class="mbr-section-title mb-4 mbr-fonts-style display-1">
+                            <strong> {{ invoicePage?.name }}</strong>
+                        </h3>
+                        <p class="mbr-section-title mb-4 mbr-fonts-style display-7" v-html="invoicePage?.content"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Invoices Table -->
-    <v-data-table
-      :headers="invoiceHeaders"
-      :items="invoices"
-      :loading="loading"
-      class="elevation-1"
-      item-key="id"
-    >
-      <template #item.status="{ item }">
-        <v-chip
-          :color="getInvoiceStatusColor(item.status)"
-          size="small"
-          variant="tonal"
-        >
-          {{ item.status.toUpperCase() }}
-        </v-chip>
-      </template>
+        <v-card variant="text">
+            <v-toolbar :style="`background-color: ${invoiceBar?.color}; color: ${invoiceBar?.colortext} !important`">
+                <v-toolbar-title>{{ invoiceBar?.name }}</v-toolbar-title>
 
-      <template #item.amount="{ item }">
-        {{ formatCurrency(item.amount) }}
-      </template>
+                <v-tabs v-model="tab" align-tabs="center">
+                    <div v-for="(menu, index) in invoiceBar?.menus" :key="index">
+                        <v-tab :value="menu?.value">
+                            <v-btn variant="text"
+                                :style="`color: ${invoiceBar?.colortext} !important`">{{ menu?.name }}</v-btn>
+                        </v-tab>
+                    </div>
+                </v-tabs>
+            </v-toolbar>
+        </v-card>
 
-      <template #item.order="{ item }">
-        {{ item.order?.order_number }}
-      </template>
-
-      <template #item.created_at="{ item }">
-        {{ formatDate(item.created_at) }}
-      </template>
-
-      <template #item.due_date="{ item }">
-        {{ formatDate(item.due_date) }}
-      </template>
-
-      <template #item.actions="{ item }">
-        <v-btn-group variant="text" density="compact">
-          <v-btn
-            size="small"
-            icon="mdi-download"
-            @click="downloadInvoice(item)"
-          />
-          <v-btn
-            size="small"
-            icon="mdi-eye"
-            @click="viewInvoice(item)"
-          />
-          <v-btn
-            size="small"
-            icon="mdi-email"
-            @click="sendInvoice(item)"
-            :disabled="item.status === 'paid'"
-          />
-        </v-btn-group>
-      </template>
-    </v-data-table>
-  </div>
+        <v-tabs-window v-model="tab">
+            <!--Invoices-->
+            <v-tabs-window-item :value="invoiceBar?.menus?.[0]?.value">
+                <v-row class="media-container-row">
+                    <template v-if="invoices?.length">
+                        <v-col class="wrap col-sm-12 col-lg-4 feedPost" v-for="transaction in invoices" :key="transaction.id">
+                            <invoiceCard :post="transaction" />
+                        </v-col>
+                    </template>
+                    <div class="center-text" v-else>No Invoices Available</div>
+                </v-row>
+            </v-tabs-window-item>
+        </v-tabs-window>
+    </div>
 </template>
 
-<script setup lang="ts">
-import { debounce } from 'lodash-es'
-import { useOrdersStore } from '~/app/stores/orders'
-import { storeToRefs } from 'pinia'
-import type { Invoice } from '~/app/types'
+<script setup>
+    import {
+        ref,
+        computed
+    } from 'vue'
+    import invoiceCard from '~/components/related/invoiceCard.vue'
+    import {
+        useUserStore
+    } from '~/stores/user'
 
-const ordersStore = useOrdersStore()
-const { invoices, loading } = storeToRefs(ordersStore)
+    const { user } = useUserSession()
 
-const searchQuery = ref('')
+    const {
+        $directus,
+        $readItem,
+        $readItems
+    } = useNuxtApp()
+    const tab = ref(null);
 
-const invoiceHeaders = [
-  { title: 'Invoice #', key: 'invoice_number', sortable: true },
-  { title: 'Order #', key: 'order', sortable: false },
-  { title: 'Amount', key: 'amount', sortable: true },
-  { title: 'Status', key: 'status', sortable: true },
-  { title: 'Due Date', key: 'due_date', sortable: true },
-  { title: 'Date', key: 'created_at', sortable: true },
-  { title: 'Actions', key: 'actions', sortable: false, width: '160px' }
-]
+    const {
+        data: invoiceBar
+    } = await useAsyncData('invoiceBar', async () => {
+        const resp = await $directus.request($readItem('navigation', '118', {
+            fields: ['*', {
+                '*': ['*']
+            }]
+        }))
+        return resp?.data ?? resp ?? null
+    })
 
-const debouncedSearch = debounce(() => {
-  ordersStore.fetchInvoices(searchQuery.value)
-}, 300)
+    const {
+        data: invoicePage
+    } = await useAsyncData('invoicePage', () => {
+        return $directus.request($readItem('pages', '86', {
+            fields: ['*', {
+                '*': ['*']
+            }]
+        }))
+    })
 
-const refreshInvoices = () => {
-  ordersStore.fetchInvoices(searchQuery.value)
-}
+    const {
+        data: invoices
+    } = await useAsyncData('invoices', async () => {
+        const resp = await $directus.request($readItems('invoices', {
+            fields: ['*', {
+                '*': ['*']
+            }],
+            filter: {
+                user_id: {
+                    _eq: user.id
+                }
+            }
+        }))
+        return resp?.data ?? resp ?? []
+    })
 
-const getInvoiceStatusColor = (status: string) => {
-  const colors = {
-    draft: 'grey',
-    sent: 'blue',
-    paid: 'green',
-    overdue: 'red'
-  } as const
-  return colors[status as keyof typeof colors] || 'grey'
-}
-
-const formatCurrency = (amount: number) => {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD'
-  }).format(amount)
-}
-
-const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString()
-}
-
-const downloadInvoice = (invoice: Invoice) => {
-  console.log('Download invoice:', invoice)
-}
-
-const viewInvoice = (invoice: Invoice) => {
-  console.log('View invoice:', invoice)
-}
-
-const sendInvoice = (invoice: Invoice) => {
-  console.log('Send invoice:', invoice)
-}
-
-onMounted(() => {
-  ordersStore.fetchInvoices()
-})
+    useHead({
+        title: 'Invoices',
+    })
 </script>

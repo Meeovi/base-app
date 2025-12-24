@@ -4,12 +4,11 @@
             <v-col cols="12">
                 <v-toolbar title="Your Subscriptions" subtitle=""></v-toolbar>
                 <v-row class="accountRow">
-                    <v-col cols="3" v-for="(subscriptions, index) in subscriptions" :key="index">
+                    <v-col cols="3" v-for="(subscriptions, index) in mySubscriptions" :key="index">
                         <v-card class="mx-auto" max-width="400">
-                            <NuxtImg loading="lazy" class="align-end text-white" height="200"
+                            <img loading="lazy" class="align-end text-white" height="200"
                             :src="subscriptions?.image?.filename_disk" :alt="subscriptions?.name" cover />
                                 <v-card-title>{{subscriptions?.name}}</v-card-title>
-
                             <v-card-subtitle class="pt-4">
                                 Status: {{ subscriptions?.status }}
                             </v-card-subtitle>
@@ -63,14 +62,59 @@
 </template>
 
 <script setup>
-  const {
-    getItems
-  } = useDirectusItems()
-  const model = ref(null);
+    import productCard from '~/components/related/post.vue'
 
-  const subscriptions = await getItems({
-    collection: "subscriptions",
-  });
+    const { user } = useUserSession()
+
+    const {
+        $directus,
+        $readItem,
+        $readItems
+    } = useNuxtApp()
+    const tab = ref(null);
+
+    const {
+        data: incentiveBar
+    } = await useAsyncData('incentiveBar', async () => {
+        const resp = await $directus.request($readItem('navigation', '118', {
+            fields: ['*', {
+                '*': ['*']
+            }]
+        }))
+        return resp?.data ?? resp ?? null
+    })
+
+    const {
+        data: incentivePage
+    } = await useAsyncData('incentivePage', () => {
+        return $directus.request($readItem('pages', '86', {
+            fields: ['*', {
+                '*': ['*']
+            }]
+        }))
+    })
+
+    const {
+        data: subscriptions
+    } = await useAsyncData('subscriptions', async () => {
+        const resp = await $directus.request($readItems('products', {
+            fields: ['*', {
+                '*': ['*']
+            }],
+            filter: {
+                user_id: {
+                    _eq: user?.id
+                },
+                type: {
+                    name: {
+                        _eq: 'Subscription'
+                    }
+                }
+            }
+        }))
+        return resp?.data ?? resp ?? []
+    })
+
 
     useHead({
         title: 'Subscriptions',

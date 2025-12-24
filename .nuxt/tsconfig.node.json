@@ -113,7 +113,7 @@
     "noUncheckedIndexedAccess": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitOverride": true,
-    "module": "ESNext",
+    "module": "preserve",
     "noEmit": true,
     "types": [],
     "moduleResolution": "Bundler",
@@ -151,7 +151,6 @@
     "../node_modules/@nuxtjs/i18n/node_modules",
     "../node_modules/nuxt-security/node_modules",
     "../node_modules/@nuxtjs/seo/node_modules",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/nuxt-site-config/node_modules",
     "../node_modules/@nuxtjs/robots/node_modules",
@@ -201,8 +200,6 @@
     "../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/dist/runtime",
     "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/runtime",
     "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/dist/runtime",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime",
     "../node_modules/nuxt-site-config/dist/runtime",
     "../node_modules/nuxt-site-config/dist/dist/runtime"
   ]

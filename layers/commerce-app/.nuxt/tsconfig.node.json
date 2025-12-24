@@ -68,7 +68,7 @@
     "noUncheckedIndexedAccess": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitOverride": true,
-    "module": "ESNext",
+    "module": "preserve",
     "noEmit": true,
     "types": [],
     "moduleResolution": "Bundler",
@@ -89,8 +89,9 @@
   ],
   "exclude": [
     "../node_modules",
+    "../../../node_modules",
     "../../../node_modules/nuxt/node_modules",
-    "../../../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
+    "../../../node_modules/@nuxt/devtools/node_modules",
     "../../../node_modules/@nuxt/telemetry/node_modules",
     "../dist",
     "../.data",
@@ -103,8 +104,6 @@
     "../modules/*/runtime/server/**/*",
     "../layers/*/server/**/*",
     "../layers/*/modules/*/runtime/server/**/*",
-    "../../../../../../../../../../../AppData/Roaming/npm/node_modules/runtime",
-    "../../../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime",
     "../../../node_modules/runtime",
     "../../../node_modules/dist/runtime"
   ]

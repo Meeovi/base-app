@@ -1,7 +1,7 @@
-@source "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/app";
-@source "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/layers/social-app/app";
-@source "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/layers/shared-app/app";
-@source "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/layers/commerce-app/app";
-@source "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/layers/lists-app/app";
-@source "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/layers/departments-app/app";
-@source "C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/layers/seller-dashboard-app/app";
+@source "/home/meebuzo/github/base-app/app";
+@source "/home/meebuzo/github/base-app/layers/social-app/app";
+@source "/home/meebuzo/github/base-app/layers/shared-app/app";
+@source "/home/meebuzo/github/base-app/layers/commerce-app/app";
+@source "/home/meebuzo/github/base-app/layers/lists-app/app";
+@source "/home/meebuzo/github/base-app/layers/departments-app/app";
+@source "/home/meebuzo/github/base-app/layers/seller-dashboard-app/app";

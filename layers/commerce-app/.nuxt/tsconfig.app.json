@@ -122,7 +122,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/bff08101-dda2-40af-8c64-3141de10fc0b"
+        "./manifest/meta/f8c7caf7-dc35-4f98-8144-851be72d6eb1"
       ],
       "#components": [
         "./components"
@@ -146,7 +146,7 @@
     "noUncheckedIndexedAccess": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitOverride": true,
-    "module": "ESNext",
+    "module": "preserve",
     "noEmit": true,
     "lib": [
       "ESNext",
@@ -178,8 +178,9 @@
   ],
   "exclude": [
     "../node_modules",
+    "../../../node_modules",
     "../../../node_modules/nuxt/node_modules",
-    "../../../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
+    "../../../node_modules/@nuxt/devtools/node_modules",
     "../../../node_modules/@nuxt/telemetry/node_modules",
     "../dist",
     "../.data",
@@ -192,10 +193,6 @@
     "../layers/*/nuxt.config.*",
     "../layers/*/.config/nuxt.*",
     "../layers/*/modules/**/*",
-    "../../../../../../../../../../../AppData/Roaming/npm/node_modules/runtime/server",
-    "../../../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server",
-    "../../../../../../../../../../../AppData/Roaming/npm/node_modules/*.*",
-    "../../../../../../../../../../../AppData/Roaming/npm/node_modules/dist/*.*",
     "../../../node_modules/runtime/server",
     "../../../node_modules/dist/runtime/server",
     "../../../node_modules/*.*",

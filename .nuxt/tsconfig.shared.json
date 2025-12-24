@@ -300,7 +300,7 @@
         "./tailwindcss/sources"
       ],
       "#app-manifest": [
-        "./manifest/meta/dev"
+        "./manifest/meta/64b823eb-98c7-4493-8bd1-71d729d08c4d"
       ],
       "#build": [
         "."
@@ -321,7 +321,7 @@
     "noUncheckedIndexedAccess": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitOverride": true,
-    "module": "ESNext",
+    "module": "preserve",
     "noEmit": true,
     "types": [],
     "moduleResolution": "Bundler",

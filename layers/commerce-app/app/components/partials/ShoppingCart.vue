@@ -14,43 +14,7 @@
     <div v-else>
       <v-list two-line>
         <v-list-item v-for="item in cartItems" :key="item.id" class="py-4">
-          <v-list-item-avatar>
-            <v-img :src="getImageUrl(item)" alt="item.product?.name" :lazy-src="placeholder"/>
-          </v-list-item-avatar>
-
-          <v-list-item-content>
-            <v-list-item-title class="font-medium">{{ item.product?.name || 'Product' }}</v-list-item-title>
-            <v-list-item-subtitle class="text-sm text-muted">{{ formatPrice(item.price) }} each</v-list-item-subtitle>
-
-            <div class="flex items-center gap-3 mt-2">
-              <v-btn icon size="sm" @click="decreaseQty(item)">
-                <v-icon>mdi-minus</v-icon>
-              </v-btn>
-
-              <v-text-field
-                v-model.number="quantities[item.id]"
-                type="number"
-                class="w-24"
-                min="1"
-                dense
-                hide-details
-                @change="onQtyChange(item)"
-              />
-
-              <v-btn icon size="sm" @click="increaseQty(item)">
-                <v-icon>mdi-plus</v-icon>
-              </v-btn>
-
-              <v-spacer />
-
-              <div class="text-right">
-                <div class="font-medium">{{ formatPrice(item.total) }}</div>
-                <v-btn icon color="error" @click="removeItem(item)" :aria-label="`Remove ${item.product?.name}`">
-                  <v-icon>mdi-delete</v-icon>
-                </v-btn>
-              </div>
-            </div>
-          </v-list-item-content>
+          <PartialsCartItem :item="item" @cart-changed="initialize" />
         </v-list-item>
       </v-list>
 

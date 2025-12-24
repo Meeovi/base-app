@@ -14,6 +14,8 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 interface _GlobalComponents {
+  'RelatedList': typeof import("../../app/components/Related/list.vue").default
+  'RelatedRelatedlists': typeof import("../../app/components/Related/relatedlists.vue").default
   'FeaturesArchived': typeof import("../../app/components/features/archived.vue").default
   'FeaturesBookmarks': typeof import("../../app/components/features/bookmarks.vue").default
   'FeaturesLists': typeof import("../../app/components/features/lists.vue").default
@@ -29,8 +31,6 @@ interface _GlobalComponents {
   'PartialsAddtolist': typeof import("../../app/components/partials/addtolist.vue").default
   'PartialsCreateListBtn': typeof import("../../app/components/partials/createListBtn.vue").default
   'PartialsListBtn': typeof import("../../app/components/partials/listBtn.vue").default
-  'RelatedList': typeof import("../../app/components/related/list.vue").default
-  'RelatedRelatedlists': typeof import("../../app/components/related/relatedlists.vue").default
   'TasksTaskItem': typeof import("../../app/components/tasks/TaskItem.vue").default
   'NuxtWelcome': typeof import("../../../../node_modules/nuxt/dist/app/components/welcome.vue").default
   'NuxtLayout': typeof import("../../../../node_modules/nuxt/dist/app/components/nuxt-layout").default
@@ -55,6 +55,8 @@ interface _GlobalComponents {
   'Html': typeof import("../../../../node_modules/nuxt/dist/head/runtime/components").Html
   'Body': typeof import("../../../../node_modules/nuxt/dist/head/runtime/components").Body
   'NuxtIsland': typeof import("../../../../node_modules/nuxt/dist/app/components/nuxt-island").default
+  'LazyRelatedList': LazyComponent<typeof import("../../app/components/Related/list.vue").default>
+  'LazyRelatedRelatedlists': LazyComponent<typeof import("../../app/components/Related/relatedlists.vue").default>
   'LazyFeaturesArchived': LazyComponent<typeof import("../../app/components/features/archived.vue").default>
   'LazyFeaturesBookmarks': LazyComponent<typeof import("../../app/components/features/bookmarks.vue").default>
   'LazyFeaturesLists': LazyComponent<typeof import("../../app/components/features/lists.vue").default>
@@ -70,8 +72,6 @@ interface _GlobalComponents {
   'LazyPartialsAddtolist': LazyComponent<typeof import("../../app/components/partials/addtolist.vue").default>
   'LazyPartialsCreateListBtn': LazyComponent<typeof import("../../app/components/partials/createListBtn.vue").default>
   'LazyPartialsListBtn': LazyComponent<typeof import("../../app/components/partials/listBtn.vue").default>
-  'LazyRelatedList': LazyComponent<typeof import("../../app/components/related/list.vue").default>
-  'LazyRelatedRelatedlists': LazyComponent<typeof import("../../app/components/related/relatedlists.vue").default>
   'LazyTasksTaskItem': LazyComponent<typeof import("../../app/components/tasks/TaskItem.vue").default>
   'LazyNuxtWelcome': LazyComponent<typeof import("../../../../node_modules/nuxt/dist/app/components/welcome.vue").default>
   'LazyNuxtLayout': LazyComponent<typeof import("../../../../node_modules/nuxt/dist/app/components/nuxt-layout").default>

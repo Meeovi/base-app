@@ -4,7 +4,7 @@
       <template #prefix>
         <SfIconShoppingCart size="sm" />
       </template>
-      {{ buttonText }}
+      Add to Cart
     </v-btn>
     <compareBtn />
   </div>

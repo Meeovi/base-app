@@ -312,7 +312,7 @@
         "../node_modules/nuxt-og-image/dist/runtime/server/og-image/satori/renderer"
       ],
       "#og-image/renderers/chromium": [
-        "../node_modules/nuxt-og-image/dist/runtime/server/og-image/chromium/renderer"
+        "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
       ],
       "#og-image/bindings/css-inline": [
         "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
@@ -327,7 +327,22 @@
         "../node_modules/nuxt-og-image/dist/runtime/server/og-image/bindings/satori/node"
       ],
       "#og-image/bindings/chromium": [
-        "../node_modules/nuxt-og-image/dist/runtime/server/og-image/bindings/chromium/on-demand"
+        "../node_modules/nuxt-og-image/dist/runtime/server/og-image/bindings/chromium/null"
+      ],
+      "electron": [
+        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
+      ],
+      "bufferutil": [
+        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
+      ],
+      "utf-8-validate": [
+        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
+      ],
+      "queue": [
+        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
+      ],
+      "chromium-bidi": [
+        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
       ]
     },
     "lib": [
@@ -369,8 +384,6 @@
     "../node_modules/@maas/vue-equipment/dist/plugins/MagicScroll/dist/runtime/server",
     "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/runtime/server",
     "../node_modules/@maas/vue-equipment/dist/plugins/MagicToast/dist/runtime/server",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime/server",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server",
     "../node_modules/nuxt-site-config/dist/runtime/server",
     "../node_modules/nuxt-site-config/dist/dist/runtime/server",
     "../server/**/*",
@@ -407,7 +420,6 @@
     "../node_modules/@nuxtjs/i18n/node_modules",
     "../node_modules/nuxt-security/node_modules",
     "../node_modules/@nuxtjs/seo/node_modules",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/nuxt-site-config/node_modules",
     "../node_modules/@nuxtjs/robots/node_modules",

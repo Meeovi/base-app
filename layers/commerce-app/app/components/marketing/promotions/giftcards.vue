@@ -44,7 +44,7 @@
 </template>
 
 <script setup>
-    import productCard from '~/app/components/catalog/product/productCard.vue'
+    import productCard from '~/components/catalog/product/productCard.vue'
     import {
         ref,
         onMounted

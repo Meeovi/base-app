@@ -14,6 +14,8 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 
+export const RelatedList: typeof import("../app/components/Related/list.vue").default
+export const RelatedRelatedlists: typeof import("../app/components/Related/relatedlists.vue").default
 export const FeaturesArchived: typeof import("../app/components/features/archived.vue").default
 export const FeaturesBookmarks: typeof import("../app/components/features/bookmarks.vue").default
 export const FeaturesLists: typeof import("../app/components/features/lists.vue").default
@@ -29,8 +31,6 @@ export const MediaPlayer: typeof import("../app/components/media/MediaPlayer.vue
 export const PartialsAddtolist: typeof import("../app/components/partials/addtolist.vue").default
 export const PartialsCreateListBtn: typeof import("../app/components/partials/createListBtn.vue").default
 export const PartialsListBtn: typeof import("../app/components/partials/listBtn.vue").default
-export const RelatedList: typeof import("../app/components/related/list.vue").default
-export const RelatedRelatedlists: typeof import("../app/components/related/relatedlists.vue").default
 export const TasksTaskItem: typeof import("../app/components/tasks/TaskItem.vue").default
 export const NuxtWelcome: typeof import("../../../node_modules/nuxt/dist/app/components/welcome.vue").default
 export const NuxtLayout: typeof import("../../../node_modules/nuxt/dist/app/components/nuxt-layout").default
@@ -55,6 +55,8 @@ export const Head: typeof import("../../../node_modules/nuxt/dist/head/runtime/c
 export const Html: typeof import("../../../node_modules/nuxt/dist/head/runtime/components").Html
 export const Body: typeof import("../../../node_modules/nuxt/dist/head/runtime/components").Body
 export const NuxtIsland: typeof import("../../../node_modules/nuxt/dist/app/components/nuxt-island").default
+export const LazyRelatedList: LazyComponent<typeof import("../app/components/Related/list.vue").default>
+export const LazyRelatedRelatedlists: LazyComponent<typeof import("../app/components/Related/relatedlists.vue").default>
 export const LazyFeaturesArchived: LazyComponent<typeof import("../app/components/features/archived.vue").default>
 export const LazyFeaturesBookmarks: LazyComponent<typeof import("../app/components/features/bookmarks.vue").default>
 export const LazyFeaturesLists: LazyComponent<typeof import("../app/components/features/lists.vue").default>
@@ -70,8 +72,6 @@ export const LazyMediaPlayer: LazyComponent<typeof import("../app/components/med
 export const LazyPartialsAddtolist: LazyComponent<typeof import("../app/components/partials/addtolist.vue").default>
 export const LazyPartialsCreateListBtn: LazyComponent<typeof import("../app/components/partials/createListBtn.vue").default>
 export const LazyPartialsListBtn: LazyComponent<typeof import("../app/components/partials/listBtn.vue").default>
-export const LazyRelatedList: LazyComponent<typeof import("../app/components/related/list.vue").default>
-export const LazyRelatedRelatedlists: LazyComponent<typeof import("../app/components/related/relatedlists.vue").default>
 export const LazyTasksTaskItem: LazyComponent<typeof import("../app/components/tasks/TaskItem.vue").default>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../../../node_modules/nuxt/dist/app/components/welcome.vue").default>
 export const LazyNuxtLayout: LazyComponent<typeof import("../../../node_modules/nuxt/dist/app/components/nuxt-layout").default>
