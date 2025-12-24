@@ -1,60 +1,43 @@
-# M Framework Starter Template
+## This Application is in Beta Release ##
 
-This is a starter template for the M Framework, designed to help you quickly set up a new project with essential features and configurations.
+# Social App
 
-## Features
+A powerful, consistent, and flexible starter template with tons of integrations. 
 
-- **Nuxt.js**: A powerful framework for building Vue.js applications.
-- **Apollo Client**: For GraphQL data management.
-- **Vue Apollo Composable**: Simplifies the integration of Apollo Client with Vue.
-- **VueUse**: A collection of essential Vue Composition API utilities.
-- **Pinia**: State management library for Vue.js.
-- **Nuxt SEO**: For managing SEO metadata.
-- **Nuxt Image**: Optimized image handling.
-- **Nuxt Icon**: Easy icon management.
-- **Nuxt Fonts**: Automatic font loading.
-- **Nuxt Security**: Enhances security features.
-- **Nuxt I18n**: Internationalization support.
-- **Nuxt Scripts**: For running scripts in Nuxt applications.
-- **Nuxt Test Utils**: Utilities for testing Nuxt applications.
-- **Nuxt ESLint**: Linting support for Nuxt projects.
-- **Meilisearch**: Integrated search functionality with the powerful open source search server.
-- **Nuxt Route Announcer**: Accessibility feature for announcing route changes.
-- **Directus**: Backend for managing content, this sdk allows for creating and managing data from your frontend.
-- **Storefront UI**: For providing user interface for ecommerce.
+## Features include:
 
-## Installation
-To get started, clone this repository and install the dependencies:
+- Social App supports Graphql, Rest Apis
+- Extendible system that supports Nuxtjs, Vuejs modules
+- Meilisearch and Instantsearch.js support
+- Added an error page
+- Vuetify, Fontawesome integration for design system
+- Google Tag Manager, Google Analytics integration
+- Stripe integration for payments and commerce
+- Directus integration for content management system integration
 
-```bash
-git clone
-cd starter-template
-npm install
-```
+and much more.
 
-## Usage
-To run the development server, use:
+## Prerequisites:
 
-```bash
-npm run dev
-```
+You will need:
 
-To build the project for production, use:
+Git = https://git-scm.com/
 
-```bash
-npm run build
-```
+Nodejs = https://nodejs.org/en/
 
-To start the production server, use:
+We recommend postgres as the database 
 
-```bash
-npm start
-```
+rename .sample.env file to .env 
 
-## Configuration
+Add your database type to DATABASE_PROVIDER, example is DATABASE_PROVIDER="postgresql" (" " are required)
 
-You can configure various aspects of the application in the `nuxt.config.ts` file. This includes setting up environment variables, plugins, modules, and more.
+Add your database credentials to DATABASE_URL, example is DATABASE_URL=postgresql://databaseusername:databasepassword@databasehost:5432/databasename
 
-## Contributing
+## Steps to Install - 10 Minute Install
 
-Feel free to contribute to this project by submitting issues or pull requests. Your contributions are welcome!
+1. git clone https://github.com/meeovi/social-app
+2. cd social-app
+3. npm install
+4. npm run all
+
+Social App will be at: http://localhost:3001
