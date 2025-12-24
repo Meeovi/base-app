@@ -1,0 +1,31 @@
+{
+   "name": "lists-app",
+   "version": "0.0.7",
+   "description": "This is a template for my projects.",
+   "author": "Sebastian Hilton (https://www.sebastianhilton.com)",
+   "homepage": "https://www.sebastianhilton.com",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Meeovi/lists-app"
+   },
+   "bugs": {
+      "url": "https://github.com/Meeovi/lists-app/issues"
+   },
+   "license": "MIT",
+   "private": true,
+   "scripts": {
+      "list-commit": "git add . && git commit -m \"ready for update\"",
+      "list-update": "git pull \"https://github.com/Meeovi/lists-app\"",
+      "build": "nuxt build",
+      "dev": "nuxt dev",
+      "ts-node": "ts-node -r tsconfig-paths/register --compiler-options '{\"module\":\"CommonJS\"}'",
+      "generate": "nuxt generate",
+      "preview": "nuxt preview",
+      "postinstall": "nuxt prepare",
+      "gqlg": "npx gqlg --schemaFilePath graphql/schema.graphql --destDirPath graphql/framework --depthLimit 2"
+   },
+   "dependencies": {
+      "nuxt": "latest"
+   },
+   "devDependencies": {}
+}

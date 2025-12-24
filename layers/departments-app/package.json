@@ -1,0 +1,17 @@
+{
+  "name": "departments-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/leaflet": "^1.3.2",
+    "nuxt": "latest"
+  },
+  "devDependencies": {}
+}
