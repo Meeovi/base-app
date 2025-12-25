@@ -32,6 +32,7 @@
       "@nuxtjs/seo": "^3.2.2",
       "@pinia/nuxt": "^0.11.2",
       "nuxt": "^4.2.2",
+      "nuxt-newsletter": "^0.2.0",
       "nuxt-security": "^2.4.0",
       "pinia": "^3.0.3",
       "vuetify-nuxt-module": "^0.18.8"

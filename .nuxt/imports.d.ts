@@ -38,7 +38,7 @@ export { useRouteBaseName, useLocalePath, useLocaleRoute, useSwitchLocalePath, u
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';
 export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
 export { default as useDirectusAuth } from '../app/composables/useDirectusAuth';
-export { default as Timer, Timer, Timer } from '../layers/shared-app/app/utils/Timer';
+export { default as Timer, Timer } from '../layers/shared-app/app/utils/Timer';
 export { getPrimaryBillingAddress } from '../layers/shared-app/app/utils/billing-address';
 export { isNuxtZodError } from '../layers/shared-app/app/utils/errors';
 export { fieldRegistry, interfaceRegistry, resolveFieldComponent } from '../layers/shared-app/app/utils/fieldRegistry';

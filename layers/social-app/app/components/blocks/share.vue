@@ -1,6 +1,6 @@
 <template>
   <v-btn class="shareBtn" :disabled="!isSupported" @click="startShare" variant="text" prepend-icon="fas:fa fa-share-nodes" size="medium" title="Share This">
-    {{ isSupported ? 'Share' : 'Web share is not supported in your browser' }}
+    {{ isSupported ? '' : 'Web share is not supported in your browser' }}
   </v-btn>
 </template>
 

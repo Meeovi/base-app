@@ -171,8 +171,6 @@ declare global {
   const useState: typeof import('../../../../node_modules/nuxt/dist/app/composables/state').useState
   const useTemplateRef: typeof import('../../../../node_modules/vue').useTemplateRef
   const useTransitionState: typeof import('../../../../node_modules/vue').useTransitionState
-  const useVendureMutation: typeof import('../../app/composables/useVendureMutation').useVendureMutation
-  const useVendureQuery: typeof import('../../app/composables/useVendureQuery').useVendureQuery
   const watch: typeof import('../../../../node_modules/vue').watch
   const watchEffect: typeof import('../../../../node_modules/vue').watchEffect
   const watchPostEffect: typeof import('../../../../node_modules/vue').watchPostEffect
@@ -364,8 +362,6 @@ declare module 'vue' {
     readonly useState: UnwrapRef<typeof import('../../../../node_modules/nuxt/dist/app/composables/state')['useState']>
     readonly useTemplateRef: UnwrapRef<typeof import('../../../../node_modules/vue')['useTemplateRef']>
     readonly useTransitionState: UnwrapRef<typeof import('../../../../node_modules/vue')['useTransitionState']>
-    readonly useVendureMutation: UnwrapRef<typeof import('../../app/composables/useVendureMutation')['useVendureMutation']>
-    readonly useVendureQuery: UnwrapRef<typeof import('../../app/composables/useVendureQuery')['useVendureQuery']>
     readonly watch: UnwrapRef<typeof import('../../../../node_modules/vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('../../../../node_modules/vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('../../../../node_modules/vue')['watchPostEffect']>

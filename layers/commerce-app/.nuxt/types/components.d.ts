@@ -21,7 +21,6 @@ interface _GlobalComponents {
   'CatalogProductAddStation': typeof import("../../app/components/catalog/product/add-station.vue").default
   'CatalogProductBestsellers': typeof import("../../app/components/catalog/product/bestsellers.vue").default
   'CatalogProductBidding': typeof import("../../app/components/catalog/product/bidding.vue").default
-  'CatalogProductBrands': typeof import("../../app/components/related/brandCard.vue").default
   'CatalogProductColorOptions': typeof import("../../app/components/catalog/product/colorOptions.vue").default
   'CatalogProductDeals': typeof import("../../app/components/catalog/product/deals.vue").default
   'CatalogProductExclusives': typeof import("../../app/components/catalog/product/exclusives.vue").default
@@ -39,6 +38,7 @@ interface _GlobalComponents {
   'CatalogProductSpecs': typeof import("../../app/components/catalog/product/productSpecs.vue").default
   'CatalogProductRadiostation': typeof import("../../app/components/catalog/product/radiostation.vue").default
   'CatalogProductRecentlyviewed': typeof import("../../app/components/catalog/product/recentlyviewed.vue").default
+  'CatalogProductRelatedbrands': typeof import("../../app/components/catalog/product/relatedbrands.vue").default
   'CatalogProductRelatedproducts': typeof import("../../app/components/catalog/product/relatedproducts.vue").default
   'CatalogProductRelatedstations': typeof import("../../app/components/catalog/product/relatedstations.vue").default
   'CatalogProductShippingOptions': typeof import("../../app/components/catalog/product/shippingOptions.vue").default
@@ -91,6 +91,7 @@ interface _GlobalComponents {
   'PartialsRatings': typeof import("../../app/components/partials/ratings.vue").default
   'PartialsStoreCurrencySelector': typeof import("../../app/components/partials/store/CurrencySelector.vue").default
   'PartialsStoreSwitcher': typeof import("../../app/components/partials/store/StoreSwitcher.vue").default
+  'RelatedBrandCard': typeof import("../../app/components/related/brandCard.vue").default
   'RelatedIncentiveCard': typeof import("../../app/components/related/incentiveCard.vue").default
   'RelatedInvoiceCard': typeof import("../../app/components/related/invoiceCard.vue").default
   'RelatedOrderCard': typeof import("../../app/components/related/orderCard.vue").default
@@ -139,7 +140,6 @@ interface _GlobalComponents {
   'LazyCatalogProductAddStation': LazyComponent<typeof import("../../app/components/catalog/product/add-station.vue").default>
   'LazyCatalogProductBestsellers': LazyComponent<typeof import("../../app/components/catalog/product/bestsellers.vue").default>
   'LazyCatalogProductBidding': LazyComponent<typeof import("../../app/components/catalog/product/bidding.vue").default>
-  'LazyCatalogProductBrands': LazyComponent<typeof import("../../app/components/related/brandCard.vue").default>
   'LazyCatalogProductColorOptions': LazyComponent<typeof import("../../app/components/catalog/product/colorOptions.vue").default>
   'LazyCatalogProductDeals': LazyComponent<typeof import("../../app/components/catalog/product/deals.vue").default>
   'LazyCatalogProductExclusives': LazyComponent<typeof import("../../app/components/catalog/product/exclusives.vue").default>
@@ -157,6 +157,7 @@ interface _GlobalComponents {
   'LazyCatalogProductSpecs': LazyComponent<typeof import("../../app/components/catalog/product/productSpecs.vue").default>
   'LazyCatalogProductRadiostation': LazyComponent<typeof import("../../app/components/catalog/product/radiostation.vue").default>
   'LazyCatalogProductRecentlyviewed': LazyComponent<typeof import("../../app/components/catalog/product/recentlyviewed.vue").default>
+  'LazyCatalogProductRelatedbrands': LazyComponent<typeof import("../../app/components/catalog/product/relatedbrands.vue").default>
   'LazyCatalogProductRelatedproducts': LazyComponent<typeof import("../../app/components/catalog/product/relatedproducts.vue").default>
   'LazyCatalogProductRelatedstations': LazyComponent<typeof import("../../app/components/catalog/product/relatedstations.vue").default>
   'LazyCatalogProductShippingOptions': LazyComponent<typeof import("../../app/components/catalog/product/shippingOptions.vue").default>
@@ -209,6 +210,7 @@ interface _GlobalComponents {
   'LazyPartialsRatings': LazyComponent<typeof import("../../app/components/partials/ratings.vue").default>
   'LazyPartialsStoreCurrencySelector': LazyComponent<typeof import("../../app/components/partials/store/CurrencySelector.vue").default>
   'LazyPartialsStoreSwitcher': LazyComponent<typeof import("../../app/components/partials/store/StoreSwitcher.vue").default>
+  'LazyRelatedBrandCard': LazyComponent<typeof import("../../app/components/related/brandCard.vue").default>
   'LazyRelatedIncentiveCard': LazyComponent<typeof import("../../app/components/related/incentiveCard.vue").default>
   'LazyRelatedInvoiceCard': LazyComponent<typeof import("../../app/components/related/invoiceCard.vue").default>
   'LazyRelatedOrderCard': LazyComponent<typeof import("../../app/components/related/orderCard.vue").default>

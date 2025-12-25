@@ -31,6 +31,7 @@
 /// <reference types="@nuxtjs/i18n" />
 /// <reference types="nuxt-security" />
 /// <reference types="@nuxtjs/seo" />
+/// <reference types="nuxt-newsletter" />
 /// <reference types="@maas/vue-equipment" />
 /// <reference types="@maas/vue-equipment" />
 /// <reference path="types/modules.d.ts" />

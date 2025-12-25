@@ -26,7 +26,7 @@
                     <div class="col-12 col-md-12 col-lg">
                         <div class="text-wrapper align-left">
                             <h1 class="mbr-section-title mbr-fonts-style text-black mb-4 display-2">
-                                <strong>{{ post?.title }}</strong>
+                                <strong class="auto-text">{{ post?.title }}</strong>
                             </h1>
 
                             <div class="row">
@@ -39,8 +39,7 @@
                                 </div>
                             </div>
 
-                            <p class="mbr-text align-left mbr-fonts-style text-black mb-4 display-7"
-                                v-html="post?.content"></p>
+                            <p class="mbr-text align-left mbr-fonts-style mb-4 display-7 auto-text">{{ post?.content }}</p>
                         </div>
                     </div>
                 </div>
@@ -69,11 +68,11 @@
                                     <strong>Author</strong>
                                 </h4>
                                 <h5 class="card-text mbr-fonts-style display-7">
-                                    <NuxtLink v-if="post?.author?.avatar?.filename_disk" :to="post?.author?.id">
+                                    <NuxtLink v-if="post?.author?.avatar?.filename_disk" :to="`/user/${post?.author?.id}`">
                                         <v-avatar :image="post?.author?.avatar"></v-avatar>
                                     </NuxtLink>
 
-                                    <NuxtLink v-else :to="post?.author?.id">
+                                    <NuxtLink v-else :to="`/user/${post?.author?.id}`">
                                         <v-avatar image="/images/background4.jpg" size="41"></v-avatar>
                                     </NuxtLink>
                                 </h5>
@@ -136,6 +135,9 @@
                         <div class="item-wrapper">
                             <span class="mbr-iconfont m-auto mobi-mbri-share mobi-mbri"></span>
                             <div class="card-box">
+                                <h4 class="card-title mbr-fonts-style mb-1 display-7">
+                                    <strong>Share</strong>
+                                </h4>
                                 <h5 class="card-text mbr-fonts-style display-7">
                                     <share />
                                 </h5>

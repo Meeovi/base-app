@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import brandCard from '../../related/brandCard.vuedCard.vue'
+import brandCard from '../../related/brandCard.vue'
 
   const model = ref(null)
   const {

@@ -34,7 +34,7 @@
             <v-tabs-window-item :value="feedBar?.menus?.[0]?.value">
                 <v-row class="media-container-row">
                     <template v-if="posts?.length">
-                        <v-col class="wrap col-sm-12 col-lg-4 feedPost" v-for="post in posts" :key="post.id">
+                        <v-col class="wrap col-sm-12 col-lg-6 feedPost" v-for="post in posts" :key="post.id">
                             <postCard :post="post" />
                         </v-col>
                     </template>
@@ -44,26 +44,26 @@
             <v-tabs-window-item :value="feedBar?.menus?.[1]?.value">
                 <v-row class="media-container-row">
                     <template v-if="posts?.length">
-                        <v-col class="wrap col-sm-12 col-lg-4 feedPost" v-for="post in posts" :key="post.id">
+                        <v-col class="wrap col-sm-12 col-lg-6 feedPost" v-for="post in posts" :key="post.id">
                             <postCard :post="post" />
                         </v-col>
                     </template>
-                    <div class="center-text" v-else>No Activity yet</div>
+                    <div class="center-text" v-else>Not following anyone yet</div>
                 </v-row>
             </v-tabs-window-item>
             <v-tabs-window-item :value="feedBar?.menus?.[2]?.value">
                 <v-row class="media-container-row">
-                    <v-col class="wrap col-sm-12 col-lg-4 feedPost" v-if="circles?.length" v-for="circlesPost in circles" :key="circlesPost.id">
+                    <v-col class="wrap col-sm-12 col-lg-6 feedPost" v-if="circles?.length" v-for="circlesPost in circles" :key="circlesPost.id">
                         <postCard :post="circlesPost?.posts_id" />
                     </v-col>
 
-                    <div class="center-text" v-else>No Activity yet</div>
+                    <div class="center-text" v-else>No Circles yet</div>
                 </v-row>
             </v-tabs-window-item>
             <v-tabs-window-item :value="feedBar?.menus?.[3]?.value">
                 <v-row class="media-container-row">
                     <template v-if="posts?.length">
-                        <v-col class="wrap col-sm-12 col-lg-4 feedPost" v-for="post in posts" :key="post.id">
+                        <v-col class="wrap col-sm-12 col-lg-6 feedPost" v-for="post in posts" :key="post.id">
                             <postCard :post="post" />
                         </v-col>
                     </template>
@@ -80,14 +80,8 @@
         computed
     } from 'vue'
     import postCard from '~/components/related/post.vue'
-    import {
-        useUserStore
-    } from '~/stores/user'
 
-    const userStore = useUserStore()
-    const userDisplayName = computed(() => {
-        return userStore.user?.name || userStore.user?.username || 'User'
-    })
+    const { user } = useUserSession()
 
     const {
         $directus,
@@ -110,7 +104,7 @@
     const {
         data: feedsPage
     } = await useAsyncData('feedsPage', () => {
-        return $directus.request($readItem('pages', '86', {
+        return $directus.request($readItem('pages', '34', {
             fields: ['*', {
                 '*': ['*']
             }]
@@ -141,7 +135,7 @@
             ],
             filter: {
                 creator: {
-                    _eq: userDisplayName.value,
+                    _eq: user?.id,
                 }
             }
         }))

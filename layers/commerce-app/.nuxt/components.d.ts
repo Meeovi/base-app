@@ -21,7 +21,6 @@ export const CatalogProductAddShowcase: typeof import("../app/components/catalog
 export const CatalogProductAddStation: typeof import("../app/components/catalog/product/add-station.vue").default
 export const CatalogProductBestsellers: typeof import("../app/components/catalog/product/bestsellers.vue").default
 export const CatalogProductBidding: typeof import("../app/components/catalog/product/bidding.vue").default
-export const CatalogProductBrands: typeof import("../app/components/catalog/product/brands.vue").default
 export const CatalogProductColorOptions: typeof import("../app/components/catalog/product/colorOptions.vue").default
 export const CatalogProductDeals: typeof import("../app/components/catalog/product/deals.vue").default
 export const CatalogProductExclusives: typeof import("../app/components/catalog/product/exclusives.vue").default
@@ -39,6 +38,7 @@ export const CatalogProductReviews: typeof import("../app/components/catalog/pro
 export const CatalogProductSpecs: typeof import("../app/components/catalog/product/productSpecs.vue").default
 export const CatalogProductRadiostation: typeof import("../app/components/catalog/product/radiostation.vue").default
 export const CatalogProductRecentlyviewed: typeof import("../app/components/catalog/product/recentlyviewed.vue").default
+export const CatalogProductRelatedbrands: typeof import("../app/components/catalog/product/relatedbrands.vue").default
 export const CatalogProductRelatedproducts: typeof import("../app/components/catalog/product/relatedproducts.vue").default
 export const CatalogProductRelatedstations: typeof import("../app/components/catalog/product/relatedstations.vue").default
 export const CatalogProductShippingOptions: typeof import("../app/components/catalog/product/shippingOptions.vue").default
@@ -91,6 +91,7 @@ export const PartialsCompareBtn: typeof import("../app/components/partials/compa
 export const PartialsRatings: typeof import("../app/components/partials/ratings.vue").default
 export const PartialsStoreCurrencySelector: typeof import("../app/components/partials/store/CurrencySelector.vue").default
 export const PartialsStoreSwitcher: typeof import("../app/components/partials/store/StoreSwitcher.vue").default
+export const RelatedBrandCard: typeof import("../app/components/related/brandCard.vue").default
 export const RelatedIncentiveCard: typeof import("../app/components/related/incentiveCard.vue").default
 export const RelatedInvoiceCard: typeof import("../app/components/related/invoiceCard.vue").default
 export const RelatedOrderCard: typeof import("../app/components/related/orderCard.vue").default
@@ -139,7 +140,6 @@ export const LazyCatalogProductAddShowcase: LazyComponent<typeof import("../app/
 export const LazyCatalogProductAddStation: LazyComponent<typeof import("../app/components/catalog/product/add-station.vue").default>
 export const LazyCatalogProductBestsellers: LazyComponent<typeof import("../app/components/catalog/product/bestsellers.vue").default>
 export const LazyCatalogProductBidding: LazyComponent<typeof import("../app/components/catalog/product/bidding.vue").default>
-export const LazyCatalogProductBrands: LazyComponent<typeof import("../app/components/catalog/product/brands.vue").default>
 export const LazyCatalogProductColorOptions: LazyComponent<typeof import("../app/components/catalog/product/colorOptions.vue").default>
 export const LazyCatalogProductDeals: LazyComponent<typeof import("../app/components/catalog/product/deals.vue").default>
 export const LazyCatalogProductExclusives: LazyComponent<typeof import("../app/components/catalog/product/exclusives.vue").default>
@@ -157,6 +157,7 @@ export const LazyCatalogProductReviews: LazyComponent<typeof import("../app/comp
 export const LazyCatalogProductSpecs: LazyComponent<typeof import("../app/components/catalog/product/productSpecs.vue").default>
 export const LazyCatalogProductRadiostation: LazyComponent<typeof import("../app/components/catalog/product/radiostation.vue").default>
 export const LazyCatalogProductRecentlyviewed: LazyComponent<typeof import("../app/components/catalog/product/recentlyviewed.vue").default>
+export const LazyCatalogProductRelatedbrands: LazyComponent<typeof import("../app/components/catalog/product/relatedbrands.vue").default>
 export const LazyCatalogProductRelatedproducts: LazyComponent<typeof import("../app/components/catalog/product/relatedproducts.vue").default>
 export const LazyCatalogProductRelatedstations: LazyComponent<typeof import("../app/components/catalog/product/relatedstations.vue").default>
 export const LazyCatalogProductShippingOptions: LazyComponent<typeof import("../app/components/catalog/product/shippingOptions.vue").default>
@@ -209,6 +210,7 @@ export const LazyPartialsCompareBtn: LazyComponent<typeof import("../app/compone
 export const LazyPartialsRatings: LazyComponent<typeof import("../app/components/partials/ratings.vue").default>
 export const LazyPartialsStoreCurrencySelector: LazyComponent<typeof import("../app/components/partials/store/CurrencySelector.vue").default>
 export const LazyPartialsStoreSwitcher: LazyComponent<typeof import("../app/components/partials/store/StoreSwitcher.vue").default>
+export const LazyRelatedBrandCard: LazyComponent<typeof import("../app/components/related/brandCard.vue").default>
 export const LazyRelatedIncentiveCard: LazyComponent<typeof import("../app/components/related/incentiveCard.vue").default>
 export const LazyRelatedInvoiceCard: LazyComponent<typeof import("../app/components/related/invoiceCard.vue").default>
 export const LazyRelatedOrderCard: LazyComponent<typeof import("../app/components/related/orderCard.vue").default>

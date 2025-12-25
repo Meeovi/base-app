@@ -1319,6 +1319,7 @@ const _inlineRuntimeConfig = {
         "include": [],
         "exclude": [
           "/_**",
+          "/_nuxt/**",
           "/_nuxt/**"
         ],
         "includeAppSources": true,
@@ -1329,6 +1330,7 @@ const _inlineRuntimeConfig = {
         "include": [],
         "exclude": [
           "/_**",
+          "/_nuxt/**",
           "/_nuxt/**"
         ],
         "includeAppSources": true,
@@ -1339,6 +1341,7 @@ const _inlineRuntimeConfig = {
         "include": [],
         "exclude": [
           "/_**",
+          "/_nuxt/**",
           "/_nuxt/**"
         ],
         "includeAppSources": true,
@@ -1468,6 +1471,52 @@ const _inlineRuntimeConfig = {
           }
         ],
         "_normalized": true
+      },
+      {
+        "comment": [],
+        "disallow": [
+          "/pages/account/*",
+          "/pl-PL/pages/account/*",
+          "/testde/pages/account/*"
+        ],
+        "allow": [
+          "/pages/*",
+          "/pl-PL/pages/*",
+          "/testde/pages/*"
+        ],
+        "userAgent": [
+          "*"
+        ],
+        "contentUsage": [],
+        "contentSignal": [],
+        "_indexable": true,
+        "_rules": [
+          {
+            "pattern": "/pages/account/*",
+            "allow": false
+          },
+          {
+            "pattern": "/pl-PL/pages/account/*",
+            "allow": false
+          },
+          {
+            "pattern": "/testde/pages/account/*",
+            "allow": false
+          },
+          {
+            "pattern": "/pages/*",
+            "allow": true
+          },
+          {
+            "pattern": "/pl-PL/pages/*",
+            "allow": true
+          },
+          {
+            "pattern": "/testde/pages/*",
+            "allow": true
+          }
+        ],
+        "_normalized": true
       }
     ],
     "sitemap": [
@@ -1517,9 +1566,9 @@ const _inlineRuntimeConfig = {
     "strictNuxtContentPaths": "",
     "isNuxtContentDocumentDriven": false,
     "componentDirs": [
-      "OgImage",
+      "OgImageTemplate",
       "og-image",
-      "OgImageTemplate"
+      "OgImage"
     ]
   },
   "ipx": {
@@ -5174,7 +5223,7 @@ const _SRhDnY_DPe9XMRfGFYQIkHMPYjpcuoeXZ4NCMWgS4vU = defineNitroPlugin(async (ni
     const localeSegment = detector.route(event.path);
     const pathLocale = isSupportedLocale(localeSegment) && localeSegment || void 0;
     const path = (pathLocale && url.pathname.slice(pathLocale.length + 1)) ?? url.pathname;
-    if (!url.pathname.includes("/_i18n/-P1DtHp0") && !isExistingNuxtRoute(path)) {
+    if (!url.pathname.includes("/_i18n/cubxlPWK") && !isExistingNuxtRoute(path)) {
       return;
     }
     const resolved = resolveRedirectPath(event, path, pathLocale, ctx.vueI18nOptions.defaultLocale, detector);
@@ -5487,7 +5536,7 @@ const _DXMRFSHHYLVeO7a7qEPi0nWRa7rXEAbCnd2ehPuEXRk = defineNitroPlugin(async (ni
   await nitroApp.hooks.callHook("nuxt-security:ready");
 });
 
-const sriHashes = {"/_nuxt/builds/meta/dev.json":"sha384-HHyWFT7M//Tpps3DN3r/JIJRQjm7LB/VsgtSZ/BSjHEftOXmjjsAv2p+4F4yNe7P","/_nuxt/builds/meta/f52cb58d-47aa-490a-b068-f2d06d2547b5.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/latest.json":"sha384-wCxcch5r9eA6rsQPg+EpJK5JQRlSRuAvXa4x5gZzeHQ9HsFObZEZ4aCigEuHM0LW","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
+const sriHashes = {"/_nuxt/builds/meta/dev.json":"sha384-jQbki8FFzhi73qMPDcXvCshZ4A3u7DOyWupCQzG4AeJ4om/atKRewuktj8rSpEPa","/_nuxt/builds/meta/f52cb58d-47aa-490a-b068-f2d06d2547b5.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/latest.json":"sha384-jeSc52pJAk5h4heyQIxWHMLTB38xCo2KGGNtAEjv0ZS3AWQUwoxAXwW71ZG+hRrV","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
 
 const SCRIPT_RE$1 = /<script((?=[^>]+\bsrc="([^"]+)")(?![^>]+\bintegrity="[^"]+")[^>]+)(?:\/>|><\/script>)/g;
 const LINK_RE$1 = /<link((?=[^>]+\brel="(?:stylesheet|preload|modulepreload)")(?=[^>]+\bhref="([^"]+)")(?![^>]+\bintegrity="[\w\-+/=]+")[^>]+)>/g;

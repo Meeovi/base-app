@@ -30,8 +30,6 @@ export { requestIdleCallback, cancelIdleCallback } from '#app/compat/idle-callba
 export { setInterval } from '#app/compat/interval';
 export { definePageMeta } from '../../../node_modules/nuxt/dist/pages/runtime/composables';
 export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
-export { useVendureMutation } from '../app/composables/useVendureMutation';
-export { useVendureQuery } from '../app/composables/useVendureQuery';
 export { default as countryList } from '../app/utils/countryList';
 export { formatPrice, convertPrice, getCurrencySymbol } from '../app/utils/currency';
 export { getStripe } from '../app/utils/stripe';

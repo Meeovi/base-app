@@ -14,6 +14,12 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       secretKey: string,
    },
 
+   stripe: {
+      key: string,
+
+      options: any,
+   },
+
    paypal: {
       clientId: string,
 
@@ -22,19 +28,19 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       sandbox: boolean,
    },
 
-   stripe: {
-      key: any,
-
-      options: any,
-
-      secretKey: string,
-   },
-
    nitro: {
       envPrefix: string,
    },
   }
   interface SharedPublicRuntimeConfig {
+   stripe: {
+      manualClientLoad: boolean,
+
+      key: string,
+
+      options: any,
+   },
+
    directus: {
       url: string,
 
@@ -97,16 +103,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       defaultProvider: string,
 
       currency: string,
-   },
-
-   stripe: {
-      manualClientLoad: boolean,
-
-      key: any,
-
-      options: any,
-
-      publishableKey: string,
    },
   }
 declare module '@nuxt/schema' {

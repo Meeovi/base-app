@@ -84,16 +84,12 @@
 
 <script setup>
 import { ref, computed, watchEffect } from 'vue'
-import { useUserStore } from '~/stores/user'
 import { useNuxtApp, useRuntimeConfig } from '#imports'
 
 const { $directus, $readItems, $readItem, $createItem, $deleteItem } = useNuxtApp()
 const config = useRuntimeConfig()
 
-const userStore = useUserStore()
-const userDisplayName = computed(() => {
-    return userStore.user?.name || userStore.user?.username || 'User'
-})
+const { user } = useUserSession()
 
 const videos = ref([])
 const tags = ref([])
@@ -113,8 +109,8 @@ async function fetchTags() {
 async function fetchVideos() {
     try {
         const filter = {}
-        if (showMine.value && userStore.user) {
-            filter.user_id = { _eq: userStore.user.id }
+        if (showMine.value && user) {
+            filter.user_id = { _eq: user.id }
         } else {
             filter.visibility = { _eq: 'public' }
         }

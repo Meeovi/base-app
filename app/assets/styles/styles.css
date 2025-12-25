@@ -56,13 +56,13 @@ body {
     width: 650px !important;
     min-height: 55px;
     display: inline-block !important;
-    border-radius: 25px !important;
+    border-radius: 5px !important;
     background-color: white;
 }
 
 .ais-SearchBox-input {
     min-height: 0 !important;
-    border-radius: 55px !important;
+    border-radius: 5px !important;
 }
 
 .ais-InstantSearch svg {
@@ -1022,7 +1022,7 @@ body {
     height: 28px !important;
 }
 
-.social02 {
+.social02, .article2 {
     background-color: transparent !important;
 }
 
@@ -1035,6 +1035,21 @@ body {
     position: relative;
     top: -8px;
     color: black !important;
+}
+
+.postTitle {
+    height: 50px;
+    max-height: 60px;
+}
+
+.postAvatar {
+    position: relative;
+    top: -7px;
+}
+
+.postContent {
+    height: 50px;
+    max-height: 60px;
 }
 
 /****************** Messages Page **************/

@@ -19,9 +19,9 @@
             <v-tabs-window-item :value="eventBar?.submenus?.[0]?.value">
                 <v-sheet class="pa-5">
                     <h2 class="text-center">Going To</h2>
-                    <v-row class="member-cards">
-                        <v-col cols="3" v-for="events in goingEvents" :key="events.id" class="d-inline-block">
-                            <eventCard :event="events" />
+                    <v-row class="member-cards" v-if="events?.default_label?.options?.name === 'Going To'">
+                        <v-col cols="3" v-for="events in events" :key="events.id" class="d-inline-block">
+                            <eventCard :product="events" />
                         </v-col>
                     </v-row>
                 </v-sheet>
@@ -29,9 +29,9 @@
             <v-tabs-window-item :value="eventBar?.submenus?.[1]?.value">
                 <v-sheet class="pa-5">
                     <h2 class="text-center">Invited To</h2>
-                    <v-row class="member-cards">
-                        <v-col cols="3" v-for="events in invitedEvents" :key="events.id" class="d-inline-block">
-                            <eventCard :event="events" />
+                    <v-row class="member-cards" v-if="events?.default_label?.options?.name === 'Invited To'">
+                        <v-col cols="3" v-for="events in events" :key="events.id" class="d-inline-block">
+                            <eventCard :product="events" />
                         </v-col>
                     </v-row>
                 </v-sheet>
@@ -39,9 +39,9 @@
             <v-tabs-window-item :value="eventBar?.submenus?.[2]?.value">
                 <v-sheet class="pa-5">
                     <h2 class="text-center">Interested</h2>
-                    <v-row class="member-cards">
-                        <v-col cols="3" v-for="events in interestedEvents" :key="events.id" class="d-inline-block">
-                            <eventCard :event="events" />
+                    <v-row class="member-cards" v-if="events?.default_label?.options?.name === 'Interested'">
+                        <v-col cols="3" v-for="events in events" :key="events.id" class="d-inline-block">
+                            <eventCard :product="events" />
                         </v-col>
                     </v-row>
                 </v-sheet>
@@ -49,9 +49,20 @@
             <v-tabs-window-item :value="eventBar?.submenus?.[3]?.value">
                 <v-sheet class="pa-5">
                     <h2 class="text-center">Events your Hosting</h2>
-                    <v-row class="member-cards">
-                        <v-col cols="3" v-for="events in hostingEvents" :key="events.id" class="d-inline-block">
-                            <eventCard :event="events" />
+                    <v-row class="member-cards" v-if="events?.default_label?.options?.name === 'Hosting'">
+                        <v-col cols="3" v-for="events in events" :key="events.id" class="d-inline-block">
+                            <eventCard :product="events" />
+                        </v-col>
+                    </v-row>
+                </v-sheet>
+            </v-tabs-window-item>
+
+            <v-tabs-window-item :value="eventBar?.submenus?.[3]?.value">
+                <v-sheet class="pa-5">
+                    <h2 class="text-center">Events you Declined</h2>
+                    <v-row class="member-cards" v-if="events?.default_label?.options?.name === 'Declined'">
+                        <v-col cols="3" v-for="events in events" :key="events.id" class="d-inline-block">
+                            <eventCard :product="events" />
                         </v-col>
                     </v-row>
                 </v-sheet>
@@ -62,7 +73,7 @@
                     <h2 class="text-center">Past Events</h2>
                     <v-row class="member-cards">
                         <v-col cols="3" v-for="events in pastEvents" :key="events.id" class="d-inline-block">
-                            <eventCard :event="events" />
+                            <eventCard :product="events" />
                         </v-col>
                     </v-row>
                 </v-sheet>
@@ -96,60 +107,24 @@
     })
 
     const {
-        data: goingEvents
-    } = await useAsyncData('goingEvents', () => {
-        return $directus.request($readItems('events', {
+        data: events
+    } = await useAsyncData('events', () => {
+        return $directus.request($readItems('products', {
             fields: ['*', {
                 '*': ['*']
             }],
             filter: {
-                'rsvp_status': {
-                    '_eq': "Going"
-                }
-            }
-        }))
-    })
-
-    const {
-        data: invitedEvents
-    } = await useAsyncData('invitedEvents', () => {
-        return $directus.request($readItems('events', {
-            fields: ['*', {
-                '*': ['*']
-            }],
-            filter: {
-                'rsvp_status': {
-                    '_eq': "Invites"
-                }
-            }
-        }))
-    })
-
-    const {
-        data: interestedEvents
-    } = await useAsyncData('interestedEvents', () => {
-        return $directus.request($readItems('events', {
-            fields: ['*', {
-                '*': ['*']
-            }],
-            filter: {
-                'rsvp_status': {
-                    '_eq': "Interested"
-                }
-            }
-        }))
-    })
-
-    const {
-        data: hostingEvents
-    } = await useAsyncData('hostingEvents', () => {
-        return $directus.request($readItems('events', {
-            fields: ['*', {
-                '*': ['*']
-            }],
-            filter: {
-                'rsvp_status': {
-                    '_eq': "Hosting"
+                product_type: {
+                    product_types_id: {
+                        name: {
+                            _eq: 'Event'
+                        }
+                    }
+                },
+                attributes: {
+                    default_label: {
+                        _eq: 'RSVP Status'
+                    }
                 }
             }
         }))
@@ -158,13 +133,20 @@
     const {
         data: pastEvents
     } = await useAsyncData('pastEvents', () => {
-        return $directus.request($readItems('events', {
+        return $directus.request($readItems('products', {
             fields: ['*', {
                 '*': ['*']
             }],
             filter: {
-                'rsvp_status': {
-                    '_eq': "Past Events"
+                product_type: {
+                    product_types_id: {
+                        name: {
+                            _eq: 'Event'
+                        }
+                    }
+                },
+                date_created: {
+                    _lt: new Date().toISOString().slice(5, 10)
                 }
             }
         }))

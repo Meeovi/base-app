@@ -38,7 +38,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
 import { createItem, readItem } from '@directus/sdk'
 import { useNuxtApp, useAsyncData } from 'nuxt/app'
@@ -54,7 +54,7 @@ const subscribe = async () => {
     try {
         loading.value = true
         message.value = ''
-        
+
         await $directus.request(createItem('newsletters', {
             email: email.value,
             status: 'subscribed',
@@ -64,8 +64,8 @@ const subscribe = async () => {
         message.value = 'Successfully subscribed to newsletter!'
         messageType.value = 'success'
         email.value = ''
-    } catch (error: any) {
-        message.value = error.message || 'An error occurred while subscribing'
+    } catch (err) {
+        message.value = (err && err.message) ? err.message : 'An error occurred while subscribing'
         messageType.value = 'error'
     } finally {
         loading.value = false

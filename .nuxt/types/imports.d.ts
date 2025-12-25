@@ -557,7 +557,7 @@ declare global {
   export type { Component, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from '../../node_modules/vue'
   import('../../node_modules/vue')
   // @ts-ignore
-  export type { Timer, Timer } from '../../layers/shared-app/app/utils/Timer'
+  export type { Timer } from '../../layers/shared-app/app/utils/Timer'
   import('../../layers/shared-app/app/utils/Timer')
 }
 // for vue template auto import
