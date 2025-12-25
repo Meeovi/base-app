@@ -6,8 +6,8 @@
                     <div class="col-lg-7 mbr-form">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <strong>
-                                <h5 class="mbr-section-title mbr-fonts-style mb-5 display-7"
-                                    v-html="(blocksNewsletter as any)?.description"></h5>
+                                    <h5 class="mbr-section-title mbr-fonts-style mb-5 display-7"
+                                        v-html="blocksNewsletter?.description"></h5>
                             </strong>
                             <p v-if="message" :class="messageType === 'error' ? 'text-red-500' : 'text-green-500'">{{ message }}</p>
                         </div>
@@ -21,7 +21,7 @@
                                             v-model="email" 
                                             type="email"
                                             density="compact" 
-                                            :label="(blocksNewsletter as any)?.content?.[0]?.name"
+                                            :label="blocksNewsletter?.content?.[0]?.name"
                                             variant="solo" 
                                             hide-details 
                                             single-line

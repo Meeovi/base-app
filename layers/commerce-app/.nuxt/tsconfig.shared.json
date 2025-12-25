@@ -122,7 +122,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/f8c7caf7-dc35-4f98-8144-851be72d6eb1"
+        "./manifest/meta/55511020-fbd8-450e-8614-94d857af3d4a"
       ],
       "#build": [
         "."
@@ -143,7 +143,7 @@
     "noUncheckedIndexedAccess": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitOverride": true,
-    "module": "preserve",
+    "module": "ESNext",
     "noEmit": true,
     "types": [],
     "moduleResolution": "Bundler",

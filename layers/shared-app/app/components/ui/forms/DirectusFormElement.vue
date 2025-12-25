@@ -26,7 +26,7 @@ const props = defineProps<{ field: any; modelValue?: any }>()
 const emit = defineEmits(["update:modelValue"])
 
 // inject form context if parent provided it
-const formContext = inject("directusForm", null) as any
+const formContext = inject("directusForm", null)
 
 const {
   internalValue,

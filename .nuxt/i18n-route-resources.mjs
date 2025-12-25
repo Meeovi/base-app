@@ -30,11 +30,6 @@ export const pathToI18nConfig = {
     "pl-PL": "/logout",
     "testde": "/logout"
   },
-  "/orders": {
-    "en-GB": "/orders",
-    "pl-PL": "/orders",
-    "testde": "/orders"
-  },
   "/compare": {
     "en-GB": "/compare",
     "pl-PL": "/compare",
@@ -60,20 +55,20 @@ export const pathToI18nConfig = {
     "pl-PL": "/:slug(.*)*",
     "testde": "/:slug(.*)*"
   },
-  "/promotions": {
-    "en-GB": "/promotions",
-    "pl-PL": "/promotions",
-    "testde": "/promotions"
-  },
-  "/coupon/:id()": {
-    "en-GB": "/coupon/:id()",
-    "pl-PL": "/coupon/:id()",
-    "testde": "/coupon/:id()"
+  "/order/:id()": {
+    "en-GB": "/order/:id()",
+    "pl-PL": "/order/:id()",
+    "testde": "/order/:id()"
   },
   "/lists": {
     "en-GB": "/lists",
     "pl-PL": "/lists",
     "testde": "/lists"
+  },
+  "/invoice/:id()": {
+    "en-GB": "/invoice/:id()",
+    "pl-PL": "/invoice/:id()",
+    "testde": "/invoice/:id()"
   },
   "/account": {
     "en-GB": "/account",
@@ -105,6 +100,16 @@ export const pathToI18nConfig = {
     "pl-PL": "/product/:id(.*)*",
     "testde": "/product/:id(.*)*"
   },
+  "/shipment/:id(.*)*": {
+    "en-GB": "/shipment/:id(.*)*",
+    "pl-PL": "/shipment/:id(.*)*",
+    "testde": "/shipment/:id(.*)*"
+  },
+  "/incentive/:id(.*)*": {
+    "en-GB": "/incentive/:id(.*)*",
+    "pl-PL": "/incentive/:id(.*)*",
+    "testde": "/incentive/:id(.*)*"
+  },
   "/account/user/:uid()": {
     "en-GB": "/account/user/:uid()",
     "pl-PL": "/account/user/:uid()",
@@ -120,6 +125,11 @@ export const pathToI18nConfig = {
     "pl-PL": "/lists/bookmark/:id()",
     "testde": "/lists/bookmark/:id()"
   },
+  "/transaction/:id(.*)*": {
+    "en-GB": "/transaction/:id(.*)*",
+    "pl-PL": "/transaction/:id(.*)*",
+    "testde": "/transaction/:id(.*)*"
+  },
   "/connect/vibe/:id(.*)*": {
     "en-GB": "/connect/vibe/:id(.*)*",
     "pl-PL": "/connect/vibe/:id(.*)*",
@@ -134,6 +144,11 @@ export const pathToI18nConfig = {
     "en-GB": "/lists/list/:slug(.*)*",
     "pl-PL": "/lists/list/:slug(.*)*",
     "testde": "/lists/list/:slug(.*)*"
+  },
+  "/subscription/:id(.*)*": {
+    "en-GB": "/subscription/:id(.*)*",
+    "pl-PL": "/subscription/:id(.*)*",
+    "testde": "/subscription/:id(.*)*"
   },
   "/collaborrate/messages": {
     "en-GB": "/collaborrate/messages",
@@ -198,27 +213,30 @@ export const i18nPathToPath = {
   "/shops": "/shops",
   "/brands": "/brands",
   "/logout": "/logout",
-  "/orders": "/orders",
   "/compare": "/compare",
   "/results": "/results",
   "/callback": "/callback",
   "/register": "/register",
   "/:slug(.*)*": "/:slug(.*)*",
-  "/promotions": "/promotions",
-  "/coupon/:id()": "/coupon/:id()",
+  "/order/:id()": "/order/:id()",
   "/lists": "/lists",
+  "/invoice/:id()": "/invoice/:id()",
   "/account": "/account",
   "/reset-password": "/reset-password",
   "/shop/:slug(.*)*": "/shop/:slug(.*)*",
   "/brand/:slug(.*)*": "/brand/:slug(.*)*",
   "/forgot-password": "/forgot-password",
   "/product/:id(.*)*": "/product/:id(.*)*",
+  "/shipment/:id(.*)*": "/shipment/:id(.*)*",
+  "/incentive/:id(.*)*": "/incentive/:id(.*)*",
   "/account/user/:uid()": "/account/user/:uid()",
   "/connect/vibe/upload": "/connect/vibe/upload",
   "/lists/bookmark/:id()": "/lists/bookmark/:id()",
+  "/transaction/:id(.*)*": "/transaction/:id(.*)*",
   "/connect/vibe/:id(.*)*": "/connect/vibe/:id(.*)*",
   "/connect/vibe/preview": "/connect/vibe/preview",
   "/lists/list/:slug(.*)*": "/lists/list/:slug(.*)*",
+  "/subscription/:id(.*)*": "/subscription/:id(.*)*",
   "/collaborrate/messages": "/collaborrate/messages",
   "/departments/:slug(.*)*": "/departments/:slug(.*)*",
   "/connect/post/:slug(.*)*": "/connect/post/:slug(.*)*",

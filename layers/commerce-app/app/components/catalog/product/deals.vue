@@ -51,6 +51,9 @@ import productCard from './productCard.vue'
       filter: {
         price: {
           _lte: "20.00"
+        },
+        status: {
+          _eq: "published"
         }
       }
     }))

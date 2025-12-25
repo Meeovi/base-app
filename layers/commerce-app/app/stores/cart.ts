@@ -16,7 +16,9 @@ export const useCartStore = defineStore('cart', () => {
     updateCartItem, 
     applyCoupon, 
     removeCoupon, 
-    clearCart 
+    clearCart,
+    setShippingOption: setShippingOptionFn
+    ,createCheckoutSession: createCheckoutSessionFn
   } = useCart()
   
   const initializeCart = async () => {
@@ -118,6 +120,35 @@ export const useCartStore = defineStore('cart', () => {
       loading.value = false
     }
   }
+
+  const setShippingOption = async (option: any) => {
+    loading.value = true
+    error.value = null
+    try {
+      if (!setShippingOptionFn) throw new Error('Shipping setter unavailable')
+      await setShippingOptionFn(option)
+    } catch (err: any) {
+      error.value = err.message
+      console.error('Error setting shipping option:', err)
+      throw err
+    } finally {
+      loading.value = false
+    }
+  }
+
+  const createCheckoutSession = async (cartId?: string) => {
+    loading.value = true
+    error.value = null
+    try {
+      const data = await createCheckoutSessionFn(cartId)
+      return data
+    } catch (err: any) {
+      error.value = err.message
+      throw err
+    } finally {
+      loading.value = false
+    }
+  }
   
   // Computed properties
   const itemCount = computed(() => {
@@ -181,5 +212,7 @@ export const useCartStore = defineStore('cart', () => {
     applyCartCoupon,
     removeCartCoupon,
     emptyCart
+    ,setShippingOption
+    ,createCheckoutSession
   }
 })

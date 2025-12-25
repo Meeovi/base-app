@@ -47,9 +47,9 @@ import { useNuxtApp } from '#app';
 import productCard from '~/components/catalog/product/productCard.vue';
 import { computed } from 'vue';
 
-const props = defineProps<{ item: any }>();
-const emit = defineEmits<('cart-changed')[]>();
-const nuxtApp = useNuxtApp() as any;
+const props = defineProps({ item: Object })
+const emit = defineEmits(['cart-changed'])
+const nuxtApp = useNuxtApp()
 
 // Prepare a product object compatible with productCard.vue
 const productForCard = computed(() => {

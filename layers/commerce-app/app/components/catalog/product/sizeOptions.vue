@@ -10,10 +10,39 @@
     </v-row>
 </template>
 
-<script setup lang="ts">
-import { ref, watch } from 'vue';
-const props = defineProps<{ sizes: Array<{ id: string; name: string }> }>();
-const emit = defineEmits(['size-selected']);
-const selectedSize = ref(null);
-watch(selectedSize, (newSize) => emit('size-selected', newSize));
+<script setup>
+import { ref, onMounted, watch } from 'vue'
+const emit = defineEmits(['size-selected'])
+const sizes = ref([])
+const selectedSize = ref(null)
+
+
+import { useNuxtApp } from '#app'
+const nuxtApp = useNuxtApp()
+const { $directus, $readItems } = nuxtApp
+
+const loadSizes = async () => {
+    try {
+        const res = await $directus.request($readItems('attributes', {
+            filter: {
+                attribute_code: { _eq: 'size' }
+            },
+            sort: ['id']
+        }))
+
+        const attr = (res && res[0]) || null
+        const opts = attr?.options || []
+        sizes.value = opts.map((o, i) => ({ id: `${attr?.id || 'size'}-${i}`, name: o.name }))
+    } catch (e) {
+        // eslint-disable-next-line no-console
+        console.warn('Failed to load size attributes', e)
+        sizes.value = []
+    }
+}
+
+watch(selectedSize, (newSize) => emit('size-selected', newSize))
+
+onMounted(() => {
+    loadSizes()
+})
 </script>

@@ -105,9 +105,6 @@
         computed
     } from 'vue'
     import incentiveCard from '~/components/related/post.vue'
-    import {
-        useUserStore
-    } from '~/stores/user'
 
     const { user } = useUserSession()
 

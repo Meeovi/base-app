@@ -22,6 +22,14 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       sandbox: boolean,
    },
 
+   stripe: {
+      key: any,
+
+      options: any,
+
+      secretKey: string,
+   },
+
    nitro: {
       envPrefix: string,
    },
@@ -89,6 +97,16 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       defaultProvider: string,
 
       currency: string,
+   },
+
+   stripe: {
+      manualClientLoad: boolean,
+
+      key: any,
+
+      options: any,
+
+      publishableKey: string,
    },
   }
 declare module '@nuxt/schema' {

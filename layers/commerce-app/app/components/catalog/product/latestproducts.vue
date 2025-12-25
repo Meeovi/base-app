@@ -46,6 +46,12 @@
         'brands.brands_id.*',
         'image.*',
       ],
+      filter: {
+        status: {
+          _eq: 'published'
+        }
+      },
+      sort: '-products_id.date_created',
       limit: 10,
     }))
   })

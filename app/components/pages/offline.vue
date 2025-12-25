@@ -152,7 +152,7 @@ function startCountdown(seconds = 5) {
   isCounting.value = true;
   timer = setInterval(() => {
     if (countdown.value <= 1) {
-      clearInterval(timer as any);
+      clearInterval(timer);
       timer = null;
       isCounting.value = false;
       doReload();
@@ -164,7 +164,7 @@ function startCountdown(seconds = 5) {
 
 function cancelCountdown() {
   if (timer) {
-    clearInterval(timer as any);
+    clearInterval(timer);
     timer = null;
   }
   isCounting.value = false;
@@ -184,6 +184,6 @@ function doReload() {
 }
 
 onUnmounted(() => {
-  if (timer) clearInterval(timer as any);
+  if (timer) clearInterval(timer);
 });
 </script>

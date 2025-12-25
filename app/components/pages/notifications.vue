@@ -16,9 +16,6 @@
 
     <v-card variant="text">
       <v-toolbar :style="`background-color: ${notifyBar?.color}; color: ${notifyBar?.colortext} !important`">
-        <v-toolbar-title>{{ notifyBar?.name }}</v-toolbar-title>
-
-
         <v-tabs v-model="tab" align-tabs="center">
           <div v-for="(menu, index) in notifyBar?.menus" :key="index">
             <v-tab :value="menu?.value">

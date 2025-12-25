@@ -7,9 +7,9 @@
         <v-col cols="12">
             <v-container>
                 <v-row>
-                    <v-col cols="auto">
-                        <v-btn density="compact" :style="`background-color: ${colors?.name}`" :title="colors?.name"
-                            @click="selectColor(colors)">
+                    <v-col cols="auto" v-for="color in colors" :key="color.id">
+                        <v-btn density="compact" :style="`background-color: ${color.value || color.hex || color.name}`" :title="color.name"
+                            @click="selectColor(color)">
                         </v-btn>
                     </v-col>
                 </v-row>
@@ -18,24 +18,42 @@
     </v-row>
 </template>
 
-<script>
-    export default {
-        props: {
-            colors: {
-                type: Array,
-                required: true, // Colors should always be passed
+<script setup>
+import { ref, onMounted } from 'vue'
+const emit = defineEmits(['color-selected'])
+const colors = ref([])
+const selectedColor = ref(null)
+
+import { useNuxtApp } from '#app'
+const nuxtApp = useNuxtApp()
+const { $directus, $readItems } = nuxtApp
+
+const loadColors = async () => {
+    try {
+        const res = await $directus.request($readItems('attributes', {
+            filter: {
+                attribute_code: { _eq: 'color' }
             },
-        },
-        data() {
-            return {
-                selectedColor: null, // Stores the selected color
-            };
-        },
-        methods: {
-            selectColor(color) {
-                this.selectedColor = color.value; // Set the selected color
-                this.$emit('color-selected', color); // Emit the selected color to the parent
-            },
-        },
-    };
+            sort: ['id']
+        }))
+
+        const attr = (res && res[0]) || null
+        const opts = attr?.options || []
+        // options may only have `name`; normalize to objects with id and value
+        colors.value = opts.map((o, i) => ({ id: `${attr?.id || 'color'}-${i}`, name: o.name, value: o.name }))
+    } catch (e) {
+        // eslint-disable-next-line no-console
+        console.warn('Failed to load color attributes', e)
+        colors.value = []
+    }
+}
+
+const selectColor = (color) => {
+    selectedColor.value = color.value ?? color.id
+    emit('color-selected', color)
+}
+
+onMounted(() => {
+    loadColors()
+})
 </script>

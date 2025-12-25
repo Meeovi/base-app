@@ -5,25 +5,37 @@
         </v-col>
 
         <v-col cols="12">
-            <v-select v-model="selectedOption" :items="shippingOptions" item-title="name" item-value="id"
+            <v-select v-model="selected" :items="shippingOptions" item-title="name" item-value="id"
                 label="Select Delivery Method" single-line variant="solo" :loading="loading"
                 :disabled="loading || shippingOptions.length === 0"></v-select>
         </v-col>
     </v-row>
 </template>
 
-<script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import { useVendureQuery } from '../../../composables/useVendureQuery';
-import getEligibleShippingMethodsQuery from '#graphql/app/commerce/queries/getEligibleShippingMethods.gql';
-const props = defineProps<{ orderId: string }>();
-const selectedOption = ref(null);
-const loading = ref(false);
-const shippingOptions = ref([]);
-const { data, refetch } = useVendureQuery(getEligibleShippingMethodsQuery, { orderId: props.orderId });
+<script setup>
+import { onMounted, watch } from 'vue'
+import { useShippingSelection } from '~/app/composables/cart/useShippingSelection'
+
+const props = defineProps({
+    modelValue: { type: [String, Number, null], default: null }
+})
+const emit = defineEmits(['shippingOption-selected', 'update:modelValue'])
+
+const { shippingOptions, selected, loading, load } = useShippingSelection(props.modelValue)
+
 onMounted(() => {
-  if (data.value?.eligibleShippingMethods) {
-    shippingOptions.value = data.value.eligibleShippingMethods;
-  }
-});
+    load()
+})
+
+watch(() => props.modelValue, (val) => {
+    if (val === selected.value) return
+    selected.value = val
+})
+
+watch(selected, async (val) => {
+    const option = shippingOptions.value.find((s) => s.id === val) || null
+    // update parent v-model
+    emit('update:modelValue', val)
+    emit('shippingOption-selected', option)
+})
 </script>

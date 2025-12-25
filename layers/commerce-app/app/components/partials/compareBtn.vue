@@ -17,7 +17,7 @@
   const props = defineProps<{ product: Product }>();
 
   const compareStore = useCompareStore();
-  const nuxtApp = useNuxtApp() as any;
+  const nuxtApp = useNuxtApp();
 
   // Check if the product is already in compare list
   const isInCompare = computed(() => {

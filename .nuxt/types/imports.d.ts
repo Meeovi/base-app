@@ -220,7 +220,6 @@ declare global {
   const resolveComponent: typeof import('../../node_modules/vue').resolveComponent
   const resolveFieldComponent: typeof import('../../layers/shared-app/app/utils/fieldRegistry').resolveFieldComponent
   const resolveRef: typeof import('@vueuse/core').resolveRef
-  const setInterval: typeof import('../../node_modules/nuxt/dist/app/compat/interval').setInterval
   const setPageLayout: typeof import('../../node_modules/nuxt/dist/app/composables/router').setPageLayout
   const setResponseStatus: typeof import('../../node_modules/nuxt/dist/app/composables/ssr').setResponseStatus
   const shallowReactive: typeof import('../../node_modules/vue').shallowReactive
@@ -283,6 +282,7 @@ declare global {
   const useBrowserLocale: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index').useBrowserLocale
   const useBrowserLocation: typeof import('@vueuse/core').useBrowserLocation
   const useCached: typeof import('@vueuse/core').useCached
+  const useClientStripe: typeof import('../../node_modules/@unlok-co/nuxt-stripe/dist/runtime/composables/useClientStripe').default
   const useClipboard: typeof import('@vueuse/core').useClipboard
   const useClipboardItems: typeof import('@vueuse/core').useClipboardItems
   const useCloned: typeof import('@vueuse/core').useCloned
@@ -513,8 +513,6 @@ declare global {
   const useUserSession: typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/app/composables/session').useUserSession
   const useVModel: typeof import('@vueuse/core').useVModel
   const useVModels: typeof import('@vueuse/core').useVModels
-  const useVendureMutation: typeof import('../../layers/commerce-app/app/composables/useVendureMutation').useVendureMutation
-  const useVendureQuery: typeof import('../../layers/commerce-app/app/composables/useVendureQuery').useVendureQuery
   const useVibrate: typeof import('@vueuse/core').useVibrate
   const useVirtualList: typeof import('@vueuse/core').useVirtualList
   const useWakeLock: typeof import('@vueuse/core').useWakeLock
@@ -559,7 +557,7 @@ declare global {
   export type { Component, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from '../../node_modules/vue'
   import('../../node_modules/vue')
   // @ts-ignore
-  export type { Timer } from '../../layers/shared-app/app/utils/Timer'
+  export type { Timer, Timer } from '../../layers/shared-app/app/utils/Timer'
   import('../../layers/shared-app/app/utils/Timer')
 }
 // for vue template auto import
@@ -785,7 +783,6 @@ declare module 'vue' {
     readonly resolveComponent: UnwrapRef<typeof import('../../node_modules/vue')['resolveComponent']>
     readonly resolveFieldComponent: UnwrapRef<typeof import('../../layers/shared-app/app/utils/fieldRegistry')['resolveFieldComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
-    readonly setInterval: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/interval')['setInterval']>
     readonly setPageLayout: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['setPageLayout']>
     readonly setResponseStatus: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['setResponseStatus']>
     readonly shallowReactive: UnwrapRef<typeof import('../../node_modules/vue')['shallowReactive']>
@@ -848,6 +845,7 @@ declare module 'vue' {
     readonly useBrowserLocale: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index')['useBrowserLocale']>
     readonly useBrowserLocation: UnwrapRef<typeof import('@vueuse/core')['useBrowserLocation']>
     readonly useCached: UnwrapRef<typeof import('@vueuse/core')['useCached']>
+    readonly useClientStripe: UnwrapRef<typeof import('../../node_modules/@unlok-co/nuxt-stripe/dist/runtime/composables/useClientStripe')['default']>
     readonly useClipboard: UnwrapRef<typeof import('@vueuse/core')['useClipboard']>
     readonly useClipboardItems: UnwrapRef<typeof import('@vueuse/core')['useClipboardItems']>
     readonly useCloned: UnwrapRef<typeof import('@vueuse/core')['useCloned']>
@@ -1078,8 +1076,6 @@ declare module 'vue' {
     readonly useUserSession: UnwrapRef<typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/app/composables/session')['useUserSession']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
-    readonly useVendureMutation: UnwrapRef<typeof import('../../layers/commerce-app/app/composables/useVendureMutation')['useVendureMutation']>
-    readonly useVendureQuery: UnwrapRef<typeof import('../../layers/commerce-app/app/composables/useVendureQuery')['useVendureQuery']>
     readonly useVibrate: UnwrapRef<typeof import('@vueuse/core')['useVibrate']>
     readonly useVirtualList: UnwrapRef<typeof import('@vueuse/core')['useVirtualList']>
     readonly useWakeLock: UnwrapRef<typeof import('@vueuse/core')['useWakeLock']>

@@ -1,7 +1,9 @@
 import {
   defineNuxtConfig
 } from "nuxt/config"
-import { resolve } from 'path'
+import {
+  resolve
+} from 'path'
 
 export default defineNuxtConfig({
   alias: {
@@ -55,7 +57,7 @@ export default defineNuxtConfig({
     'assets/styles/styles.css',
   ],
 
-  modules: [],
+  modules: ['@unlok-co/nuxt-stripe'],
 
   runtimeConfig: {
     // Cloudflare Turnstile
@@ -64,7 +66,17 @@ export default defineNuxtConfig({
       // environment variable.
       secretKey: process.env.NUXT_TURNSTILE_SECRET_KEY,
     },
+     // Server
+    stripe: {
+      key: process.env.STRIPE_SECRET_KEY,
+      options: {},
+    },
+    // Client
     public: {
+      stripe: {
+        key: process.env.STRIPE_PUBLISHABLE_KEY,
+        options: {},
+      },
       // Directus
       directus: {
         url: process.env.DIRECTUS_URL,
@@ -116,7 +128,7 @@ export default defineNuxtConfig({
       clientId: process.env.PAYPAL_CLIENT_ID,
       clientSecret: process.env.PAYPAL_CLIENT_SECRET,
       sandbox: process.env.PAYPAL_SANDBOX === 'true'
-    }
+    },
   },
 
   build: {},

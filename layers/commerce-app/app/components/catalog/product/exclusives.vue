@@ -10,8 +10,8 @@
         </div>
         <v-sheet class="mx-auto sliderProducts row align-items-stretch items-row justify-content-center">
           <v-slide-group v-model="model" class="pa-4" selected-class="bg-success" show-arrows>
-            <v-slide-group-item v-slot="{ isSelected, toggle, selectedClass }"
-              v-for="(products, index) in exclusives" :key="index">
+            <v-slide-group-item v-slot="{ isSelected, toggle, selectedClass }" v-for="(products, index) in exclusives"
+              :key="index">
               <productCard :product="products?.products_id" :class="['ma-4', selectedClass]" @click="toggle" />
 
               <div class="d-flex fill-height align-center justify-center">
@@ -29,7 +29,7 @@
 
 <script setup>
   import productCard from './productCard.vue'
-  
+
   const model = ref(null);
   const {
     $directus,
@@ -49,12 +49,8 @@
       ],
       limit: 10,
       filter: {
-        products: {
-          products_id: {
-            status: {
-              _eq: "published"
-            }
-          }
+        status: {
+          _eq: "published"
         },
         departments: {
           departments_id: {

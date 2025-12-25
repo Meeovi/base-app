@@ -83,6 +83,12 @@
                 </div>
             </div>
 
+            <!-- Shipping Methods -->
+            <div class="form-section">
+                <h3>Shipping Method</h3>
+                <ShippingOptions v-model="selectedShipping" />
+            </div>
+
             <!-- Billing Address -->
             <div class="form-section">
                 <h3>Billing Address</h3>
@@ -123,7 +129,7 @@
             <!-- Payment Section -->
             <div class="form-section">
                 <h3>Payment</h3>
-                <div ref="paymentElement"></div>
+                <p>You will be redirected to a secure Stripe Checkout page to complete payment.</p>
             </div>
 
             <!-- Order Summary -->
@@ -149,7 +155,7 @@
                 </div>
             </div>
 
-            <button class="submit-button" type="submit" :disabled="!stripe || loading">
+            <button class="submit-button" type="submit" :disabled="loading">
                 <span v-if="loading">Processing...</span>
                 <span v-else>Pay {{ formatPrice(cart.total) }}</span>
             </button>
@@ -160,132 +166,11 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 import { loadStripe } from '@stripe/stripe-js'
-import { useMutation, useQuery } from '@vue/apollo-composable'
-import gql from 'graphql-tag'
-
-// GraphQL queries and mutations
-const GET_CART = gql`
-  query GetCart {
-    customerCart {
-      id
-      items {
-        id
-        quantity
-        product {
-          name
-          sku
-        }
-        prices {
-          price {
-            value
-            currency
-          }
-        }
-      }
-      prices {
-        subtotal_excluding_tax {
-          value
-          currency
-        }
-        grand_total {
-          value
-          currency
-        }
-      }
-      shipping_addresses {
-        firstname
-        lastname
-        street
-        city
-        region {
-          code
-          label
-        }
-        postcode
-        country {
-          code
-          label
-        }
-        telephone
-      }
-    }
-  }
-`
-
-const SET_SHIPPING_ADDRESS = gql`
-  mutation SetShippingAddress($cartId: String!, $address: ShippingAddressInput!) {
-    setShippingAddressesOnCart(
-      input: {
-        cart_id: $cartId
-        shipping_addresses: [$address]
-      }
-    ) {
-      cart {
-        shipping_addresses {
-          firstname
-          lastname
-          street
-          city
-          region {
-            code
-            label
-          }
-          postcode
-          country {
-            code
-            label
-          }
-          telephone
-        }
-      }
-    }
-  }
-`
-
-const SET_BILLING_ADDRESS = gql`
-  mutation SetBillingAddress($cartId: String!, $address: BillingAddressInput!) {
-    setBillingAddressOnCart(
-      input: {
-        cart_id: $cartId
-        billing_address: $address
-      }
-    ) {
-      cart {
-        billing_address {
-          firstname
-          lastname
-          street
-          city
-          region {
-            code
-            label
-          }
-          postcode
-          country {
-            code
-            label
-          }
-          telephone
-        }
-      }
-    }
-  }
-`
-
-const PLACE_ORDER = gql`
-  mutation PlaceOrder($cartId: String!) {
-    placeOrder(input: { cart_id: $cartId }) {
-      order {
-        order_number
-      }
-    }
-  }
-`
+import { useCartStore } from '~/app/stores/cart'
+import ShippingOptions from '../../catalog/product/shippingOptions.vue'
+import { useNuxtApp } from '#app'
 
 // Component state
-const stripe = ref(null)
-const elements = ref(null)
-const paymentElement = ref(null)
 const loading = ref(false)
 const error = ref(null)
 const sameAsShipping = ref(true)
@@ -312,14 +197,26 @@ const billingAddress = ref({
     telephone: ''
 })
 
-// Cart data
-const { result: cartResult, loading: cartLoading } = useQuery(GET_CART)
-const cart = computed(() => cartResult.value?.customerCart || {})
+// Cart store
+const cartStore = useCartStore()
+const cart = computed(() => cartStore.cart ?? { subtotal: 0, tax_amount: 0, shipping_amount: 0, total: 0, currency: 'USD' })
 
-// Mutations
-const { mutate: setShippingAddress } = useMutation(SET_SHIPPING_ADDRESS)
-const { mutate: setBillingAddress } = useMutation(SET_BILLING_ADDRESS)
-const { mutate: placeOrder } = useMutation(PLACE_ORDER)
+// Selected shipping (v-model) bound to ShippingOptions
+const selectedShipping = computed({
+    get: () => cartStore.cart?.shipping_method_id ?? cartStore.cart?.shipping_method ?? null,
+    set: async (val) => {
+        try {
+            if (cartStore && cartStore.setShippingOption) {
+                await cartStore.setShippingOption({ id: val })
+            }
+        } catch (e) {
+            // eslint-disable-next-line no-console
+            console.warn('Failed to set shipping from checkout', e)
+        }
+    }
+})
+
+const nuxtApp = useNuxtApp()
 
 // Watch for same as shipping changes
 watch(sameAsShipping, (newValue) => {
@@ -328,110 +225,81 @@ watch(sameAsShipping, (newValue) => {
     }
 })
 
-// Initialize Stripe
-const initializeStripe = async () => {
-    try {
-        stripe.value = await loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY)
+// We use Stripe Checkout (server-created session) instead of client Payment Element
 
-        const response = await fetch('/api/create-payment-intent', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                amount: cart.value.prices.grand_total.value * 100, // Convert to cents
-                currency: cart.value.prices.grand_total.currency.toLowerCase()
-            })
-        })
-
-        const { clientSecret } = await response.json()
-
-        elements.value = stripe.value.elements({
-            clientSecret,
-            appearance: {
-                theme: 'stripe',
-                variables: {
-                    colorPrimary: '#0570de',
-                    colorBackground: '#ffffff',
-                    colorText: '#30313d',
-                    colorDanger: '#df1b41',
-                    fontFamily: 'Ideal Sans, system-ui, sans-serif',
-                    borderRadius: '4px'
-                }
-            }
-        })
-
-        const paymentElementInstance = elements.value.create('payment')
-        paymentElementInstance.mount(paymentElement.value)
-    } catch (err) {
-        error.value = 'Failed to initialize payment system. Please try again.'
-        console.error('Stripe initialization error:', err)
-    }
-}
-
-// Handle form submission
+// Handle form submission: persist addresses to Directus cart record and proceed to Stripe
 const handleSubmit = async () => {
     try {
-        if (!stripe.value || !elements.value) return
-
         loading.value = true
         error.value = null
 
-        // Set shipping address
-        await setShippingAddress({
-            variables: {
-                cartId: cart.value.id,
-                address: shippingAddress.value
-            }
-        })
+        const cartId = cartStore.cart?.id
+        if (!cartId) throw new Error('Cart not found')
 
-        // Set billing address
-        await setBillingAddress({
-            variables: {
-                cartId: cart.value.id,
-                address: sameAsShipping.value ? shippingAddress.value : billingAddress.value
+        // Persist addresses to cart
+        try {
+            const payload = {
+                shipping_address: shippingAddress.value,
+                billing_address: sameAsShipping.value ? shippingAddress.value : billingAddress.value,
+                updated_at: new Date().toISOString()
             }
-        })
-
-        // Place order
-        const orderResult = await placeOrder({
-            variables: {
-                cartId: cart.value.id
-            }
-        })
-
-        // Confirm payment with Stripe
-        const { error: stripeError } = await stripe.value.confirmPayment({
-            elements: elements.value,
-            confirmParams: {
-                return_url: `${window.location.origin}/checkout/confirmation/${orderResult.data.placeOrder.order.order_number}`
-            }
-        })
-
-        if (stripeError) {
-            error.value = stripeError.message || 'An error occurred during payment.'
+            await nuxtApp.$directus.request(nuxtApp.$updateItem('cart', cartId, payload))
+            await cartStore.fetchCart()
+        } catch (e) {
+            console.warn('Failed to persist addresses to Directus cart', e)
         }
+
+        // Create Stripe Checkout session via server API
+        const data = await cartStore.createCheckoutSession(cartId)
+        if (data?.url) {
+            window.location.href = data.url
+            return
+        }
+
+        if (data?.id) {
+            // fallback: try client redirect using session id
+            const stripeKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY
+            if (!stripeKey) throw new Error('Stripe publishable key missing')
+            const stripe = await loadStripe(stripeKey)
+            await stripe.redirectToCheckout({ sessionId: data.id })
+            return
+        }
+
+        throw new Error('Failed to create checkout session')
     } catch (err) {
-        error.value = 'Payment failed. Please try again.'
-        console.error('Payment error:', err)
+        error.value = err?.message || 'Payment failed. Please try again.'
+        console.error('Checkout error:', err)
     } finally {
         loading.value = false
     }
 }
 
-// Format price helper
-const formatPrice = (price) => {
-    if (!price) return '$0.00'
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: price.currency || 'USD'
-    }).format(price.value)
-}
-
-// Initialize on component mount
-onMounted(() => {
-    initializeStripe()
+// Directory (countries)
+import { useDirectory } from '../../composables/sales/useDirectory'
+const { getCountries } = useDirectory()
+const countries = ref([])
+onMounted(async () => {
+    try {
+        countries.value = await getCountries()
+    } catch (e) {
+        // ignore
+    }
 })
+
+// Format price helper - accepts numbers or objects { value, currency }
+const formatPrice = (price) => {
+    let amount = 0
+    let currency = 'USD'
+    if (!price) return '$0.00'
+    if (typeof price === 'number') {
+        amount = price
+    } else if (price && typeof price === 'object') {
+        amount = Number(price.value ?? price.amount ?? 0)
+        currency = price.currency ?? price.currency_code ?? 'USD'
+    }
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: (currency || 'USD').toUpperCase() }).format(amount)
+}
+// initializeStripe is invoked onMounted above
 </script>
 
 <style scoped>

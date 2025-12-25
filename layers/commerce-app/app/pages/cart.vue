@@ -22,11 +22,27 @@
         <div class="cart-total">
           <h3>Total: ${{ cart.total }}</h3>
         </div>
-        
-        <PayPalButtons
-          @payment-success="handlePaymentSuccess"
-          @payment-error="handlePaymentError"
-        />
+
+        <!-- Shipping selection -->
+        <div class="cart-shipping my-4">
+          <ShippingOptions v-model="selectedShipping" />
+        </div>
+
+        <div class="cart-actions mt-4">
+          <v-btn
+            color="primary"
+            :disabled="cart.items.length === 0 || loading"
+            @click="startCheckout"
+          >
+            <span v-if="!loading">Checkout</span>
+            <span v-else>Preparing...</span>
+          </v-btn>
+
+          <PayPalButtons
+            @payment-success="handlePaymentSuccess"
+            @payment-error="handlePaymentError"
+          />
+        </div>
       </div>
     </div>
   </template>
@@ -34,18 +50,70 @@
   <script setup>
   import { useCartStore } from '~/app/stores/cart'
   
+  import ShippingOptions from '../components/catalog/product/shippingOptions.vue'
+  import { ref, computed } from 'vue'
+  import { useRuntimeConfig, useNuxtApp } from '#app'
+
   const cart = useCartStore()
-  
+  const loading = ref(false)
+
+  const selectedShipping = computed({
+    get: () => cart.cart?.shipping_method_id ?? cart.cart?.shipping_method ?? null,
+    set: async (val) => {
+      try {
+        // Let the component/composable persist to the cart store; call store as a fallback
+        if (cart && cart.setShippingOption) {
+          await cart.setShippingOption({ id: val })
+        }
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.warn('Failed to set shipping from cart page', e)
+      }
+    }
+  })
+
   const handlePaymentSuccess = (order) => {
-    // Handle successful payment
     console.log('Payment successful:', order)
-    // You might want to redirect to a success page or show a success message
   }
-  
+
   const handlePaymentError = (error) => {
-    // Handle payment error
     console.error('Payment failed:', error)
-    // Show error message to user
+  }
+
+  const startCheckout = async () => {
+    if (!cart || !cart.createCheckoutSession) return
+    try {
+      loading.value = true
+      const data = await cart.createCheckoutSession(cart.cart?.id)
+      const url = data?.url || (data?.id ? `https://checkout.stripe.com/pay/${data.id}` : null)
+      if (url) {
+        window.location.href = url
+      } else if (data && data.id) {
+        // fallback: use injected Stripe instance from plugin if available
+        const nuxtApp = useNuxtApp()
+        const injectedStripe = nuxtApp?.$stripe || null
+        if (injectedStripe && typeof injectedStripe.redirectToCheckout === 'function') {
+          await injectedStripe.redirectToCheckout({ sessionId: data.id })
+        } else if (window && window.Stripe) {
+          // last-resort: use global Stripe if present
+          const publishable = (useRuntimeConfig() || {}).public?.stripe?.publishableKey || null
+          if (publishable) {
+            const stripe = window.Stripe(publishable)
+            await stripe.redirectToCheckout({ sessionId: data.id })
+          } else {
+            console.warn('No Stripe publishable key available for client-side redirect')
+          }
+        } else {
+          console.warn('No client Stripe instance available for redirect')
+        }
+      } else {
+        console.warn('No checkout url returned from server')
+      }
+    } catch (e) {
+      console.error('Failed to start checkout', e)
+    } finally {
+      loading.value = false
+    }
   }
   </script>
   

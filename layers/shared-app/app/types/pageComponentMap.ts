@@ -23,6 +23,11 @@ export const pageComponentMap: Record<string, AsyncComponentLoader> = {
   'offline': () => import('../../../../app/components/pages/offline.vue'),
   'checkout': () => import('#commerce/app/components/content/pages/checkout.vue'),
   'success': () => import('#commerce/app/components/content/pages/success.vue'),
+  'transactions': () => import('#commerce/app/components/sales/transactions.vue'),
+  'invoices': () => import('#commerce/app/components/sales/invoices.vue'),
+  'orders': () => import('#commerce/app/components/sales/orders.vue'),
+  'shipments': () => import('#commerce/app/components/sales/shipments.vue'),
+  'incentives': () => import('#commerce/app/components/sales/incentives.vue'),
 }
 
 export default pageComponentMap

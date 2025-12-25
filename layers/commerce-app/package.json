@@ -25,10 +25,10 @@
       "gqlg": "npx gqlg --schemaFilePath graphql/schema.graphql --destDirPath graphql/framework --depthLimit 2"
    },
    "devDependencies": {
+      "@unlok-co/nuxt-stripe": "^6.0.2",
       "nuxt": "latest"
    },
    "dependencies": {
-      "@paypal/paypal-js": "^9.0.1",
       "@storefront-ui/nuxt": "latest"
    }
 }

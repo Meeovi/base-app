@@ -243,7 +243,8 @@
 <script setup>
   import {
     ref,
-    computed
+    computed,
+    watch
   } from 'vue';
   import comments from '#social/app/components/blocks/comments.vue'
 
@@ -346,4 +347,12 @@
   useHead({
     title: computed(() => product?.value?.name || 'Product Page')
   })
+
+  import { addViewed } from '#commerce/app/composables/products/useRecentlyViewed'
+
+  watch(product, (newVal) => {
+    if (process.client && newVal?.id) {
+      addViewed(newVal.id)
+    }
+  }, { immediate: true })
 </script>

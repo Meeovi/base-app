@@ -30,33 +30,14 @@
 <script setup>
   import productCard from './productCard.vue'
 
-  const model = ref(null);
-  const {
-    $directus,
-    $readItems
-  } = useNuxtApp()
+  const model = ref(null)
 
-  const {
-    data: recentlyViewed
-  } = await useAsyncData('recentlyViewed', () => {
-    return $directus.request($readItems('products', {
-      fields: ['*',
-        'products.products_id.*',
-        'products.products_id.image.*',
-        'currency.currency_id.*',
-        'brands.brands_id.*',
-        'image.*',
-      ],
-      limit: 10,
-      filter: {
-        collections: {
-          collections_id: {
-            name: {
-              _eq: "Recently Viewed"
-            }
-          }
-        }
-      }
-    }))
+  import { onMounted } from 'vue'
+  import { useRecentlyViewed } from '#commerce/app/composables/products/useRecentlyViewed'
+
+  const { products: recentlyViewed, load } = useRecentlyViewed()
+
+  onMounted(() => {
+    load()
   })
 </script>

@@ -93,10 +93,7 @@
         </v-btn>
       </v-card-actions>
 
-      <!-- PayPal Buttons Container (renders after clicking checkout) -->
-      <div v-if="showPayPal" class="px-4 pb-4">
-        <div id="paypal-button-container"></div>
-      </div>
+      <!-- Checkout handled via Stripe Checkout (server-created session) -->
     </v-navigation-drawer>
 
     <!-- Confirmation Dialog -->
@@ -117,187 +114,96 @@
 </template>
 
 <script setup>
-  import {
-    ref,
-    computed,
-    onMounted
-  } from 'vue'
-  import {
-    useRouter
-  } from 'vue-router'
-  import {
-    useCartStore
-  } from '#commerce/app/stores/cart'
-  import {
-    useCart
-  } from '#commerce/app/composables/cart/useCart'
-  import {
-    loadScript
-  } from '@paypal/paypal-js'
+import { ref, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { useCartStore } from '#commerce/app/stores/cart'
+import { useCart } from '#commerce/app/composables/cart/useCart'
+import { useNuxtApp } from '#app'
 
-  // Local state
-  const cartNotification = ref(false)
-  const notificationMessage = ref('')
-  const drawer = ref(false)
-  const router = useRouter()
-  const showConfirmDialog = ref(false)
-  const loading = ref(false)
-  const cartId = useCookie('magento_cart_id')
-  const showPayPal = ref(false)
+const cartNotification = ref(false)
+const notificationMessage = ref('')
+const drawer = ref(false)
+const router = useRouter()
+const showConfirmDialog = ref(false)
+const loading = ref(false)
+const cartId = useCookie('magento_cart_id')
 
-  // Store and composable - only initialize on client side
-  const cartStore = process.client ? useCartStore() : null
-  const {
-    removeFromCart,
-    updateCartItem,
-    fetchCart,
-    clearCart: clearCartItems
-  } = process.client ? useCart() : { 
-    removeFromCart: () => {}, 
-    updateCartItem: () => {}, 
-    fetchCart: () => {}, 
-    clearCart: () => {} 
+const cartStore = process.client ? useCartStore() : null
+const { removeFromCart, updateCartItem, fetchCart, clearCart: clearCartItems } = process.client
+  ? useCart()
+  : { removeFromCart: () => {}, updateCartItem: () => {}, fetchCart: () => {}, clearCart: () => {} }
+
+onMounted(async () => {
+  if (process.client) await fetchCart()
+})
+
+const totalQuantity = computed(() => {
+  if (!process.client || !cartStore || !cartStore.items) return 0
+  return cartStore.items.reduce((total, item) => total + (item?.quantity || 0), 0)
+})
+
+const updateQuantity = async (itemId, newQuantity) => {
+  try {
+    loading.value = true
+    await updateCartItem(itemId, newQuantity)
+    showNotification('Cart updated')
+  } catch (error) {
+    console.error('Error updating quantity:', error)
+  } finally {
+    loading.value = false
   }
-  
-  // Initialize cart on component mount
-  onMounted(async () => {
-    if (process.client) {
-      await fetchCart()
+}
+
+const nuxtApp = useNuxtApp()
+const handleCheckout = async () => {
+  try {
+    loading.value = true
+    if (!cartStore || !cartStore.createCheckoutSession) {
+      showNotification('Checkout is not available')
+      return
     }
-  })
 
-  // Computed properties
-  const totalQuantity = computed(() => {
-    if (!process.client || !cartStore || !cartStore.items) return 0
-    return cartStore.items.reduce((total, item) => total + (item?.quantity || 0), 0)
-  })
-
-  // Methods
-  const updateQuantity = async (itemId, newQuantity) => {
-    try {
-      loading.value = true
-      await updateCartItem(itemId, newQuantity)
-      showNotification('Cart updated')
-    } catch (error) {
-      console.error('Error updating quantity:', error)
-    } finally {
-      loading.value = false
+    const data = await cartStore.createCheckoutSession(cartStore?.cart?.id)
+    const url = data?.url || (data?.id ? `https://checkout.stripe.com/pay/${data.id}` : null)
+    if (url) {
+      window.location.href = url
+      return
     }
-  }
 
-  // Already defined in the destructured useCart()
-
-  const handleCheckout = async () => {
-    // Switch to PayPal flow: render PayPal Buttons in the flyout and initialize order creation
-    try {
-      loading.value = true
-      showPayPal.value = true
-      await createAndRenderPayPalButtons()
-    } catch (error) {
-      console.error('Error initializing PayPal checkout:', error)
-      showNotification('Error initializing PayPal checkout')
-    } finally {
-      loading.value = false
+    const injectedStripe = nuxtApp?.$stripe || (typeof useStripe === 'function' ? useStripe() : null)
+    if (injectedStripe && typeof injectedStripe.redirectToCheckout === 'function' && data?.id) {
+      await injectedStripe.redirectToCheckout({ sessionId: data.id })
+      return
     }
+
+    showNotification('Failed to start checkout')
+  } catch (error) {
+    console.error('Checkout error:', error)
+    showNotification('Error starting checkout')
+  } finally {
+    loading.value = false
   }
+}
 
-  // Render PayPal Buttons into the cart flyout container
-  const createAndRenderPayPalButtons = async () => {
-    if (!process.client) return
-    const config = useRuntimeConfig()
+const handleClearCart = () => {
+  showConfirmDialog.value = true
+}
 
-    try {
-      // Ensure PayPal JS SDK is loaded
-      if (!window.paypal) {
-        await loadScript({ clientId: config.public.paypalClientId })
-      }
-
-      // Prepare the buttons
-      const buttons = window.paypal.Buttons({
-        style: { layout: 'vertical', color: 'blue', shape: 'rect', label: 'paypal' },
-        createOrder: async (data, actions) => {
-          // Prefer server-side order creation if available
-          try {
-            const res = await fetch('/api/create-paypal-order', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ items: cartStore?.items || [], cartId: cartId.value })
-            })
-            if (res.ok) {
-              const json = await res.json()
-              if (json?.orderID) return json.orderID
-            }
-          } catch (err) {
-            // fallthrough to client-side create
-            console.warn('Server-side PayPal order creation failed, falling back to client-side', err)
-          }
-
-          // Fallback: create order client-side
-          const total = String(cartStore?.totalPrice || 0)
-          return actions.order.create({
-            purchase_units: [{ amount: { value: total } }]
-          })
-        },
-        onApprove: async (data, actions) => {
-          try {
-            // If actions.order.capture is available, capture client-side
-            let captureResult = null
-            if (actions && actions.order && typeof actions.order.capture === 'function') {
-              captureResult = await actions.order.capture()
-            }
-
-            // Notify server to fulfill the order (optional but recommended)
-            try {
-              await fetch('/api/capture-paypal-order', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ orderID: data.orderID, cartId: cartId.value })
-              })
-            } catch (fulfillErr) {
-              console.warn('Order capture/fulfillment webhook failed', fulfillErr)
-            }
-
-            showNotification('Payment completed')
-            await clearCartItems()
-            drawer.value = false
-          } catch (err) {
-            console.error('Error capturing PayPal order:', err)
-            showNotification('Payment capture failed')
-          }
-        },
-        onError: (err) => {
-          console.error('PayPal Buttons error:', err)
-          showNotification('PayPal error')
-        }
-      })
-
-      // Render into container; if it's already rendered this will throw which we catch
-      await buttons.render('#paypal-button-container')
-    } catch (err) {
-      console.error('Failed to render PayPal buttons', err)
-      showNotification('Failed to initialize PayPal')
-    }
+const confirmClear = async () => {
+  try {
+    await clearCartItems()
+    showConfirmDialog.value = false
+    showNotification('Cart cleared')
+    drawer.value = false
+  } catch (error) {
+    console.error('Error clearing cart:', error)
   }
+}
 
-  const handleClearCart = () => {
-    showConfirmDialog.value = true
-  }
-
-  const confirmClear = async () => {
-    try {
-      await clearCartItems()
-      showConfirmDialog.value = false
-      showNotification('Cart cleared')
-      drawer.value = false
-    } catch (error) {
-      console.error('Error clearing cart:', error)
-    }
-  }
-
-  const showNotification = (message) => {
-    notificationMessage.value = message
-    cartNotification.value = true
-  }
+const showNotification = (message) => {
+  notificationMessage.value = message
+  cartNotification.value = true
+}
 </script>
 
 <style scoped>

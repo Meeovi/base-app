@@ -29,7 +29,12 @@
     data: stationSlide
   } = await useAsyncData('stationSlide', () => {
     return $directus.request($readItems('radios', {
-      fields: ['*', { '*': ['*'] }]
+      fields: ['*', { '*': ['*'] }],
+      filter: {
+        status: {
+          _eq: "published"
+        }
+      }
     }))
   })
 </script>

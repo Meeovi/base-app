@@ -35,3 +35,5 @@ export { useVendureQuery } from '../app/composables/useVendureQuery';
 export { default as countryList } from '../app/utils/countryList';
 export { formatPrice, convertPrice, getCurrencySymbol } from '../app/utils/currency';
 export { getStripe } from '../app/utils/stripe';
+export { default as useClientStripeD } from '../../../node_modules/@unlok-co/nuxt-stripe/dist/runtime/composables/useClientStripe.d';
+export { default as useClientStripe } from '../../../node_modules/@unlok-co/nuxt-stripe/dist/runtime/composables/useClientStripe';

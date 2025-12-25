@@ -10,7 +10,7 @@
   import getActiveOrderQuery from '#graphql/app/commerce/queries/activeOrder.gql';
   import { useNuxtApp } from '#app';
 
-  const nuxtApp = useNuxtApp() as any;
+  const nuxtApp = useNuxtApp();
 
   const redirectToCheckout = async () => {
     try {

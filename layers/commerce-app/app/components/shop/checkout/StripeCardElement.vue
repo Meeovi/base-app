@@ -107,11 +107,10 @@ const shippingDetails = ref({
   },
 });
 
-function useNuxtApp(): { $stripe: any } {
-  // In a real Nuxt app, this would return the injected Stripe instance.
-  // Replace this with your actual Stripe integration.
+function useNuxtApp() {
+  // Return a simple wrapper exposing a client-side Stripe instance if available
   return {
-    $stripe: (window as any).StripeInstance
+    $stripe: (typeof window !== 'undefined' && window.Stripe) ? window.Stripe : null
   };
 }
 const { $stripe } = useNuxtApp();

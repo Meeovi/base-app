@@ -39,7 +39,7 @@
   import exclusives from '#commerce/app/components/catalog/product/exclusives.vue'
   import deals from '#commerce/app/components/catalog/product/deals.vue'
   import recentlyViewed from '#commerce/app/components/catalog/product/recentlyviewed.vue'
-  import relatedbrands from '#commerce/app/components/sales/brands/relatedbrands.vue'
+  import relatedbrands from '#commerce/app/components/catalog/product/relatedbrands.vue'
   //import relatedcreators from '#social/components/related/relatedcreators.vue'
   //import yardsale from '~/components/pages/homepage/yardsale.vue'
   import blogcallout from '~/components/pages/homepage/blogcallout.vue'

@@ -49,12 +49,19 @@
       ],
       limit: 10,
       filter: {
-        collections: {
-          collections_id: {
-            name: {
-              _eq: "Featured"
+        lists: {
+          lists_id: {
+            lists_types: {
+              lists_types_id: {
+                name: {
+                  _eq: "Featured"
+                }
+              }
             }
           }
+        },
+        status: {
+          _eq: "published"
         }
       }
     }))
