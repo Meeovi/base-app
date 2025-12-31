@@ -1,24 +1,38 @@
-import { useDirectusClient } from '../directus'
+import {
+  useDirectusClient
+} from '../directus'
 import * as DirectusSdk from '@directus/sdk'
 const Directus = (DirectusSdk as any).Directus || (DirectusSdk as any).default || DirectusSdk
-import type { H3Event } from 'h3'
-import { Client as MinioClient } from 'minio'
-import { v4 as uuidv4 } from 'uuid'
-import formidable from 'formidable'
-import fs from 'fs/promises'
-import { createError, defineEventHandler } from 'h3'
+import type {
+  H3Event
+} from 'h3'
+import {
+  Client as MinioClient
+} from 'minio'
+import {
+  v4 as uuidv4
+} from 'uuid'
+import { Formidable } from 'formidable'
+import fs from 'node:fs/promises'
+import {
+  createError,
+  defineEventHandler
+} from 'h3'
 
 export default defineEventHandler(async (event: H3Event) => {
   // 1. Authenticate user via Directus access token (from Authorization header or sb:token cookie)
   const authHeader = event.node.req.headers.authorization || ''
   const headerToken = authHeader.startsWith('Bearer ') ? authHeader.split(' ')[1] : null
   const cookieHeader = event.node.req.headers.cookie || ''
-  const cookieMatch = cookieHeader.match(/access_token=([^;]+)/) || cookieHeader.match(/sb:token=([^;]+)/)
-  const cookieToken = cookieMatch && cookieMatch[1] ? decodeURIComponent(cookieMatch[1]) : null
+  const cookieMatch = RegExp(/access_token=([^;]+)/).exec(cookieHeader) || cookieHeader.match(/sb:token=([^;]+)/)
+  const cookieToken = cookieMatch?.[1] ? decodeURIComponent(cookieMatch[1]) : null
 
   const tokenToCheck = headerToken || cookieToken
   if (!tokenToCheck) {
-    return createError({ statusCode: 401, statusMessage: 'Unauthorized' })
+    return createError({
+      statusCode: 401,
+      statusMessage: 'Unauthorized'
+    })
   }
 
   // Validate token with Directus SDK by creating a temp client with the provided token
@@ -31,14 +45,21 @@ export default defineEventHandler(async (event: H3Event) => {
     user = null
   }
 
-  if (!user) return createError({ statusCode: 401, statusMessage: 'Unauthorized' })
+  if (!user) return createError({
+    statusCode: 401,
+    statusMessage: 'Unauthorized'
+  })
 
   // 2. Parse uploaded file
-  const form = formidable({ keepExtensions: true })
+  const form = new Formidable({ uploadDir: "/uploads/", keepExtensions: false });
+
   const [fields, files] = (await form.parse(event.req)) as any
-  const file = (files.video as any)
+  const file = (files.video)
   if (!file || Array.isArray(file)) {
-    return createError({ statusCode: 400, statusMessage: 'Invalid file' })
+    return createError({
+      statusCode: 400,
+      statusMessage: 'Invalid file'
+    })
   }
 
   const fileBuffer = await fs.readFile(file.filepath)
@@ -78,8 +99,9 @@ export default defineEventHandler(async (event: H3Event) => {
     'vibez-uploads',
     minioKey,
     fileBuffer,
-    fileBuffer.length,
-    { 'Content-Type': file.mimetype || 'video/mp4' }
+    fileBuffer.length, {
+      'Content-Type': file.mimetype || 'video/mp4'
+    }
   )
 
   // 4. Insert metadata into Directus 'videos' collection using service token
@@ -95,8 +117,14 @@ export default defineEventHandler(async (event: H3Event) => {
   const itemsApi = adminClient.items('videos')
   const createResp = await itemsApi.create(payload)
   if (!createResp || createResp.errors) {
-    return createError({ statusCode: 500, statusMessage: JSON.stringify(createResp) })
+    return createError({
+      statusCode: 500,
+      statusMessage: JSON.stringify(createResp)
+    })
   }
 
-  return { success: true, id: fileId }
+  return {
+    success: true,
+    id: fileId
+  }
 })

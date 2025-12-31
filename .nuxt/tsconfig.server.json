@@ -104,9 +104,6 @@
       "nuxt-site-config": [
         "../node_modules/nuxt-site-config"
       ],
-      "@tiptap/vue-3": [
-        "../node_modules/@tiptap/vue-3"
-      ],
       "vue-i18n": [
         "../node_modules/vue-i18n"
       ],
@@ -127,6 +124,9 @@
       ],
       "@intlify/message-compiler": [
         "../node_modules/@intlify/message-compiler"
+      ],
+      "@tiptap/vue-3": [
+        "../node_modules/@tiptap/vue-3"
       ],
       "#shared": [
         "../layers/shared-app"
@@ -167,6 +167,15 @@
       "#social/*": [
         "../layers/social-app/*"
       ],
+      "#auth": [
+        "../../auth-app"
+      ],
+      "#search": [
+        "../../search-app"
+      ],
+      "#search/*": [
+        "../../search-app/*"
+      ],
       "#sellerDashboard": [
         "../layers/seller-dashboard-app"
       ],
@@ -203,6 +212,18 @@
       "#layers/departments-app/*": [
         "../layers/departments-app/*"
       ],
+      "#layers/auth-app": [
+        "../layers/auth-app"
+      ],
+      "#layers/auth-app/*": [
+        "../layers/auth-app/*"
+      ],
+      "#layers/search-app": [
+        "../layers/search-app"
+      ],
+      "#layers/search-app/*": [
+        "../layers/search-app/*"
+      ],
       "#layers/seller-dashboard-app": [
         "../layers/seller-dashboard-app"
       ],
@@ -220,6 +241,9 @@
       ],
       "#internal-i18n-types": [
         "../node_modules/@nuxtjs/i18n/dist/types"
+      ],
+      "#auth-utils": [
+        "../node_modules/nuxt-auth-utils/dist/runtime/types/index"
       ],
       "#unhead/composables": [
         "../node_modules/nuxt/dist/head/runtime/composables"
@@ -297,7 +321,7 @@
         "../node_modules/nuxt-og-image/dist/runtime/server/og-image/satori/renderer"
       ],
       "#og-image/renderers/chromium": [
-        "../node_modules/nuxt-og-image/dist/runtime/server/og-image/chromium/renderer"
+        "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
       ],
       "#og-image/bindings/css-inline": [
         "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
@@ -312,7 +336,22 @@
         "../node_modules/nuxt-og-image/dist/runtime/server/og-image/bindings/satori/node"
       ],
       "#og-image/bindings/chromium": [
-        "../node_modules/nuxt-og-image/dist/runtime/server/og-image/bindings/chromium/on-demand"
+        "../node_modules/nuxt-og-image/dist/runtime/server/og-image/bindings/chromium/null"
+      ],
+      "electron": [
+        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
+      ],
+      "bufferutil": [
+        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
+      ],
+      "utf-8-validate": [
+        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
+      ],
+      "queue": [
+        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
+      ],
+      "chromium-bidi": [
+        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
       ]
     },
     "lib": [
@@ -336,31 +375,40 @@
     "../layers/commerce-app/server/**/*",
     "../layers/lists-app/server/**/*",
     "../layers/departments-app/server/**/*",
+    "../layers/auth-app/server/**/*",
+    "../layers/search-app/server/**/*",
     "../layers/seller-dashboard-app/server/**/*",
+    "../../search-app/server/**/*",
     "../shared/**/*.d.ts",
     "../layers/social-app/shared/**/*.d.ts",
     "../layers/shared-app/shared/**/*.d.ts",
     "../layers/commerce-app/shared/**/*.d.ts",
     "../layers/lists-app/shared/**/*.d.ts",
     "../layers/departments-app/shared/**/*.d.ts",
+    "../layers/auth-app/shared/**/*.d.ts",
+    "../layers/search-app/shared/**/*.d.ts",
     "../layers/seller-dashboard-app/shared/**/*.d.ts",
+    "../../search-app/shared/**/*.d.ts",
     "./types/nitro.d.ts"
   ],
   "exclude": [
     "../node_modules",
     "../node_modules/nuxt/node_modules",
-    "../node_modules/@nuxtjs/leaflet/node_modules",
-    "../node_modules/@unlok-co/nuxt-stripe/node_modules",
+    "../../search-app/node_modules",
     "../node_modules/@nuxt/image/node_modules",
+    "../node_modules/@nuxtjs/tailwindcss/node_modules",
+    "../node_modules/@storefront-ui/nuxt/node_modules",
+    "../node_modules/@nuxtjs/i18n/node_modules",
+    "../node_modules/nuxt-security/node_modules",
+    "../node_modules/vuetify-nuxt-module/node_modules",
     "../node_modules/@pinia/nuxt/node_modules",
     "../node_modules/@vueuse/nuxt/node_modules",
+    "../node_modules/nuxt-auth-utils/node_modules",
+    "../node_modules/@nuxtjs/leaflet/node_modules",
+    "../node_modules/@unlok-co/nuxt-stripe/node_modules",
     "../node_modules/@nuxtjs/mcp-toolkit/node_modules",
     "../node_modules/nuxt-tiptap-editor/node_modules",
     "../node_modules/@nuxt/test-utils/node_modules",
-    "../node_modules/@nuxtjs/tailwindcss/node_modules",
-    "../node_modules/vuetify-nuxt-module/node_modules",
-    "../node_modules/@nuxtjs/i18n/node_modules",
-    "../node_modules/nuxt-security/node_modules",
     "../node_modules/@nuxtjs/seo/node_modules",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",

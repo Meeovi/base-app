@@ -116,6 +116,18 @@
       "#social/*": [
         "../../social-app/*"
       ],
+      "#auth": [
+        "../../auth-app"
+      ],
+      "#auth/*": [
+        "../../auth-app/*"
+      ],
+      "#search": [
+        "../../search-app"
+      ],
+      "#search/*": [
+        "../../search-app/*"
+      ],
       "#unhead/composables": [
         "../../../node_modules/nuxt/dist/head/runtime/composables"
       ],
@@ -136,8 +148,6 @@
     "./types/nitro-nuxt.d.ts",
     "../../../node_modules/runtime/server",
     "../../../node_modules/dist/runtime/server",
-    "../../../modules/nuxt-commerce/src/runtime/server",
-    "../../../modules/nuxt-commerce/src/dist/runtime/server",
     "../../../../../../../../../../../AppData/Roaming/npm/node_modules/runtime/server",
     "../../../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server",
     "../server/**/*",
@@ -149,7 +159,6 @@
     "../../../node_modules",
     "../../../node_modules/nuxt/node_modules",
     "../../../node_modules/@unlok-co/nuxt-stripe/node_modules",
-    "../../../modules/nuxt-commerce/node_modules",
     "../../../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
     "../../../node_modules/@nuxt/telemetry/node_modules",
     "../dist"

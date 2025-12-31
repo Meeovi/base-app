@@ -12,6 +12,8 @@ const layers = useLayers(__dirname, {
   lists: 'layers/lists-app',
   sellerDashboard: 'layers/seller-dashboard-app',
   social: 'layers/social-app',
+  auth: 'layers/auth-app',
+  search: 'layers/search-app'
 })
 
 export default defineNuxtConfig({
@@ -42,11 +44,7 @@ export default defineNuxtConfig({
         {
           rel: 'apple-touch-icon',
           href: '/icons/apple-touch-icon-180x180.png'
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css'
-        },
+        }
       ],
     },
   },

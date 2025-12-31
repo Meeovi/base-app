@@ -55,7 +55,7 @@
     import postCard from '~/components/related/post.vue'
     import {
         useUserStore
-    } from '~/stores/user'
+    } from '~~/layers/auth-app/app/stores/user'
 
     const user = useSupabaseUser()
 

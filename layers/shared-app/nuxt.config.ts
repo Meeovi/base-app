@@ -7,6 +7,8 @@ const layers = useLayers(__dirname, {
   social: '../social-app',
   lists: '../lists-app',
   departments: '../departments-app',
+  auth: '../auth-app',
+  search: '../search-app'
 })
 
 export default defineNuxtConfig({
@@ -24,7 +26,7 @@ export default defineNuxtConfig({
       },
       meta: [{
         name: 'description',
-        content: 'Base Application for Meeovi Framework'
+        content: 'Shared Application for Meeovi Framework'
       }, ],
       link: [{
           rel: 'icon',
@@ -33,10 +35,6 @@ export default defineNuxtConfig({
         {
           rel: 'apple-touch-icon',
           href: '/icons/apple-touch-icon-180x180.png'
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css'
         }
       ],
     },
@@ -62,18 +60,6 @@ export default defineNuxtConfig({
       // ShareThis
       NUXT_PROJECT_ID: process.env.NUXT_PROJECT_ID,
       NUXT_PUBLIC_SITE_URL: process.env.NUXT_PUBLIC_SITE_URL,
-
-      indexName: process.env.MEILISEARCH_INDEX_NAME,
-
-      meilisearch: {
-        host: process.env.MEILISEARCH_HOST,
-        searchApiKey: process.env.MEILISEARCH_SEARCH_API_KEY,
-        options: {
-          primaryKey: 'id',
-          keepZeroFacets: false,
-          finitePagination: false
-        },
-      },
 
       // Rocket.chat
       rocketChatUrl: process.env.NUXT_PUBLIC_ROCKETCHAT_URL,

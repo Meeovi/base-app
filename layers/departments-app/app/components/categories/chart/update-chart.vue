@@ -94,7 +94,7 @@
     import { updateItem, deleteItem } from '@directus/sdk';
     import {
         useUserStore
-    } from '~/stores/user'
+    } from '~~/layers/auth-app/app/stores/user'
     import {
         useRouter
     } from 'vue-router'

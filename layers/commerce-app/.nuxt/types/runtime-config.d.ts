@@ -31,10 +31,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
    nitro: {
       envPrefix: string,
    },
-
-   commerce: {
-      magentoToken: any,
-   },
   }
   interface SharedPublicRuntimeConfig {
    stripe: {
@@ -78,11 +74,9 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
    },
 
    commerce: {
-      magentoEndpoint: any,
+      magentoEndpoint: string,
 
       magentoToken: string,
-
-      provider: string,
    },
 
    ups: {

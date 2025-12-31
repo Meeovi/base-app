@@ -51,7 +51,7 @@
     } from 'vue';
     import {
         useUserStore
-    } from '~/stores/user'
+    } from '~~/layers/auth-app/app/stores/user'
 
     const model = ref(null);
     const userStore = useUserStore()

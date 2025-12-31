@@ -103,6 +103,18 @@
       "#social/*": [
         "../../social-app/*"
       ],
+      "#auth": [
+        "../../auth-app"
+      ],
+      "#auth/*": [
+        "../../auth-app/*"
+      ],
+      "#search": [
+        "../../search-app"
+      ],
+      "#search/*": [
+        "../../search-app/*"
+      ],
       "#app": [
         "../../../node_modules/nuxt/dist/app"
       ],
@@ -122,7 +134,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/cf370862-1c96-4294-88ee-27819071bb56"
+        "./manifest/meta/9fdf0ca7-0452-41e6-8ebd-2c58f7920c2f"
       ],
       "#components": [
         "./components"

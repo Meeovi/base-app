@@ -10,6 +10,8 @@ export default defineNuxtConfig({
     '#departments': resolve(__dirname, '../departments-app'),
     '#lists': resolve(__dirname, '../lists-app'),
     '#social': resolve(__dirname, '../social-app'),
+    '#auth': resolve(__dirname, '../auth-app'),
+    '#search': resolve(__dirname, '../search-app'),
   },
 
   experimental: {

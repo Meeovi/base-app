@@ -29,7 +29,7 @@
     import bookmarkCard from '~/components/related/bookmark.vue'
     import {
         useUserStore
-    } from '~/stores/user'
+    } from '~~/layers/auth-app/app/stores/user'
 
     const userStore = useUserStore()
     const userDisplayName = computed(() => {

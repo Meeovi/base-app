@@ -5,6 +5,11 @@ export const pathToI18nConfig = {
     "pl-PL": "/cart",
     "testde": "/cart"
   },
+  "/error": {
+    "en-GB": "/error",
+    "pl-PL": "/error",
+    "testde": "/error"
+  },
   "/": {
     "en-GB": "/",
     "pl-PL": "/",
@@ -79,6 +84,11 @@ export const pathToI18nConfig = {
     "en-GB": "/reset-password",
     "pl-PL": "/reset-password",
     "testde": "/reset-password"
+  },
+  "/Search/results": {
+    "en-GB": "/Search/results",
+    "pl-PL": "/Search/results",
+    "testde": "/Search/results"
   },
   "/shop/:slug(.*)*": {
     "en-GB": "/shop/:slug(.*)*",
@@ -213,6 +223,7 @@ export const pathToI18nConfig = {
 };
 export const i18nPathToPath = {
   "/cart": "/cart",
+  "/error": "/error",
   "/": "/",
   "/login": "/login",
   "/shops": "/shops",
@@ -228,6 +239,7 @@ export const i18nPathToPath = {
   "/invoice/:id()": "/invoice/:id()",
   "/account": "/account",
   "/reset-password": "/reset-password",
+  "/Search/results": "/Search/results",
   "/shop/:slug(.*)*": "/shop/:slug(.*)*",
   "/brand/:slug(.*)*": "/brand/:slug(.*)*",
   "/forgot-password": "/forgot-password",

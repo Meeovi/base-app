@@ -39,7 +39,7 @@
 <script setup>
 import {
         useUserStore
-    } from '~/stores/user'
+    } from '~~/layers/auth-app/app/stores/user'
 
     const userStore = useUserStore()
 

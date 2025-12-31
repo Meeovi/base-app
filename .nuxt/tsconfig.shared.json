@@ -76,9 +76,6 @@
       "nuxt-site-config": [
         "../node_modules/nuxt-site-config"
       ],
-      "@tiptap/vue-3": [
-        "../node_modules/@tiptap/vue-3"
-      ],
       "vue-i18n": [
         "../node_modules/vue-i18n/dist/vue-i18n",
         "../node_modules/vue-i18n"
@@ -106,6 +103,9 @@
       "@intlify/message-compiler": [
         "../node_modules/@intlify/message-compiler/dist/message-compiler",
         "../node_modules/@intlify/message-compiler"
+      ],
+      "@tiptap/vue-3": [
+        "../node_modules/@tiptap/vue-3"
       ],
       "~": [
         "../app"
@@ -161,6 +161,15 @@
       "#social/*": [
         "../layers/social-app/*"
       ],
+      "#auth": [
+        "../../auth-app"
+      ],
+      "#search": [
+        "../../search-app"
+      ],
+      "#search/*": [
+        "../../search-app/*"
+      ],
       "#sellerDashboard": [
         "../layers/seller-dashboard-app"
       ],
@@ -197,6 +206,18 @@
       "#layers/departments-app/*": [
         "../layers/departments-app/*"
       ],
+      "#layers/auth-app": [
+        "../layers/auth-app"
+      ],
+      "#layers/auth-app/*": [
+        "../layers/auth-app/*"
+      ],
+      "#layers/search-app": [
+        "../layers/search-app"
+      ],
+      "#layers/search-app/*": [
+        "../layers/search-app/*"
+      ],
       "#layers/seller-dashboard-app": [
         "../layers/seller-dashboard-app"
       ],
@@ -220,6 +241,9 @@
       ],
       "#internal-i18n-types": [
         "../node_modules/@nuxtjs/i18n/dist/types"
+      ],
+      "#auth-utils": [
+        "../node_modules/nuxt-auth-utils/dist/runtime/types/index"
       ],
       "#vue-router": [
         "../node_modules/vue-router"
@@ -279,7 +303,7 @@
         "./tailwindcss/sources"
       ],
       "#app-manifest": [
-        "./manifest/meta/dev"
+        "./manifest/meta/9a4632a9-fe36-45d9-a425-ced53c9a6136"
       ],
       "#build": [
         "."
@@ -314,7 +338,12 @@
     "../modules/*/shared/**/*",
     "../layers/*/shared/**/*",
     "../*.d.ts",
-    "../layers/*/*.d.ts"
+    "../layers/*/*.d.ts",
+    "../../search-app/shared/**/*",
+    "../../search-app/modules/*/shared/**/*",
+    "../../search-app/layers/*/shared/**/*",
+    "../../search-app/*.d.ts",
+    "../../search-app/layers/*/*.d.ts"
   ],
   "exclude": []
 }

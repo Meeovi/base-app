@@ -44,7 +44,7 @@
 <script setup>
   import {
     useUserStore
-  } from '~/stores/user'
+  } from '~~/layers/auth-app/app/stores/user'
   import list from '#lists/app/components/lists/lists.vue'
   import post from '#social/app/components/feeds/posts.vue'
   import shorts from '#social/app/components/vibez/shorts.vue'

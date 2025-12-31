@@ -116,6 +116,18 @@
       "#social/*": [
         "../../social-app/*"
       ],
+      "#auth": [
+        "../../auth-app"
+      ],
+      "#auth/*": [
+        "../../auth-app/*"
+      ],
+      "#search": [
+        "../../search-app"
+      ],
+      "#search/*": [
+        "../../search-app/*"
+      ],
       "#unhead/composables": [
         "../../../node_modules/nuxt/dist/head/runtime/composables"
       ]

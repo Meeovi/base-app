@@ -96,7 +96,7 @@
   import {
     ref,
   } from 'vue'
-  import logoutButton from '#shared/app/components/auth/logoutButton.vue'
+  import logoutButton from '#auth/app/components/logoutButton.vue'
 
   const tab = ref(null)
   const drawer = ref(false)
