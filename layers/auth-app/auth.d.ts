@@ -8,6 +8,7 @@ declare module '#auth-utils' {
     githubId?: number | null
     twitchId?: string | null
     verifiedAt: string | null
+    isSeller?: boolean | null
     emailToVerify?: string | null
   }
 }
