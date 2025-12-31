@@ -41,11 +41,14 @@
 </template>
 
 <script setup>
+  import productCard from '#commerce/app/components/catalog/product/productCard.vue'
+  
   const {
     $directus,
     $readItem
   } = useNuxtApp()
 
+  const model = ref(null)
   const {
     data: departmentTheater
   } = await useAsyncData('departmentTheater', () => {

@@ -52,58 +52,18 @@
 
   const tab = ref(null);
 
-  const {
-    $directus,
-    $readItem,
-    $readItems
-  } = useNuxtApp()
+  const { $commerce } = useNuxtApp()
 
-  const {
-    data: groupedProducts
-  } = await useAsyncData('groupedProducts', () => {
-    return $directus.request($readItems('products', {
-      fields: ['*',
-        'currency.currency_id.*',
-        'image.*',
-      ],
-      filter: {
-        type: {
-          _eq: "Grouped Product"
-        }
-      }
-    }))
+  const { data: groupedProducts } = await useAsyncData('groupedProducts', async () => {
+    return await $commerce.getProducts({ pageSize: 12 })
   })
 
-  const {
-    data: bundledProducts
-  } = await useAsyncData('bundledProducts', () => {
-    return $directus.request($readItems('products', {
-      fields: ['*',
-        'currency.currency_id.*',
-        'image.*',
-      ],
-      filter: {
-        type: {
-          _eq: "Bundled Product"
-        }
-      }
-    }))
+  const { data: bundledProducts } = await useAsyncData('bundledProducts', async () => {
+    return await $commerce.getProducts({ pageSize: 12 })
   })
 
-  const {
-    data: subscriptions
-  } = await useAsyncData('subscriptions', () => {
-    return $directus.request($readItems('products', {
-      fields: ['*',
-        'currency.currency_id.*',
-        'image.*',
-      ],
-      filter: {
-        type: {
-          _eq: "Subscriptions"
-        }
-      }
-    }))
+  const { data: subscriptions } = await useAsyncData('subscriptions', async () => {
+    return await $commerce.getProducts({ pageSize: 12 })
   })
 
   const {

@@ -13,30 +13,42 @@ export default defineNuxtConfig({
   extends: layers.extends(),
   alias: layers.alias('#'),
 
+  app: {
+    head: {
+      viewport: 'minimum-scale=1, initial-scale=1, width=device-width',
+      templateParams: {
+        separator: '·',
+      },
+      htmlAttrs: {
+        lang: 'en',
+      },
+      meta: [{
+        name: 'description',
+        content: 'Base Application for Meeovi Framework'
+      }, ],
+      link: [{
+          rel: 'icon',
+          href: '/favicon.ico'
+        },
+        {
+          rel: 'apple-touch-icon',
+          href: '/icons/apple-touch-icon-180x180.png'
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css'
+        }
+      ],
+    },
+  },
+
   css: [],
 
-  modules: ["@nuxt/image", '@pinia/nuxt', '@vueuse/nuxt', '@maas/vue-equipment/nuxt', '@nuxtjs/mcp-toolkit', 'nuxt-tiptap-editor', 'nuxt-auth-utils', 'nuxt-authorization'],
-
-  auth: {
-    oauth: {
-      directus: {
-        clientId: process.env.NUXT_OAUTH_DIRECTUS_CLIENT_ID,
-        clientSecret: process.env.NUXT_OAUTH_DIRECTUS_CLIENT_SECRET,
-        redirectUrl: process.env.NUXT_OAUTH_DIRECTUS_REDIRECT_URL
-      }
-    },
-    atproto: true,
-    webAuthn: true
-  },
+  modules: ["@nuxt/image", '@pinia/nuxt', '@vueuse/nuxt', '@nuxtjs/mcp-toolkit', 'nuxt-tiptap-editor'],
 
   mcp: {
     name: 'Meeovi MCP Server',
     version: '1.0.0',
-  },
-
-  vueEquipment: {
-    plugins: ['MagicDrawer', 'MagicMenu', 'MagicModal', 'MagicCommand', 'MagicCookie', 'MagicDraggable', 'MagicMenu', 'MagicEmitter', 'MagicError', 'MagicMarquee', 'MagicPie', 'MagicNoise', 'MagicPlayer', 'MagicScroll', 'MagicToast'],
-    composables: ['useCountdown', 'useScrollTo', 'useuseEasings', 'useMetaViewport', 'useScrollLockPadding'],
   },
 
   runtimeConfig: {
@@ -66,15 +78,16 @@ export default defineNuxtConfig({
       // Rocket.chat
       rocketChatUrl: process.env.NUXT_PUBLIC_ROCKETCHAT_URL,
 
-
       // Minio
       minioEndpoint: process.env.MINIO_ENDPOINT,
       minioUser: process.env.MINIO_USER,
       minioPass: process.env.MINIO_PASS,
 
       // Supabase
-      supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL,
-      supabaseAnonKey: process.env.NUXT_PUBLIC_SUPABASE_KEY,
+      supabase: {
+        url: process.env.SUPABASE_URL || '',
+        key: process.env.SUPABASE_KEY || '',
+      },
 
       // Commerce 
       commerceUrl: process.env.COMMERCE_STORE_URL,
@@ -86,14 +99,14 @@ export default defineNuxtConfig({
 
       // Stripe
       stripe: {
-        publishableKey: process.env.STRIPE_PUBLISHABLE_KEY
+        key: process.env.STRIPE_PUBLISHABLE_KEY
       },
 
       // Paypal
       paypalClientId: process.env.PAYPAL_CLIENT_ID,
     },
     stripe: {
-      secretKey: process.env.STRIPE_SECRET_KEY
+      key: process.env.STRIPE_SECRET_KEY
     }
   },
 

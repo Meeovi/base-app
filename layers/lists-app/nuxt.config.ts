@@ -40,17 +40,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: [
-    'assets/web/assets/mobirise-icons2/mobirise2.css',
-    'assets/bootstrap/css/bootstrap.min.css',
-    'assets/bootstrap/css/bootstrap-grid.min.css',
-    'assets/bootstrap/css/bootstrap-reboot.min.css',
-    'assets/theme/css/style.css',
-    'assets/mobirise/css/mbr-additional.css',
-    '@fortawesome/fontawesome-svg-core/styles.css',
-    'assets/styles/mobile.css',
-    'assets/styles/styles.css',
-  ],
+  css: [],
 
   modules: [],
 

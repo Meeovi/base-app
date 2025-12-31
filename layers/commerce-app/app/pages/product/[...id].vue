@@ -264,70 +264,21 @@
   // Product query
   const route = useRoute()
 
-  const {
-    $directus,
-    $readItem
-  } = useNuxtApp()
+  const { $commerce } = useNuxtApp()
 
-  const {
-    data: product
-  } = await useAsyncData('product', () => {
-    return $directus.request($readItem('products', route.params.id, {
-      fields: ['*',
-        'products.products_id.*',
-        'products.products_id.image.*',
-        'showcases.showcases_id.*',
-        'comments.comments_id.*',
-        'currency.currency_id.*',
-        'shorts.shorts_id.*',
-        'categories.categories_id.*',
-        'spaces.spaces_id.*',
-        'shops.shops_id.*',
-        'image.*',
-      ]
-    }))
+  const { data: product } = await useAsyncData('product', async () => {
+    return await $commerce.getProduct(route.params.id)
   })
 
-  const {
-    data: groupedProducts
-  } = await useAsyncData('groupedProducts', () => {
-    return $directus.request($readItem('products', route.params.id, {
-      fields: ['*',
-        'products.products_id.*',
-        'products.products_id.image.*',
-        'image.*',
-      ],
-      filter: {
-        products: {
-          products_id: {
-            type: {
-              _eq: "Grouped Product"
-            }
-          }
-        }
-      }
-    }))
+  // Grouped/bundled products: Magento provider currently doesn't expose
+  // these specific relations via the generic interface. Fetch a small page
+  // of products as a fallback so the UI can render product cards.
+  const { data: groupedProducts } = await useAsyncData('groupedProducts', async () => {
+    return await $commerce.getProducts({ pageSize: 6 })
   })
 
-  const {
-    data: bundledProducts
-  } = await useAsyncData('bundledProducts', () => {
-    return $directus.request($readItem('products', route.params.id, {
-      fields: ['*',
-        'products.products_id.*',
-        'products.products_id.image.*',
-        'image.*',
-      ],
-      filter: {
-        products: {
-          products_id: {
-            type: {
-              _eq: "Bundled Product"
-            }
-          }
-        }
-      }
-    }))
+  const { data: bundledProducts } = await useAsyncData('bundledProducts', async () => {
+    return await $commerce.getProducts({ pageSize: 6 })
   })
 
   const {

@@ -14,16 +14,14 @@
 			</div>
 		</section>
 
-        <v-card variant="text" class="lowerBar">
+        <v-card variant="text">
             <v-toolbar :style="`background-color: ${friendBar?.color}; color: ${friendBar?.colortext} !important`">
-                <v-toolbar-title>{{ friendBar?.name }}</v-toolbar-title>
-
 
                 <v-tabs v-model="tab" align-tabs="center">
                     <div v-for="(menu, index) in friendBar?.menus" :key="index">
                         <v-tab :value="menu?.value">
-                            <v-btn variant="text"
-                                :style="`color: ${friendBar?.colortext} !important`">{{ menu?.name }}</v-btn>
+                            <v-btn variant="text" :style="`color: ${friendBar?.colortext} !important`"
+                                :href="menu?.slug">{{ menu?.name }}</v-btn>
                         </v-tab>
                     </div>
                 </v-tabs>

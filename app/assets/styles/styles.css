@@ -1026,6 +1026,14 @@ body {
     background-color: transparent !important;
 }
 
+.article2 {
+    padding-top: 0px;
+}
+
+.social02 {
+    padding-top: 0px;
+}
+
 .postReactions {
     position: relative;
     top: 3px;

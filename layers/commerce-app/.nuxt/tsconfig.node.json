@@ -92,6 +92,7 @@
     "../../../node_modules",
     "../../../node_modules/nuxt/node_modules",
     "../../../node_modules/@unlok-co/nuxt-stripe/node_modules",
+    "../../../modules/nuxt-commerce/node_modules",
     "../../../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
     "../../../node_modules/@nuxt/telemetry/node_modules",
     "../dist",
@@ -107,6 +108,8 @@
     "../layers/*/modules/*/runtime/server/**/*",
     "../../../node_modules/runtime",
     "../../../node_modules/dist/runtime",
+    "../../../modules/nuxt-commerce/src/runtime",
+    "../../../modules/nuxt-commerce/src/dist/runtime",
     "../../../../../../../../../../../AppData/Roaming/npm/node_modules/runtime",
     "../../../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime"
   ]

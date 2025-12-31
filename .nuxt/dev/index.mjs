@@ -1,30 +1,27 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
 import { Server } from 'node:http';
 import { resolve as resolve$1, dirname, extname, join } from 'node:path';
-import crypto$1 from 'node:crypto';
+import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
 import wsAdapter from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/crossws/dist/adapters/node.mjs';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getResponseStatus, createError, getQuery as getQuery$1, readBody, H3Error, getRequestProtocol, getRequestHost, useSession, getCookie, setCookie, removeResponseHeader, getHeader, getRouterParam, setHeader, handleCors, getRequestIP, readMultipartFormData, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, sendError, readRawBody, readValidatedBody, defineWebSocketHandler, getResponseStatusText } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getRequestProtocol, getRequestHost, createError, getQuery as getQuery$1, getResponseStatus, getCookie, setCookie, removeResponseHeader, getHeader, readBody, getRouterParam, setHeader, handleCors, getRequestIP, readMultipartFormData, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, sendError, readRawBody, getValidatedRouterParams, defineWebSocketHandler, getResponseStatusText, H3Error } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/h3/dist/index.mjs';
 import { escapeHtml } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@vue/shared/dist/shared.cjs.js';
-import defu, { defuFn, createDefu, defu as defu$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/defu/dist/defu.mjs';
+import defu, { defuFn, defu as defu$1, createDefu } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/defu/dist/defu.mjs';
 import { html as html$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/satori-html/dist/index.js';
 import sizeOf from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/image-size/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, joinRelativeURL, hasProtocol, withHttps, withLeadingSlash, withoutTrailingSlash, withBase, withTrailingSlash, withoutLeadingSlash, parsePath, decodePath, stringifyQuery, parseQuery, encodePath, stringifyParsedURL } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ufo/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withoutTrailingSlash, withLeadingSlash, withBase, withTrailingSlash, withoutLeadingSlash, joinRelativeURL, parsePath, decodePath, stringifyQuery, parseQuery, encodePath, stringifyParsedURL } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ufo/dist/index.mjs';
 import consola, { createConsola, consola as consola$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/consola/dist/index.mjs';
 import { execa } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/nuxt-og-image/node_modules/execa/index.js';
 import playwrightCore from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/playwright-core/index.mjs';
 import { toValue, isVNode, isRef } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/vue/index.mjs';
 import * as DirectusSdk from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@directus/sdk/dist/index.js';
-import { createDirectus, rest, readItem, updateItem } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@directus/sdk/dist/index.js';
+import { createDirectus, rest, readItem, readItems as readItems$1, updateItem } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@directus/sdk/dist/index.js';
 import Stripe from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/stripe/esm/stripe.esm.node.js';
-import { z } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/zod/index.js';
+import z, { z as z$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/zod/index.js';
 import { Client } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/minio/dist/esm/minio.mjs';
 import { v4 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/uuid/dist-node/index.js';
 import formidable from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/formidable/src/index.js';
 import fs$1, { readFile } from 'node:fs/promises';
-import { generateAuthenticationOptions, verifyAuthenticationResponse, generateRegistrationOptions, verifyRegistrationResponse } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@simplewebauthn/server/esm/index.js';
-import { randomUUID, getRandomValues } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/uncrypto/dist/crypto.node.mjs';
-import { bufferToBase64URLString, base64URLStringToBuffer } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@simplewebauthn/browser/dist/bundle/index.js';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import destr, { destr as destr$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/destr/dist/index.mjs';
 import { parse, stringify, uneval } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/devalue/index.js';
@@ -32,13 +29,13 @@ import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:/
 import { createStorage, prefixStorage, normalizeKey } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unstorage/dist/index.mjs';
 import lruCacheDriver from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unstorage/drivers/lru-cache.mjs';
 import { klona } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/klona/dist/index.mjs';
-import { snakeCase, kebabCase, titleCase, upperFirst } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/scule/dist/index.mjs';
+import { snakeCase, kebabCase, titleCase } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/scule/dist/index.mjs';
 import { createGenerator } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@unocss/core/dist/index.mjs';
 import presetWind from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@unocss/preset-wind3/dist/index.mjs';
 import { digest, hash as hash$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ohash/dist/index.mjs';
 import { toRouteMatcher, createRouter } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/radix3/dist/index.mjs';
 import { createHooks } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/hookable/dist/index.mjs';
-import { FetchError, createFetch, Headers as Headers$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ofetch/dist/node.mjs';
+import { createFetch, Headers as Headers$1 } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/ofetch/dist/node.mjs';
 import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/node-mock-http/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unstorage/drivers/fs.mjs';
 import unstorage_47drivers_47redis from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unstorage/drivers/redis.mjs';
@@ -53,6 +50,7 @@ import { captureRawStackTrace, parseRawStackTrace } from 'file://C:/Users/Basti/
 import fs, { promises } from 'node:fs';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { dirname as dirname$1, resolve as resolve$2, isAbsolute } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/pathe/dist/index.mjs';
+import { createClient } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@supabase/supabase-js/dist/index.mjs';
 import process$1 from 'node:process';
 import { renderToString } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/vue/server-renderer/index.mjs';
 import { walkResolver } from 'file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/unhead/dist/utils.mjs';
@@ -758,10 +756,12 @@ const _inlineRuntimeConfig = {
     "stripe": {
       "manualClientLoad": false,
       "key": "mk_1S9u7BBeKGrUL2I426w5o8Kw",
-      "options": {},
-      "publishableKey": "mk_1S9u7BBeKGrUL2I426w5o8Kw"
+      "options": {}
     },
-    "commerceApiToken": "uk2et3qlhy4ibsse9mihtocgt45iyhsp",
+    "commerce": {
+      "magentoEndpoint": "https://meeovi.com/graphql",
+      "magentoToken": ""
+    },
     "ups": {
       "apiKey": "",
       "apiUrl": "https://onlinetools.ups.com/api"
@@ -803,11 +803,13 @@ const _inlineRuntimeConfig = {
     "minioEndpoint": "https://live.meeovicms.com",
     "minioUser": "meeovi",
     "minioPass": "Libraxus@1986",
+    "supabase": {
+      "url": "https://tfelkrbgkbmewrzmgfcc.supabase.co",
+      "key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRmZWxrcmJna2JtZXdyem1nZmNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg1MTYxMTcsImV4cCI6MjA1NDA5MjExN30.bFIMXnDLutAlG4Y2dCUyrmm2jXPInLuyqaBEhTSIVCk"
+    },
+    "commerceApiToken": "a28g7iegnoqji80mzs4nxjp12ic3q9fz",
     "gtagId": "GTM-MQ4JC38D",
     "paypalClientId": "AbcdEfghIjklMnopQrstuVwxYz",
-    "auth": {
-      "loadStrategy": "server-first"
-    },
     "nuxt-schema-org": {
       "reactive": true,
       "minify": false,
@@ -882,8 +884,7 @@ const _inlineRuntimeConfig = {
   },
   "stripe": {
     "key": "mk_1SNkm1BeKGrUL2I4CqeCzE9I",
-    "options": {},
-    "secretKey": "mk_1SNkm1BeKGrUL2I4CqeCzE9I"
+    "options": {}
   },
   "paypal": {
     "clientId": "AbcdEfghIjklMnopQrstuVwxYz",
@@ -897,301 +898,6 @@ const _inlineRuntimeConfig = {
     "name": "Meeovi MCP Server",
     "version": "1.0.0",
     "dir": "mcp"
-  },
-  "session": {
-    "name": "nuxt-session",
-    "password": "",
-    "cookie": {
-      "sameSite": "lax"
-    }
-  },
-  "hash": {
-    "scrypt": {}
-  },
-  "webauthn": {
-    "register": {},
-    "authenticate": {}
-  },
-  "oauth": {
-    "gitea": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": "",
-      "baseURL": ""
-    },
-    "github": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "gitlab": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": "",
-      "baseURL": "https://gitlab.com"
-    },
-    "spotify": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "google": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "twitch": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "auth0": {
-      "clientId": "",
-      "clientSecret": "",
-      "domain": "",
-      "audience": "",
-      "redirectURL": ""
-    },
-    "workos": {
-      "clientId": "",
-      "clientSecret": "",
-      "connectionId": "",
-      "screenHint": "",
-      "redirectURL": ""
-    },
-    "microsoft": {
-      "clientId": "",
-      "clientSecret": "",
-      "tenant": "",
-      "scope": [],
-      "authorizationURL": "",
-      "tokenURL": "",
-      "userURL": "",
-      "redirectURL": ""
-    },
-    "azureb2c": {
-      "clientId": "",
-      "policy": "",
-      "tenant": "",
-      "scope": [],
-      "authorizationURL": "",
-      "tokenURL": "",
-      "userURL": "",
-      "redirectURL": ""
-    },
-    "discord": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "battledotnet": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "bluesky": {
-      "clientMetadataFilename": "",
-      "clientName": "",
-      "clientUri": "",
-      "logoUri": "",
-      "policyUri": "",
-      "tosUri": "",
-      "scope": [
-        "atproto"
-      ],
-      "grantTypes": [
-        "authorization_code"
-      ],
-      "responseTypes": [
-        "code"
-      ],
-      "applicationType": "web",
-      "redirectUris": "",
-      "dpopBoundAccessTokens": true,
-      "tokenEndpointAuthMethod": "none"
-    },
-    "keycloak": {
-      "clientId": "",
-      "clientSecret": "",
-      "serverUrl": "",
-      "serverUrlInternal": "",
-      "realm": "",
-      "redirectURL": ""
-    },
-    "linear": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "linkedin": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "cognito": {
-      "clientId": "",
-      "clientSecret": "",
-      "region": "",
-      "userPoolId": "",
-      "redirectURL": ""
-    },
-    "facebook": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "instagram": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "paypal": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "steam": {
-      "apiKey": "",
-      "redirectURL": ""
-    },
-    "x": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "xsuaa": {
-      "clientId": "",
-      "clientSecret": "",
-      "domain": "",
-      "redirectURL": ""
-    },
-    "vk": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "yandex": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "tiktok": {
-      "clientKey": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "dropbox": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "polar": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "zitadel": {
-      "clientId": "",
-      "clientSecret": "",
-      "domain": "",
-      "redirectURL": ""
-    },
-    "authentik": {
-      "clientId": "",
-      "clientSecret": "",
-      "domain": "",
-      "redirectURL": ""
-    },
-    "seznam": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "strava": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "hubspot": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "line": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "atlassian": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "apple": {
-      "teamId": "",
-      "keyId": "",
-      "privateKey": "",
-      "redirectURL": "",
-      "clientId": ""
-    },
-    "kick": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": ""
-    },
-    "livechat": {
-      "clientId": "",
-      "clientSecret": ""
-    },
-    "salesforce": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": "",
-      "baseURL": "",
-      "scope": ""
-    },
-    "slack": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": "",
-      "scope": ""
-    },
-    "heroku": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": "",
-      "scope": ""
-    },
-    "roblox": {
-      "clientId": "",
-      "clientSecret": "",
-      "redirectURL": "",
-      "scope": ""
-    },
-    "okta": {
-      "clientId": "",
-      "clientSecret": "",
-      "domain": "",
-      "audience": "",
-      "scope": [],
-      "redirectURL": ""
-    },
-    "ory": {
-      "clientId": "",
-      "clientSecret": "",
-      "sdkURL": "",
-      "redirectURL": "",
-      "scope": [],
-      "authorizationURL": "",
-      "tokenURL": "",
-      "userURL": ""
-    },
-    "shopifyCustomer": {
-      "shopDomain": "",
-      "clientId": "",
-      "redirectURL": "",
-      "scope": []
-    }
   },
   "private": {
     "basicAuth": false
@@ -1319,7 +1025,6 @@ const _inlineRuntimeConfig = {
         "include": [],
         "exclude": [
           "/_**",
-          "/_nuxt/**",
           "/_nuxt/**"
         ],
         "includeAppSources": true,
@@ -1330,7 +1035,6 @@ const _inlineRuntimeConfig = {
         "include": [],
         "exclude": [
           "/_**",
-          "/_nuxt/**",
           "/_nuxt/**"
         ],
         "includeAppSources": true,
@@ -1341,7 +1045,6 @@ const _inlineRuntimeConfig = {
         "include": [],
         "exclude": [
           "/_**",
-          "/_nuxt/**",
           "/_nuxt/**"
         ],
         "includeAppSources": true,
@@ -1471,52 +1174,6 @@ const _inlineRuntimeConfig = {
           }
         ],
         "_normalized": true
-      },
-      {
-        "comment": [],
-        "disallow": [
-          "/pages/account/*",
-          "/pl-PL/pages/account/*",
-          "/testde/pages/account/*"
-        ],
-        "allow": [
-          "/pages/*",
-          "/pl-PL/pages/*",
-          "/testde/pages/*"
-        ],
-        "userAgent": [
-          "*"
-        ],
-        "contentUsage": [],
-        "contentSignal": [],
-        "_indexable": true,
-        "_rules": [
-          {
-            "pattern": "/pages/account/*",
-            "allow": false
-          },
-          {
-            "pattern": "/pl-PL/pages/account/*",
-            "allow": false
-          },
-          {
-            "pattern": "/testde/pages/account/*",
-            "allow": false
-          },
-          {
-            "pattern": "/pages/*",
-            "allow": true
-          },
-          {
-            "pattern": "/pl-PL/pages/*",
-            "allow": true
-          },
-          {
-            "pattern": "/testde/pages/*",
-            "allow": true
-          }
-        ],
-        "_normalized": true
       }
     ],
     "sitemap": [
@@ -1566,9 +1223,9 @@ const _inlineRuntimeConfig = {
     "strictNuxtContentPaths": "",
     "isNuxtContentDocumentDriven": false,
     "componentDirs": [
-      "OgImageTemplate",
+      "OgImage",
       "og-image",
-      "OgImage"
+      "OgImageTemplate"
     ]
   },
   "ipx": {
@@ -2281,739 +1938,6 @@ async function errorHandler(error, event) {
   // H3 will handle fallback
 }
 
-const _cdxnSJlampA5kjx_azfmRhJzuavQKhoLu_yY_6UIdxA = defineNitroPlugin((nitroApp) => {
-  if (process.env.NUXT_OAUTH_FACEBOOK_CLIENT_ID && process.env.NUXT_OAUTH_FACEBOOK_CLIENT_SECRET || process.env.NUXT_OAUTH_INSTAGRAM_CLIENT_ID && process.env.NUXT_OAUTH_INSTAGRAM_CLIENT_SECRET) {
-    nitroApp.hooks.hook("render:html", (html) => {
-      html.head.unshift(`
-      <script>
-        if (window.location.hash === "#_=_"){
-          history.replaceState
-              ? history.replaceState(null, null, window.location.href.split("#")[0])
-              : window.location.hash = "";
-        }
-      <\/script>
-    `);
-    });
-  }
-});
-
-function defineNitroPlugin(def) {
-  return def;
-}
-
-function defineRenderHandler(render) {
-  const runtimeConfig = useRuntimeConfig();
-  return eventHandler(async (event) => {
-    const nitroApp = useNitroApp();
-    const ctx = { event, render, response: void 0 };
-    await nitroApp.hooks.callHook("render:before", ctx);
-    if (!ctx.response) {
-      if (event.path === `${runtimeConfig.app.baseURL}favicon.ico`) {
-        setResponseHeader(event, "Content-Type", "image/x-icon");
-        return send(
-          event,
-          "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-        );
-      }
-      ctx.response = await ctx.render(event);
-      if (!ctx.response) {
-        const _currentStatus = getResponseStatus(event);
-        setResponseStatus(event, _currentStatus === 200 ? 500 : _currentStatus);
-        return send(
-          event,
-          "No response returned from render handler: " + event.path
-        );
-      }
-    }
-    await nitroApp.hooks.callHook("render:response", ctx.response, ctx);
-    if (ctx.response.headers) {
-      setResponseHeaders(event, ctx.response.headers);
-    }
-    if (ctx.response.statusCode || ctx.response.statusMessage) {
-      setResponseStatus(
-        event,
-        ctx.response.statusCode,
-        ctx.response.statusMessage
-      );
-    }
-    return ctx.response.body;
-  });
-}
-
-const r=Object.create(null),i=e=>globalThis.process?.env||globalThis._importMeta_.env||globalThis.Deno?.env.toObject()||globalThis.__env__||(e?r:globalThis),o=new Proxy(r,{get(e,s){return i()[s]??r[s]},has(e,s){const E=i();return s in E||s in r},set(e,s,E){const B=i(true);return B[s]=E,true},deleteProperty(e,s){if(!s)return  false;const E=i(true);return delete E[s],true},ownKeys(){const e=i(true);return Object.keys(e)}}),t=typeof process<"u"&&process.env&&"development"||"",f=[["APPVEYOR"],["AWS_AMPLIFY","AWS_APP_ID",{ci:true}],["AZURE_PIPELINES","SYSTEM_TEAMFOUNDATIONCOLLECTIONURI"],["AZURE_STATIC","INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN"],["APPCIRCLE","AC_APPCIRCLE"],["BAMBOO","bamboo_planKey"],["BITBUCKET","BITBUCKET_COMMIT"],["BITRISE","BITRISE_IO"],["BUDDY","BUDDY_WORKSPACE_ID"],["BUILDKITE"],["CIRCLE","CIRCLECI"],["CIRRUS","CIRRUS_CI"],["CLOUDFLARE_PAGES","CF_PAGES",{ci:true}],["CLOUDFLARE_WORKERS","WORKERS_CI",{ci:true}],["CODEBUILD","CODEBUILD_BUILD_ARN"],["CODEFRESH","CF_BUILD_ID"],["DRONE"],["DRONE","DRONE_BUILD_EVENT"],["DSARI"],["GITHUB_ACTIONS"],["GITLAB","GITLAB_CI"],["GITLAB","CI_MERGE_REQUEST_ID"],["GOCD","GO_PIPELINE_LABEL"],["LAYERCI"],["HUDSON","HUDSON_URL"],["JENKINS","JENKINS_URL"],["MAGNUM"],["NETLIFY"],["NETLIFY","NETLIFY_LOCAL",{ci:false}],["NEVERCODE"],["RENDER"],["SAIL","SAILCI"],["SEMAPHORE"],["SCREWDRIVER"],["SHIPPABLE"],["SOLANO","TDDIUM"],["STRIDER"],["TEAMCITY","TEAMCITY_VERSION"],["TRAVIS"],["VERCEL","NOW_BUILDER"],["VERCEL","VERCEL",{ci:false}],["VERCEL","VERCEL_ENV",{ci:false}],["APPCENTER","APPCENTER_BUILD_ID"],["CODESANDBOX","CODESANDBOX_SSE",{ci:false}],["CODESANDBOX","CODESANDBOX_HOST",{ci:false}],["STACKBLITZ"],["STORMKIT"],["CLEAVR"],["ZEABUR"],["CODESPHERE","CODESPHERE_APP_ID",{ci:true}],["RAILWAY","RAILWAY_PROJECT_ID"],["RAILWAY","RAILWAY_SERVICE_ID"],["DENO-DEPLOY","DENO_DEPLOYMENT_ID"],["FIREBASE_APP_HOSTING","FIREBASE_APP_HOSTING",{ci:true}]];function b(){if(globalThis.process?.env)for(const e of f){const s=e[1]||e[0];if(globalThis.process?.env[s])return {name:e[0].toLowerCase(),...e[2]}}return globalThis.process?.env?.SHELL==="/bin/jsh"&&globalThis.process?.versions?.webcontainer?{name:"stackblitz",ci:false}:{name:"",ci:false}}const l=b();l.name;function n(e){return e?e!=="false":false}const I=globalThis.process?.platform||"",T=n(o.CI)||l.ci!==false,R=n(globalThis.process?.stdout&&globalThis.process?.stdout.isTTY);n(o.DEBUG);const a=t==="test"||n(o.TEST),h=t==="dev"||t==="development";n(o.MINIMAL)||T||a||!R;const A=/^win/i.test(I);!n(o.NO_COLOR)&&(n(o.FORCE_COLOR)||(R||A)&&o.TERM!=="dumb"||T);const C=(globalThis.process?.versions?.node||"").replace(/^v/,"")||null;Number(C?.split(".")[0])||null;const W=globalThis.process||Object.create(null),_={versions:{}};new Proxy(W,{get(e,s){if(s==="env")return o;if(s in e)return e[s];if(s in _)return _[s]}});const O=globalThis.process?.release?.name==="node",c=!!globalThis.Bun||!!globalThis.process?.versions?.bun,D=!!globalThis.Deno,L=!!globalThis.fastly,S=!!globalThis.Netlify,u=!!globalThis.EdgeRuntime,N=globalThis.navigator?.userAgent==="Cloudflare-Workers",F=[[S,"netlify"],[u,"edge-light"],[N,"workerd"],[L,"fastly"],[D,"deno"],[c,"bun"],[O,"node"]];function G(){const e=F.find(s=>s[0]);if(e)return {name:e[1]}}const P=G();P?.name||"";
-
-const scheduledTasks = false;
-
-const tasks = {
-  
-};
-
-const __runningTasks__ = {};
-async function runTask(name, {
-  payload = {},
-  context = {}
-} = {}) {
-  if (__runningTasks__[name]) {
-    return __runningTasks__[name];
-  }
-  if (!(name in tasks)) {
-    throw createError({
-      message: `Task \`${name}\` is not available!`,
-      statusCode: 404
-    });
-  }
-  if (!tasks[name].resolve) {
-    throw createError({
-      message: `Task \`${name}\` is not implemented!`,
-      statusCode: 501
-    });
-  }
-  const handler = await tasks[name].resolve();
-  const taskEvent = { name, payload, context };
-  __runningTasks__[name] = handler.run(taskEvent);
-  try {
-    const res = await __runningTasks__[name];
-    return res;
-  } finally {
-    delete __runningTasks__[name];
-  }
-}
-
-function buildAssetsDir() {
-  return useRuntimeConfig().app.buildAssetsDir;
-}
-function buildAssetsURL(...path) {
-  return joinRelativeURL(publicAssetsURL(), buildAssetsDir(), ...path);
-}
-function publicAssetsURL(...path) {
-  const app = useRuntimeConfig().app;
-  const publicBase = app.cdnURL || app.baseURL;
-  return path.length ? joinRelativeURL(publicBase, ...path) : publicBase;
-}
-
-function parseCacheDuration(duration) {
-  if (typeof duration === "number") {
-    return duration;
-  }
-  const parsed = ms(duration);
-  if (parsed === void 0) {
-    throw new Error(`Invalid cache duration: ${duration}`);
-  }
-  return Math.ceil(parsed / 1e3);
-}
-function createCacheOptions(cache, name, defaultGetKey) {
-  if (typeof cache === "object") {
-    return {
-      getKey: defaultGetKey,
-      ...cache,
-      maxAge: parseCacheDuration(cache.maxAge),
-      name: cache.name ?? name,
-      group: cache.group ?? "mcp"
-    };
-  }
-  return {
-    maxAge: parseCacheDuration(cache),
-    name,
-    group: "mcp",
-    getKey: defaultGetKey
-  };
-}
-function wrapWithCache(fn, cacheOptions) {
-  return defineCachedFunction(
-    fn,
-    cacheOptions
-  );
-}
-
-function enrichNameTitle(options) {
-  const { name, title, _meta, type } = options;
-  const filename = _meta?.filename;
-  let enrichedName = name;
-  let enrichedTitle = title;
-  if (filename) {
-    const nameWithoutExt = filename.replace(/\.(ts|js|mts|mjs)$/, "");
-    if (!enrichedName) {
-      enrichedName = kebabCase(nameWithoutExt);
-    }
-    if (!enrichedTitle) {
-      enrichedTitle = titleCase(nameWithoutExt);
-    }
-  }
-  if (!enrichedName) {
-    throw new Error(`Failed to auto-generate ${type} name from filename. Please provide a name explicitly.`);
-  }
-  return {
-    name: enrichedName,
-    title: enrichedTitle
-  };
-}
-
-function registerToolFromDefinition(server, tool) {
-  const { name, title } = enrichNameTitle({
-    name: tool.name,
-    title: tool.title,
-    _meta: tool._meta,
-    type: "tool"
-  });
-  let handler = tool.handler;
-  if (tool.cache !== void 0) {
-    const defaultGetKey = tool.inputSchema ? (args) => {
-      const values = Object.values(args);
-      return values.map((v) => String(v).replace(/\//g, "-").replace(/^-/, "")).join(":");
-    } : void 0;
-    const cacheOptions = createCacheOptions(tool.cache, `mcp-tool:${name}`, defaultGetKey);
-    handler = wrapWithCache(
-      tool.handler,
-      cacheOptions
-    );
-  }
-  const options = {
-    title,
-    description: tool.description,
-    inputSchema: tool.inputSchema,
-    outputSchema: tool.outputSchema,
-    annotations: tool.annotations,
-    _meta: tool._meta
-  };
-  return server.registerTool(name, options, handler);
-}
-
-function getMimeType(filePath) {
-  const ext = extname(filePath).toLowerCase();
-  switch (ext) {
-    case ".md":
-      return "text/markdown";
-    case ".ts":
-    case ".mts":
-    case ".cts":
-      return "text/typescript";
-    case ".js":
-    case ".mjs":
-    case ".cjs":
-      return "text/javascript";
-    case ".json":
-      return "application/json";
-    case ".html":
-      return "text/html";
-    case ".css":
-      return "text/css";
-    case ".xml":
-      return "text/xml";
-    case ".csv":
-      return "text/csv";
-    case ".yaml":
-    case ".yml":
-      return "text/yaml";
-    default:
-      return "text/plain";
-  }
-}
-function registerResourceFromDefinition(server, resource) {
-  const { name, title } = enrichNameTitle({
-    name: resource.name,
-    title: resource.title,
-    _meta: resource._meta,
-    type: "resource"
-  });
-  let uri = resource.uri;
-  let handler = resource.handler;
-  const metadata = {
-    ...resource.metadata,
-    title: resource.title || resource.metadata?.title || title,
-    description: resource.description || resource.metadata?.description
-  };
-  if ("file" in resource && resource.file) {
-    const filePath = resolve$1(process.cwd(), resource.file);
-    if (!uri) {
-      uri = pathToFileURL(filePath).toString();
-    }
-    if (!handler) {
-      handler = async (requestUri) => {
-        try {
-          const content = await readFile(filePath, "utf-8");
-          return {
-            contents: [{
-              uri: requestUri.toString(),
-              mimeType: resource.metadata?.mimeType || getMimeType(filePath),
-              text: content
-            }]
-          };
-        } catch (error) {
-          throw new Error(`Failed to read file ${filePath}: ${error instanceof Error ? error.message : String(error)}`);
-        }
-      };
-    }
-  }
-  if (!uri) {
-    throw new Error(`Resource ${name} is missing a URI`);
-  }
-  if (!handler) {
-    throw new Error(`Resource ${name} is missing a handler`);
-  }
-  if (resource.cache !== void 0) {
-    const defaultGetKey = (requestUri) => requestUri.pathname.replace(/\//g, "-").replace(/^-/, "");
-    const cacheOptions = createCacheOptions(resource.cache, `mcp-resource:${name}`, defaultGetKey);
-    handler = wrapWithCache(
-      handler,
-      cacheOptions
-    );
-  }
-  if (typeof uri === "string") {
-    return server.registerResource(
-      name,
-      uri,
-      metadata,
-      handler
-    );
-  } else {
-    return server.registerResource(
-      name,
-      uri,
-      metadata,
-      handler
-    );
-  }
-}
-
-function registerPromptFromDefinition(server, prompt) {
-  const { name, title } = enrichNameTitle({
-    name: prompt.name,
-    title: prompt.title,
-    _meta: prompt._meta,
-    type: "prompt"
-  });
-  if (prompt.inputSchema) {
-    return server.registerPrompt(
-      name,
-      {
-        title,
-        description: prompt.description,
-        argsSchema: prompt.inputSchema
-      },
-      prompt.handler
-    );
-  } else {
-    return server.registerPrompt(
-      name,
-      {
-        title,
-        description: prompt.description
-      },
-      prompt.handler
-    );
-  }
-}
-
-const defuReplaceArray = createDefu((obj, key, value) => {
-  if (Array.isArray(obj[key]) || Array.isArray(value)) {
-    obj[key] = value;
-    return true;
-  }
-});
-
-function parseAcceptLanguage(value) {
-  return value.split(",").map((tag) => tag.split(";")[0]).filter(
-    (tag) => !(tag === "*" || tag === "")
-  );
-}
-function createPathIndexLanguageParser(index = 0) {
-  return (path) => {
-    const rawPath = typeof path === "string" ? path : path.pathname;
-    const normalizedPath = rawPath.split("?")[0];
-    const parts = normalizedPath.split("/");
-    if (parts[0] === "") {
-      parts.shift();
-    }
-    return parts.length > index ? parts[index] || "" : "";
-  };
-}
-
-function getOAuthRedirectURL(event) {
-  const requestURL = getRequestURL(event);
-  return `${requestURL.protocol}//${requestURL.host}${requestURL.pathname}`;
-}
-async function requestAccessToken(url, options) {
-  const headers = {
-    "Content-Type": "application/x-www-form-urlencoded",
-    ...options.headers
-  };
-  const body = headers["Content-Type"] === "application/x-www-form-urlencoded" ? new URLSearchParams(
-    options.body || options.params || {}
-  ).toString() : options.body;
-  return $fetch(url, {
-    method: "POST",
-    headers,
-    body
-  }).catch((error) => {
-    if (error instanceof FetchError && error.status === 401) {
-      return error.data;
-    }
-    throw error;
-  });
-}
-function handleAccessTokenErrorResponse(event, oauthProvider, oauthError, onError) {
-  const message = `${upperFirst(oauthProvider)} login failed: ${oauthError.error_description || oauthError.error || "Unknown error"}`;
-  const error = createError({
-    statusCode: 401,
-    message,
-    data: oauthError
-  });
-  if (!onError) throw error;
-  return onError(event, error);
-}
-function handleMissingConfiguration(event, provider, missingKeys, onError) {
-  const environmentVariables = missingKeys.map((key) => `NUXT_OAUTH_${provider.toUpperCase()}_${snakeCase(key).toUpperCase()}`);
-  const error = createError({
-    statusCode: 500,
-    message: `Missing ${environmentVariables.join(" or ")} env ${missingKeys.length > 1 ? "variables" : "variable"}.`
-  });
-  if (!onError) throw error;
-  return onError(event, error);
-}
-
-function defineOAuthXEventHandler({
-  config,
-  onSuccess,
-  onError
-}) {
-  return eventHandler(async (event) => {
-    config = defu$1(config, useRuntimeConfig(event).oauth?.x, {
-      authorizationURL: "https://x.com/i/oauth2/authorize",
-      tokenURL: "https://api.x.com/2/oauth2/token",
-      userURL: "https://api.x.com/2/users/me",
-      authorizationParams: {
-        state: randomUUID(),
-        code_challenge: randomUUID()
-      }
-    });
-    const query = getQuery$1(event);
-    if (!config.clientId || !config.clientSecret) {
-      return handleMissingConfiguration(event, "x", ["clientId", "clientSecret"], onError);
-    }
-    const redirectURL = config.redirectURL || getOAuthRedirectURL(event);
-    if (!query.code) {
-      config.scope = config.scope || [
-        "tweet.read",
-        "users.read",
-        "offline.access"
-      ];
-      return sendRedirect(
-        event,
-        withQuery(config.authorizationURL, {
-          response_type: "code",
-          client_id: config.clientId,
-          code_challenge_method: "plain",
-          redirect_uri: redirectURL,
-          scope: config.scope.join(" "),
-          ...config.authorizationParams
-        })
-      );
-    }
-    const tokens = await requestAccessToken(config.tokenURL, {
-      headers: {
-        Authorization: `Basic ${Buffer.from(
-          `${config.clientId}:${config.clientSecret}`
-        ).toString("base64")}`
-      },
-      params: {
-        grant_type: "authorization_code",
-        code_verifier: config.authorizationParams?.code_challenge,
-        redirect_uri: redirectURL,
-        code: query.code
-      }
-    });
-    if (tokens.error) {
-      return handleAccessTokenErrorResponse(event, "x", tokens, onError);
-    }
-    const accessToken = tokens.access_token;
-    const user = await $fetch(config.userURL, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`
-      },
-      query: {
-        "user.fields": "description,id,name,profile_image_url,username,verified,verified_type"
-      }
-    }).catch((error) => {
-      return error;
-    });
-    return onSuccess(event, {
-      tokens,
-      user: user?.data
-    });
-  });
-}
-
-function defineWebAuthnAuthenticateEventHandler({
-  storeChallenge,
-  getChallenge,
-  getCredential,
-  allowCredentials,
-  getOptions,
-  onSuccess,
-  onError
-}) {
-  return eventHandler(async (event) => {
-    const url = getRequestURL(event);
-    const body = await readBody(event);
-    const _config = defu(await getOptions?.(event, body) ?? {}, useRuntimeConfig(event).webauthn.authenticate, {
-      rpID: url.hostname
-    });
-    if (!storeChallenge) {
-      _config.challenge = "";
-    }
-    try {
-      if (!body.verify) {
-        if (allowCredentials && body.userName) {
-          _config.allowCredentials = await allowCredentials(event, body.userName);
-        }
-        const options = await generateAuthenticationOptions(_config);
-        const attemptId = bufferToBase64URLString(getRandomValues(new Uint8Array(32)).buffer);
-        if (storeChallenge) {
-          await storeChallenge(event, options.challenge, attemptId);
-        }
-        return {
-          requestOptions: options,
-          attemptId
-        };
-      }
-      if (!body.attemptId)
-        throw createError({ statusCode: 400 });
-      let expectedChallenge = "";
-      if (getChallenge) {
-        expectedChallenge = await getChallenge(event, body.attemptId);
-      }
-      const credential = await getCredential(event, body.response.id);
-      const verification = await verifyAuthenticationResponse({
-        response: body.response,
-        expectedChallenge,
-        expectedOrigin: url.origin,
-        expectedRPID: url.hostname,
-        requireUserVerification: false,
-        // TODO: make configurable https://simplewebauthn.dev/docs/advanced/passkeys#verifyauthenticationresponse
-        credential: {
-          id: credential.id,
-          publicKey: new Uint8Array(base64URLStringToBuffer(credential.publicKey)),
-          counter: credential.counter,
-          transports: credential.transports
-        }
-      });
-      if (!verification.verified)
-        throw createError({ statusCode: 400, message: "Failed to verify registration response" });
-      await onSuccess(event, {
-        credential,
-        authenticationInfo: verification.authenticationInfo
-      });
-      return verification;
-    } catch (error) {
-      if (!onError) throw error;
-      if (error instanceof H3Error)
-        return onError(event, error);
-      return onError(event, createError({ statusCode: 500, message: "Failed to authenticate credential" }));
-    }
-  });
-}
-
-function defineWebAuthnRegisterEventHandler({
-  storeChallenge,
-  getChallenge,
-  getOptions,
-  validateUser,
-  excludeCredentials,
-  onSuccess,
-  onError
-}) {
-  return eventHandler(async (event) => {
-    const url = getRequestURL(event);
-    const body = await readBody(event);
-    if (body.verify === void 0 || !body.user?.userName)
-      throw createError({
-        message: "Invalid request, missing userName or verify property",
-        statusCode: 400
-      });
-    let user = body.user;
-    if (validateUser) {
-      user = await validateUserData(body.user, event, validateUser);
-    }
-    const _config = defu(await getOptions?.(event, body) ?? {}, useRuntimeConfig(event).webauthn.register, {
-      rpID: url.hostname,
-      rpName: url.hostname,
-      userName: user.userName,
-      userDisplayName: user.displayName,
-      authenticatorSelection: {
-        userVerification: "preferred"
-      }
-    });
-    if (!storeChallenge) {
-      _config.challenge = "";
-    }
-    try {
-      if (!body.verify) {
-        if (excludeCredentials) {
-          _config.excludeCredentials = await excludeCredentials(event, user.userName);
-        }
-        const options = await generateRegistrationOptions(_config);
-        const attemptId = bufferToBase64URLString(getRandomValues(new Uint8Array(32)).buffer);
-        if (storeChallenge) {
-          await storeChallenge(event, options.challenge, attemptId);
-        }
-        return {
-          creationOptions: options,
-          attemptId
-        };
-      }
-      if (!body.attemptId) {
-        throw createError({
-          message: "Invalid request, missing attemptId",
-          statusCode: 400
-        });
-      }
-      let expectedChallenge = "";
-      if (getChallenge) {
-        expectedChallenge = await getChallenge(event, body.attemptId);
-      }
-      const verification = await verifyRegistrationResponse({
-        response: body.response,
-        expectedChallenge,
-        expectedOrigin: url.origin,
-        expectedRPID: url.hostname,
-        requireUserVerification: false,
-        // TODO: make configurable https://simplewebauthn.dev/docs/advanced/passkeys#verifyregistrationresponse
-        supportedAlgorithmIDs: _config.supportedAlgorithmIDs
-      });
-      if (!verification.verified) {
-        throw createError({
-          message: "Failed to verify registration response",
-          statusCode: 400
-        });
-      }
-      await onSuccess(event, {
-        user,
-        credential: {
-          id: verification.registrationInfo.credential.id,
-          publicKey: bufferToBase64URLString(verification.registrationInfo.credential.publicKey.buffer),
-          counter: verification.registrationInfo.credential.counter,
-          backedUp: verification.registrationInfo.credentialBackedUp,
-          transports: verification.registrationInfo.credential.transports
-        },
-        registrationInfo: verification.registrationInfo
-      });
-      return verification;
-    } catch (error) {
-      if (!onError) throw error;
-      if (error instanceof H3Error)
-        return onError(event, error);
-      return onError(event, createError({ statusCode: 500, message: "Failed to register credential" }));
-    }
-  });
-}
-async function validateUserData(userBody, event, fn) {
-  try {
-    const res = await fn(userBody, event);
-    if (res === false) {
-      throw createUserValidationError();
-    }
-    if (res === true) {
-      return userBody;
-    }
-    return res ?? userBody;
-  } catch (error) {
-    throw createUserValidationError(error);
-  }
-}
-function createUserValidationError(validateError) {
-  throw createError({
-    status: validateError?.statusCode || 400,
-    message: validateError?.message || "User Validation Error",
-    data: validateError
-  });
-}
-
-const atprotoProviders = ["bluesky"];
-function getClientMetadataFilename(provider, config) {
-  return config?.clientMetadataFilename || provider + "/client-metadata.json";
-}
-
-function getAtprotoClientMetadata(event, provider, config) {
-  const providerRuntimeConfig = useRuntimeConfig(event).oauth[provider];
-  const scopes = [.../* @__PURE__ */ new Set(["atproto", ...[], ...providerRuntimeConfig.scope ?? []])];
-  const scope = scopes.join(" ");
-  const grantTypes = [.../* @__PURE__ */ new Set(["authorization_code", ...providerRuntimeConfig.grantTypes ?? []])];
-  const requestURL = getRequestURL(event);
-  const baseUrl = `${requestURL.protocol}//${requestURL.host}`;
-  const redirectURL = new URL(
-    providerRuntimeConfig.redirectUris[0] && baseUrl + providerRuntimeConfig.redirectUris[0] || getOAuthRedirectURL(event)
-  );
-  if (redirectURL.hostname === "localhost") {
-    redirectURL.hostname = "127.0.0.1";
-  }
-  const redirectUris = (providerRuntimeConfig.redirectUris.length ? providerRuntimeConfig.redirectUris : [requestURL.pathname]).map((uri) => new URL(`${redirectURL.protocol}//${redirectURL.host}${uri}`).toString());
-  const clientId = `http://localhost?redirect_uri=${encodeURIComponent(redirectURL.toString())}&scope=${encodeURIComponent(scope)}` ;
-  const clientMetadata = {
-    client_name: providerRuntimeConfig.clientName || void 0,
-    client_uri: providerRuntimeConfig.clientUri || void 0,
-    logo_uri: providerRuntimeConfig.logoUri || void 0,
-    policy_uri: providerRuntimeConfig.policyUri || void 0,
-    tos_uri: providerRuntimeConfig.tosUri || void 0,
-    client_id: clientId,
-    redirect_uris: redirectUris,
-    scope,
-    grant_types: grantTypes,
-    application_type: providerRuntimeConfig.applicationType,
-    token_endpoint_auth_method: providerRuntimeConfig.tokenEndpointAuthMethod,
-    dpop_bound_access_tokens: true
-  };
-  return clientMetadata;
-}
-
-function getNitroOrigin$1(ctx = {}) {
-  const isDev = ctx.isDev ?? h;
-  const isPrerender = ctx.isPrerender ?? !!o.prerender;
-  let host = "";
-  let port = "";
-  let protocol = o.NITRO_SSL_CERT && o.NITRO_SSL_KEY ? "https" : "http";
-  if (isDev || isPrerender) {
-    const devEnv = o.__NUXT_DEV__ || o.NUXT_VITE_NODE_OPTIONS;
-    if (devEnv) {
-      const parsed = JSON.parse(devEnv);
-      const origin = parsed.proxy?.url || parsed.baseURL?.replace("/__nuxt_vite_node__", "");
-      host = origin.replace(/^https?:\/\//, "");
-      protocol = origin.startsWith("https") ? "https" : "http";
-    }
-  }
-  if (!host && ctx.requestHost) {
-    host = ctx.requestHost;
-    protocol = ctx.requestProtocol || protocol;
-  }
-  if (!host) {
-    host = o.NITRO_HOST || o.HOST || "";
-    if (isDev)
-      port = o.NITRO_PORT || o.PORT || "3000";
-  }
-  if (host.includes(":")) {
-    const i = host.lastIndexOf(":");
-    port = host.slice(i + 1);
-    host = host.slice(0, i);
-  }
-  host = o.NUXT_SITE_HOST_OVERRIDE || host;
-  port = o.NUXT_SITE_PORT_OVERRIDE || port;
-  if (host.startsWith("http://") || host.startsWith("https://")) {
-    protocol = host.startsWith("https://") ? "https" : "http";
-    host = host.replace(/^https?:\/\//, "");
-  } else if (!host.includes("localhost") && !host.startsWith("127.")) {
-    protocol = "https";
-  }
-  return `${protocol}://${host}${port ? `:${port}` : ""}/`;
-}
-
-function getNitroOrigin(e) {
-  return getNitroOrigin$1({
-    isDev: true,
-    isPrerender: false,
-    requestHost: e ? getRequestHost(e, { xForwardedHost: true }) : void 0,
-    requestProtocol: e ? getRequestProtocol(e, { xForwardedProto: true }) : void 0
-  });
-}
-
 function normalizeSiteConfig(config) {
   if (typeof config.indexable !== "undefined")
     config.indexable = String(config.indexable) !== "false";
@@ -3106,190 +2030,20 @@ function getSiteConfig(e, _options) {
   return e.context.siteConfig.get(options);
 }
 
-function getSiteIndexable(e) {
-  const { env, indexable } = getSiteConfig(e);
-  if (typeof indexable !== "undefined")
-    return String(indexable) === "true";
-  return env === "production";
-}
-
-function useNitroOrigin(e) {
-  return getNitroOrigin(e);
-}
-
-function useSiteConfig(e, _options) {
-  return getSiteConfig(e, _options);
-}
-
-function resolveSitePath(pathOrUrl, options) {
-  let path = pathOrUrl;
-  if (hasProtocol(pathOrUrl, { strict: false, acceptRelative: true })) {
-    const parsed = parseURL(pathOrUrl);
-    path = parsed.pathname;
-  }
-  const base = withLeadingSlash(options.base || "/");
-  if (base !== "/" && path.startsWith(base)) {
-    path = path.slice(base.length);
-  }
-  let origin = withoutTrailingSlash(options.absolute ? options.siteUrl : "");
-  if (base !== "/" && origin.endsWith(base)) {
-    origin = origin.slice(0, origin.indexOf(base));
-  }
-  const baseWithOrigin = options.withBase ? withBase(base, origin || "/") : origin;
-  const resolvedUrl = withBase(path, baseWithOrigin);
-  return path === "/" && !options.withBase ? withTrailingSlash(resolvedUrl) : fixSlashes(options.trailingSlash, resolvedUrl);
-}
-const fileExtensions = [
-  // Images
-  "jpg",
-  "jpeg",
-  "png",
-  "gif",
-  "bmp",
-  "webp",
-  "svg",
-  "ico",
-  // Documents
-  "pdf",
-  "doc",
-  "docx",
-  "xls",
-  "xlsx",
-  "ppt",
-  "pptx",
-  "txt",
-  "md",
-  "markdown",
-  // Archives
-  "zip",
-  "rar",
-  "7z",
-  "tar",
-  "gz",
-  // Audio
-  "mp3",
-  "wav",
-  "flac",
-  "ogg",
-  "opus",
-  "m4a",
-  "aac",
-  "midi",
-  "mid",
-  // Video
-  "mp4",
-  "avi",
-  "mkv",
-  "mov",
-  "wmv",
-  "flv",
-  "webm",
-  // Web
-  "html",
-  "css",
-  "js",
-  "json",
-  "xml",
-  "tsx",
-  "jsx",
-  "ts",
-  "vue",
-  "svelte",
-  "xsl",
-  "rss",
-  "atom",
-  // Programming
-  "php",
-  "py",
-  "rb",
-  "java",
-  "c",
-  "cpp",
-  "h",
-  "go",
-  // Data formats
-  "csv",
-  "tsv",
-  "sql",
-  "yaml",
-  "yml",
-  // Fonts
-  "woff",
-  "woff2",
-  "ttf",
-  "otf",
-  "eot",
-  // Executables/Binaries
-  "exe",
-  "msi",
-  "apk",
-  "ipa",
-  "dmg",
-  "iso",
-  "bin",
-  // Scripts/Config
-  "bat",
-  "cmd",
-  "sh",
-  "env",
-  "htaccess",
-  "conf",
-  "toml",
-  "ini",
-  // Package formats
-  "deb",
-  "rpm",
-  "jar",
-  "war",
-  // E-books
-  "epub",
-  "mobi",
-  // Common temporary/backup files
-  "log",
-  "tmp",
-  "bak",
-  "old",
-  "sav"
-];
-function isPathFile(path) {
-  const lastSegment = path.split("/").pop();
-  const ext = (lastSegment || path).match(/\.[0-9a-z]+$/i)?.[0];
-  return ext && fileExtensions.includes(ext.replace(".", ""));
-}
-function fixSlashes(trailingSlash, pathOrUrl) {
-  const $url = parseURL(pathOrUrl);
-  if (isPathFile($url.pathname))
-    return pathOrUrl;
-  const fixedPath = trailingSlash ? withTrailingSlash($url.pathname) : withoutTrailingSlash($url.pathname);
-  return `${$url.protocol ? `${$url.protocol}//` : ""}${$url.host || ""}${fixedPath}${$url.search || ""}${$url.hash || ""}`;
-}
-
-function createSitePathResolver(e, options = {}) {
-  const siteConfig = getSiteConfig(e);
-  const nitroOrigin = getNitroOrigin(e);
-  const nuxtBase = useRuntimeConfig(e).app.baseURL || "/";
-  return (path) => {
-    return resolveSitePath(path, {
-      ...options,
-      siteUrl: options.canonical !== false || false ? siteConfig.url : nitroOrigin,
-      trailingSlash: siteConfig.trailingSlash,
-      base: nuxtBase
-    });
-  };
-}
-function withSiteUrl(e, path, options = {}) {
-  const siteConfig = e.context.siteConfig?.get();
-  let siteUrl = e.context.siteConfigNitroOrigin;
-  if ((options.canonical !== false || false) && siteConfig.url)
-    siteUrl = siteConfig.url;
-  return resolveSitePath(path, {
-    absolute: true,
-    siteUrl,
-    trailingSlash: siteConfig.trailingSlash,
-    base: e.context.nitro.baseURL,
-    withBase: options.withBase
+const _pLzN7P7gu74lbAWNw_bZ4luNIXECYa1swgjn_1dN4w = defineNitroPlugin(async (nitroApp) => {
+  nitroApp.hooks.hook("render:html", async (ctx, { event }) => {
+    const routeOptions = getRouteRules(event);
+    const isIsland = process.env.NUXT_COMPONENT_ISLANDS && event.path.startsWith("/__nuxt_island");
+    event.path;
+    const noSSR = event.context.nuxt?.noSSR || routeOptions.ssr === false && !isIsland || (false);
+    if (noSSR) {
+      const siteConfig = Object.fromEntries(
+        Object.entries(getSiteConfig(event)).map(([k, v]) => [k, toValue(v)])
+      );
+      ctx.body.push(`<script>window.__NUXT_SITE_CONFIG__=${devalue(siteConfig)}<\/script>`);
+    }
   });
-}
+});
 
 const KNOWN_SEARCH_BOTS = [
   {
@@ -3758,225 +2512,9 @@ function normaliseRobotsRouteRule(config) {
   };
 }
 
-function withoutQuery$2(path) {
-  return path.split("?")[0];
-}
-function createNitroRouteRuleMatcher$2(e) {
-  const { nitro, app } = useRuntimeConfig(e);
-  const _routeRulesMatcher = toRouteMatcher(
-    createRouter({
-      routes: Object.fromEntries(
-        Object.entries(nitro?.routeRules || {}).map(([path, rules]) => [withoutTrailingSlash(path), rules])
-      )
-    })
-  );
-  return (path) => {
-    return defu$1({}, ..._routeRulesMatcher.matchAll(
-      // radix3 does not support trailing slashes
-      withoutBase(withoutTrailingSlash(withoutQuery$2(path)), app.baseURL)
-    ).reverse());
-  };
-}
-
 function useRuntimeConfigNuxtRobots(event) {
   return useRuntimeConfig(event)["nuxt-robots"];
 }
-
-function getSiteRobotConfig(e) {
-  const query = getQuery$1(e);
-  const hints = [];
-  const { groups, debug } = useRuntimeConfigNuxtRobots(e);
-  let indexable = getSiteIndexable(e);
-  const queryIndexableEnabled = String(query.mockProductionEnv) === "true" || query.mockProductionEnv === "";
-  {
-    const { _context } = getSiteConfig(e, { debug: debug || true });
-    if (queryIndexableEnabled) {
-      indexable = true;
-      hints.push("You are mocking a production enviroment with ?mockProductionEnv query.");
-    } else if (!indexable && _context.indexable === "nuxt-robots:config") {
-      hints.push("You are blocking indexing with your Nuxt Robots config.");
-    } else if (!queryIndexableEnabled && !_context.indexable) {
-      hints.push(`Indexing is blocked in development. You can mock a production environment with ?mockProductionEnv query.`);
-    } else if (!indexable && !queryIndexableEnabled) {
-      hints.push(`Indexing is blocked by site config set by ${_context.indexable}.`);
-    } else if (indexable && !queryIndexableEnabled) {
-      hints.push(`Indexing is enabled from ${_context.indexable}.`);
-    }
-  }
-  if (groups.some((g) => g.userAgent.includes("*") && g.disallow.includes("/"))) {
-    indexable = false;
-    hints.push("You are blocking all user agents with a wildcard `Disallow /`.");
-  } else if (groups.some((g) => g.disallow.includes("/"))) {
-    hints.push("You are blocking specific user agents with `Disallow /`.");
-  }
-  return { indexable, hints };
-}
-
-function getPathRobotConfig(e, options) {
-  const runtimeConfig = useRuntimeConfig(e);
-  const { robotsDisabledValue, robotsEnabledValue, isNuxtContentV2 } = useRuntimeConfigNuxtRobots(e);
-  if (!options?.skipSiteIndexable) {
-    if (!getSiteRobotConfig(e).indexable) {
-      return {
-        rule: robotsDisabledValue,
-        indexable: false,
-        debug: {
-          source: "Site Config"
-        }
-      };
-    }
-  }
-  const path = options?.path || e.path;
-  let userAgent = options?.userAgent;
-  if (!userAgent) {
-    try {
-      userAgent = getRequestHeader(e, "User-Agent");
-    } catch {
-    }
-  }
-  const nitroApp = useNitroApp();
-  const groups = [
-    // run explicit user agent matching first
-    ...nitroApp._robots.ctx.groups.filter((g) => {
-      if (userAgent) {
-        return g.userAgent.some((ua) => ua.toLowerCase().includes(userAgent.toLowerCase()));
-      }
-      return false;
-    }),
-    // run wildcard matches second
-    ...nitroApp._robots.ctx.groups.filter((g) => g.userAgent.includes("*"))
-  ];
-  for (const group of groups) {
-    if (group._indexable === false) {
-      return {
-        indexable: false,
-        rule: robotsDisabledValue,
-        debug: {
-          source: "/robots.txt",
-          line: JSON.stringify(group)
-        }
-      };
-    }
-    const robotsTxtRule = matchPathToRule(path, group._rules || []);
-    if (robotsTxtRule) {
-      if (!robotsTxtRule.allow) {
-        return {
-          indexable: false,
-          rule: robotsDisabledValue,
-          debug: {
-            source: "/robots.txt",
-            line: `Disallow: ${robotsTxtRule.pattern}`
-          }
-        };
-      }
-      break;
-    }
-  }
-  if (isNuxtContentV2 && nitroApp._robots?.nuxtContentUrls?.has(withoutTrailingSlash(path))) {
-    return {
-      indexable: false,
-      rule: robotsDisabledValue,
-      debug: {
-        source: "Nuxt Content"
-      }
-    };
-  }
-  nitroApp._robotsRuleMatcher = nitroApp._robotsRuleMatcher || createNitroRouteRuleMatcher$2(e);
-  let robotRouteRules = nitroApp._robotsRuleMatcher(path);
-  let routeRulesPath = path;
-  if (runtimeConfig.public?.i18n?.locales && typeof robotRouteRules.robots === "undefined") {
-    const { locales } = runtimeConfig.public.i18n;
-    const locale = locales.find((l) => routeRulesPath.startsWith(`/${l.code}`));
-    if (locale) {
-      routeRulesPath = routeRulesPath.replace(`/${locale.code}`, "");
-      robotRouteRules = nitroApp._robotsRuleMatcher(routeRulesPath);
-    }
-  }
-  const routeRules = normaliseRobotsRouteRule(robotRouteRules);
-  if (routeRules && (typeof routeRules.allow !== "undefined" || typeof routeRules.rule !== "undefined")) {
-    return {
-      indexable: routeRules.allow ?? false,
-      rule: routeRules.rule || (routeRules.allow ? robotsEnabledValue : robotsDisabledValue),
-      debug: {
-        source: "Route Rules"
-      }
-    };
-  }
-  return {
-    indexable: true,
-    rule: robotsEnabledValue
-  };
-}
-
-const sessionHooks = createHooks();
-async function getUserSession(event) {
-  const session = await _useSession(event);
-  return {
-    ...session.data,
-    id: session.id
-  };
-}
-async function setUserSession(event, data, config) {
-  const session = await _useSession(event, config);
-  await session.update(defu$1(data, session.data));
-  return session.data;
-}
-async function clearUserSession(event, config) {
-  const session = await _useSession(event, config);
-  await sessionHooks.callHookParallel("clear", session.data, event);
-  await session.clear();
-  return true;
-}
-async function requireUserSession(event, opts = {}) {
-  const userSession = await getUserSession(event);
-  if (!userSession.user) {
-    if (isEvent(event)) {
-      throw createError({
-        statusCode: opts.statusCode || 401,
-        message: opts.message || "Unauthorized"
-      });
-    } else {
-      throw new Response(opts.message || "Unauthorized", {
-        status: opts.statusCode || 401
-      });
-    }
-  }
-  return userSession;
-}
-let sessionConfig;
-function _useSession(event, config = {}) {
-  if (!sessionConfig) {
-    const runtimeConfig = useRuntimeConfig(isEvent(event) ? event : void 0);
-    const envSessionPassword = `${runtimeConfig.nitro?.envPrefix || "NUXT_"}SESSION_PASSWORD`;
-    sessionConfig = defu$1({ password: process.env[envSessionPassword] }, runtimeConfig.session);
-    if (!sessionConfig.password) {
-      console.error(`[nuxt-auth-utils] ${envSessionPassword} environment variable or runtimeConfig.session.password was not set.`);
-    }
-  }
-  const finalConfig = defu$1(config, sessionConfig);
-  return useSession(event, finalConfig);
-}
-
-const _iJkIwfIdFCUYQ4g74eVpIbhEX0cgRphTEJj4ba06ew8 = defineNitroPlugin((nitroApp) => {
-  nitroApp.hooks.hook("request", async (event) => {
-    await getUserSession(event);
-  });
-});
-
-const _pLzN7P7gu74lbAWNw_bZ4luNIXECYa1swgjn_1dN4w = defineNitroPlugin(async (nitroApp) => {
-  nitroApp.hooks.hook("render:html", async (ctx, { event }) => {
-    const routeOptions = getRouteRules(event);
-    const isIsland = process.env.NUXT_COMPONENT_ISLANDS && event.path.startsWith("/__nuxt_island");
-    event.path;
-    const noSSR = event.context.nuxt?.noSSR || routeOptions.ssr === false && !isIsland || (false);
-    if (noSSR) {
-      const siteConfig = Object.fromEntries(
-        Object.entries(getSiteConfig(event)).map(([k, v]) => [k, toValue(v)])
-      );
-      ctx.body.push(`<script>window.__NUXT_SITE_CONFIG__=${devalue(siteConfig)}<\/script>`);
-    }
-  });
-});
 
 const logger$2 = createConsola({
   defaults: { tag: "@nuxtjs/robots" }
@@ -4029,6 +2567,227 @@ const fontCache = createStorage({
 const emojiCache = createStorage({
   driver: lruCacheDriver({ max: 1e3 })
 });
+
+function resolveSitePath(pathOrUrl, options) {
+  let path = pathOrUrl;
+  if (hasProtocol(pathOrUrl, { strict: false, acceptRelative: true })) {
+    const parsed = parseURL(pathOrUrl);
+    path = parsed.pathname;
+  }
+  const base = withLeadingSlash(options.base || "/");
+  if (base !== "/" && path.startsWith(base)) {
+    path = path.slice(base.length);
+  }
+  let origin = withoutTrailingSlash(options.absolute ? options.siteUrl : "");
+  if (base !== "/" && origin.endsWith(base)) {
+    origin = origin.slice(0, origin.indexOf(base));
+  }
+  const baseWithOrigin = options.withBase ? withBase(base, origin || "/") : origin;
+  const resolvedUrl = withBase(path, baseWithOrigin);
+  return path === "/" && !options.withBase ? withTrailingSlash(resolvedUrl) : fixSlashes(options.trailingSlash, resolvedUrl);
+}
+const fileExtensions = [
+  // Images
+  "jpg",
+  "jpeg",
+  "png",
+  "gif",
+  "bmp",
+  "webp",
+  "svg",
+  "ico",
+  // Documents
+  "pdf",
+  "doc",
+  "docx",
+  "xls",
+  "xlsx",
+  "ppt",
+  "pptx",
+  "txt",
+  "md",
+  "markdown",
+  // Archives
+  "zip",
+  "rar",
+  "7z",
+  "tar",
+  "gz",
+  // Audio
+  "mp3",
+  "wav",
+  "flac",
+  "ogg",
+  "opus",
+  "m4a",
+  "aac",
+  "midi",
+  "mid",
+  // Video
+  "mp4",
+  "avi",
+  "mkv",
+  "mov",
+  "wmv",
+  "flv",
+  "webm",
+  // Web
+  "html",
+  "css",
+  "js",
+  "json",
+  "xml",
+  "tsx",
+  "jsx",
+  "ts",
+  "vue",
+  "svelte",
+  "xsl",
+  "rss",
+  "atom",
+  // Programming
+  "php",
+  "py",
+  "rb",
+  "java",
+  "c",
+  "cpp",
+  "h",
+  "go",
+  // Data formats
+  "csv",
+  "tsv",
+  "sql",
+  "yaml",
+  "yml",
+  // Fonts
+  "woff",
+  "woff2",
+  "ttf",
+  "otf",
+  "eot",
+  // Executables/Binaries
+  "exe",
+  "msi",
+  "apk",
+  "ipa",
+  "dmg",
+  "iso",
+  "bin",
+  // Scripts/Config
+  "bat",
+  "cmd",
+  "sh",
+  "env",
+  "htaccess",
+  "conf",
+  "toml",
+  "ini",
+  // Package formats
+  "deb",
+  "rpm",
+  "jar",
+  "war",
+  // E-books
+  "epub",
+  "mobi",
+  // Common temporary/backup files
+  "log",
+  "tmp",
+  "bak",
+  "old",
+  "sav"
+];
+function isPathFile(path) {
+  const lastSegment = path.split("/").pop();
+  const ext = (lastSegment || path).match(/\.[0-9a-z]+$/i)?.[0];
+  return ext && fileExtensions.includes(ext.replace(".", ""));
+}
+function fixSlashes(trailingSlash, pathOrUrl) {
+  const $url = parseURL(pathOrUrl);
+  if (isPathFile($url.pathname))
+    return pathOrUrl;
+  const fixedPath = trailingSlash ? withTrailingSlash($url.pathname) : withoutTrailingSlash($url.pathname);
+  return `${$url.protocol ? `${$url.protocol}//` : ""}${$url.host || ""}${fixedPath}${$url.search || ""}${$url.hash || ""}`;
+}
+
+const r=Object.create(null),i=e=>globalThis.process?.env||globalThis._importMeta_.env||globalThis.Deno?.env.toObject()||globalThis.__env__||(e?r:globalThis),o=new Proxy(r,{get(e,s){return i()[s]??r[s]},has(e,s){const E=i();return s in E||s in r},set(e,s,E){const B=i(true);return B[s]=E,true},deleteProperty(e,s){if(!s)return  false;const E=i(true);return delete E[s],true},ownKeys(){const e=i(true);return Object.keys(e)}}),t=typeof process<"u"&&process.env&&"development"||"",f=[["APPVEYOR"],["AWS_AMPLIFY","AWS_APP_ID",{ci:true}],["AZURE_PIPELINES","SYSTEM_TEAMFOUNDATIONCOLLECTIONURI"],["AZURE_STATIC","INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN"],["APPCIRCLE","AC_APPCIRCLE"],["BAMBOO","bamboo_planKey"],["BITBUCKET","BITBUCKET_COMMIT"],["BITRISE","BITRISE_IO"],["BUDDY","BUDDY_WORKSPACE_ID"],["BUILDKITE"],["CIRCLE","CIRCLECI"],["CIRRUS","CIRRUS_CI"],["CLOUDFLARE_PAGES","CF_PAGES",{ci:true}],["CLOUDFLARE_WORKERS","WORKERS_CI",{ci:true}],["CODEBUILD","CODEBUILD_BUILD_ARN"],["CODEFRESH","CF_BUILD_ID"],["DRONE"],["DRONE","DRONE_BUILD_EVENT"],["DSARI"],["GITHUB_ACTIONS"],["GITLAB","GITLAB_CI"],["GITLAB","CI_MERGE_REQUEST_ID"],["GOCD","GO_PIPELINE_LABEL"],["LAYERCI"],["HUDSON","HUDSON_URL"],["JENKINS","JENKINS_URL"],["MAGNUM"],["NETLIFY"],["NETLIFY","NETLIFY_LOCAL",{ci:false}],["NEVERCODE"],["RENDER"],["SAIL","SAILCI"],["SEMAPHORE"],["SCREWDRIVER"],["SHIPPABLE"],["SOLANO","TDDIUM"],["STRIDER"],["TEAMCITY","TEAMCITY_VERSION"],["TRAVIS"],["VERCEL","NOW_BUILDER"],["VERCEL","VERCEL",{ci:false}],["VERCEL","VERCEL_ENV",{ci:false}],["APPCENTER","APPCENTER_BUILD_ID"],["CODESANDBOX","CODESANDBOX_SSE",{ci:false}],["CODESANDBOX","CODESANDBOX_HOST",{ci:false}],["STACKBLITZ"],["STORMKIT"],["CLEAVR"],["ZEABUR"],["CODESPHERE","CODESPHERE_APP_ID",{ci:true}],["RAILWAY","RAILWAY_PROJECT_ID"],["RAILWAY","RAILWAY_SERVICE_ID"],["DENO-DEPLOY","DENO_DEPLOYMENT_ID"],["FIREBASE_APP_HOSTING","FIREBASE_APP_HOSTING",{ci:true}]];function b(){if(globalThis.process?.env)for(const e of f){const s=e[1]||e[0];if(globalThis.process?.env[s])return {name:e[0].toLowerCase(),...e[2]}}return globalThis.process?.env?.SHELL==="/bin/jsh"&&globalThis.process?.versions?.webcontainer?{name:"stackblitz",ci:false}:{name:"",ci:false}}const l=b();l.name;function n(e){return e?e!=="false":false}const I=globalThis.process?.platform||"",T=n(o.CI)||l.ci!==false,R=n(globalThis.process?.stdout&&globalThis.process?.stdout.isTTY);n(o.DEBUG);const a=t==="test"||n(o.TEST),h=t==="dev"||t==="development";n(o.MINIMAL)||T||a||!R;const A=/^win/i.test(I);!n(o.NO_COLOR)&&(n(o.FORCE_COLOR)||(R||A)&&o.TERM!=="dumb"||T);const C=(globalThis.process?.versions?.node||"").replace(/^v/,"")||null;Number(C?.split(".")[0])||null;const W=globalThis.process||Object.create(null),_={versions:{}};new Proxy(W,{get(e,s){if(s==="env")return o;if(s in e)return e[s];if(s in _)return _[s]}});const O=globalThis.process?.release?.name==="node",c=!!globalThis.Bun||!!globalThis.process?.versions?.bun,D=!!globalThis.Deno,L=!!globalThis.fastly,S=!!globalThis.Netlify,u=!!globalThis.EdgeRuntime,N=globalThis.navigator?.userAgent==="Cloudflare-Workers",F=[[S,"netlify"],[u,"edge-light"],[N,"workerd"],[L,"fastly"],[D,"deno"],[c,"bun"],[O,"node"]];function G(){const e=F.find(s=>s[0]);if(e)return {name:e[1]}}const P=G();P?.name||"";
+
+function getNitroOrigin$1(ctx = {}) {
+  const isDev = ctx.isDev ?? h;
+  const isPrerender = ctx.isPrerender ?? !!o.prerender;
+  let host = "";
+  let port = "";
+  let protocol = o.NITRO_SSL_CERT && o.NITRO_SSL_KEY ? "https" : "http";
+  if (isDev || isPrerender) {
+    const devEnv = o.__NUXT_DEV__ || o.NUXT_VITE_NODE_OPTIONS;
+    if (devEnv) {
+      const parsed = JSON.parse(devEnv);
+      const origin = parsed.proxy?.url || parsed.baseURL?.replace("/__nuxt_vite_node__", "");
+      host = origin.replace(/^https?:\/\//, "");
+      protocol = origin.startsWith("https") ? "https" : "http";
+    }
+  }
+  if (!host && ctx.requestHost) {
+    host = ctx.requestHost;
+    protocol = ctx.requestProtocol || protocol;
+  }
+  if (!host) {
+    host = o.NITRO_HOST || o.HOST || "";
+    if (isDev)
+      port = o.NITRO_PORT || o.PORT || "3000";
+  }
+  if (host.includes(":")) {
+    const i = host.lastIndexOf(":");
+    port = host.slice(i + 1);
+    host = host.slice(0, i);
+  }
+  host = o.NUXT_SITE_HOST_OVERRIDE || host;
+  port = o.NUXT_SITE_PORT_OVERRIDE || port;
+  if (host.startsWith("http://") || host.startsWith("https://")) {
+    protocol = host.startsWith("https://") ? "https" : "http";
+    host = host.replace(/^https?:\/\//, "");
+  } else if (!host.includes("localhost") && !host.startsWith("127.")) {
+    protocol = "https";
+  }
+  return `${protocol}://${host}${port ? `:${port}` : ""}/`;
+}
+
+function getNitroOrigin(e) {
+  return getNitroOrigin$1({
+    isDev: true,
+    isPrerender: false,
+    requestHost: e ? getRequestHost(e, { xForwardedHost: true }) : void 0,
+    requestProtocol: e ? getRequestProtocol(e, { xForwardedProto: true }) : void 0
+  });
+}
+
+function createSitePathResolver(e, options = {}) {
+  const siteConfig = getSiteConfig(e);
+  const nitroOrigin = getNitroOrigin(e);
+  const nuxtBase = useRuntimeConfig(e).app.baseURL || "/";
+  return (path) => {
+    return resolveSitePath(path, {
+      ...options,
+      siteUrl: options.canonical !== false || false ? siteConfig.url : nitroOrigin,
+      trailingSlash: siteConfig.trailingSlash,
+      base: nuxtBase
+    });
+  };
+}
+function withSiteUrl(e, path, options = {}) {
+  const siteConfig = e.context.siteConfig?.get();
+  let siteUrl = e.context.siteConfigNitroOrigin;
+  if ((options.canonical !== false || false) && siteConfig.url)
+    siteUrl = siteConfig.url;
+  return resolveSitePath(path, {
+    absolute: true,
+    siteUrl,
+    trailingSlash: siteConfig.trailingSlash,
+    base: e.context.nitro.baseURL,
+    withBase: options.withBase
+  });
+}
 
 function detectBase64MimeType(data) {
   const signatures = {
@@ -4123,6 +2882,10 @@ function normaliseFontInput(fonts) {
 
 const theme = {};
 
+function useSiteConfig(e, _options) {
+  return getSiteConfig(e, _options);
+}
+
 function htmlDecodeQuotes(html) {
   return html.replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&#x27;/g, "'");
 }
@@ -4147,10 +2910,10 @@ function fetchIsland(e, component, props) {
     }
   });
 }
-function withoutQuery$1(path) {
+function withoutQuery$2(path) {
   return path.split("?")[0];
 }
-function createNitroRouteRuleMatcher$1() {
+function createNitroRouteRuleMatcher$2() {
   const { nitro, app } = useRuntimeConfig();
   const _routeRulesMatcher = toRouteMatcher(
     createRouter({
@@ -4162,7 +2925,7 @@ function createNitroRouteRuleMatcher$1() {
   return (path) => {
     return defu$1({}, ..._routeRulesMatcher.matchAll(
       // radix3 does not support trailing slashes
-      withoutBase(withoutTrailingSlash(withoutQuery$1(path)), app.baseURL)
+      withoutBase(withoutTrailingSlash(withoutQuery$2(path)), app.baseURL)
     ).reverse());
   };
 }
@@ -4283,7 +3046,7 @@ async function resolveContext(e) {
     }
   }
   delete queryParams.options;
-  const routeRuleMatcher = createNitroRouteRuleMatcher$1();
+  const routeRuleMatcher = createNitroRouteRuleMatcher$2();
   const routeRules = routeRuleMatcher(basePath);
   if (typeof routeRules.ogImage === "undefined" && !options) {
     return createError({
@@ -4627,6 +3390,492 @@ const setupVueI18nOptions = async (defaultLocale) => {
   return options;
 };
 
+function defineNitroPlugin(def) {
+  return def;
+}
+
+function defineRenderHandler(render) {
+  const runtimeConfig = useRuntimeConfig();
+  return eventHandler(async (event) => {
+    const nitroApp = useNitroApp();
+    const ctx = { event, render, response: void 0 };
+    await nitroApp.hooks.callHook("render:before", ctx);
+    if (!ctx.response) {
+      if (event.path === `${runtimeConfig.app.baseURL}favicon.ico`) {
+        setResponseHeader(event, "Content-Type", "image/x-icon");
+        return send(
+          event,
+          "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        );
+      }
+      ctx.response = await ctx.render(event);
+      if (!ctx.response) {
+        const _currentStatus = getResponseStatus(event);
+        setResponseStatus(event, _currentStatus === 200 ? 500 : _currentStatus);
+        return send(
+          event,
+          "No response returned from render handler: " + event.path
+        );
+      }
+    }
+    await nitroApp.hooks.callHook("render:response", ctx.response, ctx);
+    if (ctx.response.headers) {
+      setResponseHeaders(event, ctx.response.headers);
+    }
+    if (ctx.response.statusCode || ctx.response.statusMessage) {
+      setResponseStatus(
+        event,
+        ctx.response.statusCode,
+        ctx.response.statusMessage
+      );
+    }
+    return ctx.response.body;
+  });
+}
+
+const scheduledTasks = false;
+
+const tasks = {
+  
+};
+
+const __runningTasks__ = {};
+async function runTask(name, {
+  payload = {},
+  context = {}
+} = {}) {
+  if (__runningTasks__[name]) {
+    return __runningTasks__[name];
+  }
+  if (!(name in tasks)) {
+    throw createError({
+      message: `Task \`${name}\` is not available!`,
+      statusCode: 404
+    });
+  }
+  if (!tasks[name].resolve) {
+    throw createError({
+      message: `Task \`${name}\` is not implemented!`,
+      statusCode: 501
+    });
+  }
+  const handler = await tasks[name].resolve();
+  const taskEvent = { name, payload, context };
+  __runningTasks__[name] = handler.run(taskEvent);
+  try {
+    const res = await __runningTasks__[name];
+    return res;
+  } finally {
+    delete __runningTasks__[name];
+  }
+}
+
+function buildAssetsDir() {
+  return useRuntimeConfig().app.buildAssetsDir;
+}
+function buildAssetsURL(...path) {
+  return joinRelativeURL(publicAssetsURL(), buildAssetsDir(), ...path);
+}
+function publicAssetsURL(...path) {
+  const app = useRuntimeConfig().app;
+  const publicBase = app.cdnURL || app.baseURL;
+  return path.length ? joinRelativeURL(publicBase, ...path) : publicBase;
+}
+
+function parseCacheDuration(duration) {
+  if (typeof duration === "number") {
+    return duration;
+  }
+  const parsed = ms(duration);
+  if (parsed === void 0) {
+    throw new Error(`Invalid cache duration: ${duration}`);
+  }
+  return Math.ceil(parsed / 1e3);
+}
+function createCacheOptions(cache, name, defaultGetKey) {
+  if (typeof cache === "object") {
+    return {
+      getKey: defaultGetKey,
+      ...cache,
+      maxAge: parseCacheDuration(cache.maxAge),
+      name: cache.name ?? name,
+      group: cache.group ?? "mcp"
+    };
+  }
+  return {
+    maxAge: parseCacheDuration(cache),
+    name,
+    group: "mcp",
+    getKey: defaultGetKey
+  };
+}
+function wrapWithCache(fn, cacheOptions) {
+  return defineCachedFunction(
+    fn,
+    cacheOptions
+  );
+}
+
+function enrichNameTitle(options) {
+  const { name, title, _meta, type } = options;
+  const filename = _meta?.filename;
+  let enrichedName = name;
+  let enrichedTitle = title;
+  if (filename) {
+    const nameWithoutExt = filename.replace(/\.(ts|js|mts|mjs)$/, "");
+    if (!enrichedName) {
+      enrichedName = kebabCase(nameWithoutExt);
+    }
+    if (!enrichedTitle) {
+      enrichedTitle = titleCase(nameWithoutExt);
+    }
+  }
+  if (!enrichedName) {
+    throw new Error(`Failed to auto-generate ${type} name from filename. Please provide a name explicitly.`);
+  }
+  return {
+    name: enrichedName,
+    title: enrichedTitle
+  };
+}
+
+function registerToolFromDefinition(server, tool) {
+  const { name, title } = enrichNameTitle({
+    name: tool.name,
+    title: tool.title,
+    _meta: tool._meta,
+    type: "tool"
+  });
+  let handler = tool.handler;
+  if (tool.cache !== void 0) {
+    const defaultGetKey = tool.inputSchema ? (args) => {
+      const values = Object.values(args);
+      return values.map((v) => String(v).replace(/\//g, "-").replace(/^-/, "")).join(":");
+    } : void 0;
+    const cacheOptions = createCacheOptions(tool.cache, `mcp-tool:${name}`, defaultGetKey);
+    handler = wrapWithCache(
+      tool.handler,
+      cacheOptions
+    );
+  }
+  const options = {
+    title,
+    description: tool.description,
+    inputSchema: tool.inputSchema,
+    outputSchema: tool.outputSchema,
+    annotations: tool.annotations,
+    _meta: tool._meta
+  };
+  return server.registerTool(name, options, handler);
+}
+
+function getMimeType(filePath) {
+  const ext = extname(filePath).toLowerCase();
+  switch (ext) {
+    case ".md":
+      return "text/markdown";
+    case ".ts":
+    case ".mts":
+    case ".cts":
+      return "text/typescript";
+    case ".js":
+    case ".mjs":
+    case ".cjs":
+      return "text/javascript";
+    case ".json":
+      return "application/json";
+    case ".html":
+      return "text/html";
+    case ".css":
+      return "text/css";
+    case ".xml":
+      return "text/xml";
+    case ".csv":
+      return "text/csv";
+    case ".yaml":
+    case ".yml":
+      return "text/yaml";
+    default:
+      return "text/plain";
+  }
+}
+function registerResourceFromDefinition(server, resource) {
+  const { name, title } = enrichNameTitle({
+    name: resource.name,
+    title: resource.title,
+    _meta: resource._meta,
+    type: "resource"
+  });
+  let uri = resource.uri;
+  let handler = resource.handler;
+  const metadata = {
+    ...resource.metadata,
+    title: resource.title || resource.metadata?.title || title,
+    description: resource.description || resource.metadata?.description
+  };
+  if ("file" in resource && resource.file) {
+    const filePath = resolve$1(process.cwd(), resource.file);
+    if (!uri) {
+      uri = pathToFileURL(filePath).toString();
+    }
+    if (!handler) {
+      handler = async (requestUri) => {
+        try {
+          const content = await readFile(filePath, "utf-8");
+          return {
+            contents: [{
+              uri: requestUri.toString(),
+              mimeType: resource.metadata?.mimeType || getMimeType(filePath),
+              text: content
+            }]
+          };
+        } catch (error) {
+          throw new Error(`Failed to read file ${filePath}: ${error instanceof Error ? error.message : String(error)}`);
+        }
+      };
+    }
+  }
+  if (!uri) {
+    throw new Error(`Resource ${name} is missing a URI`);
+  }
+  if (!handler) {
+    throw new Error(`Resource ${name} is missing a handler`);
+  }
+  if (resource.cache !== void 0) {
+    const defaultGetKey = (requestUri) => requestUri.pathname.replace(/\//g, "-").replace(/^-/, "");
+    const cacheOptions = createCacheOptions(resource.cache, `mcp-resource:${name}`, defaultGetKey);
+    handler = wrapWithCache(
+      handler,
+      cacheOptions
+    );
+  }
+  if (typeof uri === "string") {
+    return server.registerResource(
+      name,
+      uri,
+      metadata,
+      handler
+    );
+  } else {
+    return server.registerResource(
+      name,
+      uri,
+      metadata,
+      handler
+    );
+  }
+}
+
+function registerPromptFromDefinition(server, prompt) {
+  const { name, title } = enrichNameTitle({
+    name: prompt.name,
+    title: prompt.title,
+    _meta: prompt._meta,
+    type: "prompt"
+  });
+  if (prompt.inputSchema) {
+    return server.registerPrompt(
+      name,
+      {
+        title,
+        description: prompt.description,
+        argsSchema: prompt.inputSchema
+      },
+      prompt.handler
+    );
+  } else {
+    return server.registerPrompt(
+      name,
+      {
+        title,
+        description: prompt.description
+      },
+      prompt.handler
+    );
+  }
+}
+
+const defuReplaceArray = createDefu((obj, key, value) => {
+  if (Array.isArray(obj[key]) || Array.isArray(value)) {
+    obj[key] = value;
+    return true;
+  }
+});
+
+function parseAcceptLanguage(value) {
+  return value.split(",").map((tag) => tag.split(";")[0]).filter(
+    (tag) => !(tag === "*" || tag === "")
+  );
+}
+function createPathIndexLanguageParser(index = 0) {
+  return (path) => {
+    const rawPath = typeof path === "string" ? path : path.pathname;
+    const normalizedPath = rawPath.split("?")[0];
+    const parts = normalizedPath.split("/");
+    if (parts[0] === "") {
+      parts.shift();
+    }
+    return parts.length > index ? parts[index] || "" : "";
+  };
+}
+
+function getSiteIndexable(e) {
+  const { env, indexable } = getSiteConfig(e);
+  if (typeof indexable !== "undefined")
+    return String(indexable) === "true";
+  return env === "production";
+}
+
+function useNitroOrigin(e) {
+  return getNitroOrigin(e);
+}
+
+function withoutQuery$1(path) {
+  return path.split("?")[0];
+}
+function createNitroRouteRuleMatcher$1(e) {
+  const { nitro, app } = useRuntimeConfig(e);
+  const _routeRulesMatcher = toRouteMatcher(
+    createRouter({
+      routes: Object.fromEntries(
+        Object.entries(nitro?.routeRules || {}).map(([path, rules]) => [withoutTrailingSlash(path), rules])
+      )
+    })
+  );
+  return (path) => {
+    return defu$1({}, ..._routeRulesMatcher.matchAll(
+      // radix3 does not support trailing slashes
+      withoutBase(withoutTrailingSlash(withoutQuery$1(path)), app.baseURL)
+    ).reverse());
+  };
+}
+
+function getSiteRobotConfig(e) {
+  const query = getQuery$1(e);
+  const hints = [];
+  const { groups, debug } = useRuntimeConfigNuxtRobots(e);
+  let indexable = getSiteIndexable(e);
+  const queryIndexableEnabled = String(query.mockProductionEnv) === "true" || query.mockProductionEnv === "";
+  {
+    const { _context } = getSiteConfig(e, { debug: debug || true });
+    if (queryIndexableEnabled) {
+      indexable = true;
+      hints.push("You are mocking a production enviroment with ?mockProductionEnv query.");
+    } else if (!indexable && _context.indexable === "nuxt-robots:config") {
+      hints.push("You are blocking indexing with your Nuxt Robots config.");
+    } else if (!queryIndexableEnabled && !_context.indexable) {
+      hints.push(`Indexing is blocked in development. You can mock a production environment with ?mockProductionEnv query.`);
+    } else if (!indexable && !queryIndexableEnabled) {
+      hints.push(`Indexing is blocked by site config set by ${_context.indexable}.`);
+    } else if (indexable && !queryIndexableEnabled) {
+      hints.push(`Indexing is enabled from ${_context.indexable}.`);
+    }
+  }
+  if (groups.some((g) => g.userAgent.includes("*") && g.disallow.includes("/"))) {
+    indexable = false;
+    hints.push("You are blocking all user agents with a wildcard `Disallow /`.");
+  } else if (groups.some((g) => g.disallow.includes("/"))) {
+    hints.push("You are blocking specific user agents with `Disallow /`.");
+  }
+  return { indexable, hints };
+}
+
+function getPathRobotConfig(e, options) {
+  const runtimeConfig = useRuntimeConfig(e);
+  const { robotsDisabledValue, robotsEnabledValue, isNuxtContentV2 } = useRuntimeConfigNuxtRobots(e);
+  if (!options?.skipSiteIndexable) {
+    if (!getSiteRobotConfig(e).indexable) {
+      return {
+        rule: robotsDisabledValue,
+        indexable: false,
+        debug: {
+          source: "Site Config"
+        }
+      };
+    }
+  }
+  const path = options?.path || e.path;
+  let userAgent = options?.userAgent;
+  if (!userAgent) {
+    try {
+      userAgent = getRequestHeader(e, "User-Agent");
+    } catch {
+    }
+  }
+  const nitroApp = useNitroApp();
+  const groups = [
+    // run explicit user agent matching first
+    ...nitroApp._robots.ctx.groups.filter((g) => {
+      if (userAgent) {
+        return g.userAgent.some((ua) => ua.toLowerCase().includes(userAgent.toLowerCase()));
+      }
+      return false;
+    }),
+    // run wildcard matches second
+    ...nitroApp._robots.ctx.groups.filter((g) => g.userAgent.includes("*"))
+  ];
+  for (const group of groups) {
+    if (group._indexable === false) {
+      return {
+        indexable: false,
+        rule: robotsDisabledValue,
+        debug: {
+          source: "/robots.txt",
+          line: JSON.stringify(group)
+        }
+      };
+    }
+    const robotsTxtRule = matchPathToRule(path, group._rules || []);
+    if (robotsTxtRule) {
+      if (!robotsTxtRule.allow) {
+        return {
+          indexable: false,
+          rule: robotsDisabledValue,
+          debug: {
+            source: "/robots.txt",
+            line: `Disallow: ${robotsTxtRule.pattern}`
+          }
+        };
+      }
+      break;
+    }
+  }
+  if (isNuxtContentV2 && nitroApp._robots?.nuxtContentUrls?.has(withoutTrailingSlash(path))) {
+    return {
+      indexable: false,
+      rule: robotsDisabledValue,
+      debug: {
+        source: "Nuxt Content"
+      }
+    };
+  }
+  nitroApp._robotsRuleMatcher = nitroApp._robotsRuleMatcher || createNitroRouteRuleMatcher$1(e);
+  let robotRouteRules = nitroApp._robotsRuleMatcher(path);
+  let routeRulesPath = path;
+  if (runtimeConfig.public?.i18n?.locales && typeof robotRouteRules.robots === "undefined") {
+    const { locales } = runtimeConfig.public.i18n;
+    const locale = locales.find((l) => routeRulesPath.startsWith(`/${l.code}`));
+    if (locale) {
+      routeRulesPath = routeRulesPath.replace(`/${locale.code}`, "");
+      robotRouteRules = nitroApp._robotsRuleMatcher(routeRulesPath);
+    }
+  }
+  const routeRules = normaliseRobotsRouteRule(robotRouteRules);
+  if (routeRules && (typeof routeRules.allow !== "undefined" || typeof routeRules.rule !== "undefined")) {
+    return {
+      indexable: routeRules.allow ?? false,
+      rule: routeRules.rule || (routeRules.allow ? robotsEnabledValue : robotsDisabledValue),
+      debug: {
+        source: "Route Rules"
+      }
+    };
+  }
+  return {
+    indexable: true,
+    rule: robotsEnabledValue
+  };
+}
+
 function useRuntimeI18n(nuxtApp, event) {
   {
     return useRuntimeConfig(event).public.i18n;
@@ -4859,15 +4108,15 @@ const pathToI18nConfig = {
     "pl-PL": "/brands",
     "testde": "/brands"
   },
-  "/logout": {
-    "en-GB": "/logout",
-    "pl-PL": "/logout",
-    "testde": "/logout"
-  },
   "/compare": {
     "en-GB": "/compare",
     "pl-PL": "/compare",
     "testde": "/compare"
+  },
+  "/confirm": {
+    "en-GB": "/confirm",
+    "pl-PL": "/confirm",
+    "testde": "/confirm"
   },
   "/results": {
     "en-GB": "/results",
@@ -5024,6 +4273,11 @@ const pathToI18nConfig = {
     "pl-PL": "/product/showcases",
     "testde": "/product/showcases"
   },
+  "/seller-dashboard/request": {
+    "en-GB": "/seller-dashboard/request",
+    "pl-PL": "/seller-dashboard/request",
+    "testde": "/seller-dashboard/request"
+  },
   "/connect/hashtag/:slug(.*)*": {
     "en-GB": "/connect/hashtag/:slug(.*)*",
     "pl-PL": "/connect/hashtag/:slug(.*)*",
@@ -5046,8 +4300,8 @@ const i18nPathToPath = {
   "/login": "/login",
   "/shops": "/shops",
   "/brands": "/brands",
-  "/logout": "/logout",
   "/compare": "/compare",
+  "/confirm": "/confirm",
   "/results": "/results",
   "/callback": "/callback",
   "/register": "/register",
@@ -5079,6 +4333,7 @@ const i18nPathToPath = {
   "/connect/event/:slug(.*)*": "/connect/event/:slug(.*)*",
   "/connect/space/:slug(.*)*": "/connect/space/:slug(.*)*",
   "/product/showcases": "/product/showcases",
+  "/seller-dashboard/request": "/seller-dashboard/request",
   "/connect/hashtag/:slug(.*)*": "/connect/hashtag/:slug(.*)*",
   "/departments/category/:slug(.*)*": "/departments/category/:slug(.*)*",
   "/ndefined": "/ndefined"
@@ -5223,7 +4478,7 @@ const _SRhDnY_DPe9XMRfGFYQIkHMPYjpcuoeXZ4NCMWgS4vU = defineNitroPlugin(async (ni
     const localeSegment = detector.route(event.path);
     const pathLocale = isSupportedLocale(localeSegment) && localeSegment || void 0;
     const path = (pathLocale && url.pathname.slice(pathLocale.length + 1)) ?? url.pathname;
-    if (!url.pathname.includes("/_i18n/cubxlPWK") && !isExistingNuxtRoute(path)) {
+    if (!url.pathname.includes("/_i18n/HuVkPgMY") && !isExistingNuxtRoute(path)) {
       return;
     }
     const resolved = resolveRedirectPath(event, path, pathLocale, ctx.vueI18nOptions.defaultLocale, detector);
@@ -5536,7 +4791,7 @@ const _DXMRFSHHYLVeO7a7qEPi0nWRa7rXEAbCnd2ehPuEXRk = defineNitroPlugin(async (ni
   await nitroApp.hooks.callHook("nuxt-security:ready");
 });
 
-const sriHashes = {"/_nuxt/builds/meta/dev.json":"sha384-jQbki8FFzhi73qMPDcXvCshZ4A3u7DOyWupCQzG4AeJ4om/atKRewuktj8rSpEPa","/_nuxt/builds/meta/f52cb58d-47aa-490a-b068-f2d06d2547b5.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/latest.json":"sha384-jeSc52pJAk5h4heyQIxWHMLTB38xCo2KGGNtAEjv0ZS3AWQUwoxAXwW71ZG+hRrV","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
+const sriHashes = {"/_nuxt/builds/meta/61c5a9c8-9f20-4b89-b614-7355390704e1.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/meta/dev.json":"sha384-mqAg1r7b03funIFTB5T5CKvdbrg4+JC5FkF+OA3GsiCobLhfkB0Ywcz+vWH88TSm","/_nuxt/builds/latest.json":"sha384-NUFKx5zQN7y5MImYdxBfQepn1HpnFt1sgRapoFLGiOq/NBZ7YFc1HgIMpMKArthI","/favicon.ico":"sha384-udbcbVSoJ0jynxYo+FKdhmcYDst1ze6s6rkgFExSYfpX6tAuGn5whsHNjmcRr4eU","/logo.svg":"sha384-l/ISSHQ+YgbslL1d8HeCybCLgfVysoMKFuSTPxFIe5LxTW5H+8qi9DcVn5WShGzt","/_robots.txt":"sha384-ujI0ujR7Tg+bIrV+VZzTu7+1M2MQdnnvkIkBc4HTUztvW3JNiLzeBg9zlA0dNnmQ","/robots.txt":"sha384-1+z+xOPZC0Y/sCZO3+nqXNQyRWi3tQkSmQE0iHdWv71QQCTPZPk9HyBTl6AWpC2R"};
 
 const SCRIPT_RE$1 = /<script((?=[^>]+\bsrc="([^"]+)")(?![^>]+\bintegrity="[^"]+")[^>]+)(?:\/>|><\/script>)/g;
 const LINK_RE$1 = /<link((?=[^>]+\brel="(?:stylesheet|preload|modulepreload)")(?=[^>]+\bhref="([^"]+)")(?![^>]+\bintegrity="[\w\-+/=]+")[^>]+)>/g;
@@ -5752,9 +5007,7 @@ const _B8lyDTlxLYwIVL7mHaIG_costZHgLMP7QejioBZNJ0Y = defineNitroPlugin(async (ni
 });
 
 const plugins = [
-  _cdxnSJlampA5kjx_azfmRhJzuavQKhoLu_yY_6UIdxA,
-_iJkIwfIdFCUYQ4g74eVpIbhEX0cgRphTEJj4ba06ew8,
-_pLzN7P7gu74lbAWNw_bZ4luNIXECYa1swgjn_1dN4w,
+  _pLzN7P7gu74lbAWNw_bZ4luNIXECYa1swgjn_1dN4w,
 _1j2_7vr1DPpUV3dsNV0gbvw1x8G4oC46IDkbhAefSmo,
 _5cqK42agoj1GCWbdFsvGb9_VqMNO01wykTEBnPiDSbs,
 _SRhDnY_DPe9XMRfGFYQIkHMPYjpcuoeXZ4NCMWgS4vU,
@@ -5857,6 +5110,18 @@ const _tIQtQH = eventHandler((event) => {
     setResponseHeader(event, "Content-Length", asset.size);
   }
   return readAsset(id);
+});
+
+const _PXqLoL = defineEventHandler(async (event) => {
+  const authHeader = getHeader(event, "authorization");
+  if (!authHeader) return;
+  const token = authHeader.replace("Bearer ", "");
+  const supabase = createClient(
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
+  const { data } = await supabase.auth.getUser(token);
+  event.context.auth = data;
 });
 
 const VueResolver = (_, value) => {
@@ -6496,35 +5761,6 @@ const _J6gEDw = defineEventHandler(async (event) => {
       <text x="70" y="20" fill="#fff" font-size="12" text-anchor="middle">${options.label}</text>
     </svg>`;
   }
-});
-
-const _QWmR2y = eventHandler(async (event) => {
-  await clearUserSession(event);
-  return { loggedOut: true };
-});
-
-const _ahRYdb = eventHandler(async (event) => {
-  const session = await getUserSession(event);
-  if (Object.keys(session).length > 0) {
-    await sessionHooks.callHookParallel("fetch", session, event);
-  }
-  const { secure, ...data } = session;
-  return data;
-});
-
-const _SnNpHp = defineEventHandler((event) => {
-  const path = event.path.slice(1);
-  const runtimeConfig = useRuntimeConfig(event);
-  for (const provider of atprotoProviders) {
-    const config = runtimeConfig.oauth[provider];
-    if (getClientMetadataFilename(provider, config) === path) {
-      return getAtprotoClientMetadata(event, provider);
-    }
-  }
-  throw createError({
-    statusCode: 404,
-    message: "Provider not found"
-  });
 });
 
 const defaultThrowErrorValue = { throwError: true };
@@ -9088,16 +8324,19 @@ const _y8RD3L = lazyEventHandler(() => {
 });
 
 const _lazy_G2DqLb = () => Promise.resolve().then(function () { return createCheckoutSession_post$1; });
+const _lazy_Otzi1L = () => Promise.resolve().then(function () { return profile_get$1; });
+const _lazy_wrg9v8 = () => Promise.resolve().then(function () { return request_post$1; });
 const _lazy_KYJupK = () => Promise.resolve().then(function () { return stripeWebhook_post$1; });
-const _lazy_DPGs2y = () => Promise.resolve().then(function () { return login_post$1; });
 const _lazy_RmdCbk = () => import('file://C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/layers/shared-app/server/api/comments/channel/%5Bid%5D.js');
+const _lazy_SjrDE5 = () => Promise.resolve().then(function () { return _pathname__delete$1; });
+const _lazy_NQE0LY = () => Promise.resolve().then(function () { return _pathname__get$3; });
+const _lazy_avytOK = () => Promise.resolve().then(function () { return index_get$1; });
+const _lazy_6dhdyC = () => Promise.resolve().then(function () { return upload_post$1; });
 const _lazy_Fl4g4_ = () => Promise.resolve().then(function () { return rocketChat; });
+const _lazy_jgu_Wy = () => Promise.resolve().then(function () { return _pathname__get$1; });
 const _lazy_KauQYP = () => Promise.resolve().then(function () { return uploadVideo_post$1; });
 const _lazy_WOhcNy = () => Promise.resolve().then(function () { return stats_get$1; });
 const _lazy_lPH12s = () => Promise.resolve().then(function () { return viewVideo_post$1; });
-const _lazy_5JRByj = () => Promise.resolve().then(function () { return authenticate_post$1; });
-const _lazy_IK4MWz = () => Promise.resolve().then(function () { return register_post$1; });
-const _lazy_I1b2L9 = () => Promise.resolve().then(function () { return directus_get$1; });
 const _lazy_LBbG7G = () => Promise.resolve().then(function () { return ws$1; });
 const _lazy_X3cMEh = () => Promise.resolve().then(function () { return renderer$1; });
 const _lazy_c6dPPY = () => Promise.resolve().then(function () { return sitemap_index_xml$1; });
@@ -9108,26 +8347,27 @@ const _lazy_6y0rdw = () => Promise.resolve().then(function () { return image$1; 
 
 const handlers = [
   { route: '', handler: _tIQtQH, lazy: false, middleware: true, method: undefined },
+  { route: '', handler: _PXqLoL, lazy: false, middleware: true, method: undefined },
   { route: '/api/create-checkout-session', handler: _lazy_G2DqLb, lazy: true, middleware: false, method: "post" },
+  { route: '/api/profile', handler: _lazy_Otzi1L, lazy: true, middleware: false, method: "get" },
+  { route: '/api/seller/request', handler: _lazy_wrg9v8, lazy: true, middleware: false, method: "post" },
   { route: '/api/stripe-webhook', handler: _lazy_KYJupK, lazy: true, middleware: false, method: "post" },
-  { route: '/api/auth/login', handler: _lazy_DPGs2y, lazy: true, middleware: false, method: "post" },
   { route: '/api/comments/channel/:id', handler: _lazy_RmdCbk, lazy: true, middleware: false, method: undefined },
+  { route: '/api/images/:pathname', handler: _lazy_SjrDE5, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/images/:pathname', handler: _lazy_NQE0LY, lazy: true, middleware: false, method: "get" },
+  { route: '/api/images', handler: _lazy_avytOK, lazy: true, middleware: false, method: "get" },
+  { route: '/api/images/upload', handler: _lazy_6dhdyC, lazy: true, middleware: false, method: "post" },
   { route: '/api/rocketChat', handler: _lazy_Fl4g4_, lazy: true, middleware: false, method: undefined },
+  { route: '/api/routes/images/:pathname', handler: _lazy_jgu_Wy, lazy: true, middleware: false, method: "get" },
   { route: '/api/upload-video', handler: _lazy_KauQYP, lazy: true, middleware: false, method: "post" },
   { route: '/api/user/stats', handler: _lazy_WOhcNy, lazy: true, middleware: false, method: "get" },
   { route: '/api/view-video', handler: _lazy_lPH12s, lazy: true, middleware: false, method: "post" },
-  { route: '/api/webauthn/authenticate', handler: _lazy_5JRByj, lazy: true, middleware: false, method: "post" },
-  { route: '/api/webauthn/register', handler: _lazy_IK4MWz, lazy: true, middleware: false, method: "post" },
-  { route: '/auth/directus', handler: _lazy_I1b2L9, lazy: true, middleware: false, method: "get" },
   { route: '/routes/ws', handler: _lazy_LBbG7G, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_X3cMEh, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
   { route: '/mcp', handler: _Zw164B, lazy: false, middleware: false, method: undefined },
   { route: '/mcp/deeplink', handler: _1YiwXI, lazy: false, middleware: false, method: undefined },
   { route: '/mcp/badge.svg', handler: _J6gEDw, lazy: false, middleware: false, method: undefined },
-  { route: '/api/_auth/session', handler: _QWmR2y, lazy: false, middleware: false, method: "delete" },
-  { route: '/api/_auth/session', handler: _ahRYdb, lazy: false, middleware: false, method: "get" },
-  { route: '/bluesky/client-metadata.json', handler: _SnNpHp, lazy: false, middleware: false, method: "get" },
   { route: '', handler: _VOEU8B, lazy: false, middleware: false, method: undefined },
   { route: '', handler: _LUXrN5, lazy: false, middleware: false, method: undefined },
   { route: '', handler: _gySGfR, lazy: false, middleware: false, method: undefined },
@@ -9298,7 +8538,7 @@ function useNitroApp() {
 runNitroPlugins(nitroApp$1);
 
 if (!globalThis.crypto) {
-  globalThis.crypto = crypto$1;
+  globalThis.crypto = nodeCrypto;
 }
 const { NITRO_NO_UNIX_SOCKET, NITRO_DEV_WORKER_ID } = process.env;
 trapUnhandledNodeErrors();
@@ -15609,72 +14849,6 @@ const sources$1 = [
                 ]
             },
             {
-                "loc": "/logout",
-                "_sitemap": "en-GB",
-                "alternatives": [
-                    {
-                        "hreflang": "en-GB",
-                        "href": "/logout"
-                    },
-                    {
-                        "hreflang": "pl-PL",
-                        "href": "/pl-PL/logout"
-                    },
-                    {
-                        "hreflang": "de-DE",
-                        "href": "/testde/logout"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/logout"
-                    }
-                ]
-            },
-            {
-                "loc": "/pl-PL/logout",
-                "_sitemap": "pl-PL",
-                "alternatives": [
-                    {
-                        "hreflang": "en-GB",
-                        "href": "/logout"
-                    },
-                    {
-                        "hreflang": "pl-PL",
-                        "href": "/pl-PL/logout"
-                    },
-                    {
-                        "hreflang": "de-DE",
-                        "href": "/testde/logout"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/logout"
-                    }
-                ]
-            },
-            {
-                "loc": "/testde/logout",
-                "_sitemap": "de-DE",
-                "alternatives": [
-                    {
-                        "hreflang": "en-GB",
-                        "href": "/logout"
-                    },
-                    {
-                        "hreflang": "pl-PL",
-                        "href": "/pl-PL/logout"
-                    },
-                    {
-                        "hreflang": "de-DE",
-                        "href": "/testde/logout"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/logout"
-                    }
-                ]
-            },
-            {
                 "loc": "/compare",
                 "_sitemap": "en-GB",
                 "alternatives": [
@@ -15737,6 +14911,72 @@ const sources$1 = [
                     {
                         "hreflang": "x-default",
                         "href": "/compare"
+                    }
+                ]
+            },
+            {
+                "loc": "/confirm",
+                "_sitemap": "en-GB",
+                "alternatives": [
+                    {
+                        "hreflang": "en-GB",
+                        "href": "/confirm"
+                    },
+                    {
+                        "hreflang": "pl-PL",
+                        "href": "/pl-PL/confirm"
+                    },
+                    {
+                        "hreflang": "de-DE",
+                        "href": "/testde/confirm"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/confirm"
+                    }
+                ]
+            },
+            {
+                "loc": "/pl-PL/confirm",
+                "_sitemap": "pl-PL",
+                "alternatives": [
+                    {
+                        "hreflang": "en-GB",
+                        "href": "/confirm"
+                    },
+                    {
+                        "hreflang": "pl-PL",
+                        "href": "/pl-PL/confirm"
+                    },
+                    {
+                        "hreflang": "de-DE",
+                        "href": "/testde/confirm"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/confirm"
+                    }
+                ]
+            },
+            {
+                "loc": "/testde/confirm",
+                "_sitemap": "de-DE",
+                "alternatives": [
+                    {
+                        "hreflang": "en-GB",
+                        "href": "/confirm"
+                    },
+                    {
+                        "hreflang": "pl-PL",
+                        "href": "/pl-PL/confirm"
+                    },
+                    {
+                        "hreflang": "de-DE",
+                        "href": "/testde/confirm"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/confirm"
                     }
                 ]
             },
@@ -16531,6 +15771,72 @@ const sources$1 = [
                         "href": "/product/showcases"
                     }
                 ]
+            },
+            {
+                "loc": "/seller-dashboard/request",
+                "_sitemap": "en-GB",
+                "alternatives": [
+                    {
+                        "hreflang": "en-GB",
+                        "href": "/seller-dashboard/request"
+                    },
+                    {
+                        "hreflang": "pl-PL",
+                        "href": "/pl-PL/seller-dashboard/request"
+                    },
+                    {
+                        "hreflang": "de-DE",
+                        "href": "/testde/seller-dashboard/request"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/seller-dashboard/request"
+                    }
+                ]
+            },
+            {
+                "loc": "/pl-PL/seller-dashboard/request",
+                "_sitemap": "pl-PL",
+                "alternatives": [
+                    {
+                        "hreflang": "en-GB",
+                        "href": "/seller-dashboard/request"
+                    },
+                    {
+                        "hreflang": "pl-PL",
+                        "href": "/pl-PL/seller-dashboard/request"
+                    },
+                    {
+                        "hreflang": "de-DE",
+                        "href": "/testde/seller-dashboard/request"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/seller-dashboard/request"
+                    }
+                ]
+            },
+            {
+                "loc": "/testde/seller-dashboard/request",
+                "_sitemap": "de-DE",
+                "alternatives": [
+                    {
+                        "hreflang": "en-GB",
+                        "href": "/seller-dashboard/request"
+                    },
+                    {
+                        "hreflang": "pl-PL",
+                        "href": "/pl-PL/seller-dashboard/request"
+                    },
+                    {
+                        "hreflang": "de-DE",
+                        "href": "/testde/seller-dashboard/request"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/seller-dashboard/request"
+                    }
+                ]
             }
         ],
         "sourceType": "app"
@@ -16609,6 +15915,66 @@ const createCheckoutSession_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Obj
   default: createCheckoutSession_post
 }, Symbol.toStringTag, { value: 'Module' }));
 
+const profile_get = defineEventHandler(async (event) => {
+  var _a;
+  const { $supabase } = await useNuxtApp(event);
+  const config = useRuntimeConfig();
+  const {
+    data: { user }
+  } = await $supabase.auth.getUser();
+  if (!user) {
+    throw createError({ statusCode: 401 });
+  }
+  const directus = createDirectus(config.public.directus.url).with(rest());
+  const profiles = await directus.request(
+    readItems$1("profiles", {
+      filter: {
+        supabase_user_id: { _eq: user.id }
+      },
+      fields: ["id", "display_name", "role.key"],
+      limit: 1
+    })
+  );
+  return (_a = profiles[0]) != null ? _a : null;
+});
+
+const profile_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: profile_get
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const request_post = defineEventHandler(async (event) => {
+  const { $supabase } = await useNuxtApp(event);
+  const config = useRuntimeConfig();
+  const {
+    data: { user }
+  } = await $supabase.auth.getUser();
+  if (!user) {
+    throw createError({ statusCode: 401 });
+  }
+  const directus = createDirectus(config.public.directus.url).with(rest());
+  const profiles = await directus.request(
+    readItems("profiles", {
+      filter: { supabase_user_id: { _eq: user.id } },
+      limit: 1
+    })
+  );
+  if (!profiles.length) {
+    throw createError({ statusCode: 404 });
+  }
+  await directus.request(
+    updateItem("profiles", profiles[0].id, {
+      seller_requested: true
+    })
+  );
+  return { success: true };
+});
+
+const request_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: request_post
+}, Symbol.toStringTag, { value: 'Module' }));
+
 const stripeWebhook_post = defineEventHandler(async (event) => {
   var _a, _b, _c, _d, _e, _f;
   const config = useRuntimeConfig();
@@ -16664,29 +16030,58 @@ const stripeWebhook_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defi
   default: stripeWebhook_post
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const bodySchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8)
+const _pathname__delete = eventHandler(async (event) => {
+  await requireUserSession(event);
+  const { pathname } = event.context.params || {};
+  return hubBlob().del(pathname);
 });
-const login_post = defineEventHandler(async (event) => {
-  const { email, password } = await readValidatedBody(event, bodySchema.parse);
-  if (email === "admin@admin.com" && password === "iamtheadmin") {
-    await setUserSession(event, {
-      user: {
-        name: "John Doe"
-      }
-    });
-    return {};
-  }
-  throw createError({
-    status: 401,
-    message: "Bad credentials"
+
+const _pathname__delete$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _pathname__delete
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _pathname__get$2 = eventHandler(async (event) => {
+  const { pathname } = await getValidatedRouterParams(event, z.object({
+    pathname: z.string().min(1)
+  }).parse);
+  return hubBlob().serve(event, pathname);
+});
+
+const _pathname__get$3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _pathname__get$2
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const index_get = eventHandler(async () => {
+  const { blobs } = await hubBlob().list({
+    limit: 1e3
+  });
+  return blobs;
+});
+
+const index_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: index_get
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const upload_post = eventHandler(async (event) => {
+  await requireUserSession(event);
+  return hubBlob().handleUpload(event, {
+    multiple: false,
+    put: {
+      addRandomSuffix: true
+    },
+    ensure: {
+      maxSize: "8MB",
+      types: ["image/jpeg", "image/png", "image/gif", "image/heic", "image/webp"]
+    }
   });
 });
 
-const login_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const upload_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
-  default: login_post
+  default: upload_post
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const RC_URL = process.env.NUXT_PUBLIC_ROCKETCHAT_URL;
@@ -16739,6 +16134,18 @@ async function ensureChannelForContent(title) {
 const rocketChat = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   ensureChannelForContent: ensureChannelForContent
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _pathname__get = eventHandler(async (event) => {
+  const { pathname } = await getValidatedRouterParams(event, z$1.object({
+    pathname: z$1.string().min(1)
+  }).parse);
+  return hubBlob().serve(event, pathname);
+});
+
+const _pathname__get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _pathname__get
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const Directus$1 = DirectusSdk.Directus || DirectusSdk.default || DirectusSdk;
@@ -16877,158 +16284,6 @@ const viewVideo_post = defineEventHandler(async (event) => {
 const viewVideo_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: viewVideo_post
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const authenticate_post = defineWebAuthnAuthenticateEventHandler({
-  async storeChallenge(event, challenge, attemptId) {
-    await hubKV().set(`auth:challenge:${attemptId}`, challenge, { ttl: 60 });
-  },
-  async getChallenge(event, attemptId) {
-    const challenge = await hubKV().get(`auth:challenge:${attemptId}`);
-    if (!challenge) {
-      throw createError({
-        statusCode: 400,
-        message: "Challenge not found or expired"
-      });
-    }
-    await hubKV().del(`auth:challenge:${attemptId}`);
-    return challenge;
-  },
-  async allowCredentials(event, userName) {
-    const db = useDB();
-    const user = await db.query.users.findFirst({
-      where: eq(tables.users.username, userName),
-      with: {
-        credentials: true
-      }
-    });
-    return (user == null ? void 0 : user.credentials) || [];
-  },
-  async getCredential(event, credentialID) {
-    const credential = await useDB().query.credentials.findFirst({
-      where: eq(tables.credentials.id, credentialID),
-      with: {
-        user: true
-      }
-    });
-    if (!credential) {
-      throw createError({
-        statusCode: 404,
-        statusMessage: "Credential not found"
-      });
-    }
-    return credential;
-  },
-  async onSuccess(event, { credential }) {
-    await setUserSession(event, {
-      user: {
-        id: credential.user.id,
-        name: credential.user.name,
-        username: credential.user.username
-      }
-    });
-  }
-});
-
-const authenticate_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-  __proto__: null,
-  default: authenticate_post
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const register_post = defineWebAuthnRegisterEventHandler({
-  async storeChallenge(event, challenge, attemptId) {
-    await hubKV().set(`auth:challenge:${attemptId}`, challenge, { ttl: 60 });
-  },
-  async getChallenge(event, attemptId) {
-    const challenge = await hubKV().get(`auth:challenge:${attemptId}`);
-    if (!challenge) {
-      throw createError({
-        statusCode: 400,
-        message: "Challenge not found or expired"
-      });
-    }
-    await hubKV().del(`auth:challenge:${attemptId}`);
-    return challenge;
-  },
-  validateUser: (user) => z.object({
-    userName: z.string().min(1).toLowerCase().trim(),
-    displayName: z.string().min(1).trim()
-  }).parseAsync(user),
-  async onSuccess(event, { user, credential }) {
-    const db = useDB();
-    const dbUser = await db.insert(tables.users).values({
-      username: user.userName,
-      name: user.displayName,
-      createdAt: /* @__PURE__ */ new Date(),
-      lastLoginAt: /* @__PURE__ */ new Date()
-    }).returning().get().catch(() => {
-      throw createError({
-        statusCode: 400,
-        message: "User already exists"
-      });
-    });
-    await db.insert(tables.credentials).values({
-      userId: dbUser.id,
-      id: credential.id,
-      publicKey: credential.publicKey,
-      counter: credential.counter,
-      backedUp: credential.backedUp,
-      transports: credential.transports
-    });
-    await setUserSession(event, {
-      user: {
-        id: dbUser.id,
-        username: dbUser.username,
-        name: dbUser.name || dbUser.username
-      }
-    });
-  },
-  async excludeCredentials(event, userName) {
-    return useDB().select({
-      id: tables.credentials.id,
-      transports: tables.credentials.transports
-    }).from(tables.users).innerJoin(tables.credentials, eq(tables.credentials.userId, tables.users.id)).where(eq(tables.users.username, userName.toLowerCase().trim()));
-  }
-});
-
-const register_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-  __proto__: null,
-  default: register_post
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const directus_get = defineOAuthXEventHandler({
-  config: {
-    authorizeUrl: `${process.env.DIRECTUS_URL}/oauth/authorize`,
-    tokenUrl: `${process.env.NUXTUS_DIRECTUS_STATIC_TOKEN}/oauth/token`,
-    scope: ["openid", "profile", "email"]
-  },
-  async onSuccess(event, {
-    user,
-    tokens
-  }) {
-    await setUserSession(event, {
-      user: {
-        id: user.id,
-        firstName: user.first_name,
-        lastName: user.last_name,
-        // spread extra fields as any to avoid assigning unknown properties directly on the User type
-        ...{
-          email: user.email
-        }
-      },
-      loggedInAt: Date.now()
-    });
-    return sendRedirect(event, "/");
-  },
-  onError(event, error) {
-    console.error("OAuth error:", error);
-    return sendRedirect(event, "/login");
-  }
-});
-
-const directus_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-  __proto__: null,
-  default: directus_get
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const ws = defineWebSocketHandler({

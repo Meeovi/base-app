@@ -106,7 +106,7 @@
     } from 'vue'
     import incentiveCard from '~/components/related/post.vue'
 
-    const { user } = useUserSession()
+    const user = useSupabaseUser()
 
     const {
         $directus,

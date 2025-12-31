@@ -1,6 +1,6 @@
 <template>
   <div class="authPage">
-    <!-- Same layout as login but with "Register" -->
+    <!-- Use same layout as login but change title to "Register" -->
     <section data-bs-version="5.1" class="form2 shopm5 cid-umoq9RvANO mbr-parallax-background" id="aform2-a3"
       data-sortbtn="btn-primary" style="height: 100vh;">
       <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(255, 255, 255);"></div>
@@ -22,7 +22,7 @@
                   </div>
 
                   <div class="mb-3">
-                    <v-text-field class="inputField" placeholder="Username (handle)" v-model="username" required />
+                    <v-text-field class="inputField" placeholder="Username" v-model="username" required />
                   </div>
 
                   <div class="mb-3">
@@ -30,23 +30,22 @@
                       required />
                   </div>
 
-                  <div>
-                    <v-btn type="submit" class="button block" :disabled="loading">
-                      {{ loading ? 'Loading...' : 'Sign Up' }}
-                    </v-btn>
-                  </div>
-
-                  <div v-if="result" class="success-message mt-3 text-green-600">
-                    <p>Successfully registered</p>
-                  </div>
-                  <div v-if="errorMsg" class="error-message mt-3 text-red-500">
-                    {{ errorMsg }}
-                  </div>
-
-                  <div class="mt-3 text-center">
-                    <p>Already have an account?
-                      <NuxtLink to="/login">Sign In</NuxtLink>
-                    </p>
+                  <div class="mb-3">
+                    <v-checkbox v-model="wantsSeller" label="I want to sell products on this platform"
+                      density="comfortable" />
+                    <div>
+                      <v-btn type="submit" class="button block" :disabled="loading">
+                        {{ loading ? 'Loading...' : 'Sign Up' }}
+                      </v-btn>
+                    </div>
+                    <div v-if="error" class="error-message mt-3">
+                      {{ error }}
+                    </div>
+                    <div class="mt-3 text-center">
+                      <p>Already have an account?
+                        <NuxtLink to="/login">Sign In</NuxtLink>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </form>
@@ -58,46 +57,56 @@
   </div>
 </template>
 
-<script setup lang="ts">
-  import { useHead } from 'nuxt/app'
-  import { ref } from 'vue'
-  import { useRouter } from 'vue-router'
-  // @ts-ignore: missing type declarations for '#auth' (Sidebase Auth)
-  import { useAuth as useSidebaseAuth } from '#auth'
+<script setup>
+  import {
+    ref
+  } from 'vue'
+  import {
+    useRouter
+  } from 'vue-router'
+  const {
+    $supabase
+  } = useNuxtApp()
 
+  const router = useRouter()
+  const loading = ref(false)
   const email = ref('')
   const username = ref('')
   const password = ref('')
-  const loading = ref(false)
-  const result = ref(false)
-  const errorMsg = ref('')
-  const router = useRouter()
-
-  const sbAuth = useSidebaseAuth()
+  const wantsSeller = ref(false)
+  const error = ref(null)
 
   const handleRegister = async () => {
-    loading.value = true
-    result.value = false
-    errorMsg.value = ''
     try {
-      if (!sbAuth) throw new Error('Auth not available')
-      // Start Keycloak sign-in (provider handles signup)
-      // @ts-ignore
-      await sbAuth.signIn({ provider: 'keycloak', callbackUrl: window.location.href })
-    } catch (error: any) {
-      console.error(error)
-      errorMsg.value = error?.message || 'Registration failed. Please try again.'
+      loading.value = true
+      error.value = null
+
+      const {
+        data,
+        error: signUpError
+      } = await $supabase.auth.signUp({
+        email: email.value,
+        password: password.value,
+        options: {
+          data: {
+            username: username.value,
+            wants_seller: wantsSeller.value
+          }
+        }
+      })
+
+      if (signUpError) throw signUpError
+
+      // Successful registration
+      await router.push('/login')
+    } catch (e) {
+      error.value = e.message
     } finally {
       loading.value = false
-      password.value = ''
     }
   }
 
   definePageMeta({
     layout: 'auth',
-  })
-
-  useHead({
-    title: 'Register to Meeovi',
   })
 </script>

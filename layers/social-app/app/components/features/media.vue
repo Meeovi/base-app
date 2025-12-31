@@ -1,55 +1,72 @@
 <template>
     <div>
-        <section data-bs-version="5.1" class="info1 cid-v5A0K07pfT" id="info1-bd" data-sortbtn="btn-primary">
-            <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(68, 121, 217);"></div>
-            <div class="align-center container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-8">
-                        <h3 class="mbr-section-title mb-4 mbr-fonts-style display-1">
-                            <strong> {{ mediaCenterPage?.name }}</strong>
-                        </h3>
-                        <p class="mbr-section-title mb-4 mbr-fonts-style display-7" v-html="mediaCenterPage?.content"></p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <v-toolbar density="comfortable"
+            :style="`background-color: ${mediaBar?.color}; color: ${mediaBar?.colortext} !important`">
+            <v-toolbar-title>{{ mediaCenterPage?.name }}</v-toolbar-title>
 
-        <v-card variant="text" class="lowerBar">
+            <v-spacer></v-spacer>
+
+            <DragDropUpload />
+        </v-toolbar>
+
+        <!-- NAVIGATION TABS -->
+        <v-card variant="text">
             <v-toolbar :style="`background-color: ${mediaBar?.color}; color: ${mediaBar?.colortext} !important`">
-                <v-toolbar-title>{{ mediaBar?.name }}</v-toolbar-title>
-
                 <v-tabs v-model="tab" align-tabs="center">
-                    <div v-for="(menu, index) in mediaBar?.menus" :key="index">
-                        <v-tab :value="menu?.value">
-                            <v-btn variant="text"
-                                :style="`color: ${mediaBar?.colortext} !important`">{{ menu?.name }}</v-btn>
-                        </v-tab>
-                    </div>
+                    <v-tab v-for="(menu, index) in mediaBar?.menus" :key="index" :value="menu.value">
+                        <v-btn variant="text" :style="`color: ${mediaBar?.colortext} !important`">
+                            {{ menu.name }}
+                        </v-btn>
+                    </v-tab>
                 </v-tabs>
             </v-toolbar>
         </v-card>
 
+        <!-- TAB CONTENT -->
         <v-tabs-window v-model="tab">
+            <!-- ALL (carousel) -->
             <v-tabs-window-item :value="mediaBar?.menus?.[0]?.value">
-                <v-row class="mediaCard">
-                    <v-col cols="3">
-                        <photoCard :image="images" />
-                    </v-col>
-                </v-row>
+                <MediaCarousel :items="allMedia" />
             </v-tabs-window-item>
+
+            <!-- AUDIO -->
             <v-tabs-window-item :value="mediaBar?.menus?.[1]?.value">
-                <v-row class="mediaCard">
-                    <v-col cols="3">
-                        <videoCard :visual="visuals" />
-                    </v-col>
-                </v-row>
+                <AudioGallery :items="audioMedia" />
             </v-tabs-window-item>
+
+            <!-- VIDEO -->
             <v-tabs-window-item :value="mediaBar?.menus?.[2]?.value">
-                <v-row class="mediaCard">
-                    <v-col cols="3">
-                        <documentCard :text="texts" />
-                    </v-col>
-                </v-row>
+                <VideoGallery :items="videoMedia" />
+            </v-tabs-window-item>
+
+            <!-- IMAGES -->
+            <v-tabs-window-item :value="mediaBar?.menus?.[3]?.value">
+                <ImageGallery :items="imageMedia" />
+            </v-tabs-window-item>
+
+            <!-- FOLDERS -->
+            <v-tabs-window-item :value="mediaBar?.menus?.[4]?.value">
+                <MediaFolderSidebar :folders="folders" @create="createFolder" @select="selectFolder"
+                    @reorder="reorderFolders" />
+            </v-tabs-window-item>
+
+            <!-- SEARCH -->
+            <v-tabs-window-item :value="mediaBar?.menus?.[5]?.value">
+                <MediaSearchBar @search="searchMedia" />
+                <MediaCarousel :items="searchResults" />
+            </v-tabs-window-item>
+
+            <!-- SHARED WITH ME (if you have a menu for it) -->
+            <v-tabs-window-item :value="mediaBar?.menus?.[6]?.value">
+                <MediaCarousel :items="sharedWithMe" />
+            </v-tabs-window-item>
+
+            <!-- SMART ALBUMS TAB -->
+            <v-tabs-window-item :value="mediaBar?.menus?.[7]?.value">
+                <div v-for="album in smartAlbums" :key="album.id" class="mb-6">
+                    <h4 class="mb-2">{{ album.label }}</h4>
+                    <MediaCarousel :items="album.items" />
+                </div>
             </v-tabs-window-item>
         </v-tabs-window>
     </div>
@@ -59,38 +76,68 @@
     import {
         ref
     } from 'vue'
-    import photoCard from '~/components/blocks/photo.vue'
-    import videoCard from '~/components/blocks/video.vue'
-    import documentCard from '~/components/blocks/document.vue'
+    import ImageGallery from '#shared/app/components/media/imageGallery.vue'
+    import VideoGallery from '#shared/app/components/media/videoGallery.vue'
+    import AudioGallery from '#shared/app/components/media/audioGallery.vue'
+    import MediaCarousel from '#shared/app/components/media/mediaCarousel.vue'
+    import MediaFolderSidebar from '#shared/app/components/media/mediaFolderSidebar.vue'
+    import MediaSearchBar from '#shared/app/components/media/mediaSearchBar.vue'
+    import DragDropUpload from '#shared/app/components/media/dragDropUpload.vue'
+
+    import {
+        useMediaCenter
+    } from '#shared/app/composables/media/useMediaCenter'
+
+    const {
+        allMedia,
+        imageMedia,
+        videoMedia,
+        audioMedia,
+        searchResults,
+        sharedWithMe,
+        folders,
+        smartAlbums,
+
+        uploadFiles,
+        searchMedia,
+        createFolder,
+        filterByFolder,
+        reorderFolders,
+    } = useMediaCenter()
+
+    const selectFolder = (folder) => {
+        filterByFolder(folder?.id || null)
+    }
 
     const {
         $directus,
         $readItem
     } = useNuxtApp()
-    const tab = ref(null);
+    const tab = ref(null)
 
     const {
         data: mediaBar
-    } = await useAsyncData('mediaBar', () => {
-        return $directus.request($readItem('navigation', '81', {
-            fields: ['*', {
-                '*': ['*']
-            }]
-        }))
-    })
+    } = await useAsyncData('mediaBar', () =>
+        $directus.request(
+            $readItem('navigation', '81', {
+                fields: ['*', {
+                    menus: ['*']
+                }],
+            })
+        )
+    )
 
     const {
         data: mediaCenterPage
-    } = await useAsyncData('mediaCenterPage', () => {
-        return $directus.request($readItem('pages', '100', {
-            fields: ['*', {
-                '*': ['*']
-            }]
-        }))
-    })
-
+    } = await useAsyncData('mediaCenterPage', () =>
+        $directus.request(
+            $readItem('pages', '100', {
+                fields: ['*'],
+            })
+        )
+    )
 
     useHead({
-        title: 'Meeovi Media Center',
+        title: 'Meeovi Media Center'
     })
 </script>

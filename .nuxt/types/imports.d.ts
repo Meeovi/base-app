@@ -32,10 +32,7 @@ declare global {
   const abortNavigation: typeof import('../../node_modules/nuxt/dist/app/composables/router').abortNavigation
   const acceptHMRUpdate: typeof import('../../node_modules/@pinia/nuxt/dist/runtime/composables').acceptHMRUpdate
   const addRouteMiddleware: typeof import('../../node_modules/nuxt/dist/app/composables/router').addRouteMiddleware
-  const allow: typeof import('../../node_modules/nuxt-authorization/dist/runtime/ability').allow
-  const allows: typeof import('../../node_modules/nuxt-authorization/dist/runtime/utils/bouncer').allows
   const asyncComputed: typeof import('@vueuse/core').asyncComputed
-  const authorize: typeof import('../../node_modules/nuxt-authorization/dist/runtime/utils/bouncer').authorize
   const autoResetRef: typeof import('@vueuse/core').autoResetRef
   const callOnce: typeof import('../../node_modules/nuxt/dist/app/composables/once').callOnce
   const cancelIdleCallback: typeof import('../../node_modules/nuxt/dist/app/compat/idle-callback').cancelIdleCallback
@@ -65,7 +62,7 @@ declare global {
   const customRef: typeof import('../../node_modules/vue').customRef
   const debouncedRef: typeof import('@vueuse/core').debouncedRef
   const debouncedWatch: typeof import('@vueuse/core').debouncedWatch
-  const defineAbility: typeof import('../../node_modules/nuxt-authorization/dist/runtime/ability').defineAbility
+  const decodeImageSlug: typeof import('../../layers/shared-app/app/utils/url').decodeImageSlug
   const defineAddress: typeof import('../../node_modules/@unhead/schema-org/vue').defineAddress
   const defineAggregateOffer: typeof import('../../node_modules/@unhead/schema-org/vue').defineAggregateOffer
   const defineAggregateRating: typeof import('../../node_modules/@unhead/schema-org/vue').defineAggregateRating
@@ -120,12 +117,11 @@ declare global {
   const defineVirtualLocation: typeof import('../../node_modules/@unhead/schema-org/vue').defineVirtualLocation
   const defineWebPage: typeof import('../../node_modules/@unhead/schema-org/vue').defineWebPage
   const defineWebSite: typeof import('../../node_modules/@unhead/schema-org/vue').defineWebSite
-  const denies: typeof import('../../node_modules/nuxt-authorization/dist/runtime/utils/bouncer').denies
-  const deny: typeof import('../../node_modules/nuxt-authorization/dist/runtime/ability').deny
   const destructureDate: typeof import('../../layers/shared-app/app/utils/time').destructureDate
   const eagerComputed: typeof import('@vueuse/core').eagerComputed
   const effect: typeof import('../../node_modules/vue').effect
   const effectScope: typeof import('../../node_modules/vue').effectScope
+  const encodeImageSlug: typeof import('../../layers/shared-app/app/utils/url').encodeImageSlug
   const extendRef: typeof import('@vueuse/core').extendRef
   const fieldRegistry: typeof import('../../layers/shared-app/app/utils/fieldRegistry').fieldRegistry
   const formatPrice: typeof import('../../layers/commerce-app/app/utils/currency').formatPrice
@@ -151,6 +147,7 @@ declare global {
   const injectLocal: typeof import('@vueuse/core').injectLocal
   const interfaceRegistry: typeof import('../../layers/shared-app/app/utils/fieldRegistry').interfaceRegistry
   const isDefined: typeof import('@vueuse/core').isDefined
+  const isImageMatch: typeof import('../../layers/shared-app/app/utils/url').isImageMatch
   const isNuxtError: typeof import('../../node_modules/nuxt/dist/app/composables/error').isNuxtError
   const isNuxtZodError: typeof import('../../layers/shared-app/app/utils/errors').isNuxtZodError
   const isPrerendered: typeof import('../../node_modules/nuxt/dist/app/composables/payload').isPrerendered
@@ -290,7 +287,7 @@ declare global {
   const useConfirmDialog: typeof import('@vueuse/core').useConfirmDialog
   const useCookie: typeof import('../../node_modules/nuxt/dist/app/composables/cookie').useCookie
   const useCookieLocale: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index').useCookieLocale
-  const useCountdown: typeof import('../../node_modules/@maas/vue-equipment/dist/composables/useCountdown').useCountdown
+  const useCountdown: typeof import('@vueuse/core').useCountdown
   const useCounter: typeof import('@vueuse/core').useCounter
   const useCssModule: typeof import('../../node_modules/vue').useCssModule
   const useCssVar: typeof import('@vueuse/core').useCssVar
@@ -309,6 +306,7 @@ declare global {
   const useDevicePixelRatio: typeof import('@vueuse/core').useDevicePixelRatio
   const useDevicesList: typeof import('@vueuse/core').useDevicesList
   const useDirectusAuth: typeof import('../../app/composables/useDirectusAuth').default
+  const useDirectusRequest: typeof import('../../layers/shared-app/app/composables/useDirectusRequest').default
   const useDisplay: typeof import('../../node_modules/vuetify').useDisplay
   const useDisplayMedia: typeof import('@vueuse/core').useDisplayMedia
   const useDocumentVisibility: typeof import('@vueuse/core').useDocumentVisibility
@@ -360,24 +358,12 @@ declare global {
   const useLocaleHead: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index').useLocaleHead
   const useLocalePath: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index').useLocalePath
   const useLocaleRoute: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index').useLocaleRoute
-  const useMagicCommand: typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand').useMagicCommand
-  const useMagicCookie: typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie').useMagicCookie
-  const useMagicDraggable: typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicDraggable').useMagicDraggable
-  const useMagicDrawer: typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicDrawer').useMagicDrawer
-  const useMagicEmitter: typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicEmitter').useMagicEmitter
-  const useMagicError: typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicError').useMagicError
   const useMagicKeys: typeof import('@vueuse/core').useMagicKeys
-  const useMagicMenu: typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu').useMagicMenu
-  const useMagicModal: typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicModal').useMagicModal
-  const useMagicPie: typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicPie').useMagicPie
-  const useMagicPlayer: typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer').useMagicPlayer
-  const useMagicToast: typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicToast').useMagicToast
   const useManualRefHistory: typeof import('@vueuse/core').useManualRefHistory
   const useMediaControls: typeof import('@vueuse/core').useMediaControls
   const useMediaQuery: typeof import('@vueuse/core').useMediaQuery
   const useMemoize: typeof import('@vueuse/core').useMemoize
   const useMemory: typeof import('@vueuse/core').useMemory
-  const useMetaViewport: typeof import('../../node_modules/@maas/vue-equipment/dist/composables/useMetaViewport').useMetaViewport
   const useModel: typeof import('../../node_modules/vue').useModel
   const useMounted: typeof import('@vueuse/core').useMounted
   const useMouse: typeof import('@vueuse/core').useMouse
@@ -465,8 +451,6 @@ declare global {
   const useScriptYouTubePlayer: typeof import('../../node_modules/nuxt/dist/app/composables/script-stubs').useScriptYouTubePlayer
   const useScroll: typeof import('@vueuse/core').useScroll
   const useScrollLock: typeof import('@vueuse/core').useScrollLock
-  const useScrollLockPadding: typeof import('../../node_modules/@maas/vue-equipment/dist/composables/useScrollLockPadding').useScrollLockPadding
-  const useScrollTo: typeof import('../../node_modules/@maas/vue-equipment/dist/composables/useScrollTo').useScrollTo
   const useSeoMeta: typeof import('../../node_modules/nuxt/dist/app/composables/head').useSeoMeta
   const useServerHead: typeof import('../../node_modules/nuxt/dist/app/composables/head').useServerHead
   const useServerHeadSafe: typeof import('../../node_modules/nuxt/dist/app/composables/head').useServerHeadSafe
@@ -510,13 +494,12 @@ declare global {
   const useTransitionState: typeof import('../../node_modules/vue').useTransitionState
   const useUrlSearchParams: typeof import('@vueuse/core').useUrlSearchParams
   const useUserMedia: typeof import('@vueuse/core').useUserMedia
-  const useUserSession: typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/app/composables/session').useUserSession
+  const useUserStore: typeof import('../../app/stores/user').useUserStore
   const useVModel: typeof import('@vueuse/core').useVModel
   const useVModels: typeof import('@vueuse/core').useVModels
   const useVibrate: typeof import('@vueuse/core').useVibrate
   const useVirtualList: typeof import('@vueuse/core').useVirtualList
   const useWakeLock: typeof import('@vueuse/core').useWakeLock
-  const useWebAuthn: typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/app/composables/webauthn').useWebAuthn
   const useWebNotification: typeof import('@vueuse/core').useWebNotification
   const useWebSocket: typeof import('@vueuse/core').useWebSocket
   const useWebWorker: typeof import('@vueuse/core').useWebWorker
@@ -525,7 +508,6 @@ declare global {
   const useWindowScroll: typeof import('@vueuse/core').useWindowScroll
   const useWindowSize: typeof import('@vueuse/core').useWindowSize
   const userName: typeof import('../../layers/shared-app/app/utils/user-name').userName
-  const useuseEasings: typeof import('../../node_modules/@maas/vue-equipment/dist/composables/useuseEasings').useuseEasings
   const watch: typeof import('../../node_modules/vue').watch
   const watchArray: typeof import('@vueuse/core').watchArray
   const watchAtMost: typeof import('@vueuse/core').watchAtMost
@@ -595,10 +577,7 @@ declare module 'vue' {
     readonly abortNavigation: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['abortNavigation']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('../../node_modules/@pinia/nuxt/dist/runtime/composables')['acceptHMRUpdate']>
     readonly addRouteMiddleware: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['addRouteMiddleware']>
-    readonly allow: UnwrapRef<typeof import('../../node_modules/nuxt-authorization/dist/runtime/ability')['allow']>
-    readonly allows: UnwrapRef<typeof import('../../node_modules/nuxt-authorization/dist/runtime/utils/bouncer')['allows']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
-    readonly authorize: UnwrapRef<typeof import('../../node_modules/nuxt-authorization/dist/runtime/utils/bouncer')['authorize']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly callOnce: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/once')['callOnce']>
     readonly cancelIdleCallback: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/idle-callback')['cancelIdleCallback']>
@@ -628,7 +607,7 @@ declare module 'vue' {
     readonly customRef: UnwrapRef<typeof import('../../node_modules/vue')['customRef']>
     readonly debouncedRef: UnwrapRef<typeof import('@vueuse/core')['debouncedRef']>
     readonly debouncedWatch: UnwrapRef<typeof import('@vueuse/core')['debouncedWatch']>
-    readonly defineAbility: UnwrapRef<typeof import('../../node_modules/nuxt-authorization/dist/runtime/ability')['defineAbility']>
+    readonly decodeImageSlug: UnwrapRef<typeof import('../../layers/shared-app/app/utils/url')['decodeImageSlug']>
     readonly defineAddress: UnwrapRef<typeof import('../../node_modules/@unhead/schema-org/vue')['defineAddress']>
     readonly defineAggregateOffer: UnwrapRef<typeof import('../../node_modules/@unhead/schema-org/vue')['defineAggregateOffer']>
     readonly defineAggregateRating: UnwrapRef<typeof import('../../node_modules/@unhead/schema-org/vue')['defineAggregateRating']>
@@ -683,12 +662,11 @@ declare module 'vue' {
     readonly defineVirtualLocation: UnwrapRef<typeof import('../../node_modules/@unhead/schema-org/vue')['defineVirtualLocation']>
     readonly defineWebPage: UnwrapRef<typeof import('../../node_modules/@unhead/schema-org/vue')['defineWebPage']>
     readonly defineWebSite: UnwrapRef<typeof import('../../node_modules/@unhead/schema-org/vue')['defineWebSite']>
-    readonly denies: UnwrapRef<typeof import('../../node_modules/nuxt-authorization/dist/runtime/utils/bouncer')['denies']>
-    readonly deny: UnwrapRef<typeof import('../../node_modules/nuxt-authorization/dist/runtime/ability')['deny']>
     readonly destructureDate: UnwrapRef<typeof import('../../layers/shared-app/app/utils/time')['destructureDate']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
     readonly effect: UnwrapRef<typeof import('../../node_modules/vue')['effect']>
     readonly effectScope: UnwrapRef<typeof import('../../node_modules/vue')['effectScope']>
+    readonly encodeImageSlug: UnwrapRef<typeof import('../../layers/shared-app/app/utils/url')['encodeImageSlug']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly fieldRegistry: UnwrapRef<typeof import('../../layers/shared-app/app/utils/fieldRegistry')['fieldRegistry']>
     readonly formatPrice: UnwrapRef<typeof import('../../layers/commerce-app/app/utils/currency')['formatPrice']>
@@ -714,6 +692,7 @@ declare module 'vue' {
     readonly injectLocal: UnwrapRef<typeof import('@vueuse/core')['injectLocal']>
     readonly interfaceRegistry: UnwrapRef<typeof import('../../layers/shared-app/app/utils/fieldRegistry')['interfaceRegistry']>
     readonly isDefined: UnwrapRef<typeof import('@vueuse/core')['isDefined']>
+    readonly isImageMatch: UnwrapRef<typeof import('../../layers/shared-app/app/utils/url')['isImageMatch']>
     readonly isNuxtError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/error')['isNuxtError']>
     readonly isNuxtZodError: UnwrapRef<typeof import('../../layers/shared-app/app/utils/errors')['isNuxtZodError']>
     readonly isPrerendered: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/payload')['isPrerendered']>
@@ -853,7 +832,7 @@ declare module 'vue' {
     readonly useConfirmDialog: UnwrapRef<typeof import('@vueuse/core')['useConfirmDialog']>
     readonly useCookie: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/cookie')['useCookie']>
     readonly useCookieLocale: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index')['useCookieLocale']>
-    readonly useCountdown: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/composables/useCountdown')['useCountdown']>
+    readonly useCountdown: UnwrapRef<typeof import('@vueuse/core')['useCountdown']>
     readonly useCounter: UnwrapRef<typeof import('@vueuse/core')['useCounter']>
     readonly useCssModule: UnwrapRef<typeof import('../../node_modules/vue')['useCssModule']>
     readonly useCssVar: UnwrapRef<typeof import('@vueuse/core')['useCssVar']>
@@ -872,6 +851,7 @@ declare module 'vue' {
     readonly useDevicePixelRatio: UnwrapRef<typeof import('@vueuse/core')['useDevicePixelRatio']>
     readonly useDevicesList: UnwrapRef<typeof import('@vueuse/core')['useDevicesList']>
     readonly useDirectusAuth: UnwrapRef<typeof import('../../app/composables/useDirectusAuth')['default']>
+    readonly useDirectusRequest: UnwrapRef<typeof import('../../layers/shared-app/app/composables/useDirectusRequest')['default']>
     readonly useDisplay: UnwrapRef<typeof import('../../node_modules/vuetify')['useDisplay']>
     readonly useDisplayMedia: UnwrapRef<typeof import('@vueuse/core')['useDisplayMedia']>
     readonly useDocumentVisibility: UnwrapRef<typeof import('@vueuse/core')['useDocumentVisibility']>
@@ -923,24 +903,12 @@ declare module 'vue' {
     readonly useLocaleHead: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index')['useLocaleHead']>
     readonly useLocalePath: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index')['useLocalePath']>
     readonly useLocaleRoute: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index')['useLocaleRoute']>
-    readonly useMagicCommand: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicCommand')['useMagicCommand']>
-    readonly useMagicCookie: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicCookie')['useMagicCookie']>
-    readonly useMagicDraggable: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicDraggable')['useMagicDraggable']>
-    readonly useMagicDrawer: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicDrawer')['useMagicDrawer']>
-    readonly useMagicEmitter: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicEmitter')['useMagicEmitter']>
-    readonly useMagicError: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicError')['useMagicError']>
     readonly useMagicKeys: UnwrapRef<typeof import('@vueuse/core')['useMagicKeys']>
-    readonly useMagicMenu: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicMenu')['useMagicMenu']>
-    readonly useMagicModal: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicModal')['useMagicModal']>
-    readonly useMagicPie: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicPie')['useMagicPie']>
-    readonly useMagicPlayer: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicPlayer')['useMagicPlayer']>
-    readonly useMagicToast: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/plugins/MagicToast')['useMagicToast']>
     readonly useManualRefHistory: UnwrapRef<typeof import('@vueuse/core')['useManualRefHistory']>
     readonly useMediaControls: UnwrapRef<typeof import('@vueuse/core')['useMediaControls']>
     readonly useMediaQuery: UnwrapRef<typeof import('@vueuse/core')['useMediaQuery']>
     readonly useMemoize: UnwrapRef<typeof import('@vueuse/core')['useMemoize']>
     readonly useMemory: UnwrapRef<typeof import('@vueuse/core')['useMemory']>
-    readonly useMetaViewport: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/composables/useMetaViewport')['useMetaViewport']>
     readonly useModel: UnwrapRef<typeof import('../../node_modules/vue')['useModel']>
     readonly useMounted: UnwrapRef<typeof import('@vueuse/core')['useMounted']>
     readonly useMouse: UnwrapRef<typeof import('@vueuse/core')['useMouse']>
@@ -1028,8 +996,6 @@ declare module 'vue' {
     readonly useScriptYouTubePlayer: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/script-stubs')['useScriptYouTubePlayer']>
     readonly useScroll: UnwrapRef<typeof import('@vueuse/core')['useScroll']>
     readonly useScrollLock: UnwrapRef<typeof import('@vueuse/core')['useScrollLock']>
-    readonly useScrollLockPadding: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/composables/useScrollLockPadding')['useScrollLockPadding']>
-    readonly useScrollTo: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/composables/useScrollTo')['useScrollTo']>
     readonly useSeoMeta: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/head')['useSeoMeta']>
     readonly useServerHead: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/head')['useServerHead']>
     readonly useServerHeadSafe: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/head')['useServerHeadSafe']>
@@ -1073,13 +1039,12 @@ declare module 'vue' {
     readonly useTransitionState: UnwrapRef<typeof import('../../node_modules/vue')['useTransitionState']>
     readonly useUrlSearchParams: UnwrapRef<typeof import('@vueuse/core')['useUrlSearchParams']>
     readonly useUserMedia: UnwrapRef<typeof import('@vueuse/core')['useUserMedia']>
-    readonly useUserSession: UnwrapRef<typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/app/composables/session')['useUserSession']>
+    readonly useUserStore: UnwrapRef<typeof import('../../app/stores/user')['useUserStore']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
     readonly useVibrate: UnwrapRef<typeof import('@vueuse/core')['useVibrate']>
     readonly useVirtualList: UnwrapRef<typeof import('@vueuse/core')['useVirtualList']>
     readonly useWakeLock: UnwrapRef<typeof import('@vueuse/core')['useWakeLock']>
-    readonly useWebAuthn: UnwrapRef<typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/app/composables/webauthn')['useWebAuthn']>
     readonly useWebNotification: UnwrapRef<typeof import('@vueuse/core')['useWebNotification']>
     readonly useWebSocket: UnwrapRef<typeof import('@vueuse/core')['useWebSocket']>
     readonly useWebWorker: UnwrapRef<typeof import('@vueuse/core')['useWebWorker']>
@@ -1088,7 +1053,6 @@ declare module 'vue' {
     readonly useWindowScroll: UnwrapRef<typeof import('@vueuse/core')['useWindowScroll']>
     readonly useWindowSize: UnwrapRef<typeof import('@vueuse/core')['useWindowSize']>
     readonly userName: UnwrapRef<typeof import('../../layers/shared-app/app/utils/user-name')['userName']>
-    readonly useuseEasings: UnwrapRef<typeof import('../../node_modules/@maas/vue-equipment/dist/composables/useuseEasings')['useuseEasings']>
     readonly watch: UnwrapRef<typeof import('../../node_modules/vue')['watch']>
     readonly watchArray: UnwrapRef<typeof import('@vueuse/core')['watchArray']>
     readonly watchAtMost: UnwrapRef<typeof import('@vueuse/core')['watchAtMost']>

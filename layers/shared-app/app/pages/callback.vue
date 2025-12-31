@@ -1,23 +1,20 @@
 <template>
-    <div>
-        <v-row>
-            <v-col cols="12">
-                <v-text-field type="url" hint=""></v-text-field>
-            </v-col>
-        </v-row>
-    </div>
+  <div>Processing login...</div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+const { $supabase } = useNuxtApp()
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
 onMounted(async () => {
-    // Simple callback redirect logic
-    await router.replace('/')
+  const { error } = await $supabase.auth.getSession()
+  if (error) {
+    await router.push('/auth/login')
+  } else {
+    await router.push('/') // or your dashboard route
+  }
 })
-
-useHead({ title: '' })
 </script>

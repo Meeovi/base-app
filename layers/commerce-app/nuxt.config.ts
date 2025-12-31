@@ -45,19 +45,15 @@ export default defineNuxtConfig({
     titleSuffix: '',
   },
 
-  css: [
-    'assets/web/assets/mobirise-icons2/mobirise2.css',
-    'assets/bootstrap/css/bootstrap.min.css',
-    'assets/bootstrap/css/bootstrap-grid.min.css',
-    'assets/bootstrap/css/bootstrap-reboot.min.css',
-    'assets/theme/css/style.css',
-    'assets/mobirise/css/mbr-additional.css',
-    '@fortawesome/fontawesome-svg-core/styles.css',
-    'assets/styles/mobile.css',
-    'assets/styles/styles.css',
+  css: [],
+
+  modules: [
+    '@unlok-co/nuxt-stripe',
   ],
 
-  modules: ['@unlok-co/nuxt-stripe'],
+  commerce: {
+    provider: 'magento', // or 'directus'
+  },
 
   runtimeConfig: {
     // Cloudflare Turnstile
@@ -66,7 +62,7 @@ export default defineNuxtConfig({
       // environment variable.
       secretKey: process.env.NUXT_TURNSTILE_SECRET_KEY,
     },
-     // Server
+    // Server
     stripe: {
       key: process.env.STRIPE_SECRET_KEY,
       options: {},
@@ -98,10 +94,11 @@ export default defineNuxtConfig({
         }
       },
 
-      // Commerce 
-      commerceUrl: process.env.COMMERCE_STORE_URL,
-      commerceGraphql: process.env.COMMERCE_GRAPHQL_URL,
-      commerceApiToken: process.env.WEBSITE_TOKEN,
+      // Commerce
+      commerce: {
+        magentoEndpoint: process.env.MAGE_MAGENTO_GRAPHQL_URL || '',
+        magentoToken: process.env.MAGE_MAGENTO_TOKEN || '',
+      },
 
       ups: {
         apiKey: process.env.UPS_API_KEY,

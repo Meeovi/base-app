@@ -1,40 +1,35 @@
-import { createDirectus, rest, readItems } from '@directus/sdk'
+import { useNuxtApp } from '#app'
 
 export const useRelatedProducts = () => {
-  const config = useRuntimeConfig()
-  const client = createDirectus(config.public.directus.url).with(rest())
+  const { $commerce } = useNuxtApp()
 
   const getRelatedProducts = async (productId) => {
-    return await client.request(
-      readItems('product_relations', {
-        filter: { product_id: { _eq: productId } },
-        fields: ['*', 'related_product.*']
-      })
-    )
+    try {
+      const items = await $commerce.getProducts({ pageSize: 6 })
+      return items.filter(p => p?.id !== String(productId)).slice(0, 6)
+    } catch (error) {
+      console.error('Error fetching related products (magento):', error)
+      return []
+    }
   }
 
   const getProductsByCategory = async (categoryId, limit = 10) => {
-    return await client.request(
-      readItems('products', {
-        filter: { category_id: { _eq: categoryId } },
-        limit,
-        fields: ['*']
-      })
-    )
+    try {
+      return await $commerce.getProducts({ pageSize: limit })
+    } catch (error) {
+      console.error('Error fetching products by category (magento):', error)
+      return []
+    }
   }
 
   const getSimilarProducts = async (productId, attributes) => {
-    return await client.request(
-      readItems('products', {
-        filter: {
-          _and: [
-            { id: { _neq: productId } },
-            { attributes: { _contains: attributes } }
-          ]
-        },
-        limit: 8
-      })
-    )
+    try {
+      const items = await $commerce.getProducts({ pageSize: 8 })
+      return items.filter(p => p?.id !== String(productId)).slice(0, 8)
+    } catch (error) {
+      console.error('Error fetching similar products (magento):', error)
+      return []
+    }
   }
 
   return { getRelatedProducts, getProductsByCategory, getSimilarProducts }

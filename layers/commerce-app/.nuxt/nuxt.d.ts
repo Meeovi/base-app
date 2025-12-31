@@ -1,3 +1,4 @@
+/// <reference types="../../modules/nuxt-commerce/src/module.ts" />
 /// <reference types="@nuxt/devtools" />
 /// <reference types="@nuxt/devtools" />
 /// <reference types="@nuxt/telemetry" />

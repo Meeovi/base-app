@@ -22,30 +22,9 @@ export function addViewed(id: string | number) {
 export async function fetchProductsByIds(ids: Array<string | number>) {
   if (!ids || ids.length === 0) return []
   try {
-    const { $directus, $readItems } = useNuxtApp()
-    const res = await $directus.request(
-      $readItems('products', {
-        fields: [
-          '*',
-          'products.products_id.*',
-          'products.products_id.image.*',
-          'products.products_id.image.*',
-          'currency.currency_id.*',
-          'brands.brands_id.*',
-          'image.*'
-        ],
-        filter: {
-          id: {
-            _in: ids
-          }
-        },
-        limit: ids.length
-      })
-    )
-
-    const items = Array.isArray(res) ? res : (res?.data || res?.items || [])
-    const map = new Map(items.map((i: any) => [i.id, i]))
-    return ids.map((id) => map.get(id)).filter(Boolean)
+    const { $commerce } = useNuxtApp()
+    const results = await Promise.all(ids.map(id => $commerce.getProduct(String(id))))
+    return results.filter(Boolean)
   } catch (e) {
     // eslint-disable-next-line no-console
     console.warn('useRecentlyViewed.fetchProductsByIds error', e)

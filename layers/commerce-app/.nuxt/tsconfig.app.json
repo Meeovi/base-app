@@ -122,7 +122,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/7327292e-7e48-4549-a69e-06fd43b1a107"
+        "./manifest/meta/2ab76b89-d2ea-4e20-b60b-2c2ad5f64539"
       ],
       "#components": [
         "./components"
@@ -181,6 +181,7 @@
     "../../../node_modules",
     "../../../node_modules/nuxt/node_modules",
     "../../../node_modules/@unlok-co/nuxt-stripe/node_modules",
+    "../../../modules/nuxt-commerce/node_modules",
     "../../../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
     "../../../node_modules/@nuxt/telemetry/node_modules",
     "../dist",
@@ -198,6 +199,10 @@
     "../../../node_modules/dist/runtime/server",
     "../../../node_modules/*.*",
     "../../../node_modules/dist/*.*",
+    "../../../modules/nuxt-commerce/src/runtime/server",
+    "../../../modules/nuxt-commerce/src/dist/runtime/server",
+    "../../../modules/nuxt-commerce/src/*.*",
+    "../../../modules/nuxt-commerce/src/dist/*.*",
     "../../../../../../../../../../../AppData/Roaming/npm/node_modules/runtime/server",
     "../../../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server",
     "../../../../../../../../../../../AppData/Roaming/npm/node_modules/*.*",

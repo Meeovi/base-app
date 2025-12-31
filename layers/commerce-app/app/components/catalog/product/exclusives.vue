@@ -31,35 +31,28 @@
   import productCard from './productCard.vue'
 
   const model = ref(null);
-  const {
-    $directus,
-    $readItem
-  } = useNuxtApp()
+  const { $directus, $readItems, $commerce } = useNuxtApp()
 
-  const {
-    data: exclusives
-  } = await useAsyncData('exclusives', () => {
-    return $directus.request($readItems('products', route.params.slug, {
-      fields: ['*',
-        'products.products_id.*',
-        'products.products_id.image.*',
-        'currency.currency_id.*',
-        'brands.brands_id.*',
-        'image.*',
-      ],
+  const { data: exclusives } = await useAsyncData('exclusives', async () => {
+    const refs = await $directus.request($readItems('products', {
+      fields: ['id', 'sku'],
       limit: 10,
       filter: {
-        status: {
-          _eq: "published"
-        },
+        status: { _eq: 'published' },
         departments: {
-          departments_id: {
-            name: {
-              _eq: "Exclusives"
-            }
-          }
+          departments_id: { name: { _eq: 'Exclusives' } }
         }
       }
     }))
+
+    const products = await Promise.all(refs.map(async (r) => {
+      try {
+        return await $commerce.getProduct(String(r.sku || r.id))
+      } catch (e) {
+        return null
+      }
+    }))
+
+    return products.filter(Boolean)
   })
 </script>

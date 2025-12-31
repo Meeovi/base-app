@@ -57,7 +57,7 @@
         useUserStore
     } from '~/stores/user'
 
-    const { user } = useUserSession()
+    const user = useSupabaseUser()
 
     const {
         $directus,

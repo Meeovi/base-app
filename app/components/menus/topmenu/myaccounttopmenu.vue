@@ -15,16 +15,16 @@
       <div class="cart-items">
         <template>
           <v-list>
-            <v-row v-if="loggedIn">
+            <v-row v-if="userStore.isLoggedIn === true">
               <v-col cols="12">
-                <v-toolbar :title="`Welcome, ${user?.first_name || user?.email}`" color="info"></v-toolbar>
+                <v-toolbar :title="`Welcome, ${userStore.user?.first_name || userStore.user?.email}`" color="info"></v-toolbar>
               </v-col>
               <v-col cols="12">
                 <v-sheet elevation="0">
                   <v-tabs color="cyan">
                     <v-tab value="one">{{ navSocial?.name }}</v-tab>
                     <v-tab value="two">{{ navcomm?.name }}</v-tab>
-                    <!--<v-tab value="three">Item Three</v-tab>-->
+                    <v-tab value="three" v-if="profile.role === 'seller'">Seller Dashboard</v-tab><!---->
                   </v-tabs>
 
                   <v-divider></v-divider>
@@ -57,15 +57,13 @@
               <v-col cols="12">
                 <v-list-item prepend-icon="fas:fa fa-upload" title="Upload Center" href="/upload"></v-list-item>
               </v-col>
-              <v-list-item @click="clear" prepend-icon="fas:fa fa-sign-out-alt">
-                <v-list-item-title>Logout</v-list-item-title>
-              </v-list-item>
+              <logoutButton />
             </v-row>
 
             <v-row v-else>
               <v-list-item prepend-icon="fas:fa fa-sign-in-alt">
                 <v-list-item-title>
-                  <NuxtLink to="/auth/login">Login</NuxtLink>
+                  <NuxtLink to="/login">Login</NuxtLink>
                 </v-list-item-title>
               </v-list-item>
             </v-row>
@@ -98,11 +96,12 @@
   import {
     ref,
   } from 'vue'
+  import logoutButton from '#shared/app/components/auth/logoutButton.vue'
 
   const tab = ref(null)
   const drawer = ref(false)
   const showLogoutConfirmation = ref(false)
-  const { loggedIn, user, clear } = useUserSession()
+  const userStore = useUserStore()
 
   const {
     $directus,

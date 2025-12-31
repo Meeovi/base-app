@@ -212,27 +212,6 @@
       "vue-demi": [
         "../node_modules/nuxt/dist/app/compat/vue-demi"
       ],
-      "@maas/vue-equipment/plugins": [
-        "../node_modules/@maas/vue-equipment/dist/plugins"
-      ],
-      "@maas/vue-equipment/plugins/*": [
-        "../node_modules/@maas/vue-equipment/dist/plugins/*"
-      ],
-      "@maas/vue-equipment/composables": [
-        "../node_modules/@maas/vue-equipment/dist/composables"
-      ],
-      "@maas/vue-equipment/composables/*": [
-        "../node_modules/@maas/vue-equipment/dist/composables/*"
-      ],
-      "@maas/vue-equipment/utils": [
-        "../node_modules/@maas/vue-equipment/dist/utils"
-      ],
-      "@maas/vue-equipment/utils/*": [
-        "../node_modules/@maas/vue-equipment/dist/utils/*"
-      ],
-      "#auth-utils": [
-        "../node_modules/nuxt-auth-utils/dist/runtime/types/index"
-      ],
       "#i18n-kit": [
         "../node_modules/@nuxtjs/i18n/dist/runtime/kit"
       ],

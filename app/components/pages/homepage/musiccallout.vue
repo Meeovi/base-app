@@ -43,6 +43,9 @@
 </template>
 
 <script setup>
+  import ProductCard from '#commerce/app/components/catalog/product/productCard.vue'
+  
+  const model = ref(null)
   const {
     $directus,
     $readItem

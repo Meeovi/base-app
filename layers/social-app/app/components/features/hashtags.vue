@@ -14,7 +14,7 @@
 			</div>
 		</section>
 
-        <v-card variant="text" class="lowerBar">
+        <v-card variant="text">
             <v-toolbar :style="`background-color: ${tagBar?.color}; color: ${tagBar?.colortext} !important`">
                 <v-toolbar-title>{{ tagBar?.name }}</v-toolbar-title>
 

@@ -15,7 +15,7 @@
         </section>
 
         <v-row class="text-center">
-            <v-col cols="3" v-for="historyPosts in historyPosts" :key="historyPosts.id">
+            <v-col cols="3" v-for="historyPosts in historyPosts" :key="historyPosts">
                 <postsCard :posts="historyPosts" />
             </v-col>
         </v-row>
@@ -23,6 +23,10 @@
 </template>
 
 <script setup>
+    import { ref } from 'vue'
+    import postsCard from '~/components/related/post.vue'
+    
+    const user = useSupabaseUser()
     const {
         $directus,
         $readItems,

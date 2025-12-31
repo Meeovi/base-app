@@ -77,17 +77,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     "nuxt-security",
     '@nuxtjs/seo',
-    "nuxt-newsletter",
   ],
-
-  newsletter: {
-    mailchimp: {
-      apiKey: process.env.MAILCHIMP_API_KEY,
-      serverPrefix: process.env.MAILCHIMP_SERVER_PREFIX,
-      audienceId: process.env.MAILCHIMP_AUDIENCE_ID,
-      component: true // optional
-    }
-  },
 
   security: {
     headers: {
@@ -211,4 +201,4 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-02-22',
-} as any)
+})

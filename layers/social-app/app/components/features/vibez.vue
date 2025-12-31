@@ -89,7 +89,7 @@ import { useNuxtApp, useRuntimeConfig } from '#imports'
 const { $directus, $readItems, $readItem, $createItem, $deleteItem } = useNuxtApp()
 const config = useRuntimeConfig()
 
-const { user } = useUserSession()
+const user = useSupabaseUser()
 
 const videos = ref([])
 const tags = ref([])

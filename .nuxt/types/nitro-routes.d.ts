@@ -6,17 +6,33 @@ declare module "nitropack/types" {
     '/api/create-checkout-session': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/create-checkout-session.post').default>>>>
     }
+    '/api/profile': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/profile.get').default>>>>
+    }
+    '/api/seller/request': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/seller/request.post').default>>>>
+    }
     '/api/stripe-webhook': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/stripe-webhook.post').default>>>>
-    }
-    '/api/auth/login': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/auth/login.post').default>>>>
     }
     '/api/comments/channel/:id': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/comments/channel/[id]').default>>>>
     }
+    '/api/images/:pathname': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/images/[pathname].delete').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/images/[pathname].get').default>>>>
+    }
+    '/api/images': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/images/index.get').default>>>>
+    }
+    '/api/images/upload': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/images/upload.post').default>>>>
+    }
     '/api/rocketChat': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/rocketChat').default>>>>
+    }
+    '/api/routes/images/:pathname': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/routes/images/[pathname].get').default>>>>
     }
     '/api/upload-video': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/upload-video.post').default>>>>
@@ -26,15 +42,6 @@ declare module "nitropack/types" {
     }
     '/api/view-video': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/view-video.post').default>>>>
-    }
-    '/api/webauthn/authenticate': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/webauthn/authenticate.post').default>>>>
-    }
-    '/api/webauthn/register': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/webauthn/register.post').default>>>>
-    }
-    '/auth/directus': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/routes/auth/directus.get').default>>>>
     }
     '/routes/ws': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/routes/routes/ws').default>>>>
@@ -53,13 +60,6 @@ declare module "nitropack/types" {
     }
     '/mcp/badge.svg': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/badge-image').default>>>>
-    }
-    '/api/_auth/session': {
-      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/server/api/session.delete').default>>>>
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/server/api/session.get').default>>>>
-    }
-    '/bluesky/client-metadata.json': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/server/routes/atproto/client-metadata.json.get').default>>>>
     }
     '/__site-config__/debug.json': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-site-config/dist/runtime/server/routes/__site-config__/debug').default>>>>

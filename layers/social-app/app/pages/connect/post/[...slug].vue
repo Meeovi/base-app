@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section data-bs-version="5.1" class="start article2 cid-v4JqojhMIl auto-text" id="article02-b9"
+        <section data-bs-version="5.1" class="start article2 cid-v4JqojhMIl" id="article02-b9"
             data-sortbtn="btn-primary">
             <div class="container">
                 <div class="row justify-content-center">

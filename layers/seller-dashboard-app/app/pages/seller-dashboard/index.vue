@@ -1,4 +1,4 @@
-<template>
+<template v-if="profile.role === 'seller'">
     <div>
 
     </div>
@@ -6,7 +6,11 @@
 
 <script setup>
     
-    useHead ({
+    definePageMeta({
+        middleware: ['seller']
+    })
+
+    useHead({
         title: "Seller Dashboard - Meeovi"
     })
 </script>

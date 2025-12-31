@@ -81,7 +81,7 @@
     } from 'vue'
     import postCard from '~/components/related/post.vue'
 
-    const { user } = useUserSession()
+    const user = useSupabaseUser()
 
     const {
         $directus,

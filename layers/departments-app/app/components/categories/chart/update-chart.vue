@@ -89,7 +89,7 @@
     import {
         ref
     } from 'vue';
-    import uploadFiles from '~/composables/content/uploadFiles
+    import uploadFiles from '~~/layers/shared-app/app/composables/globals/uploadFiless
     import updateChart from '~/composables/charts/updateChart';
     import { updateItem, deleteItem } from '@directus/sdk';
     import {

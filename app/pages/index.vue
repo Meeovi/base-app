@@ -26,7 +26,7 @@
   import headerslider from '~/components/pages/homepage/headerslider.vue'
   //import intro from '~/components/pages/homepage/intro.vue'
   import pixanomycallout from '~/components/pages/homepage/pixanomycallout.vue'
-  import hellobar from '~/components/pages/homepage/hellobar.vue'
+  import hellobar from '~/components/menus/hellobar.vue'
   import bookcallout from '~/components/pages/homepage/bookcallout.vue'
   import musiccallout from '~/components/pages/homepage/musiccallout.vue'
   import latestproducts from '#commerce/app/components/catalog/product/latestproducts.vue'

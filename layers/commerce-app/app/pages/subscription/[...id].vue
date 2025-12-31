@@ -122,7 +122,7 @@ import productCard from '~/app/components/catalog/product/productCard.vue'
         $directus,
         $readItem
     } = useNuxtApp()
-    const { user } = useUserSession()
+    const user = useSupabaseUser()
 
     const {
         data: subscription
