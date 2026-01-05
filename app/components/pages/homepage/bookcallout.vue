@@ -14,7 +14,7 @@
                 <h4 class="card-title mbr-fonts-style mb-4 display-2">
                   <strong>{{ departmentBook?.name }}</strong>
                 </h4>
-                <p class="mbr-text mbr-fonts-style mb-4 display-7" v-html="departmentBook?.description"></p>
+                <p class="mbr-text mbr-fonts-style mb-4 display-7" v-dompurify-html="departmentBook?.description"></p>
                 <div class="mbr-section-btn mb-4"><a class="btn btn-secondary display-4"
                     :href="`/departments/${departmentBook?.slug}`">Visit the Bookstore</a></div>
               </div>

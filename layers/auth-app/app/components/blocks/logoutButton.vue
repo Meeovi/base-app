@@ -3,11 +3,12 @@
 </template>
 
 <script setup>
-const { supabase } = useSupabaseClient()
+const { logout } = useAuth()
+const router = useRouter()
 
 const signOut = async () => {
-  const { error } = await supabase.auth.signOut()
-  if (error) console.log(error)
+  await logout()
+  await router.push('/login')
 }
 </script>
 

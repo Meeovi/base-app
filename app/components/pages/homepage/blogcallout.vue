@@ -11,7 +11,7 @@
               <div class="card-box align-center">
                 <h4 class="card-title mbr-fonts-style align-center mb-4 display-1">
                   <strong>{{ blocksBlog?.name }}</strong></h4>
-                <p class="mbr-text mbr-fonts-style mb-4 display-7" v-html="blocksBlog?.description"></p>
+                <p class="mbr-text mbr-fonts-style mb-4 display-7" v-dompurify-html="blocksBlog?.description"></p>
                 <div class="mbr-section-btn mt-3"><NuxtLink class="btn btn-warning display-4" :to="`${blocksBlog?.content?.[0]?.url}`">{{ blocksBlog?.content?.[0]?.url_name }}</NuxtLink></div>
               </div>
             </div>

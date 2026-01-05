@@ -17,7 +17,7 @@
                                 <strong>{{ page?.name }}</strong>
                             </h1>
                             <p class="mbr-text mbr-fonts-style mb-4 display-7 text-black align-center auto-text"
-                                v-html="page?.content"></p>
+                                v-dompurify-html="page?.content"></p>
                             <createList
                                 class="mbr-section-btn mt-3 mobi-mbri mobi-mbri-plus mbr-iconfont mbr-iconfont-btn" />
                         </div>

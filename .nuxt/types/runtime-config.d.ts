@@ -10,8 +10,36 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       cdnURL: string,
    },
 
-   meilisearch: {
-      apiKey: string,
+   appName: string,
+
+   appSite: string,
+
+   directus: {
+      url: string,
+
+      adminToken: string,
+
+      clientId: string,
+
+      clientSecret: string,
+   },
+
+   mail: {
+      key: string,
+
+      from: string,
+   },
+
+   session: {
+      name: string,
+
+      password: string,
+
+      cookie: {
+         sameSite: string,
+      },
+
+      maxAge: number,
    },
 
    turnstile: {
@@ -34,130 +62,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
 
    nitro: {
       envPrefix: string,
-   },
-
-   private: {
-      basicAuth: boolean,
-   },
-
-   security: {
-      strict: boolean,
-
-      headers: {
-         crossOriginResourcePolicy: string,
-
-         crossOriginOpenerPolicy: boolean,
-
-         crossOriginEmbedderPolicy: boolean,
-
-         contentSecurityPolicy: boolean,
-
-         originAgentCluster: string,
-
-         referrerPolicy: string,
-
-         strictTransportSecurity: {
-            maxAge: number,
-
-            includeSubdomains: boolean,
-         },
-
-         xContentTypeOptions: string,
-
-         xDNSPrefetchControl: string,
-
-         xDownloadOptions: string,
-
-         xFrameOptions: string,
-
-         xPermittedCrossDomainPolicies: string,
-
-         xXSSProtection: string,
-
-         permissionsPolicy: boolean,
-      },
-
-      requestSizeLimiter: {
-         maxRequestSizeInBytes: number,
-
-         maxUploadFileRequestInBytes: number,
-
-         throwError: boolean,
-      },
-
-      rateLimiter: {
-         tokensPerInterval: number,
-
-         interval: number,
-
-         headers: boolean,
-
-         driver: {
-            name: string,
-         },
-
-         whiteList: any,
-
-         ipHeader: any,
-
-         throwError: boolean,
-      },
-
-      xssValidator: {
-         methods: Array<string>,
-
-         throwError: boolean,
-      },
-
-      corsHandler: {
-         origin: string,
-
-         methods: Array<string>,
-
-         preflight: {
-            statusCode: number,
-         },
-      },
-
-      allowedMethodsRestricter: {
-         methods: string,
-
-         throwError: boolean,
-      },
-
-      hidePoweredBy: boolean,
-
-      enabled: boolean,
-
-      csrf: boolean,
-
-      nonce: boolean,
-
-      removeLoggers: boolean,
-
-      ssg: {
-         meta: boolean,
-
-         hashScripts: boolean,
-
-         hashStyles: boolean,
-
-         nitroHeaders: boolean,
-
-         exportToPresets: boolean,
-      },
-
-      sri: boolean,
-   },
-
-   session: {
-      name: string,
-
-      password: string,
-
-      cookie: {
-         sameSite: string,
-      },
    },
 
    hash: {
@@ -642,6 +546,120 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       dir: string,
    },
 
+   private: {
+      basicAuth: boolean,
+   },
+
+   security: {
+      strict: boolean,
+
+      headers: {
+         crossOriginResourcePolicy: string,
+
+         crossOriginOpenerPolicy: boolean,
+
+         crossOriginEmbedderPolicy: boolean,
+
+         contentSecurityPolicy: boolean,
+
+         originAgentCluster: string,
+
+         referrerPolicy: string,
+
+         strictTransportSecurity: {
+            maxAge: number,
+
+            includeSubdomains: boolean,
+         },
+
+         xContentTypeOptions: string,
+
+         xDNSPrefetchControl: string,
+
+         xDownloadOptions: string,
+
+         xFrameOptions: string,
+
+         xPermittedCrossDomainPolicies: string,
+
+         xXSSProtection: string,
+
+         permissionsPolicy: boolean,
+      },
+
+      requestSizeLimiter: {
+         maxRequestSizeInBytes: number,
+
+         maxUploadFileRequestInBytes: number,
+
+         throwError: boolean,
+      },
+
+      rateLimiter: {
+         tokensPerInterval: number,
+
+         interval: number,
+
+         headers: boolean,
+
+         driver: {
+            name: string,
+         },
+
+         whiteList: any,
+
+         ipHeader: any,
+
+         throwError: boolean,
+      },
+
+      xssValidator: {
+         methods: Array<string>,
+
+         throwError: boolean,
+      },
+
+      corsHandler: {
+         origin: string,
+
+         methods: Array<string>,
+
+         preflight: {
+            statusCode: number,
+         },
+      },
+
+      allowedMethodsRestricter: {
+         methods: string,
+
+         throwError: boolean,
+      },
+
+      hidePoweredBy: boolean,
+
+      enabled: boolean,
+
+      csrf: boolean,
+
+      nonce: boolean,
+
+      removeLoggers: boolean,
+
+      ssg: {
+         meta: boolean,
+
+         hashScripts: boolean,
+
+         hashStyles: boolean,
+
+         nitroHeaders: boolean,
+
+         exportToPresets: boolean,
+      },
+
+      sri: boolean,
+   },
+
    sitemap: {
       isI18nMapped: boolean,
 
@@ -774,32 +792,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       multiTenancy: Array<any>,
    },
 
-   "nuxt-robots": {
-      version: string,
-
-      isNuxtContentV2: boolean,
-
-      debug: boolean,
-
-      credits: boolean,
-
-      groups: Array<{
-
-      }>,
-
-      sitemap: Array<string>,
-
-      header: boolean,
-
-      robotsEnabledValue: string,
-
-      robotsDisabledValue: string,
-
-      cacheControl: string,
-
-      botDetection: boolean,
-   },
-
    "nuxt-og-image": {
       version: string,
 
@@ -843,8 +835,56 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
 
       isNuxtContentDocumentDriven: boolean,
    },
+
+   "nuxt-robots": {
+      version: string,
+
+      isNuxtContentV2: boolean,
+
+      debug: boolean,
+
+      credits: boolean,
+
+      groups: Array<{
+
+      }>,
+
+      sitemap: Array<string>,
+
+      header: boolean,
+
+      robotsEnabledValue: string,
+
+      robotsDisabledValue: string,
+
+      cacheControl: string,
+
+      botDetection: boolean,
+   },
   }
   interface SharedPublicRuntimeConfig {
+   indexName: string,
+
+   meilisearch: {
+      host: string,
+
+      searchApiKey: string,
+
+      options: {
+         primaryKey: string,
+
+         keepZeroFacets: boolean,
+
+         finitePagination: boolean,
+      },
+   },
+
+   search: {
+      host: string,
+
+      apiKey: string,
+   },
+
    directus: {
       url: string,
 
@@ -874,22 +914,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
 
             callback: string,
          },
-      },
-   },
-
-   meilisearch: {
-      host: string,
-
-      searchApiKey: string,
-
-      indexName: string,
-
-      options: {
-         primaryKey: string,
-
-         keepZeroFacets: boolean,
-
-         finitePagination: boolean,
       },
    },
 
@@ -932,8 +956,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
 
       currency: string,
    },
-
-   indexName: string,
 
    NUXT_PROJECT_ID: string,
 

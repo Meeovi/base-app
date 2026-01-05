@@ -1,10 +1,12 @@
-import { createDirectus, rest, readItem, readItems, createItem, deleteItem, uploadFiles, readSingleton, readFieldsByCollection } from '@directus/sdk';
+import { createDirectus, rest, authentication, readItem, readItems, createItem, deleteItem, uploadFiles, readSingleton, readFieldsByCollection } from '@directus/sdk';
 import type { DirectusSchema } from '~/types/directus';
 
 export default defineNuxtPlugin((nuxtApp) => {
 	const config = useRuntimeConfig()
 
-	const directus = createDirectus<DirectusSchema>(`${config.public.directus.url}`).with(rest())
+	const directus = createDirectus<DirectusSchema>(`${config.public.directus.url}`)
+		.with(rest())
+		.with(authentication())
 
 	// Provide safely to avoid "Cannot redefine property" when multiple plugins register Directus
 	try {

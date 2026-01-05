@@ -8,7 +8,7 @@
                         <h3 class="mbr-section-title mb-4 mbr-fonts-style display-1">
                             <strong> {{ spacePage?.name }}</strong>
                         </h3>
-                        <p class="mbr-section-title mb-4 mbr-fonts-style display-7" v-html="spacePage?.content"></p>
+                        <p class="mbr-section-title mb-4 mbr-fonts-style display-7" v-dompurify-html="spacePage?.content"></p>
                     </div>
                 </div>
             </div>

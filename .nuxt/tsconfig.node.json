@@ -76,6 +76,9 @@
       "nuxt-site-config": [
         "../node_modules/nuxt-site-config"
       ],
+      "@tiptap/vue-3": [
+        "../node_modules/@tiptap/vue-3"
+      ],
       "vue-i18n": [
         "../node_modules/vue-i18n"
       ],
@@ -96,9 +99,6 @@
       ],
       "@intlify/message-compiler": [
         "../node_modules/@intlify/message-compiler"
-      ],
-      "@tiptap/vue-3": [
-        "../node_modules/@tiptap/vue-3"
       ]
     },
     "esModuleInterop": true,
@@ -129,12 +129,6 @@
     "../layers/*/nuxt.config.*",
     "../layers/*/.config/nuxt.*",
     "../layers/*/modules/**/*",
-    "../../search-app/modules/*.*",
-    "../../search-app/nuxt.config.*",
-    "../../search-app/.config/nuxt.*",
-    "../../search-app/layers/*/nuxt.config.*",
-    "../../search-app/layers/*/.config/nuxt.*",
-    "../../search-app/layers/*/modules/**/*",
     "../vitest.config.*",
     "../nuxt.schema.*",
     "../layers/*/nuxt.schema.*"
@@ -142,29 +136,28 @@
   "exclude": [
     "../node_modules",
     "../node_modules/nuxt/node_modules",
-    "../../search-app/node_modules",
-    "../node_modules/@nuxt/image/node_modules",
-    "../node_modules/@nuxtjs/tailwindcss/node_modules",
-    "../node_modules/@storefront-ui/nuxt/node_modules",
-    "../node_modules/@nuxtjs/i18n/node_modules",
-    "../node_modules/nuxt-security/node_modules",
-    "../node_modules/vuetify-nuxt-module/node_modules",
-    "../node_modules/@pinia/nuxt/node_modules",
-    "../node_modules/@vueuse/nuxt/node_modules",
     "../node_modules/nuxt-auth-utils/node_modules",
+    "../node_modules/nuxt-authorization/node_modules",
     "../node_modules/@nuxtjs/leaflet/node_modules",
     "../node_modules/@unlok-co/nuxt-stripe/node_modules",
+    "../node_modules/@nuxt/image/node_modules",
+    "../node_modules/@pinia/nuxt/node_modules",
+    "../node_modules/@vueuse/nuxt/node_modules",
     "../node_modules/@nuxtjs/mcp-toolkit/node_modules",
     "../node_modules/nuxt-tiptap-editor/node_modules",
+    "../node_modules/nuxt-site-config/node_modules",
+    "../node_modules/nuxt-og-image/node_modules",
     "../node_modules/@nuxt/test-utils/node_modules",
+    "../node_modules/@nuxtjs/tailwindcss/node_modules",
+    "../node_modules/vuetify-nuxt-module/node_modules",
+    "../node_modules/@nuxtjs/i18n/node_modules",
+    "../node_modules/nuxt-security/node_modules",
     "../node_modules/@nuxtjs/seo/node_modules",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
-    "../node_modules/nuxt-site-config/node_modules",
     "../node_modules/@nuxtjs/robots/node_modules",
     "../node_modules/@nuxtjs/sitemap/node_modules",
     "../node_modules/nuxt-link-checker/node_modules",
-    "../node_modules/nuxt-og-image/node_modules",
     "../node_modules/nuxt-schema-org/node_modules",
     "../node_modules/nuxt-seo-utils/node_modules",
     "../dist",
@@ -178,20 +171,11 @@
     "../modules/*/runtime/server/**/*",
     "../layers/*/server/**/*",
     "../layers/*/modules/*/runtime/server/**/*",
-    "../../search-app/app/**/*",
-    "../../search-app/modules/*/runtime/**/*",
-    "../../search-app/test/nuxt/**/*",
-    "../../search-app/tests/nuxt/**/*",
-    "../../search-app/layers/*/app/**/*",
-    "../../search-app/layers/*/modules/*/runtime/**/*",
-    "../../search-app/modules/*/runtime/server/**/*",
-    "../../search-app/layers/*/server/**/*",
-    "../../search-app/layers/*/modules/*/runtime/server/**/*",
     "../node_modules/runtime",
     "../node_modules/dist/runtime",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime",
     "../node_modules/nuxt-site-config/dist/runtime",
-    "../node_modules/nuxt-site-config/dist/dist/runtime"
+    "../node_modules/nuxt-site-config/dist/dist/runtime",
+    "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime",
+    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime"
   ]
 }

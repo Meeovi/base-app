@@ -17,7 +17,7 @@
                                 </div>
                             </v-card-subtitle>
 
-                            <v-card-subtitle v-html="station?.description"></v-card-subtitle>
+                            <v-card-subtitle v-dompurify-html="station?.description"></v-card-subtitle>
                         </div>
 
                         <v-avatar class="ma-3" rounded="0" size="125">

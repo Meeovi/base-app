@@ -5,12 +5,14 @@
       <h1 class="mbr-section-title mbr-fonts-style display-1">Forgot Password</h1>
 
       <div class="mbr-section-btn">
-        <div v-if="!token" class="request-reset-form">
+        <div class="request-reset-form">
           <p>Enter your email address to receive a password reset link.</p>
-          <form class="mbr-section-btn">
-            <v-text-field @click="requestResetPassword" v-model="email" type="email" label="Email"
-              :error-messages="emailError" required></v-text-field>
-            <v-btn class="mt-2 btn btn-primary display-4" type="submit" block :loading="loading" :disabled="loading">
+          <form class="mbr-section-btn" :schema="schema" :state="state" @submit="onSubmit">
+            <v-text-field v-model="state.email" type="email" label="Email" required></v-text-field>
+            <div class="mb-3">
+              <div ref="turnstileRef"></div>
+            </div>
+            <v-btn class="mt-2 btn btn-primary display-4" type="submit" block :loading="loading" :disabled="loading || !turnstileToken">
               Send Reset Link
             </v-btn>
           </form>
@@ -22,7 +24,7 @@
 
         <div class="mt-4 text-center">
           <p>Remember your password?
-            <NuxtLink to="/auth/login">Sign In</NuxtLink>
+            <NuxtLink to="/login">Sign In</NuxtLink>
           </p>
         </div>
       </div>
@@ -31,106 +33,57 @@
 </template>
 
 <script setup>
-  import {
-    ref,
-    computed
-  } from 'vue'
-  import {
-    useRuntimeConfig
-  } from '#imports'
-  import {
-    useRouter
-  } from 'vue-router'
-  const { $supabase } = useNuxtApp()
+definePageMeta({
+  auth: {
+    only: 'guest'
+  }
+})
 
-  const router = useRouter()
-  const config = useRuntimeConfig()
+const { t } = useI18n()
+useHead({
+  title: t('forgotPassword.title')
+})
 
-  // Form state
-  const email = ref('')
-  const loading = ref(false)
-  const message = ref('')
-  const messageType = ref < 'success' | 'error' | 'info' > ('info')
+const auth = useAuth()
+const toast = useToast()
+const localePath = useLocalePath()
 
-  const requestResetPassword = async () => {
-    const {
-      data,
-      error
-    } = await $supabase.auth.resetPasswordForEmail(email.value, {
-      redirectTo: '/reset-password',
+const schema = z.object({
+  email: z.email(t('forgotPassword.errors.invalidEmail'))
+})
+
+type Schema = zodOutput<typeof schema>
+
+const state = reactive<Partial<Schema>>({
+  email: undefined
+})
+
+const loading = ref(false)
+
+async function onSubmit(event: FormSubmitEvent<Schema>) {
+  if (loading.value)
+    return
+
+  loading.value = true
+  const { error } = await auth.forgetPassword({
+    email: event.data.email,
+    redirectTo: localePath('/reset-password')
+  })
+
+  if (error) {
+    toast.add({
+      title: error.message || error.statusText,
+      color: 'error'
     })
-    if (error) console.log(error)
   }
-
-  const forgotPassword = async () => {
-    // Validate email
-    if (emailError.value || !email.value) {
-      message.value = 'Please enter a valid email address'
-      messageType.value = 'error'
-      return
-    }
-
-    try {
-      loading.value = true
-      message.value = ''
-
-      // Get the current origin for the reset URL
-      const origin = window.location.origin
-      const resetUrl = `${origin}/auth/reset-password`
-
-      const response = await fetch(`${config.public.directus.url}/auth/password/request`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email.value,
-          reset_url: `${resetUrl}?token={token}`, // Directus will replace {token} with the actual token
-        }),
-      })
-
-      if (!response.ok) {
-        const error = await response.json()
-        throw new Error(error.message || 'Failed to send reset email')
-      }
-
-      // Show success message
-      message.value = 'If an account exists with this email, you will receive a password reset link shortly.'
-      messageType.value = 'success'
-
-      // Clear form
-      email.value = ''
-
-      // Optionally redirect after a delay
-      setTimeout(() => {
-        router.push('/auth/login')
-      }, 5000)
-
-    } catch (error) {
-      console.error('Password reset request failed:', error)
-      message.value = 'An error occurred while processing your request. Please try again.'
-      messageType.value = 'error'
-    } finally {
-      loading.value = false
-    }
+  else {
+    toast.add({
+      title: t('forgotPassword.success'),
+      color: 'success'
+    })
   }
-
-  // Handle auto-fill of email from query params if present
-  onMounted(() => {
-    const route = useRoute()
-    if (route.query.email) {
-      email.value = route.query.email.toString()
-    }
-  })
-
-  useHead({
-    title: "Forgot Password"
-  })
-
-  definePageMeta({
-    auth: false,
-    layout: false,
-  })
+  loading.value = false
+}
 </script>
 
 <style scoped>

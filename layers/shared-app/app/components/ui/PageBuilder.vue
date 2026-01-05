@@ -1,22 +1,39 @@
 <script setup lang="ts">
-interface PageBuilderProps {
-	sections: PageBlock[];
-}
+import type { Page, OsProposal, PageBlock, BlockType } from '~/types';
 
-const props = defineProps<PageBuilderProps>();
+const componentMap: Record<BlockType, any> = {
+	block_hero: resolveComponent('BlocksHero'),
+	block_faqs: resolveComponent('BlocksFaqs'),
+	block_richtext: resolveComponent('BlocksRichText'),
+	block_testimonials: resolveComponent('BlocksTestimonials'),
+	block_quote: resolveComponent('BlocksQuote'),
+	block_cta: resolveComponent('BlocksCta'),
+	block_form: resolveComponent('BlocksForm'),
+	block_logocloud: resolveComponent('BlocksLogoCloud'),
+	block_team: resolveComponent('BlocksTeam'),
+	block_html: resolveComponent('BlocksRawHtml'),
+	block_video: resolveComponent('BlocksVideo'),
+	block_gallery: resolveComponent('BlocksGallery'),
+	block_steps: resolveComponent('BlocksSteps'),
+	block_columns: resolveComponent('BlocksColumns'),
+	block_divider: resolveComponent('BlocksDivider'),
+};
 
-const validBlocks = computed(() =>
-	props.sections.filter(
-		(block): block is PageBlock & { collection: string; item: object } =>
-			typeof block.collection === 'string' && !!block.item && typeof block.item === 'object',
-	),
-);
+const props = defineProps<{
+	page: Page | OsProposal;
+}>();
+
+const blocks = computed(() => {
+	const blocks = unref(props.page as Page)?.blocks as PageBlock[];
+	return blocks?.filter((block) => {
+		return block.hide_block !== true;
+	});
+});
 </script>
-
 <template>
-	<div v-for="block in validBlocks" :key="block.id" :data-background="block.background" class="py-16">
-		<Container>
-			<BaseBlock :block="block" />
-		</Container>
+	<div id="content" class="mx-auto">
+		<template v-for="block in blocks" :key="block.id">
+			<component :is="componentMap[block.collection]" v-if="block && block.collection" :data="block.item" />
+		</template>
 	</div>
 </template>

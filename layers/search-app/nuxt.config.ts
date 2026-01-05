@@ -60,6 +60,14 @@ export default defineNuxtConfig({
           finitePagination: false
         },
       },
+
+      // Search (Elasticsearch / Searchkit or MeiliSearch) - set at runtime or via environment
+      search: {
+        // Example: 'https://your-search-host:9243' or MeiliSearch host
+        host: process.env.NUXT_PUBLIC_SEARCH_HOST,
+        // Example: 'your_api_key'
+        apiKey: process.env.NUXT_PUBLIC_SEARCH_API_KEY,
+      },
     }
   }
 })

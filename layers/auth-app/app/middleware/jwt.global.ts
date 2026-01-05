@@ -16,6 +16,10 @@ export default defineNuxtRouteMiddleware(async () => {
   const runtimeConfig = useRuntimeConfig()
   const { accessToken, refreshToken } = session.value.jwt
 
+  if (!accessToken || !refreshToken) {
+    return
+  }
+
   const accessPayload = decode(accessToken)
   const refreshPayload = decode(refreshToken)
 

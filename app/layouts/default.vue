@@ -120,7 +120,7 @@
   import sidebartop from '~/components/menus/sidebar/sidebartop.vue'
   import socialmenu from '~/components/menus/sidebar/socialmenu.vue'
   import logo from '~/components/blocks/logo.vue'
-  import search from '#shared/app/components/search/search.vue'
+  import search from '#search/app/components/search.vue'
   import ecosystemmenu from '~/components/menus/ecosystemmenu.vue'
   import live from '~/components/menus/livebar/live.vue'
   import topmenu from '~/components/menus/sidebar/topmenu.vue'
@@ -178,4 +178,19 @@
       localStorage.setItem(STORAGE_KEY, val)
     }
   )
+
+useHead({
+  htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'icon', href: '/favicon.ico' }]
+})
+
+useSeoMeta({
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+  title: 'Meeovi',
+  description:
+    'Meeovi is a social marketplace for customers and sellers to engage and build communities around their products and ideas.',
+  ogImage: '/images/logo.png',
+  twitterImage: '/images/logo.png',
+  twitterCard: 'summary_large_image'
+})
 </script>

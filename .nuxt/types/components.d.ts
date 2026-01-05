@@ -153,7 +153,11 @@ interface _GlobalComponents {
   'MediaPlayer': typeof import("../../layers/shared-app/app/components/media/mediaPlayer.vue").default
   'MediaSearchBar': typeof import("../../layers/shared-app/app/components/media/mediaSearchBar.vue").default
   'MediaVideoGallery': typeof import("../../layers/shared-app/app/components/media/videoGallery.vue").default
+  'UiMotionable': typeof import("../../layers/shared-app/app/components/ui/Motionable.vue").default
   'UiPageBuilder': typeof import("../../layers/shared-app/app/components/ui/PageBuilder.vue").default
+  'UiPageContainer': typeof import("../../layers/shared-app/app/components/ui/PageContainer.vue").default
+  'UiRadialProgress': typeof import("../../layers/shared-app/app/components/ui/RadialProgress.vue").default
+  'UiScrollTop': typeof import("../../layers/shared-app/app/components/ui/ScrollTop.vue").default
   'UiFormsBooleanInput': typeof import("../../layers/shared-app/app/components/ui/forms/BooleanInput.vue").default
   'UiFormsDateTime': typeof import("../../layers/shared-app/app/components/ui/forms/DateTime.vue").default
   'UiFormsDirectusFormElement': typeof import("../../layers/shared-app/app/components/ui/forms/DirectusFormElement.vue").default
@@ -363,59 +367,11 @@ interface _GlobalComponents {
   'FeaturesProducts': typeof import("../../layers/seller-dashboard-app/app/components/features/products.vue").default
   'FeaturesReviews': typeof import("../../layers/seller-dashboard-app/app/components/features/reviews.vue").default
   'FeaturesSettings': typeof import("../../layers/seller-dashboard-app/app/components/features/settings.vue").default
-  'AtomsGoogleTagManager': typeof import("../../../search-app/app/components/atoms/GoogleTagManager.vue").default
-  'AtomsImageIcon': typeof import("../../../search-app/app/components/atoms/ImageIcon.vue").default
-  'OrganismsProductOverview': typeof import("../../../search-app/app/components/organisms/ProductOverview.vue").default
-  'RelatedArticle': typeof import("../../../search-app/app/components/related/article.vue").default
-  'RelatedTopics': typeof import("../../../search-app/app/components/related/topics.vue").default
-  'SearchFilters': typeof import("../../../search-app/app/components/search/SearchFilters.vue").default
-  'SearchAtomsBaseButton': typeof import("../../../search-app/app/components/search/atoms/BaseButton.vue").default
-  'SearchAtomsBaseCard': typeof import("../../../search-app/app/components/search/atoms/BaseCard.vue").default
-  'SearchAtomsBaseCheckbox': typeof import("../../../search-app/app/components/search/atoms/BaseCheckbox.vue").default
-  'SearchAtomsBaseLogo': typeof import("../../../search-app/app/components/search/atoms/BaseLogo.vue").default
-  'SearchAtomsBaseText': typeof import("../../../search-app/app/components/search/atoms/BaseText.vue").default
-  'SearchAtomsBaseTitle': typeof import("../../../search-app/app/components/search/atoms/BaseTitle.vue").default
-  'SearchAtomsDiscordIcon': typeof import("../../../search-app/app/components/search/atoms/DiscordIcon.vue").default
-  'SearchAtomsGithubIcon': typeof import("../../../search-app/app/components/search/atoms/GithubIcon.vue").default
-  'SearchAtomsHalfSolidStarIcon': typeof import("../../../search-app/app/components/search/atoms/HalfSolidStarIcon.vue").default
-  'SearchAtomsSelectArrow': typeof import("../../../search-app/app/components/search/atoms/SelectArrow.vue").default
-  'SearchAtomsSolidStarIcon': typeof import("../../../search-app/app/components/search/atoms/SolidStarIcon.vue").default
-  'SearchAtomsStarIcon': typeof import("../../../search-app/app/components/search/atoms/StarIcon.vue").default
-  'SearchAtomsTwitterIcon': typeof import("../../../search-app/app/components/search/atoms/TwitterIcon.vue").default
-  'SearchAtomsWebIcon': typeof import("../../../search-app/app/components/search/atoms/WebIcon.vue").default
-  'SearchAtomsXIcon': typeof import("../../../search-app/app/components/search/atoms/XIcon.vue").default
-  'SearchMoleculesBaseSelect': typeof import("../../../search-app/app/components/search/molecules/BaseSelect.vue").default
-  'SearchMoleculesPageNumber': typeof import("../../../search-app/app/components/search/molecules/PageNumber.vue").default
-  'SearchMoleculesRangeSlider': typeof import("../../../search-app/app/components/search/molecules/RangeSlider.vue").default
-  'SearchMoleculesSearchInput': typeof import("../../../search-app/app/components/search/molecules/SearchInput.vue").default
-  'SearchMoleculesSocialLink': typeof import("../../../search-app/app/components/search/molecules/SocialLink.vue").default
-  'SearchMoleculesStarRating': typeof import("../../../search-app/app/components/search/molecules/StarRating.vue").default
-  'SearchOrganismsLoadingIndicator': typeof import("../../../search-app/app/components/search/organisms/LoadingIndicator.vue").default
-  'SearchOrganismsMeiliSearchBar': typeof import("../../../search-app/app/components/search/organisms/MeiliSearchBar.vue").default
-  'SearchOrganismsMeiliSearchFacetFilter': typeof import("../../../search-app/app/components/search/organisms/MeiliSearchFacetFilter.vue").default
-  'SearchOrganismsMeiliSearchLoadingProvider': typeof import("../../../search-app/app/components/search/organisms/MeiliSearchLoadingProvider.vue").default
-  'SearchOrganismsMeiliSearchPagination': typeof import("../../../search-app/app/components/search/organisms/MeiliSearchPagination.vue").default
-  'SearchOrganismsMeiliSearchProvider': typeof import("../../../search-app/app/components/search/organisms/MeiliSearchProvider.vue").default
-  'SearchOrganismsMeiliSearchRangeFilter': typeof import("../../../search-app/app/components/search/organisms/MeiliSearchRangeFilter.vue").default
-  'SearchOrganismsMeiliSearchRatingFilter': typeof import("../../../search-app/app/components/search/organisms/MeiliSearchRatingFilter.vue").default
-  'SearchOrganismsMeiliSearchResults': typeof import("../../../search-app/app/components/search/organisms/MeiliSearchResults.vue").default
-  'SearchOrganismsMeiliSearchSorting': typeof import("../../../search-app/app/components/search/organisms/MeiliSearchSorting.vue").default
-  'SearchOrganismsMeiliSearchStats': typeof import("../../../search-app/app/components/search/organisms/MeiliSearchStats.vue").default
-  'SearchOrganismsProductCard': typeof import("../../../search-app/app/components/search/organisms/ProductCard.vue").default
-  'SearchOrganismsTheNavbar': typeof import("../../../search-app/app/components/search/organisms/TheNavbar.vue").default
-  'SearchResultsBaseSearchResult': typeof import("../../../search-app/app/components/search/results/BaseSearchResult.vue").default
-  'SearchResultsAudioSearch': typeof import("../../../search-app/app/components/search/results/audioSearch.vue").default
-  'SearchResultsBooksSearch': typeof import("../../../search-app/app/components/search/results/booksSearch.vue").default
-  'SearchResultsFinanceSearch': typeof import("../../../search-app/app/components/search/results/financeSearch.vue").default
-  'SearchResultsImageSearch': typeof import("../../../search-app/app/components/search/results/imageSearch.vue").default
-  'SearchResultsMusicSearch': typeof import("../../../search-app/app/components/search/results/musicSearch.vue").default
-  'SearchResultsNewsSearch': typeof import("../../../search-app/app/components/search/results/newsSearch.vue").default
-  'SearchResultsSpaceSearch': typeof import("../../../search-app/app/components/search/results/spaceSearch.vue").default
-  'SearchResultsSpacesSearch': typeof import("../../../search-app/app/components/search/results/spacesSearch.vue").default
-  'SearchResultsTravelSearch': typeof import("../../../search-app/app/components/search/results/travelSearch.vue").default
-  'SearchResultsVideoSearch': typeof import("../../../search-app/app/components/search/results/videoSearch.vue").default
-  'SearchTemplatesHomeTemplate': typeof import("../../../search-app/app/components/search/templates/HomeTemplate.vue").default
   'AuthState': typeof import("../../node_modules/nuxt-auth-utils/dist/runtime/app/components/AuthState.vue").default
+  'Bouncer': typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Bouncer.vue").default
+  'Can': typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Can.vue").default
+  'Cannot': typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Cannot.vue").default
+  'Primitive': typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Primitive").default
   'NuxtWelcome': typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue").default
   'NuxtLayout': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout").default
   'NuxtErrorBoundary': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").default
@@ -428,124 +384,6 @@ interface _GlobalComponents {
   'NuxtRouteAnnouncer': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-route-announcer").default
   'NuxtImg': typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue").default
   'NuxtPicture': typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue").default
-  'SfAccordionItem': typeof import("@storefront-ui/vue").SfAccordionItem
-  'SfBadge': typeof import("@storefront-ui/vue").SfBadge
-  'SfButton': typeof import("@storefront-ui/vue").SfButton
-  'SfCheckbox': typeof import("@storefront-ui/vue").SfCheckbox
-  'SfChip': typeof import("@storefront-ui/vue").SfChip
-  'SfCounter': typeof import("@storefront-ui/vue").SfCounter
-  'SfDrawer': typeof import("@storefront-ui/vue").SfDrawer
-  'SfDropdown': typeof import("@storefront-ui/vue").SfDropdown
-  'SfIconAdd': typeof import("@storefront-ui/vue").SfIconAdd
-  'SfIconAddShoppingCart': typeof import("@storefront-ui/vue").SfIconAddShoppingCart
-  'SfIconAlokai': typeof import("@storefront-ui/vue").SfIconAlokai
-  'SfIconAlokaiFull': typeof import("@storefront-ui/vue").SfIconAlokaiFull
-  'SfIconArrowBack': typeof import("@storefront-ui/vue").SfIconArrowBack
-  'SfIconArrowDownward': typeof import("@storefront-ui/vue").SfIconArrowDownward
-  'SfIconArrowForward': typeof import("@storefront-ui/vue").SfIconArrowForward
-  'SfIconArrowUpward': typeof import("@storefront-ui/vue").SfIconArrowUpward
-  'SfIconBase': typeof import("@storefront-ui/vue").SfIconBase
-  'SfIconBlock': typeof import("@storefront-ui/vue").SfIconBlock
-  'SfIconCalendarToday': typeof import("@storefront-ui/vue").SfIconCalendarToday
-  'SfIconCall': typeof import("@storefront-ui/vue").SfIconCall
-  'SfIconCancel': typeof import("@storefront-ui/vue").SfIconCancel
-  'SfIconCheck': typeof import("@storefront-ui/vue").SfIconCheck
-  'SfIconCheckBox': typeof import("@storefront-ui/vue").SfIconCheckBox
-  'SfIconCheckBoxOutlineBlank': typeof import("@storefront-ui/vue").SfIconCheckBoxOutlineBlank
-  'SfIconCheckCircle': typeof import("@storefront-ui/vue").SfIconCheckCircle
-  'SfIconChevronLeft': typeof import("@storefront-ui/vue").SfIconChevronLeft
-  'SfIconChevronRight': typeof import("@storefront-ui/vue").SfIconChevronRight
-  'SfIconCircle': typeof import("@storefront-ui/vue").SfIconCircle
-  'SfIconClose': typeof import("@storefront-ui/vue").SfIconClose
-  'SfIconCloseSm': typeof import("@storefront-ui/vue").SfIconCloseSm
-  'SfIconCompareArrows': typeof import("@storefront-ui/vue").SfIconCompareArrows
-  'SfIconContactSupport': typeof import("@storefront-ui/vue").SfIconContactSupport
-  'SfIconCreditCard': typeof import("@storefront-ui/vue").SfIconCreditCard
-  'SfIconDelete': typeof import("@storefront-ui/vue").SfIconDelete
-  'SfIconDownload': typeof import("@storefront-ui/vue").SfIconDownload
-  'SfIconEmail': typeof import("@storefront-ui/vue").SfIconEmail
-  'SfIconError': typeof import("@storefront-ui/vue").SfIconError
-  'SfIconExpandLess': typeof import("@storefront-ui/vue").SfIconExpandLess
-  'SfIconExpandMore': typeof import("@storefront-ui/vue").SfIconExpandMore
-  'SfIconFacebook': typeof import("@storefront-ui/vue").SfIconFacebook
-  'SfIconFavorite': typeof import("@storefront-ui/vue").SfIconFavorite
-  'SfIconFavoriteFilled': typeof import("@storefront-ui/vue").SfIconFavoriteFilled
-  'SfIconGridView': typeof import("@storefront-ui/vue").SfIconGridView
-  'SfIconHelp': typeof import("@storefront-ui/vue").SfIconHelp
-  'SfIconHome': typeof import("@storefront-ui/vue").SfIconHome
-  'SfIconIndeterminateCheckBox': typeof import("@storefront-ui/vue").SfIconIndeterminateCheckBox
-  'SfIconInfo': typeof import("@storefront-ui/vue").SfIconInfo
-  'SfIconInstagram': typeof import("@storefront-ui/vue").SfIconInstagram
-  'SfIconLanguage': typeof import("@storefront-ui/vue").SfIconLanguage
-  'SfIconLocalShipping': typeof import("@storefront-ui/vue").SfIconLocalShipping
-  'SfIconLocalFireDepartment': typeof import("@storefront-ui/vue").SfIconLocal_fire_department
-  'SfIconLocationOn': typeof import("@storefront-ui/vue").SfIconLocationOn
-  'SfIconLocationOnFilled': typeof import("@storefront-ui/vue").SfIconLocationOnFilled
-  'SfIconLock': typeof import("@storefront-ui/vue").SfIconLock
-  'SfIconLockOpen': typeof import("@storefront-ui/vue").SfIconLockOpen
-  'SfIconLogin': typeof import("@storefront-ui/vue").SfIconLogin
-  'SfIconLogout': typeof import("@storefront-ui/vue").SfIconLogout
-  'SfIconMenu': typeof import("@storefront-ui/vue").SfIconMenu
-  'SfIconMoreHoriz': typeof import("@storefront-ui/vue").SfIconMoreHoriz
-  'SfIconMoreVert': typeof import("@storefront-ui/vue").SfIconMoreVert
-  'SfIconOpenInNew': typeof import("@storefront-ui/vue").SfIconOpenInNew
-  'SfIconOpenSource': typeof import("@storefront-ui/vue").SfIconOpenSource
-  'SfIconPackage': typeof import("@storefront-ui/vue").SfIconPackage
-  'SfIconPercent': typeof import("@storefront-ui/vue").SfIconPercent
-  'SfIconPerson': typeof import("@storefront-ui/vue").SfIconPerson
-  'SfIconPinterest': typeof import("@storefront-ui/vue").SfIconPinterest
-  'SfIconPublishedWithChanges': typeof import("@storefront-ui/vue").SfIconPublishedWithChanges
-  'SfIconRadioButtonChecked': typeof import("@storefront-ui/vue").SfIconRadioButtonChecked
-  'SfIconRadioButtonUnchecked': typeof import("@storefront-ui/vue").SfIconRadioButtonUnchecked
-  'SfIconReact': typeof import("@storefront-ui/vue").SfIconReact
-  'SfIconRemove': typeof import("@storefront-ui/vue").SfIconRemove
-  'SfIconRemoveShoppingCart': typeof import("@storefront-ui/vue").SfIconRemoveShoppingCart
-  'SfIconSafetyCheck': typeof import("@storefront-ui/vue").SfIconSafetyCheck
-  'SfIconSchedule': typeof import("@storefront-ui/vue").SfIconSchedule
-  'SfIconSearch': typeof import("@storefront-ui/vue").SfIconSearch
-  'SfIconSell': typeof import("@storefront-ui/vue").SfIconSell
-  'SfIconShare': typeof import("@storefront-ui/vue").SfIconShare
-  'SfIconShoppingCart': typeof import("@storefront-ui/vue").SfIconShoppingCart
-  'SfIconShoppingCartCheckout': typeof import("@storefront-ui/vue").SfIconShoppingCartCheckout
-  'SfIconSort': typeof import("@storefront-ui/vue").SfIconSort
-  'SfIconStar': typeof import("@storefront-ui/vue").SfIconStar
-  'SfIconStarFilled': typeof import("@storefront-ui/vue").SfIconStarFilled
-  'SfIconStarHalf': typeof import("@storefront-ui/vue").SfIconStarHalf
-  'SfIconThumbDown': typeof import("@storefront-ui/vue").SfIconThumbDown
-  'SfIconThumbUp': typeof import("@storefront-ui/vue").SfIconThumbUp
-  'SfIconTune': typeof import("@storefront-ui/vue").SfIconTune
-  'SfIconTwitter': typeof import("@storefront-ui/vue").SfIconTwitter
-  'SfIconUndo': typeof import("@storefront-ui/vue").SfIconUndo
-  'SfIconUnfoldMore': typeof import("@storefront-ui/vue").SfIconUnfoldMore
-  'SfIconUpload': typeof import("@storefront-ui/vue").SfIconUpload
-  'SfIconViewList': typeof import("@storefront-ui/vue").SfIconViewList
-  'SfIconVisibility': typeof import("@storefront-ui/vue").SfIconVisibility
-  'SfIconVisibilityOff': typeof import("@storefront-ui/vue").SfIconVisibilityOff
-  'SfIconVsfDiamond': typeof import("@storefront-ui/vue").SfIconVsfDiamond
-  'SfIconVuejs': typeof import("@storefront-ui/vue").SfIconVuejs
-  'SfIconVuestorefront': typeof import("@storefront-ui/vue").SfIconVuestorefront
-  'SfIconWarehouse': typeof import("@storefront-ui/vue").SfIconWarehouse
-  'SfIconWarning': typeof import("@storefront-ui/vue").SfIconWarning
-  'SfIconYoutube': typeof import("@storefront-ui/vue").SfIconYoutube
-  'SfInput': typeof import("@storefront-ui/vue").SfInput
-  'SfLink': typeof import("@storefront-ui/vue").SfLink
-  'SfListItem': typeof import("@storefront-ui/vue").SfListItem
-  'SfLoaderCircular': typeof import("@storefront-ui/vue").SfLoaderCircular
-  'SfLoaderLinear': typeof import("@storefront-ui/vue").SfLoaderLinear
-  'SfModal': typeof import("@storefront-ui/vue").SfModal
-  'SfProgressCircular': typeof import("@storefront-ui/vue").SfProgressCircular
-  'SfProgressLinear': typeof import("@storefront-ui/vue").SfProgressLinear
-  'SfRadio': typeof import("@storefront-ui/vue").SfRadio
-  'SfRating': typeof import("@storefront-ui/vue").SfRating
-  'SfRatingButton': typeof import("@storefront-ui/vue").SfRatingButton
-  'SfScrollable': typeof import("@storefront-ui/vue").SfScrollable
-  'SfSelect': typeof import("@storefront-ui/vue").SfSelect
-  'SfSwitch': typeof import("@storefront-ui/vue").SfSwitch
-  'SfTextarea': typeof import("@storefront-ui/vue").SfTextarea
-  'SfThumbnail': typeof import("@storefront-ui/vue").SfThumbnail
-  'SfTooltip': typeof import("@storefront-ui/vue").SfTooltip
-  'NuxtLinkLocale': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default
-  'SwitchLocalePathLink': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default
   'LCircle': typeof import("@vue-leaflet/vue-leaflet").LCircle
   'LCircleMarker': typeof import("@vue-leaflet/vue-leaflet").LCircleMarker
   'LControl': typeof import("@vue-leaflet/vue-leaflet").LControl
@@ -571,6 +409,10 @@ interface _GlobalComponents {
   'TiptapEditorContent': typeof import("@tiptap/vue-3").EditorContent
   'TiptapFloatingMenu': typeof import("@tiptap/vue-3/menus").FloatingMenu
   'TiptapBubbleMenu': typeof import("@tiptap/vue-3/menus").BubbleMenu
+  'OgImage': typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default
+  'OgImageScreenshot': typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default
+  'NuxtLinkLocale': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default
+  'SwitchLocalePathLink': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default
   'NuxtPage': typeof import("../../node_modules/nuxt/dist/pages/runtime/page").default
   'NoScript': typeof import("../../node_modules/nuxt/dist/head/runtime/components").NoScript
   'Link': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Link
@@ -581,8 +423,6 @@ interface _GlobalComponents {
   'Head': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Head
   'Html': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Html
   'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Body
-  'OgImage': typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default
-  'OgImageScreenshot': typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default
   'SchemaOrgDebug': typeof import("@unhead/schema-org/vue").SchemaOrgDebug
   'SchemaOrgArticle': typeof import("@unhead/schema-org/vue").SchemaOrgArticle
   'SchemaOrgBreadcrumb': typeof import("@unhead/schema-org/vue").SchemaOrgBreadcrumb
@@ -747,7 +587,11 @@ interface _GlobalComponents {
   'LazyMediaPlayer': LazyComponent<typeof import("../../layers/shared-app/app/components/media/mediaPlayer.vue").default>
   'LazyMediaSearchBar': LazyComponent<typeof import("../../layers/shared-app/app/components/media/mediaSearchBar.vue").default>
   'LazyMediaVideoGallery': LazyComponent<typeof import("../../layers/shared-app/app/components/media/videoGallery.vue").default>
+  'LazyUiMotionable': LazyComponent<typeof import("../../layers/shared-app/app/components/ui/Motionable.vue").default>
   'LazyUiPageBuilder': LazyComponent<typeof import("../../layers/shared-app/app/components/ui/PageBuilder.vue").default>
+  'LazyUiPageContainer': LazyComponent<typeof import("../../layers/shared-app/app/components/ui/PageContainer.vue").default>
+  'LazyUiRadialProgress': LazyComponent<typeof import("../../layers/shared-app/app/components/ui/RadialProgress.vue").default>
+  'LazyUiScrollTop': LazyComponent<typeof import("../../layers/shared-app/app/components/ui/ScrollTop.vue").default>
   'LazyUiFormsBooleanInput': LazyComponent<typeof import("../../layers/shared-app/app/components/ui/forms/BooleanInput.vue").default>
   'LazyUiFormsDateTime': LazyComponent<typeof import("../../layers/shared-app/app/components/ui/forms/DateTime.vue").default>
   'LazyUiFormsDirectusFormElement': LazyComponent<typeof import("../../layers/shared-app/app/components/ui/forms/DirectusFormElement.vue").default>
@@ -957,59 +801,11 @@ interface _GlobalComponents {
   'LazyFeaturesProducts': LazyComponent<typeof import("../../layers/seller-dashboard-app/app/components/features/products.vue").default>
   'LazyFeaturesReviews': LazyComponent<typeof import("../../layers/seller-dashboard-app/app/components/features/reviews.vue").default>
   'LazyFeaturesSettings': LazyComponent<typeof import("../../layers/seller-dashboard-app/app/components/features/settings.vue").default>
-  'LazyAtomsGoogleTagManager': LazyComponent<typeof import("../../../search-app/app/components/atoms/GoogleTagManager.vue").default>
-  'LazyAtomsImageIcon': LazyComponent<typeof import("../../../search-app/app/components/atoms/ImageIcon.vue").default>
-  'LazyOrganismsProductOverview': LazyComponent<typeof import("../../../search-app/app/components/organisms/ProductOverview.vue").default>
-  'LazyRelatedArticle': LazyComponent<typeof import("../../../search-app/app/components/related/article.vue").default>
-  'LazyRelatedTopics': LazyComponent<typeof import("../../../search-app/app/components/related/topics.vue").default>
-  'LazySearchFilters': LazyComponent<typeof import("../../../search-app/app/components/search/SearchFilters.vue").default>
-  'LazySearchAtomsBaseButton': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/BaseButton.vue").default>
-  'LazySearchAtomsBaseCard': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/BaseCard.vue").default>
-  'LazySearchAtomsBaseCheckbox': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/BaseCheckbox.vue").default>
-  'LazySearchAtomsBaseLogo': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/BaseLogo.vue").default>
-  'LazySearchAtomsBaseText': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/BaseText.vue").default>
-  'LazySearchAtomsBaseTitle': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/BaseTitle.vue").default>
-  'LazySearchAtomsDiscordIcon': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/DiscordIcon.vue").default>
-  'LazySearchAtomsGithubIcon': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/GithubIcon.vue").default>
-  'LazySearchAtomsHalfSolidStarIcon': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/HalfSolidStarIcon.vue").default>
-  'LazySearchAtomsSelectArrow': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/SelectArrow.vue").default>
-  'LazySearchAtomsSolidStarIcon': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/SolidStarIcon.vue").default>
-  'LazySearchAtomsStarIcon': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/StarIcon.vue").default>
-  'LazySearchAtomsTwitterIcon': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/TwitterIcon.vue").default>
-  'LazySearchAtomsWebIcon': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/WebIcon.vue").default>
-  'LazySearchAtomsXIcon': LazyComponent<typeof import("../../../search-app/app/components/search/atoms/XIcon.vue").default>
-  'LazySearchMoleculesBaseSelect': LazyComponent<typeof import("../../../search-app/app/components/search/molecules/BaseSelect.vue").default>
-  'LazySearchMoleculesPageNumber': LazyComponent<typeof import("../../../search-app/app/components/search/molecules/PageNumber.vue").default>
-  'LazySearchMoleculesRangeSlider': LazyComponent<typeof import("../../../search-app/app/components/search/molecules/RangeSlider.vue").default>
-  'LazySearchMoleculesSearchInput': LazyComponent<typeof import("../../../search-app/app/components/search/molecules/SearchInput.vue").default>
-  'LazySearchMoleculesSocialLink': LazyComponent<typeof import("../../../search-app/app/components/search/molecules/SocialLink.vue").default>
-  'LazySearchMoleculesStarRating': LazyComponent<typeof import("../../../search-app/app/components/search/molecules/StarRating.vue").default>
-  'LazySearchOrganismsLoadingIndicator': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/LoadingIndicator.vue").default>
-  'LazySearchOrganismsMeiliSearchBar': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/MeiliSearchBar.vue").default>
-  'LazySearchOrganismsMeiliSearchFacetFilter': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/MeiliSearchFacetFilter.vue").default>
-  'LazySearchOrganismsMeiliSearchLoadingProvider': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/MeiliSearchLoadingProvider.vue").default>
-  'LazySearchOrganismsMeiliSearchPagination': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/MeiliSearchPagination.vue").default>
-  'LazySearchOrganismsMeiliSearchProvider': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/MeiliSearchProvider.vue").default>
-  'LazySearchOrganismsMeiliSearchRangeFilter': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/MeiliSearchRangeFilter.vue").default>
-  'LazySearchOrganismsMeiliSearchRatingFilter': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/MeiliSearchRatingFilter.vue").default>
-  'LazySearchOrganismsMeiliSearchResults': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/MeiliSearchResults.vue").default>
-  'LazySearchOrganismsMeiliSearchSorting': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/MeiliSearchSorting.vue").default>
-  'LazySearchOrganismsMeiliSearchStats': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/MeiliSearchStats.vue").default>
-  'LazySearchOrganismsProductCard': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/ProductCard.vue").default>
-  'LazySearchOrganismsTheNavbar': LazyComponent<typeof import("../../../search-app/app/components/search/organisms/TheNavbar.vue").default>
-  'LazySearchResultsBaseSearchResult': LazyComponent<typeof import("../../../search-app/app/components/search/results/BaseSearchResult.vue").default>
-  'LazySearchResultsAudioSearch': LazyComponent<typeof import("../../../search-app/app/components/search/results/audioSearch.vue").default>
-  'LazySearchResultsBooksSearch': LazyComponent<typeof import("../../../search-app/app/components/search/results/booksSearch.vue").default>
-  'LazySearchResultsFinanceSearch': LazyComponent<typeof import("../../../search-app/app/components/search/results/financeSearch.vue").default>
-  'LazySearchResultsImageSearch': LazyComponent<typeof import("../../../search-app/app/components/search/results/imageSearch.vue").default>
-  'LazySearchResultsMusicSearch': LazyComponent<typeof import("../../../search-app/app/components/search/results/musicSearch.vue").default>
-  'LazySearchResultsNewsSearch': LazyComponent<typeof import("../../../search-app/app/components/search/results/newsSearch.vue").default>
-  'LazySearchResultsSpaceSearch': LazyComponent<typeof import("../../../search-app/app/components/search/results/spaceSearch.vue").default>
-  'LazySearchResultsSpacesSearch': LazyComponent<typeof import("../../../search-app/app/components/search/results/spacesSearch.vue").default>
-  'LazySearchResultsTravelSearch': LazyComponent<typeof import("../../../search-app/app/components/search/results/travelSearch.vue").default>
-  'LazySearchResultsVideoSearch': LazyComponent<typeof import("../../../search-app/app/components/search/results/videoSearch.vue").default>
-  'LazySearchTemplatesHomeTemplate': LazyComponent<typeof import("../../../search-app/app/components/search/templates/HomeTemplate.vue").default>
   'LazyAuthState': LazyComponent<typeof import("../../node_modules/nuxt-auth-utils/dist/runtime/app/components/AuthState.vue").default>
+  'LazyBouncer': LazyComponent<typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Bouncer.vue").default>
+  'LazyCan': LazyComponent<typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Can.vue").default>
+  'LazyCannot': LazyComponent<typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Cannot.vue").default>
+  'LazyPrimitive': LazyComponent<typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Primitive").default>
   'LazyNuxtWelcome': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue").default>
   'LazyNuxtLayout': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout").default>
   'LazyNuxtErrorBoundary': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").default>
@@ -1022,124 +818,6 @@ interface _GlobalComponents {
   'LazyNuxtRouteAnnouncer': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-route-announcer").default>
   'LazyNuxtImg': LazyComponent<typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue").default>
   'LazyNuxtPicture': LazyComponent<typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue").default>
-  'LazySfAccordionItem': LazyComponent<typeof import("@storefront-ui/vue").SfAccordionItem>
-  'LazySfBadge': LazyComponent<typeof import("@storefront-ui/vue").SfBadge>
-  'LazySfButton': LazyComponent<typeof import("@storefront-ui/vue").SfButton>
-  'LazySfCheckbox': LazyComponent<typeof import("@storefront-ui/vue").SfCheckbox>
-  'LazySfChip': LazyComponent<typeof import("@storefront-ui/vue").SfChip>
-  'LazySfCounter': LazyComponent<typeof import("@storefront-ui/vue").SfCounter>
-  'LazySfDrawer': LazyComponent<typeof import("@storefront-ui/vue").SfDrawer>
-  'LazySfDropdown': LazyComponent<typeof import("@storefront-ui/vue").SfDropdown>
-  'LazySfIconAdd': LazyComponent<typeof import("@storefront-ui/vue").SfIconAdd>
-  'LazySfIconAddShoppingCart': LazyComponent<typeof import("@storefront-ui/vue").SfIconAddShoppingCart>
-  'LazySfIconAlokai': LazyComponent<typeof import("@storefront-ui/vue").SfIconAlokai>
-  'LazySfIconAlokaiFull': LazyComponent<typeof import("@storefront-ui/vue").SfIconAlokaiFull>
-  'LazySfIconArrowBack': LazyComponent<typeof import("@storefront-ui/vue").SfIconArrowBack>
-  'LazySfIconArrowDownward': LazyComponent<typeof import("@storefront-ui/vue").SfIconArrowDownward>
-  'LazySfIconArrowForward': LazyComponent<typeof import("@storefront-ui/vue").SfIconArrowForward>
-  'LazySfIconArrowUpward': LazyComponent<typeof import("@storefront-ui/vue").SfIconArrowUpward>
-  'LazySfIconBase': LazyComponent<typeof import("@storefront-ui/vue").SfIconBase>
-  'LazySfIconBlock': LazyComponent<typeof import("@storefront-ui/vue").SfIconBlock>
-  'LazySfIconCalendarToday': LazyComponent<typeof import("@storefront-ui/vue").SfIconCalendarToday>
-  'LazySfIconCall': LazyComponent<typeof import("@storefront-ui/vue").SfIconCall>
-  'LazySfIconCancel': LazyComponent<typeof import("@storefront-ui/vue").SfIconCancel>
-  'LazySfIconCheck': LazyComponent<typeof import("@storefront-ui/vue").SfIconCheck>
-  'LazySfIconCheckBox': LazyComponent<typeof import("@storefront-ui/vue").SfIconCheckBox>
-  'LazySfIconCheckBoxOutlineBlank': LazyComponent<typeof import("@storefront-ui/vue").SfIconCheckBoxOutlineBlank>
-  'LazySfIconCheckCircle': LazyComponent<typeof import("@storefront-ui/vue").SfIconCheckCircle>
-  'LazySfIconChevronLeft': LazyComponent<typeof import("@storefront-ui/vue").SfIconChevronLeft>
-  'LazySfIconChevronRight': LazyComponent<typeof import("@storefront-ui/vue").SfIconChevronRight>
-  'LazySfIconCircle': LazyComponent<typeof import("@storefront-ui/vue").SfIconCircle>
-  'LazySfIconClose': LazyComponent<typeof import("@storefront-ui/vue").SfIconClose>
-  'LazySfIconCloseSm': LazyComponent<typeof import("@storefront-ui/vue").SfIconCloseSm>
-  'LazySfIconCompareArrows': LazyComponent<typeof import("@storefront-ui/vue").SfIconCompareArrows>
-  'LazySfIconContactSupport': LazyComponent<typeof import("@storefront-ui/vue").SfIconContactSupport>
-  'LazySfIconCreditCard': LazyComponent<typeof import("@storefront-ui/vue").SfIconCreditCard>
-  'LazySfIconDelete': LazyComponent<typeof import("@storefront-ui/vue").SfIconDelete>
-  'LazySfIconDownload': LazyComponent<typeof import("@storefront-ui/vue").SfIconDownload>
-  'LazySfIconEmail': LazyComponent<typeof import("@storefront-ui/vue").SfIconEmail>
-  'LazySfIconError': LazyComponent<typeof import("@storefront-ui/vue").SfIconError>
-  'LazySfIconExpandLess': LazyComponent<typeof import("@storefront-ui/vue").SfIconExpandLess>
-  'LazySfIconExpandMore': LazyComponent<typeof import("@storefront-ui/vue").SfIconExpandMore>
-  'LazySfIconFacebook': LazyComponent<typeof import("@storefront-ui/vue").SfIconFacebook>
-  'LazySfIconFavorite': LazyComponent<typeof import("@storefront-ui/vue").SfIconFavorite>
-  'LazySfIconFavoriteFilled': LazyComponent<typeof import("@storefront-ui/vue").SfIconFavoriteFilled>
-  'LazySfIconGridView': LazyComponent<typeof import("@storefront-ui/vue").SfIconGridView>
-  'LazySfIconHelp': LazyComponent<typeof import("@storefront-ui/vue").SfIconHelp>
-  'LazySfIconHome': LazyComponent<typeof import("@storefront-ui/vue").SfIconHome>
-  'LazySfIconIndeterminateCheckBox': LazyComponent<typeof import("@storefront-ui/vue").SfIconIndeterminateCheckBox>
-  'LazySfIconInfo': LazyComponent<typeof import("@storefront-ui/vue").SfIconInfo>
-  'LazySfIconInstagram': LazyComponent<typeof import("@storefront-ui/vue").SfIconInstagram>
-  'LazySfIconLanguage': LazyComponent<typeof import("@storefront-ui/vue").SfIconLanguage>
-  'LazySfIconLocalShipping': LazyComponent<typeof import("@storefront-ui/vue").SfIconLocalShipping>
-  'LazySfIconLocalFireDepartment': LazyComponent<typeof import("@storefront-ui/vue").SfIconLocal_fire_department>
-  'LazySfIconLocationOn': LazyComponent<typeof import("@storefront-ui/vue").SfIconLocationOn>
-  'LazySfIconLocationOnFilled': LazyComponent<typeof import("@storefront-ui/vue").SfIconLocationOnFilled>
-  'LazySfIconLock': LazyComponent<typeof import("@storefront-ui/vue").SfIconLock>
-  'LazySfIconLockOpen': LazyComponent<typeof import("@storefront-ui/vue").SfIconLockOpen>
-  'LazySfIconLogin': LazyComponent<typeof import("@storefront-ui/vue").SfIconLogin>
-  'LazySfIconLogout': LazyComponent<typeof import("@storefront-ui/vue").SfIconLogout>
-  'LazySfIconMenu': LazyComponent<typeof import("@storefront-ui/vue").SfIconMenu>
-  'LazySfIconMoreHoriz': LazyComponent<typeof import("@storefront-ui/vue").SfIconMoreHoriz>
-  'LazySfIconMoreVert': LazyComponent<typeof import("@storefront-ui/vue").SfIconMoreVert>
-  'LazySfIconOpenInNew': LazyComponent<typeof import("@storefront-ui/vue").SfIconOpenInNew>
-  'LazySfIconOpenSource': LazyComponent<typeof import("@storefront-ui/vue").SfIconOpenSource>
-  'LazySfIconPackage': LazyComponent<typeof import("@storefront-ui/vue").SfIconPackage>
-  'LazySfIconPercent': LazyComponent<typeof import("@storefront-ui/vue").SfIconPercent>
-  'LazySfIconPerson': LazyComponent<typeof import("@storefront-ui/vue").SfIconPerson>
-  'LazySfIconPinterest': LazyComponent<typeof import("@storefront-ui/vue").SfIconPinterest>
-  'LazySfIconPublishedWithChanges': LazyComponent<typeof import("@storefront-ui/vue").SfIconPublishedWithChanges>
-  'LazySfIconRadioButtonChecked': LazyComponent<typeof import("@storefront-ui/vue").SfIconRadioButtonChecked>
-  'LazySfIconRadioButtonUnchecked': LazyComponent<typeof import("@storefront-ui/vue").SfIconRadioButtonUnchecked>
-  'LazySfIconReact': LazyComponent<typeof import("@storefront-ui/vue").SfIconReact>
-  'LazySfIconRemove': LazyComponent<typeof import("@storefront-ui/vue").SfIconRemove>
-  'LazySfIconRemoveShoppingCart': LazyComponent<typeof import("@storefront-ui/vue").SfIconRemoveShoppingCart>
-  'LazySfIconSafetyCheck': LazyComponent<typeof import("@storefront-ui/vue").SfIconSafetyCheck>
-  'LazySfIconSchedule': LazyComponent<typeof import("@storefront-ui/vue").SfIconSchedule>
-  'LazySfIconSearch': LazyComponent<typeof import("@storefront-ui/vue").SfIconSearch>
-  'LazySfIconSell': LazyComponent<typeof import("@storefront-ui/vue").SfIconSell>
-  'LazySfIconShare': LazyComponent<typeof import("@storefront-ui/vue").SfIconShare>
-  'LazySfIconShoppingCart': LazyComponent<typeof import("@storefront-ui/vue").SfIconShoppingCart>
-  'LazySfIconShoppingCartCheckout': LazyComponent<typeof import("@storefront-ui/vue").SfIconShoppingCartCheckout>
-  'LazySfIconSort': LazyComponent<typeof import("@storefront-ui/vue").SfIconSort>
-  'LazySfIconStar': LazyComponent<typeof import("@storefront-ui/vue").SfIconStar>
-  'LazySfIconStarFilled': LazyComponent<typeof import("@storefront-ui/vue").SfIconStarFilled>
-  'LazySfIconStarHalf': LazyComponent<typeof import("@storefront-ui/vue").SfIconStarHalf>
-  'LazySfIconThumbDown': LazyComponent<typeof import("@storefront-ui/vue").SfIconThumbDown>
-  'LazySfIconThumbUp': LazyComponent<typeof import("@storefront-ui/vue").SfIconThumbUp>
-  'LazySfIconTune': LazyComponent<typeof import("@storefront-ui/vue").SfIconTune>
-  'LazySfIconTwitter': LazyComponent<typeof import("@storefront-ui/vue").SfIconTwitter>
-  'LazySfIconUndo': LazyComponent<typeof import("@storefront-ui/vue").SfIconUndo>
-  'LazySfIconUnfoldMore': LazyComponent<typeof import("@storefront-ui/vue").SfIconUnfoldMore>
-  'LazySfIconUpload': LazyComponent<typeof import("@storefront-ui/vue").SfIconUpload>
-  'LazySfIconViewList': LazyComponent<typeof import("@storefront-ui/vue").SfIconViewList>
-  'LazySfIconVisibility': LazyComponent<typeof import("@storefront-ui/vue").SfIconVisibility>
-  'LazySfIconVisibilityOff': LazyComponent<typeof import("@storefront-ui/vue").SfIconVisibilityOff>
-  'LazySfIconVsfDiamond': LazyComponent<typeof import("@storefront-ui/vue").SfIconVsfDiamond>
-  'LazySfIconVuejs': LazyComponent<typeof import("@storefront-ui/vue").SfIconVuejs>
-  'LazySfIconVuestorefront': LazyComponent<typeof import("@storefront-ui/vue").SfIconVuestorefront>
-  'LazySfIconWarehouse': LazyComponent<typeof import("@storefront-ui/vue").SfIconWarehouse>
-  'LazySfIconWarning': LazyComponent<typeof import("@storefront-ui/vue").SfIconWarning>
-  'LazySfIconYoutube': LazyComponent<typeof import("@storefront-ui/vue").SfIconYoutube>
-  'LazySfInput': LazyComponent<typeof import("@storefront-ui/vue").SfInput>
-  'LazySfLink': LazyComponent<typeof import("@storefront-ui/vue").SfLink>
-  'LazySfListItem': LazyComponent<typeof import("@storefront-ui/vue").SfListItem>
-  'LazySfLoaderCircular': LazyComponent<typeof import("@storefront-ui/vue").SfLoaderCircular>
-  'LazySfLoaderLinear': LazyComponent<typeof import("@storefront-ui/vue").SfLoaderLinear>
-  'LazySfModal': LazyComponent<typeof import("@storefront-ui/vue").SfModal>
-  'LazySfProgressCircular': LazyComponent<typeof import("@storefront-ui/vue").SfProgressCircular>
-  'LazySfProgressLinear': LazyComponent<typeof import("@storefront-ui/vue").SfProgressLinear>
-  'LazySfRadio': LazyComponent<typeof import("@storefront-ui/vue").SfRadio>
-  'LazySfRating': LazyComponent<typeof import("@storefront-ui/vue").SfRating>
-  'LazySfRatingButton': LazyComponent<typeof import("@storefront-ui/vue").SfRatingButton>
-  'LazySfScrollable': LazyComponent<typeof import("@storefront-ui/vue").SfScrollable>
-  'LazySfSelect': LazyComponent<typeof import("@storefront-ui/vue").SfSelect>
-  'LazySfSwitch': LazyComponent<typeof import("@storefront-ui/vue").SfSwitch>
-  'LazySfTextarea': LazyComponent<typeof import("@storefront-ui/vue").SfTextarea>
-  'LazySfThumbnail': LazyComponent<typeof import("@storefront-ui/vue").SfThumbnail>
-  'LazySfTooltip': LazyComponent<typeof import("@storefront-ui/vue").SfTooltip>
-  'LazyNuxtLinkLocale': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default>
-  'LazySwitchLocalePathLink': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default>
   'LazyLCircle': LazyComponent<typeof import("@vue-leaflet/vue-leaflet").LCircle>
   'LazyLCircleMarker': LazyComponent<typeof import("@vue-leaflet/vue-leaflet").LCircleMarker>
   'LazyLControl': LazyComponent<typeof import("@vue-leaflet/vue-leaflet").LControl>
@@ -1165,6 +843,10 @@ interface _GlobalComponents {
   'LazyTiptapEditorContent': LazyComponent<typeof import("@tiptap/vue-3").EditorContent>
   'LazyTiptapFloatingMenu': LazyComponent<typeof import("@tiptap/vue-3/menus").FloatingMenu>
   'LazyTiptapBubbleMenu': LazyComponent<typeof import("@tiptap/vue-3/menus").BubbleMenu>
+  'LazyOgImage': LazyComponent<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default>
+  'LazyOgImageScreenshot': LazyComponent<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default>
+  'LazyNuxtLinkLocale': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default>
+  'LazySwitchLocalePathLink': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default>
   'LazyNuxtPage': LazyComponent<typeof import("../../node_modules/nuxt/dist/pages/runtime/page").default>
   'LazyNoScript': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").NoScript>
   'LazyLink': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Link>
@@ -1175,8 +857,6 @@ interface _GlobalComponents {
   'LazyHead': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Head>
   'LazyHtml': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Html>
   'LazyBody': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Body>
-  'LazyOgImage': LazyComponent<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default>
-  'LazyOgImageScreenshot': LazyComponent<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default>
   'LazySchemaOrgDebug': LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgDebug>
   'LazySchemaOrgArticle': LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgArticle>
   'LazySchemaOrgBreadcrumb': LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgBreadcrumb>

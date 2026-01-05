@@ -5,7 +5,7 @@
                 v-slot="{ isSelected, toggle, selectedClass }">
                 <v-alert v-model="alert" border="start" close-label="Close Alert" :icon="announcement?.icon"
                     :color="announcement?.color" :border-color="announcement?.border_color"
-                    :title="announcement?.subject" variant="tonal" closable v-html="announcement?.description">
+                    :title="announcement?.subject" variant="tonal" closable v-dompurify-html="announcement?.description">
                 </v-alert>
 
                 <!--<div v-if="!alert" class="text-center">

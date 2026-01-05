@@ -9,7 +9,7 @@
                         <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-1">
                             <strong>{{ group?.name }}</strong></h1>
 
-                        <p class="mbr-text mbr-white mbr-fonts-style display-7" v-html="group?.description"></p>
+                        <p class="mbr-text mbr-white mbr-fonts-style display-7" v-dompurify-html="group?.description"></p>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                     <div class="col-12">
                         <div class="card-wrapper">
                             <div class="card-box align-center">
-                                <p class="card-title align-center mbr-black mbr-fonts-style display-7" v-html="group?.description"></p>
+                                <p class="card-title align-center mbr-black mbr-fonts-style display-7" v-dompurify-html="group?.description"></p>
                             </div>
                         </div>
                     </div>                    

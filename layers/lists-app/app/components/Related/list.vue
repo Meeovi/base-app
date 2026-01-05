@@ -5,7 +5,7 @@
                 <h4 class="item-title_1 mbr-fonts-style display-7">
                     <strong>{{ list?.name }}</strong>
                 </h4>
-                <p class="item-text_1 mbr-fonts-style display-4" v-html="list?.description"></p>
+                <p class="item-text_1 mbr-fonts-style display-4" v-dompurify-html="list?.description"></p>
                 <div class="mbr-section-btn item-footer">
                     <NuxtLink :to="`/lists/list/${list?.slug}`" class="btn item-btn btn-info-outline display-4">
                         View

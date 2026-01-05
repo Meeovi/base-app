@@ -15,7 +15,7 @@
                                         <h6 class="card-subtitle mbr-fonts-style mb-2 display-4">Last Activity: {{ new Date(spaces?.lastActivity).toLocaleDateString() }}</h6>
                                         <p class="mbr-text mbr-fonts-style mb-5 display-4"># of Members: {{spaces?.totalMemberCount}}</p>
                                         <p class="mbr-text mbr-fonts-style mb-5 display-4">Status: {{spaces?.status}}</p>    
-                                        <p class="mbr-text mbr-fonts-style mb-5 display-4" v-html="spaces?.description"></p>
+                                        <p class="mbr-text mbr-fonts-style mb-5 display-4" v-dompurify-html="spaces?.description"></p>
                                         <div class="mbr-section-btn"><NuxtLink :to="`/social/group/${spaces?.id}`"
                                                 class="btn btn-warning display-4">Learn more</NuxtLink></div>
                                     </div>

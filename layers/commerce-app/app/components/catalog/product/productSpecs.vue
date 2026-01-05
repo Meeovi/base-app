@@ -54,7 +54,7 @@
       </tr>
       <tr>
         <th>Format</th>
-        <td v-html="product?.format"></td>
+        <td v-dompurify-html="product?.format"></td>
       </tr>
       <tr>
         <th>Product Color</th>
@@ -70,7 +70,7 @@
       </tr>
       <tr>
         <th>Product Description</th>
-        <td><div v-html="product?.content"></div></td>
+        <td><div v-dompurify-html="product?.content"></div></td>
       </tr>
       <tr>
         <th>Is Gift Message Available</th>

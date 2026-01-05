@@ -28,7 +28,7 @@
                 <h6 class="card-title mbr-fonts-style display-5">
                   <strong>{{ departmentMusic?.name }}</strong>
                 </h6>
-                <p class="mbr-text mbr-fonts-style mb-4 display-4" v-html="departmentMusic?.description"></p>
+                <p class="mbr-text mbr-fonts-style mb-4 display-4" v-dompurify-html="departmentMusic?.description"></p>
                 <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4"
                     :href="`/departments/${departmentMusic?.slug}`">
                     Listen to the Music

@@ -45,7 +45,7 @@
                       <p>Country: {{ shop?.store_country }}</p>
                     </div>
                   </div>
-                  <p class="card-text mbr-fonts-style display-7" v-html="shop?.description"></p>
+                  <p class="card-text mbr-fonts-style display-7" v-dompurify-html="shop?.description"></p>
                 </div>
               </div>
             </div>

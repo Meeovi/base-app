@@ -1,9 +1,14 @@
-import { defineNuxtRouteMiddleware, useUserSession, navigateTo } from '#imports'
+import { authClient } from "../../lib/auth-client";
 
-export default defineNuxtRouteMiddleware(() => {
-  const { user, loggedIn } = useUserSession()
+export default defineNuxtRouteMiddleware(async (to) => {
 
-  if (!loggedIn.value || !user.value?.isSeller) {
-    return navigateTo('/seller-dashboard/')
-  }
-})
+    // Check if the user is navigating to the seller dashboard route
+    const isUserNavigatingToAdminOnly = to.path.startsWith('/dashboard/');
+    const { data: loggedIn } = await authClient.useSession(useFetch);
+    const isUserSeller = loggedIn.value?.user.role === 'seller';
+
+    if (isUserNavigatingToAdminOnly && !isUserSeller) {
+        return navigateTo('/');
+    }
+
+});

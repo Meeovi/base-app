@@ -13,7 +13,7 @@
             </v-card-subtitle>
 
             <v-card-text>
-                <div v-html="space?.description"></div>
+                <div v-dompurify-html="space?.description"></div>
             </v-card-text>
 
             <v-card-actions>

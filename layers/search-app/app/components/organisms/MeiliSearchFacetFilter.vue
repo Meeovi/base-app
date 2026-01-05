@@ -85,7 +85,7 @@ const filterOutEmptyFacets = (items: any) => {
           @change="refine(item.value)"
         >
           <BaseText tag="span" size="m" :class="[ item.count ? 'text-valhalla-500' : 'text-ashes-900']">
-            <span v-html="item.label" /> <BaseText tag="span" size="s" class="text-ashes-900">
+            <span v-dompurify-html="item.label" /> <BaseText tag="span" size="s" class="text-ashes-900">
               ({{ item.count.toLocaleString() }})
             </BaseText>
           </BaseText>

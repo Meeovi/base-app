@@ -2,7 +2,7 @@
     <div class="contentPage">
         <v-row>
             <v-col cols="12" v-for="page in result?.cmsPage" :key="page">
-                <p class="uploadHeader" v-html="page?.content"></p>
+                <p class="uploadHeader" v-dompurify-html="page?.content"></p>
             </v-col>
 
             <v-col cols="12">

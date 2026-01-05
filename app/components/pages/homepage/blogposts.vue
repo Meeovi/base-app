@@ -19,7 +19,7 @@
                                 <h6 class="item-subtitle mbr-fonts-style mt-1 display-7" v-for="posts in data?.posts?.nodes" :key="posts.id">
                                     <em>Author: {{ posts?.author?.node?.username }}</em>
                                 </h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7" v-html="posts?.excerpt"></p>
+                                <p class="mbr-text mbr-fonts-style mt-3 display-7" v-dompurify-html="posts?.excerpt"></p>
                             </div>
                             <div class="mbr-section-btn item-footer mt-2"><NuxtLink :to="`/blog/${posts?.id}`" class="btn btn-primary item-btn display-7">Read More&gt;</NuxtLink></div>
                         </div>

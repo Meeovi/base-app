@@ -1,7 +1,7 @@
 <template>
   <div>
     <component v-if="currentComponent" :is="currentComponent" :page="page?.value" />
-    <div v-else v-html="page?.value?.content" />
+    <div v-else v-dompurify-html="page?.value?.content" />
   </div>
 </template>
 

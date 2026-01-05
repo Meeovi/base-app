@@ -22,7 +22,7 @@
                                 </h5>
                                 <h6 class="item-subtitle mbr-fonts-style mt-1 display-7">
                                     <strong>{{ blocks?.content[0]?.subtitle }}</strong></h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7" v-html="blocks?.content[0]?.content">
+                                <p class="mbr-text mbr-fonts-style mt-3 display-7" v-dompurify-html="blocks?.content[0]?.content">
                                 </p>
                             </div>
                             <div class="mbr-section-btn item-footer mt-2">
@@ -48,7 +48,7 @@
                                 </h5>
                                 <h6 class="item-subtitle mbr-fonts-style mt-1 display-7">
                                     <strong>{{ blocks?.content[1]?.subtitle }}&nbsp;</strong></h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7" v-html="blocks?.content[1]?.content">
+                                <p class="mbr-text mbr-fonts-style mt-3 display-7" v-dompurify-html="blocks?.content[1]?.content">
                                 </p>
                             </div>
                             <div class="mbr-section-btn item-footer mt-2">
@@ -74,7 +74,7 @@
                                 </h5>
                                 <h6 class="item-subtitle mbr-fonts-style mt-1 display-7">
                                     <strong>{{ blocks?.content[2]?.subtitle }}</strong></h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7" v-html="blocks?.content[2]?.content">
+                                <p class="mbr-text mbr-fonts-style mt-3 display-7" v-dompurify-html="blocks?.content[2]?.content">
                                 </p>
                             </div>
                             <div class="mbr-section-btn item-footer mt-2">

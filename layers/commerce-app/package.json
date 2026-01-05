@@ -29,6 +29,8 @@
       "nuxt": "latest"
    },
    "dependencies": {
-      "@storefront-ui/nuxt": "latest"
+      "@polar-sh/nuxt": "^0.5.3",
+      "@storefront-ui/nuxt": "latest",
+      "zod": "^4.3.4"
    }
 }

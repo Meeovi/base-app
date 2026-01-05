@@ -3,18 +3,20 @@
 </template>
 
 <script setup>
-const { $supabase } = useNuxtApp()
-import { onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-
 const router = useRouter()
+const store = useUserStore()
 
 onMounted(async () => {
-  const { error } = await $supabase.auth.getSession()
-  if (error) {
-    await router.push('/auth/login')
-  } else {
-    await router.push('/') // or your dashboard route
+  try {
+    // No server session to refresh; rely on local store state
+    if (store.user) {
+      await router.push('/')
+    } else {
+      await router.push('/login')
+    }
+  } catch (error) {
+    console.error('Callback navigation failed:', error)
+    await router.push('/login')
   }
 })
 </script>

@@ -40,7 +40,7 @@
                         </NuxtLink>
                     </v-toolbar>
 
-                    <p v-html="post?.content" class="postContent"></p>
+                    <p v-dompurify-html="post?.content" class="postContent"></p>
 
                     <v-card-actions>
                         <!--Reactions-->

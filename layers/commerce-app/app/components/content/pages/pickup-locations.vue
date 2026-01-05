@@ -49,7 +49,7 @@
         <template v-else>
           <v-card class="mx-auto mb-4" width="100%" elevation="0">
             <v-card-text class="text-center">
-              <p class="text-h6" v-html="pickupBlocks?.content?.[0]?.content"></p>
+              <p class="text-h6" v-dompurify-html="pickupBlocks?.content?.[0]?.content"></p>
             </v-card-text>
           </v-card>
         </template>

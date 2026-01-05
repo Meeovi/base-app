@@ -14,14 +14,20 @@
               </h2>
             </div>
             <div class="form-wrap">
-              <form class="row flex-center flex" @submit.prevent="handleLogin">
+              <form class="row flex-center flex" :schema="schema" :state="state" @submit="onSubmit">
                 <div class="col-12 form-widget">
                   <div class="mb-3">
-                    <v-text-field class="inputField" type="email" placeholder="Email" v-model="email" required />
+                    <v-text-field class="inputField" autocomplete="email" type="email" placeholder="Email" v-model="state.email" required />
                   </div>
                   <div class="mb-3">
-                    <v-text-field class="inputField" type="password" placeholder="Password" v-model="password"
+                    <v-text-field class="inputField" type="password" placeholder="Password" v-model="state.password"
                       required />
+                  </div>
+                  <div class="mb-3">
+                    <v-checkbox v-model="state.rememberMe" />
+                  </div>
+                  <div class="mb-3">
+                    <div ref="turnstileRef"></div>
                   </div>
                   <div>
                     <v-btn type="submit" class="button block" :disabled="loading">
@@ -30,6 +36,9 @@
                   </div>
                   <div v-if="error" class="error-message mt-3">
                     {{ error }}
+                  </div>
+                  <div v-if="success" class="success-message mt-3">
+                    {{ success }}
                   </div>
                   <div class="mt-3 text-center">
                     <p>Don't have an account?
@@ -49,77 +58,112 @@
   </div>
 </template>
 
-<script setup>
-const { $supabase } = useNuxtApp()
+<script setup lang="ts">
+  definePageMeta({
+    auth: {
+      only: 'guest'
+    }
+  })
 
-  const router = useRouter()
+  const {
+    t
+  } = useI18n()
+
+  useHead({
+    title: t('signIn.signIn')
+  })
+  const auth = useAuth()
+  const toast = useToast()
+  const route = useRoute()
+  const localePath = useLocalePath()
+
+  const redirectTo = computed(() => {
+    const redirect = route.query.redirect as string
+    return localePath(redirect || '/')
+  })
+
+  const schema = z.object({
+    email: z.email(t('signIn.errors.invalidEmail')),
+    password: z.string().min(8, t('signIn.errors.passwordLength', {
+      min: 8
+    })),
+    rememberMe: z.boolean().optional()
+  })
+  type Schema = zodOutput < typeof schema >
+
+    const state = reactive < Partial < Schema >> ({
+      email: undefined,
+      password: undefined,
+      rememberMe: false
+    })
+
   const loading = ref(false)
-  const email = ref('')
-  const password = ref('')
-  const error = ref(null)
+  const loadingAction = ref('')
+  const isEmailVerifyModalOpen = ref(false)
+  const resendLoading = ref(false)
+  let unverifiedEmail = ''
 
-  const config = useRuntimeConfig()
-  const recaptchaSiteKey = config.public?.recaptcha?.siteKey ?? null
-
-  const loadRecaptcha = () => {
-    return new Promise((resolve, reject) => {
-      if (typeof window === 'undefined') return resolve(null)
-      // already available
-      // @ts-ignore
-      if (window.grecaptcha) return resolve(window.grecaptcha)
-
-      const script = document.createElement('script')
-      script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`
-      script.async = true
-      script.defer = true
-      script.onload = () => resolve(window.grecaptcha)
-      script.onerror = reject
-      document.head.appendChild(script)
+  async function onSocialLogin(action: 'google' | 'github') {
+    loading.value = true
+    loadingAction.value = action
+    auth.signIn.social({
+      provider: action,
+      callbackURL: redirectTo.value
     })
   }
 
-  const getRecaptchaToken = async () => {
-    if (!recaptchaSiteKey) return null
-    try {
-      // @ts-ignore
-      await loadRecaptcha()
-      // @ts-ignore
-      const token = await window.grecaptcha.execute(recaptchaSiteKey, { action: 'login' })
-      return token
-    } catch (e) {
-      // don't block login on recaptcha load failure; surface a helpful error
-      console.warn('reCAPTCHA load/execute failed', e)
-      return null
+  async function onSubmit(event: FormSubmitEvent < Schema > ) {
+    if (loading.value)
+      return
+    loading.value = true
+    loadingAction.value = 'submit'
+    const {
+      error
+    } = await auth.signIn.email({
+      email: event.data.email,
+      password: event.data.password,
+      rememberMe: event.data.rememberMe,
+      callbackURL: redirectTo.value
+    })
+    if (error) {
+      if (error.code === auth.errorCodes.EMAIL_NOT_VERIFIED) {
+        unverifiedEmail = event.data.email
+        isEmailVerifyModalOpen.value = true
+        loading.value = false
+        return
+      }
+      toast.add({
+        title: error.message,
+        color: 'error'
+      })
     }
+    loading.value = false
   }
 
-  const handleLogin = async () => {
-    try {
-      loading.value = true
-      error.value = null
-
-      const captchaToken = await getRecaptchaToken()
-
-      const {
-        data,
-        error: signInError
-      } = await $supabase.auth.signInWithPassword({
-        email: email.value,
-        password: password.value,
-      }, captchaToken ? { captchaToken } : undefined)
-
-      if (signInError) throw signInError
-
-      // Successful login
-      await router.push('/') // or your dashboard route
-    } catch (e) {
-      error.value = e.message ?? String(e)
-    } finally {
-      loading.value = false
+  async function handleResendEmail() {
+    if (resendLoading.value)
+      return
+    resendLoading.value = true
+    const {
+      error
+    } = await auth.sendVerificationEmail({
+      email: unverifiedEmail,
+      callbackURL: redirectTo.value
+    })
+    if (error) {
+      toast.add({
+        title: error.message,
+        color: 'error'
+      })
+    } else {
+      toast.add({
+        title: t('signIn.sendEmailSuccess'),
+        color: 'success'
+      })
     }
+
+    isEmailVerifyModalOpen.value = false
+    resendLoading.value = false
   }
 
-  definePageMeta({
-    layout: 'auth',
-  })
 </script>

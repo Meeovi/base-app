@@ -168,7 +168,6 @@ export default defineNuxtConfig({
       
       // Google Tag Manager
       gtagId: process.env.NUXT_PUBLIC_GTAG_ID,
-
     },
   },
 

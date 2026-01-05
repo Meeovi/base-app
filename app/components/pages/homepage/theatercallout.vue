@@ -13,7 +13,7 @@
                 <h6 class="card-title mbr-fonts-style display-2">
                   <strong>{{ departmentTheater?.name }}</strong>
                 </h6>
-                <p class="mbr-text mbr-fonts-style mb-4 display-4" v-html="departmentTheater?.description"></p>
+                <p class="mbr-text mbr-fonts-style mb-4 display-4" v-dompurify-html="departmentTheater?.description"></p>
                 <div class="mbr-section-btn mt-3"><a class="btn btn-warning display-4"
                     :href="`/departments/${departmentTheater?.slug}`">Start Watching</a></div>
               </div>

@@ -132,7 +132,7 @@
                         {{ item.price }}
                     </template>
                     <template v-slot:[`item.tax_amount`]="{ item }">
-                        <span v-html="item.tax_amount"></span>
+                        <span v-dompurify-html="item.tax_amount"></span>
                     </template>
                     <template v-slot:[`item.discount_amount`]="{ item }">
                         {{ item.discount_amount }}

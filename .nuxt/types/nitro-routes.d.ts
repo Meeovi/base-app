@@ -3,20 +3,14 @@ import type { Serialize, Simplify } from "nitropack/types";
 declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
-    '/api/create-checkout-session': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/create-checkout-session.post').default>>>>
-    }
-    '/api/profile': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/profile.get').default>>>>
-    }
-    '/api/seller/request': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/seller/request.post').default>>>>
-    }
-    '/api/stripe-webhook': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/stripe-webhook.post').default>>>>
+    '/api/_sitemap-urls': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/_sitemap-urls').default>>>>
     }
     '/api/comments/channel/:id': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/comments/channel/[id]').default>>>>
+    }
+    '/api/feedback': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/feedback.post').default>>>>
     }
     '/api/images/:pathname': {
       'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/images/[pathname].delete').default>>>>
@@ -28,11 +22,17 @@ declare module "nitropack/types" {
     '/api/images/upload': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/images/upload.post').default>>>>
     }
+    '/api/proxy/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/proxy/[...]').default>>>>
+    }
     '/api/rocketChat': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/rocketChat').default>>>>
     }
     '/api/routes/images/:pathname': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/routes/images/[pathname].get').default>>>>
+    }
+    '/api/search': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/search.get').default>>>>
     }
     '/api/upload-video': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/upload-video.post').default>>>>
@@ -42,6 +42,33 @@ declare module "nitropack/types" {
     }
     '/api/view-video': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/api/view-video.post').default>>>>
+    }
+    '/api/create-checkout-session': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/commerce-app/server/api/create-checkout-session.post').default>>>>
+    }
+    '/api/stripe-webhook': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/commerce-app/server/api/stripe-webhook.post').default>>>>
+    }
+    '/api/admin/count/:tableName/:columnName': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/admin/count/[tableName]/[columnName].get').default>>>>
+    }
+    '/api/admin/list/:tableName': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/admin/list/[tableName].get').default>>>>
+    }
+    '/api/admin/maintenance/db-stats': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/admin/maintenance/db-stats').default>>>>
+    }
+    '/api/admin/maintenance/ensure-payment-customers': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/admin/maintenance/ensure-payment-customers').default>>>>
+    }
+    '/api/auth/**:all': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/auth/[...all]').default>>>>
+    }
+    '/api/file/:id': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/file/[id].delete').default>>>>
+    }
+    '/api/file/upload': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/auth-app/server/api/file/upload.post').default>>>>
     }
     '/routes/ws': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../layers/shared-app/server/routes/routes/ws').default>>>>
@@ -65,6 +92,15 @@ declare module "nitropack/types" {
     '/mcp/badge.svg': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/mcp-toolkit/dist/runtime/server/mcp/badge-image').default>>>>
     }
+    '/__og-image__/font/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/server/routes/font').default>>>>
+    }
+    '/__og-image__/image/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/server/routes/image').default>>>>
+    }
+    '/__og-image__/static/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/server/routes/image').default>>>>
+    }
     '/robots.txt': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/robots/dist/runtime/server/routes/robots-txt').default>>>>
     }
@@ -80,20 +116,8 @@ declare module "nitropack/types" {
     '/sitemap.xml': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/sitemap.xml').default>>>>
     }
-    '/__og-image__/font/**': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/server/routes/font').default>>>>
-    }
-    '/__og-image__/image/**': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/server/routes/image').default>>>>
-    }
-    '/__og-image__/static/**': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/server/routes/image').default>>>>
-    }
     '/_i18n/:hash/:locale/messages.json': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/server/routes/messages').default>>>>
-    }
-    '/_ipx/**': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/image/dist/runtime/server/routes/_ipx').default>>>>
     }
   }
 }

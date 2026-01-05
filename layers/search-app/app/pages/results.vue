@@ -32,6 +32,10 @@
             </v-tabs>
 
             <v-card-text>
+              <div v-if="selectedItem" class="selected-item mb-5">
+                <h2>{{ selectedItem.title || selectedItem.name || 'Item' }}</h2>
+                <pre style="white-space:pre-wrap">{{ selectedItem }}</pre>
+              </div>
               <v-tabs-window v-model="tab">
                 <!--All Results -->
                 <v-tabs-window-item value="one">
@@ -125,6 +129,35 @@
   } from '#imports';
 
   const config = useRuntimeConfig();
+  const route = useRoute();
+  const selectedId = ref(route.query.id || null);
+  const selectedItem = ref(null);
+
+  async function fetchSelectedItem(id) {
+    if (!id) return;
+    try {
+      const host = config.public.meilisearch?.host || config.public.search?.host;
+      const apiKey = config.public.meilisearch?.searchApiKey || config.public.search?.apiKey;
+      if (!host) return;
+      const idx = indexName;
+      const url = `${host.replace(/\/$/, '')}/indexes/${encodeURIComponent(idx)}/documents/${encodeURIComponent(id)}`;
+      const res = await $fetch(url, {
+        method: 'GET',
+        headers: apiKey ? { 'X-Meili-API-Key': apiKey } : {}
+      });
+      selectedItem.value = res;
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.warn('Failed to fetch selected item', e);
+    }
+  }
+
+  // react to route changes
+  watch(() => route.query.id, (val) => {
+    selectedId.value = val || null;
+    if (selectedId.value) fetchSelectedItem(selectedId.value);
+    else selectedItem.value = null;
+  }, { immediate: true });
   // Initialize MeiliSearch client
   const searchClient = instantMeiliSearch(
     `${config.public.meilisearch.host}`, // Replace with your MeiliSearch host

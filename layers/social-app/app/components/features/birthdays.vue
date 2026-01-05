@@ -8,7 +8,7 @@
                         <h3 class="mbr-section-title mb-4 mbr-fonts-style display-1">
                             <strong> {{ birthdayPage?.name }}</strong>
                         </h3>
-                        <p class="mbr-section-title mb-4 mbr-fonts-style display-7" v-html="birthdayPage?.content"></p>
+                        <p class="mbr-section-title mb-4 mbr-fonts-style display-7" v-dompurify-html="birthdayPage?.content"></p>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
 
             <div>
                 <div class="container">
-                    <h5 class="mbr-section-title mbr-fonts-style display-4" v-html="birthdayPage?.content"></h5>
+                    <h5 class="mbr-section-title mbr-fonts-style display-4" v-dompurify-html="birthdayPage?.content"></h5>
                     <p class="mbr-text mbr-fonts-style display-1">{{ birthdayPage?.name }}</p>
 
                 </div>

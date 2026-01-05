@@ -124,7 +124,7 @@
                   SKU: {{ item?.sku }}
                   </template>
                   <template v-slot:[`item.tax_amount`]="{ item }">
-                      <span v-html="item.status"></span>
+                      <span v-dompurify-html="item.status"></span>
                   </template>
                   <template v-slot:[`item.original_price`]="{ item }">
                       {{ item.original_price }}
@@ -139,10 +139,10 @@
                       {{ item.price }}
                   </template>
                   <template v-slot:[`item.tax_amount`]="{ item }">
-                      <span v-html="item.tax_amount"></span>
+                      <span v-dompurify-html="item.tax_amount"></span>
                   </template>
                   <template v-slot:[`item.tax_percent`]="{ item }">
-                      <span v-html="item.tax_percent"></span>
+                      <span v-dompurify-html="item.tax_percent"></span>
                   </template>
                   <template v-slot:[`item.discount_amount`]="{ item }">
                       {{ item.discount_amount }}

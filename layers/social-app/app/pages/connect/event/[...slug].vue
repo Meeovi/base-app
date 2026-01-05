@@ -18,7 +18,7 @@
                                             <strong>{{ event?.name }}</strong>
                                         </h1>
                                         <p class="mbr-text mbr-fonts-style mb-4 display-7">{{ event?.location }}</p>
-                                        <p class="mbr-text mbr-fonts-style mb-4 display-7" v-html="event?.description"></p>
+                                        <p class="mbr-text mbr-fonts-style mb-4 display-7" v-dompurify-html="event?.description"></p>
                                     </div>
                                 </div>
                             </div>

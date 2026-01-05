@@ -42,7 +42,14 @@ export default defineNuxtConfig({
 
   css: [],
 
-  modules: ["@nuxt/image", '@pinia/nuxt', '@vueuse/nuxt', '@nuxtjs/mcp-toolkit', 'nuxt-tiptap-editor'],
+  modules: [
+    "@nuxt/image",
+    '@pinia/nuxt',
+    '@vueuse/nuxt',
+    '@nuxtjs/mcp-toolkit',
+    'nuxt-tiptap-editor',
+    'nuxt-og-image'
+  ],
 
   mcp: {
     name: 'Meeovi MCP Server',
@@ -75,7 +82,7 @@ export default defineNuxtConfig({
         key: process.env.SUPABASE_KEY || '',
       },
 
-      // Commerce 
+      // Commerce
       commerceUrl: process.env.COMMERCE_STORE_URL,
       commerceGraphql: process.env.COMMERCE_GRAPHQL_URL,
       commerceApiToken: process.env.WEBSITE_TOKEN,
@@ -94,6 +101,25 @@ export default defineNuxtConfig({
     stripe: {
       key: process.env.STRIPE_SECRET_KEY
     }
+  },
+
+  // Image Configuration - https://image.nuxt.com/providers/directus
+  image: {
+    provider: 'directus',
+    directus: {
+      baseURL: `${process.env.DIRECTUS_URL}/assets/`,
+    },
+  },
+
+  // OG Image Configuration - https://nuxtseo.com/og-image/getting-started/installation
+  ogImage: {
+    defaults: {
+      component: 'OgImageTemplate',
+      width: 1200,
+      height: 630,
+    },
+    // @TODO: Fix font families for OG Image
+    // fonts: formatFonts(fontFamilies),
   },
 
   build: {},

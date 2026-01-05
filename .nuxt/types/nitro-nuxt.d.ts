@@ -3,13 +3,13 @@
 /// <reference path="runtime-config.d.ts" />
 /// <reference types="C:/Users/Basti/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/Meeovi_Framework/Ecosystem/base-app/node_modules/@nuxt/nitro-server/dist/index.mjs" />
 /// <reference path="../image/providers.d.ts" />
+/// <reference path="../module/nuxt-site-config.d.ts" />
+/// <reference path="../module/nuxt-og-image.d.ts" />
 /// <reference path="nuxt-security.d.ts" />
 /// <reference path="nuxt-security-nitro.d.ts" />
 /// <reference path="nitro-middleware.d.ts" />
-/// <reference path="../module/nuxt-site-config.d.ts" />
 /// <reference path="../module/nuxt-robots.d.ts" />
 /// <reference path="../module/nuxt-sitemap.d.ts" />
-/// <reference path="../module/nuxt-og-image.d.ts" />
 /// <reference path="../module/nuxt-seo-utils.d.ts" />
 
 import type { RuntimeConfig } from 'nuxt/schema'

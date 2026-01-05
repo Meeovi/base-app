@@ -15,16 +15,16 @@
       <div class="cart-items">
         <template>
           <v-list>
-            <v-row v-if="userStore.isLoggedIn === true">
+            <v-row v-if="loggedIn">
               <v-col cols="12">
-                <v-toolbar :title="`Welcome, ${userStore.user?.first_name || userStore.user?.email}`" color="info"></v-toolbar>
+                <v-toolbar :title="`Welcome, ${user?.name || user?.email}`" color="info"></v-toolbar>
               </v-col>
               <v-col cols="12">
                 <v-sheet elevation="0">
                   <v-tabs color="cyan">
                     <v-tab value="one">{{ navSocial?.name }}</v-tab>
                     <v-tab value="two">{{ navcomm?.name }}</v-tab>
-                    <v-tab value="three" v-if="profile.role === 'seller'">Seller Dashboard</v-tab><!---->
+                    <v-tab value="three" v-if="user?.isSeller">Seller Dashboard</v-tab><!---->
                   </v-tabs>
 
                   <v-divider></v-divider>
@@ -96,12 +96,12 @@
   import {
     ref,
   } from 'vue'
-  import logoutButton from '#auth/app/components/logoutButton.vue'
+  import logoutButton from '#auth/app/components/blocks/logoutButton.vue'
 
   const tab = ref(null)
   const drawer = ref(false)
   const showLogoutConfirmation = ref(false)
-  const userStore = useUserStore()
+  const { user, loggedIn, fetch: fetchUserSession } = useUserSession()
 
   const {
     $directus,

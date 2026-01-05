@@ -35,7 +35,7 @@
                                     <h4 class="item-title mbr-fonts-style display-5">
                                         <strong>{{ restaurant?.name }}</strong>
                                     </h4>
-                                    <p class="item-text mbr-fonts-style display-4" v-html="restaurant?.description"></p>
+                                    <p class="item-text mbr-fonts-style display-4" v-dompurify-html="restaurant?.description"></p>
                                 </div>
                             </div>
                         </div>

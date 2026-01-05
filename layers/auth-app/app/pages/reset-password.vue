@@ -5,13 +5,13 @@
       <h1 class="mbr-section-title mbr-fonts-style display-1">Reset Password</h1>
 
       <div class="reset-password-form">
-        <form class="mbr-section-btn">
-          <v-text-field v-model="newPassword" type="password" label="New Password" :error-messages="passwordError"
-            required></v-text-field>
-          <v-text-field v-model="confirmPassword" type="password" label="Confirm Password"
-            :error-messages="confirmPasswordError" required></v-text-field>
-          <v-btn class="mt-2 btn btn-primary display-4" @click="updateUserPassword" type="submit" block
-            :loading="loading" :disabled="loading">
+        <form class="mbr-section-btn" :schema="schema" :state="state" @submit="onSubmit">
+          <v-text-field v-model="state.Password" type="password" label="New Password" required></v-text-field>
+          <v-text-field v-model="state.confirmPassword" type="password" label="Confirm Password" required></v-text-field>
+          <div class="mb-3">
+            <div ref="turnstileRef"></div>
+          </div>
+          <v-btn class="mt-2 btn btn-primary display-4" type="submit" block :loading="loading" :disabled="loading || !turnstileToken">
             Reset Password
           </v-btn>
         </form>
@@ -22,54 +22,70 @@
       </v-alert>
 
       <div class="mt-4 text-center">
-        <NuxtLink to="/auth/login">Back to Login</NuxtLink>
+        <NuxtLink to="/login">Back to Login</NuxtLink>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-  const { $supabase } = useNuxtApp()
-
-  const newPassword = ref('')
-  const password = generateRandomPassword()
-
-  const updateUserPassword = async () => {
-    const {
-      data,
-      error
-    } = await supabase.auth.updateUser({
-      password: newPassword.value
-    })
-    if (error) console.log(error)
+definePageMeta({
+  auth: {
+    only: 'guest'
   }
+})
 
-  watch(newPassword, () => {
-    $supabase.auth.onAuthStateChange(async (event, session) => {
-      if (event == "PASSWORD_RECOVERY") {
-        const {
-          data,
-          error
-        } = await supabase.auth
-          .updateUser({
-            password
-          })
+const { t } = useI18n()
+useHead({
+  title: t('resetPassword.title')
+})
 
-        if (data) alert("Password updated successfully!")
-        if (error) alert("There was an error updating your password.")
-      }
-    })
+const auth = useAuth()
+const toast = useToast()
+const route = useRoute()
+const localePath = useLocalePath()
+const runtimeConfig = useRuntimeConfig()
+
+const state = reactive({
+  password: undefined as string | undefined,
+  confirmPassword: undefined as string | undefined
+})
+
+const schema = z.object({
+  password: z.string().min(8, t('resetPassword.errors.minLength', { min: 8 })),
+  confirmPassword: z.string().min(8, t('resetPassword.errors.minLength', { min: 8 })).refine(val => val === state.password, {
+    message: t('resetPassword.errors.passwordMismatch')
+  })
+})
+
+type Schema = zodOutput<typeof schema>
+
+const loading = ref(false)
+
+async function onSubmit(event: FormSubmitEvent<Schema>) {
+  if (loading.value)
+    return
+
+  loading.value = true
+  const { error } = await auth.resetPassword({
+    newPassword: event.data.password,
+    token: route.query.token as string
   })
 
-  // Page meta
-  useHead({
-    title: "Reset Password"
-  });
-
-  definePageMeta({
-    auth: false,
-    layout: false,
-  });
+  if (error) {
+    toast.add({
+      title: error.message,
+      color: 'error'
+    })
+  } else {
+    toast.add({
+      title: t('resetPassword.success'),
+      color: 'success'
+    })
+    navigateTo(localePath(runtimeConfig.public.auth.redirectGuestTo))
+  }
+  loading.value = false
+}
 </script>
 
 <style scoped>

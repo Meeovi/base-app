@@ -5,11 +5,6 @@ export const pathToI18nConfig = {
     "pl-PL": "/cart",
     "testde": "/cart"
   },
-  "/error": {
-    "en-GB": "/error",
-    "pl-PL": "/error",
-    "testde": "/error"
-  },
   "/": {
     "en-GB": "/",
     "pl-PL": "/",
@@ -80,15 +75,15 @@ export const pathToI18nConfig = {
     "pl-PL": "/account",
     "testde": "/account"
   },
+  "/WebAuthnModal": {
+    "en-GB": "/WebAuthnModal",
+    "pl-PL": "/WebAuthnModal",
+    "testde": "/WebAuthnModal"
+  },
   "/reset-password": {
     "en-GB": "/reset-password",
     "pl-PL": "/reset-password",
     "testde": "/reset-password"
-  },
-  "/Search/results": {
-    "en-GB": "/Search/results",
-    "pl-PL": "/Search/results",
-    "testde": "/Search/results"
   },
   "/shop/:slug(.*)*": {
     "en-GB": "/shop/:slug(.*)*",
@@ -99,6 +94,11 @@ export const pathToI18nConfig = {
     "en-GB": "/brand/:slug(.*)*",
     "pl-PL": "/brand/:slug(.*)*",
     "testde": "/brand/:slug(.*)*"
+  },
+  "/dashboard": {
+    "en-GB": "/dashboard",
+    "pl-PL": "/dashboard",
+    "testde": "/dashboard"
   },
   "/forgot-password": {
     "en-GB": "/forgot-password",
@@ -115,10 +115,20 @@ export const pathToI18nConfig = {
     "pl-PL": "/shipment/:id(.*)*",
     "testde": "/shipment/:id(.*)*"
   },
+  "/dashboard/request": {
+    "en-GB": "/dashboard/request",
+    "pl-PL": "/dashboard/request",
+    "testde": "/dashboard/request"
+  },
   "/incentive/:id(.*)*": {
     "en-GB": "/incentive/:id(.*)*",
     "pl-PL": "/incentive/:id(.*)*",
     "testde": "/incentive/:id(.*)*"
+  },
+  "/profile/:slug(.*)*": {
+    "en-GB": "/profile/:slug(.*)*",
+    "pl-PL": "/profile/:slug(.*)*",
+    "testde": "/profile/:slug(.*)*"
   },
   "/account/user/:uid()": {
     "en-GB": "/account/user/:uid()",
@@ -175,16 +185,6 @@ export const pathToI18nConfig = {
     "pl-PL": "/connect/post/:slug(.*)*",
     "testde": "/connect/post/:slug(.*)*"
   },
-  "/connect/user/:slug(.*)*": {
-    "en-GB": "/connect/user/:slug(.*)*",
-    "pl-PL": "/connect/user/:slug(.*)*",
-    "testde": "/connect/user/:slug(.*)*"
-  },
-  "/seller-dashboard": {
-    "en-GB": "/seller-dashboard",
-    "pl-PL": "/seller-dashboard",
-    "testde": "/seller-dashboard"
-  },
   "/connect/event/:slug(.*)*": {
     "en-GB": "/connect/event/:slug(.*)*",
     "pl-PL": "/connect/event/:slug(.*)*",
@@ -199,11 +199,6 @@ export const pathToI18nConfig = {
     "en-GB": "/product/showcases",
     "pl-PL": "/product/showcases",
     "testde": "/product/showcases"
-  },
-  "/seller-dashboard/request": {
-    "en-GB": "/seller-dashboard/request",
-    "pl-PL": "/seller-dashboard/request",
-    "testde": "/seller-dashboard/request"
   },
   "/connect/hashtag/:slug(.*)*": {
     "en-GB": "/connect/hashtag/:slug(.*)*",
@@ -223,7 +218,6 @@ export const pathToI18nConfig = {
 };
 export const i18nPathToPath = {
   "/cart": "/cart",
-  "/error": "/error",
   "/": "/",
   "/login": "/login",
   "/shops": "/shops",
@@ -238,14 +232,17 @@ export const i18nPathToPath = {
   "/lists": "/lists",
   "/invoice/:id()": "/invoice/:id()",
   "/account": "/account",
+  "/WebAuthnModal": "/WebAuthnModal",
   "/reset-password": "/reset-password",
-  "/Search/results": "/Search/results",
   "/shop/:slug(.*)*": "/shop/:slug(.*)*",
   "/brand/:slug(.*)*": "/brand/:slug(.*)*",
+  "/dashboard": "/dashboard",
   "/forgot-password": "/forgot-password",
   "/product/:id(.*)*": "/product/:id(.*)*",
   "/shipment/:id(.*)*": "/shipment/:id(.*)*",
+  "/dashboard/request": "/dashboard/request",
   "/incentive/:id(.*)*": "/incentive/:id(.*)*",
+  "/profile/:slug(.*)*": "/profile/:slug(.*)*",
   "/account/user/:uid()": "/account/user/:uid()",
   "/connect/vibe/upload": "/connect/vibe/upload",
   "/lists/bookmark/:id()": "/lists/bookmark/:id()",
@@ -257,12 +254,9 @@ export const i18nPathToPath = {
   "/collaborrate/messages": "/collaborrate/messages",
   "/departments/:slug(.*)*": "/departments/:slug(.*)*",
   "/connect/post/:slug(.*)*": "/connect/post/:slug(.*)*",
-  "/connect/user/:slug(.*)*": "/connect/user/:slug(.*)*",
-  "/seller-dashboard": "/seller-dashboard",
   "/connect/event/:slug(.*)*": "/connect/event/:slug(.*)*",
   "/connect/space/:slug(.*)*": "/connect/space/:slug(.*)*",
   "/product/showcases": "/product/showcases",
-  "/seller-dashboard/request": "/seller-dashboard/request",
   "/connect/hashtag/:slug(.*)*": "/connect/hashtag/:slug(.*)*",
   "/departments/category/:slug(.*)*": "/departments/category/:slug(.*)*",
   "/ndefined": "/ndefined"

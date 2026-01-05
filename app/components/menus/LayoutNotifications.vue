@@ -27,7 +27,7 @@
                     <v-icon :icon="getNotificationIcon(notification.type)"
                       :color="getNotificationColor(notification.type)"></v-icon>
                   </template>
-                  <v-list-item-title v-html="notification.title"></v-list-item-title>
+                  <v-list-item-title v-dompurify-html="notification.title"></v-list-item-title>
                   <v-list-item-subtitle>
                     {{ new Date(notification.date).toLocaleDateString() }}
                   </v-list-item-subtitle>

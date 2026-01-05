@@ -14,7 +14,7 @@
         <v-toolbar-title>{{ list.name }}</v-toolbar-title>
 
         <template v-slot:extension>
-          <p v-html="list?.description"></p>
+          <p v-dompurify-html="list?.description"></p>
         </template>
 
         <v-chip>{{ list?.type }}</v-chip>

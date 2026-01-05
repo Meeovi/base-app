@@ -7,7 +7,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <strong>
                                     <h5 class="mbr-section-title mbr-fonts-style mb-5 display-7"
-                                        v-html="blocksNewsletter?.description"></h5>
+                                        v-dompurify-html="blocksNewsletter?.description"></h5>
                             </strong>
                             <p v-if="message" :class="messageType === 'error' ? 'text-red-500' : 'text-green-500'">{{ message }}</p>
                         </div>

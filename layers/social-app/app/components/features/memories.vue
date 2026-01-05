@@ -8,7 +8,7 @@
                         <h3 class="mbr-section-title mb-4 mbr-fonts-style display-1">
                             <strong> {{ memoryPage?.name }}</strong>
                         </h3>
-                        <p class="mbr-section-title mb-4 mbr-fonts-style display-7" v-html="memoryPage?.content"></p>
+                        <p class="mbr-section-title mb-4 mbr-fonts-style display-7" v-dompurify-html="memoryPage?.content"></p>
                     </div>
                 </div>
             </div>
