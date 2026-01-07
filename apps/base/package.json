@@ -1,0 +1,42 @@
+{
+   "name": "base-app",
+   "version": "0.0.8",
+   "type": "module",
+   "description": "This is a base template for my projects.",
+   "author": "Sebastian Hilton (https://www.sebastianhilton.com)",
+   "homepage": "https://www.sebastianhilton.com",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Meeovi/base-app"
+   },
+   "bugs": {
+      "url": "https://github.com/Meeovi/base-app/issues"
+   },
+   "license": "MIT",
+   "private": true,
+   "scripts": {
+      "starter-commit": "git add . && git commit -m \"ready for update\"",
+      "starter-update": "git pull \"https://github.com/Meeovi/base-app\"",
+      "build": "nuxt build",
+      "dev": "nuxt dev --port 3011",
+      "ts-node": "ts-node -r tsconfig-paths/register --compiler-options '{\"module\":\"CommonJS\"}'",
+      "generate": "nuxt generate",
+      "preview": "nuxt preview",
+      "codegen:commerce": "graphql-codegen --config codegen.yml",
+      "gqlg": "npx gqlg --schemaFilePath graphql/magento/schema.graphql --destDirPath graphql/magento --depthLimit 2"
+   },
+   "dependencies": {
+      "@nuxtjs/seo": "^3.2.2",
+      "nuxt": "^4.2.2"
+   },
+   "devDependencies": {
+      "@nuxtjs/turnstile": "^1.0.0",
+      "@types/node": "^24.10.3",
+      "@vueuse/core": "^14.0.0",
+      "@vueuse/nuxt": "^14.0.0",
+      "sass": "^1.94.2",
+      "sass-embedded": "^1.93.3",
+      "tsx": "^4.20.6",
+      "typescript": "^5.9.3"
+   }
+}

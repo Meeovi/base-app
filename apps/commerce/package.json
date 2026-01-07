@@ -1,0 +1,35 @@
+{
+   "name": "commerce-app",
+   "version": "0.0.7",
+   "description": "This is a commerce app for my projects.",
+   "author": "Sebastian Hilton (https://www.sebastianhilton.com)",
+   "homepage": "https://www.sebastianhilton.com",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Meeovi/commerce-app"
+   },
+   "bugs": {
+      "url": "https://github.com/Meeovi/commerce-app/issues"
+   },
+   "license": "MIT",
+   "private": true,
+   "scripts": {
+      "starter-commit": "git add . && git commit -m \"ready for update\"",
+      "starter-update": "git pull \"https://github.com/Meeovi/commerce-app\"",
+      "build": "nuxt build",
+      "dev": "nuxt dev",
+      "ts-node": "ts-node -r tsconfig-paths/register --compiler-options '{\"module\":\"CommonJS\"}'",
+      "generate": "nuxt generate",
+      "preview": "nuxt preview",
+      "gqlg": "npx gqlg --schemaFilePath graphql/schema.graphql --destDirPath graphql/framework --depthLimit 2"
+   },
+   "devDependencies": {
+      "nuxt": "^4.2.2"
+   },
+   "dependencies": {
+      "@polar-sh/nuxt": "^0.5.3",
+      "@polar-sh/sdk": "^0.42.1",
+      "@storefront-ui/nuxt": "latest",
+      "zod": "^4.3.4"
+   }
+}
