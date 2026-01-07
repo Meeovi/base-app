@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@nuxtjs/leaflet": "^1.3.2",
-    "nuxt": "latest"
+    "nuxt": "^4.2.2"
   },
   "devDependencies": {}
 }

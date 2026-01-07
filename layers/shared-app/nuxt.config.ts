@@ -47,8 +47,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/mcp-toolkit',
-    'nuxt-tiptap-editor',
-    'nuxt-og-image'
+    'nuxt-tiptap-editor'
   ],
 
   mcp: {
@@ -109,17 +108,6 @@ export default defineNuxtConfig({
     directus: {
       baseURL: `${process.env.DIRECTUS_URL}/assets/`,
     },
-  },
-
-  // OG Image Configuration - https://nuxtseo.com/og-image/getting-started/installation
-  ogImage: {
-    defaults: {
-      component: 'OgImageTemplate',
-      width: 1200,
-      height: 630,
-    },
-    // @TODO: Fix font families for OG Image
-    // fonts: formatFonts(fontFamilies),
   },
 
   build: {},

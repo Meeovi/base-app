@@ -367,11 +367,6 @@ export const FeaturesIntegrations: typeof import("../layers/seller-dashboard-app
 export const FeaturesProducts: typeof import("../layers/seller-dashboard-app/app/components/features/products.vue").default
 export const FeaturesReviews: typeof import("../layers/seller-dashboard-app/app/components/features/reviews.vue").default
 export const FeaturesSettings: typeof import("../layers/seller-dashboard-app/app/components/features/settings.vue").default
-export const AuthState: typeof import("../node_modules/nuxt-auth-utils/dist/runtime/app/components/AuthState.vue").default
-export const Bouncer: typeof import("../node_modules/nuxt-authorization/dist/runtime/components/Bouncer.vue").default
-export const Can: typeof import("../node_modules/nuxt-authorization/dist/runtime/components/Can.vue").default
-export const Cannot: typeof import("../node_modules/nuxt-authorization/dist/runtime/components/Cannot.vue").default
-export const Primitive: typeof import("../node_modules/nuxt-authorization/dist/runtime/components/Primitive").default
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue").default
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout").default
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").default
@@ -409,8 +404,6 @@ export const InstallButton: typeof import("../node_modules/@nuxtjs/mcp-toolkit/d
 export const TiptapEditorContent: typeof import("@tiptap/vue-3").EditorContent
 export const TiptapFloatingMenu: typeof import("@tiptap/vue-3/menus").FloatingMenu
 export const TiptapBubbleMenu: typeof import("@tiptap/vue-3/menus").BubbleMenu
-export const OgImage: typeof import("../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default
-export const OgImageScreenshot: typeof import("../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default
 export const NuxtLinkLocale: typeof import("../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default
 export const SwitchLocalePathLink: typeof import("../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default
 export const NuxtPage: typeof import("../node_modules/nuxt/dist/pages/runtime/page").default
@@ -423,6 +416,8 @@ export const Style: typeof import("../node_modules/nuxt/dist/head/runtime/compon
 export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/components").Head
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components").Html
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components").Body
+export const OgImage: typeof import("../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default
+export const OgImageScreenshot: typeof import("../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default
 export const SchemaOrgDebug: typeof import("@unhead/schema-org/vue").SchemaOrgDebug
 export const SchemaOrgArticle: typeof import("@unhead/schema-org/vue").SchemaOrgArticle
 export const SchemaOrgBreadcrumb: typeof import("@unhead/schema-org/vue").SchemaOrgBreadcrumb
@@ -801,11 +796,6 @@ export const LazyFeaturesIntegrations: LazyComponent<typeof import("../layers/se
 export const LazyFeaturesProducts: LazyComponent<typeof import("../layers/seller-dashboard-app/app/components/features/products.vue").default>
 export const LazyFeaturesReviews: LazyComponent<typeof import("../layers/seller-dashboard-app/app/components/features/reviews.vue").default>
 export const LazyFeaturesSettings: LazyComponent<typeof import("../layers/seller-dashboard-app/app/components/features/settings.vue").default>
-export const LazyAuthState: LazyComponent<typeof import("../node_modules/nuxt-auth-utils/dist/runtime/app/components/AuthState.vue").default>
-export const LazyBouncer: LazyComponent<typeof import("../node_modules/nuxt-authorization/dist/runtime/components/Bouncer.vue").default>
-export const LazyCan: LazyComponent<typeof import("../node_modules/nuxt-authorization/dist/runtime/components/Can.vue").default>
-export const LazyCannot: LazyComponent<typeof import("../node_modules/nuxt-authorization/dist/runtime/components/Cannot.vue").default>
-export const LazyPrimitive: LazyComponent<typeof import("../node_modules/nuxt-authorization/dist/runtime/components/Primitive").default>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue").default>
 export const LazyNuxtLayout: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout").default>
 export const LazyNuxtErrorBoundary: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").default>
@@ -843,8 +833,6 @@ export const LazyInstallButton: LazyComponent<typeof import("../node_modules/@nu
 export const LazyTiptapEditorContent: LazyComponent<typeof import("@tiptap/vue-3").EditorContent>
 export const LazyTiptapFloatingMenu: LazyComponent<typeof import("@tiptap/vue-3/menus").FloatingMenu>
 export const LazyTiptapBubbleMenu: LazyComponent<typeof import("@tiptap/vue-3/menus").BubbleMenu>
-export const LazyOgImage: LazyComponent<typeof import("../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default>
-export const LazyOgImageScreenshot: LazyComponent<typeof import("../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default>
 export const LazyNuxtLinkLocale: LazyComponent<typeof import("../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default>
 export const LazySwitchLocalePathLink: LazyComponent<typeof import("../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default>
 export const LazyNuxtPage: LazyComponent<typeof import("../node_modules/nuxt/dist/pages/runtime/page").default>
@@ -857,6 +845,8 @@ export const LazyStyle: LazyComponent<typeof import("../node_modules/nuxt/dist/h
 export const LazyHead: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components").Head>
 export const LazyHtml: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components").Html>
 export const LazyBody: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components").Body>
+export const LazyOgImage: LazyComponent<typeof import("../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default>
+export const LazyOgImageScreenshot: LazyComponent<typeof import("../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default>
 export const LazySchemaOrgDebug: LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgDebug>
 export const LazySchemaOrgArticle: LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgArticle>
 export const LazySchemaOrgBreadcrumb: LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgBreadcrumb>

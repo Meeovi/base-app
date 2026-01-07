@@ -32,10 +32,7 @@ declare global {
   const abortNavigation: typeof import('../../node_modules/nuxt/dist/app/composables/router').abortNavigation
   const acceptHMRUpdate: typeof import('../../node_modules/@pinia/nuxt/dist/runtime/composables').acceptHMRUpdate
   const addRouteMiddleware: typeof import('../../node_modules/nuxt/dist/app/composables/router').addRouteMiddleware
-  const allow: typeof import('../../node_modules/nuxt-authorization/dist/runtime/ability').allow
-  const allows: typeof import('../../node_modules/nuxt-authorization/dist/runtime/utils/bouncer').allows
   const asyncComputed: typeof import('@vueuse/core').asyncComputed
-  const authorize: typeof import('../../node_modules/nuxt-authorization/dist/runtime/utils/bouncer').authorize
   const autoResetRef: typeof import('@vueuse/core').autoResetRef
   const calculateReadTime: typeof import('../../layers/shared-app/app/utils/strings').calculateReadTime
   const callOnce: typeof import('../../node_modules/nuxt/dist/app/composables/once').callOnce
@@ -73,7 +70,6 @@ declare global {
   const debouncedRef: typeof import('@vueuse/core').debouncedRef
   const debouncedWatch: typeof import('@vueuse/core').debouncedWatch
   const decodeImageSlug: typeof import('../../layers/shared-app/app/utils/url').decodeImageSlug
-  const defineAbility: typeof import('../../node_modules/nuxt-authorization/dist/runtime/ability').defineAbility
   const defineAddress: typeof import('../../node_modules/@unhead/schema-org/vue').defineAddress
   const defineAggregateOffer: typeof import('../../node_modules/@unhead/schema-org/vue').defineAggregateOffer
   const defineAggregateRating: typeof import('../../node_modules/@unhead/schema-org/vue').defineAggregateRating
@@ -128,8 +124,6 @@ declare global {
   const defineVirtualLocation: typeof import('../../node_modules/@unhead/schema-org/vue').defineVirtualLocation
   const defineWebPage: typeof import('../../node_modules/@unhead/schema-org/vue').defineWebPage
   const defineWebSite: typeof import('../../node_modules/@unhead/schema-org/vue').defineWebSite
-  const denies: typeof import('../../node_modules/nuxt-authorization/dist/runtime/utils/bouncer').denies
-  const deny: typeof import('../../node_modules/nuxt-authorization/dist/runtime/ability').deny
   const deslugify: typeof import('../../layers/shared-app/app/utils/strings').deslugify
   const destructureDate: typeof import('../../layers/shared-app/app/utils/time').destructureDate
   const dollarsToCents: typeof import('../../layers/shared-app/app/utils/currency').dollarsToCents
@@ -255,7 +249,6 @@ declare global {
   const roundToDecimal: typeof import('../../layers/shared-app/app/utils/math').roundToDecimal
   const safeRelation: typeof import('../../layers/shared-app/app/utils/relations').safeRelation
   const safeRelationId: typeof import('../../layers/shared-app/app/utils/relations').safeRelationId
-  const setInterval: typeof import('../../node_modules/nuxt/dist/app/compat/interval').setInterval
   const setPageLayout: typeof import('../../node_modules/nuxt/dist/app/composables/router').setPageLayout
   const setResponseStatus: typeof import('../../node_modules/nuxt/dist/app/composables/ssr').setResponseStatus
   const shallowReactive: typeof import('../../node_modules/vue').shallowReactive
@@ -549,13 +542,11 @@ declare global {
   const useTransitionState: typeof import('../../node_modules/vue').useTransitionState
   const useUrlSearchParams: typeof import('@vueuse/core').useUrlSearchParams
   const useUserMedia: typeof import('@vueuse/core').useUserMedia
-  const useUserSession: typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/app/composables/session').useUserSession
   const useVModel: typeof import('@vueuse/core').useVModel
   const useVModels: typeof import('@vueuse/core').useVModels
   const useVibrate: typeof import('@vueuse/core').useVibrate
   const useVirtualList: typeof import('@vueuse/core').useVirtualList
   const useWakeLock: typeof import('@vueuse/core').useWakeLock
-  const useWebAuthn: typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/app/composables/webauthn').useWebAuthn
   const useWebNotification: typeof import('@vueuse/core').useWebNotification
   const useWebSocket: typeof import('@vueuse/core').useWebSocket
   const useWebWorker: typeof import('@vueuse/core').useWebWorker
@@ -639,10 +630,7 @@ declare module 'vue' {
     readonly abortNavigation: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['abortNavigation']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('../../node_modules/@pinia/nuxt/dist/runtime/composables')['acceptHMRUpdate']>
     readonly addRouteMiddleware: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['addRouteMiddleware']>
-    readonly allow: UnwrapRef<typeof import('../../node_modules/nuxt-authorization/dist/runtime/ability')['allow']>
-    readonly allows: UnwrapRef<typeof import('../../node_modules/nuxt-authorization/dist/runtime/utils/bouncer')['allows']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
-    readonly authorize: UnwrapRef<typeof import('../../node_modules/nuxt-authorization/dist/runtime/utils/bouncer')['authorize']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly calculateReadTime: UnwrapRef<typeof import('../../layers/shared-app/app/utils/strings')['calculateReadTime']>
     readonly callOnce: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/once')['callOnce']>
@@ -680,7 +668,6 @@ declare module 'vue' {
     readonly debouncedRef: UnwrapRef<typeof import('@vueuse/core')['debouncedRef']>
     readonly debouncedWatch: UnwrapRef<typeof import('@vueuse/core')['debouncedWatch']>
     readonly decodeImageSlug: UnwrapRef<typeof import('../../layers/shared-app/app/utils/url')['decodeImageSlug']>
-    readonly defineAbility: UnwrapRef<typeof import('../../node_modules/nuxt-authorization/dist/runtime/ability')['defineAbility']>
     readonly defineAddress: UnwrapRef<typeof import('../../node_modules/@unhead/schema-org/vue')['defineAddress']>
     readonly defineAggregateOffer: UnwrapRef<typeof import('../../node_modules/@unhead/schema-org/vue')['defineAggregateOffer']>
     readonly defineAggregateRating: UnwrapRef<typeof import('../../node_modules/@unhead/schema-org/vue')['defineAggregateRating']>
@@ -735,8 +722,6 @@ declare module 'vue' {
     readonly defineVirtualLocation: UnwrapRef<typeof import('../../node_modules/@unhead/schema-org/vue')['defineVirtualLocation']>
     readonly defineWebPage: UnwrapRef<typeof import('../../node_modules/@unhead/schema-org/vue')['defineWebPage']>
     readonly defineWebSite: UnwrapRef<typeof import('../../node_modules/@unhead/schema-org/vue')['defineWebSite']>
-    readonly denies: UnwrapRef<typeof import('../../node_modules/nuxt-authorization/dist/runtime/utils/bouncer')['denies']>
-    readonly deny: UnwrapRef<typeof import('../../node_modules/nuxt-authorization/dist/runtime/ability')['deny']>
     readonly deslugify: UnwrapRef<typeof import('../../layers/shared-app/app/utils/strings')['deslugify']>
     readonly destructureDate: UnwrapRef<typeof import('../../layers/shared-app/app/utils/time')['destructureDate']>
     readonly dollarsToCents: UnwrapRef<typeof import('../../layers/shared-app/app/utils/currency')['dollarsToCents']>
@@ -862,7 +847,6 @@ declare module 'vue' {
     readonly roundToDecimal: UnwrapRef<typeof import('../../layers/shared-app/app/utils/math')['roundToDecimal']>
     readonly safeRelation: UnwrapRef<typeof import('../../layers/shared-app/app/utils/relations')['safeRelation']>
     readonly safeRelationId: UnwrapRef<typeof import('../../layers/shared-app/app/utils/relations')['safeRelationId']>
-    readonly setInterval: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/interval')['setInterval']>
     readonly setPageLayout: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['setPageLayout']>
     readonly setResponseStatus: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['setResponseStatus']>
     readonly shallowReactive: UnwrapRef<typeof import('../../node_modules/vue')['shallowReactive']>
@@ -1156,13 +1140,11 @@ declare module 'vue' {
     readonly useTransitionState: UnwrapRef<typeof import('../../node_modules/vue')['useTransitionState']>
     readonly useUrlSearchParams: UnwrapRef<typeof import('@vueuse/core')['useUrlSearchParams']>
     readonly useUserMedia: UnwrapRef<typeof import('@vueuse/core')['useUserMedia']>
-    readonly useUserSession: UnwrapRef<typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/app/composables/session')['useUserSession']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
     readonly useVibrate: UnwrapRef<typeof import('@vueuse/core')['useVibrate']>
     readonly useVirtualList: UnwrapRef<typeof import('@vueuse/core')['useVirtualList']>
     readonly useWakeLock: UnwrapRef<typeof import('@vueuse/core')['useWakeLock']>
-    readonly useWebAuthn: UnwrapRef<typeof import('../../node_modules/nuxt-auth-utils/dist/runtime/app/composables/webauthn')['useWebAuthn']>
     readonly useWebNotification: UnwrapRef<typeof import('@vueuse/core')['useWebNotification']>
     readonly useWebSocket: UnwrapRef<typeof import('@vueuse/core')['useWebSocket']>
     readonly useWebWorker: UnwrapRef<typeof import('@vueuse/core')['useWebWorker']>

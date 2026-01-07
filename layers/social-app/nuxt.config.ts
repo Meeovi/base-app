@@ -1,13 +1,6 @@
-import {
-  resolve
-} from 'path'
 
 export default defineNuxtConfig({
-  alias: {
-    '#departments': resolve(__dirname, '../departments-app'),
-    '#lists': resolve(__dirname, '../lists-app'),
-    '#commerce': resolve(__dirname, '../commerce-app'),
-  },
+  extends: ['../shared-app'],
 
   compatibilityDate: '2025-07-15',
   devtools: {

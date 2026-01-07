@@ -367,11 +367,6 @@ interface _GlobalComponents {
   'FeaturesProducts': typeof import("../../layers/seller-dashboard-app/app/components/features/products.vue").default
   'FeaturesReviews': typeof import("../../layers/seller-dashboard-app/app/components/features/reviews.vue").default
   'FeaturesSettings': typeof import("../../layers/seller-dashboard-app/app/components/features/settings.vue").default
-  'AuthState': typeof import("../../node_modules/nuxt-auth-utils/dist/runtime/app/components/AuthState.vue").default
-  'Bouncer': typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Bouncer.vue").default
-  'Can': typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Can.vue").default
-  'Cannot': typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Cannot.vue").default
-  'Primitive': typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Primitive").default
   'NuxtWelcome': typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue").default
   'NuxtLayout': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout").default
   'NuxtErrorBoundary': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").default
@@ -409,8 +404,6 @@ interface _GlobalComponents {
   'TiptapEditorContent': typeof import("@tiptap/vue-3").EditorContent
   'TiptapFloatingMenu': typeof import("@tiptap/vue-3/menus").FloatingMenu
   'TiptapBubbleMenu': typeof import("@tiptap/vue-3/menus").BubbleMenu
-  'OgImage': typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default
-  'OgImageScreenshot': typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default
   'NuxtLinkLocale': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default
   'SwitchLocalePathLink': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default
   'NuxtPage': typeof import("../../node_modules/nuxt/dist/pages/runtime/page").default
@@ -423,6 +416,8 @@ interface _GlobalComponents {
   'Head': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Head
   'Html': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Html
   'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Body
+  'OgImage': typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default
+  'OgImageScreenshot': typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default
   'SchemaOrgDebug': typeof import("@unhead/schema-org/vue").SchemaOrgDebug
   'SchemaOrgArticle': typeof import("@unhead/schema-org/vue").SchemaOrgArticle
   'SchemaOrgBreadcrumb': typeof import("@unhead/schema-org/vue").SchemaOrgBreadcrumb
@@ -801,11 +796,6 @@ interface _GlobalComponents {
   'LazyFeaturesProducts': LazyComponent<typeof import("../../layers/seller-dashboard-app/app/components/features/products.vue").default>
   'LazyFeaturesReviews': LazyComponent<typeof import("../../layers/seller-dashboard-app/app/components/features/reviews.vue").default>
   'LazyFeaturesSettings': LazyComponent<typeof import("../../layers/seller-dashboard-app/app/components/features/settings.vue").default>
-  'LazyAuthState': LazyComponent<typeof import("../../node_modules/nuxt-auth-utils/dist/runtime/app/components/AuthState.vue").default>
-  'LazyBouncer': LazyComponent<typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Bouncer.vue").default>
-  'LazyCan': LazyComponent<typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Can.vue").default>
-  'LazyCannot': LazyComponent<typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Cannot.vue").default>
-  'LazyPrimitive': LazyComponent<typeof import("../../node_modules/nuxt-authorization/dist/runtime/components/Primitive").default>
   'LazyNuxtWelcome': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue").default>
   'LazyNuxtLayout': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout").default>
   'LazyNuxtErrorBoundary': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").default>
@@ -843,8 +833,6 @@ interface _GlobalComponents {
   'LazyTiptapEditorContent': LazyComponent<typeof import("@tiptap/vue-3").EditorContent>
   'LazyTiptapFloatingMenu': LazyComponent<typeof import("@tiptap/vue-3/menus").FloatingMenu>
   'LazyTiptapBubbleMenu': LazyComponent<typeof import("@tiptap/vue-3/menus").BubbleMenu>
-  'LazyOgImage': LazyComponent<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default>
-  'LazyOgImageScreenshot': LazyComponent<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default>
   'LazyNuxtLinkLocale': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default>
   'LazySwitchLocalePathLink': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default>
   'LazyNuxtPage': LazyComponent<typeof import("../../node_modules/nuxt/dist/pages/runtime/page").default>
@@ -857,6 +845,8 @@ interface _GlobalComponents {
   'LazyHead': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Head>
   'LazyHtml': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Html>
   'LazyBody': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Body>
+  'LazyOgImage': LazyComponent<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImage").default>
+  'LazyOgImageScreenshot': LazyComponent<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/components/OgImage/OgImageScreenshot").default>
   'LazySchemaOrgDebug': LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgDebug>
   'LazySchemaOrgArticle': LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgArticle>
   'LazySchemaOrgBreadcrumb': LazyComponent<typeof import("@unhead/schema-org/vue").SchemaOrgBreadcrumb>

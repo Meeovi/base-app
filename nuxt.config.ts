@@ -1,25 +1,9 @@
 import {
   defineNuxtConfig
 } from 'nuxt/config'
-import {
-  useLayers
-} from 'nuxt-layers-utils'
-
-const layers = useLayers(__dirname, {
-  shared: 'layers/shared-app',
-  commerce: 'layers/commerce-app',
-  departments: 'layers/departments-app',
-  lists: 'layers/lists-app',
-  sellerDashboard: 'layers/seller-dashboard-app',
-  social: 'layers/social-app',
-  auth: 'layers/auth-app',
-  search: 'layers/search-app'
-})
 
 export default defineNuxtConfig({
-  extends: layers.extends(),
-  alias: layers.alias('#'),
-
+  extends: ['../layers/shared-app'],
   experimental: {
     watcher: 'parcel'
   },

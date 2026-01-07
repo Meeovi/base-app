@@ -98,36 +98,6 @@
       "#internal/nuxt/paths": [
         "../../../node_modules/@nuxt/nitro-server/dist/runtime/utils/paths"
       ],
-      "#departments": [
-        "../../departments-app"
-      ],
-      "#departments/*": [
-        "../../departments-app/*"
-      ],
-      "#commerce": [
-        "../../commerce-app"
-      ],
-      "#commerce/*": [
-        "../../commerce-app/*"
-      ],
-      "#social": [
-        "../../social-app"
-      ],
-      "#social/*": [
-        "../../social-app/*"
-      ],
-      "#auth": [
-        "../../auth-app"
-      ],
-      "#auth/*": [
-        "../../auth-app/*"
-      ],
-      "#search": [
-        "../../search-app"
-      ],
-      "#search/*": [
-        "../../search-app/*"
-      ],
       "#unhead/composables": [
         "../../../node_modules/nuxt/dist/head/runtime/composables"
       ]

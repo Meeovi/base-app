@@ -21,7 +21,7 @@ import {
   twoFactor,
   phoneNumber,
   magicLink,
-  emailOTP, lastLoginMethod, captcha, deviceAuthorization, multiSession
+  emailOTP, lastLoginMethod, captcha, deviceAuthorization, multiSession, haveIBeenPwned
 } from 'better-auth/plugins'
 import {
   passkey
@@ -292,6 +292,7 @@ export const createBetterAuth = () => betterAuth({
     }),
     lastLoginMethod(),
     multiSession(),
+    haveIBeenPwned()
   ]
 })
 

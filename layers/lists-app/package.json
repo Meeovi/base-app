@@ -25,7 +25,7 @@
       "gqlg": "npx gqlg --schemaFilePath graphql/schema.graphql --destDirPath graphql/framework --depthLimit 2"
    },
    "dependencies": {
-      "nuxt": "latest"
+      "nuxt": "^4.2.2"
    },
    "devDependencies": {}
 }

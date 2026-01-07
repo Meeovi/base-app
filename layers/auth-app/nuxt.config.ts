@@ -1,16 +1,11 @@
-import {
-  resolve
-} from 'path'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  extends: ['../shared-app'],
+
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['nuxt-auth-utils', 'nuxt-authorization'],
-
-  auth: {
-    webAuthn: true
-  },
+  modules: [],
 
   runtimeConfig: {
     appName: process.env.NUXT_PUBLIC_SITE_NAME || 'Meeovi',

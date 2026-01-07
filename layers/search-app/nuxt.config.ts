@@ -2,18 +2,9 @@
 import {
   defineNuxtConfig
 } from "nuxt/config"
-import {
-  resolve
-} from 'path'
 
 export default defineNuxtConfig({
-  alias: {
-    '#departments': resolve(__dirname, '../departments-app'),
-    '#lists': resolve(__dirname, '../lists-app'),
-    '#social': resolve(__dirname, '../social-app'),
-    '#auth': resolve(__dirname, '../auth-app'),
-    '#commerce': resolve(__dirname, '../commerce-app'),
-  },
+  extends: ['../shared-app'],
 
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },

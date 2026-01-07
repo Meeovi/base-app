@@ -85,36 +85,6 @@
       "#shared/*": [
         "../shared/*"
       ],
-      "#departments": [
-        "../../departments-app"
-      ],
-      "#departments/*": [
-        "../../departments-app/*"
-      ],
-      "#commerce": [
-        "../../commerce-app"
-      ],
-      "#commerce/*": [
-        "../../commerce-app/*"
-      ],
-      "#social": [
-        "../../social-app"
-      ],
-      "#social/*": [
-        "../../social-app/*"
-      ],
-      "#auth": [
-        "../../auth-app"
-      ],
-      "#auth/*": [
-        "../../auth-app/*"
-      ],
-      "#search": [
-        "../../search-app"
-      ],
-      "#search/*": [
-        "../../search-app/*"
-      ],
       "#app": [
         "../../../node_modules/nuxt/dist/app"
       ],
@@ -134,7 +104,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/9fdf0ca7-0452-41e6-8ebd-2c58f7920c2f"
+        "./manifest/meta/c5031a5f-6a23-42b9-bce5-96866d2ea456"
       ],
       "#build": [
         "."

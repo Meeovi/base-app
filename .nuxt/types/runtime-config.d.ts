@@ -31,13 +31,7 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
    },
 
    session: {
-      name: string,
-
       password: string,
-
-      cookie: {
-         sameSite: string,
-      },
 
       maxAge: number,
    },
@@ -62,474 +56,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
 
    nitro: {
       envPrefix: string,
-   },
-
-   hash: {
-      scrypt: any,
-   },
-
-   webauthn: {
-      register: any,
-
-      authenticate: any,
-   },
-
-   oauth: {
-      gitea: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-
-         baseURL: string,
-      },
-
-      github: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      gitlab: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-
-         baseURL: string,
-      },
-
-      spotify: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      google: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      twitch: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      auth0: {
-         clientId: string,
-
-         clientSecret: string,
-
-         domain: string,
-
-         audience: string,
-
-         redirectURL: string,
-      },
-
-      workos: {
-         clientId: string,
-
-         clientSecret: string,
-
-         connectionId: string,
-
-         screenHint: string,
-
-         redirectURL: string,
-      },
-
-      microsoft: {
-         clientId: string,
-
-         clientSecret: string,
-
-         tenant: string,
-
-         scope: Array<any>,
-
-         authorizationURL: string,
-
-         tokenURL: string,
-
-         userURL: string,
-
-         redirectURL: string,
-      },
-
-      azureb2c: {
-         clientId: string,
-
-         policy: string,
-
-         tenant: string,
-
-         scope: Array<any>,
-
-         authorizationURL: string,
-
-         tokenURL: string,
-
-         userURL: string,
-
-         redirectURL: string,
-      },
-
-      discord: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      battledotnet: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      bluesky: {
-         clientMetadataFilename: string,
-
-         clientName: string,
-
-         clientUri: any,
-
-         logoUri: any,
-
-         policyUri: any,
-
-         tosUri: any,
-
-         scope: Array<string>,
-
-         grantTypes: Array<string>,
-
-         responseTypes: Array<string>,
-
-         applicationType: string,
-
-         redirectUris: any,
-
-         dpopBoundAccessTokens: boolean,
-
-         tokenEndpointAuthMethod: string,
-      },
-
-      keycloak: {
-         clientId: string,
-
-         clientSecret: string,
-
-         serverUrl: string,
-
-         serverUrlInternal: string,
-
-         realm: string,
-
-         redirectURL: string,
-      },
-
-      linear: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      linkedin: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      cognito: {
-         clientId: string,
-
-         clientSecret: string,
-
-         region: string,
-
-         userPoolId: string,
-
-         redirectURL: string,
-      },
-
-      facebook: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      instagram: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      paypal: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      steam: {
-         apiKey: string,
-
-         redirectURL: string,
-      },
-
-      x: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      xsuaa: {
-         clientId: string,
-
-         clientSecret: string,
-
-         domain: string,
-
-         redirectURL: string,
-      },
-
-      vk: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      yandex: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      tiktok: {
-         clientKey: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      dropbox: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      polar: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      zitadel: {
-         clientId: string,
-
-         clientSecret: string,
-
-         domain: string,
-
-         redirectURL: string,
-      },
-
-      authentik: {
-         clientId: string,
-
-         clientSecret: string,
-
-         domain: string,
-
-         redirectURL: string,
-      },
-
-      seznam: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      strava: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      hubspot: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      line: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      atlassian: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      apple: {
-         teamId: string,
-
-         keyId: string,
-
-         privateKey: string,
-
-         redirectURL: string,
-
-         clientId: string,
-      },
-
-      kick: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-      },
-
-      livechat: {
-         clientId: string,
-
-         clientSecret: string,
-      },
-
-      salesforce: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-
-         baseURL: string,
-
-         scope: string,
-      },
-
-      slack: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-
-         scope: string,
-      },
-
-      heroku: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-
-         scope: string,
-      },
-
-      roblox: {
-         clientId: string,
-
-         clientSecret: string,
-
-         redirectURL: string,
-
-         scope: string,
-      },
-
-      okta: {
-         clientId: string,
-
-         clientSecret: string,
-
-         domain: string,
-
-         audience: string,
-
-         scope: Array<any>,
-
-         redirectURL: string,
-      },
-
-      ory: {
-         clientId: string,
-
-         clientSecret: string,
-
-         sdkURL: string,
-
-         redirectURL: string,
-
-         scope: Array<any>,
-
-         authorizationURL: string,
-
-         tokenURL: string,
-
-         userURL: string,
-      },
-
-      shopifyCustomer: {
-         shopDomain: string,
-
-         clientId: string,
-
-         redirectURL: string,
-
-         scope: Array<any>,
-      },
    },
 
    mcp: {
@@ -792,6 +318,32 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       multiTenancy: Array<any>,
    },
 
+   "nuxt-robots": {
+      version: string,
+
+      isNuxtContentV2: boolean,
+
+      debug: boolean,
+
+      credits: boolean,
+
+      groups: Array<{
+
+      }>,
+
+      sitemap: Array<string>,
+
+      header: boolean,
+
+      robotsEnabledValue: string,
+
+      robotsDisabledValue: string,
+
+      cacheControl: string,
+
+      botDetection: boolean,
+   },
+
    "nuxt-og-image": {
       version: string,
 
@@ -834,57 +386,11 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       strictNuxtContentPaths: any,
 
       isNuxtContentDocumentDriven: boolean,
-   },
 
-   "nuxt-robots": {
-      version: string,
-
-      isNuxtContentV2: boolean,
-
-      debug: boolean,
-
-      credits: boolean,
-
-      groups: Array<{
-
-      }>,
-
-      sitemap: Array<string>,
-
-      header: boolean,
-
-      robotsEnabledValue: string,
-
-      robotsDisabledValue: string,
-
-      cacheControl: string,
-
-      botDetection: boolean,
+      componentDirs: Array<string>,
    },
   }
   interface SharedPublicRuntimeConfig {
-   indexName: string,
-
-   meilisearch: {
-      host: string,
-
-      searchApiKey: string,
-
-      options: {
-         primaryKey: string,
-
-         keepZeroFacets: boolean,
-
-         finitePagination: boolean,
-      },
-   },
-
-   search: {
-      host: string,
-
-      apiKey: string,
-   },
-
    directus: {
       url: string,
 
@@ -957,6 +463,28 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       currency: string,
    },
 
+   indexName: string,
+
+   meilisearch: {
+      host: string,
+
+      searchApiKey: string,
+
+      options: {
+         primaryKey: string,
+
+         keepZeroFacets: boolean,
+
+         finitePagination: boolean,
+      },
+   },
+
+   search: {
+      host: string,
+
+      apiKey: string,
+   },
+
    NUXT_PROJECT_ID: string,
 
    NUXT_PUBLIC_SITE_URL: string,
@@ -979,8 +507,18 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
 
    paypalClientId: string,
 
-   auth: {
-      loadStrategy: string,
+   "nuxt-schema-org": {
+      reactive: boolean,
+
+      minify: boolean,
+
+      scriptAttributes: {
+         "data-nuxt-schema-org": boolean,
+      },
+
+      identity: any,
+
+      version: string,
    },
 
    "seo-utils": {
